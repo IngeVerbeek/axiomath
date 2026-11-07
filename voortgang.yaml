@@ -1,0 +1,27 @@
+# Voortgang van de handboeken. Dit bestand is de bron voor het overzicht op de landingspagina.
+# Na een wijziging: python maak-voortgang.py
+#
+# Sleutel: <pakketnummer>/<rubriek>/<cursus>, zoals in Ontwerp/voorkanten/maak-voorkanten.py.
+# Een handboek dat hier niet staat, heeft de status "gepland".
+
+statussen:
+  gepland:
+    percentage: 0
+    teken: "⚪"
+    uitleg: nog niet begonnen
+  eerste-versie:
+    percentage: 40
+    teken: "🟠"
+    uitleg: tekst en oefeningen geschreven, nog niet nagelezen door andere leerkrachten
+  nagelezen:
+    percentage: 70
+    teken: "🟡"
+    uitleg: nagelezen door leerkrachten, feedback verwerkt
+  klaar:
+    percentage: 100
+    teken: "🟢"
+    uitleg: in de klas gebruikt en bijgewerkt, versie 1.0
+
+handboeken:
+  "4/Analyse/Integralen": eerste-versie
+  "1/Algebra/Matrices": eerste-versie

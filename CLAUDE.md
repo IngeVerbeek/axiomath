@@ -22,4 +22,5 @@ Vrije, niet-commerciële handboeken wiskunde voor de 3de graad doorstroomfinalit
 - Python 3.13 met `pymupdf`, `pillow`, `pyyaml`; TeX Live 2024 of recenter. Vanuit de map van de cursus: `python maak-pdf.py` (of `--hoofdstuk 2` voor één hoofdstuk).
 - LaTeX leest `gen/`, dus draai altijd eerst `maak-pdf.py`, ook vóór een gewone `latexmk`.
 - Voorkanten: `python maak-voorkanten.py` in `Ontwerp/voorkanten/`. Pas ze daar aan, want het script overschrijft de kopieën in de cursussen.
+- Voortgang: zet de status van een handboek in `voortgang.yaml` en draai `python maak-voortgang.py`. Dat vult het overzicht in `README.md` tussen de markeringen: pas dat deel nooit met de hand aan.
 - Bekijk na het bouwen de pagina's echt (render naar PNG): de meeste fouten zie je alleen op de pagina.
