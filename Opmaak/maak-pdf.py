@@ -1,14 +1,17 @@
-"""Bouwt de cursus Integralen. Uitvoeren vanuit deze map, in PowerShell:
+"""Bouwt een cursus. Uitvoeren vanuit de hoofdmap van de repo, in PowerShell:
 
-    py -3.13 -P maak-pdf.py                 alles: handboek, oplossingen, leerkracht, zelfstudie
-    py -3.13 -P maak-pdf.py --hoofdstuk 2   snel: alleen hoofdstuk 2, in snel-h2.pdf
-    py -3.13 -P maak-pdf.py --hoofdstuk 2 --versie leerkracht
+    py -3.13 -P Opmaak/maak-pdf.py <cursus>                  alles: handboek, oplossingen, leerkracht, zelfstudie
+    py -3.13 -P Opmaak/maak-pdf.py <cursus> --hoofdstuk 2    snel: alleen hoofdstuk 2, in snel-h2.pdf
+    py -3.13 -P Opmaak/maak-pdf.py <cursus> --hoofdstuk 2 --versie leerkracht
+
+<cursus> is <pakketnummer>/<rubriek>/<cursus>, bijvoorbeeld 4/Analyse/Integralen, of het pad naar de map
+van de cursus. Zonder <cursus> bouwt het script de map waar je staat. De bestanden verschijnen in de map van de cursus.
 
 Twee dingen maken het sneller, zonder dat er iets aan de bronbestanden verandert.
 
 Grafieken: TikZ rekent elke kromme in LaTeX uit, en dat is traag. Daarom zet dit script de
 grafieken van een hoofdstuk in een eigen PDF in figuren-cache/ (een pagina per figuur). De naam
-bevat een hash van de figuren, notatie.tex en opmaak-v2.tex: alleen als daarin iets verandert,
+bevat een hash van de figuren, notatie.tex en Opmaak/opmaak.tex: alleen als daarin iets verandert,
 wordt die PDF opnieuw gemaakt. In gen/ komen kopieën van de hoofdstukken waarin elke figuur
 vervangen is door die pagina. Pas de hoofdstukken dus aan in hoofdstukken/, nooit in gen/.
 
@@ -29,23 +32,25 @@ import sys
 import time
 from pathlib import Path
 
-MAP = Path(__file__).resolve().parent
-sys.path.insert(0, str(MAP))  # py -P zoekt niet in de map van het script
+OPMAAK = Path(__file__).resolve().parent
+HOOFD = OPMAAK.parent
+sys.path.insert(0, str(OPMAAK))  # py -P zoekt niet in de map van het script
 import oefeningenbank
 
 TEXLIVE = Path(r"C:\texlive\2024\bin\windows")  # wordt aan het PATH toegevoegd als pdflatex ontbreekt
-CACHE = MAP / "figuren-cache"
-GEN = MAP / "gen"
+# De map van de cursus: zet_cursus() vult dit in
+MAP = CACHE = GEN = None
+HOOFDMAP = "../../../../"
 FIGUUR = re.compile(r"\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}", re.S)
 TUSSENBESTANDEN = (".aux", ".log", ".out", ".toc", ".fls", ".fdb_latexmk", ".synctex.gz")
 OPLOSSINGEN = [("numeriek", "numerieke oplossingen"), ("uitgewerkt", "uitgewerkte oplossingen")]
 
-VOORAF = r"""\documentclass[11pt,fleqn,oneside,openany]{book}
+VOORAF = r"""\def\hoofdmap{@@HOOFDMAP@@}\documentclass[11pt,fleqn,oneside,openany]{book}
 \newcommand{\cursustitel}{Figuren}
 \newcommand{\cursusondertitel}{}
 \newcommand{\cursusauteur}{}
 \newcommand{\schooljaar}{}
-\input{opmaak-v2}
+\input{\hoofdmap Opmaak/opmaak}
 \input{notatie}
 % Elke figuur op een eigen pagina, met een marge van 3bp: lijnen mogen iets buiten de figuur steken.
 \hoffset=-1in \voffset=-1in
@@ -83,7 +88,7 @@ def maak_figuren():
     """Zorgt dat elk hoofdstuk zijn figuren-PDF heeft, en schrijft de kopieën in gen/."""
     CACHE.mkdir(exist_ok=True)
     GEN.mkdir(exist_ok=True)
-    basis = hashlib.sha1((MAP / "notatie.tex").read_bytes() + (MAP / "opmaak-v2.tex").read_bytes()).digest()
+    basis = hashlib.sha1((MAP / "notatie.tex").read_bytes() + (OPMAAK / "opmaak.tex").read_bytes()).digest()
     bank = oefeningenbank.laad(MAP)
     gebruikt = set()
     for bron in sorted((MAP / "hoofdstukken").glob("0[1-9]-*.tex")):
@@ -95,7 +100,7 @@ def maak_figuren():
         if not (CACHE / f"{naam}.pdf").exists():
             print(f"  figuren van hoofdstuk {nummer}: {len(figuren)} opnieuw maken")
             bouw = MAP / f"_figuren-{nummer}.tex"
-            inhoud = VOORAF + rf"\colorlet{{accent}}{{hd{nummer}}}\colorlet{{fel}}{{hf{nummer}}}" + "\n"
+            inhoud = VOORAF.replace("@@HOOFDMAP@@", HOOFDMAP) + rf"\colorlet{{accent}}{{hd{nummer}}}\colorlet{{fel}}{{hf{nummer}}}" + "\n"
             inhoud += "".join(rf"\setbox0\hbox{{{f}}}\figuurpagina" + "\n" for f in figuren)
             bouw.write_text(inhoud + "\\end{document}\n", encoding="utf-8")
             pdflatex(bouw.stem, bouw.name)
@@ -112,15 +117,32 @@ def maak_figuren():
 
 def bouw(job, hoofd, extra=""):
     begin = time.time()
-    rondes = tot_stabiel(job, rf"\def\hoofdstukmap{{gen}}{extra}\input{{{hoofd}}}")
+    rondes = tot_stabiel(job, rf"\def\hoofdmap{{{HOOFDMAP}}}\def\hoofdstukmap{{gen}}{extra}\input{{{hoofd}}}")
     print(f"  {job}.pdf: {rondes} rondes, {time.time() - begin:.0f} s")
 
 
+def zet_cursus(naam):
+    """Zoekt de map van de cursus en zet de paden die ervan afhangen."""
+    global MAP, CACHE, GEN, HOOFDMAP
+    pad = Path(naam) if naam else Path.cwd()
+    if naam and not (pad / "handboek.tex").exists():
+        nummer, _, rest = naam.replace("\\", "/").partition("/")
+        gevonden = list((HOOFD / "Handboeken").glob(f"{nummer} */{rest}")) if rest else []
+        pad = gevonden[0] if len(gevonden) == 1 else pad
+    if not (pad / "handboek.tex").exists():
+        sys.exit(f"Geen cursus gevonden voor {naam or pad}: geef <pakketnummer>/<rubriek>/<cursus>, of het pad naar de map.")
+    MAP = pad.resolve()
+    CACHE, GEN = MAP / "figuren-cache", MAP / "gen"
+    HOOFDMAP = os.path.relpath(HOOFD, MAP).replace("\\", "/") + "/"
+
+
 def main():
-    parser = argparse.ArgumentParser(description="Bouwt de cursus Integralen.")
+    parser = argparse.ArgumentParser(description="Bouwt een cursus.")
+    parser.add_argument("cursus", nargs="?", help="<pakketnummer>/<rubriek>/<cursus> of het pad naar de map; standaard de huidige map")
     parser.add_argument("--hoofdstuk", type=int, help="bouw alleen dit hoofdstuk, in snel-h<nummer>.pdf")
     parser.add_argument("--versie", choices=["handboek", "leerkracht", "zelfstudie"], default="handboek")
     args = parser.parse_args()
+    zet_cursus(args.cursus)
 
     if not shutil.which("pdflatex"):
         os.environ["PATH"] = str(TEXLIVE) + os.pathsep + os.environ["PATH"]

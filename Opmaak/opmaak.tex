@@ -1,11 +1,13 @@
 %----------------------------------------------------------------------------------------
-% OPMAAK VAN PROTOTYPE 2
+% OPMAAK VAN AXIOMATH: gedeeld door alle cursussen. Pas ze alleen hier aan.
 % Compact handboek voor in de les. Uit dezelfde bron komen drie versies:
 %   \def\versie{handboek}    kern, uitgewerkte voorbeelden, oefeningen zonder uitwerking
 %   \def\versie{leerkracht}  handboek + didactische tips, antwoorden
 %   \def\versie{zelfstudie}  handboek + extra uitleg, extra opgaven, antwoorden
 %----------------------------------------------------------------------------------------
 \providecommand{\versie}{handboek}
+% Van de map van de cursus naar de hoofdmap van de repo (de cursus of maak-pdf.py zet dit al)
+\providecommand{\hoofdmap}{../../../../}
 
 \usepackage{etoolbox}
 \newif\ifhandboek \newif\ifleerkracht \newif\ifzelfstudie \newif\ifuitwerking
@@ -30,7 +32,9 @@
 \usepackage[inline]{enumitem}
 \usepackage{multicol}
 \usepackage{graphicx}
-\graphicspath{{afbeeldingen/}}
+% \graphicspath breidt macro's niet uit: werk de lijst eerst uit
+\edef\gptmp{{afbeeldingen/}{./}{\hoofdmap Ontwerp/omslagen/}{\hoofdmap Ontwerp/logo/}}
+\expandafter\graphicspath\expandafter{\gptmp}
 \usepackage{xcolor}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,decorations.pathreplacing,calc}
@@ -359,7 +363,7 @@
 %----------------------------------------------------------------------------------------
 % VOORKAFT: in een eigen bestand, zodat een wijziging de bewaarde grafieken niet ongeldig maakt
 %----------------------------------------------------------------------------------------
-\input{voorkant}
+\input{\hoofdmap Ontwerp/voorkanten/voorkant}
 
 %----------------------------------------------------------------------------------------
 % INHOUD: hoofdstukken in hun eigen kleur, secties, en per hoofdstuk Opdrachten, Koppel en Test

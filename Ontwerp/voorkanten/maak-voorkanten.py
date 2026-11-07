@@ -4,8 +4,8 @@
 
 Resultaat:
   - alle-voorkanten.pdf: alle handboeken, een pagina per handboek, met bladwijzers;
-  - in elke cursus die al een handboek.tex heeft: voorkant.tex, motief.tex, voorkant-gegevens.tex,
-    afbeeldingen/omslag-<naam>.jpg en afbeeldingen/axiomath-logo-wit.pdf.
+  - in elke cursus die al een handboek.tex heeft: voorkant-gegevens.tex (de gegevens en de naam van het motief).
+    De voorkant, de motieven, de schilderijen en het logo blijven hier: de cursussen lezen ze rechtstreeks.
 
 Een nieuwe cursus krijgt haar voorkant dus vanzelf bij de volgende keer dat dit script draait.
 Kunstwerken: ../omslagen/maak-omslagen.py. Het logo: ../logo/.
@@ -19,8 +19,6 @@ import os
 
 MAP = Path(__file__).resolve().parent
 HANDBOEKEN = MAP.parent.parent / "Handboeken"
-AFBEELDINGEN = MAP.parent / "omslagen"
-LOGO = MAP.parent / "logo" / "axiomath-logo-wit.pdf"
 TEXLIVE = Path(r"C:\texlive\2024\bin\windows")
 
 GRAAD = "3de graad doorstroomfinaliteit"
@@ -182,13 +180,8 @@ def zet_in_cursussen():
             cursus = cursus / "Handboek"
         if not (cursus / "handboek.tex").exists():
             continue
-        (cursus / "voorkant-gegevens.tex").write_text(gegevens(pakket, map_, jaar), encoding="utf-8")
-        shutil.copyfile(MAP / "voorkant.tex", cursus / "voorkant.tex")
-        shutil.copyfile(MAP / "motieven" / f"{motief}.tex", cursus / "motief.tex")
-        bestand = re.search(r"\\def\\omslagbestand\{(.+?)\}", (cursus / "motief.tex").read_text(encoding="utf-8")).group(1)
-        (cursus / "afbeeldingen").mkdir(exist_ok=True)
-        shutil.copyfile(AFBEELDINGEN / bestand, cursus / "afbeeldingen" / bestand)
-        shutil.copyfile(LOGO, cursus / "afbeeldingen" / LOGO.name)
+        (cursus / "voorkant-gegevens.tex").write_text(
+            gegevens(pakket, map_, jaar) + f"\\def\\motiefnaam{{{motief}}}\n", encoding="utf-8")
         print("cursus bijgewerkt:", map_, f"({pakket.split()[0]})")
 
 

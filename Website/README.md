@@ -17,7 +17,7 @@ Open `index.html` met een dubbelklik: de site werkt zonder server en zonder inte
 ## Bestanden
 
 - `index.html`: de pagina. De navigatie loopt via de hash (`#h1-ondersom`, `#naar-h1-o3` voor oefening `h1-o3`, `#naar-vb-h1-limiet` voor een voorbeeld).
-- `assets/stijl.css`: de opmaak. Alle kleuren zijn tokens; `data-h` zet het kleurenpaar van het hoofdstuk uit `opmaak-v2.tex` (donker = uitleg, fel = opdrachten).
+- `assets/stijl.css`: de opmaak. Alle kleuren zijn tokens; `data-h` zet het kleurenpaar van het hoofdstuk uit `Opmaak/opmaak.tex` (donker = uitleg, fel = opdrachten).
 - `assets/kern.js`: formules, navigatie, voortgang en overgangen. De lijst met hoofdstukken staat bovenaan.
 - `assets/graf.js`: de grafiekmotor (assen, krommen, gebieden, verende rechthoeken, versleepbare punten).
 - `assets/geluid.js`: alle geluiden, opgewekt in de browser. Er zijn dus geen geluidsbestanden.

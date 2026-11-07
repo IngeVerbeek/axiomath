@@ -1,9 +1,9 @@
 %----------------------------------------------------------------------------------------
-% VOORKANT: dezelfde indeling voor alle handboeken. Dit bestand wordt gekopieerd door
-% Ontwerp/voorkanten/maak-voorkanten.py: pas het daar aan, niet in een cursus.
+% VOORKANT: dezelfde indeling voor alle handboeken. Elke cursus leest dit bestand rechtstreeks
+% (via Opmaak/opmaak.tex): pas het dus alleen hier aan.
 %
-% Per cursus:  motief.tex             kunstwerk, bovenrand van de band en vormen
-%              voorkant-gegevens.tex  rubriek, richtingen, graad, uren en titel
+% Per onderwerp:  motieven/<naam>.tex  kunstwerk, bovenrand van de band en vormen
+% Per cursus:     voorkant-gegevens.tex  rubriek, richtingen, graad, uren, titel en \motiefnaam
 % Coördinaten in cm, met de oorsprong linksonder op de pagina (A4: 21 x 29,7).
 %----------------------------------------------------------------------------------------
 \providecommand{\omslagsamples}{120}
@@ -24,7 +24,7 @@
   omslaglabel/.style={fill=accent,text=white,inner sep=2pt,rounded corners=1.5pt,font=\small},
 }
 
-\InputIfFileExists{motief}{}{}
+\ifdefined\motiefnaam\InputIfFileExists{\hoofdmap Ontwerp/voorkanten/motieven/\motiefnaam}{}{}\fi
 
 \newcommand{\maakomslag}{%
   \begingroup\thispagestyle{empty}%

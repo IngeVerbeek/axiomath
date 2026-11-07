@@ -1,6 +1,6 @@
 # Integralen: handboek
 
-Cursus voor pakket 4 (B+S''), leerplandoelen 31-33, volgens de [ontwerpregels](../../../../Ontwerp/ontwerpregels.md). Alle opgaven zijn eigen werk. De omslag is van Seurat (publiek domein). De voorkant komt uit `Ontwerp/voorkanten/`: pas ze daar aan, want `maak-voorkanten.py` overschrijft `voorkant.tex`, `motief.tex` en `voorkant-gegevens.tex`. De herkomst van de prenten staat in `afbeeldingen/prenten/README.md`.
+Cursus voor pakket 4 (B+S''), leerplandoelen 31-33, volgens de [ontwerpregels](../../../../Ontwerp/ontwerpregels.md). Alle opgaven zijn eigen werk. De omslag is van Seurat (publiek domein). De voorkant komt uit `Ontwerp/voorkanten/`: pas ze daar aan (`voorkant-gegevens.tex` maakt `maak-voorkanten.py`). De herkomst van de prenten staat in `afbeeldingen/prenten/README.md`.
 
 | Hoofdstuk | Bestand | Leerplan | Status |
 |---|---|---|---|
@@ -11,14 +11,16 @@ Cursus voor pakket 4 (B+S''), leerplandoelen 31-33, volgens de [ontwerpregels](.
 
 ## Maken
 
-Vanuit deze map, in PowerShell:
+Vanuit de hoofdmap van de repo, in PowerShell:
 
 ```
-py -3.13 -P maak-pdf.py                 alles: handboek, oplossingen, leerkracht, zelfstudie
-py -3.13 -P maak-pdf.py --hoofdstuk 2   snel: alleen hoofdstuk 2, in snel-h2.pdf
+py -3.13 -P Opmaak/maak-pdf.py 4/Analyse/Integralen                  alles: handboek, oplossingen, leerkracht, zelfstudie
+py -3.13 -P Opmaak/maak-pdf.py 4/Analyse/Integralen --hoofdstuk 2    snel: alleen hoofdstuk 2, in snel-h2.pdf
 ```
 
-Het script bewaart de grafieken per hoofdstuk in `figuren-cache/`, en maakt ze alleen opnieuw als een figuur, `notatie.tex` of `opmaak-v2.tex` verandert. In `gen/` komen kopieën van de hoofdstukken die naar die grafieken verwijzen: pas de hoofdstukken dus aan in `hoofdstukken/`. Beide mappen en de PDF's staan niet in git. LaTeX leest altijd `gen/`, dus draai dit script ook vóór een gewone `latexmk -pdf handboek.tex`.
+De opmaak en de bouwscripts zijn gedeeld: zie [Opmaak/README.md](../../../../Opmaak/README.md).
+
+Het script bewaart de grafieken per hoofdstuk in `figuren-cache/`, en maakt ze alleen opnieuw als een figuur, `notatie.tex` of `Opmaak/opmaak.tex` verandert. In `gen/` komen kopieën van de hoofdstukken die naar die grafieken verwijzen: pas de hoofdstukken dus aan in `hoofdstukken/`. Beide mappen en de PDF's staan niet in git. LaTeX leest altijd `gen/`, dus draai dit script ook vóór een gewone `latexmk -pdf handboek.tex`.
 
 ## Oefeningen
 
@@ -30,9 +32,9 @@ De 178 oefeningen staan in `oefeningen/*.yaml`, per hoofdstuk: de bron voor de P
 - **Bewust opgenomen:** oneigenlijke integralen (het leerplan zegt *je kan*) en booglengte met exacte voorbeelden (het leerplan vraagt enkel *aangeven*, eventueel met ICT).
 - **Notatie:** `bgsin` en `bgtan`, de Vlaamse notatie voor de inverse goniometrische functies. Wijzigen kan op één plaats, in `notatie.tex`.
 
-## Opmaak en macro's
+## Eigen macro's
 
-`opmaak-v2.tex` heeft enkele bijzonderheden: de uitlegkolom van `stappen` is cursief, er is een macro `\uitleg` voor de zin over de aanpak bovenaan een voorbeeld, `stelling` is een wit kader met de naam op de lijn, `bewijs` eindigt met een vierkantje in de kleur van het hoofdstuk en gebruikt `\bewijsregel` voor formules, en `theorie` mag over twee pagina's breken (lange bewijzen lieten anders halve pagina's leeg). Wat verder eigen is aan deze cursus staat in `notatie.tex`, in de preambule: de lijsten met oplossingen gebruiken die macro's ook, en die uitvoer leest de hoofdstukken niet.
+De opmaak is gedeeld met alle cursussen: zie [Opmaak/README.md](../../../../Opmaak/README.md). Wat eigen is aan deze cursus staat in `notatie.tex`, in de preambule: de lijsten met oplossingen gebruiken die macro's ook, en die uitvoer leest de hoofdstukken niet.
 
 - `\dx`, `\dt`, `\du`, `\e`, `\ig`, `\grens`, `\bgsin`, `\bgtan`;
 - grafieken met `\rooster` (met getallen), `\roosterleeg`, `\assen`, `\kromme`, `\gebied`, `\gebiedtussen` en `\riemann`;

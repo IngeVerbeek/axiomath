@@ -7,7 +7,7 @@ Copyright © 2026 Klaasvdb en bijdragers.
 | Wat | Licentie |
 |---|---|
 | **Inhoud:** tekst, oefeningen, antwoorden, figuren, ontwerp, het logo, de voorkanten (alles in `Handboeken/` en `Ontwerp/`, en de gegevens in `Website/assets/h1/`) | [Creative Commons BY-NC-SA 4.0](LICENSES/CC-BY-NC-SA-4.0.txt): naamsvermelding, niet commercieel, bewerkingen onder dezelfde licentie |
-| **Code:** de scripts (`*.py`), `Website/index.html`, de JavaScript en de stijlen van de website, en de LaTeX-opmaak (`opmaak-v2.tex`, `notatie.tex`) | [PolyForm Noncommercial 1.0.0](LICENSES/PolyForm-Noncommercial-1.0.0.md): gebruik, aanpassen en delen voor niet-commerciële doeleinden, ook in onderwijs |
+| **Code:** de scripts (`*.py`), `Website/index.html`, de JavaScript en de stijlen van de website, en de LaTeX-opmaak (`Opmaak/`, `notatie.tex`) | [PolyForm Noncommercial 1.0.0](LICENSES/PolyForm-Noncommercial-1.0.0.md): gebruik, aanpassen en delen voor niet-commerciële doeleinden, ook in onderwijs |
 
 De bedoeling is dat scholen en leerkrachten de handboeken kunnen afdrukken en gebruiken in de les. Verkopen, of opnemen in een betaald aanbod, mag niet zonder toestemming. Twijfel je over een bepaald gebruik, vraag het dan via een issue.
 

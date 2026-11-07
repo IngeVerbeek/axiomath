@@ -128,6 +128,7 @@ Een percentage hoort bij een status: âšª **gepland** (0 %): nog niet begonnen, ð
 | Map | Inhoud |
 |---|---|
 | [Handboeken/](Handboeken/) | De cursussen, per leerplanpakket, per rubriek, per cursus |
+| [Opmaak/](Opmaak/) | De opmaak en de bouwscripts, gedeeld door alle cursussen |
 | [Ontwerp/](Ontwerp/) | [Ontwerpregels](Ontwerp/ontwerpregels.md), logo, voorkanten en de schilderijen voor de voorkaft |
 | [Website/](Website/) | Voorbeeld van de online versie (Integralen, hoofdstuk 1) |
 | `.claude/skills/` | Een skill voor wie met Claude Code een hoofdstuk schrijft |
@@ -137,11 +138,10 @@ Een percentage hoort bij een status: âšª **gepland** (0 %): nog niet begonnen, ð
 Je hebt nodig: TeX Live (2024 of recenter, met `pdflatex`) en Python 3.13 met `pymupdf`, `pillow` en `pyyaml`.
 
 ```
-cd "Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Analyse/Integralen"
-python maak-pdf.py
+python Opmaak/maak-pdf.py 4/Analyse/Integralen
 ```
 
-Dat maakt het handboek, de leerkrachtenversie, de zelfstudieversie en de lijsten met oplossingen. Zie de README van de cursus voor opties.
+Dat maakt het handboek, de leerkrachtenversie, de zelfstudieversie en de lijsten met oplossingen, in de map van de cursus. De cursus is `<pakketnummer>/<rubriek>/<cursus>`. Zie [Opmaak/README.md](Opmaak/README.md) voor opties.
 
 ## Meewerken
 

@@ -13,14 +13,15 @@ Vrije, niet-commerciële handboeken wiskunde voor de 3de graad doorstroomfinalit
 ## Indeling
 
 - `Handboeken/<pakket>/<rubriek>/<cursus>/`: vier pakketten naar leerplan (Basis, B+S, B+S', B+S''). Zie `Handboeken/README.md`.
-- Het voorbeeld van een cursus is `Handboeken/4 .../Analyse/Integralen/`: hoofdstukken in `hoofdstukken/`, oefeningen in `oefeningen/*.yaml` (de bron), macro's in `opmaak-v2.tex` en `notatie.tex`.
+- `Opmaak/`: de opmaak (`opmaak.tex`), het documentskelet (`boek.tex`), `maak-pdf.py` en `oefeningenbank.py`, gedeeld door alle cursussen. **Pas ze alleen daar aan en kopieer ze nooit naar een cursus.**
+- Het voorbeeld van een cursus is `Handboeken/4 .../Analyse/Integralen/`: `handboek.tex` (titel en hoofdstukken), hoofdstukken in `hoofdstukken/`, oefeningen in `oefeningen/*.yaml` (de bron) en eigen macro's in `notatie.tex`.
 - `Ontwerp/`: ontwerpregels, `logo/`, `voorkanten/` (gedeeld door alle handboeken) en `omslagen/` (schilderijen).
 - `Website/`: voorbeeld van de online versie; `maak-site.py` leest de oefeningenbank van Integralen.
 
 ## Bouwen
 
-- Python 3.13 met `pymupdf`, `pillow`, `pyyaml`; TeX Live 2024 of recenter. Vanuit de map van de cursus: `python maak-pdf.py` (of `--hoofdstuk 2` voor één hoofdstuk).
-- LaTeX leest `gen/`, dus draai altijd eerst `maak-pdf.py`, ook vóór een gewone `latexmk`.
-- Voorkanten: `python maak-voorkanten.py` in `Ontwerp/voorkanten/`. Pas ze daar aan, want het script overschrijft de kopieën in de cursussen.
+- Python 3.13 met `pymupdf`, `pillow`, `pyyaml`; TeX Live 2024 of recenter. Vanuit de hoofdmap: `python Opmaak/maak-pdf.py 4/Analyse/Integralen` (of `--hoofdstuk 2` voor één hoofdstuk).
+- LaTeX leest `gen/`, dus draai altijd eerst `Opmaak/maak-pdf.py`, ook vóór een gewone `latexmk`.
+- Voorkanten: `python maak-voorkanten.py` in `Ontwerp/voorkanten/`. Pas ze daar aan: de cursussen lezen de voorkant rechtstreeks, en het script schrijft alleen `voorkant-gegevens.tex` in een cursus.
 - Voortgang: zet de status van een handboek in `voortgang.yaml` en draai `python maak-voortgang.py`. Dat vult het overzicht in `README.md` tussen de markeringen: pas dat deel nooit met de hand aan.
 - Bekijk na het bouwen de pagina's echt (render naar PNG): de meeste fouten zie je alleen op de pagina.

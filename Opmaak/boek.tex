@@ -1,0 +1,83 @@
+%----------------------------------------------------------------------------------------
+% HET BOEK: het documentskelet dat alle cursussen delen. Een cursus levert alleen
+%   \cursustitel         de titel
+%   \cursushoofdstukken  de lijst met \hoofdstuk{nummer}{bestand}
+% en zijn eigen notatie.tex, voorkant-gegevens.tex, hoofdstukken/ en oefeningen/.
+% Pas dit bestand alleen hier aan: het geldt voor alle cursussen.
+%----------------------------------------------------------------------------------------
+\documentclass[11pt,fleqn,oneside,openany]{book}
+
+\newcommand{\cursusondertitel}{Handboek}
+\newcommand{\cursusauteur}{Axiomath}
+
+% De voorkant: gegevens en motief van deze cursus (Ontwerp/voorkanten/maak-voorkanten.py).
+\input{voorkant-gegevens}
+
+\input{\hoofdmap Opmaak/opmaak}
+\input{notatie}
+
+\ifleerkracht\renewcommand{\cursusondertitel}{Leerkrachtenversie}\fi
+\ifzelfstudie\renewcommand{\cursusondertitel}{Zelfstudie voor thuis}\fi
+
+\providecommand{\uitvoer}{cursus}
+\newif\ifcursus
+\ifdefstring{\uitvoer}{cursus}{\cursustrue}{\cursusfalse}
+
+% Zie maak-pdf.py: gen/ bevat de hoofdstukken met de oefeningen uit de bank en de bewaarde
+% grafieken. Draai dat script dus eerst. \enkelhoofdstuk bouwt maar één hoofdstuk.
+\providecommand{\hoofdstukmap}{gen}
+\newcommand{\hoofdstuk}[2]{%
+  \ifcsname enkelhoofdstuk\endcsname
+    \ifnum#1=\enkelhoofdstuk\relax\setcounter{chapter}{\numexpr#1-1\relax}\input{\hoofdstukmap/#2}\fi
+  \else
+    \input{\hoofdstukmap/#2}%
+  \fi}
+
+\begin{document}
+
+\ifcursus
+\Opensolutionfile{oplossingen}
+\Opensolutionfile{uitgewerkteoplossingen}
+\fi
+
+\ifcursus\else
+\renewcommand{\cursusondertitel}{\ifdefstring{\uitvoer}{numeriek}{Numerieke oplossingen}{Uitgewerkte oplossingen}}
+\fi
+\maakomslag
+
+\ifcursus
+
+\inhoudstafel
+\input{\hoofdmap Opmaak/zo-werk-je}
+\clearpage % voor de teller van het hoofdstuk verandert: deze pagina krijgt geen tab
+
+\cursushoofdstukken
+
+\Closesolutionfile{oplossingen}
+\Closesolutionfile{uitgewerkteoplossingen}
+
+% De leerkrachten- en zelfstudieversie krijgen de antwoorden meteen achteraan
+\ifuitwerking
+\clearpage\global\opdrachtdeelfalse
+\section*{Antwoorden}
+\phantomsection\addcontentsline{toc}{chapter}{Antwoorden}
+\begin{multicols}{2}\footnotesize
+\input{oplossingen}
+\end{multicols}
+\fi
+
+\else
+
+\ifdefstring{\uitvoer}{numeriek}{%
+\chapter*{Numerieke oplossingen}
+\begin{multicols}{2}
+\input{oplossingen}
+\end{multicols}
+}{%
+\chapter*{Uitgewerkte oplossingen}
+\input{uitgewerkteoplossingen}
+}
+
+\fi
+
+\end{document}

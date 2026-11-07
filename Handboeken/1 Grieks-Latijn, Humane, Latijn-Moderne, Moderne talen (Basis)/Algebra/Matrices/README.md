@@ -1,6 +1,6 @@
 # Matrices (pakket 1, Basis): handboek
 
-Cursus voor pakket 1 (Grieks-Latijn, Humane wetenschappen, Latijn-Moderne talen, Moderne talen), keuzedoelen K3 en K4, volgens de [ontwerpregels](../../../../Ontwerp/ontwerpregels.md). Opmaak en werkwijze komen uit `Analyse/Integralen/` van pakket 4. Alle opgaven, contexten en figuren zijn eigen werk. De voorkant (Mondriaan) komt uit `Ontwerp/voorkanten/`: pas ze daar aan, want `maak-voorkanten.py` overschrijft `voorkant.tex`, `motief.tex` en `voorkant-gegevens.tex`. De herkomst van de prenten staat in `afbeeldingen/prenten/README.md`.
+Cursus voor pakket 1 (Grieks-Latijn, Humane wetenschappen, Latijn-Moderne talen, Moderne talen), keuzedoelen K3 en K4, volgens de [ontwerpregels](../../../../Ontwerp/ontwerpregels.md). De opmaak en de bouwscripts zijn gedeeld: zie [Opmaak/README.md](../../../../Opmaak/README.md). Alle opgaven, contexten en figuren zijn eigen werk. De voorkant (Mondriaan) komt uit `Ontwerp/voorkanten/`: pas ze daar aan. De herkomst van de prenten staat in `afbeeldingen/prenten/README.md`.
 
 | Hoofdstuk | Bestand | Leerplan | Status |
 |---|---|---|---|
@@ -9,11 +9,11 @@ Cursus voor pakket 1 (Grieks-Latijn, Humane wetenschappen, Latijn-Moderne talen,
 
 ## Maken
 
-Vanuit deze map, in PowerShell:
+Vanuit de hoofdmap van de repo, in PowerShell:
 
 ```
-py -3.13 -P maak-pdf.py                 alles: handboek, oplossingen, leerkracht, zelfstudie
-py -3.13 -P maak-pdf.py --hoofdstuk 2   snel: alleen hoofdstuk 2, in snel-h2.pdf
+py -3.13 -P Opmaak/maak-pdf.py 1/Algebra/Matrices                  alles: handboek, oplossingen, leerkracht, zelfstudie
+py -3.13 -P Opmaak/maak-pdf.py 1/Algebra/Matrices --hoofdstuk 2    snel: alleen hoofdstuk 2, in snel-h2.pdf
 ```
 
 Zoals bij Integralen: de grafieken worden bewaard in `figuren-cache/`, LaTeX leest `gen/`, en de oefeningen (83) staan in `oefeningen/*.yaml`. Pas een opgave dus aan in de YAML.
@@ -28,10 +28,9 @@ Het leerplan Basis heeft voor matrices alleen twee keuzedoelen: bewerkingen (opt
 - **Afspraak:** in elke matrix van hoofdstuk 2 is de kolom het vertrek (van) en de rij de aankomst (naar), ook bij grafen. Zo werkt $X_{n+1} = MX_n$ met een kolom. Het boek zegt dat andere boeken het soms omgekeerd doen.
 - **Rekentoestel:** de leerkrachtenversie noemt de toetsen van de TI-84. Pas aan als de school een ander toestel gebruikt.
 
-## Verschil met de cursus Integralen
+## Eigen macro's
 
 - `notatie.tex`: `\tr` (getransponeerde), `\km` (compacte matrix in tekst en antwoorden), `mat`, de TikZ-stijlen `knoop`, `boog`, `lus`, `kans` en `getallen` (matrix in TikZ, kolommen met `\&`), `\markeer` (rij of kolom kleuren) en `\staaf`. De integraalmacro's zijn weg.
-- `oefeningenbank.py`: de uitwerkingen van deelvragen staan na elkaar met `\par` in plaats van `\\`, zodat een uitwerking op een figuur mag eindigen.
 
 ## Controle
 

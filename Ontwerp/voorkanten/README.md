@@ -4,7 +4,7 @@ Alle voorkanten komen hier vandaan: 47 handboeken, 16 onderwerpen. De regels en 
 
 | Bestand | Inhoud |
 |---|---|
-| `voorkant.tex` | De indeling, voor alle handboeken dezelfde |
+| `voorkant.tex` | De indeling, voor alle handboeken dezelfde. De cursussen lezen dit bestand rechtstreeks |
 | `motieven/<naam>.tex` | Per onderwerp: het kunstwerk, de bovenrand van de band en de vormen |
 | `maak-voorkanten.py` | De lijst met handboeken en gegevens per pakket, en het bouwscript |
 | `alle-voorkanten.pdf` | Het resultaat: een pagina per handboek, met bladwijzers. Niet in git |
@@ -17,7 +17,7 @@ In PowerShell, vanuit deze map:
 py -3.13 -P maak-voorkanten.py
 ```
 
-Dat maakt `alle-voorkanten.pdf` en werkt de voorkant bij van elke cursus die al een `handboek.tex` heeft (nu Integralen en Matrices). Daar komen `voorkant.tex`, `motief.tex`, `voorkant-gegevens.tex`, de omslag en het logo terecht. Pas die bestanden dus hier aan, niet in de cursus. De PDF van de cursus zelf maak je daarna opnieuw met `maak-pdf.py`.
+Dat maakt `alle-voorkanten.pdf` en schrijft in elke cursus die al een `handboek.tex` heeft een `voorkant-gegevens.tex` (nu Integralen en Matrices): de gegevens en de naam van het motief. De voorkant, het motief, het schilderij en het logo kopieert het niet: de cursussen lezen ze hier rechtstreeks. Pas ze dus alleen hier aan. De PDF van de cursus zelf maak je daarna opnieuw met `Opmaak/maak-pdf.py`.
 
 De schilderijen komen uit `Ontwerp/omslagen/` (gemaakt met `maak-omslagen.py`), het logo uit `Ontwerp/logo/`.
 

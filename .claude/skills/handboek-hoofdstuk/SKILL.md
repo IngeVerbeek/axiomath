@@ -5,14 +5,14 @@ description: Schrijf of herwerk een hoofdstuk of cursus van de eigen wiskundehan
 
 # Hoofdstuk van een eigen handboek schrijven
 
-De ontwerpregels staan in `Ontwerp/ontwerpregels.md`: lees die eerst, ze hebben voorrang op alles hieronder. Het werkende voorbeeld is de cursus `Analyse/Integralen/` (in `Handboeken/4 .../`), met de hoofdstukken in `hoofdstukken/` als model en de macro's in `opmaak-v2.tex` en `notatie.tex`. Die volgt alle huidige regels. Kijk daar hoe iets eruitziet in plaats van het opnieuw uit te vinden.
+De ontwerpregels staan in `Ontwerp/ontwerpregels.md`: lees die eerst, ze hebben voorrang op alles hieronder. Het werkende voorbeeld is de cursus `Analyse/Integralen/` (in `Handboeken/4 .../`), met de hoofdstukken in `hoofdstukken/` als model. De opmaak en de bouwscripts staan gedeeld in `Opmaak/` (zie `Opmaak/README.md`): pas ze daar aan en kopieer ze nooit naar een cursus. De eigen macro's van een cursus staan in `notatie.tex`. Die volgt alle huidige regels. Kijk daar hoe iets eruitziet in plaats van het opnieuw uit te vinden.
 
 De gebruiker is wiskundeleerkracht en schrijft Nederlands. Schrijf de leerstof in helder Nederlands voor leerlingen van 16-18 jaar.
 
 ## Werkwijze
 
 1. **Bepaal de leerstof.** Zoek de cursus, het pakket en de leerplandoelen op in de README van het pakket onder `Handboeken/` en in het leerplan van dat pakket (zie `Handboeken/README.md`; het leerplan zelf zit niet in de repo, lees het online). Een bestaande cursus toont wat erin hoort. Is de afbakening onduidelijk, leg dan kort voor wat je zou opnemen.
-2. **Zet de cursus klaar** als die nog niet bestaat: kopieer `opmaak-v2.tex`, `notatie.tex`, `handboek.tex`, `leerkracht.tex`, `zelfstudie.tex`, `maak-pdf.py`, `oefeningenbank.py` en `hoofdstukken/00-zo-werk-je.tex` uit `Analyse/Integralen/` naar `Handboeken/<pakket>/<rubriek>/<cursus>/`. De voorkant komt uit `Ontwerp/voorkanten/` (zie hieronder). Pas `\cursustitel` en `\cursusondertitel` aan, en zet in `handboek.tex` de `\input`-regels van de eigen hoofdstukken.
+2. **Zet de cursus klaar** als die nog niet bestaat: kopieer `handboek.tex`, `leerkracht.tex`, `zelfstudie.tex` en `notatie.tex` uit `Analyse/Integralen/` naar `Handboeken/<pakket>/<rubriek>/<cursus>/`, en maak `hoofdstukken/` en `oefeningen/`. De opmaak, het documentskelet, de bouwscripts en de voorkant staan in `Opmaak/` en `Ontwerp/` en worden niet gekopieerd. Pas in `handboek.tex` `\cursustitel` en `\cursushoofdstukken` aan.
 3. **Schrijf het hoofdstuk** volgens de opbouw hieronder.
 4. **Bouw en kijk** (zie Controle).
 5. **Meld** wat er staat, wat je zelf hebt beslist en wat de leerkracht moet nakijken.
@@ -21,9 +21,9 @@ De gebruiker is wiskundeleerkracht en schrijft Nederlands. Schrijf de leerstof i
 
 Elk handboek uit de README's van de pakketten heeft al een voorkant: zie het deel Voorkant in de ontwerpregels en `Ontwerp/voorkanten/README.md`.
 
-**Bij een nieuwe cursus:** draai `py -3.13 -P maak-voorkanten.py` in `Ontwerp/voorkanten/` zodra de cursus een `handboek.tex` heeft. Dat zet `voorkant.tex`, `motief.tex`, `voorkant-gegevens.tex`, de omslag en het logo in de cursus. `handboek.tex` leest de gegevens met `\input{voorkant-gegevens}`, `opmaak-v2.tex` de rest met `\input{voorkant}`.
+**Bij een nieuwe cursus:** draai `py -3.13 -P maak-voorkanten.py` in `Ontwerp/voorkanten/` zodra de cursus een `handboek.tex` heeft. Dat zet `voorkant-gegevens.tex` in de cursus (de gegevens en de naam van het motief). De voorkant zelf, het motief, het schilderij en het logo leest de opmaak rechtstreeks uit `Ontwerp/`.
 
-**Pas je iets aan,** doe het dan in `Ontwerp/voorkanten/`, niet in de cursus: het script overschrijft die bestanden.
+**Pas je iets aan,** doe het dan in `Ontwerp/voorkanten/`: alle cursussen lezen de voorkant daar rechtstreeks.
 
 **Bij een nieuw onderwerp:**
 
@@ -68,7 +68,7 @@ Elke oefening heeft een kort antwoord en een uitwerking. Labels moeten uniek zij
 
 ## Oefeningenbank
 
-In Integralen staan de oefeningen niet in de hoofdstukken maar in `oefeningen/<hoofdstuk>.yaml`, de bron voor de PDF's en de online versie. `oefeningenbank.py` beschrijft alle velden.
+In Integralen staan de oefeningen niet in de hoofdstukken maar in `oefeningen/<hoofdstuk>.yaml`, de bron voor de PDF's en de online versie. `Opmaak/oefeningenbank.py` beschrijft alle velden.
 
 ```yaml
 - id: h3-sub            # vast en uniek, nooit wijzigen, ook niet als de oefening verhuist; het label wordt oef:h3-sub
@@ -93,7 +93,7 @@ In Integralen staan de oefeningen niet in de hoofdstukken maar in `oefeningen/<h
 - Zet antwoord en uitwerking per deelvraag als het kan, dat is nodig voor de online versie. Alleen als een uitwerking meerdere deelvragen samen behandelt, staat ze als `uitwerking` bij de oefening zelf.
 - Een figuur rechts komt in `figuur` (`code`, eventueel `opties`), een prent in `prent` (`naam`). De volgorde in het boek bepaalt het hoofdstuk: `\needspace` en andere opmaak blijven daar, vlak voor `\oef{id}`.
 - Een oefening mag in de bank staan zonder `\oef`: dan is ze er alleen voor online. In het boek mag elke oefening maar één keer staan.
-- LaTeX leest `gen/`: draai altijd eerst `maak-pdf.py`, ook vóór een `latexmk`.
+- LaTeX leest `gen/`: draai altijd eerst `Opmaak/maak-pdf.py`, ook vóór een `latexmk`.
 
 ## Theorie, werkwijze of uitleg
 
@@ -109,10 +109,10 @@ Kies voor elk stuk tekst bewust, en wees streng met het theoriekader: leerlingen
 
 Zie de delen Bindtekst en Grafieken in de ontwerpregels. In de praktijk:
 
-- Schrijf een hoofdstuk niet als een reeks kaders. Begin met een korte alinea over het hoofdstuk, en laat elke sectie en elk onderdeel starten met tekst die het probleem en het idee uitlegt. Zeg in voorbeelden ook waarom je iets doet: begin de uitwerking met `\uitleg{...}` over de aanpak, en leg elke stap in volzinnen uit. Die uitleg staat cursief. `\uitleg` en de cursieve kolom van `stappen` staan in `opmaak-v2.tex`.
+- Schrijf een hoofdstuk niet als een reeks kaders. Begin met een korte alinea over het hoofdstuk, en laat elke sectie en elk onderdeel starten met tekst die het probleem en het idee uitlegt. Zeg in voorbeelden ook waarom je iets doet: begin de uitwerking met `\uitleg{...}` over de aanpak, en leg elke stap in volzinnen uit. Die uitleg staat cursief. `\uitleg` en de cursieve kolom van `stappen` staan in `Opmaak/opmaak.tex`.
 - Leerstof per onderdeel: uitleg, `theorie`, `\voorbeeld`, `werkwijze`, korte oefening. De werkwijze komt dus na het voorbeeld. Geef bij alles wat je uitlegt een voorbeeld, ook per regel van een tabel. Werk voorbeelden uit: alleen een lijst met één opgave per regel van een tabel mag met de vermelding "(Niet uitgewerkt.)". Elk voorbeeld is één opgave, tenzij het net draait om het verschil tussen twee opgaven.
 - Schrijf een bewijs als redenering: korte bindtekst ("stel", "neem", "dus", "waaruit", "zodat") met de belangrijke formules in `\bewijsregel`, niet als tabel met `stappen`. Houd het algebraïsch: "neem $x + h \in [a, b]$" in plaats van een hele zin. Volg de bewijzen van Integralen als model. De omgeving `bewijs` zet achteraan een vierkantje in de kleur van het hoofdstuk.
-- Zet elke stelling en eigenschap in `\begin{stelling}{Naam}` binnen de `theorie`, altijd met een naam. Definities blijven erbuiten. `stelling` en `\bewijsregel` staan in `opmaak-v2.tex`.
+- Zet elke stelling en eigenschap in `\begin{stelling}{Naam}` binnen de `theorie`, altijd met een naam. Definities blijven erbuiten. `stelling` en `\bewijsregel` staan in `Opmaak/opmaak.tex`.
 - Teken veel meer dan strikt nodig is. Vraag bij elk voorschrift, gebied of elke context: zou een grafiek hier helpen? Meestal is het antwoord ja. Zet ook grafieken in opgaven (aflezen, kiezen) en in uitgewerkte oplossingen als de opgave vraagt om te tekenen.
 - Macro's die ook in de oplossingen voorkomen, staan in de preambule en niet in een hoofdstuk, want de oplossingen-PDF's lezen de hoofdstukken niet. Integralen heeft daarvoor `notatie.tex`, met `\rooster`, `\kromme`, `\gebied`, `\riemann`, `\lichaam`, `\limr`, `\liml`, `\naast`, `\figuren` en de omgeving `metgrafiek`: kopieer die als de nieuwe cursus grafieken gebruikt.
 - Figuren in `\figuren` staan met hun onderkant op de lijn, ook een `baseline`-optie werkt niet door de bewaarde grafieken: zet een teken tussen twee figuren met `\raisebox{9mm}{$\leqslant$}`.
@@ -140,15 +140,14 @@ Zoek verbanden die een leerling echt iets leren, bijvoorbeeld dat een meetkundig
 
 ## Controle
 
-Vanuit de map van de cursus, in PowerShell (TeX Live staat in het PATH; gebruik `py -3.13 -P`):
+Vanuit de hoofdmap van de repo, in PowerShell (TeX Live staat in het PATH; gebruik `py -3.13 -P`):
 
 ```powershell
-py -3.13 -P maak-pdf.py handboek.tex
-latexmk -pdf -gg leerkracht.tex
-latexmk -pdf -gg zelfstudie.tex
+py -3.13 -P Opmaak/maak-pdf.py 4/Analyse/Integralen                  # alle versies, met bewaarde grafieken
+py -3.13 -P Opmaak/maak-pdf.py 4/Analyse/Integralen --hoofdstuk 2    # tijdens het schrijven: alleen dat hoofdstuk, in snel-h2.pdf
 ```
 
-In `Analyse/Integralen/` bouw je met `py -3.13 -P maak-pdf.py` (alle versies, met bewaarde grafieken), en tijdens het schrijven met `py -3.13 -P maak-pdf.py --hoofdstuk 2` (alleen dat hoofdstuk, in `snel-h2.pdf`). Neem dat script mee voor een nieuwe cursus met veel grafieken, want TikZ rekent ze anders bij elke ronde opnieuw uit.
+De cursus is `<pakketnummer>/<rubriek>/<cursus>`. Het script bewaart de grafieken, want TikZ rekent ze anders bij elke ronde opnieuw uit.
 
 Zoek in de `.log`-bestanden naar regels die beginnen met `!` en naar `undefined`. Render daarna de pagina's met PyMuPDF naar PNG in de scratchpad en **bekijk ze echt**, want de meeste fouten zie je alleen op de pagina. Let op:
 

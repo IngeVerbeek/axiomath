@@ -1,85 +1,12 @@
 %----------------------------------------------------------------------------------------
-% MATRICES (pakket 1, Basis): HANDBOEK (hoofdbestand).
-%
-% Vanuit deze map:
-%     py -3.13 -P maak-pdf.py                  alle versies, met bewaarde grafieken
-%     py -3.13 -P maak-pdf.py --hoofdstuk 2    snel: alleen hoofdstuk 2, in snel-h2.pdf
+% MATRICES (pakket 1, Basis): HANDBOEK. De opmaak en het documentskelet staan in Opmaak/ (voor alle cursussen).
+% Bouwen: python ../../../../Opmaak/maak-pdf.py   (zie Opmaak/README.md)
 %----------------------------------------------------------------------------------------
-\documentclass[11pt,fleqn,oneside,openany]{book}
+\ifdefined\hoofdmap\else\def\hoofdmap{../../../../}\fi % van deze map naar de hoofdmap van de repo
 
-\newcommand{\cursustitel}{Matrices}
-\newcommand{\cursusondertitel}{Handboek}
-\newcommand{\cursusauteur}{Heilige-Drievuldigheidscollege Leuven}
+\def\cursustitel{Matrices}
+\def\cursushoofdstukken{%
+  \hoofdstuk{1}{01-rekenen-met-matrices}
+  \hoofdstuk{2}{02-matrixmodellen}}
 
-% De voorkant: gegevens, kunstwerk en motief. Gemaakt door Ontwerp/voorkanten/maak-voorkanten.py.
-\input{voorkant-gegevens}
-
-\input{opmaak-v2}
-\input{notatie}
-
-\ifleerkracht\renewcommand{\cursusondertitel}{Leerkrachtenversie}\fi
-\ifzelfstudie\renewcommand{\cursusondertitel}{Zelfstudie voor thuis}\fi
-
-\providecommand{\uitvoer}{cursus}
-\newif\ifcursus
-\ifdefstring{\uitvoer}{cursus}{\cursustrue}{\cursusfalse}
-
-% Zie maak-pdf.py: gen/ bevat de hoofdstukken met de oefeningen uit de bank en de bewaarde
-% grafieken. Draai dat script dus eerst. \enkelhoofdstuk bouwt maar één hoofdstuk.
-\providecommand{\hoofdstukmap}{gen}
-\newcommand{\hoofdstuk}[2]{%
-  \ifcsname enkelhoofdstuk\endcsname
-    \ifnum#1=\enkelhoofdstuk\relax\setcounter{chapter}{\numexpr#1-1\relax}\input{\hoofdstukmap/#2}\fi
-  \else
-    \input{\hoofdstukmap/#2}%
-  \fi}
-
-\begin{document}
-
-\ifcursus
-\Opensolutionfile{oplossingen}
-\Opensolutionfile{uitgewerkteoplossingen}
-\fi
-
-\ifcursus\else
-\renewcommand{\cursusondertitel}{\ifdefstring{\uitvoer}{numeriek}{Numerieke oplossingen}{Uitgewerkte oplossingen}}
-\fi
-\maakomslag
-
-\ifcursus
-
-\inhoudstafel
-\input{hoofdstukken/00-zo-werk-je}
-\clearpage % voor de teller van het hoofdstuk verandert: deze pagina krijgt geen tab
-
-\hoofdstuk{1}{01-rekenen-met-matrices}
-\hoofdstuk{2}{02-matrixmodellen}
-
-\Closesolutionfile{oplossingen}
-\Closesolutionfile{uitgewerkteoplossingen}
-
-% De leerkrachten- en zelfstudieversie krijgen de antwoorden meteen achteraan
-\ifuitwerking
-\clearpage\global\opdrachtdeelfalse
-\section*{Antwoorden}
-\phantomsection\addcontentsline{toc}{chapter}{Antwoorden}
-\begin{multicols}{2}\footnotesize
-\input{oplossingen}
-\end{multicols}
-\fi
-
-\else
-
-\ifdefstring{\uitvoer}{numeriek}{%
-\chapter*{Numerieke oplossingen}
-\begin{multicols}{2}
-\input{oplossingen}
-\end{multicols}
-}{%
-\chapter*{Uitgewerkte oplossingen}
-\input{uitgewerkteoplossingen}
-}
-
-\fi
-
-\end{document}
+\input{\hoofdmap Opmaak/boek}
