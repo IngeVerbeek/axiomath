@@ -33,7 +33,7 @@ Elk handboek uit de README's van de pakketten heeft al een voorkant: zie het dee
 4. **Zet het handboek in `HANDBOEKEN_LIJST`** van `maak-voorkanten.py`, en een lange titel in `TITELS`. Het leerjaar vul je alleen in als het vastligt.
 5. **Vul de tabel met kunstwerken** in de ontwerpregels aan.
 
-Een wijziging in `voorkant.tex` of `motief.tex` maakt de grafieken niet opnieuw: die bestanden vallen buiten de hash in `maak-pdf.py`.
+Een wijziging in `voorkant.tex` of in een motief maakt de grafieken niet opnieuw: die bestanden vallen buiten de hash in `maak-pdf.py`.
 
 ## Inhoud
 
