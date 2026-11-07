@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="nl-BE" data-h="0">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Axiomath Integralen</title>
+<link rel="stylesheet" href="assets/katex/katex.min.css">
+<link rel="stylesheet" href="assets/stijl.css">
+</head>
+<body data-scherm="cursus">
+<div id="kleurvlak" hidden></div>
+
+<!-- Overzicht van de cursus: dezelfde opbouw als de voorkant van het boek. -->
+<div id="cursus">
+  <div class="omslag">
+    <img src="assets/fig/omslag.jpg" alt="Georges Seurat, Een zondagnamiddag op het eiland La Grande Jatte: mensen in een park aan het water, geschilderd in duizenden kleine stipjes">
+  </div>
+  <header class="band">
+    <canvas id="cursus-stipjes" aria-hidden="true"></canvas>
+    <div class="band-binnen">
+      <div class="band-tekst">
+        <p class="rubriek">Analyse</p>
+        <h1>Integralen</h1>
+        <p class="pil">Online cursus</p>
+        <dl class="gegevens">
+          <div><dt>Richtingen</dt><dd>Economie-Wiskunde, Grieks-Wiskunde, Latijn-Wiskunde, Wetenschappen-Wiskunde</dd></div>
+          <div><dt>Graad</dt><dd>3de graad doorstroomfinaliteit, 6de jaar</dd></div>
+          <div><dt>Uren</dt><dd>6 uur per week</dd></div>
+        </dl>
+      </div>
+      <img class="logo-groot" src="assets/axiomath-logo-wit.svg" alt="Axiomath">
+    </div>
+    <div class="band-knoppen">
+      <button type="button" class="knop-rond geluid-knop" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="sp" d="M4 9v6h4l5 4V5L8 9z"/><path class="golf" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/><path class="streep" d="M16 9l5 6m0-6l-5 6"/></svg></button>
+      <button type="button" class="knop-rond donker-knop" aria-label="Wissel tussen licht en donker"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="sp" d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg></button>
+    </div>
+  </header>
+  <main class="cursus-lijf">
+    <section aria-labelledby="kop-hs">
+      <div class="cursus-rij">
+        <h2 id="kop-hs">Hoofdstukken</h2>
+        <div class="cursus-verder">
+          <p id="cursus-stand"></p>
+          <a id="verder-knop" class="knop" href="#h1-start">Begin bij hoofdstuk 1</a>
+        </div>
+      </div>
+      <ol id="hoofdstuk-lijst"></ol>
+    </section>
+    <section class="zo-werk-je" aria-labelledby="kop-zo">
+      <h2 id="kop-zo">Zo werk je met deze site</h2>
+      <ul>
+        <li><strong>Voor thuis.</strong> In de les werk je met het boek. Hier bekijk je de leerstof opnieuw, en ga je na of je het kunt.</li>
+        <li><strong>Voorbeelden, stap per stap.</strong> Probeer de volgende stap eerst zelf te bedenken, en klik dan pas verder.</li>
+        <li><strong>Zelf proberen.</strong> Sleep aan de grafieken, en maak de oefeningen in je schrift. De nummers zijn dezelfde als in het boek.</li>
+        <li><strong>Antwoorden invullen.</strong> Typ getallen zoals <code>4,5</code>, <code>3/4</code> of <code>9pi/2</code>. Je voortgang blijft alleen in deze browser staan.</li>
+      </ul>
+    </section>
+    <p class="bron">Kunstwerk: Georges Seurat, <em>Een zondagnamiddag op het eiland La Grande Jatte</em>, 1884-1886 (publiek domein).</p>
+  </main>
+</div>
+
+<!-- Een hoofdstuk -->
+<div id="hoofdstuk">
+  <header class="kop">
+    <button type="button" id="rail-knop" class="kop-knop" aria-label="Inhoud van het hoofdstuk" aria-expanded="false" aria-controls="rail"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <a href="#cursus" class="kop-logo" aria-label="Terug naar het overzicht van de cursus">
+      <img class="logo-wit" src="assets/axiomath-logo-wit.svg" alt="Axiomath">
+      <img class="logo-inkt" src="assets/axiomath-logo.svg" alt="">
+    </a>
+    <p id="kop-titel" class="kop-titel"></p>
+    <div class="kop-rechts">
+      <button type="button" class="kop-knop geluid-knop" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="sp" d="M4 9v6h4l5 4V5L8 9z"/><path class="golf" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/><path class="streep" d="M16 9l5 6m0-6l-5 6"/></svg></button>
+      <button type="button" class="kop-knop donker-knop" aria-label="Wissel tussen licht en donker"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="sp" d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg></button>
+    </div>
+    <i id="leesbalk" aria-hidden="true"></i>
+  </header>
+  <div id="rail-dek"></div>
+  <nav id="rail" aria-label="Inhoud van het hoofdstuk">
+    <a class="rail-terug" href="#cursus">← Integralen</a>
+    <div class="rail-stand">
+      <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15.9" class="ring-bg" pathLength="100"/><circle id="voortgang-ring" cx="18" cy="18" r="15.9" class="ring" pathLength="100"/></svg>
+      <div><strong>De bepaalde integraal</strong><span id="voortgang-tekst"></span></div>
+    </div>
+    <div id="rail-lijst"></div>
+  </nav>
+  <!-- De tab aan de rand, zoals in het boek -->
+  <div class="tabs" aria-hidden="true">
+    <span data-h="1" class="aan">1</span>
+    <span data-h="2">2</span><span data-h="3">3</span><span data-h="4">4</span>
+  </div>
+  <main id="inhoud"></main>
+</div>
+
+<script src="assets/katex/katex.min.js"></script>
+<script src="assets/geluid.js"></script>
+<script src="assets/kern.js"></script>
+<script src="assets/graf.js"></script>
+<script src="assets/oefen.js"></script>
+<script src="assets/h1/oefeningen.js"></script>
+<script src="assets/h1/labs.js"></script>
+<script src="assets/h1/voorbeelden.js"></script>
+<script src="assets/h1/inhoud.js"></script>
+<script>Axiomath.start();</script>
+</body>
+</html>

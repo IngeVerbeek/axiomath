@@ -1,0 +1,20 @@
+% Afgeleiden. Turner: snelheid op een ogenblik, de trein die op je afkomt.
+% Motief: koorden door P die samenvallen met de raaklijn, wier richting de afgeleide is.
+\def\omslagbestand{omslag-regen-stoom.jpg}
+\def\omslagbron{J.M.W. Turner, \textit{Regen, stoom en snelheid}, 1844 (publiek domein)}
+\def\omslagrand{10.4 + 6*(\x/21)^5}
+\def\omslagmotief{%
+  \randlijn
+  \randwaarde{13}{\yp}%
+  \pgfmathsetmacro{\rico}{30/21*(13/21)^4}%
+  \foreach \q in {20.5,18.5,16}{%
+    \randwaarde{\q}{\yq}%
+    \pgfmathsetmacro{\yeind}{\yp+(\yq-\yp)/(\q-13)*(\q+.5-13)}%
+    \draw[omslaglijn=.9pt,dashed] (13,\yp) -- (\q+.5,\yeind);
+    \fill[omslagstip] (\q,\yq) circle (1.2mm);
+  }
+  \draw[fel,line width=1.8pt] (9,{\yp-4*\rico}) -- (21,{\yp+8*\rico});
+  \fill[omslagstip] (13,\yp) circle (1.7mm);
+  \node[omslaglabel,anchor=south east] at (12.85,{\yp+.12}) {$P$};
+  \node[text=white,font=\small,inner sep=1pt,anchor=north east] at (20.6,{\yp+7.6*\rico-.2}) {raaklijn};
+}

@@ -1,0 +1,12 @@
+% Rationale functies. Hobbema: de hoge, dunne bomen staan als verticale asymptoten in het landschap,
+% en de weg loopt naar een horizon die hij nooit haalt.
+% Motief: de grafiek van c + a/(x-p)^2 met haar twee asymptoten.
+\def\omslagbestand{omslag-middelharnis.jpg}
+\def\omslagbron{Meindert Hobbema, \textit{De laan van Middelharnis}, 1689 (publiek domein)}
+\def\omslagsamples{421}
+\def\omslagrand{min(31, 10.7 + 4/((\x-17.2)^2 + 0.002))}
+\def\omslagmotief{%
+  \randlijn
+  \draw[white,line width=.8pt,dashed] (7,10.7) -- (21,10.7);
+  \draw[white,line width=.8pt,dashed] (17.2,4.6) -- (17.2,29.7);
+}

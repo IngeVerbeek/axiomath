@@ -1,0 +1,392 @@
+%----------------------------------------------------------------------------------------
+% OPMAAK VAN PROTOTYPE 2
+% Compact handboek voor in de les. Uit dezelfde bron komen drie versies:
+%   \def\versie{handboek}    kern, uitgewerkte voorbeelden, oefeningen zonder uitwerking
+%   \def\versie{leerkracht}  handboek + didactische tips, antwoorden
+%   \def\versie{zelfstudie}  handboek + extra uitleg, extra opgaven, antwoorden
+%----------------------------------------------------------------------------------------
+\providecommand{\versie}{handboek}
+
+\usepackage{etoolbox}
+\newif\ifhandboek \newif\ifleerkracht \newif\ifzelfstudie \newif\ifuitwerking
+\ifdefstring{\versie}{handboek}{\handboektrue}{}
+\ifdefstring{\versie}{leerkracht}{\leerkrachttrue\uitwerkingtrue}{}
+\ifdefstring{\versie}{zelfstudie}{\zelfstudietrue\uitwerkingtrue}{}
+
+\usepackage[dutch]{babel}
+\usepackage[a4paper,left=2.5cm,right=2.5cm,top=2.4cm,bottom=2.2cm,headsep=6mm,footskip=8mm,headheight=14pt]{geometry}
+
+\usepackage{amsmath}
+% Source Sans voor tekst en koppen, newtxsf voor schreefloze wiskunde (beide onder de SIL Open Font License)
+\usepackage[T1]{fontenc}
+\usepackage[default]{sourcesanspro}
+\usepackage{newtxsf}
+\renewcommand{\familydefault}{\sfdefault}
+\linespread{1.1}
+\usepackage{icomma}
+\usepackage{ragged2e}
+
+\usepackage{array,booktabs,colortbl}
+\usepackage[inline]{enumitem}
+\usepackage{multicol}
+\usepackage{graphicx}
+\graphicspath{{afbeeldingen/}}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,decorations.pathreplacing,calc}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{answers}
+\usepackage{needspace}
+% Zoals \needspace, maar zonder voorkeur (\penalty-100) om bij elke kop te breken: anders blijven pagina's half leeg
+\makeatletter
+\renewcommand{\needspace}[1]{\par\penalty0\begingroup\setlength{\dimen@}{#1}%
+  \dimen@ii\pagegoal\advance\dimen@ii-\pagetotal
+  \ifdim\dimen@>\dimen@ii\break\fi\endgroup}
+\makeatother
+\usepackage{refcount}
+
+% Elk hoofdstuk heeft een kleur. Donker (hd) = uitleg, fel (hf) = opdrachten.
+% Contrast nagekeken: wit op donker minstens 5,3 en inkt op fel minstens 7,0.
+\definecolor{hd1}{HTML}{1257B0}\definecolor{hf1}{HTML}{5CB8FF}% blauw
+\definecolor{hd2}{HTML}{0A7A5C}\definecolor{hf2}{HTML}{2EDDA5}% groen
+\definecolor{hd3}{HTML}{B24A06}\definecolor{hf3}{HTML}{FFA62B}% oranje
+\definecolor{hd4}{HTML}{B0216F}\definecolor{hf4}{HTML}{FF7DBD}% roze
+\definecolor{hd5}{HTML}{6A35B8}\definecolor{hf5}{HTML}{BC96FF}% paars
+\definecolor{hd6}{HTML}{BF2626}\definecolor{hf6}{HTML}{FF8A7A}% rood
+\definecolor{hd7}{HTML}{0A6E8A}\definecolor{hf7}{HTML}{3FD6F0}% cyaan
+\definecolor{hd8}{HTML}{6E6300}\definecolor{hf8}{HTML}{FFD93D}% olijf
+\definecolor{inkt}{HTML}{12202B}
+% Rubrieken, voor de labels van Koppel
+\colorlet{rubriek-analyse}{hd1}\colorlet{rubriek-algebra}{hd5}\colorlet{rubriek-meetkunde}{hd3}
+\colorlet{rubriek-discreet}{hd2}\colorlet{rubriek-data}{hd4}
+\definecolor{accent}{HTML}{0B6470}% kleur van de voorkaft en de oplossingen
+\colorlet{fel}{hf7}
+\definecolor{grijs}{HTML}{5F6368}
+\definecolor{lijngrijs}{HTML}{9AA0A6}
+\newcommand{\kopletter}{\sffamily\bfseries}
+\newif\ifopdrachtdeel % vanaf de Opdrachten: tab, kop en sectienummers in de felle tint
+\DeclareEmphSequence{\color{accent}\bfseries,\itshape,\upshape}
+\newcommand{\eur}{\texteuro{}}
+
+%----------------------------------------------------------------------------------------
+% ALINEA'S
+%----------------------------------------------------------------------------------------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\AtBeginDocument{\RaggedRight\frenchspacing
+  \thickmuskip=5mu plus 1mu\relax\medmuskip=4mu plus 1mu minus 2mu\relax
+  \setlength{\abovedisplayskip}{5pt plus 1pt}\setlength{\belowdisplayskip}{5pt plus 1pt}%
+  \setlength{\abovedisplayshortskip}{2pt}\setlength{\belowdisplayshortskip}{2pt}}
+\tolerance=800
+\hyphenpenalty=2000
+\clubpenalty=10000 \widowpenalty=10000
+\setlength{\mathindent}{3mm}
+\raggedbottom
+\setlength{\columnsep}{7mm}
+\setlength{\multicolsep}{3pt}
+\makeatletter
+\def\@minipagerestore{\RaggedRight\setlength{\parskip}{3pt}}
+\makeatother
+
+\setlist[itemize,1]{label=\textcolor{accent}{\textbullet},leftmargin=4mm,itemsep=.1ex,topsep=.3ex,parsep=0pt}
+\setlist[enumerate,1]{label=\textbf{\alph*.},leftmargin=6mm,labelsep=1.4mm,itemsep=.5ex,topsep=.6ex,parsep=0pt,beginpenalty=10000,midpenalty=10000}% deelvragen blijven samen
+% Korte deelvragen naast elkaar, uitgelijnd (bv. rijtjes getallen). Lange deelvragen: enumerate.
+\newenvironment{reeks}[1][3]{\begin{multicols}{#1}\begin{enumerate}[midpenalty=0]}{\end{enumerate}\end{multicols}}% midpenalty=0: de kolommen moeten kunnen breken
+
+%----------------------------------------------------------------------------------------
+% KOPPEN
+%----------------------------------------------------------------------------------------
+\makeatletter
+\def\@makechapterhead#1{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[accent] (current page.north west) rectangle ($(current page.north east)+(0,-3.5cm)$);
+    \node[anchor=west,inner sep=0pt,text=fel,font=\kopletter\fontsize{54}{54}\selectfont]
+      at ($(current page.north west)+(2.5cm,-1.95cm)$) {\thechapter};
+    \node[anchor=south west,inner sep=0pt,text=white,font=\sffamily\small]
+      at ($(current page.north west)+(4.4cm,-1.35cm)$) {\cursustitel};
+    \node[anchor=north west,inner sep=0pt,text=white,font=\kopletter\fontsize{26}{31}\selectfont]
+      at ($(current page.north west)+(4.4cm,-1.5cm)$) {#1};
+  \end{tikzpicture}%
+  \par\vspace*{1.05cm}}
+\def\@makeschapterhead#1{%
+  {\parindent\z@\RaggedRight\normalfont\vspace*{-6mm}%
+   {\kopletter\fontsize{21}{25}\selectfont #1\par}
+   \vspace{1mm}{\color{accent}\hrule height 1.4pt}\vspace{3mm}}}
+\renewcommand{\section}{\@startsection{section}{1}{\z@}
+  {-4ex \@plus -1ex \@minus -.4ex}{1.2ex \@plus .2ex}
+  {\normalfont\kopletter\large}}
+\DeclareRobustCommand{\secnummer}[1]{%
+  \ifopdrachtdeel\def\secvul{fel}\def\sectekst{inkt}\else\def\secvul{accent}\def\sectekst{white}\fi
+  \tikz[baseline=(c.base)]\node[fill=\secvul,rounded corners=2pt,text=\sectekst,inner xsep=1.2mm,inner ysep=.6mm,font=\sffamily\bfseries\small](c){#1};}
+% Start van de Opdrachten: nieuwe pagina met een felle band
+\newcommand{\opdrachtenkop}{%
+  \clearpage\global\opdrachtdeeltrue\thispagestyle{plain}%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[fel] (current page.north west) rectangle ($(current page.north east)+(0,-2.6cm)$);
+    \node[anchor=west,inner sep=0pt,text=inkt,font=\kopletter\fontsize{26}{31}\selectfont]
+      at ($(current page.north west)+(2.5cm,-1.45cm)$) {Opdrachten};
+  \end{tikzpicture}%
+  \phantomsection\addcontentsline{toc}{opdracht}{Opdrachten}%
+  \par\vspace*{2mm}}
+% Felle balk voor Koppel en Test jezelf
+\newcommand{\opdrachtsectie}[1]{%
+  \par\addvspace{3.5ex}\needspace{10\baselineskip}\noindent
+  \phantomsection\addcontentsline{toc}{opdracht}{#1}%
+  \tikz\node[fill=fel,rounded corners=2.5pt,inner xsep=3mm,inner ysep=1.5mm,text width=\dimexpr\linewidth-6mm\relax,align=left,text=inkt,font=\kopletter\large]{#1};%
+  \par\nobreak\addvspace{.5ex}}
+% Sprongenfiguur in een theoriekader; het argument staat boven de sprongen, bv. +v
+\newcommand{\sprongfiguur}[1]{%
+  \begin{tikzpicture}[x=.7cm,y=1cm,>={Stealth[length=1.8mm]},font=\small]
+    \draw[lijngrijs] (-.2,0) -- (9.9,0);
+    \foreach \x/\t in {0/u_1,1.6/u_2,3.2/u_3,7.8/u_{n-1},9.4/u_n}{
+      \fill[accent] (\x,0) circle (2pt);
+      \node[below=1pt] at (\x,0) {$\t$};}
+    \node at (5.5,0) [fill=accent!9!white,inner sep=1pt] {$\cdots$};
+    \foreach \a/\b in {0/1.6,1.6/3.2,7.8/9.4}{
+      \draw[->,accent,thick] (\a,.08) to[bend left=45] node[above=-1pt,text=black,font=\scriptsize] {$#1$} (\b,.08);}
+    \draw[decorate,decoration={brace,amplitude=4pt},grijs] (0,.62) -- (9.4,.62)
+      node[midway,above=3pt,text=black] {$n-1$ sprongen};
+  \end{tikzpicture}}
+\renewcommand{\@seccntformat}[1]{\llap{\secnummer{\csname the#1\endcsname}\hspace{2mm}}}% nummer hangt in de linkermarge
+\setcounter{secnumdepth}{1} % subsecties krijgen geen nummer
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}
+  {-3ex \@plus -.8ex \@minus -.3ex}{1ex \@plus .2ex}
+  {\normalfont\kopletter\color{accent}\nobreak}}% \nobreak: \color maakt anders een breekpunt vlak na een sectiekop
+\makeatother
+\newcommand{\blokkop}[1]{\leavevmode{\kopletter\small\color{accent}#1}}
+\pretocmd{\section}{\needspace{9\baselineskip}}{}{} % kop en kader niet los van de rest
+% Niet meteen na een sectiekop: \needspace geeft daar een breekpunt, en dan blijft de sectiekop alleen onderaan staan
+\makeatletter
+\pretocmd{\subsection}{\if@nobreak\else\needspace{7\baselineskip}\fi}{}{}
+\makeatother
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{}
+\fancyhf{}
+\fancyhead[L]{\kopletter\footnotesize\color{accent}\leftmark\ifopdrachtdeel\ \textperiodcentered\ Opdrachten\fi}
+\fancyfoot[R]{\sffamily\footnotesize\color{grijs}\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[R]{\sffamily\footnotesize\color{grijs}\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+% Tab aan de rand van elke pagina: kleur, nummer en plaats tonen het hoofdstuk.
+% 14 mm breed, zodat er genoeg overblijft als een printer de rand niet bedrukt.
+\newlength{\tabx}\newlength{\taby}
+\AddToHook{shipout/background}{%
+  \ifnum\value{chapter}>0
+    \setlength{\tabx}{\paperwidth}\addtolength{\tabx}{-14mm}%
+    \setlength{\taby}{\dimexpr -4.3cm - 3cm*\numexpr\value{chapter}-1\relax\relax}%
+    \ifopdrachtdeel\def\tabvul{fel}\def\tabtekst{inkt}\else\def\tabvul{accent}\def\tabtekst{white}\fi
+    \put(\tabx,\taby){\textcolor{\tabvul}{\rule[-2.7cm]{14mm}{2.7cm}}}%
+    \put(\tabx,\taby){\raisebox{-1.6cm}[0pt][0pt]{\makebox[8.5mm]{\color{\tabtekst}\kopletter\LARGE\thechapter}}}%
+  \fi}
+
+%----------------------------------------------------------------------------------------
+% BLOKKEN
+%----------------------------------------------------------------------------------------
+\tcbset{blok/.style={enhanced,sharp corners,boxrule=0pt,frame hidden,
+    left=4mm,right=3mm,top=2mm,bottom=2mm,before skip=2ex,after skip=2ex}}
+
+% Theorie: definities, eigenschappen, formules en hun bewijs. Volledig omkaderd en getint.
+\newtcolorbox{theorie}{enhanced,breakable,sharp corners,boxrule=1pt,colframe=accent,colback=accent!9!white,
+  left=4mm,right=3mm,top=2mm,bottom=2mm,before skip=2ex,after skip=2ex,
+  before upper={\RaggedRight\setlength{\parskip}{3pt}}}
+% Een kader begint niet met een paar regels onderaan een pagina: het mag alleen verderop breken, bij een lang bewijs
+\AtBeginEnvironment{theorie}{\needspace{10\baselineskip}}
+% Formule in een theoriekader: vet en in de kleur van het hoofdstuk. Gebruik in wiskundemodus: $\formule{...}$
+\newcommand{\formule}[1]{\text{\boldmath\color{accent}$\displaystyle #1$}}
+% Bewijs: staat in het theoriekader, onder de eigenschap. Binnenin meestal de omgeving stappen.
+% Binnenin: korte bindtekst met de formules op een eigen regel (\bewijsregel). Achteraan een vierkantje in de kleur van het hoofdstuk.
+% Een bewijs is één blok (vbox): een kader breekt dus nooit midden in een bewijs, alleen ervoor.
+\newenvironment{bewijs}{\par\addvspace{1.5mm}\vbox\bgroup\blokkop{Bewijs}\par\nobreak}{\par\nobreak\vspace{.6mm}\noindent\hfill\textcolor{accent}{\rule{2.2mm}{2.2mm}}\par\egroup}
+\newcommand{\bewijsregel}[1]{\par\vspace{.6ex}\hspace*{6mm}$\displaystyle #1$\par\vspace{.6ex}}
+% Stelling of eigenschap: eigen wit kader binnen het theoriekader, met de naam op de bovenlijn.
+% De naam staat met haar midden op de lijn, en de lijn is daar onderbroken. Gebruik: \begin{stelling}{Naam} ... \end{stelling}
+\newtcolorbox{stelling}[1]{enhanced,sharp corners,colback=white,colframe=accent,boxrule=.8pt,
+  left=3mm,right=3mm,top=3.2mm,bottom=2mm,after skip=1.5ex,
+  % geen breekpunt tussen een definitie en de stelling eronder; bovenaan het kader (prevdepth -1000pt) geen extra ruimte
+  before={\par\ifdim\prevdepth=-1000pt\else\nobreak\addvspace{3.2ex}\fi\noindent},
+  before upper={\RaggedRight\setlength{\parskip}{3pt}},
+  title={#1},coltitle=accent,fonttitle=\kopletter\small,
+  attach boxed title to top left={xshift=4mm,yshift=-\tcboxedtitleheight/2},
+  boxed title style={enhanced,frame hidden,interior hidden,sharp corners,boxrule=0pt,
+    left=1.5mm,right=1.5mm,top=.4mm,bottom=.4mm},
+  underlay boxed title={%
+    \fill[accent!9!white] (title.north west) rectangle (title.east);
+    \fill[white] (title.west) rectangle (title.south east);}}
+% Werkwijze: hoe je een soort opgave aanpakt. Enkel een balk links, geen tint, met een klein label.
+\newtcolorbox{werkwijze}{blok,colback=white,
+  borderline west={2.5pt}{0pt}{accent},
+  before upper={\RaggedRight\setlength{\parskip}{3pt}\blokkop{Werkwijze}\quad}}
+
+% Voorbeeld: altijd uitgewerkt, ook in het handboek. Oefeningen zijn dat niet.
+\newcounter{voorbeeld}[chapter]
+\providecommand{\theHvoorbeeld}{\thechapter.\arabic{voorbeeld}}
+\newcommand{\voorbeeld}[3]{%
+  \par\addvspace{2ex}\refstepcounter{voorbeeld}%
+  \vbox{\noindent\tikz[baseline=(c.base)]\node[fill=accent,rounded corners=2pt,text=white,inner xsep=1.6mm,inner ysep=.6mm,font=\sffamily\bfseries\footnotesize](c){Voorbeeld \thevoorbeeld\ifstrempty{#1}{}{: #1}};\quad #2\par
+  \uitwerkingblok{#3}}
+  \addvspace{1.5ex}}
+
+\newcommand{\uitwerkingblok}[1]{%
+  \begin{tcolorbox}[blok,colback=white,borderline west={1pt}{0pt}{accent},before skip=.5ex,after skip=1ex,
+      before upper=\RaggedRight\setlength{\parskip}{3pt}]
+    #1
+  \end{tcolorbox}}
+
+% Uitleg bij een voorbeeld: cursief, net als de uitleg naast de stappen.
+\newcommand{\uitleg}[1]{{\itshape #1\par}\vspace{.8ex}}
+
+\newenvironment{stappen}{%
+  \par\renewcommand{\arraystretch}{1.25}%
+  \noindent\begin{tabular}{@{}>{$\displaystyle}p{7cm}<{$}@{\hspace{4mm}}>{\RaggedRight\small\itshape\arraybackslash}p{7.6cm}@{}}%
+}{\end{tabular}\par}
+
+% Alleen voor de leerkracht
+\newcommand{\lkr}[1]{\ifleerkracht
+  \begin{tcolorbox}[blok,colback=black!5!white,borderline west={1pt}{0pt}{grijs},before skip=.6ex,after skip=.8ex,
+      before upper=\RaggedRight\sffamily\footnotesize]
+    {\bfseries Voor de leerkracht.} #1
+  \end{tcolorbox}\fi}
+
+% Alleen in de zelfstudieversie: uitleg in lopende tekst
+\newcommand{\thuis}[1]{\ifzelfstudie\par #1\par\fi}
+
+% Alleen in de zelfstudieversie: extra opgave, met het antwoord onderaan de pagina
+\newcounter{nujij}[chapter]
+\providecommand{\theHnujij}{\thechapter.\arabic{nujij}}
+\makeatletter
+\newcommand{\nujij}[2]{\ifzelfstudie
+  \refstepcounter{nujij}%
+  \begin{tcolorbox}[blok,colback=white,frame hidden,borderline={1.2pt}{0pt}{fel},left=2.5mm,right=2.5mm,
+      before upper=\RaggedRight]
+    \blokkop{Nu jij \thenujij}\quad #1
+  \end{tcolorbox}%
+  \begingroup\long\def\@makefntext##1{\noindent\footnotesize ##1}%
+  \footnotetext{\RaggedRight\textbf{Nu jij \thenujij:} #2}\endgroup\fi}
+\makeatother
+
+\newcommand{\vak}{\mbox{\fboxsep=0pt\fboxrule=.5pt\fbox{\rule{0pt}{1.8ex}\hspace{1.4em}}}}
+
+%----------------------------------------------------------------------------------------
+% OEFENINGEN: een kolom, nummer links, balkjes voor de moeilijkheid (bij de Opdrachten)
+%----------------------------------------------------------------------------------------
+\newcounter{oefening}[chapter] % nummering herstart per hoofdstuk
+\providecommand{\theHoefening}{\thechapter.\arabic{oefening}}
+\newcommand{\oefstrook}[1]{%
+  \needspace{10\baselineskip}\par\noindent
+  \tikz[baseline=(s.base)]\node[fill=fel,rounded corners=2.5pt,inner xsep=2.2mm,inner ysep=1mm,text=inkt,font=\sffamily\bfseries\small](s){#1};%
+  \hspace{1.5mm}\textcolor{fel}{\leaders\hrule height 2.9pt depth -1.2pt\hfill\kern0pt}\par\nobreak}
+\newcommand{\oefnummer}[1]{%
+  \tikz[baseline=(c.base)]\node[fill=fel,rounded corners=2pt,inner xsep=1.2mm,inner ysep=.95mm,minimum width=7mm,text=inkt,font=\sffamily\bfseries\small](c){#1};}
+\newenvironment{oefeningen}[1][]{\par\addvspace{1.2ex}\ifstrempty{#1}{}{\addvspace{1ex}\oefstrook{#1}}}{\par\addvspace{1ex}}
+\newenvironment{oefening}[1][1]{%
+  \needspace{5\baselineskip}% opgave niet los van de deelvragen
+  \refstepcounter{oefening}%
+  \renewcommand{\Currentlabel}{\theoefening}%
+  \begin{list}{}{\setlength{\leftmargin}{15mm}\setlength{\labelwidth}{15mm}\setlength{\labelsep}{0pt}%
+      \setlength{\topsep}{1.7ex}\setlength{\partopsep}{0pt}\setlength{\parsep}{3pt}\setlength{\itemsep}{0pt}}%
+  \interlinepenalty=10000 % een oefening breekt niet over twee pagina's
+  \item[{\makebox[15mm][l]{\oefnummer{\theoefening}\ifopdrachtdeel\hspace{.9mm}\niveau{#1}\fi}}]\ignorespaces
+}{\end{list}}
+
+% Kleine prent rechts naast een opdracht: \begin{metprent}{naam} opgave en deelvragen \end{metprent}
+% De prent staat in afbeeldingen/prenten/, de solution komt na \end{metprent}. Optioneel: [breedte].
+\newenvironment{metprent}[2][2.1cm]{%
+  \def\prentnaam{#2}\def\prentbreedte{#1}%
+  \begin{minipage}[t]{\dimexpr\linewidth-#1-4mm\relax}%
+}{%
+  \end{minipage}\hfill
+  \begin{minipage}[t]{\prentbreedte}
+    \vspace{-3mm}\raggedleft
+    \includegraphics[width=\linewidth,height=2.1cm,keepaspectratio]{prenten/\prentnaam}
+  \end{minipage}\par}
+
+% Moeilijkheid: drie oplopende balkjes, niveau 1, 2 of 3. Ook duidelijk in zwart-wit.
+\newcommand{\niveau}[1]{%
+  \begin{tikzpicture}[baseline=.1mm,x=1mm,y=1mm]
+    \foreach \b/\h in {1/1.6,2/2.8,3/4}{
+      \ifnum\b>#1\relax\def\balk{black!20}\else\def\balk{inkt}\fi
+      \fill[\balk] ({(\b-1)*1.4},0) rectangle ++(1.05,\h);}
+  \end{tikzpicture}}
+% Onderwerp van een opdracht, enkel in de leerkrachtenversie
+\newcommand{\thema}[1]{\ifleerkracht{\sffamily\scriptsize\color{grijs}[#1]}\ \fi\ignorespaces}
+% Label naar andere leerstof: de kleur toont de rubriek (analyse, algebra, meetkunde, discreet, data)
+\newcommand{\koppel}[2]{%
+  \tikz[baseline=(k.base)]\node[fill=rubriek-#1,rounded corners=2mm,text=white,inner xsep=2mm,inner ysep=.7mm,font=\sffamily\bfseries\footnotesize](k){%
+    \tikz[baseline=-.2mm,x=1mm,y=1mm,line width=.5pt,white]{\draw[rounded corners=.5mm] (0,0) rectangle (1.9,1.1);\draw[rounded corners=.5mm] (1.3,0) rectangle (3.2,1.1);}\ #2};\ \ignorespaces}
+\newcommand{\voorbeeldpil}[1]{%
+  \tikz[baseline=(c.base)]\node[fill=accent,rounded corners=2pt,text=white,inner xsep=1.6mm,inner ysep=.6mm,font=\sffamily\bfseries\footnotesize](c){#1};}
+\newcommand{\oefstrookje}[1]{%
+  \tikz[baseline=(s.base)]\node[fill=fel,rounded corners=2.5pt,inner xsep=2.2mm,inner ysep=1mm,text=inkt,font=\sffamily\bfseries\small](s){#1};}
+
+% Schema 'Fout? Herhaal'. In het hoofdstuk: \herhaalschema{\fv{test}{voorbeeld}{oefening} \fzv{test}{oefening} ...}
+% met labels als argument. Het komt ook in de lijsten met oplossingen, met de nummers al ingevuld.
+\protected\def\foutrij#1#2#3{\oefnummer{#1} & $\rightarrow$ & \ifstrempty{#2}{}{\voorbeeldpil{Voorbeeld #2}\ }\oefnummer{#3}\\}
+\protected\def\foutschema#1{%
+  \par\addvspace{2ex}\needspace{8\baselineskip}\noindent\blokkop{Fout? Herhaal}\par\nobreak\vspace{.6ex}%
+  {\renewcommand{\arraystretch}{1.5}\noindent\begin{tabular}{@{}l@{\hspace{2.5mm}}c@{\hspace{2.5mm}}l@{}}#1\end{tabular}\par}\addvspace{1.5ex}}
+\newcommand{\herhaalschema}[1]{%
+  \begingroup
+  \def\fv##1##2##3{\foutrij{\getrefnumber{##1}}{\getrefnumber{##2}}{\getrefnumber{##3}}}%
+  \def\fzv##1##2{\foutrij{\getrefnumber{##1}}{}{\getrefnumber{##2}}}%
+  \edef\schemaregels{#1}%
+  \foutschema{\schemaregels}%
+  \Writetofile{oplossingen}{\foutschema{\schemaregels}}%
+  \Writetofile{uitgewerkteoplossingen}{\foutschema{\schemaregels}}%
+  \endgroup}
+
+%----------------------------------------------------------------------------------------
+% OPLOSSINGEN
+%----------------------------------------------------------------------------------------
+\Newassociation{solution}{Sol}{oplossingen}
+\Newassociation{fullsolution}{Fullsol}{uitgewerkteoplossingen}
+\renewenvironment{Sol}[1]{\par\noindent\textcolor{accent}{\textbf{#1.}}~\ignorespaces}{\par\vspace{.4ex}}
+\renewenvironment{Fullsol}[1]{\par\medskip\noindent\textcolor{accent}{\textbf{Oefening #1}}\par\nobreak}{\par}
+\newcommand{\oplossingenkop}[2]{%
+  \colorlet{accent}{hd#1}\colorlet{fel}{hf#1}%
+  \par\vspace{2mm}\noindent{\kopletter\color{accent}#1.\ \ #2}\par\nobreak\vspace{1mm}}
+\newcommand{\mychapter}[2]{%
+  \clearpage % eerst de vorige pagina afsluiten: die houdt de kleur van het vorige hoofdstuk
+  \global\opdrachtdeelfalse
+  \colorlet{accent}{hd\number\numexpr\value{chapter}+1\relax}%
+  \colorlet{fel}{hf\number\numexpr\value{chapter}+1\relax}%
+  \Writetofile{oplossingen}{\protect\oplossingenkop{#1}{#2}}%
+  \Writetofile{uitgewerkteoplossingen}{\protect\oplossingenkop{#1}{#2}}%
+  \chapter{#2}}
+
+%----------------------------------------------------------------------------------------
+% VOORKAFT: in een eigen bestand, zodat een wijziging de bewaarde grafieken niet ongeldig maakt
+%----------------------------------------------------------------------------------------
+\input{voorkant}
+
+%----------------------------------------------------------------------------------------
+% INHOUD: hoofdstukken in hun eigen kleur, secties, en per hoofdstuk Opdrachten, Koppel en Test
+%----------------------------------------------------------------------------------------
+\makeatletter
+\setcounter{tocdepth}{1} % onderdelen zonder nummer niet: de inhoud past zo op één pagina
+\newcommand{\tochoofdstuk}{1}
+\newcommand{\tocpuntjes}{\leaders\hbox to 2.4mm{\hss\textcolor{lijngrijs}{.}\hss}\hfill}
+\def\toclevel@opdracht{1}
+\def\l@chapter#1#2{\par\addvspace{4mm}%
+  {\noindent\kopletter\large\color{inkt}%
+   \def\numberline##1{\gdef\tochoofdstuk{##1}%
+     \makebox[10mm][l]{\tikz[baseline=(c.base)]\node[fill=hd##1,rounded corners=2pt,text=white,inner xsep=1.6mm,inner ysep=.7mm](c){##1};}%
+     \color{hd##1}}%
+   #1\hfill #2\par}\nobreak\vspace{.6mm}}
+\def\l@section#1#2{%
+  {\noindent\hspace*{10mm}%
+   \def\numberline##1{\makebox[9mm][l]{\textcolor{hd\tochoofdstuk}{\bfseries\small ##1}}}%
+   #1\ \tocpuntjes\ #2\par}}
+\def\l@opdracht#1#2{%
+  {\noindent\hspace*{10mm}\makebox[9mm][l]{\textcolor{hf\tochoofdstuk}{\rule{4.5mm}{2.2mm}}}%
+   {\small #1}\ \tocpuntjes\ {\small #2}\par}}
+\newcommand{\inhoudstafel}{%
+  \chapter*{Inhoud}%
+  \begingroup\setlength{\parskip}{.8pt}\@starttoc{toc}\endgroup
+  \clearpage}
+\makeatother
+
+\usepackage[hyperfootnotes=false]{hyperref}
+\hypersetup{hidelinks,pdftitle={\cursustitel},pdfauthor={\cursusauteur},pdflang={nl}}

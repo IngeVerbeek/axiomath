@@ -1,0 +1,23 @@
+% Groepen. Morris: een behangpatroon dat onveranderd blijft onder verschuivingen en spiegelingen.
+% De rand is een fries met diezelfde symmetrie.
+% Motief: de symmetrieën van de gelijkzijdige driehoek, de kleinste niet-commutatieve groep.
+\def\omslagbestand{omslag-aardbeiendief.jpg}
+\def\omslagbron{William Morris, \textit{Strawberry Thief}, ontwerp 1883 (publiek domein)}
+\def\omslagsamples{281}
+\def\omslagrand{10.7 + 0.75*abs(sin(\x*180/3))}
+\def\omslagmotief{%
+  \randlijn
+  \coordinate (M) at (16.6,7.3);
+  \foreach \h in {90,210,330}{%
+    \draw[white,line width=.8pt,dashed] ($(M)+(\h:2.95)$) -- ($(M)+(\h+180:1.75)$);
+  }
+  \draw[white,line width=1.6pt,line join=round,fill=white,fill opacity=.17] ($(M)+(90:2.3)$) -- ($(M)+(210:2.3)$) -- ($(M)+(330:2.3)$) -- cycle;
+  \foreach \h in {90,210,330}{%
+    \fill[fel] ($(M)+(\h:2.3)$) circle (1.5mm);
+  }
+  \node[text=white,font=\small,inner sep=1pt,anchor=south west] at ($(M)+(90:2.3)+(.15,.02)$) {$1$};
+  \node[text=white,font=\small,inner sep=1pt,anchor=north] at ($(M)+(210:2.3)+(.15,-.17)$) {$2$};
+  \node[text=white,font=\small,inner sep=1pt,anchor=north] at ($(M)+(330:2.3)+(-.15,-.17)$) {$3$};
+  \draw[fel,line width=1.6pt,-{Stealth[length=3mm]}] ($(M)+(30:1.05)$) arc[start angle=30,end angle=150,radius=1.05];
+  \node[text=white,font=\small,inner sep=1pt] at ($(M)+(60:.72)$) {$r$};
+}

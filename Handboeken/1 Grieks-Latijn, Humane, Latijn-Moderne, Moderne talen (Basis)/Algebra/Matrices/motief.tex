@@ -1,0 +1,17 @@
+% Matrices. Mondriaan: een raster van rijen en kolommen. De trappen in de rand volgen zijn vlakken.
+% Motief: een matrix, met de rij en de kolom waar het element a_23 op het kruispunt staat.
+\def\omslagbestand{omslag-mondriaan.jpg}
+\def\omslagbron{Piet Mondriaan, \textit{Tableau 3 met oranjerood, geel, zwart, blauw en grijs}, 1921 (publiek domein)}
+\def\omslagband{\fill[accent] (0,0) -- (0,10.5) -- (13.1,10.5) -- (13.1,12.6) -- (19.9,12.6) -- (19.9,11.2) -- (21,11.2) -- (21,0) -- cycle;}
+\def\omslagmotief{%
+  \draw[white,line width=2pt,line join=miter] (0,10.5) -- (13.1,10.5) -- (13.1,12.6) -- (19.9,12.6) -- (19.9,11.2) -- (21,11.2);
+  \fill[white,fill opacity=.17] (14.25,8.3) rectangle (18.75,9.8);
+  \fill[white,fill opacity=.17] (17.25,6.8) rectangle (18.75,11.3);
+  \fill[fel] (17.25,8.3) rectangle (18.75,9.8);
+  \foreach \kol in {0,1,2}{\foreach \rij in {0,1,2}{%
+    \draw[white,line width=.8pt] ({14.25+1.5*\kol},{6.8+1.5*\rij}) rectangle +(1.5,1.5);
+  }}
+  \node[text=inkt,font=\large] at (18,9.05) {$a_{23}$};
+  \draw[white,line width=1.6pt] (14.2,6.45) -- (13.85,6.45) -- (13.85,11.65) -- (14.2,11.65);
+  \draw[white,line width=1.6pt] (18.8,6.45) -- (19.15,6.45) -- (19.15,11.65) -- (18.8,11.65);
+}

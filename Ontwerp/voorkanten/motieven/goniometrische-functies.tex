@@ -1,0 +1,21 @@
+% Goniometrische functies. Hokusai: golven zijn het beeld van een periodieke functie.
+% Motief: de draaiende straal in de eenheidscirkel tekent de sinus, de rand van de band.
+\def\omslagbestand{omslag-golf.jpg}
+\def\omslagbron{Katsushika Hokusai, \textit{De grote golf bij Kanagawa}, ca. 1831 (publiek domein)}
+\def\omslagrand{12 + 1.8*sin((\x-13.2)*40)}
+\def\omslagmotief{%
+  \randlijn
+  \draw[omslaglijn=.8pt,-{Stealth[length=2.4mm]}] (10.9,12) -- (20.7,12);
+  \draw[omslaglijn=1pt] (13.2,12) circle (1.8);
+  \pgfmathsetmacro{\px}{13.2+1.8*cos(130)}%
+  \pgfmathsetmacro{\py}{12+1.8*sin(130)}%
+  \pgfmathsetmacro{\gx}{13.2+9*130/360}%
+  \draw[omslaglijn=.8pt,dashed] (\px,\py) -- (\gx,\py);
+  \draw[omslaglijn=1pt] (13.2,12) -- (\px,\py);
+  \draw[fel,line width=1.4pt] (13.8,12) arc[start angle=0,end angle=130,radius=.6];
+  \draw[fel,line width=2.2pt] (\gx,12) -- (\gx,\py);
+  \fill[omslagstip] (\px,\py) circle (1.4mm);
+  \fill[omslagstip] (\gx,\py) circle (1.4mm);
+  \node[omslaglabel,font=\footnotesize,inner sep=1.5pt] at (14.05,12.75) {$\alpha$};
+  \node[omslaglabel,anchor=north] at (\gx,11.82) {$\sin\alpha$};
+}

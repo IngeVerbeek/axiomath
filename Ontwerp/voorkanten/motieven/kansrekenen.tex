@@ -1,0 +1,22 @@
+% Kansrekenen. Caravaggio: kaarten en vals spel, het kansspel waaruit de kansrekening ontstond.
+% Motief: de 36 even waarschijnlijke uitkomsten van twee dobbelstenen, gestapeld per som.
+\def\omslagbestand{omslag-valsspelers.jpg}
+\def\omslagbron{Caravaggio, \textit{De valsspelers}, ca. 1594 (publiek domein)}
+\def\omslagrand{10.5 + 0.35*sin(\x*360/14)}
+\def\omslagmotief{%
+  \randlijn
+  \foreach \som/\aantal in {2/1,3/2,4/3,5/4,6/5,7/6,8/5,9/4,10/3,11/2,12/1}{%
+    \pgfmathsetmacro{\plek}{13.9+(\som-2)*.62}%
+    \foreach \k in {1,...,\aantal}{%
+      \ifnum\som=7
+        \fill[fel,draw=accent,line width=.6pt] (\plek,{8.75+(\k-1)*.62}) circle (2.2mm);
+      \else
+        \fill[omslagstip] (\plek,{8.75+(\k-1)*.62}) circle (2.2mm);
+      \fi
+    }
+  }
+  \foreach \som in {2,7,12}{%
+    \pgfmathsetmacro{\plek}{13.9+(\som-2)*.62}%
+    \node[text=white,font=\small,inner sep=1pt,anchor=north] at (\plek,8.4) {$\som$};
+  }
+}

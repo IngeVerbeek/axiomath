@@ -1,0 +1,17 @@
+% Rijen. Monet: een rij populieren langs het water, stam na stam op gelijke afstand.
+% Motief: de termen u_n als stammen, die steeds dichter bij hun limiet komen.
+\def\omslagbestand{omslag-populieren.jpg}
+\def\omslagbron{Claude Monet, \textit{Populieren aan de Epte}, 1891 (publiek domein)}
+\def\omslagrand{10.5 + 0.5*\x/21}
+\def\omslagmotief{%
+  \randlijn
+  \draw[white,line width=.8pt] (8.3,4.4) -- (20.7,4.4);
+  \foreach \n in {1,...,10}{%
+    \pgfmathsetmacro{\plek}{8.8+(\n-1)*1.25}%
+    \pgfmathsetmacro{\term}{15-7.8*0.72^(\n-1)}%
+    \draw[omslaglijn=1pt] (\plek,4.4) -- (\plek,\term);
+    \fill[omslagstip] (\plek,\term) circle (1.4mm);
+  }
+  \draw[omslaglijn=.8pt,dashed] (11,15) -- (20.9,15);
+  \node[omslaglabel,anchor=east] at (10.9,15) {limiet};
+}

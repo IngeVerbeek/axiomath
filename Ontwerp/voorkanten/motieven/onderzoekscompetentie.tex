@@ -1,0 +1,13 @@
+% Onderzoekscompetentie. Vermeer: een onderzoeker met passer en kaart, op het moment dat hij opkijkt.
+% Motief: meetpunten met de regressierechte (de afwijkingen zijn zo gekozen), die de rand van de band is.
+\def\omslagbestand{omslag-geograaf.jpg}
+\def\omslagbron{Johannes Vermeer, \textit{De geograaf}, ca. 1669 (publiek domein)}
+\def\omslagrand{10.3 + 0.176*\x}
+\def\omslagmotief{%
+  \randlijn
+  \foreach \plek/\afw in {7.2/-.5,8.5/.5,9.8/-.16,11.1/.73,12.4/-.57,13.7/.27,15/-.74,16.3/.55,17.6/-.3,18.9/.69,20.2/-.47}{%
+    \randwaarde{\plek}{\yw}%
+    \draw[omslaglijn=.6pt] (\plek,\yw) -- (\plek,\yw+\afw);
+    \fill[fel,draw=accent,line width=.6pt] (\plek,\yw+\afw) circle (1.5mm);
+  }
+}

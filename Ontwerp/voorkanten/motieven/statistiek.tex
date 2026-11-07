@@ -1,0 +1,18 @@
+% Statistiek. Rembrandt: de staalmeesters keurden laken op basis van stalen, een steekproef.
+% Motief: de normale verdeling als rand, met 68% van de waarden tussen mu - sigma en mu + sigma.
+\def\omslagbestand{omslag-staalmeesters.jpg}
+\def\omslagbron{Rembrandt van Rijn, \textit{De staalmeesters}, 1662 (publiek domein)}
+\def\omslagrand{10.5 + 4.8*exp(-(\x-16.4)^2/(2*2.2*2.2))}
+\def\omslagmotief{%
+  \fill[white,fill opacity=.17] (14.2,3.7) -- plot[domain=14.2:18.6,samples=50,variable=\x] (\x,{\omslagrand}) -- (18.6,3.7) -- cycle;
+  \randlijn
+  \draw[white,line width=.8pt,-{Stealth[length=2.4mm]}] (13.7,3.7) -- (20.6,3.7);
+  \randwaarde{16.4}{\yt}%
+  \draw[white,line width=.8pt,dashed] (16.4,3.7) -- (16.4,\yt);
+  \foreach \plek/\naam in {14.2/\mu-\sigma,16.4/\mu,18.6/\mu+\sigma}{%
+    \randwaarde{\plek}{\yr}%
+    \draw[white,line width=.6pt] (\plek,3.6) -- (\plek,\yr);
+    \node[text=white,font=\small,inner sep=1pt,anchor=north] at (\plek,3.6) {$\naam$};
+  }
+  \node[fill=fel,text=inkt,rounded corners=1.5pt,inner sep=2.5pt,font=\kopletter\small] at (17.5,8) {68\,\%};
+}

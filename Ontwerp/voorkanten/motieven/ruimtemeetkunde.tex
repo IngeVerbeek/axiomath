@@ -1,0 +1,25 @@
+% Ruimtemeetkunde. De ideale stad: de ruimte op een plat vlak, opgebouwd uit evenwijdige lijnen.
+% Motief: een kubus in een assenstelsel met de ruimtevector naar het tegenoverliggende hoekpunt.
+\def\omslagbestand{omslag-ideale-stad.jpg}
+\def\omslagbron{Anoniem, \textit{De ideale stad}, ca. 1480-1490 (publiek domein)}
+\def\omslagrand{10.4 + 1.2*\x/21}
+\def\omslagmotief{%
+  \randlijn
+  \coordinate (O) at (15.4,9.2);
+  \coordinate (X) at (-1.2,-1);
+  \coordinate (Y) at (3.5,0);
+  \coordinate (Z) at (0,3.5);
+  \fill[accent,fill opacity=.6] ($(O)+(X)$) -- ($(O)+(X)+(Y)$) -- ($(O)+(Y)$) -- ($(O)+(Y)+(Z)$) -- ($(O)+(Z)$) -- ($(O)+(X)+(Z)$) -- cycle;
+  % de zichtbare en verborgen ribben
+  \draw[white,line width=.7pt,dashed] (O) -- ($(O)+(X)$) (O) -- ($(O)+(Y)$) (O) -- ($(O)+(Z)$);
+  \draw[white,line width=1pt,line join=round]
+    ($(O)+(X)$) -- ($(O)+(X)+(Y)$) -- ($(O)+(Y)$) -- ($(O)+(Y)+(Z)$) -- ($(O)+(Z)$) -- ($(O)+(X)+(Z)$) -- cycle
+    ($(O)+(X)+(Y)$) -- ($(O)+(X)+(Y)+(Z)$) -- ($(O)+(X)+(Z)$)
+    ($(O)+(X)+(Y)+(Z)$) -- ($(O)+(Y)+(Z)$);
+  % de assen lopen buiten de kubus door
+  \draw[white,line width=.8pt,-{Stealth[length=2.4mm]}] ($(O)+(X)$) -- ($(O)+1.25*(X)$);
+  \draw[white,line width=.8pt,-{Stealth[length=2.4mm]}] ($(O)+(Y)$) -- ($(O)+1.3*(Y)$);
+  \draw[omslaglijn=.8pt,-{Stealth[length=2.4mm]}] ($(O)+(Z)$) -- ($(O)+1.3*(Z)$);
+  \draw[fel,line width=1.8pt,-{Stealth[length=3mm]}] (O) -- ($(O)+(X)+(Y)+(Z)$);
+  \fill[fel] (O) circle (1.2mm);
+}

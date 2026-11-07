@@ -1,0 +1,19 @@
+% Exponentiële en logaritmische functies. Van Gogh: de helderheid van sterren meten we op een
+% logaritmische schaal. Motief: bij gelijke stappen naar rechts verdubbelt de hoogte, tot aan de
+% rand die steeds sneller in het schilderij stijgt. De sterren worden mee groter.
+\def\omslagbestand{omslag-sterrennacht.jpg}
+\def\omslagbron{Vincent van Gogh, \textit{De sterrennacht}, 1889 (publiek domein)}
+\def\omslagrand{10.25 + 6*exp(ln(2)*(\x-20.4)/3)}
+\def\omslagmotief{%
+  \randlijn
+  \draw[white,line width=.8pt,dashed] (6,10.25) -- (21,10.25);
+  \foreach \plek/\straal in {8.4/.07,11.4/.09,14.4/.11,17.4/.14,20.4/.17}{%
+    \randwaarde{\plek}{\yw}%
+    \draw[white,line width=.8pt] (\plek,10.25) -- (\plek,\yw);
+    \draw[omslaglijn=.8pt] (\plek,\yw) circle ({1.9*\straal});
+    \fill[fel] (\plek,\yw) circle (\straal);
+  }
+  \foreach \plek in {9.9,12.9,15.9,18.9}{%
+    \node[text=white,font=\footnotesize,inner sep=1pt,anchor=north] at (\plek,10.1) {$\times 2$};
+  }
+}

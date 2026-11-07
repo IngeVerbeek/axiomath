@@ -1,0 +1,41 @@
+# LaTeX-bouwbestanden
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.idx
+*.ilg
+*.ind
+*.out
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*_preview.png
+
+# Gegenereerd door maak-pdf.py (de PDF's zelf komen bij een release, niet in git)
+**/figuren-cache/
+**/gen/
+**/_figuren-*
+**/__pycache__/
+**/oplossingen.tex
+**/uitgewerkteoplossingen.tex
+**/snel-h*.pdf
+Handboeken/**/*.pdf
+
+# Voorkanten: het overzicht wordt opnieuw gebouwd
+Ontwerp/voorkanten/alle-voorkanten.*
+
+# Opmerkingen van nalezers in een PDF en oude versies
+**/*feedback*.pdf
+**/_Feedback*/
+**/oud/
+
+# Lokale instellingen en systeembestanden
+**/.claude/settings.local.json
+~$*
+Thumbs.db
+desktop.ini
+.~lock.*

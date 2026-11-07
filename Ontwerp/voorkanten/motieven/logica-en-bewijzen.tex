@@ -1,0 +1,14 @@
+% Logica en bewijzen. Rafaël: Aristoteles, de grondlegger van de logica, en Euclides, die alles bewees.
+% Motief: de bekendste sluitrede van Aristoteles als cirkels. Elke mens is sterfelijk, Socrates is een mens.
+\def\omslagbestand{omslag-athene.jpg}
+\def\omslagbron{Rafaël, \textit{De school van Athene}, 1509-1511 (publiek domein)}
+\def\omslagrand{10.5 + 0.7*sin(\x*180/21)}
+\def\omslagmotief{%
+  \randlijn
+  \draw[omslaglijn=1.2pt] (16.6,8) circle (3.3);
+  \draw[white,line width=1.2pt,fill=white,fill opacity=.17] (16.6,7.15) circle (2);
+  \fill[fel] (16.6,6.65) circle (1.5mm);
+  \node[text=white,font=\small,inner sep=1pt,anchor=north] at (16.6,6.45) {Socrates};
+  \node[text=white,font=\small,inner sep=1pt] at (16.6,8.45) {mens};
+  \node[text=white,font=\small,inner sep=1pt] at (16.6,9.9) {sterfelijk};
+}

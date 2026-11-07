@@ -1,0 +1,22 @@
+% Complexe getallen. Delaunay: schijven en ringen die rond een middelpunt draaien.
+% Motief: vermenigvuldigen met i is in het complexe vlak een kwartslag.
+\def\omslagbestand{omslag-lune.jpg}
+\def\omslagbron{Robert Delaunay, \textit{Cirkelvormen, maan nr. 1}, 1913 (publiek domein)}
+\def\omslagrand{10.5 + 0.8*sin(\x*180/21)}
+\def\omslagmotief{%
+  \randlijn
+  \coordinate (O) at (16.5,8.9);
+  \draw[omslaglijn=.8pt,-{Stealth[length=2.4mm]}] (12.9,8.9) -- (20.5,8.9);
+  \draw[omslaglijn=.8pt,-{Stealth[length=2.4mm]}] (16.5,5) -- (16.5,13.2);
+  \draw[omslaglijn=1pt] (O) circle (3);
+  \draw[omslaglijn=1pt] (O) -- ($(O)+(35:3)$);
+  \draw[omslaglijn=1pt] (O) -- ($(O)+(125:3)$);
+  \draw[white,line width=.6pt] ($(O)+(35:.42)$) -- ($(O)+(80:.594)$) -- ($(O)+(125:.42)$);
+  \draw[fel,line width=2pt,-{Stealth[length=3mm]}] ($(O)+(41:3)$) arc[start angle=41,end angle=119,radius=3];
+  \fill[omslagstip] ($(O)+(35:3)$) circle (1.5mm);
+  \fill[omslagstip] ($(O)+(125:3)$) circle (1.5mm);
+  \node[omslaglabel,anchor=west] at ($(O)+(35:3.2)$) {$z$};
+  \node[omslaglabel,anchor=east] at ($(O)+(125:3.2)$) {$iz$};
+  \node[text=white,font=\footnotesize,inner sep=1pt,anchor=north west] at (20.1,8.8) {Re};
+  \node[omslaglabel,anchor=west,font=\footnotesize] at (16.65,12.95) {Im};
+}

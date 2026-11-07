@@ -1,0 +1,18 @@
+% Algemene functies. Friedrich: de bergkammen in de mist zijn grafieken met toppen en dalen.
+% Motief: de functiewaarde aflezen, van x via de grafiek naar f(x).
+\def\omslagbestand{omslag-nevelzee.jpg}
+\def\omslagbron{Caspar David Friedrich, \textit{Wandelaar boven de nevelzee}, ca. 1818 (publiek domein)}
+\def\omslagrand{11.8 + 1.1*sin(0.55*\x r - 1 r) + 0.55*sin(1.35*\x r + 0.5 r)}
+\def\omslagmotief{%
+  \randlijn
+  \randwaarde{17.6}{\yw}%
+  \draw[omslaglijn=.8pt,-{Stealth[length=2.4mm]}] (13.5,3.7) -- (20.6,3.7);
+  \draw[omslaglijn=.8pt,-{Stealth[length=2.4mm]}] (13.9,3.35) -- (13.9,15.6);
+  \draw[omslaglijn=.8pt,dashed] (17.6,3.7) -- (17.6,\yw);
+  \draw[omslaglijn=.8pt,dashed] (17.6,\yw) -- (13.9,\yw);
+  \fill[omslagstip] (17.6,\yw) circle (1.6mm);
+  \fill[fel] (17.6,3.7) circle (1mm);
+  \fill[fel] (13.9,\yw) circle (1mm);
+  \node[text=white,font=\small,inner sep=1pt,anchor=north] at (17.6,3.6) {$x$};
+  \node[omslaglabel,anchor=east] at (13.75,\yw) {$f(x)$};
+}
