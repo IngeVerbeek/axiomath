@@ -11,7 +11,7 @@ Leerplan: B+S (Katholiek Onderwijs Vlaanderen). Doelen volgens de tabel met leer
 | Analyse/Rationale functies | LPD 17, K1 | nog te maken |
 | [Analyse/Afgeleiden](Analyse/Afgeleiden) | LPD 18-21 | 4 hoofdstukken, eerste versie (afgeleid van pakket 4), nog na te lezen |
 | Analyse/Integralen | LPD 22-24 | nog te maken |
-| Algebra/Matrices | LPD 25-27 | nog te maken |
+| [Algebra/Matrices](Algebra/Matrices) | LPD 25-27 | 4 hoofdstukken, eerste versie (afgeleid van pakket 4), nog na te lezen |
 | Discrete wiskunde/Rijen | LPD 28 | nog te maken |
 | Data en onzekerheid/Kansrekenen | LPD 29 | nog te maken |
 | Data en onzekerheid/Statistiek | LPD 30-34 | nog te maken |
