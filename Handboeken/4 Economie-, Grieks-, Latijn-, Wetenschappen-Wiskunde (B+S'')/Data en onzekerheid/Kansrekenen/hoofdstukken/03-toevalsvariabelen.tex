@@ -1,0 +1,216 @@
+%----------------------------------------------------------------------------------------
+% TOEVALSVARIABELEN. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h3-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{3}{Toevalsvariabelen}
+
+\lkr{Leerplan B+S'': de wenken bij LPD 49 (kansverdeling van een toevalsvariabele, verwachtingswaarde en standaardafwijking, discreet tegenover continu, cumulatieve verdelingsfunctie). Ze bereiden de binomiale verdeling in hoofdstuk 4 voor. Leerlingen kennen het gemiddelde en de standaardafwijking van een frequentietabel uit de 2de graad: de verwachtingswaarde is hetzelfde, met kansen in de plaats van relatieve frequenties.}
+
+Bij een spel wil je niet alleen weten hoe groot de kans op winst is, maar ook hoeveel je wint. Gooi je twee dobbelstenen, dan interesseert je soms alleen de som, of het aantal zessen. Zo'n getal dat van het toeval afhangt, heet een toevalsvariabele. In dit hoofdstuk leer je hoe je de kansen voor alle waarden samen beschrijft, wat je op lange termijn gemiddeld verwacht, en hoe sterk de uitkomsten rond dat gemiddelde schommelen.
+
+\begin{oefeningen}[Start]
+\oef{h3-start-1}
+
+\oef{h3-verken}
+\end{oefeningen}
+
+\lkr{Laat oefening \ref{oef:h3-verken} maken vóór de uitleg. In vraag c berekenen leerlingen een gemiddelde winst met kansen in de plaats van frequenties: dat is de verwachtingswaarde. Vraag d gaat over een eerlijk spel.}
+
+%========================================================================================
+\section{Kansverdelingen}
+
+\begin{theorie}
+Een \textbf{\textcolor{accent}{toevalsvariabele}} $X$ koppelt aan elke uitkomst van een kansexperiment een getal. Kan $X$ maar een eindig aantal waarden $x_1, x_2, \ldots, x_k$ aannemen (of een rij waarden die je kunt opsommen), dan is $X$ \textbf{\textcolor{accent}{discreet}}.
+
+\vspace{1mm}
+De \textbf{\textcolor{accent}{kansverdeling}} van een discrete $X$ is de tabel van alle waarden $x_i$ met hun kansen $\formule{P(X = x_i)}$. Die kansen zijn samen $\formule{1}$.
+\end{theorie}
+
+Een toevalsvariabele noteer je met een hoofdletter, haar waarden met een kleine letter. Kan $X$ elk getal in een interval aannemen, zoals een lengte of een wachttijd, dan is ze \textbf{continu}. Dan heeft één bepaalde waarde kans 0, en werk je met de kans op een interval. Continue toevalsvariabelen zie je in de cursus Statistiek, bij de normale verdeling.
+
+\voorbeeld{}{Je gooit twee keer met een dobbelsteen. $X$ is het aantal zessen. Geef de kansverdeling en teken een staafdiagram.\label{vb:h3-verdeling}}{%
+\uitleg{$X$ kan 0, 1 of 2 zijn. De kansen vinden we met een boomdiagram: elke worp is zes of geen zes, onafhankelijk van de andere.}
+\naast{\begin{minipage}{9.4cm}
+\begin{stappenvrij}{4.6cm}{4.4cm}
+P(X = 0) = \frac56 \cdot \frac56 = \frac{25}{36} & Twee keer geen zes. \\[3ex]
+P(X = 1) = 2 \cdot \frac16 \cdot \frac56 = \frac{10}{36} & Zes-geen of geen-zes. \\[3ex]
+P(X = 2) = \frac16 \cdot \frac16 = \frac{1}{36} & Twee zessen.
+\end{stappenvrij}
+
+\vspace{1mm}
+Controle: $\frac{25 + 10 + 1}{36} = 1$.
+\end{minipage}}{\begin{tikzpicture}[x=1cm,y=4.4cm,font=\scriptsize]
+  \draw[black!14,very thin] (-.5,0) grid[xstep=5,ystep=.2] (2.5,.8);
+  \foreach \x/\h in {0/.6944,1/.2778,2/.0278}{\staaf{\x}{\h}{.55}}
+  \draw[->,grijs] (-.5,0) -- (2.7,0) node[right,text=black] {$x$};
+  \draw[->,grijs] (-.5,0) -- (-.5,.85) node[above,text=black] {$P(X = x)$};
+  \foreach \x in {0,1,2}{\node[below] at (\x,0) {\x};}
+  \foreach \t/\l in {.2/{0,2},.4/{0,4},.6/{0,6},.8/{0,8}}{\node[left] at (-.5,\t) {\l};}
+\end{tikzpicture}}}
+
+\begin{oefeningen}
+\oef{h3-verdeling}
+\end{oefeningen}
+
+%========================================================================================
+\section{De verwachtingswaarde}
+
+Speel je een spel heel vaak, dan nadert de relatieve frequentie van elke uitkomst tot haar kans. Het gemiddelde van de uitkomsten nadert dan tot het gemiddelde met de kansen als gewichten. Dat getal heet de verwachtingswaarde.
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{verwachtingswaarde}} van een discrete toevalsvariabele $X$ is
+
+\vspace{1mm}
+\qquad $\formule{\mu = \E(X) = \sum_{i} x_i \cdot P(X = x_i)}$
+\end{theorie}
+
+De verwachtingswaarde hoeft geen mogelijke waarde te zijn: het gemiddelde aantal ogen van een dobbelsteen is $3{,}5$. Ze is het \textit{evenwichtspunt} van het staafdiagram. Bij een spel met $X$ de winst heet het spel \textbf{eerlijk} als $\E(X) = 0$: op lange termijn win of verlies je niets.
+
+\voorbeeld{}{Een rad van fortuin heeft 8 gelijke vakken. Eén vak betaalt 10 euro uit, twee vakken 3 euro, de andere vijf niets. Een draai kost 2 euro. Is het spel eerlijk?\label{vb:h3-verwachting}}{%
+\uitleg{De winst $X$ is de uitbetaling min de inzet. We stellen de kansverdeling van $X$ op en berekenen $\E(X)$.}
+\begin{stappenbreed}
+x: \quad 8, \quad 1, \quad -2 \qquad P: \quad \tfrac18, \quad \tfrac28, \quad \tfrac58 & De winst bij 10, 3 en 0 euro uitbetaling. \\[2ex]
+\E(X) = 8 \cdot \frac18 + 1 \cdot \frac28 + (-2) \cdot \frac58 = \frac{8 + 2 - 10}{8} = 0 & Het spel is eerlijk.
+\end{stappenbreed}}
+
+Bij een loterij, een casino of een verzekering is de verwachte winst voor de speler negatief: daarvan leeft de organisator.
+
+\begin{oefeningen}
+\oef{h3-verwachting}
+\end{oefeningen}
+
+%========================================================================================
+\section{Variantie en standaardafwijking}
+
+Twee spelen kunnen dezelfde verwachtingswaarde hebben, maar toch heel anders aanvoelen. Bij een munt win of verlies je 1 euro; bij een loterij win je meestal niets en soms veel. De standaardafwijking meet hoe ver de waarden gemiddeld van $\mu$ liggen.
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{variantie}} en de \textbf{\textcolor{accent}{standaardafwijking}} van een discrete toevalsvariabele $X$ met verwachtingswaarde $\mu$ zijn
+
+\vspace{1mm}
+\qquad $\formule{\Var(X) = \sum_{i} (x_i - \mu)^2 \cdot P(X = x_i)} \qquad \formule{\sigma = \sqrt{\Var(X)}}$
+
+\begin{stelling}{Rekenformule}
+\qquad $\formule{\Var(X) = \E(X^2) - \mu^2}$, \quad met $\E(X^2) = \sum_i x_i^2 P(X = x_i)$.
+\end{stelling}
+
+\begin{bewijs}
+Schrijf $p_i = P(X = x_i)$. Werk het kwadraat uit en gebruik $\sum_i x_i p_i = \mu$ en $\sum_i p_i = 1$:
+\bewijsregel{\sum_i (x_i^2 - 2\mu x_i + \mu^2) p_i = \sum_i x_i^2 p_i - 2\mu \sum_i x_i p_i + \mu^2 \sum_i p_i = \E(X^2) - 2\mu^2 + \mu^2 .}
+\end{bewijs}
+\end{theorie}
+
+Net als bij een frequentietabel is $\sigma$ in dezelfde eenheid als $X$: in euro, in ogen, in aantallen. De variantie is in het kwadraat van die eenheid.
+
+\voorbeeld{}{Bereken de verwachtingswaarde en de standaardafwijking van het aantal zessen $X$ uit voorbeeld \ref{vb:h3-verdeling}.\label{vb:h3-sigma}}{%
+\uitleg{We berekenen $\mu$ en $\E(X^2)$ met de kansverdeling, en gebruiken de rekenformule.}
+\begin{stappenbreed}
+\mu = 0 \cdot \frac{25}{36} + 1 \cdot \frac{10}{36} + 2 \cdot \frac{1}{36} = \frac{12}{36} = \frac13 & Gemiddeld een derde zes per twee worpen. \\[3ex]
+\E(X^2) = 0 + 1 \cdot \frac{10}{36} + 4 \cdot \frac{1}{36} = \frac{14}{36} = \frac{7}{18} & De kwadraten van de waarden. \\[3ex]
+\Var(X) = \frac{7}{18} - \frac19 = \frac{5}{18}, \quad \sigma = \sqrt{\tfrac{5}{18}} \approx 0{,}53 & Rekenformule.
+\end{stappenbreed}}
+
+\begin{werkwijze}
+Stel de kansverdeling op en controleer dat de kansen samen 1 zijn. Bereken $\mu = \sum x_i p_i$ en $\E(X^2) = \sum x_i^2 p_i$. Dan is $\Var(X) = \E(X^2) - \mu^2$ en $\sigma = \sqrt{\Var(X)}$. Het rekentoestel doet het ook, met de waarden als lijst en de kansen als frequenties.
+\end{werkwijze}
+
+\nujij{Bij spel A win of verlies je 1 euro, elk met kans $\frac12$. Bij spel B win je 9 euro met kans $\frac{1}{10}$ en verlies je anders 1 euro. Vergelijk $\mu$ en $\sigma$.}{Beide hebben $\mu = 0$. A: $\E(X^2) = 1$, $\sigma = 1$. B: $\E(X^2) = 81 \cdot 0{,}1 + 1 \cdot 0{,}9 = 9$, $\sigma = 3$: veel meer risico.}
+
+\begin{oefeningen}
+\oef{h3-sigma}
+\end{oefeningen}
+
+%========================================================================================
+\section{De cumulatieve verdelingsfunctie}
+
+Vaak vraag je niet naar één waarde, maar naar \textit{hoogstens} of \textit{minstens} een waarde. Daarvoor tel je kansen op.
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{cumulatieve verdelingsfunctie}} van $X$ is de functie \quad $\formule{F(x) = P(X \leqslant x)}$
+\end{theorie}
+
+\naast{\begin{minipage}{9cm}
+Bij twee munten met $X$ het aantal keer kop is $P(X = 0) = \frac14$, $P(X = 1) = \frac12$ en $P(X = 2) = \frac14$. Dan is $F(x) = 0$ voor $x < 0$, $F(x) = \frac14$ voor $0 \leqslant x < 1$, $F(x) = \frac34$ voor $1 \leqslant x < 2$, en $F(x) = 1$ voor $x \geqslant 2$. De grafiek is een trap: bij elke waarde springt ze omhoog met de kans van die waarde. Met $F$ bereken je ook \textit{minstens}: $P(X \geqslant 1) = 1 - F(0) = \frac34$.
+\end{minipage}}{\begin{tikzpicture}[x=1cm,y=2.4cm,font=\scriptsize]
+  \draw[black!14,very thin] (-1,0) grid[xstep=1,ystep=.25] (3,1);
+  \draw[->,grijs] (-1.2,0) -- (3.3,0) node[right,text=black] {$x$};
+  \draw[->,grijs] (0,0) -- (0,1.15) node[above,text=black] {$F(x)$};
+  \foreach \x in {1,2}{\node[below] at (\x,0) {\x};}
+  \foreach \t/\l in {.25/{\frac14},.75/{\frac34},1/1}{\node[left] at (0,\t) {$\l$};}
+  \draw[accent,very thick] (-1,0) -- (0,0) (0,.25) -- (1,.25) (1,.75) -- (2,.75) (2,1) -- (3,1);
+  \foreach \x/\y in {0/.25,1/.75,2/1}{\fill[accent] (\x,\y) circle (1.8pt);}
+  \foreach \x/\y in {0/0,1/.25,2/.75}{\draw[accent,fill=white] (\x,\y) circle (1.8pt);}
+\end{tikzpicture}}
+
+\begin{oefeningen}
+\oef{h3-cumulatief}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h3-o1}
+
+\oef{h3-o2}
+
+\oef{h3-o3}
+
+\oef{h3-o4}
+
+\oef{h3-o5}
+
+\oef{h3-o6}
+
+\oef{h3-o7}
+
+\oef{h3-o8}
+
+\oef{h3-o9}
+
+\oef{h3-o10}
+
+\oef{h3-o11}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{De eerste oefening gebruikt het gemiddelde en de standaardafwijking uit de 2de graad. De tweede gebruikt een meetkundige reeks uit de cursus Rijen (6de jaar); als die nog niet gezien is, kan ze met een simulatie.}
+
+\begin{oefeningen}
+\oef{h3-koppel-1}
+
+\oef{h3-koppel-2}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h3-t1}
+
+\oef{h3-t2}
+
+\oef{h3-t3}
+
+\oef{h3-t4}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h3-t1}{vb:h3-verdeling}{oef:h3-verdeling}%
+  \fv{oef:h3-t2}{vb:h3-verwachting}{oef:h3-verwachting}%
+  \fv{oef:h3-t3}{vb:h3-sigma}{oef:h3-sigma}%
+  \fzv{oef:h3-t4}{oef:h3-cumulatief}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: wat een toevalsvariabele en een kansverdeling zijn, het verschil tussen discreet en continu, de verwachtingswaarde en wat een eerlijk spel is, de variantie en de standaardafwijking met de rekenformule, en de cumulatieve verdelingsfunctie. Vergelijk daarna met de kaders.
+\fi

@@ -1,0 +1,365 @@
+# Oefeningen van hoofdstuk 4. Zie oefeningenbank.py voor de velden.
+
+- id: h4-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Bereken $\binom{10}{3}$ en $\binom{12}{2}$.
+      antwoord: |-
+        120 en 66
+      uitwerking: |-
+        $\frac{10 \cdot 9 \cdot 8}{6} = 120$ en $\frac{12 \cdot 11}{2} = 66$.
+    - opgave: |-
+        Bereken $0{,}8^3 \cdot 0{,}2^2$.
+      antwoord: |-
+        $0{,}02048$
+      uitwerking: |-
+        $0{,}512 \cdot 0{,}04 = 0{,}02048$.
+    - opgave: |-
+        Je gooit 4 keer met een dobbelsteen. Wat is de kans op het rijtje zes, geen zes, zes, geen zes?
+      antwoord: |-
+        $\tfrac{25}{1296}$
+      uitwerking: |-
+        Onafhankelijke worpen: $\frac16 \cdot \frac56 \cdot \frac16 \cdot \frac56 = \frac{25}{1296}$.
+    - opgave: |-
+        Op hoeveel manieren kies je 2 plaatsen uit 4?
+      antwoord: |-
+        6
+      uitwerking: |-
+        $\binom42 = 6$.
+    - opgave: |-
+        Een toevalsvariabele neemt de waarden 0, 1, 2 aan met kansen 0,49; 0,42; 0,09. Bereken $\E(X)$.
+      antwoord: |-
+        $0{,}6$
+      uitwerking: |-
+        $0 + 0{,}42 + 0{,}18 = 0{,}6$.
+    - opgave: |-
+        Wat is het complement van \textit{minstens 3}, als de waarden 0 tot 10 zijn?
+      antwoord: |-
+        hoogstens 2
+      uitwerking: |-
+        \textit{Hoogstens 2}: de waarden 0, 1 en 2.
+
+- id: h4-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken}\quad Een basketbalspeler scoort een vrijworp met kans 0,7, onafhankelijk van de vorige. Hij neemt 4 vrijworpen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Wat is de kans dat hij de eerste twee scoort en de laatste twee mist (SSMM)?
+      antwoord: |-
+        $0{,}0441$
+      uitwerking: |-
+        $0{,}7 \cdot 0{,}7 \cdot 0{,}3 \cdot 0{,}3 = 0{,}0441$.
+    - opgave: |-
+        Schrijf alle rijtjes op met precies twee keer scoren. Hebben ze allemaal dezelfde kans?
+      antwoord: |-
+        6 rijtjes, elk $0{,}0441$
+      uitwerking: |-
+        SSMM, SMSM, SMMS, MSSM, MSMS, MMSS: 6 rijtjes. Elk bevat twee keer 0,7 en twee keer 0,3, dus elk heeft kans $0{,}7^2 \cdot 0{,}3^2 = 0{,}0441$.
+    - opgave: |-
+        Wat is de kans dat hij precies twee keer scoort? Waar komt het getal 6 vandaan?
+      antwoord: |-
+        $0{,}2646$; \ $\binom42$
+      uitwerking: |-
+        $6 \cdot 0{,}0441 = 0{,}2646$. Er zijn $\binom42 = 6$ manieren om de twee worpen te kiezen die hij scoort.
+
+- id: h4-formule
+  soort: kort
+  opgave: |-
+    Bereken.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Je gooit 8 keer met een munt. Wat is de kans op hoogstens 2 keer kop?
+      antwoord: |-
+        $\approx 0{,}145$
+      uitwerking: |-
+        $X \sim B(8;\, 0{,}5)$: $P(X \leqslant 2) = \frac{1 + 8 + 28}{256} = \frac{37}{256} \approx 0{,}145$.
+    - opgave: |-
+        Je gooit 12 keer met een dobbelsteen. Wat is de kans op precies 2 zessen? Op minstens 2?
+      antwoord: |-
+        $\approx 0{,}296$; \ $\approx 0{,}619$
+      uitwerking: |-
+        $X \sim B(12;\, \tfrac16)$: $P(X = 2) = \binom{12}{2}\bigl(\frac16\bigr)^2\bigl(\frac56\bigr)^{10} \approx 0{,}296$. $P(X \geqslant 2) = 1 - P(X \leqslant 1) \approx 0{,}619$.
+
+- id: h4-mu
+  soort: kort
+  opgave: |-
+    Een eigenschap komt voor bij 15~\% van de bevolking. Je kiest willekeurig 20 personen uit een grote stad. $X$ is het aantal met die eigenschap.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $\E(X)$ en $\sigma$.
+      antwoord: |-
+        3; \ $\approx 1{,}60$
+      uitwerking: |-
+        $\E(X) = 20 \cdot 0{,}15 = 3$ en $\sigma = \sqrt{20 \cdot 0{,}15 \cdot 0{,}85} \approx 1{,}60$.
+    - opgave: |-
+        Wat is de kans op precies 3? Op minstens 1?
+      antwoord: |-
+        $\approx 0{,}243$; \ $\approx 0{,}961$
+      uitwerking: |-
+        $P(X = 3) \approx 0{,}243$. $P(X \geqslant 1) = 1 - 0{,}85^{20} \approx 0{,}961$.
+
+- id: h4-verrassend
+  soort: kort
+  opgave: |-
+    In een groep van 20 willekeurige personen uit de stad van de vorige oefening hebben er 6 de eigenschap. Bereken $P(X \geqslant 6)$. Is dat verrassend?
+  antwoord: |-
+    $\approx 0{,}067$; niet echt
+  uitwerking: |-
+    $P(X \geqslant 6) = 1 - P(X \leqslant 5) \approx 0{,}067$. Ongeveer 7~\%: niet heel gewoon, maar ook niet zo zeldzaam dat je aan het model moet twijfelen. 6 ligt $\frac{6 - 3}{1{,}6} \approx 1{,}9$ standaardafwijkingen boven het gemiddelde.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h4-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    strafschoppen
+  opgave: |-
+    Een speler scoort een strafschop met kans 0,8, onafhankelijk van vorige. Hij neemt er 5. Wat is de kans dat hij er precies 4 scoort? Minstens 4?
+  antwoord: |-
+    $0{,}4096$; \ $\approx 0{,}737$
+  uitwerking: |-
+    $X \sim B(5;\, 0{,}8)$. $P(X = 4) = 5 \cdot 0{,}8^4 \cdot 0{,}2 = 0{,}4096$. $P(X \geqslant 4) = 0{,}4096 + 0{,}8^5 = 0{,}4096 + 0{,}32768 \approx 0{,}737$.
+
+- id: h4-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    kwaliteitscontrole
+  opgave: |-
+    Van alle lampen uit een grote productie is 2~\% defect. Een controleur test er 50. Wat is de kans dat er geen enkele defect is? Hoogstens 2? Hoeveel defecte verwacht je?
+  antwoord: |-
+    $\approx 0{,}364$; \ $\approx 0{,}922$; \ 1
+  uitwerking: |-
+    $X \sim B(50;\, 0{,}02)$. $P(X = 0) = 0{,}98^{50} \approx 0{,}364$. $P(X \leqslant 2) \approx 0{,}922$. $\E(X) = 50 \cdot 0{,}02 = 1$.
+
+- id: h4-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    binomiaal of niet
+  opgave: |-
+    Is $X$ binomiaal? Geef zo ja $n$ en $p$; zo nee, welke voorwaarde ontbreekt?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $X$ is het aantal zessen bij 20 worpen met een dobbelsteen.
+      antwoord: |-
+        ja: $n = 20$, $p = \frac16$
+      uitwerking: |-
+        Ja: 20 onafhankelijke worpen met telkens kans $\frac16$.
+    - opgave: |-
+        $X$ is het aantal azen bij 5 kaarten uit een spel van 52, zonder teruglegging.
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: zonder teruglegging verandert de kans op een aas na elke kaart, en de trekkingen zijn niet onafhankelijk.
+    - opgave: |-
+        $X$ is het aantal worpen tot de eerste zes.
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: het aantal herhalingen ligt niet vast, en $X$ telt geen successen.
+
+- id: h4-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: overboeking
+  opgave: |-
+    Een luchtvaartmaatschappij verkoopt 52 tickets voor een vlucht met 50 plaatsen, omdat elke passagier, onafhankelijk van de andere, maar met kans 0,9 komt opdagen. Wat is de kans dat er te veel passagiers zijn? Hoeveel passagiers verwacht ze?
+  antwoord: |-
+    $\approx 0{,}028$; \ $46{,}8$
+  uitwerking: |-
+    $X \sim B(52;\, 0{,}9)$. Te veel: $P(X \geqslant 51) = 1 - P(X \leqslant 50) \approx 0{,}028$. Verwacht: $52 \cdot 0{,}9 = 46{,}8$.
+
+- id: h4-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    de meest waarschijnlijke waarde
+  opgave: |-
+    Voor $X \sim B(20;\, 0{,}3)$: bereken $P(X = k)$ voor $k = 4, 5, 6, 7, 8$. Welke waarde is het meest waarschijnlijk? Vergelijk met $\E(X)$.
+  antwoord: |-
+    6; \ $\E(X) = 6$
+  uitwerking: |-
+    De kansen zijn ongeveer $0{,}130$; $0{,}179$; $0{,}192$; $0{,}164$; $0{,}114$. De grootste is $P(X = 6)$, en $\E(X) = 20 \cdot 0{,}3 = 6$.
+
+- id: h4-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    gokken op een toets
+  opgave: |-
+    Een toets heeft 15 meerkeuzevragen met 5 antwoorden. Een leerling die niets weet, gokt. Wat is zijn verwachte score? Wat is de kans dat hij er minstens 8 juist heeft? Leg uit waarom gokken hier geen goede strategie is.
+  antwoord: |-
+    3; \ $\approx 0{,}004$
+  uitwerking: |-
+    $X \sim B(15;\, 0{,}2)$: $\E(X) = 3$. $P(X \geqslant 8) = 1 - P(X \leqslant 7) \approx 0{,}004$. De kans om te slagen door te gokken is bijna 0.
+
+- id: h4-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    misvattingen
+  opgave: |-
+    Waar of vals? Verklaar.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bij $X \sim B(100;\, 0{,}5)$ is $P(X = 50) = \frac12$.
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: 50 is de meest waarschijnlijke waarde, maar haar kans is maar $\binom{100}{50}0{,}5^{100} \approx 0{,}08$.
+    - opgave: |-
+        $P(X < 4) = P(X \leqslant 4)$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: $P(X < 4) = P(X \leqslant 3)$. Bij een discrete verdeling telt de grens.
+    - opgave: |-
+        Bij $p = 0{,}5$ is de binomiale verdeling symmetrisch.
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $P(X = k) = \binom{n}{k}0{,}5^n = \binom{n}{n - k}0{,}5^n = P(X = n - k)$.
+    - opgave: |-
+        Als je $n$ verdubbelt, verdubbelt ook de standaardafwijking.
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: $\sigma = \sqrt{np(1 - p)}$ wordt maar $\sqrt2$ keer zo groot.
+
+- id: h4-o8
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    is de munt eerlijk
+  opgave: |-
+    Iemand gooit een munt 100 keer en krijgt 56 keer kop. Een ander krijgt 60 keer kop. Bereken voor beide de kans op minstens zoveel keer kop bij een eerlijke munt. Welke uitkomst maakt je wantrouwig?
+  antwoord: |-
+    $\approx 0{,}136$; \ $\approx 0{,}028$
+  uitwerking: |-
+    $P(X \geqslant 56) = 1 - P(X \leqslant 55) \approx 0{,}136$: gebeurt geregeld. $P(X \geqslant 60) = 1 - P(X \leqslant 59) \approx 0{,}028$: zelden, en 60 ligt 2 standaardafwijkingen boven 50. Bij 60 keer kop wordt je wantrouwig.
+
+- id: h4-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    hoeveel herhalingen
+  opgave: |-
+    Een loterij geeft bij elk lot met kans 0,05 een prijs, onafhankelijk van andere loten. Hoeveel loten moet je kopen om met minstens 99~\% zekerheid minstens één prijs te winnen? Los op met een logaritme, en controleer.
+  antwoord: |-
+    90
+  uitwerking: |-
+    $P(\text{minstens één}) = 1 - 0{,}95^n \geqslant 0{,}99 \iff 0{,}95^n \leqslant 0{,}01 \iff n \geqslant \frac{\log 0{,}01}{\log 0{,}95} \approx 89{,}8$. Dus 90 loten. Controle: $1 - 0{,}95^{89} \approx 0{,}9896$ en $1 - 0{,}95^{90} \approx 0{,}9901$.
+
+- id: h4-o10
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    verwachtingswaarde voor n = 2
+  opgave: |-
+    Neem $X \sim B(2, p)$. Schrijf de kansverdeling op, en toon met de definities uit hoofdstuk 3 aan dat $\E(X) = 2p$ en $\Var(X) = 2p(1 - p)$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    $P(X = 0) = (1 - p)^2$, $P(X = 1) = 2p(1 - p)$, $P(X = 2) = p^2$. Dan is $\E(X) = 2p(1 - p) + 2p^2 = 2p$, en $\E(X^2) = 2p(1 - p) + 4p^2 = 2p + 2p^2$, dus $\Var(X) = 2p + 2p^2 - 4p^2 = 2p - 2p^2 = 2p(1 - p)$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h4-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: discreet
+    onderwerp: Telproblemen
+  thema: |-
+    binomium van Newton
+  opgave: |-
+    Toon met het binomium van Newton aan dat de kansen $\binom{n}{k}p^k(1 - p)^{n - k}$ voor $k = 0, 1, \ldots, n$ samen 1 zijn. Verklaar ook de naam \textit{binomiale} verdeling.
+  antwoord: |-
+    $(p + (1 - p))^n = 1$
+  uitwerking: |-
+    $\sum_{k=0}^{n}\binom{n}{k}p^k(1 - p)^{n - k} = \bigl(p + (1 - p)\bigr)^n = 1^n = 1$. De kansen zijn de termen van het binomium $(p + q)^n$ met $q = 1 - p$: daar komt de naam vandaan.
+
+- id: h4-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Logaritmen
+  thema: |-
+    zeldzame gebeurtenissen
+  opgave: |-
+    Een zeldzame bijwerking komt voor bij 1 op 1000 patiënten. Hoeveel patiënten moet een studie minstens tellen om met 95~\% kans minstens één geval te zien?
+  antwoord: |-
+    2995
+  uitwerking: |-
+    $1 - 0{,}999^n \geqslant 0{,}95 \iff n \geqslant \frac{\log 0{,}05}{\log 0{,}999} \approx 2994{,}2$. Dus minstens 2995 patiënten, ongeveer drie keer het omgekeerde van de kans.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h4-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    binomiale kans
+  opgave: |-
+    Je gooit 6 keer met een dobbelsteen. Een worp is een succes bij 5 of 6. Wat is de kans op precies 2 successen?
+  antwoord: |-
+    $\approx 0{,}329$
+  uitwerking: |-
+    $p = \frac13$: $\binom62\bigl(\frac13\bigr)^2\bigl(\frac23\bigr)^4 = 15 \cdot \frac19 \cdot \frac{16}{81} = \frac{80}{243} \approx 0{,}329$.
+
+- id: h4-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    cumulatieve kans
+  opgave: |-
+    $X \sim B(15;\, 0{,}4)$. Bereken $P(X \leqslant 3)$ en $P(X \geqslant 10)$ met je rekentoestel.
+  antwoord: |-
+    $\approx 0{,}091$; \ $\approx 0{,}034$
+  uitwerking: |-
+    $P(X \leqslant 3) \approx 0{,}091$. $P(X \geqslant 10) = 1 - P(X \leqslant 9) \approx 0{,}034$.
+
+- id: h4-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    verwachtingswaarde en standaardafwijking
+  opgave: |-
+    Bereken $\E(X)$ en $\sigma$ voor het aantal successen uit opgave \ref{oef:h4-t1}.
+  antwoord: |-
+    2; \ $\approx 1{,}15$
+  uitwerking: |-
+    $\E(X) = 6 \cdot \frac13 = 2$ en $\sigma = \sqrt{6 \cdot \frac13 \cdot \frac23} = \sqrt{\frac43} \approx 1{,}15$.
+
+- id: h4-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    een uitkomst beoordelen
+  opgave: |-
+    Een fabrikant beweert dat 90~\% van zijn zaadjes kiemt. Je zaait er 12 en er kiemen maar 8. Bereken $P(X \leqslant 8)$ als de bewering klopt. Wat besluit je?
+  antwoord: |-
+    $\approx 0{,}026$
+  uitwerking: |-
+    $X \sim B(12;\, 0{,}9)$: $P(X \leqslant 8) \approx 0{,}026$. Als de bewering klopt, gebeurt dit maar in ongeveer 3~\% van de gevallen: een reden om aan de bewering te twijfelen, maar geen bewijs.

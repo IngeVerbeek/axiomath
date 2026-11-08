@@ -1,0 +1,468 @@
+# Oefeningen van hoofdstuk 1. Zie oefeningenbank.py voor de velden.
+
+- id: h1-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Schrijf $\frac38$ als decimaal getal en als percentage.
+      antwoord: |-
+        $0{,}375 = 37{,}5$~\%
+      uitwerking: |-
+        $3 : 8 = 0{,}375$, en dat is $37{,}5$~\%.
+    - opgave: |-
+        Hoeveel uitkomsten zijn er als je twee dobbelstenen (een rode en een blauwe) gooit?
+      antwoord: |-
+        36
+      uitwerking: |-
+        Productregel: $6 \cdot 6 = 36$.
+    - opgave: |-
+        Hoeveel getallen van 1 tot 20 zijn even of een veelvoud van 3?
+      antwoord: |-
+        13
+      uitwerking: |-
+        Even: 10, veelvoud van 3: 6, beide (veelvoud van 6): 3. Dus $10 + 6 - 3 = 13$.
+    - opgave: |-
+        Bereken $\binom52$.
+      antwoord: |-
+        10
+      uitwerking: |-
+        $\frac{5 \cdot 4}{2} = 10$.
+    - opgave: |-
+        In een klas heeft 35~\% een huisdier. Welk percentage heeft er geen?
+      antwoord: |-
+        65~\%
+      uitwerking: |-
+        $100$~\% $- 35$~\% $= 65$~\%.
+    - opgave: |-
+        In een enquête bij 200 jongeren zegt 46 dat ze dagelijks lezen. Welk deel is dat?
+      antwoord: |-
+        $0{,}23$
+      uitwerking: |-
+        $\frac{46}{200} = 0{,}23$, of 23~\%.
+
+- id: h1-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken}\quad Je gooit met een rode en een blauwe dobbelsteen en telt de ogen op.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Maak een tabel met 6 rijen (rood) en 6 kolommen (blauw), en vul in elk vakje de som in.
+      antwoord: |-
+        36 vakjes, sommen van 2 tot 12
+      uitwerking: |-
+        Het vakje in rij $a$ en kolom $b$ bevat $a + b$. De sommen gaan van 2 tot 12.
+    - opgave: |-
+        In hoeveel vakjes staat 7? En 2? En 12?
+      antwoord: |-
+        6; 1; 1
+      uitwerking: |-
+        Som 7: $(1, 6), (2, 5), (3, 4), (4, 3), (5, 2), (6, 1)$: 6 vakjes. Som 2 en som 12: elk 1 vakje.
+    - opgave: |-
+        Welke som verwacht je het vaakst als je honderden keren gooit?
+      antwoord: |-
+        7
+      uitwerking: |-
+        7, want die staat in de meeste vakjes, en alle vakjes zijn even waarschijnlijk.
+    - opgave: |-
+        Tim zegt: \textit{er zijn 11 mogelijke sommen, dus de kans op som 7 is $\frac{1}{11}$}. Wat is er fout?
+      antwoord: |-
+        de 11 sommen zijn niet even waarschijnlijk
+      uitwerking: |-
+        De 11 sommen zijn niet even waarschijnlijk: 7 komt in 6 van de 36 even waarschijnlijke vakjes, 2 maar in 1. De kans op 7 is $\frac{6}{36} = \frac16$.
+
+- id: h1-gebeurtenis
+  soort: kort
+  opgave: |-
+    Je gooit met een dobbelsteen. Noem $A$ \textit{een oneven getal}, $B$ \textit{hoogstens 2} en $C$ \textit{een zes}.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Schrijf $A$, $B$, $\compl{A}$, $A \cap B$ en $A \cup B$ als verzameling.
+      antwoord: |-
+        $\{1, 3, 5\}$, $\{1, 2\}$, $\{2, 4, 6\}$, $\{1\}$, $\{1, 2, 3, 5\}$
+      uitwerking: |-
+        $A = \{1, 3, 5\}$, $B = \{1, 2\}$, $\compl{A} = \{2, 4, 6\}$, $A \cap B = \{1\}$, $A \cup B = \{1, 2, 3, 5\}$.
+    - opgave: |-
+        Welke van de drie gebeurtenissen zijn onverenigbaar?
+      antwoord: |-
+        $A$ en $C$; $B$ en $C$
+      uitwerking: |-
+        $A \cap C = \emptyset$ en $B \cap C = \emptyset$. $A$ en $B$ zijn niet onverenigbaar, want ze hebben 1 gemeen.
+
+- id: h1-laplace
+  soort: kort
+  opgave: |-
+    Je gooit met twee dobbelstenen. Wat is de kans op
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        een dubbel (twee keer hetzelfde)?
+      antwoord: |-
+        $\tfrac16$
+      uitwerking: |-
+        6 koppels $(1, 1), \ldots, (6, 6)$ van de 36: $\frac{6}{36} = \frac16$.
+    - opgave: |-
+        som 8?
+      antwoord: |-
+        $\tfrac{5}{36}$
+      uitwerking: |-
+        $(2, 6), (3, 5), (4, 4), (5, 3), (6, 2)$: $\frac{5}{36}$.
+    - opgave: |-
+        minstens één zes?
+      antwoord: |-
+        $\tfrac{11}{36}$
+      uitwerking: |-
+        Geen zes: $5 \cdot 5 = 25$ koppels. Minstens één: $36 - 25 = 11$, dus $\frac{11}{36}$.
+
+- id: h1-frequentie
+  soort: kort
+  opgave: |-
+    In een stad werden in een jaar 1200 baby's geboren, van wie 618 jongens.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Schat de kans dat een pasgeboren baby een jongen is.
+      antwoord: |-
+        $\approx 0{,}515$
+      uitwerking: |-
+        $\frac{618}{1200} = 0{,}515$.
+    - opgave: |-
+        Hoeveel meisjes verwacht je bij 400 geboorten?
+      antwoord: |-
+        $\approx 194$
+      uitwerking: |-
+        De kans op een meisje is ongeveer $1 - 0{,}515 = 0{,}485$, dus $400 \cdot 0{,}485 = 194$.
+
+- id: h1-regels
+  soort: kort
+  opgave: |-
+    Gebruik de rekenregels.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Gegeven: $P(A) = 0{,}3$, $P(B) = 0{,}5$ en $P(A \cap B) = 0{,}1$. Bereken $P(A \cup B)$, $P(\compl{A})$ en de kans dat geen van beide gebeurt.
+      antwoord: |-
+        $0{,}7$; $0{,}7$; $0{,}3$
+      uitwerking: |-
+        $P(A \cup B) = 0{,}3 + 0{,}5 - 0{,}1 = 0{,}7$, $P(\compl{A}) = 1 - 0{,}3 = 0{,}7$. Geen van beide is het complement van $A \cup B$: $1 - 0{,}7 = 0{,}3$.
+    - opgave: |-
+        Je gooit vijf keer met een munt. Wat is de kans op minstens één keer kop?
+      antwoord: |-
+        $\tfrac{31}{32}$
+      uitwerking: |-
+        Geen kop: $\frac{1}{2^5} = \frac{1}{32}$. Minstens één: $1 - \frac{1}{32} = \frac{31}{32}$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h1-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    Laplace met een vaas
+  opgave: |-
+    In een vaas zitten 5 rode, 3 blauwe en 2 groene knikkers. Je trekt er blindelings één. Wat is de kans op een rode? Op een knikker die niet blauw is?
+  antwoord: |-
+    $\tfrac12$; \ $\tfrac{7}{10}$
+  uitwerking: |-
+    $P(\text{rood}) = \frac{5}{10} = \frac12$. $P(\text{niet blauw}) = 1 - \frac{3}{10} = \frac{7}{10}$.
+
+- id: h1-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    twee dobbelstenen
+  opgave: |-
+    Je gooit met twee dobbelstenen. Bereken de kans dat het verschil van de ogen 2 is, en de kans dat de som 5 of 6 is.
+  antwoord: |-
+    $\tfrac29$; \ $\tfrac14$
+  uitwerking: |-
+    Verschil 2: $(1, 3), (2, 4), (3, 5), (4, 6)$ en omgekeerd: 8 koppels, $\frac{8}{36} = \frac29$.\par
+    Som 5: 4 koppels, som 6: 5 koppels, onverenigbaar: $\frac{9}{36} = \frac14$.
+
+- id: h1-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    complement
+  opgave: |-
+    Je gooit drie keer met een dobbelsteen. Wat is de kans op minstens één zes?
+  antwoord: |-
+    $\tfrac{91}{216} \approx 0{,}421$
+  uitwerking: |-
+    $1 - \bigl(\frac56\bigr)^3 = 1 - \frac{125}{216} = \frac{91}{216} \approx 0{,}421$.
+
+- id: h1-o4
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    rangschikkingen
+  opgave: |-
+    De letters A, B, C, D en E worden in een willekeurige volgorde gezet. Wat is de kans dat A vooraan staat? En dat A en B naast elkaar staan?
+  antwoord: |-
+    $\tfrac15$; \ $\tfrac25$
+  uitwerking: |-
+    A vooraan: $\frac{4!}{5!} = \frac15$. A en B naast elkaar: als blok $4! \cdot 2 = 48$ van de 120 rangschikkingen, dus $\frac{48}{120} = \frac25$.
+
+- id: h1-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    kaarten en combinaties
+  opgave: |-
+    Je krijgt 5 kaarten uit een spel van 52. Bereken met combinaties de kans op
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        vijf harten;
+      antwoord: |-
+        $\approx 0{,}000\,495$
+      uitwerking: |-
+        $\frac{\binom{13}{5}}{\binom{52}{5}} = \frac{1287}{2\,598\,960} \approx 0{,}000\,495$.
+    - opgave: |-
+        minstens één aas.
+      antwoord: |-
+        $\approx 0{,}341$
+      uitwerking: |-
+        Geen aas: $\frac{\binom{48}{5}}{\binom{52}{5}} \approx 0{,}659$. Minstens één: $1 - 0{,}659 \approx 0{,}341$.
+
+- id: h1-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    gekozen worden
+  opgave: |-
+    Uit een klas van 25 leerlingen worden er 3 willekeurig gekozen voor een interview. Wat is de kans dat Lisa erbij is? Leg ook uit waarom het antwoord $\frac{3}{25}$ logisch is.
+  antwoord: |-
+    $\tfrac{3}{25}$
+  uitwerking: |-
+    Groepen met Lisa: kies de andere 2 uit 24: $\binom{24}{2} = 276$. Alle groepen: $\binom{25}{3} = 2300$. Dus $\frac{276}{2300} = \frac{3}{25}$. Logisch: er zijn 3 plaatsen voor 25 leerlingen, en elke leerling heeft dezelfde kans.
+
+- id: h1-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    misvattingen
+  opgave: |-
+    Waar of vals? Verklaar.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Voor elke twee gebeurtenissen is $P(A \cup B) = P(A) + P(B)$.
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: alleen als ze onverenigbaar zijn. Anders tel je $P(A \cap B)$ dubbel.
+    - opgave: |-
+        Een munt landde vijf keer na elkaar op kop. De kans op munt bij de volgende worp is nu groter dan $\frac12$.
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: een munt heeft geen geheugen. De kans blijft $\frac12$.
+    - opgave: |-
+        Bij een vervalste dobbelsteen kun je de kans op een zes niet met de wet van Laplace berekenen.
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: de zes uitkomsten zijn niet even waarschijnlijk. Je kunt de kans wel schatten met een relatieve frequentie.
+    - opgave: |-
+        Als $P(A) = 0{,}6$ en $P(B) = 0{,}7$, dan kunnen $A$ en $B$ niet onverenigbaar zijn.
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: anders was $P(A \cup B) = 1{,}3 > 1$.
+
+- id: h1-o8
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een code raden
+  opgave: |-
+    Een dief probeert een pincode van 4 cijfers te raden, en heeft 3 pogingen voor de kaart geblokkeerd wordt. Hij probeert telkens een andere code. Wat is de kans dat hij de juiste vindt?
+  antwoord: |-
+    $\tfrac{3}{10\,000}$
+  uitwerking: |-
+    Er zijn $10^4 = 10\,000$ even waarschijnlijke codes, en hij probeert er 3 verschillende: $\frac{3}{10\,000} = 0{,}0003$.
+
+- id: h1-o9
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    gedeelde verjaardag
+  opgave: |-
+    In een groep van 30 personen: wat is de kans dat minstens twee personen op dezelfde dag verjaren? Neem aan dat elke dag even waarschijnlijk is, zonder 29 februari, en gebruik je rekentoestel.
+  antwoord: |-
+    $\approx 0{,}706$
+  uitwerking: |-
+    Allemaal verschillend: $\frac{365 \cdot 364 \cdots 336}{365^{30}} \approx 0{,}294$. Het complement: $1 - 0{,}294 \approx 0{,}706$.
+
+- id: h1-o10
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    drie dobbelstenen
+  opgave: |-
+    Met drie dobbelstenen kun je som 9 gooien als $1 + 2 + 6$, $1 + 3 + 5$, $1 + 4 + 4$, $2 + 2 + 5$, $2 + 3 + 4$ en $3 + 3 + 3$: zes manieren. Ook voor som 10 zijn er zes zulke manieren. Toch komt 10 vaker voor. Bereken beide kansen en verklaar.
+  antwoord: |-
+    $\tfrac{25}{216}$ en $\tfrac{27}{216}$
+  uitwerking: |-
+    De even waarschijnlijke uitkomsten zijn geordende drietallen, $6^3 = 216$. Bij som 9 geven $1 + 2 + 6$, $1 + 3 + 5$ en $2 + 3 + 4$ elk $3! = 6$ drietallen, $1 + 4 + 4$ en $2 + 2 + 5$ elk 3, en $3 + 3 + 3$ maar 1: samen $18 + 6 + 1 = 25$. Bij som 10 ($1 + 3 + 6$, $1 + 4 + 5$, $2 + 2 + 6$, $2 + 3 + 5$, $2 + 4 + 4$, $3 + 3 + 4$): $6 + 6 + 3 + 6 + 3 + 3 = 27$. Dus $P(9) = \frac{25}{216}$ en $P(10) = \frac{27}{216}$.
+
+- id: h1-o11
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    brieven en enveloppen
+  opgave: |-
+    Vier brieven worden willekeurig in vier geadresseerde enveloppen gestoken. Wat is de kans dat geen enkele brief in de juiste envelop zit? Tel de gunstige rangschikkingen systematisch.
+  antwoord: |-
+    $\tfrac38$
+  uitwerking: |-
+    Er zijn $4! = 24$ rangschikkingen. Brief 1 gaat naar een van de 3 andere enveloppen, zeg envelop 2. Gaat brief 2 dan naar envelop 1, dan moeten brieven 3 en 4 wisselen: 1 manier. Gaat brief 2 naar envelop 3 of 4, dan ligt de rest vast: 2 manieren. Samen $3 \cdot 3 = 9$ gunstige rangschikkingen: $\frac{9}{24} = \frac38$.
+
+- id: h1-o12
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    somregel voor drie gebeurtenissen
+  opgave: |-
+    Toon met een venndiagram aan dat $P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(A \cap B) - P(A \cap C) - P(B \cap C) + P(A \cap B \cap C)$. Bereken zo de kans dat een getal van 1 tot 30, willekeurig gekozen, deelbaar is door 2, 3 of 5.
+  antwoord: |-
+    $\tfrac{22}{30} = \tfrac{11}{15}$
+  uitwerking: |-
+    In het diagram telt het middelste stuk drie keer mee in de eerste som, wordt het drie keer afgetrokken, en moet het dus nog één keer bij. De stukken met twee verzamelingen tellen twee keer mee en worden één keer afgetrokken.\par
+    $\frac{15 + 10 + 6 - 5 - 3 - 2 + 1}{30} = \frac{22}{30} = \frac{11}{15}$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h1-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: meetkunde
+    onderwerp: Oppervlakte
+  thema: |-
+    kans met oppervlakten
+  figuur:
+    code: |-
+      \begin{tikzpicture}[scale=1.1]
+        \draw[grijs,thick] (-1,-1) rectangle (1,1);
+        \draw[verz] (0,0) circle (1);
+        \foreach \p in {(.3,.4),(-.6,.2),(.75,-.8),(-.2,-.5),(.85,.85),(-.9,-.75),(.1,.05),(-.4,.75)}{\fill[fel!80!black] \p circle (1.2pt);}
+      \end{tikzpicture}
+  opgave: |-
+    Een pijltje landt op een willekeurige plaats in een vierkant met zijde 2. In het vierkant ligt een cirkel met straal 1. Elke plaats is even waarschijnlijk, dus de kans op een gebied is zijn oppervlakte gedeeld door die van het vierkant.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Wat is de kans dat het pijltje in de cirkel landt?
+      antwoord: |-
+        $\tfrac{\pi}{4} \approx 0{,}785$
+      uitwerking: |-
+        $\frac{\pi \cdot 1^2}{2^2} = \frac{\pi}{4} \approx 0{,}785$.
+    - opgave: |-
+        Een computer gooit 10\,000 virtuele pijltjes, en 7\,862 landen in de cirkel. Welke benadering van $\pi$ volgt daaruit?
+      antwoord: |-
+        $\approx 3{,}145$
+      uitwerking: |-
+        De relatieve frequentie benadert $\frac{\pi}{4}$: $\pi \approx 4 \cdot 0{,}7862 = 3{,}1448$.
+
+- id: h1-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: discreet
+    onderwerp: Telproblemen
+  thema: |-
+    allemaal verschillende cijfers
+  opgave: |-
+    Een computer kiest 5 willekeurige cijfers na elkaar (elk van 0 tot 9, herhaling toegelaten). Wat is de kans dat de 5 cijfers allemaal verschillend zijn? Gebruik variaties en herhalingsvariaties.
+  antwoord: |-
+    $\tfrac{30\,240}{100\,000} \approx 0{,}302$
+  uitwerking: |-
+    Mogelijke rijtjes: herhalingsvariaties, $10^5 = 100\,000$. Gunstige: variaties, $10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 = 30\,240$. De kans is $0{,}3024$.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h1-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    Laplace met twee dobbelstenen
+  opgave: |-
+    Je gooit met twee dobbelstenen. Wat is de kans dat de som 5 is?
+  antwoord: |-
+    $\tfrac19$
+  uitwerking: |-
+    $(1, 4), (2, 3), (3, 2), (4, 1)$: $\frac{4}{36} = \frac19$.
+
+- id: h1-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    complement
+  opgave: |-
+    Je gooit vier keer met een munt. Wat is de kans op minstens één keer kop?
+  antwoord: |-
+    $\tfrac{15}{16}$
+  uitwerking: |-
+    $1 - \frac{1}{2^4} = \frac{15}{16}$.
+
+- id: h1-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    somregel met overlap
+  opgave: |-
+    Je trekt een kaart uit een spel van 52. Wat is de kans op een harten of een prentkaart (boer, vrouw of heer)?
+  antwoord: |-
+    $\tfrac{11}{26}$
+  uitwerking: |-
+    $\frac{13}{52} + \frac{12}{52} - \frac{3}{52} = \frac{22}{52} = \frac{11}{26}$.
+
+- id: h1-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    Laplace met combinaties
+  opgave: |-
+    In een vaas zitten 6 rode en 4 witte knikkers. Je trekt er tegelijk 2. Wat is de kans dat ze allebei rood zijn?
+  antwoord: |-
+    $\tfrac13$
+  uitwerking: |-
+    $\frac{\binom62}{\binom{10}{2}} = \frac{15}{45} = \frac13$.
+
+- id: h1-t5
+  soort: test
+  niveau: 1
+  thema: |-
+    relatieve frequentie
+  opgave: |-
+    Een dobbelsteen wordt 600 keer gegooid en landt 132 keer op zes. Schat de kans op een zes. Is de dobbelsteen waarschijnlijk eerlijk?
+  antwoord: |-
+    $0{,}22$; waarschijnlijk niet
+  uitwerking: |-
+    $\frac{132}{600} = 0{,}22$. Bij een eerlijke dobbelsteen verwacht je ongeveer $600 \cdot \frac16 = 100$ zessen. 132 is veel meer: de dobbelsteen is waarschijnlijk niet eerlijk. (Hoe zeker je dat kunt zeggen, zie je in Statistiek.)
+
+- id: h1-t6
+  soort: test
+  niveau: 1
+  thema: |-
+    gebeurtenissen
+  opgave: |-
+    Je kiest een getal van 1 tot 10. Noem $A$ \textit{een priemgetal} en $B$ \textit{een even getal}. Schrijf $A$, $A \cap B$ en $A \cup B$ als verzameling, en bereken $P(A \cup B)$.
+  antwoord: |-
+    $\{2, 3, 5, 7\}$, $\{2\}$, $\{2, 3, 4, 5, 6, 7, 8, 10\}$; $\tfrac45$
+  uitwerking: |-
+    $A = \{2, 3, 5, 7\}$, $B = \{2, 4, 6, 8, 10\}$, $A \cap B = \{2\}$, $A \cup B = \{2, 3, 4, 5, 6, 7, 8, 10\}$. $P(A \cup B) = \frac{8}{10} = \frac45$, of $\frac{4}{10} + \frac{5}{10} - \frac{1}{10}$.
