@@ -1,0 +1,229 @@
+%----------------------------------------------------------------------------------------
+% LOGARITMEN. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h2-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{2}{Logaritmen}
+
+\lkr{Leerplan Basis: LPD 7-10 en K1 (exponentiële en logaritmische functies), het deel over de logaritme als getal, de rekenregels en exponentiële vergelijkingen. De notatie $\log_a x$ is die van de meeste rekentoestellen; de Vlaamse notatie ${}^a\!\log x$ betekent hetzelfde, vermeld ze als leerlingen ze elders tegenkomen. De logaritmische functie zelf komt in hoofdstuk 3.}
+
+Hoe lang duurt het voor een kapitaal aan $3$\,\% intrest verdubbelt? Dan moet $1{,}03^t = 2$, en de onbekende staat in de exponent. Met de rekenregels voor machten raak je ze daar niet uit. Daarvoor dient de logaritme: ze geeft de exponent.
+
+\begin{oefeningen}[Start]
+\oef{h2-start-1}
+
+\oef{h2-verken}
+\end{oefeningen}
+
+%========================================================================================
+\section{Wat is een logaritme?}
+
+\begin{theorie}
+Voor $a > 0$ met $a \neq 1$ en $x > 0$ is de \textbf{\textcolor{accent}{logaritme}} van $x$ met grondtal $a$ de exponent waartoe je $a$ moet verheffen om $x$ te krijgen:
+\[\formule{\log_a x = y \iff a^y = x}.\]
+De \textbf{\textcolor{accent}{briggse logaritme}} heeft grondtal 10: $\formule{\log x = \log_{10} x}$. De \textbf{\textcolor{accent}{natuurlijke logaritme}} heeft grondtal $\e$: $\formule{\ln x = \log_{\e} x}$.
+
+Uit de definitie volgt:
+\[\formule{\log_a 1 = 0} \qquad \formule{\log_a a = 1} \qquad \formule{\log_a a^y = y} \qquad \formule{a^{\log_a x} = x}.\]
+\end{theorie}
+
+Een logaritme is dus een exponent. Van een negatief getal of van $0$ bestaat geen logaritme: een macht van een positief grondtal is altijd positief.
+
+\voorbeeld{}{Bereken zonder rekentoestel: $\log_4 8$.\label{vb:h2-definitie}}{%
+\uitleg{Noem de logaritme $y$ en schrijf de definitie als macht. Schrijf beide leden als macht van hetzelfde grondtal.}
+\begin{stappenbreed}
+\log_4 8 = y \iff 4^y = 8 & Definitie. \\
+2^{2y} = 2^3 & Beide leden als macht van 2. \\
+y = \frac32 & Controle: $4^{\frac32} = (\sqrt4)^3 = 8$.
+\end{stappenbreed}}
+
+\nujij{Bereken $\log_2 32$, $\log 0{,}001$ en $\ln \e^5$.}{$5$, want $2^5 = 32$; $-3$, want $10^{-3} = 0{,}001$; $5$.}
+
+\begin{oefeningen}
+\oef{h2-definitie}
+\end{oefeningen}
+
+%========================================================================================
+\section{Rekenregels}
+
+\begin{theorie}
+\begin{stelling}{Rekenregels voor logaritmen}
+Voor $a > 0$, $a \neq 1$, $x, y > 0$ en $r \in \R$:
+\[\formule{\log_a (xy) = \log_a x + \log_a y} \qquad \formule{\log_a \frac{x}{y} = \log_a x - \log_a y} \qquad \formule{\log_a x^r = r \log_a x}\]
+\end{stelling}
+\begin{bewijs}
+\textit{Productregel.} Stel $p = \log_a x$ en $q = \log_a y$, dus $x = a^p$ en $y = a^q$. Dan is
+\bewijsregel{xy = a^p \cdot a^q = a^{p + q},}
+dus $\log_a(xy) = p + q$. De andere twee regels volgen op dezelfde manier uit $\frac{a^p}{a^q} = a^{p - q}$ en $(a^p)^r = a^{pr}$.
+\end{bewijs}
+
+\begin{stelling}{Verandering van grondtal}
+Voor $a, b > 0$, $a, b \neq 1$ en $x > 0$:
+\[\formule{\log_a x = \frac{\log_b x}{\log_b a}}, \qquad \text{bijvoorbeeld} \qquad \formule{\log_a x = \frac{\ln x}{\ln a}}.\]
+\end{stelling}
+\begin{bewijs}
+Stel $y = \log_a x$, dus $a^y = x$. Neem van beide leden $\log_b$ en gebruik de machtregel:
+\bewijsregel{y \log_b a = \log_b x.}
+Deel door $\log_b a$, dat niet nul is omdat $a \neq 1$.
+\end{bewijs}
+\end{theorie}
+
+Pas op: voor een som is er geen regel. $\log(x + y)$ is \textit{niet} $\log x + \log y$: neem $x = y = 1$, dan is $\log 2 \approx 0{,}301$ maar $\log 1 + \log 1 = 0$.
+
+\voorbeeld{}{Schrijf als één logaritme en bereken: $2\log 5 + \log 4$.\label{vb:h2-rekenregels}}{%
+\uitleg{Breng eerst de factor 2 naar binnen als exponent, en tel dan op met de productregel.}
+\begin{stappenbreed}
+2\log 5 + \log 4 = \log 5^2 + \log 4 & Machtregel. \\
+= \log (25 \cdot 4) = \log 100 & Productregel. \\
+= 2 & $10^2 = 100$.
+\end{stappenbreed}}
+
+\voorbeeld{}{Bereken $\log_2 7$ met je rekentoestel.\label{vb:h2-grondtal}}{%
+\uitleg{Het rekentoestel kent $\log$ en $\ln$ (sommige ook $\log_a$). Gebruik de verandering van grondtal.}
+\begin{stappenbreed}
+\log_2 7 = \frac{\ln 7}{\ln 2} \approx 2{,}807 & Of $\frac{\log 7}{\log 2}$: hetzelfde. \\
+2^{2{,}807} \approx 7{,}00 & Controle.
+\end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h2-rekenregels}
+\end{oefeningen}
+
+%========================================================================================
+\section{Exponentiële vergelijkingen}
+
+Met een logaritme haal je de onbekende uit de exponent.
+
+\voorbeeld{}{Los op: $3 \cdot 2^x = 50$.\label{vb:h2-vergelijking}}{%
+\uitleg{Zonder eerst de macht af. Dan geeft de definitie van de logaritme meteen de exponent.}
+\begin{stappenbreed}
+2^x = \frac{50}{3} & Delen door 3. \\
+x = \log_2 \frac{50}{3} = \frac{\ln \frac{50}{3}}{\ln 2} \approx 4{,}059 & Definitie, dan rekentoestel.
+\end{stappenbreed}}
+
+\voorbeeld{}{Na hoeveel jaar is een kapitaal verdubbeld bij $3$\,\% samengestelde intrest per jaar?\label{vb:h2-verdubbeling}}{%
+\uitleg{Het beginkapitaal $K_0$ valt weg: de verdubbelingstijd hangt er niet van af.}
+\begin{stappenbreed}
+K_0 \cdot 1{,}03^t = 2K_0 \iff 1{,}03^t = 2 & Delen door $K_0$. \\
+t = \frac{\ln 2}{\ln 1{,}03} \approx 23{,}45 & In jaren.
+\end{stappenbreed}
+Na 24 jaar (de intrest wordt per jaar bijgeteld) is het kapitaal meer dan verdubbeld.}
+
+Staat de onbekende in twee exponenten met een ander grondtal, neem dan van beide leden de logaritme.
+
+\voorbeeld{}{Los op: $2^{x + 1} = 3^x$.\label{vb:h2-twee}}{%
+\uitleg{Neem $\ln$ van beide leden en breng de exponenten naar voor met de machtregel. Dan staat er een eerstegraadsvergelijking.}
+\begin{stappenbreed}
+(x + 1)\ln 2 = x \ln 3 & $\ln$ van beide leden. \\
+x(\ln 3 - \ln 2) = \ln 2 & Termen met $x$ samen. \\
+x = \frac{\ln 2}{\ln 3 - \ln 2} = \frac{\ln 2}{\ln 1{,}5} \approx 1{,}710 & Controle: $2^{2{,}710} \approx 6{,}54 \approx 3^{1{,}710}$.
+\end{stappenbreed}}
+
+\begin{werkwijze}
+Zonder de macht af. Staat er één macht, gebruik dan de definitie: $a^x = c \iff x = \log_a c$ (met $c > 0$; anders is er geen oplossing). Staan er machten met een verschillend grondtal, neem dan $\ln$ van beide leden en los de eerstegraadsvergelijking op. Controleer met het rekentoestel.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h2-vergelijking}
+\end{oefeningen}
+
+%========================================================================================
+\section{Logaritmische schalen}
+
+Sommige grootheden lopen over vele machten van 10. De zuurtegraad van een oplossing, de geluidssterkte en de helderheid van sterren meten we daarom met een logaritme: een stap op de schaal is dan een vermenigvuldiging met een vaste factor.
+
+\begin{itemize}
+\item De \textbf{zuurtegraad} is $\mathrm{pH} = -\log [\mathrm{H}^+]$, met $[\mathrm{H}^+]$ de concentratie waterstofionen in mol per liter. Eén pH-eenheid lager is tien keer zuurder.
+\item Het \textbf{geluidsniveau} in decibel is $L = 10 \log \frac{I}{I_0}$, met $I$ de intensiteit en $I_0$ de gehoordrempel. $10$ dB meer is tien keer intenser.
+\item De \textbf{magnitude} van een ster is $m = -2{,}5 \log \frac{I}{I_0}$, met $I$ de helderheid en $I_0$ die van een vaste referentiester. Hoe kleiner $m$, hoe helderder: 5 magnitudes lager is $100$ keer helderder.
+\end{itemize}
+
+\figuren{\begin{tikzpicture}[x=.85cm,font=\scriptsize]
+  \shade[left color=accent!60,right color=accent!5] (0,0) rectangle (14,.35);
+  \draw[accent] (0,0) rectangle (14,.35);
+  \foreach \p in {0,...,14}{\draw (\p,0) -- (\p,-.12) node[below] {$\p$};}
+  \node[left] at (-.1,.17) {pH};
+  \foreach \p/\naam in {2/citroensap,5/koffie,7/zuiver water,10/zeep}{
+    \draw[accent,thick] (\p,.35) -- (\p,.7) node[above,text=black] {\naam};}
+  \draw[<->,accent] (2,-.75) -- node[below,text=black] {3 eenheden: $10^3 = 1000$ keer minder zuur} (5,-.75);
+\end{tikzpicture}}
+
+\voorbeeld{}{Een gesprek is $60$ dB, een rockconcert $105$ dB. Hoeveel keer intenser is het concert?\label{vb:h2-schaal}}{%
+\uitleg{Trek de twee geluidsniveaus af: de referentie $I_0$ valt weg door de quotiëntregel.}
+\begin{stappenbreed}
+105 - 60 = 10 \log \frac{I_c}{I_0} - 10 \log \frac{I_g}{I_0} = 10 \log \frac{I_c}{I_g} & Quotiëntregel. \\
+\log \frac{I_c}{I_g} = 4{,}5 \iff \frac{I_c}{I_g} = 10^{4{,}5} \approx 31\,600 & Definitie.
+\end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h2-schaal}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h2-o1}
+
+\oef{h2-o2}
+
+\oef{h2-o3}
+
+\oef{h2-o4}
+
+\oef{h2-o5}
+
+\oef{h2-o6}
+
+\oef{h2-o7}
+
+\oef{h2-o8}
+
+\oef{h2-o9}
+
+\oef{h2-o10}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{Kansrekenen: kijk na wat al gezien is. Het pakket legt de volgorde niet vast.}
+
+\begin{oefeningen}
+
+\oef{h2-koppel-2}
+
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h2-t1}
+
+\oef{h2-t2}
+
+\oef{h2-t3}
+
+\oef{h2-t4}
+
+\oef{h2-t5}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h2-t1}{vb:h2-definitie}{oef:h2-definitie}%
+  \fv{oef:h2-t2}{vb:h2-rekenregels}{oef:h2-rekenregels}%
+  \fv{oef:h2-t3}{vb:h2-grondtal}{oef:h2-rekenregels}%
+  \fv{oef:h2-t4}{vb:h2-vergelijking}{oef:h2-vergelijking}%
+  \fv{oef:h2-t5}{vb:h2-verdubbeling}{oef:h2-vergelijking}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: de definitie van $\log_a x$ en de vier gevolgen, $\log$ en $\ln$, de drie rekenregels met het bewijs van de productregel, de verandering van grondtal, en hoe je een exponentiële vergelijking oplost. Vergelijk daarna met de kaders.
+\fi
