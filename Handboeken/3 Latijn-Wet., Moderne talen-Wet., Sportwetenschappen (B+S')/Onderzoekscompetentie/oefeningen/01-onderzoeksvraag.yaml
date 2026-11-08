@@ -1,0 +1,249 @@
+# Oefeningen van hoofdstuk 1. Zie oefeningenbank.py voor de velden.
+
+- id: h1-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Bereken $1 + 2 + 3 + \cdots + 10$.
+      antwoord: |-
+        55
+      uitwerking: |-
+        $\frac{10 \cdot 11}{2} = 55$.
+    - opgave: |-
+        Bereken $5!$.
+      antwoord: |-
+        120
+      uitwerking: |-
+        $5 \cdot 4 \cdot 3 \cdot 2 \cdot 1$.
+    - opgave: |-
+        Geef de volgende term: $1, 4, 9, 16, \ldots$
+      antwoord: |-
+        25
+      uitwerking: |-
+        De kwadraten.
+    - opgave: |-
+        Geef de volgende term: $2, 3, 5, 8, 12, \ldots$
+      antwoord: |-
+        17
+      uitwerking: |-
+        De verschillen zijn $1, 2, 3, 4$; dan $5$.
+
+- id: h1-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken} Op een feest geeft iedereen iedereen één keer een hand.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel handdrukken zijn er met 2, 3, 4 en 5 personen?
+      antwoord: |-
+        $1$; $3$; $6$; $10$
+      uitwerking: |-
+        $1$, $3$, $6$, $10$.
+    - opgave: |-
+        Raad een formule voor $n$ personen. Test ze met 6 personen.
+      antwoord: |-
+        $\frac{n(n - 1)}{2}$; $15$
+      uitwerking: |-
+        $\frac{n(n - 1)}{2}$: voor 6 personen $15$. Tel na: klopt.
+    - opgave: |-
+        Waarom klopt de formule altijd?
+      antwoord: |-
+        elke persoon geeft $n - 1$ handen, elke handdruk telt twee keer
+      uitwerking: |-
+        Elke persoon geeft $n - 1$ handen: samen $n(n - 1)$, maar zo telt elke handdruk twee keer.
+
+- id: h1-vraag
+  soort: kort
+  opgave: |-
+    Is dit een goede onderzoeksvraag? Zo niet, maak er een goede van.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        \textit{Is lotto spelen de moeite?}
+      antwoord: |-
+        niet precies; bv. de verwachte winst per lotje
+      uitwerking: |-
+        \textit{De moeite} is niet precies. Beter: \textit{Wat is de verwachte winst per lotje van één euro, met de prijzentabel van deze week?}
+    - opgave: |-
+        \textit{Hoeveel water verbruikt België?}
+      antwoord: |-
+        te breed en niet met wiskunde alleen
+      uitwerking: |-
+        Te breed, en vooral een kwestie van gegevens opzoeken. Beter: \textit{Welk model beschrijft het waterverbruik van ons gezin per dag het best, op basis van een maand metingen?}
+    - opgave: |-
+        \textit{Op hoeveel manieren kun je een trap van 10 treden oplopen met stappen van één of twee treden?}
+      antwoord: |-
+        goed
+      uitwerking: |-
+        Goed: afgebakend, precies en beantwoordbaar. (Het antwoord is $89$, een getal van Fibonacci.)
+
+- id: h1-vermoeden
+  soort: kort
+  opgave: |-
+    Hoeveel vierkanten (van elke grootte) staan er op een rooster van $n$ op $n$ hokjes? Tel voor $n = 1, 2, 3$, stel een vermoeden op en bereken het aantal op een schaakbord.
+  antwoord: |-
+    $1, 5, 14$; $1^2 + 2^2 + \cdots + n^2$; $204$
+  uitwerking: |-
+    $n = 1$: $1$. $n = 2$: $4 + 1 = 5$. $n = 3$: $9 + 4 + 1 = 14$. Vermoeden: $1^2 + 2^2 + \cdots + n^2$, want er zijn $(n - k + 1)^2$ vierkanten met zijde $k$. Op een schaakbord: $1 + 4 + \cdots + 64 = 204$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h1-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    vragen bij een onderwerp
+  opgave: |-
+    Formuleer bij elk onderwerp één goede onderzoeksvraag die je met wiskunde uit dit jaar kunt beantwoorden: \textit{fietsen}, \textit{muziek}, \textit{sociale media}.
+  antwoord: |-
+    open
+  uitwerking: |-
+    Bijvoorbeeld: \textit{Hoe hangt de afstand per trapomwenteling af van de gekozen versnelling?} (verhoudingen, rechten). \textit{Welke frequenties hebben de tonen van een toonladder, en waarom vormen ze een meetkundige rij?} (exponentiële functies). \textit{Hoe snel verspreidt een bericht zich als elke ontvanger het aan drie anderen doorstuurt?} (exponentiële groei, rijen).
+
+- id: h1-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    deelvragen
+  opgave: |-
+    Splits de onderzoeksvraag \textit{Welke vorm van een blik van 33 cl gebruikt het minste metaal?} in drie of vier deelvragen.
+  antwoord: |-
+    open
+  uitwerking: |-
+    Bijvoorbeeld: Welke vormen komen in aanmerking (cilinder, balk)? Hoe druk je de oppervlakte van een cilinder uit met één veranderlijke, als de inhoud vastligt? Waar is die functie minimaal (afgeleiden)? Hoe verhoudt dat zich tot echte blikjes, en waarom wijken die af?
+
+- id: h1-o3
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    oneven getallen
+  opgave: |-
+    Bereken $1$, $1 + 3$, $1 + 3 + 5$, enzovoort. Stel een vermoeden op, test het, en bewijs het met een figuur.
+  antwoord: |-
+    $1 + 3 + \cdots + (2n - 1) = n^2$
+  uitwerking: |-
+    $1, 4, 9, 16$: vermoeden $n^2$. Figuur: een vierkant van $n$ op $n$ stippen bestaat uit L-vormige lagen van $1, 3, 5, \ldots$ stippen.
+
+- id: h1-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een vals vermoeden
+  opgave: |-
+    Iemand vermoedt: \textit{$n^2 - n + 41$ is een priemgetal voor elk natuurlijk getal $n$}. Test voor $n = 1, \ldots, 5$. Zoek een tegenvoorbeeld. Tip: probeer $n = 41$.
+  antwoord: |-
+    $41^2$ is geen priemgetal
+  uitwerking: |-
+    $41$, $43$, $47$, $53$, $61$: alle priem. Maar $n = 41$ geeft $41^2 - 41 + 41 = 41^2$. (Het eerste tegenvoorbeeld is al $n = 41$; voor $n \leqslant 40$ klopt het.)
+
+- id: h1-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een trap oplopen
+  opgave: |-
+    Op hoeveel manieren loop je een trap van $n$ treden op met stappen van één of twee treden? Tel voor $n = 1, \ldots, 5$, zoek een patroon en verklaar het. Bereken het aantal voor $10$ treden.
+  antwoord: |-
+    $1, 2, 3, 5, 8$; $a_n = a_{n-1} + a_{n-2}$; $89$
+  uitwerking: |-
+    $1, 2, 3, 5, 8$: elke term is de som van de twee vorige. Verklaring: de eerste stap is één trede (dan blijven er $n - 1$) of twee (dan blijven er $n - 2$), dus $a_n = a_{n-1} + a_{n-2}$. Verder: $13, 21, 34, 55, 89$.
+
+- id: h1-o6
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    stukken van een cirkel
+  figuur:
+    opties: |-
+      3cm
+    code: |-
+      \begin{tikzpicture}[scale=1.1]
+        \draw[grijs] (0,0) circle (1);
+        \foreach \i in {0,...,3}{\coordinate (Q\i) at ({20+95*\i}:1);}
+        \draw[accent] (Q0) -- (Q1) -- (Q2) -- (Q3) -- (Q0) -- (Q2) (Q1) -- (Q3);
+        \foreach \i in {0,...,3}{\fill[accent] (Q\i) circle (1.6pt);}
+      \end{tikzpicture}
+  opgave: |-
+    Je zet $n$ punten op een cirkel en trekt alle koorden ertussen (nooit drie door één punt). Tel het aantal stukken voor $n = 1, \ldots, 5$. Teken $n = 6$ zorgvuldig en tel. Wat leer je hieruit over vermoedens?
+  antwoord: |-
+    $1, 2, 4, 8, 16$; $31$
+  uitwerking: |-
+    $1, 2, 4, 8, 16$ suggereert $2^{n-1}$, maar $n = 6$ geeft $31$. Een patroon uit enkele gevallen kan bedriegen: zonder bewijs is het maar een vermoeden. De juiste formule is $\binom{n}{4} + \binom{n}{2} + 1$.
+
+- id: h1-o7
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een eigen onderzoek plannen
+  opgave: |-
+    Kies een onderzoeksvraag uit opdracht~\ref{oef:h1-o1} of een eigen vraag. Schrijf een plan van een halve pagina: de vraag, de deelvragen, welke wiskunde je verwacht nodig te hebben, welke gegevens of experimenten, en een planning in weken.
+  antwoord: |-
+    open
+  uitwerking: |-
+    Een goed plan is zo concreet dat een klasgenoot het zou kunnen uitvoeren. Laat het nalezen door een klasgenoot: vindt die de vraag precies genoeg?
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h1-koppel-3
+  soort: koppel
+  niveau: 1
+  koppel:
+    rubriek: discreet
+    onderwerp: Rijen
+  thema: |-
+    een recursieve rij
+  opgave: |-
+    De rij van de handdrukken $h_n$ voldoet aan $h_n = h_{n-1} + (n - 1)$. Verklaar die formule zonder rekenen.
+  antwoord: |-
+    de nieuwe persoon geeft $n - 1$ handen
+  uitwerking: |-
+    Komt er een $n$-de persoon bij, dan blijven de oude handdrukken, en geeft die persoon $n - 1$ nieuwe.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h1-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    onderzoeksvraag
+  opgave: |-
+    Verbeter de onderzoeksvraag \textit{Is de wiskunde van een voetbal moeilijk?} tot een goede onderzoeksvraag.
+  antwoord: |-
+    open, bv. over vijf- en zeshoeken
+  uitwerking: |-
+    Bijvoorbeeld: \textit{Waarom bestaat een klassieke voetbal uit 12 vijfhoeken en 20 zeshoeken, en niet uit andere aantallen?} Of: \textit{Hoeveel naden heeft een voetbal met 12 vijfhoeken en 20 zeshoeken?} ($90$).
+
+- id: h1-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    patroon zoeken
+  opgave: |-
+    Hoeveel lijnstukken verbinden $n$ punten op een cirkel? Tel voor kleine $n$, stel een vermoeden op en verklaar het.
+  antwoord: |-
+    $\frac{n(n - 1)}{2}$
+  uitwerking: |-
+    $0, 1, 3, 6, 10$: zoals de handdrukken, $\frac{n(n - 1)}{2} = \binom{n}{2}$.
+
+- id: h1-t3
+  soort: test
+  niveau: 2
+  thema: |-
+    tegenvoorbeeld
+  opgave: |-
+    Iemand vermoedt: \textit{als $n$ een priemgetal is, dan is $2^n - 1$ ook een priemgetal}. Test voor $n = 2, 3, 5, 7$, en zoek een tegenvoorbeeld bij $n = 11$ (tip: $2^{11} - 1 = 2047$ is deelbaar door 23).
+  antwoord: |-
+    $2047 = 23 \cdot 89$
+  uitwerking: |-
+    $3$, $7$, $31$, $127$: allemaal priem. Maar $2^{11} - 1 = 2047 = 23 \cdot 89$: het vermoeden is vals.
