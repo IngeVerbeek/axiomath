@@ -1,0 +1,483 @@
+# Oefeningen van hoofdstuk 1. Zie oefeningenbank.py voor de velden.
+
+- id: h1-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Je gooit drie keer met een munt. Teken een boomdiagram. Hoeveel uitkomsten zijn er?
+      antwoord: |-
+        8
+      uitwerking: |-
+        Elke worp splitst in kop en munt: $2 \cdot 2 \cdot 2 = 8$ uitkomsten.
+    - opgave: |-
+        Bereken $6 \cdot 5 \cdot 4$ en $2^{10}$.
+      antwoord: |-
+        $120$ en $1024$
+      uitwerking: |-
+        $6 \cdot 5 \cdot 4 = 120$ en $2^{10} = 1024$.
+    - opgave: |-
+        In een klas doen 14 leerlingen aan voetbal en 9 aan tennis; 5 doen beide. Hoeveel doen minstens een van de twee?
+      antwoord: |-
+        18
+      uitwerking: |-
+        Met een venndiagram: $9$ alleen voetbal, $4$ alleen tennis, $5$ beide: $18$. Of: $14 + 9 - 5 = 18$.
+    - opgave: |-
+        Hoeveel veelvouden van 3 liggen er tussen 1 en 100?
+      antwoord: |-
+        33
+      uitwerking: |-
+        $3, 6, \ldots, 99 = 3 \cdot 33$: 33 veelvouden.
+    - opgave: |-
+        Hoeveel natuurlijke getallen hebben precies twee cijfers?
+      antwoord: |-
+        90
+      uitwerking: |-
+        Van 10 tot en met 99: $99 - 10 + 1 = 90$.
+    - opgave: |-
+        Schrijf alle rangschikkingen van de letters A, B en C op. Hoeveel zijn er?
+      antwoord: |-
+        6
+      uitwerking: |-
+        ABC, ACB, BAC, BCA, CAB, CBA: 6 rangschikkingen.
+
+- id: h1-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken}
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Jana heeft 3 broeken, 4 truien en 2 paar schoenen. Op hoeveel manieren kan ze zich aankleden? Begin met een boomdiagram.
+      antwoord: |-
+        24
+      uitwerking: |-
+        Elke broek met elke trui: $3 \cdot 4 = 12$, en elk van die combinaties met elk paar schoenen: $12 \cdot 2 = 24$.
+    - opgave: |-
+        Hoeveel pincodes van 4 cijfers zijn er?
+      antwoord: |-
+        $10\,000$
+      uitwerking: |-
+        Elk cijfer heeft 10 mogelijkheden, en cijfers mogen terugkomen: $10 \cdot 10 \cdot 10 \cdot 10 = 10\,000$.
+    - opgave: |-
+        Acht lopers doen mee aan een finale. Op hoeveel manieren kunnen goud, zilver en brons verdeeld worden?
+      antwoord: |-
+        336
+      uitwerking: |-
+        8 lopers voor goud, dan 7 voor zilver, dan 6 voor brons: $8 \cdot 7 \cdot 6 = 336$.
+    - opgave: |-
+        Waarom is het antwoord in c niet $8^3$, zoals in b?
+      antwoord: |-
+        een loper kan geen twee medailles winnen
+      uitwerking: |-
+        Bij een pincode mag een cijfer terugkomen, bij de medailles niet: wie goud wint, kan niet ook zilver winnen. Daarom is er bij elke stap één mogelijkheid minder.
+
+- id: h1-product
+  soort: kort
+  opgave: |-
+    Tel met de productregel.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een nummerplaat bestaat uit een cijfer van 1 tot 9, drie letters en drie cijfers, zoals 1-ABC-234. Hoeveel nummerplaten zijn er?
+      antwoord: |-
+        $158\,184\,000$
+      uitwerking: |-
+        $9 \cdot 26^3 \cdot 10^3 = 9 \cdot 17\,576 \cdot 1000 = 158\,184\,000$.
+    - opgave: |-
+        Een broodjeszaak heeft 3 soorten brood, 6 soorten beleg en 4 sauzen. Je mag ook zonder saus kiezen. Hoeveel broodjes kun je bestellen?
+      antwoord: |-
+        90
+      uitwerking: |-
+        Voor de saus zijn er $4 + 1 = 5$ mogelijkheden (geen saus telt mee): $3 \cdot 6 \cdot 5 = 90$.
+
+- id: h1-venn
+  soort: kort
+  opgave: |-
+    Tel met de somregel.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel getallen van 1 tot en met 200 zijn deelbaar door 3 of door 7?
+      antwoord: |-
+        85
+      uitwerking: |-
+        Veelvouden van 3: 66. Van 7: 28. Van 21 (beide): 9. Dus $66 + 28 - 9 = 85$.
+    - opgave: |-
+        Hoeveel codes van 3 cijfers bevatten minstens één 0?
+      antwoord: |-
+        271
+      uitwerking: |-
+        Alle codes: $10^3 = 1000$. Zonder 0: $9^3 = 729$. Dus $1000 - 729 = 271$.
+
+- id: h1-hervar
+  soort: kort
+  opgave: |-
+    Hoeveel mogelijkheden zijn er?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Je gooit vier keer met een dobbelsteen en noteert de ogen in volgorde.
+      antwoord: |-
+        $1296$
+      uitwerking: |-
+        $6^4 = 1296$.
+    - opgave: |-
+        Een toets heeft 10 meerkeuzevragen met elk 4 antwoorden. Op hoeveel manieren kun je hem invullen, als je op elke vraag één antwoord geeft?
+      antwoord: |-
+        $1\,048\,576$
+      uitwerking: |-
+        $4^{10} = 1\,048\,576$: meer dan een miljoen.
+    - opgave: |-
+        Een byte is een rijtje van 8 bits, elk 0 of 1.
+      antwoord: |-
+        256
+      uitwerking: |-
+        $2^8 = 256$.
+
+- id: h1-var
+  soort: kort
+  opgave: |-
+    Hoeveel mogelijkheden zijn er?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Tien teams spelen een toernooi. Op hoeveel manieren kan de top drie eruitzien?
+      antwoord: |-
+        720
+      uitwerking: |-
+        $\Var{10}{3} = 10 \cdot 9 \cdot 8 = 720$.
+    - opgave: |-
+        Een code bestaat uit 4 verschillende letters.
+      antwoord: |-
+        $358\,800$
+      uitwerking: |-
+        $\Var{26}{4} = 26 \cdot 25 \cdot 24 \cdot 23 = 358\,800$.
+    - opgave: |-
+        Zeven boeken worden naast elkaar op een plank gezet.
+      antwoord: |-
+        5040
+      uitwerking: |-
+        $\Perm{7} = 7! = 5040$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h1-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    rekenen met faculteiten en variaties
+  opgave: |-
+    Bereken zonder rekentoestel.
+  lijst: reeks
+  kolommen: 4
+  delen:
+    - opgave: |-
+        $7!$
+      antwoord: |-
+        $5040$
+      uitwerking: |-
+        $7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 5040$.
+    - opgave: |-
+        $\Var{9}{2}$
+      antwoord: |-
+        $72$
+      uitwerking: |-
+        $9 \cdot 8 = 72$.
+    - opgave: |-
+        $\dfrac{10!}{8!}$
+      antwoord: |-
+        $90$
+      uitwerking: |-
+        $\frac{10 \cdot 9 \cdot 8!}{8!} = 90$.
+    - opgave: |-
+        $\HVar{2}{7}$
+      antwoord: |-
+        $128$
+      uitwerking: |-
+        $2^7 = 128$.
+
+- id: h1-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    herhalingsvariaties
+  opgave: |-
+    Een wachtwoord bestaat uit 6 tekens. Elk teken is een kleine letter of een cijfer. Hoeveel wachtwoorden zijn er? Hoeveel als ook hoofdletters mogen?
+  antwoord: |-
+    $36^6 \approx 2{,}18 \cdot 10^9$; \ $62^6 \approx 5{,}68 \cdot 10^{10}$
+  uitwerking: |-
+    Er zijn $26 + 10 = 36$ tekens: $36^6 = 2\,176\,782\,336$. Met hoofdletters zijn er $62$ tekens: $62^6 = 56\,800\,235\,584$, ongeveer 26 keer zoveel.
+
+- id: h1-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    getallen met verschillende cijfers
+  opgave: |-
+    Hoeveel getallen van drie cijfers hebben drie verschillende cijfers?
+  antwoord: |-
+    648
+  uitwerking: |-
+    Het eerste cijfer mag geen 0 zijn: 9 mogelijkheden. Het tweede mag elk cijfer behalve het eerste: 9. Het derde: 8. Dus $9 \cdot 9 \cdot 8 = 648$.
+
+- id: h1-o4
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    venndiagram
+  opgave: |-
+    In een klas van 30 leerlingen spelen 18 gitaar en 11 piano. Zes leerlingen spelen geen van beide. Hoeveel leerlingen spelen beide instrumenten? Teken een venndiagram.
+  antwoord: |-
+    5
+  uitwerking: |-
+    $30 - 6 = 24$ leerlingen spelen minstens één instrument. Met de somregel: $24 = 18 + 11 - x$, dus $x = 5$. In het venndiagram: 13 alleen gitaar, 6 alleen piano, 5 beide, 6 geen.
+
+- id: h1-o5
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    permutaties
+  opgave: |-
+    Op hoeveel manieren kunnen vier personen naast elkaar op een bank gaan zitten? En op hoeveel manieren kunnen 8 leerlingen een rij vormen?
+  antwoord: |-
+    24; \ $40\,320$
+  uitwerking: |-
+    $4! = 24$ en $8! = 40\,320$.
+
+- id: h1-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    even getallen met verschillende cijfers
+  opgave: |-
+    Hoeveel even getallen van vier cijfers hebben vier verschillende cijfers? Splits in twee gevallen: het laatste cijfer is 0, of niet.
+  antwoord: |-
+    2296
+  uitwerking: |-
+    Laatste cijfer 0: de andere drie cijfers zijn verschillend en niet 0: $9 \cdot 8 \cdot 7 = 504$.\par
+    Laatste cijfer 2, 4, 6 of 8 (4 mogelijkheden): het eerste cijfer is niet 0 en niet het laatste (8 mogelijkheden), dan $8$ en $7$ voor de middelste twee: $4 \cdot 8 \cdot 8 \cdot 7 = 1792$.\par
+    Somregel: $504 + 1792 = 2296$.
+
+- id: h1-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    niet naast elkaar
+  opgave: |-
+    Vijf boeken worden naast elkaar op een plank gezet. Op hoeveel manieren kan dat zodat twee bepaalde boeken niet naast elkaar staan?
+  antwoord: |-
+    72
+  uitwerking: |-
+    Alle rangschikkingen: $5! = 120$. Met de twee boeken naast elkaar (als blok): $4! \cdot 2 = 48$. Het tegendeel: $120 - 48 = 72$.
+
+- id: h1-o8
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    minstens twee gelijke
+  opgave: |-
+    Hoeveel pincodes van 4 cijfers hebben minstens twee gelijke cijfers?
+  antwoord: |-
+    4960
+  uitwerking: |-
+    Alle pincodes: $10^4 = 10\,000$. Met vier verschillende cijfers: $\Var{10}{4} = 5040$. Het tegendeel: $10\,000 - 5040 = 4960$, bijna de helft.
+
+- id: h1-o9
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een cijfer dat voorkomt
+  opgave: |-
+    Hoeveel natuurlijke getallen kleiner dan 1000 bevatten minstens één keer het cijfer 7?
+  antwoord: |-
+    271
+  uitwerking: |-
+    Schrijf elk getal van 0 tot 999 met drie cijfers, zoals 007. Er zijn $10^3 = 1000$ zulke getallen, en $9^3 = 729$ zonder 7. Dus $1000 - 729 = 271$.
+
+- id: h1-o10
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    delers tellen
+  opgave: |-
+    Hoeveel delers heeft 360? Schrijf 360 eerst als product van priemfactoren.
+  antwoord: |-
+    24
+  uitwerking: |-
+    $360 = 2^3 \cdot 3^2 \cdot 5$. Een deler is $2^a \cdot 3^b \cdot 5^c$ met 4 keuzes voor $a$, 3 voor $b$ en 2 voor $c$: $4 \cdot 3 \cdot 2 = 24$.
+
+- id: h1-o11
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    met of zonder herhaling
+  opgave: |-
+    Drie verschillende prijzen worden verdeeld onder 10 leerlingen. Op hoeveel manieren kan dat als een leerling meer dan één prijs mag winnen? En als dat niet mag? Leg het verschil uit.
+  antwoord: |-
+    1000; \ 720
+  uitwerking: |-
+    Met herhaling: elke prijs gaat naar een van de 10 leerlingen: $10^3 = 1000$. Zonder herhaling: $\Var{10}{3} = 720$. Het verschil, 280, zijn de verdelingen waarin iemand minstens twee prijzen krijgt.
+
+- id: h1-o12
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    symmetrie
+  opgave: |-
+    Op hoeveel manieren kun je de letters a, b, c, d en e rangschikken zodat a ergens vóór b staat (niet noodzakelijk er vlak voor)? Leg je redenering uit zonder alle gevallen te tellen.
+  antwoord: |-
+    60
+  uitwerking: |-
+    Verwissel je in een rangschikking a en b, dan krijg je een andere rangschikking, met b vóór a. Zo vormen de $5! = 120$ rangschikkingen paren, met in elk paar één waarin a vóór b staat. Dus de helft: 60.
+
+- id: h1-o13
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    somregel met drie verzamelingen
+  opgave: |-
+    Bedenk een somregel voor drie verzamelingen: $\#(A \cup B \cup C) = \ldots$ Gebruik een venndiagram. Hoeveel getallen van 1 tot en met 1000 zijn deelbaar door 2, 3 of 5?
+  antwoord: |-
+    $\#A + \#B + \#C - \#(A \cap B) - \#(A \cap C) - \#(B \cap C) + \#(A \cap B \cap C)$; \ 734
+  uitwerking: |-
+    Tel de drie verzamelingen op, trek de drie doorsneden van twee af. Het middelste stuk is dan drie keer geteld en drie keer afgetrokken: tel het nog eens op.\par
+    Deelbaar door 2: 500, door 3: 333, door 5: 200, door 6: 166, door 10: 100, door 15: 66, door 30: 33. Dus $500 + 333 + 200 - 166 - 100 - 66 + 33 = 734$.
+
+- id: h1-o14
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    deelverzamelingen tellen
+  opgave: |-
+    Toon met de productregel aan dat een verzameling met $n$ elementen precies $2^n$ deelverzamelingen heeft (de lege verzameling en de verzameling zelf inbegrepen). Hoeveel deelverzamelingen heeft $\{a, b, c\}$? Schrijf ze op.
+  antwoord: |-
+    bewijs; 8
+  uitwerking: |-
+    Voor een deelverzameling beslis je bij elk van de $n$ elementen: erin of niet. Dat zijn $n$ stappen met elk 2 mogelijkheden: $2^n$.\par
+    $\{a, b, c\}$ heeft $2^3 = 8$ deelverzamelingen: $\emptyset$, $\{a\}$, $\{b\}$, $\{c\}$, $\{a, b\}$, $\{a, c\}$, $\{b, c\}$, $\{a, b, c\}$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h1-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: data
+    onderwerp: Kansrekenen
+  thema: |-
+    het verjaardagsprobleem
+  opgave: |-
+    In een klas zitten 23 leerlingen. We nemen aan dat elke verjaardag even waarschijnlijk is, en negeren 29 februari.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Op hoeveel manieren kunnen de 23 verjaardagen vallen, als rijtje van 23 dagen? En op hoeveel manieren zodat ze allemaal verschillend zijn?
+      antwoord: |-
+        $365^{23}$; \ $\Var{365}{23}$
+      uitwerking: |-
+        Elke leerling heeft 365 mogelijkheden: $\HVar{365}{23} = 365^{23}$. Allemaal verschillend: $\Var{365}{23} = 365 \cdot 364 \cdots 343$.
+    - opgave: |-
+        Bereken met de wet van Laplace de kans dat minstens twee leerlingen op dezelfde dag verjaren.
+      antwoord: |-
+        $\approx 0{,}507$
+      uitwerking: |-
+        De kans dat alle verjaardagen verschillen is $\frac{\Var{365}{23}}{365^{23}} \approx 0{,}493$. Het tegendeel: $1 - 0{,}493 \approx 0{,}507$. Meer dan de helft, al bij 23 leerlingen.
+
+- id: h1-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Logaritmen
+  thema: |-
+    hoe lang moet een code zijn
+  opgave: |-
+    Een bedrijf wil elk van zijn 1 miljoen klanten een eigen code van hoofdletters geven, allemaal even lang. Hoe lang moet de code minstens zijn? Los op met een logaritme.
+  antwoord: |-
+    5 letters
+  uitwerking: |-
+    Met $p$ letters zijn er $26^p$ codes. We zoeken de kleinste $p$ met $26^p \geqslant 10^6$, dus $p \geqslant \frac{\log 10^6}{\log 26} = \frac{6}{\log 26} \approx 4{,}24$. Dus $p = 5$. Controle: $26^4 = 456\,976$ is te weinig, $26^5 = 11\,881\,376$ volstaat.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h1-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    productregel
+  opgave: |-
+    Een pizzeria biedt 3 soorten bodems, 6 sauzen en 4 kazen aan. Een pizza heeft één bodem, één saus en één kaas. Hoeveel pizza's zijn er mogelijk?
+  antwoord: |-
+    72
+  uitwerking: |-
+    $3 \cdot 6 \cdot 4 = 72$.
+
+- id: h1-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    somregel met overlap
+  opgave: |-
+    Van 30 leerlingen doen er 12 aan sport en 15 aan muziek, en 7 aan beide. Hoeveel leerlingen doen geen van beide?
+  antwoord: |-
+    10
+  uitwerking: |-
+    Minstens één: $12 + 15 - 7 = 20$. Geen van beide: $30 - 20 = 10$.
+
+- id: h1-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    herhalingsvariaties
+  opgave: |-
+    Je gooit zes keer met een munt en noteert telkens kop of munt. Hoeveel verschillende rijtjes zijn er?
+  antwoord: |-
+    64
+  uitwerking: |-
+    $\HVar{2}{6} = 2^6 = 64$.
+
+- id: h1-t4
+  soort: test
+  niveau: 1
+  thema: |-
+    variaties
+  opgave: |-
+    Twaalf deelnemers strijden om drie verschillende prijzen. Niemand kan meer dan één prijs winnen. Op hoeveel manieren kunnen de prijzen verdeeld worden?
+  antwoord: |-
+    1320
+  uitwerking: |-
+    $\Var{12}{3} = 12 \cdot 11 \cdot 10 = 1320$.
+
+- id: h1-t5
+  soort: test
+  niveau: 2
+  thema: |-
+    permutaties met een blok
+  opgave: |-
+    Zes personen staan in een rij voor een foto. Drie van hen willen naast elkaar staan. Op hoeveel manieren kan dat?
+  antwoord: |-
+    144
+  uitwerking: |-
+    Het blok van drie en de drie anderen: $4!$ rangschikkingen. Binnen het blok: $3!$. Dus $4! \cdot 3! = 24 \cdot 6 = 144$.
+
+- id: h1-t6
+  soort: test
+  niveau: 2
+  thema: |-
+    het tegendeel tellen
+  opgave: |-
+    Hoeveel woorden van 5 letters (ook zonder betekenis) bevatten minstens één klinker (a, e, i, o, u)?
+  antwoord: |-
+    $7\,797\,275$
+  uitwerking: |-
+    Alle woorden: $26^5 = 11\,881\,376$. Zonder klinker: $21^5 = 4\,084\,101$. Dus $11\,881\,376 - 4\,084\,101 = 7\,797\,275$.

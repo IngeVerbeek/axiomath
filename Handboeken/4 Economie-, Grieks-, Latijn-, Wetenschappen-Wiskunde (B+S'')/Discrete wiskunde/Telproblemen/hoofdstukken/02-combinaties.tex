@@ -1,0 +1,267 @@
+%----------------------------------------------------------------------------------------
+% COMBINATIES. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h2-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{2}{Combinaties}
+
+\lkr{Leerplan B+S'': LPD 47, het deel waarin de volgorde niet van belang is: combinaties, met en zonder herhaling, en permutaties met herhaling. De driehoek van Pascal staat in de leerplantabel bij LPD 47; het binomium volgt in hoofdstuk 3. In de Opdrachten staan bewust ook opgaven uit hoofdstuk 1: leerlingen moeten zelf herkennen of de volgorde telt.}
+
+In hoofdstuk 1 telde je rijtjes: een pincode, een podium, een rij in de bioscoop. Daar telt de volgorde. Maar bij een comité van drie leerlingen, een hand kaarten of een lottoformulier maakt de volgorde niet uit: het gaat om wie of wat er in de groep zit. Zo'n groep heet een combinatie. Je telt ze door eerst rijtjes te tellen en dan te corrigeren voor de volgorde. Op het einde van het hoofdstuk heb je een schema voor elk telprobleem: telt de volgorde, en mag er herhaling zijn?
+
+\begin{oefeningen}[Start]
+\oef{h2-start-1}
+
+\oef{h2-verken}
+\end{oefeningen}
+
+\lkr{Laat oefening \ref{oef:h2-verken} maken vóór de uitleg. Het verband $60 = 10 \cdot 6$ is de kern: elke groep van drie kun je op $3! = 6$ manieren in een volgorde zetten.}
+
+%========================================================================================
+\section{Combinaties}
+
+\subsection{Groepjes zonder volgorde}
+
+In de Verken vond je 60 manieren om uit vijf personen een voorzitter, een secretaris en een penningmeester te kiezen, maar maar 10 comités van drie. Elk comité komt in die 60 rijtjes precies $3! = 6$ keer voor, één keer voor elke verdeling van de functies. Dus deel je door $3!$.
+
+\begin{theorie}
+Een \textbf{\textcolor{accent}{combinatie}} van $p$ elementen uit $n$ (met $p \leqslant n$) is een deelverzameling van $p$ elementen van een verzameling met $n$ elementen. De volgorde is niet van belang, en er is geen herhaling. Hun aantal is
+
+\vspace{1mm}
+\qquad $\formule{\Comb{n}{p} = \binom{n}{p} = \dfrac{\Var{n}{p}}{p!} = \dfrac{n!}{p!\,(n - p)!}}$
+\end{theorie}
+
+Je leest $\binom{n}{p}$ als \textit{$n$ boven $p$}. Die notatie wordt internationaal gebruikt, ook op je rekentoestel (\texttt{nCr}). Let op de volgorde: in $\Comb{n}{p}$ staat het grote getal onderaan, in $\binom{n}{p}$ bovenaan.
+
+\voorbeeld{}{Een klas van 25 leerlingen kiest een comité van 3 leerlingen. Op hoeveel manieren kan dat? En op hoeveel manieren als de drie verschillende functies krijgen?\label{vb:h2-comb}}{%
+\uitleg{Een comité is een groepje: de volgorde telt niet, en niemand komt twee keer voor. Met functies telt de volgorde wel.}
+\begin{stappen}
+\Comb{25}{3} = \frac{25 \cdot 24 \cdot 23}{3!} = \frac{13\,800}{6} = 2300 & Combinatie: de variaties gedeeld door $3!$. \\[3ex]
+\Var{25}{3} = 13\,800 & Met functies: een variatie, zes keer zoveel.
+\end{stappen}}
+
+\voorbeeld{}{Bij de lotto kies je 6 verschillende getallen uit 1 tot en met 45. Hoeveel verschillende formulieren zijn er?\label{vb:h2-lotto}}{%
+\uitleg{De volgorde waarin je de getallen aankruist, maakt niet uit: alleen welke 6 het zijn.}
+\begin{stappen}
+\Comb{45}{6} = \frac{45 \cdot 44 \cdot 43 \cdot 42 \cdot 41 \cdot 40}{6!} = 8\,145\,060 & Ruim acht miljoen: met het rekentoestel, \texttt{45 nCr 6}.
+\end{stappen}}
+
+\subsection{Combinaties en de productregel}
+
+Vaak kies je in een opgave meerdere groepjes na elkaar. Dan tel je elk groepje als combinatie, en combineer je ze met de productregel.
+
+\voorbeeld{}{Uit 12 meisjes en 10 jongens wordt een team gekozen met 2 meisjes en 3 jongens. Hoeveel teams zijn er mogelijk?\label{vb:h2-comb-product}}{%
+\uitleg{We kiezen eerst de meisjes, dan de jongens. Elk groepje is een combinatie, en elke keuze van meisjes kan met elke keuze van jongens.}
+\begin{stappen}
+\Comb{12}{2} \cdot \Comb{10}{3} = 66 \cdot 120 = 7920 & Productregel met twee stappen.
+\end{stappen}}
+
+\begin{werkwijze}
+Telt de volgorde niet en is er geen herhaling, dan is het een combinatie: $\Comb{n}{p}$. Bestaat de keuze uit meerdere groepjes, vermenigvuldig dan. Bij \textit{minstens} of \textit{hoogstens}: splits in gevallen en tel op, of tel het tegendeel.
+\end{werkwijze}
+
+\nujij{Hoeveel handdrukken worden er gegeven als 12 personen elkaar allemaal één keer de hand schudden?}{Een handdruk is een groepje van 2: $\Comb{12}{2} = \frac{12 \cdot 11}{2} = 66$.}
+
+\begin{oefeningen}
+\oef{h2-comb}
+\end{oefeningen}
+
+%========================================================================================
+\section{De driehoek van Pascal}
+
+Zet je de getallen $\binom{n}{p}$ in een driehoek, met $n = 0$ bovenaan en in elke rij $p = 0, 1, \ldots, n$, dan valt een patroon op: elk getal is de som van de twee getallen erboven.
+
+\figuren{\begin{tikzpicture}[x=.62cm,y=.52cm,font=\small]
+  \foreach \n in {0,...,6}{
+    \node[grijs,anchor=east,font=\scriptsize] at (-4.3,-\n) {$n = \n$};
+    \foreach \k in {0,...,\n}{
+      \pgfmathtruncatemacro{\c}{round(\n!/(\k!*(\n-\k)!))}
+      \node (p\n-\k) at ({\k-\n/2},-\n) {\c};}}
+  \draw[accent,thick,rounded corners=2pt] ($(p4-1)+(-.35,.3)$) rectangle ($(p4-2)+(.35,-.3)$);
+  \draw[->,accent] (p4-1) -- (p5-2); \draw[->,accent] (p4-2) -- (p5-2);
+  \draw[accent,thick] (p5-2) circle (2.6mm);
+\end{tikzpicture}}
+
+\begin{theorie}
+\begin{stelling}{Eigenschappen van de combinaties}
+Voor natuurlijke getallen $n$ en $p$ met $0 \leqslant p \leqslant n$:
+
+\vspace{1mm}
+\qquad $\formule{\binom{n}{0} = \binom{n}{n} = 1} \qquad \formule{\binom{n}{p} = \binom{n}{n - p}}$
+
+\vspace{1mm}
+\qquad $\formule{\binom{n}{p} = \binom{n - 1}{p - 1} + \binom{n - 1}{p}}$ \quad voor $1 \leqslant p \leqslant n - 1$
+\end{stelling}
+
+\begin{bewijs}
+Uit $n$ elementen kies je op één manier niets, en op één manier alles. Kies je $p$ elementen, dan kies je meteen de $n - p$ die je niet neemt: dat geeft de symmetrie.\par
+Voor de laatste regel: neem een vast element $x$. Een groepje van $p$ bevat $x$ of niet. Bevat het $x$, dan kies je de andere $p - 1$ uit de overige $n - 1$: $\binom{n - 1}{p - 1}$ manieren. Bevat het $x$ niet, dan kies je alle $p$ uit de overige $n - 1$: $\binom{n - 1}{p}$. Met de somregel volgt de formule.
+\end{bewijs}
+\end{theorie}
+
+De laatste regel heet de \textbf{regel van Pascal}, naar de Franse wiskundige Blaise Pascal. Zo bouw je de driehoek van boven naar beneden op, zonder ooit een faculteit te berekenen. De symmetrie zie je ook in de driehoek: elke rij leest van links naar rechts hetzelfde als van rechts naar links.
+
+\voorbeeld{}{Bereken $\binom{20}{17}$.\label{vb:h2-symmetrie}}{%
+\uitleg{Met de definitie moet je door $17!$ delen. Met de symmetrie gaat het korter: kiezen wie erin zit is kiezen wie eruit valt.}
+\begin{stappen}
+\binom{20}{17} = \binom{20}{3} = \frac{20 \cdot 19 \cdot 18}{3!} = 1140 & De symmetrie met $n - p = 3$.
+\end{stappen}}
+
+\begin{oefeningen}
+\oef{h2-pascal}
+\end{oefeningen}
+
+%========================================================================================
+\section{Met herhaling}
+
+\subsection{Permutaties met herhaling}
+
+Hoeveel woorden maak je met de letters van BANAAN? Waren alle zes letters verschillend, dan waren het er $6!$. Maar verwissel je twee A's, dan krijg je hetzelfde woord. Elke rangschikking komt dus $3!$ keer voor door de drie A's, en $2!$ keer door de twee N's.
+
+\begin{theorie}
+Het aantal \textbf{\textcolor{accent}{permutaties met herhaling}} van $n$ elementen, waarvan $n_1$ gelijk aan elkaar, $n_2$ gelijk aan elkaar, \ldots, $n_k$ gelijk aan elkaar (met $n_1 + n_2 + \cdots + n_k = n$), is
+
+\vspace{1mm}
+\qquad $\formule{\dfrac{n!}{n_1! \, n_2! \cdots n_k!}}$
+\end{theorie}
+
+\voorbeeld{}{Hoeveel woorden (ook zonder betekenis) kun je vormen met alle letters van BANAAN?\label{vb:h2-herperm}}{%
+\uitleg{Er zijn 6 letters: 3 keer A, 2 keer N en 1 keer B. We delen $6!$ door de rangschikkingen van de gelijke letters.}
+\begin{stappen}
+\frac{6!}{3! \, 2! \, 1!} = \frac{720}{12} = 60 & Zestig verschillende woorden.
+\end{stappen}}
+
+\naast{\begin{minipage}{10.4cm}
+Hetzelfde idee telt wegen in een rooster. Om van linksonder naar rechtsboven te gaan in een rooster van 5 bij 3, met alleen stappen naar rechts ($R$) en naar boven ($B$), zet je 5 keer $R$ en 3 keer $B$ in een volgorde: een woord zoals $RRBRBRRB$. Dat kan op $\frac{8!}{5! \, 3!} = \binom{8}{3} = 56$ manieren: je kiest welke 3 van de 8 stappen naar boven gaan.
+\end{minipage}}{\begin{tikzpicture}[x=.42cm,y=.42cm]
+  \draw[black!20] (0,0) grid (5,3);
+  \draw[accent,very thick] (0,0) -- (2,0) -- (2,1) -- (3,1) -- (3,2) -- (5,2) -- (5,3);
+  \fill[accent] (0,0) circle (2.5pt) (5,3) circle (2.5pt);
+\end{tikzpicture}}
+
+\subsection{Combinaties met herhaling}
+
+In een fruitwinkel kies je 6 stuks fruit uit 4 soorten: appels, peren, bananen en kiwi's. Van elke soort is er genoeg, dus je mag een soort meer dan eens nemen, en de volgorde telt niet. Een keuze schrijf je met sterretjes en streepjes: $\star\star|\star|\,|\star\star\star$ betekent 2 appels, 1 peer, geen bananen en 3 kiwi's. Elk rijtje met 6 sterretjes en 3 streepjes is een keuze, en omgekeerd.
+
+\begin{theorie}
+Een \textbf{\textcolor{accent}{combinatie met herhaling}} van $p$ elementen uit $n$ soorten is een keuze van $p$ elementen waarbij de volgorde niet van belang is en een soort meer dan eens mag voorkomen. Hun aantal is
+
+\vspace{1mm}
+\qquad $\formule{\HComb{n}{p} = \binom{n + p - 1}{p}}$
+\end{theorie}
+
+Met $p$ sterretjes en $n - 1$ streepjes heb je $n + p - 1$ tekens, en je kiest welke $p$ ervan sterretjes zijn. Voor $n$ soorten heb je $n - 1$ streepjes nodig om ze te scheiden.
+
+\voorbeeld{}{Op hoeveel manieren kies je 6 stuks fruit uit 4 soorten?\label{vb:h2-hercomb}}{%
+\uitleg{De volgorde telt niet, en een soort mag herhaald worden: een combinatie met herhaling. Met 6 sterretjes en 3 streepjes.}
+\begin{stappen}
+\HComb{4}{6} = \binom{4 + 6 - 1}{6} = \binom{9}{6} = 84 & Kies de plaatsen van de 6 sterretjes tussen de 9 tekens.
+\end{stappen}}
+
+%========================================================================================
+\section{Welke formule?}
+
+Bij elk telprobleem stel je twee vragen: \textit{telt de volgorde?} en \textit{mag een element meer dan eens voorkomen?} Het antwoord wijst de formule aan.
+
+\begin{theorie}
+{\centering\arrayrulecolor{accent}\renewcommand{\arraystretch}{1.9}%
+\begin{tabular}{|>{\centering\arraybackslash}m{3.2cm}|>{\centering\arraybackslash}m{4.9cm}|>{\centering\arraybackslash}m{4.9cm}|}
+\hline
+ & \textbf{met herhaling} & \textbf{zonder herhaling} \\ \hline
+\textbf{volgorde telt} & herhalingsvariaties \quad $\formule{n^p}$ & variaties \quad $\formule{\Var{n}{p} = \frac{n!}{(n - p)!}}$ \\ \hline
+\textbf{volgorde telt niet} & combinaties met herhaling \quad $\formule{\binom{n + p - 1}{p}}$ & combinaties \quad $\formule{\Comb{n}{p} = \binom{n}{p}}$ \\ \hline
+\end{tabular}\par}
+
+\vspace{1mm}
+Alle $n$ elementen rangschikken: $\formule{n!}$, of $\formule{\frac{n!}{n_1! \cdots n_k!}}$ als er gelijke elementen zijn.
+\end{theorie}
+
+Een handige test voor de volgorde: wissel twee gekozen elementen. Krijg je iets anders (een andere uitslag, een ander woord, een andere functie), dan telt de volgorde.
+
+\begin{werkwijze}
+Stel de twee vragen: volgorde? herhaling? Kies de formule uit het schema. Is de keuze ingewikkelder, splits ze dan in stappen (productregel) of in gevallen (somregel), en gebruik voor elke stap het schema.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h2-schema}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h2-o1}
+
+\oef{h2-o2}
+
+\oef{h2-o3}
+
+\oef{h2-o4}
+
+\oef{h2-o5}
+
+\oef{h2-o6}
+
+\oef{h2-o7}
+
+\oef{h2-o8}
+
+\oef{h2-o9}
+
+\oef{h2-o10}
+
+\oef{h2-o11}
+
+\oef{h2-o12}
+
+\oef{h2-o13}
+
+\oef{h2-o14}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{De eerste oefening gebruikt de wet van Laplace; ze is een voorbereiding op de hypergeometrische situaties in Kansrekenen. De tweede verbindt met veelhoeken uit de meetkunde.}
+
+\begin{oefeningen}
+\oef{h2-koppel-1}
+
+\oef{h2-koppel-2}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h2-t1}
+
+\oef{h2-t2}
+
+\oef{h2-t3}
+
+\oef{h2-t4}
+
+\oef{h2-t5}
+
+\oef{h2-t6}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h2-t1}{vb:h2-comb}{oef:h2-comb}%
+  \fv{oef:h2-t2}{vb:h2-comb-product}{oef:h2-comb}%
+  \fv{oef:h2-t3}{vb:h2-symmetrie}{oef:h2-pascal}%
+  \fv{oef:h2-t4}{vb:h2-herperm}{oef:h2-schema}%
+  \fv{oef:h2-t5}{vb:h2-hercomb}{oef:h2-schema}%
+  \fv{oef:h2-t6}{vb:h2-comb}{oef:h2-schema}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: wat een combinatie is en waarom je de variaties door $p!$ deelt, de eigenschappen van de combinaties en de driehoek van Pascal, permutaties met herhaling (ook wegen in een rooster), combinaties met herhaling (sterretjes en streepjes), en het schema met de vier gevallen. Vergelijk daarna met de kaders.
+\fi
