@@ -1,0 +1,1080 @@
+# Oefeningen van hoofdstuk 4. Zie Opmaak/oefeningenbank.py voor de velden.
+
+- id: h4-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: enumerate
+  delen:
+  - opgave: |-
+      Bereken $\displaystyle\lim_{x\to+\infty} \frac{1}{x}$, $\displaystyle\lim_{x\to+\infty} \frac{2x+1}{x-3}$ en $\displaystyle\lim_{x\to+\infty} (1 - x^2)$.
+    antwoord: |-
+      0; 2; $-\infty$
+    uitwerking: |-
+      De noemer wordt onbegrensd groot: 0. Hoogste machten: $\tfrac{2x}{x}=2$. De term $-x^2$ beslist: $-\infty$.
+  - opgave: |-
+      Schrijf $|x - 5| < 0{,}1$ als een open interval.
+    antwoord: |-
+      $]4{,}9;\ 5{,}1[$
+    uitwerking: |-
+      $-0{,}1<x-5<0{,}1$, dus $4{,}9<x<5{,}1$.
+  - opgave: |-
+      Voor welke $n > 0$ is $\dfrac{1}{n} < 0{,}001$?
+    antwoord: |-
+      $n>1000$
+    uitwerking: |-
+      Omgekeerde nemen, en dan keert het teken om: $n>1000$.
+  - opgave: |-
+      Voor welke $n$ is $0{,}5^{\,n} < 0{,}01$?
+    antwoord: |-
+      $n>6{,}64$
+    uitwerking: |-
+      $n>\log_{0{,}5} 0{,}01\approx 6{,}64$. Het teken keert om, want het grondtal is kleiner dan 1.
+
+- id: h4-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken}\quad Gegeven: $u_n = \dfrac{2n+3}{n}$.
+  lijst: enumerate
+  delen:
+  - opgave: |-
+      Bereken $u_{10}$, $u_{100}$ en $u_{1000}$. Welk getal naderen de termen?
+    antwoord: |-
+      2,3; 2,03; 2,003; het getal 2
+    uitwerking: |-
+      $u_n=2+\tfrac3n$, dus 2,3; 2,03 en 2,003. De termen naderen 2.
+  - opgave: |-
+      Vanaf welk volgnummer ligt $u_n$ minder dan 0,01 van dat getal? En minder dan 0,0001?
+    antwoord: |-
+      vanaf 301; vanaf 30\,001
+    uitwerking: |-
+      $\tfrac3n<0{,}01$ geeft $n>300$, dus vanaf 301. $\tfrac3n<0{,}0001$ geeft $n>30\,000$, dus vanaf 30\,001.
+  - opgave: |-
+      Kun je voor elke afstand, hoe klein ook, zo'n volgnummer vinden? Hoe?
+    antwoord: |-
+      ja
+    uitwerking: |-
+      Ja: voor een afstand $\varepsilon>0$ geeft $\tfrac3n<\varepsilon$ dat $n>\tfrac{3}{\varepsilon}$.
+
+- id: h4-k1
+  soort: kort
+  opgave: |-
+    Bepaal de limiet. Is de rij convergent of divergent?
+  lijst: reeks
+  delen:
+  - opgave: |-
+      $u_n = 2 + \tfrac3n$
+    antwoord: |-
+      2, convergent
+    uitwerking: |-
+      $\tfrac3n$ wordt willekeurig klein.
+  - opgave: |-
+      $u_n = n^2 + 1$
+    antwoord: |-
+      $+\infty$, divergent
+    uitwerking: |-
+      $n^2$ groeit onbegrensd.
+  - opgave: |-
+      $u_n = 3 \cdot (-1)^n$
+    antwoord: |-
+      bestaat niet, divergent
+    uitwerking: |-
+      $-3,\ 3,\ {-3},\ \ldots$: de termen naderen geen vast getal.
+
+- id: h4-k2
+  soort: kort
+  opgave: |-
+    Bepaal de limiet van \ \textbf{a.}~$2,\ 6,\ 18,\ \ldots$ \quad \textbf{b.}~$100,\ 10,\ 1,\ \ldots$ \quad \textbf{c.}~$5,\ {-5},\ 5,\ \ldots$
+  antwoord: |-
+    \textbf{a.}~$+\infty$ \quad \textbf{b.}~0 \quad \textbf{c.}~bestaat niet
+  uitwerking: |-
+    \textbf{a.}~$q=3>1$ en $u_1>0$.\\
+    \textbf{b.}~$q=\tfrac{1}{10}$, dus $|q|<1$.\\
+    \textbf{c.}~$q=-1$.
+
+- id: h4-k3
+  soort: kort
+  opgave: |-
+    Bewijs met de definitie: $\displaystyle\lim_{n\to+\infty} \dfrac{4n+1}{n} = 4$. Welke $N$ past bij $\varepsilon = 0{,}02$?
+  antwoord: |-
+    Kies $N\geqslant\tfrac{1}{\varepsilon}$; bij $\varepsilon=0{,}02$ is $N=50$.
+  uitwerking: |-
+    Neem $\varepsilon>0$. $\left|\dfrac{4n+1}{n}-4\right|=\dfrac1n$ en $\dfrac1n<\varepsilon$ geeft $n>\dfrac{1}{\varepsilon}$. Kies $N\geqslant\dfrac{1}{\varepsilon}$: dan geldt voor elke $n>N$ dat $|u_n-4|<\varepsilon$. Bij $\varepsilon=0{,}02$ is $N=50$.
+
+- id: h4-k4
+  soort: kort
+  opgave: |-
+    Bereken.
+  lijst: reeks
+  kolommen: 2
+  delen:
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} \dfrac{5n + 2}{3n - 1}$
+    antwoord: |-
+      $\tfrac53$
+    uitwerking: |-
+      Deel door $n$: $\dfrac{5+\tfrac2n}{3-\tfrac1n}\to\dfrac53$.
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} \left(\sqrt{n+4} - \sqrt{n}\right)$
+    antwoord: |-
+      0
+    uitwerking: |-
+      $\sqrt{n+4}-\sqrt{n}=\dfrac{4}{\sqrt{n+4}+\sqrt{n}}\to 0$.
+
+- id: h4-k5
+  soort: kort
+  opgave: |-
+    Bereken $\displaystyle\lim_{n\to+\infty} \dfrac{\sin n}{n^2}$.
+  antwoord: |-
+    0
+  uitwerking: |-
+    $-\dfrac{1}{n^2}\leqslant\dfrac{\sin n}{n^2}\leqslant\dfrac{1}{n^2}$, en beide grenzen hebben limiet 0.
+
+- id: h4-k6
+  soort: kort
+  opgave: |-
+    Toon aan dat $u_n = 4 + \dfrac{3}{n}$ dalend en naar onder begrensd is. Wat is de limiet?
+  antwoord: |-
+    Ondergrens 4; limiet 4
+  uitwerking: |-
+    $u_n>4$ voor elke $n$, dus 4 is een ondergrens. $u_{n+1}-u_n=\dfrac{3}{n+1}-\dfrac3n=\dfrac{-3}{n(n+1)}<0$, dus de rij is dalend. De limiet is 4.
+
+- id: h4-k7
+  soort: kort
+  opgave: |-
+    Een bedrijf heeft 300 werknemers. Elk jaar vertrekt 10\% en komen er 20 nieuwe bij. Geef een recursief voorschrift. Hoeveel werknemers zijn er op lange termijn?
+  antwoord: |-
+    $u_n=0{,}9\,u_{n-1}+20$, $u_0=300$; 200
+  uitwerking: |-
+    Na het vertrek blijft 90\% over, dus $u_n=0{,}9\,u_{n-1}+20$ met $u_0=300$. $L=0{,}9\,L+20$ geeft $L=200$.
+
+- id: h4-k8
+  soort: kort
+  opgave: |-
+    Bereken $12 + 4 + \tfrac43 + \cdots$ en schrijf $0{,}888\ldots$ als een breuk.
+  antwoord: |-
+    18 en $\tfrac89$
+  uitwerking: |-
+    $q=\tfrac13$, dus $\dfrac{12}{1-\tfrac13}=18$. Verder is $0{,}8+0{,}08+\cdots=\dfrac{0{,}8}{1-0{,}1}=\dfrac89$.
+
+- id: h4-soort
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    convergent en divergent
+  opgave: |-
+    Bepaal de limiet. Is de rij convergent of divergent?
+  lijst: reeks
+  delen:
+  - opgave: |-
+      $u_n = 5 + \tfrac2n$
+    antwoord: |-
+      5, conv.
+    uitwerking: |-
+      $\tfrac2n\to 0$.
+  - opgave: |-
+      $u_n = n^2 - 3$
+    antwoord: |-
+      $+\infty$, div.
+    uitwerking: |-
+      $n^2$ groeit onbegrensd.
+  - opgave: |-
+      $u_n = 4 \cdot (-1)^n$
+    antwoord: |-
+      bestaat niet, div.
+    uitwerking: |-
+      $-4,\ 4,\ {-4},\ \ldots$: geen vast getal.
+  - opgave: |-
+      $u_n = 7$
+    antwoord: |-
+      7, conv.
+    uitwerking: |-
+      Een constante rij heeft die constante als limiet.
+  - opgave: |-
+      $u_n = \tfrac{(-1)^n}{n}$
+    antwoord: |-
+      0, conv.
+    uitwerking: |-
+      Het teken wisselt, maar de termen komen willekeurig dicht bij 0.
+  - opgave: |-
+      $u_n = 1 - n$
+    antwoord: |-
+      $-\infty$, div.
+    uitwerking: |-
+      De termen dalen onbegrensd.
+
+- id: h4-reeks
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    meetkundige reeks
+  opgave: |-
+    Bereken, of zeg dat de reeks divergeert.
+  lijst: reeks
+  kolommen: 2
+  delen:
+  - opgave: |-
+      $6 + 3 + \tfrac32 + \cdots$
+    antwoord: |-
+      12
+    uitwerking: |-
+      $q=\tfrac12$: $\dfrac{6}{1-\tfrac12}=12$.
+  - opgave: |-
+      $1 - \tfrac12 + \tfrac14 - \cdots$
+    antwoord: |-
+      $\tfrac23$
+    uitwerking: |-
+      $q=-\tfrac12$: $\dfrac{1}{1+\tfrac12}=\dfrac23$.
+  - opgave: |-
+      $1 + 3 + 9 + \cdots$
+    antwoord: |-
+      divergeert
+    uitwerking: |-
+      $q=3$: de formule mag niet.
+  - opgave: |-
+      $0{,}444\ldots$
+    antwoord: |-
+      $\tfrac49$
+    uitwerking: |-
+      $u_1=0{,}4$ en $q=0{,}1$: $\dfrac{0{,}4}{0{,}9}=\dfrac49$.
+
+- id: h4-ratio
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    rekenregels
+  opgave: |-
+    Bereken.
+  lijst: reeks
+  kolommen: 2
+  delen:
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} \dfrac{5n - 1}{2n + 3}$
+    antwoord: |-
+      $\tfrac52$
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} \dfrac{n^2 + 1}{n^3 - 2}$
+    antwoord: |-
+      0
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} \dfrac{4 - n^2}{n^2 + n}$
+    antwoord: |-
+      $-1$
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} \dfrac{n^2 + 3}{n + 1}$
+    antwoord: |-
+      $+\infty$
+  uitwerking: |-
+    Vergelijk de hoogste machten in teller en noemer.\\
+    \textbf{a.}~$\dfrac{5n}{2n}=\dfrac52$.\\
+    \textbf{b.}~De noemer heeft de hoogste macht: 0.\\
+    \textbf{c.}~$\dfrac{-n^2}{n^2}=-1$.\\
+    \textbf{d.}~De teller heeft de hoogste macht, en beide zijn positief: $+\infty$.
+
+- id: h4-rrmr
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    rekenkundige en meetkundige rijen
+  opgave: |-
+    Bepaal de limiet.
+  lijst: reeks
+  delen:
+  - opgave: |-
+      $2,\ 5,\ 8,\ \ldots$
+    antwoord: |-
+      $+\infty$
+    uitwerking: |-
+      $v=3>0$.
+  - opgave: |-
+      $100,\ 50,\ 25,\ \ldots$
+    antwoord: |-
+      0
+    uitwerking: |-
+      $q=\tfrac12$.
+  - opgave: |-
+      $3,\ {-6},\ 12,\ \ldots$
+    antwoord: |-
+      bestaat niet
+    uitwerking: |-
+      $q=-2$.
+  - opgave: |-
+      $-1,\ {-3},\ {-9},\ \ldots$
+    antwoord: |-
+      $-\infty$
+    uitwerking: |-
+      $q=3$ en $u_1<0$.
+  - opgave: |-
+      $9,\ 7,\ 5,\ \ldots$
+    antwoord: |-
+      $-\infty$
+    uitwerking: |-
+      $v=-2<0$.
+  - opgave: |-
+      $8,\ {-4},\ 2,\ \ldots$
+    antwoord: |-
+      0
+    uitwerking: |-
+      $q=-\tfrac12$.
+
+- id: h4-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    fouten: limiet bereiken
+  opgave: |-
+    Iemand schrijft: `Een limiet wordt nooit bereikt, dus de rij $5,\ 5,\ 5,\ \ldots$ heeft geen limiet.' Wat is er fout?
+  antwoord: |-
+    De limiet is 5: de limiet mag bereikt worden.
+  uitwerking: |-
+    Voor elke $\varepsilon>0$ is $|u_n-5|=0<\varepsilon$, dus de limiet is 5. De definitie vraagt niet dat de termen van $L$ verschillen.
+
+- id: h4-monotoon
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    stijgend, dalend, begrensd
+  opgave: |-
+    Is de rij stijgend, dalend of geen van beide? Is ze naar boven begrensd? Naar onder? Is ze convergent?
+  lijst: reeks
+  kolommen: 4
+  delen:
+  - opgave: |-
+      $u_n = \tfrac1n$
+    antwoord: |-
+      dalend; boven 1, onder 0; conv.
+    uitwerking: |-
+      Dalend, met $0<u_n\leqslant 1$. Limiet 0.
+  - opgave: |-
+      $u_n = n^2$
+    antwoord: |-
+      stijgend; enkel onder (1); div.
+    uitwerking: |-
+      Stijgend, met $u_n\geqslant 1$, en geen bovengrens. Limiet $+\infty$.
+  - opgave: |-
+      $u_n = (-1)^n$
+    antwoord: |-
+      geen van beide; boven 1, onder $-1$; div.
+    uitwerking: |-
+      Wisselt, met $-1\leqslant u_n\leqslant 1$. Begrensd, maar de limiet bestaat niet.
+  - opgave: |-
+      $u_n = 5 - \tfrac1n$
+    antwoord: |-
+      stijgend; boven 5, onder 4; conv.
+    uitwerking: |-
+      Stijgend, met $4\leqslant u_n<5$. Limiet 5.
+
+- id: h4-evenwicht
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    dynamisch proces
+  opgave: |-
+    Bepaal het evenwicht.
+  lijst: reeks
+  delen:
+  - opgave: |-
+      $u_n = 0{,}5\,u_{n-1} + 6$
+    antwoord: |-
+      12
+    uitwerking: |-
+      $0{,}5\,L=6$.
+  - opgave: |-
+      $u_n = 0{,}9\,u_{n-1} + 20$
+    antwoord: |-
+      200
+    uitwerking: |-
+      $0{,}1\,L=20$.
+  - opgave: |-
+      $u_n = 0{,}75\,u_{n-1} - 3$
+    antwoord: |-
+      $-12$
+    uitwerking: |-
+      $0{,}25\,L=-3$.
+
+- id: h4-epsgetal
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    definitie: met getallen
+  opgave: |-
+    Vanaf welk volgnummer geldt dit?
+  lijst: enumerate
+  delen:
+  - opgave: |-
+      $u_n = \dfrac{1}{n^2}$ ligt minder dan 0,0001 van 0.
+    antwoord: |-
+      101
+    uitwerking: |-
+      $\dfrac{1}{n^2}<0{,}0001$ geeft $n^2>10\,000$, dus $n>100$.
+  - opgave: |-
+      $u_n = \dfrac{n+1}{n}$ ligt minder dan 0,001 van 1.
+    antwoord: |-
+      1001
+    uitwerking: |-
+      $\left|\dfrac{n+1}{n}-1\right|=\dfrac1n<0{,}001$ geeft $n>1000$.
+  - opgave: |-
+      $u_n = \dfrac{(-1)^n}{n}$ ligt minder dan 0,05 van 0.
+    antwoord: |-
+      21
+    uitwerking: |-
+      $\left|\dfrac{(-1)^n}{n}\right|=\dfrac1n<0{,}05$ geeft $n>20$.
+
+- id: h4-bewijs
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    definitie: bewijs
+  opgave: |-
+    Bewijs met de definitie.
+  lijst: reeks
+  delen:
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} \dfrac{7}{n} = 0$
+    antwoord: |-
+      $N\geqslant\tfrac{7}{\varepsilon}$
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} \dfrac{4n+1}{2n} = 2$
+    antwoord: |-
+      $N\geqslant\tfrac{1}{2\varepsilon}$
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} \dfrac{n-1}{n+3} = 1$
+    antwoord: |-
+      $N\geqslant\tfrac{4}{\varepsilon}$
+  uitwerking: |-
+    Neem telkens een willekeurige $\varepsilon>0$.\\
+    \textbf{a.}~$\tfrac7n<\varepsilon$ geeft $n>\tfrac{7}{\varepsilon}$. Kies $N\geqslant\tfrac{7}{\varepsilon}$.\\
+    \textbf{b.}~$\left|\dfrac{4n+1}{2n}-2\right|=\dfrac{1}{2n}<\varepsilon$ geeft $n>\dfrac{1}{2\varepsilon}$. Kies $N\geqslant\dfrac{1}{2\varepsilon}$.\\
+    \textbf{c.}~$\left|\dfrac{n-1}{n+3}-1\right|=\dfrac{4}{n+3}<\varepsilon$ geeft $n>\dfrac{4}{\varepsilon}-3$. Elke $N\geqslant\dfrac{4}{\varepsilon}$ is goed, want dan is ook $n>\dfrac{4}{\varepsilon}-3$.
+
+- id: h4-o2
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: dynamisch proces
+  opgave: |-
+    Een sportclub telt 800 leden. Elk jaar stopt 25\% en sluiten er 150 nieuwe leden aan.
+  lijst: enumerate
+  delen:
+  - opgave: |-
+      Geef een recursief voorschrift. Hoeveel leden zijn er op lange termijn?
+    uitwerking: |-
+      $L=0{,}75\,L+150$ geeft $L=600$.
+  - opgave: |-
+      Toon aan dat $u_n = 600 + 200 \cdot 0{,}75^{\,n}$.
+    uitwerking: |-
+      $v_n=u_n-600=0{,}75\,u_{n-1}-450=0{,}75\,v_{n-1}$ met $v_0=200$, dus $v_n=200\cdot 0{,}75^{\,n}$.
+  - opgave: |-
+      Na hoeveel jaar zijn er voor het eerst minder dan 650 leden?
+    uitwerking: |-
+      $200\cdot 0{,}75^{\,n}<50$ geeft $0{,}75^{\,n}<0{,}25$ en $n>4{,}82$, dus na 5 jaar.
+  - opgave: |-
+      Hoeveel nieuwe leden per jaar zijn nodig om op lange termijn 1000 leden te hebben?
+    uitwerking: |-
+      $1000=750+b$ geeft $b=250$.
+  antwoord: |-
+    \textbf{a.}~$u_n=0{,}75\,u_{n-1}+150$, $u_0=800$; 600 \quad \textbf{c.}~na 5 jaar \quad \textbf{d.}~250
+
+- id: h4-o3
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    definitie: oneindig
+  opgave: |-
+    Bewijs met de definitie.
+  lijst: reeks
+  kolommen: 2
+  delen:
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} (2n + 1) = +\infty$
+    antwoord: |-
+      $N\geqslant\tfrac{r-1}{2}$
+    uitwerking: |-
+      Neem $r>0$. $2n+1>r$ geeft $n>\dfrac{r-1}{2}$. Kies $N\in\mathbb{N}$ met $N\geqslant\dfrac{r-1}{2}$.
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} (5 - n^2) = -\infty$
+    antwoord: |-
+      $N\geqslant\sqrt{r+5}$
+    uitwerking: |-
+      Neem $r>0$. $5-n^2<-r$ geeft $n^2>r+5$, dus $n>\sqrt{r+5}$. Kies $N\in\mathbb{N}$ met $N\geqslant\sqrt{r+5}$.
+
+- id: h4-insluit
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    insluitstelling
+  opgave: |-
+    Bereken.
+  lijst: reeks
+  delen:
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} \dfrac{(-1)^n}{\sqrt{n}}$
+    antwoord: |-
+      0
+    uitwerking: |-
+      $-\dfrac{1}{\sqrt n}\leqslant u_n\leqslant\dfrac{1}{\sqrt n}$, en beide grenzen gaan naar 0.
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} \dfrac{3 + \cos n}{n}$
+    antwoord: |-
+      0
+    uitwerking: |-
+      $2\leqslant 3+\cos n\leqslant 4$, dus $\dfrac2n\leqslant u_n\leqslant\dfrac4n$.
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} \left(2 + \dfrac{\sin n}{n}\right)$
+    antwoord: |-
+      2
+    uitwerking: |-
+      $2-\dfrac1n\leqslant u_n\leqslant 2+\dfrac1n$, en beide grenzen gaan naar 2.
+
+- id: h4-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: reeks
+  opgave: |-
+    Een bal valt van 3 m hoogte en stuit telkens terug tot 80\% van de vorige hoogte. Welke afstand legt de bal in totaal af, als hij blijft stuiten tot hij stil ligt?
+  antwoord: |-
+    27 m
+  uitwerking: |-
+    De stuithoogtes $2{,}4;\ 1{,}92;\ \ldots$ tel je dubbel, omhoog en omlaag. De som is $\dfrac{2{,}4}{1-0{,}8}=12$, dus de afstand is $3+2\cdot 12=27$ m.
+
+- id: h4-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    rekenregels: machten
+  opgave: |-
+    Bereken.
+  lijst: reeks
+  delen:
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} \dfrac{3^n + 1}{3^n}$
+    antwoord: |-
+      1
+    uitwerking: |-
+      $1+(\tfrac13)^n\to 1$.
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} \dfrac{2^n - 1}{3^n}$
+    antwoord: |-
+      0
+    uitwerking: |-
+      $(\tfrac23)^n-(\tfrac13)^n\to 0$.
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} \dfrac{2^{n+1} + 3^n}{3^{n+1}}$
+    antwoord: |-
+      $\tfrac13$
+    uitwerking: |-
+      $\tfrac23\cdot(\tfrac23)^n+\tfrac13\to\tfrac13$.
+
+- id: h4-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    functie en rij
+  opgave: |-
+    Gegeven: $u_n = \sin(2n\pi)$ en $f(x) = \sin(2x\pi)$.
+  lijst: enumerate
+  delen:
+  - opgave: |-
+      Bereken $u_1$, $u_2$ en $u_3$. Wat is de limiet van de rij?
+    antwoord: |-
+      0, 0, 0; limiet 0
+    uitwerking: |-
+      $\sin(2n\pi)=0$ voor elk natuurlijk getal $n$, dus de limiet is 0.
+  - opgave: |-
+      Bestaat $\displaystyle\lim_{x\to+\infty} f(x)$? Wat leer je hieruit?
+    antwoord: |-
+      Nee.
+    uitwerking: |-
+      $f$ blijft schommelen tussen $-1$ en 1, dus die limiet bestaat niet. Uit de limiet van de rij volgt dus niets over de limiet van de functie: alleen het omgekeerde geldt.
+
+- id: h4-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    dynamisch proces: niet stijgend of dalend
+  opgave: |-
+    Gegeven: $u_0 = 10$ en $u_n = -0{,}5\,u_{n-1} + 6$.
+  lijst: enumerate
+  delen:
+  - opgave: |-
+      Bereken $u_1$, $u_2$ en $u_3$. Is de rij stijgend of dalend?
+    antwoord: |-
+      1; 5,5; 3,25; geen van beide
+    uitwerking: |-
+      $-5+6=1$, $-0{,}5+6=5{,}5$, $-2{,}75+6=3{,}25$. De termen gaan op en neer.
+  - opgave: |-
+      Bepaal het evenwicht $L$ en een expliciet voorschrift.
+    antwoord: |-
+      $L=4$, $u_n=4+6\cdot(-0{,}5)^n$
+    uitwerking: |-
+      $L=-0{,}5\,L+6$ geeft $L=4$. Met $v_n=u_n-4$ is $v_n=-0{,}5\,v_{n-1}$ en $v_0=6$.
+  - opgave: |-
+      De rij is niet stijgend of dalend en toch convergent. Is dat in strijd met de eigenschap uit sectie 4?
+    antwoord: |-
+      nee
+    uitwerking: |-
+      Nee: de eigenschap zegt dat stijgend en begrensd voldoende is om te convergeren, niet dat het nodig is.
+
+- id: h4-o8
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    reeks: repeterende decimalen
+  opgave: |-
+    Schrijf als een breuk.
+  lijst: reeks
+  delen:
+  - opgave: |-
+      $0{,}121212\ldots$
+    antwoord: |-
+      $\tfrac{4}{33}$
+    uitwerking: |-
+      $\dfrac{0{,}12}{1-0{,}01}=\dfrac{12}{99}=\dfrac{4}{33}$.
+  - opgave: |-
+      $1{,}2555\ldots$
+    antwoord: |-
+      $\tfrac{113}{90}$
+    uitwerking: |-
+      $1{,}2+\dfrac{0{,}05}{1-0{,}1}=\dfrac65+\dfrac{1}{18}=\dfrac{113}{90}$.
+  - opgave: |-
+      $0{,}999\ldots$
+    antwoord: |-
+      1
+    uitwerking: |-
+      $\dfrac{0{,}9}{1-0{,}1}=1$. Dus $0{,}999\ldots$ en 1 zijn hetzelfde getal.
+
+- id: h4-o9
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    rekenregels: toegevoegde
+  opgave: |-
+    Bereken.
+  lijst: reeks
+  kolommen: 2
+  delen:
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} \left(\sqrt{n^2 + n} - n\right)$
+    antwoord: |-
+      $\tfrac12$
+    uitwerking: |-
+      $\sqrt{n^2+n}-n=\dfrac{n}{\sqrt{n^2+n}+n}=\dfrac{1}{\sqrt{1+\tfrac1n}+1}\to\dfrac12$.
+  - opgave: |-
+      $\displaystyle\lim_{n\to+\infty} \left(n^2 - n\right)$
+    antwoord: |-
+      $+\infty$
+    uitwerking: |-
+      $n(n-1)$: een product van twee factoren die onbegrensd groeien. Het antwoord 0, uit $\infty-\infty$, is fout.
+
+- id: h4-o10
+  soort: opdracht
+  niveau: 2
+  prent:
+    naam: schildpad
+  thema: |-
+    context: reeks
+  opgave: |-
+    Een loper start 100 m achter een schildpad. De loper loopt 10 m/s, de schildpad 1 m/s. Als de loper op de startplaats van de schildpad is, is die 10 m verder. Als de loper daar is, is ze nog 1 m verder, enzovoort.
+  lijst: enumerate
+  delen:
+  - opgave: |-
+      Schrijf de tijd tot de loper de schildpad inhaalt als een oneindige som. Bereken ze.
+    uitwerking: |-
+      De stukken duren 10 s, 1 s, 0,1 s, \ldots, dus $\dfrac{10}{1-0{,}1}=\dfrac{100}{9}$ s.
+  - opgave: |-
+      Controleer met een vergelijking.
+    uitwerking: |-
+      $10t=100+t$ geeft $t=\dfrac{100}{9}$. Een oneindig aantal stukken kan dus samen een eindige tijd duren.
+  antwoord: |-
+    \textbf{a.}~$10+1+0{,}1+\cdots=\tfrac{100}{9}$ s, ongeveer 11,11 s
+
+- id: h4-o11
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    reeks: parameter
+  opgave: |-
+    Voor welke $x \neq 1$ convergeert $1 + (x-1) + (x-1)^2 + \cdots$? Wat is dan de som?
+  antwoord: |-
+    $0<x<2$ met $x\neq 1$; de som is $\dfrac{1}{2-x}$
+  uitwerking: |-
+    $q=x-1$, en $|x-1|<1$ geeft $0<x<2$. De som is $\dfrac{1}{1-(x-1)}=\dfrac{1}{2-x}$.
+
+- id: h4-o12
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    rekenregels: parameter
+  opgave: |-
+    Bepaal $k$ zodat $\displaystyle\lim_{n\to+\infty} \dfrac{k\,n^2 - 1}{4n^2 + n} = 3$.
+  antwoord: |-
+    $k=12$
+  uitwerking: |-
+    De hoogste machten geven $\dfrac{k}{4}=3$, dus $k=12$.
+
+- id: h4-o13
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    dynamisch proces: voorwaarde
+  opgave: |-
+    Bekijk $u_n = a\,u_{n-1} + b$ met $a \neq 1$.
+  lijst: enumerate
+  delen:
+  - opgave: |-
+      Stel $L = \dfrac{b}{1-a}$ en $v_n = u_n - L$. Toon aan dat $v_n = a\,v_{n-1}$.
+    uitwerking: |-
+      Uit $L=aL+b$ volgt $v_n=au_{n-1}+b-L=au_{n-1}-aL=a\,v_{n-1}$.
+  - opgave: |-
+      Voor welke $a$ is de rij convergent, als $u_0 \neq L$?
+    uitwerking: |-
+      $v_n=v_0\cdot a^n$ met $v_0\neq 0$. Dat gaat enkel naar een eindige limiet als $|a|<1$ (want $a\neq 1$).
+  - opgave: |-
+      Neem $u_0 = 1$ en $u_n = 2u_{n-1} - 3$. De vergelijking $L = 2L - 3$ geeft $L = 3$. Is 3 de limiet?
+    uitwerking: |-
+      Nee: $1,\ {-1},\ {-5},\ {-13},\ \ldots$ Hier is $u_n=3-2\cdot 2^n$, met limiet $-\infty$. De vergelijking vindt alleen de waarde die de limiet zou moeten hebben, als hij bestaat.
+  antwoord: |-
+    \textbf{b.}~$|a|<1$ \quad \textbf{c.}~nee: limiet $-\infty$
+
+- id: h4-o14
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    stijgend en begrensd: inductie
+  opgave: |-
+    Gegeven: $u_1 = 1$ en $u_n = \sqrt{2 + u_{n-1}}$.
+  lijst: enumerate
+  delen:
+  - opgave: |-
+      Bereken $u_2$, $u_3$ en $u_4$ op drie decimalen.
+    uitwerking: |-
+      $\sqrt3\approx 1{,}732$, $\sqrt{3{,}732}\approx 1{,}932$, $\sqrt{3{,}932}\approx 1{,}983$.
+  - opgave: |-
+      Bewijs met volledige inductie dat $0 < u_n < 2$ voor elke $n$.
+    uitwerking: |-
+      Basis: $0<1<2$. Stap: uit $0<u_k<2$ volgt $0<\sqrt{2+u_k}<\sqrt4=2$.
+  - opgave: |-
+      Toon aan dat de rij stijgend is. Kijk daarvoor naar $u_{n+1}^{\,2} - u_n^{\,2}$.
+    uitwerking: |-
+      $u_{n+1}^{\,2}-u_n^{\,2}=2+u_n-u_n^{\,2}=(2-u_n)(1+u_n)>0$, en alle termen zijn positief.
+  - opgave: |-
+      Waarom is de rij convergent? Bereken de limiet.
+    uitwerking: |-
+      Stijgend en naar boven begrensd. Voor de limiet geldt $L=\sqrt{2+L}$, dus $L^2-L-2=0$ en $L=2$ of $L=-1$. Omdat de termen positief zijn, is $L=2$.
+  antwoord: |-
+    \textbf{a.}~1,732; 1,932; 1,983 \quad \textbf{d.}~2
+
+- id: h4-o15
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    definitie: rekenregel
+  opgave: |-
+    Stel dat $\displaystyle\lim_{n\to+\infty} u_n = L$ en $k \neq 0$. Bewijs met de definitie dat $\displaystyle\lim_{n\to+\infty} k\,u_n = kL$.
+  antwoord: |-
+    Gebruik de $N$ die bij $\tfrac{\varepsilon}{|k|}$ hoort.
+  uitwerking: |-
+    Neem $\varepsilon>0$. Dan is ook $\dfrac{\varepsilon}{|k|}>0$, dus er is een $N$ met $|u_n-L|<\dfrac{\varepsilon}{|k|}$ voor elke $n>N$. Voor die $n$ geldt $|ku_n-kL|=|k|\cdot|u_n-L|<\varepsilon$.
+
+- id: h4-o16
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    waar of niet waar
+  opgave: |-
+    Waar of niet waar? Bewijs kort, of geef een tegenvoorbeeld.
+  lijst: enumerate
+  delen:
+  - opgave: |-
+      Elke begrensde rij is convergent.
+    antwoord: |-
+      niet waar
+    uitwerking: |-
+      Niet waar: $(-1)^n$.
+  - opgave: |-
+      Elke stijgende rij is divergent.
+    antwoord: |-
+      niet waar
+    uitwerking: |-
+      Niet waar: $1-\tfrac1n$.
+  - opgave: |-
+      Elke convergente rij is begrensd.
+    antwoord: |-
+      waar
+    uitwerking: |-
+      Waar: neem $\varepsilon=1$. Vanaf een bepaalde $N$ liggen alle termen tussen $L-1$ en $L+1$, en er blijven maar eindig veel andere termen over.
+  - opgave: |-
+      Als $u_n + v_n$ convergent is, dan zijn $u_n$ en $v_n$ allebei convergent.
+    antwoord: |-
+      niet waar
+    uitwerking: |-
+      Niet waar: $u_n=(-1)^n$ en $v_n=-(-1)^n$ geven som 0.
+  - opgave: |-
+      Als $\displaystyle\lim_{n\to+\infty} u_n = 0$, dan is $\displaystyle\lim_{n\to+\infty} u_n v_n = 0$.
+    antwoord: |-
+      niet waar
+    uitwerking: |-
+      Niet waar: $u_n=\tfrac1n$ en $v_n=n$ geven product 1.
+
+- id: h4-o17
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    reeks: telescoperen
+  opgave: |-
+    Gegeven: $u_i = \dfrac{1}{i(i+1)}$.
+  lijst: enumerate
+  delen:
+  - opgave: |-
+      Toon aan dat $u_i = \dfrac1i - \dfrac{1}{i+1}$.
+    uitwerking: |-
+      $\dfrac1i-\dfrac{1}{i+1}=\dfrac{i+1-i}{i(i+1)}=\dfrac{1}{i(i+1)}$.
+  - opgave: |-
+      Schrijf $s_n = u_1 + u_2 + \cdots + u_n$ uit en vereenvoudig.
+    uitwerking: |-
+      $s_n=\left(1-\tfrac12\right)+\left(\tfrac12-\tfrac13\right)+\cdots+\left(\tfrac1n-\tfrac{1}{n+1}\right)=1-\dfrac{1}{n+1}$: bijna alles valt weg.
+  - opgave: |-
+      Bereken $\tfrac12 + \tfrac16 + \tfrac{1}{12} + \tfrac{1}{20} + \cdots$
+    uitwerking: |-
+      De rij is $u_i$, en de som is de limiet van $s_n$: 1. Deze reeks is niet meetkundig, en toch heeft ze een som.
+  antwoord: |-
+    \textbf{b.}~$s_n=1-\dfrac{1}{n+1}$ \quad \textbf{c.}~1
+
+- id: h4-koppel-1
+  soort: koppel
+  niveau: 3
+  koppel:
+    rubriek: discreet
+    onderwerp: |-
+      Logica en bewijzen
+  opgave: |-
+    De definitie van de limiet heeft de vorm $\forall\, \varepsilon > 0,\ \exists\, N \in \mathbb{N},\ \forall\, n > N: \ |u_n - L| < \varepsilon$.
+  lijst: enumerate
+  delen:
+  - opgave: |-
+      Schrijf de ontkenning met kwantoren. Wat betekent ze in woorden?
+    uitwerking: |-
+      $\exists\,\varepsilon>0,\ \forall\,N\in\mathbb{N},\ \exists\,n>N:\ |u_n-L|\geqslant\varepsilon$. In woorden: er is een band waar steeds opnieuw termen buiten vallen, hoe ver je ook gaat.
+  - opgave: |-
+      Bewijs daarmee dat 1 niet de limiet is van $u_n = (-1)^n$.
+    uitwerking: |-
+      Neem $\varepsilon=1$. Voor elke $N$ is er een oneven $n>N$, en dan is $|u_n-1|=|-1-1|=2\geqslant 1$.
+  antwoord: |-
+    \textbf{a.}~$\exists\,\varepsilon>0,\ \forall\,N\in\mathbb{N},\ \exists\,n>N:\ |u_n-L|\geqslant\varepsilon$
+
+- id: h4-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: |-
+      Exponentiële functies
+  opgave: |-
+    Je belegt \eur 1 aan 100\% per jaar. Je krijgt de intrest niet één keer, maar $n$ keer per jaar, telkens $\tfrac{100}{n}$\%. Na een jaar heb je $u_n = \left(1 + \tfrac1n\right)^n$.
+  lijst: enumerate
+  delen:
+  - opgave: |-
+      Bereken $u_1$, $u_{12}$, $u_{365}$ en $u_{1\,000\,000}$ op vier decimalen.
+    antwoord: |-
+      2; 2,6130; 2,7146; 2,7183
+    uitwerking: |-
+      $2^1=2$, $u_{12}\approx 2{,}6130$, $u_{365}\approx 2{,}7146$, $u_{1\,000\,000}\approx 2{,}7183$.
+  - opgave: |-
+      Word je zo onbeperkt rijk? Welk getal herken je?
+    antwoord: |-
+      nee: de limiet is $\mathrm{e}$
+    uitwerking: |-
+      Nee: de waarden stijgen, maar komen nooit boven $\mathrm{e}\approx 2{,}71828$. De rij is stijgend en naar boven begrensd.
+
+- id: h4-koppel-3
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: algebra
+    onderwerp: |-
+      Complexe getallen
+  opgave: |-
+    Gegeven: $z = \tfrac12 + \tfrac12\mathrm{i}$.
+  lijst: enumerate
+  delen:
+  - opgave: |-
+      Bereken $|z|$. Wat is de limiet van $|z^n|$? Wat betekent dat voor $z^n$ in het complexe vlak?
+    antwoord: |-
+      $\tfrac{\sqrt2}{2}$; 0; de punten spiraleren naar de oorsprong
+    uitwerking: |-
+      $|z|=\sqrt{\tfrac14+\tfrac14}=\tfrac{\sqrt2}{2}<1$, dus $|z^n|=|z|^n\to 0$. De punten $z^n$ draaien telkens 45° en komen steeds dichter bij de oorsprong.
+  - opgave: |-
+      Bereken $1 + z + z^2 + \cdots$ met de formule van de meetkundige reeks.
+    antwoord: |-
+      $1+\mathrm{i}$
+    uitwerking: |-
+      $\dfrac{1}{1-z}=\dfrac{1}{\tfrac12-\tfrac12\mathrm{i}}=\dfrac{2}{1-\mathrm{i}}=\dfrac{2(1+\mathrm{i})}{2}=1+\mathrm{i}$.
+
+- id: h4-koppel-4
+  soort: koppel
+  niveau: 2
+  prent:
+    naam: bakker
+  koppel:
+    rubriek: algebra
+    onderwerp: |-
+      Matrices
+  opgave: |-
+    In een dorp zijn er twee bakkers. Elke maand stapt 10\% van de klanten van A over naar B, en 20\% van de klanten van B naar A. De aantallen klanten zijn $X_n = \begin{pmatrix} a_n \\ b_n \end{pmatrix}$, met $X_{n} = M X_{n-1}$ en $M = \begin{pmatrix} 0{,}9 & 0{,}2 \\ 0{,}1 & 0{,}8 \end{pmatrix}$.
+  lijst: enumerate
+  delen:
+  - opgave: |-
+      Bereken $X_1$ en $X_2$ als $X_0 = \begin{pmatrix} 300 \\ 0 \end{pmatrix}$.
+    antwoord: |-
+      $\begin{pmatrix} 270 \\ 30 \end{pmatrix}$, $\begin{pmatrix} 249 \\ 51 \end{pmatrix}$
+    uitwerking: |-
+      $X_1=\begin{pmatrix} 270 \\ 30 \end{pmatrix}$ en $X_2=\begin{pmatrix} 243+6 \\ 27+24 \end{pmatrix}=\begin{pmatrix} 249 \\ 51 \end{pmatrix}$.
+  - opgave: |-
+      Zoek het evenwicht: los $X = MX$ op met $a + b = 300$. Vergelijk met $L = aL + b$.
+    antwoord: |-
+      200 en 100
+    uitwerking: |-
+      $a=0{,}9\,a+0{,}2\,b$ geeft $0{,}1\,a=0{,}2\,b$, dus $a=2b$. Met $a+b=300$ is $a=200$ en $b=100$. Het is dezelfde redenering, met een matrix in plaats van een getal: de limiet verandert niet meer bij nog een stap.
+
+- id: h4-koppel-5
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: data
+    onderwerp: |-
+      Kansrekenen
+  opgave: |-
+    Twee spelers gooien om beurt met een dobbelsteen. Wie eerst een zes gooit, wint. Speler A begint.
+  lijst: enumerate
+  delen:
+  - opgave: |-
+      Bereken de kans dat A wint in zijn eerste, tweede en derde beurt. Welke soort rij is dat?
+    antwoord: |-
+      $\tfrac16$, $\tfrac{25}{216}$, $\tfrac{625}{7776}$; meetkundig, $q=\tfrac{25}{36}$
+    uitwerking: |-
+      Voor elke volgende beurt moeten beide spelers eerst geen zes gooien: telkens maal $(\tfrac56)^2=\tfrac{25}{36}$.
+  - opgave: |-
+      Bereken de kans dat A het spel wint.
+    antwoord: |-
+      $\tfrac{6}{11}$
+    uitwerking: |-
+      $\dfrac{\tfrac16}{1-\tfrac{25}{36}}=\dfrac16\cdot\dfrac{36}{11}=\dfrac{6}{11}$.
+  - opgave: |-
+      Is het voordeel van beginnen groot?
+    antwoord: |-
+      ongeveer 54,5\% tegen 45,5\%
+    uitwerking: |-
+      A wint met kans $\tfrac{6}{11}\approx 54{,}5\%$ en B met $\tfrac{5}{11}\approx 45{,}5\%$.
+
+- id: h4-t1
+  soort: test
+  niveau: 1
+  opgave: |-
+    Bepaal de limiet. Is de rij convergent of divergent?
+  lijst: reeks
+  delen:
+  - opgave: |-
+      $u_n = 3 - \tfrac4n$
+    antwoord: |-
+      3, conv.
+    uitwerking: |-
+      $\tfrac4n\to 0$.
+  - opgave: |-
+      $u_n = (-1)^n \cdot n$
+    antwoord: |-
+      bestaat niet, div.
+    uitwerking: |-
+      De termen wisselen van teken en worden steeds groter in absolute waarde.
+  - opgave: |-
+      $u_n = 2n + 1$
+    antwoord: |-
+      $+\infty$, div.
+    uitwerking: |-
+      De termen stijgen onbegrensd.
+
+- id: h4-t2
+  soort: test
+  niveau: 1
+  opgave: |-
+    Bepaal de limiet.
+  lijst: reeks
+  delen:
+  - opgave: |-
+      $5,\ 10,\ 20,\ \ldots$
+    antwoord: |-
+      $+\infty$
+    uitwerking: |-
+      $q=2$ en $u_1>0$.
+  - opgave: |-
+      $16,\ {-8},\ 4,\ \ldots$
+    antwoord: |-
+      0
+    uitwerking: |-
+      $q=-\tfrac12$, dus $|q|<1$.
+  - opgave: |-
+      $7,\ 4,\ 1,\ \ldots$
+    antwoord: |-
+      $-\infty$
+    uitwerking: |-
+      $v=-3$.
+
+- id: h4-t3
+  soort: test
+  niveau: 2
+  opgave: |-
+    Bewijs met de definitie: $\displaystyle\lim_{n\to+\infty} \dfrac{3n+2}{n} = 3$.
+  antwoord: |-
+    Kies $N\geqslant\tfrac{2}{\varepsilon}$.
+  uitwerking: |-
+    Neem $\varepsilon>0$. $\left|\dfrac{3n+2}{n}-3\right|=\dfrac2n<\varepsilon$ geeft $n>\dfrac{2}{\varepsilon}$. Kies $N\geqslant\dfrac{2}{\varepsilon}$: dan geldt voor elke $n>N$ dat $|u_n-3|<\varepsilon$.
+
+- id: h4-t4
+  soort: test
+  niveau: 1
+  opgave: |-
+    Bereken $\displaystyle\lim_{n\to+\infty} \dfrac{2n^2 - n}{5n^2 + 3}$.
+  antwoord: |-
+    $\tfrac25$
+  uitwerking: |-
+    Deel teller en noemer door $n^2$: $\dfrac{2-\tfrac1n}{5+\tfrac{3}{n^2}}\to\dfrac25$.
+
+- id: h4-t5
+  soort: test
+  niveau: 2
+  opgave: |-
+    Bereken $\displaystyle\lim_{n\to+\infty} \dfrac{2 + \sin n}{n^2}$.
+  antwoord: |-
+    0
+  uitwerking: |-
+    $1\leqslant 2+\sin n\leqslant 3$, dus $\dfrac{1}{n^2}\leqslant u_n\leqslant\dfrac{3}{n^2}$. Beide grenzen hebben limiet 0.
+
+- id: h4-t6
+  soort: test
+  niveau: 2
+  opgave: |-
+    Toon aan dat $u_n = \dfrac{3n}{n+1}$ stijgend en naar boven begrensd is. Wat is de limiet?
+  antwoord: |-
+    Bovengrens 3; limiet 3
+  uitwerking: |-
+    $u_n=3-\dfrac{3}{n+1}<3$. $u_{n+1}-u_n=\dfrac{3}{n+1}-\dfrac{3}{n+2}=\dfrac{3}{(n+1)(n+2)}>0$. De limiet is 3.
+
+- id: h4-t7
+  soort: test
+  niveau: 1
+  opgave: |-
+    Gegeven: $u_0 = 100$ en $u_n = 0{,}6\,u_{n-1} + 20$. Bepaal het evenwicht.
+  antwoord: |-
+    50
+  uitwerking: |-
+    $L=0{,}6\,L+20$ geeft $0{,}4\,L=20$, dus $L=50$.
+
+- id: h4-t8
+  soort: test
+  niveau: 1
+  opgave: |-
+    Bereken $20 + 5 + \tfrac54 + \cdots$ en schrijf $0{,}363636\ldots$ als een breuk.
+  antwoord: |-
+    $\tfrac{80}{3}$ en $\tfrac{4}{11}$
+  uitwerking: |-
+    $q=\tfrac14$, dus $\dfrac{20}{1-\tfrac14}=\dfrac{80}{3}$. Verder is $\dfrac{0{,}36}{1-0{,}01}=\dfrac{36}{99}=\dfrac{4}{11}$.
