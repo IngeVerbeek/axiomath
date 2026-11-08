@@ -1,0 +1,613 @@
+# Oefeningen van hoofdstuk 3. Zie oefeningenbank.py voor de velden.
+
+- id: h3-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Bereken $\begin{bmatrix} 2 & 1 \\ 5 & 3 \end{bmatrix} \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix}$.
+      antwoord: |-
+        $I_2$
+      uitwerking: |-
+        $\km{6 - 5 & -2 + 2 \\ 15 - 15 & -5 + 6} = \km{1 & 0 \\ 0 & 1}$.
+    - opgave: |-
+        Wat is het omgekeerde van $\frac23$? Welk getal heeft geen omgekeerde?
+      antwoord: |-
+        $\tfrac32$; 0
+      uitwerking: |-
+        $\frac23 \cdot \frac32 = 1$. Het getal 0 heeft geen omgekeerde, want $0 \cdot x = 0 \neq 1$.
+    - opgave: |-
+        Los op: $3x = 12$. Met welk getal vermenigvuldig je beide leden?
+      antwoord: |-
+        $x = 4$; met $\frac13$
+      uitwerking: |-
+        Vermenigvuldig met $\frac13$: $x = 4$.
+    - opgave: |-
+        Rijherleid $\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$.
+      antwoord: |-
+        $I_2$
+      uitwerking: |-
+        $R_2 - 3R_1$ geeft $\km{1 & 2 \\ 0 & -2}$, dan $R_2 \to -\frac12 R_2$ en $R_1 - 2R_2$: $\km{1 & 0 \\ 0 & 1}$.
+    - opgave: |-
+        Los op: $2x + y = 1$ en $5x + 3y = 2$.
+      antwoord: |-
+        $x = 1$, $y = -1$
+      uitwerking: |-
+        Uit de eerste: $y = 1 - 2x$. Invullen: $5x + 3 - 6x = 2$, dus $x = 1$ en $y = -1$.
+    - opgave: |-
+        Hoe groot is de oppervlakte van het parallellogram met hoekpunten $(0, 0)$, $(3, 0)$, $(4, 2)$ en $(1, 2)$?
+      antwoord: |-
+        6
+      uitwerking: |-
+        Basis 3 en hoogte 2: oppervlakte 6.
+
+- id: h3-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken}\quad Gegeven: $A = \begin{bmatrix} 2 & 1 \\ 5 & 3 \end{bmatrix}$ en $B = \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $AB$ en $BA$. Wat valt je op?
+      antwoord: |-
+        allebei $I$
+      uitwerking: |-
+        $AB = I$ (zie de Opwarmer) en $BA = \km{6 - 5 & 3 - 3 \\ -10 + 10 & -5 + 6} = I$. De matrix $B$ speelt voor $A$ de rol van een omgekeerde.
+    - opgave: |-
+        Het stelsel uit de Opwarmer is $A \km{x \\ y} = \km{1 \\ 2}$. Vermenigvuldig beide leden links met $B$. Wat vind je?
+      antwoord: |-
+        $\km{x \\ y} = B\km{1 \\ 2} = \km{1 \\ -1}$
+      uitwerking: |-
+        $BA\km{x \\ y} = I\km{x \\ y} = \km{x \\ y}$, en $B\km{1 \\ 2} = \km{3 - 2 \\ -5 + 4} = \km{1 \\ -1}$. Dezelfde oplossing als in de Opwarmer, met één product.
+    - opgave: |-
+        Zoek een matrix $C$ met $\begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix} C = I$. Lukt het? Waarom (niet)?
+      antwoord: |-
+        nee: de tweede rij van elk product is het dubbel van de eerste
+      uitwerking: |-
+        Het lukt niet. In elk product $\km{1 & 2 \\ 2 & 4} C$ is de tweede rij het dubbel van de eerste, want de tweede rij van de matrix is het dubbel van de eerste. Maar in $I$ is de tweede rij $\km{0 & 1}$ niet het dubbel van $\km{1 & 0}$.
+
+- id: h3-inverse
+  soort: kort
+  opgave: |-
+    Bepaal de inverse, als ze bestaat.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\begin{bmatrix} 4 & 7 \\ 1 & 2 \end{bmatrix}$
+      antwoord: |-
+        $\km{2 & -7 \\ -1 & 4}$
+      uitwerking: |-
+        $\det = 8 - 7 = 1$, dus de inverse is $\km{2 & -7 \\ -1 & 4}$.
+    - opgave: |-
+        $\begin{bmatrix} 2 & 3 \\ 4 & 6 \end{bmatrix}$
+      antwoord: |-
+        bestaat niet
+      uitwerking: |-
+        $\det = 12 - 12 = 0$: niet inverteerbaar. (Rijherleiden geeft een nulrij.)
+    - opgave: |-
+        $\begin{bmatrix} 1 & 0 & 2 \\ 2 & 1 & 3 \\ 0 & 0 & 1 \end{bmatrix}$
+      antwoord: |-
+        $\km{1 & 0 & -2 \\ -2 & 1 & 1 \\ 0 & 0 & 1}$
+      uitwerking: |-
+        $[A \,|\, I]$ met $R_2 - 2R_1$: $\um{ccc|ccc}{1 & 0 & 2 & 1 & 0 & 0 \\ 0 & 1 & -1 & -2 & 1 & 0 \\ 0 & 0 & 1 & 0 & 0 & 1}$. Dan $R_1 - 2R_3$ en $R_2 + R_3$: rechts staat $\km{1 & 0 & -2 \\ -2 & 1 & 1 \\ 0 & 0 & 1}$.
+
+- id: h3-matrixvgl
+  soort: kort
+  opgave: |-
+    Gegeven: $A = \begin{bmatrix} 4 & 7 \\ 1 & 2 \end{bmatrix}$, met de inverse uit de vorige oefening. Los op:
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $AX = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$
+      antwoord: |-
+        $\km{2 \\ -1}$
+      uitwerking: |-
+        $X = A^{-1}\km{1 \\ 0} = \km{2 \\ -1}$: de eerste kolom van $A^{-1}$.
+    - opgave: |-
+        $XA = \begin{bmatrix} 1 & 1 \end{bmatrix}$
+      antwoord: |-
+        $\km{1 & -3}$
+      uitwerking: |-
+        $X = \km{1 & 1} A^{-1} = \km{2 - 1 & -7 + 4} = \km{1 & -3}$. Hier staat $A^{-1}$ rechts.
+
+- id: h3-det
+  soort: kort
+  opgave: |-
+    Bereken de determinant.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\begin{vmatrix} 3 & -2 \\ 4 & 5 \end{vmatrix}$
+      antwoord: |-
+        $23$
+      uitwerking: |-
+        $15 + 8 = 23$.
+    - opgave: |-
+        $\begin{vmatrix} 1 & 0 & 2 \\ -1 & 3 & 1 \\ 2 & 1 & 0 \end{vmatrix}$
+      antwoord: |-
+        $-15$
+      uitwerking: |-
+        Naar de eerste rij: $1 \cdot (0 - 1) - 0 + 2 \cdot (-1 - 6) = -1 - 14 = -15$.
+    - opgave: |-
+        $\begin{vmatrix} 2 & 0 & 0 \\ 5 & -1 & 0 \\ 7 & 3 & 4 \end{vmatrix}$
+      antwoord: |-
+        $-8$
+      uitwerking: |-
+        Naar de eerste rij: $2 \cdot \bigl((-1) \cdot 4 - 0\bigr) = -8$. Boven de hoofddiagonaal staan alleen nullen: de determinant is het product van de hoofddiagonaal.
+
+- id: h3-cramer
+  soort: kort
+  opgave: |-
+    Los op met de regel van Cramer: $\begin{cases} 2x + 3y = 7 \\ x - y = 1 \end{cases}$
+  antwoord: |-
+    $x = 2$, $y = 1$
+  uitwerking: |-
+    $\det A = -2 - 3 = -5$. \ $x = \frac{1}{-5}\begin{vmatrix} 7 & 3 \\ 1 & -1 \end{vmatrix} = \frac{-7 - 3}{-5} = 2$ en $y = \frac{1}{-5}\begin{vmatrix} 2 & 7 \\ 1 & 1 \end{vmatrix} = \frac{2 - 7}{-5} = 1$.
+
+- id: h3-rang
+  soort: kort
+  opgave: |-
+    Bepaal de rang.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix}$
+      antwoord: |-
+        1
+      uitwerking: |-
+        $R_2 - 2R_1$ geeft een nulrij: één spil.
+    - opgave: |-
+        $\begin{bmatrix} 1 & 0 & 1 \\ 2 & 1 & 3 \\ 1 & 1 & 2 \end{bmatrix}$
+      antwoord: |-
+        2
+      uitwerking: |-
+        $R_2 - 2R_1$ en $R_3 - R_1$ geven $\km{1 & 0 & 1 \\ 0 & 1 & 1 \\ 0 & 1 & 1}$, dan $R_3 - R_2$: een nulrij. Twee spillen.
+    - opgave: |-
+        $\begin{bmatrix} 1 & 2 & 0 & 1 \\ 0 & 0 & 1 & 2 \\ 2 & 4 & 1 & 4 \end{bmatrix}$
+      antwoord: |-
+        2
+      uitwerking: |-
+        $R_3 - 2R_1$ geeft $\km{0 & 0 & 1 & 2}$, gelijk aan $R_2$. Dan $R_3 - R_2$: een nulrij. Twee spillen.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h3-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    inverse van een 2x2-matrix
+  opgave: |-
+    Bepaal de inverse, als ze bestaat.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\begin{bmatrix} 3 & 5 \\ 1 & 2 \end{bmatrix}$
+      antwoord: |-
+        $\km{2 & -5 \\ -1 & 3}$
+      uitwerking: |-
+        $\det = 6 - 5 = 1$: $\km{2 & -5 \\ -1 & 3}$.
+    - opgave: |-
+        $\begin{bmatrix} -2 & 1 \\ 4 & 3 \end{bmatrix}$
+      antwoord: |-
+        $\km{-\frac{3}{10} & \frac{1}{10} \\ \frac25 & \frac15}$
+      uitwerking: |-
+        $\det = -6 - 4 = -10$: $\frac{1}{-10}\km{3 & -1 \\ -4 & -2} = \km{-\frac{3}{10} & \frac{1}{10} \\ \frac25 & \frac15}$.
+    - opgave: |-
+        $\begin{bmatrix} 6 & 4 \\ 3 & 2 \end{bmatrix}$
+      antwoord: |-
+        bestaat niet
+      uitwerking: |-
+        $\det = 12 - 12 = 0$: niet inverteerbaar.
+
+- id: h3-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    determinant van een 3x3-matrix
+  opgave: |-
+    Bereken de determinant, één keer door te ontwikkelen en één keer met de regel van Sarrus.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\begin{vmatrix} 1 & 3 & -2 \\ 0 & 2 & 1 \\ 4 & -1 & 3 \end{vmatrix}$
+      antwoord: |-
+        $35$
+      uitwerking: |-
+        Naar de eerste kolom: $1 \cdot (6 + 1) - 0 + 4 \cdot (3 + 4) = 7 + 28 = 35$. Sarrus: $(6 + 12 + 0) - (-16 - 1 + 0) = 18 + 17 = 35$.
+    - opgave: |-
+        $\begin{vmatrix} 2 & 1 & 1 \\ 3 & 0 & -2 \\ 1 & 4 & 5 \end{vmatrix}$
+      antwoord: |-
+        $11$
+      uitwerking: |-
+        Naar de tweede rij: $-3 \cdot (5 - 4) + 0 - (-2) \cdot (8 - 1) = -3 + 14 = 11$. Sarrus: $(0 - 2 + 12) - (0 - 16 + 15) = 10 + 1 = 11$.
+
+- id: h3-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    stelsel oplossen met de inverse
+  opgave: |-
+    Gegeven: $D = \begin{bmatrix} 2 & 1 & 0 \\ 1 & 1 & 1 \\ 0 & 1 & 3 \end{bmatrix}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $D^{-1}$ met $[D \,|\, I]$.
+      antwoord: |-
+        $\km{2 & -3 & 1 \\ -3 & 6 & -2 \\ 1 & -2 & 1}$
+      uitwerking: |-
+        Verwissel $R_1$ en $R_2$ en rijherleid $[D \,|\, I]$: rechts komt $\km{2 & -3 & 1 \\ -3 & 6 & -2 \\ 1 & -2 & 1}$. Controle: rij 1 van $D$ maal kolom 1 is $4 - 3 = 1$.
+    - opgave: |-
+        Los op: $2x + y = 3$, \ $x + y + z = 4$, \ $y + 3z = 7$.
+      antwoord: |-
+        $(1, 1, 2)$
+      uitwerking: |-
+        $X = D^{-1}\km{3 \\ 4 \\ 7} = \km{6 - 12 + 7 \\ -9 + 24 - 14 \\ 3 - 8 + 7} = \km{1 \\ 1 \\ 2}$.
+
+- id: h3-o4
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    rang
+  opgave: |-
+    Bepaal de rang.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\begin{bmatrix} 1 & -1 & 2 \\ 2 & -2 & 4 \\ 3 & 1 & 0 \end{bmatrix}$
+      antwoord: |-
+        2
+      uitwerking: |-
+        De tweede rij is het dubbel van de eerste: $R_2 - 2R_1$ geeft een nulrij. De andere twee rijen zijn geen veelvoud van elkaar: rang 2.
+    - opgave: |-
+        $\begin{bmatrix} 2 & 4 & 6 \\ 1 & 2 & 3 \end{bmatrix}$
+      antwoord: |-
+        1
+      uitwerking: |-
+        De eerste rij is het dubbel van de tweede: rang 1.
+    - opgave: |-
+        $\begin{bmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{bmatrix}$
+      antwoord: |-
+        2
+      uitwerking: |-
+        Rijherleiden geeft $\km{1 & 0 \\ 0 & 1 \\ 0 & 0}$: rang 2, het maximum voor twee kolommen.
+
+- id: h3-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    inverteerbaar met een parameter
+  opgave: |-
+    Voor welke reële $k$ is de matrix inverteerbaar?
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\begin{bmatrix} k & 2 \\ 8 & k \end{bmatrix}$
+      antwoord: |-
+        $k \neq 4$ en $k \neq -4$
+      uitwerking: |-
+        $\det = k^2 - 16 = 0$ als $k = \pm 4$. Inverteerbaar voor alle andere $k$.
+    - opgave: |-
+        $\begin{bmatrix} 1 & 1 & 1 \\ 1 & k & 1 \\ 1 & 1 & k \end{bmatrix}$
+      antwoord: |-
+        $k \neq 1$
+      uitwerking: |-
+        $R_2 - R_1$ en $R_3 - R_1$ veranderen de determinant niet: $\begin{vmatrix} 1 & 1 & 1 \\ 0 & k - 1 & 0 \\ 0 & 0 & k - 1 \end{vmatrix} = (k - 1)^2$. Inverteerbaar als $k \neq 1$.
+
+- id: h3-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    matrixvergelijking
+  opgave: |-
+    Gegeven: $A = \begin{bmatrix} 2 & 1 \\ 1 & 3 \end{bmatrix}$ en $B = \begin{bmatrix} 2 & 0 \\ 1 & 4 \end{bmatrix}$. Los op: $AX = X + B$. Breng daarvoor de termen met $X$ samen.
+  antwoord: |-
+    $X = \km{3 & -4 \\ -1 & 4}$
+  uitwerking: |-
+    $AX - X = B$, dus $(A - I)X = B$, want $X = IX$. Met $A - I = \km{1 & 1 \\ 1 & 2}$, determinant 1 en inverse $\km{2 & -1 \\ -1 & 1}$, is $X = (A - I)^{-1}B = \km{4 - 1 & -4 \\ -2 + 1 & 4} = \km{3 & -4 \\ -1 & 4}$.
+
+- id: h3-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    klassieke fouten
+  opgave: |-
+    Waar of vals voor vierkante matrices? Verbeter wat vals is.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\det(A + B) = \det A + \det B$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: met $A = B = I_2$ is $\det(2I) = 4$, maar $\det I + \det I = 2$. Alleen voor het product is er een regel.
+    - opgave: |-
+        Voor een $3 \times 3$-matrix is $\det(2A) = 2\det A$.
+      antwoord: |-
+        vals: $8\det A$
+      uitwerking: |-
+        Vals: $2A$ is elke rij maal 2, en dat zijn drie rijen: $\det(2A) = 2^3\det A = 8\det A$.
+    - opgave: |-
+        $(AB)^{-1} = A^{-1}B^{-1}$
+      antwoord: |-
+        vals: $B^{-1}A^{-1}$
+      uitwerking: |-
+        Vals: $(AB)^{-1} = B^{-1}A^{-1}$. Omdat het product niet commutatief is, is $A^{-1}B^{-1}$ meestal iets anders.
+    - opgave: |-
+        Is $\det A = 0$, dan heeft $AX = O$ een oplossing verschillend van $O$.
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: dan is de rang kleiner dan $n$, dus is er minstens één parameter.
+    - opgave: |-
+        $\det(A^{-1}) = -\det A$
+      antwoord: |-
+        vals: $\frac{1}{\det A}$
+      uitwerking: |-
+        Vals: uit $AA^{-1} = I$ volgt $\det A \cdot \det A^{-1} = 1$, dus $\det(A^{-1}) = \frac{1}{\det A}$.
+
+- id: h3-o8
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    Cramer met drie onbekenden
+  opgave: |-
+    Los op met de regel van Cramer: $\begin{cases} x + y + z = 6 \\ 2x - y + z = 3 \\ x + 2y - z = 2 \end{cases}$
+  antwoord: |-
+    $(1, 2, 3)$
+  uitwerking: |-
+    $\det A = \begin{vmatrix} 1 & 1 & 1 \\ 2 & -1 & 1 \\ 1 & 2 & -1 \end{vmatrix} = 7$. Met de kolom $\km{6 \\ 3 \\ 2}$ op de plaats van kolom 1, 2 en 3 vind je de determinanten 7, 14 en 21. Dus $x = \frac77 = 1$, $y = \frac{14}{7} = 2$ en $z = \frac{21}{7} = 3$.
+
+- id: h3-o9
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: geheimschrift
+  opgave: |-
+    Een geheimschrift vervangt elke letter door haar plaats in het alfabet ($A = 1$, $B = 2$, \ldots). De letters gaan per twee in een kolom: het woord \textsc{fijn} wordt $\km{6 & 10 \\ 9 & 14}$. Die matrix wordt links vermenigvuldigd met de sleutel $S = \begin{bmatrix} 2 & 1 \\ 5 & 3 \end{bmatrix}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Versleutel het woord \textsc{fijn}.
+      antwoord: |-
+        $\km{21 & 34 \\ 57 & 92}$
+      uitwerking: |-
+        $S\km{6 & 10 \\ 9 & 14} = \km{12 + 9 & 20 + 14 \\ 30 + 27 & 50 + 42} = \km{21 & 34 \\ 57 & 92}$.
+    - opgave: |-
+        Je ontvangt $\km{21 & 34 \\ 57 & 92}$. Hoe vind je het woord terug? Reken het na.
+      antwoord: |-
+        vermenigvuldig links met $S^{-1}$
+      uitwerking: |-
+        Vermenigvuldig links met $S^{-1} = \km{3 & -1 \\ -5 & 2}$ (determinant 1): $\km{63 - 57 & 102 - 92 \\ -105 + 114 & -170 + 184} = \km{6 & 10 \\ 9 & 14}$, dus \textsc{fijn}.
+    - opgave: |-
+        Waarom kan de matrix $\km{2 & 4 \\ 1 & 2}$ geen sleutel zijn?
+      antwoord: |-
+        determinant 0: niet inverteerbaar
+      uitwerking: |-
+        Haar determinant is $4 - 4 = 0$: ze heeft geen inverse, en dan kun je een bericht niet ontcijferen. Twee verschillende woorden kunnen zelfs dezelfde versleuteling krijgen.
+
+- id: h3-o10
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    stelsel met een parameter, met rang
+  opgave: |-
+    Bespreek het stelsel $\begin{cases} x + y + z = 1 \\ x + ky + z = 1 \\ x + y + kz = 1 \end{cases}$ met de determinant en de rang.
+  antwoord: |-
+    $k \neq 1$: bepaald, $(1, 0, 0)$; \ $k = 1$: rang 1, twee parameters
+  uitwerking: |-
+    De determinant is $(k - 1)^2$ (zie opdracht \ref{oef:h3-o5}). Als $k \neq 1$ is ze niet 0: bepaald, en $(1, 0, 0)$ is de oplossing.\par
+    Als $k = 1$ zijn de drie vergelijkingen gelijk: $\operatorname{rang} A = \operatorname{rang}[A \,|\, B] = 1$, dus $3 - 1 = 2$ parameters: $(1 - s - t, s, t)$.
+
+- id: h3-o11
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    determinant 0 en inverse
+  opgave: |-
+    Neem $A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$ en $C = \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $AC = (\det A) I$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $AC = \km{ad - bc & -ab + ba \\ cd - dc & -cb + da} = (ad - bc)I$.
+    - opgave: |-
+        Stel dat $\det A = 0$ en dat $A$ toch een inverse heeft. Toon aan dat dan $C = O$, en dus $A = O$. Waarom is dat een tegenspraak?
+      antwoord: |-
+        $C = A^{-1}AC = A^{-1}O = O$
+      uitwerking: |-
+        Uit a: $AC = O$. Vermenigvuldig links met $A^{-1}$: $C = A^{-1}O = O$. Dan zijn $a$, $b$, $c$ en $d$ allemaal 0, dus $A = O$. Maar $O \cdot B = O \neq I$ voor elke $B$: de nulmatrix heeft geen inverse. Dus heeft een $2 \times 2$-matrix met determinant 0 geen inverse.
+
+- id: h3-o12
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een inverse zonder rijherleiden
+  opgave: |-
+    Stel dat $N^3 = O$ voor een vierkante matrix $N$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $(I - N)(I + N + N^2) = I$. Wat besluit je over $I - N$?
+      antwoord: |-
+        $I - N$ is inverteerbaar met inverse $I + N + N^2$
+      uitwerking: |-
+        $(I - N)(I + N + N^2) = I + N + N^2 - N - N^2 - N^3 = I - N^3 = I$. Ook in de andere volgorde geeft het $I$. Dus is $I - N$ inverteerbaar, met inverse $I + N + N^2$.
+    - opgave: |-
+        Pas toe op $N = \begin{bmatrix} 0 & 1 & 2 \\ 0 & 0 & 3 \\ 0 & 0 & 0 \end{bmatrix}$: ga na dat $N^3 = O$ en bereken $(I - N)^{-1}$.
+      antwoord: |-
+        $\km{1 & 1 & 5 \\ 0 & 1 & 3 \\ 0 & 0 & 1}$
+      uitwerking: |-
+        $N^2 = \km{0 & 0 & 3 \\ 0 & 0 & 0 \\ 0 & 0 & 0}$ en $N^3 = N^2 N = O$. Dus $(I - N)^{-1} = I + N + N^2 = \km{1 & 1 & 5 \\ 0 & 1 & 3 \\ 0 & 0 & 1}$.
+
+- id: h3-o13
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    rang met twee parameters
+  opgave: |-
+    Bepaal de rang van $P = \begin{bmatrix} 1 & 2 & 3 \\ 2 & a & 6 \\ 3 & 6 & b \end{bmatrix}$ voor alle reële $a$ en $b$.
+  antwoord: |-
+    rang 3 als $a \neq 4$ en $b \neq 9$; rang 1 als $a = 4$ en $b = 9$; anders rang 2
+  uitwerking: |-
+    $R_2 - 2R_1$ en $R_3 - 3R_1$: $\km{1 & 2 & 3 \\ 0 & a - 4 & 0 \\ 0 & 0 & b - 9}$. De determinant is $(a - 4)(b - 9)$.\par
+    Als $a \neq 4$ en $b \neq 9$: drie spillen, rang 3. Als $a = 4$ en $b = 9$: twee nulrijen, rang 1. Is maar één van de twee 0, dan blijft er één nulrij: rang 2.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h3-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: meetkunde
+    onderwerp: Oppervlakte
+  thema: |-
+    determinant als oppervlakte
+  figuur:
+    code: |-
+      \begin{tikzpicture}[x=.5cm,y=.5cm,font=\scriptsize]
+        \draw[black!14,very thin] (0,0) grid (6,5);
+        \draw[->,grijs] (0,0) -- (6.4,0); \draw[->,grijs] (0,0) -- (0,5.4);
+        \fill[accent!20] (1,1) -- (5,2) -- (2,4) -- cycle;
+        \draw[accent,thick] (1,1) node[below left,text=black] {$A$} -- (5,2) node[right,text=black] {$B$} -- (2,4) node[above,text=black] {$C$} -- cycle;
+      \end{tikzpicture}
+  opgave: |-
+    Het parallellogram met zijden de vectoren $\km{a \\ c}$ en $\km{b \\ d}$ vanuit de oorsprong heeft oppervlakte $\left|\begin{vmatrix} a & b \\ c & d \end{vmatrix}\right|$, de absolute waarde van de determinant.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Controleer dat met het parallellogram uit de Opwarmer.
+      antwoord: |-
+        $\left|\begin{vmatrix} 3 & 1 \\ 0 & 2 \end{vmatrix}\right| = 6$
+      uitwerking: |-
+        De zijden zijn $\km{3 \\ 0}$ en $\km{1 \\ 2}$: $|3 \cdot 2 - 1 \cdot 0| = 6$, zoals basis maal hoogte.
+    - opgave: |-
+        Bereken zo de oppervlakte van driehoek $ABC$ met $A(1, 1)$, $B(5, 2)$ en $C(2, 4)$.
+      antwoord: |-
+        $\tfrac{11}{2}$
+      uitwerking: |-
+        De zijden vanuit $A$ zijn $\overrightarrow{AB} = \km{4 \\ 1}$ en $\overrightarrow{AC} = \km{1 \\ 3}$. Het parallellogram heeft oppervlakte $|12 - 1| = 11$, de driehoek de helft: $\frac{11}{2}$.
+    - opgave: |-
+        Wat betekent determinant 0 voor de twee vectoren?
+      antwoord: |-
+        ze liggen op één rechte
+      uitwerking: |-
+        Het parallellogram is plat: de twee vectoren liggen op één rechte door de oorsprong, en de ene is een veelvoud van de andere.
+
+- id: h3-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: algebra
+    onderwerp: Complexe getallen
+  thema: |-
+    matrices van complexe getallen
+  opgave: |-
+    Bij het complex getal $z = a + bi$ hoort de matrix $M(z) = \begin{bmatrix} a & -b \\ b & a \end{bmatrix}$. Het product van zulke matrices hoort bij het product van de complexe getallen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $\det M(z)$. Welk bekend getal is dat?
+      antwoord: |-
+        $a^2 + b^2 = |z|^2$
+      uitwerking: |-
+        $\det M(z) = a \cdot a - (-b) \cdot b = a^2 + b^2$: het kwadraat van de modulus van $z$.
+    - opgave: |-
+        Wanneer is $M(z)$ inverteerbaar? Toon aan dat de inverse $M\bigl(\frac1z\bigr)$ is.
+      antwoord: |-
+        als $z \neq 0$
+      uitwerking: |-
+        $M(z)$ is inverteerbaar als $a^2 + b^2 \neq 0$, dus als $z \neq 0$. Met de formule is $M(z)^{-1} = \frac{1}{a^2 + b^2}\km{a & b \\ -b & a} = M\bigl(\frac{a - bi}{a^2 + b^2}\bigr)$, en $\frac{a - bi}{a^2 + b^2} = \frac{\overline{z}}{|z|^2} = \frac1z$.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h3-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    inverse van een 2x2-matrix
+  opgave: |-
+    Bepaal de inverse van $\begin{bmatrix} 5 & 3 \\ 3 & 2 \end{bmatrix}$.
+  antwoord: |-
+    $\km{2 & -3 \\ -3 & 5}$
+  uitwerking: |-
+    $\det = 10 - 9 = 1$, dus de inverse is $\km{2 & -3 \\ -3 & 5}$.
+
+- id: h3-t2
+  soort: test
+  niveau: 2
+  thema: |-
+    inverse van een 3x3-matrix
+  opgave: |-
+    Bereken de inverse van $T = \begin{bmatrix} 1 & 1 & 0 \\ 0 & 1 & 2 \\ 1 & 1 & 1 \end{bmatrix}$ met $[T \,|\, I]$.
+  antwoord: |-
+    $\km{-1 & -1 & 2 \\ 2 & 1 & -2 \\ -1 & 0 & 1}$
+  uitwerking: |-
+    $R_3 - R_1$ geeft $[0 \ 0 \ 1 \,|\, {-1} \ 0 \ 1]$. Dan $R_2 - 2R_3$: $[0 \ 1 \ 0 \,|\, 2 \ 1 \ {-2}]$, en $R_1 - R_2$: $[1 \ 0 \ 0 \,|\, {-1} \ {-1} \ 2]$. Dus $T^{-1} = \km{-1 & -1 & 2 \\ 2 & 1 & -2 \\ -1 & 0 & 1}$.
+
+- id: h3-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    determinant van een 3x3-matrix
+  opgave: |-
+    Bereken $\begin{vmatrix} 1 & 2 & 0 \\ 3 & -1 & 4 \\ 2 & 0 & 1 \end{vmatrix}$.
+  antwoord: |-
+    $9$
+  uitwerking: |-
+    Naar de eerste rij: $1 \cdot (-1 - 0) - 2 \cdot (3 - 8) + 0 = -1 + 10 = 9$.
+
+- id: h3-t4
+  soort: test
+  niveau: 1
+  thema: |-
+    regel van Cramer
+  opgave: |-
+    Los op met de regel van Cramer: $\begin{cases} 2x - y = 3 \\ 3x + 2y = 8 \end{cases}$
+  antwoord: |-
+    $x = 2$, $y = 1$
+  uitwerking: |-
+    $\det A = 4 + 3 = 7$. \ $x = \frac{1}{7}\begin{vmatrix} 3 & -1 \\ 8 & 2 \end{vmatrix} = \frac{6 + 8}{7} = 2$ en $y = \frac17\begin{vmatrix} 2 & 3 \\ 3 & 8 \end{vmatrix} = \frac{16 - 9}{7} = 1$.
+
+- id: h3-t5
+  soort: test
+  niveau: 1
+  thema: |-
+    rang
+  opgave: |-
+    Bepaal de rang van $\begin{bmatrix} 1 & 2 & 1 \\ 2 & 4 & 3 \\ 3 & 6 & 4 \end{bmatrix}$.
+  antwoord: |-
+    2
+  uitwerking: |-
+    $R_2 - 2R_1$ en $R_3 - 3R_1$: $\km{1 & 2 & 1 \\ 0 & 0 & 1 \\ 0 & 0 & 1}$, dan $R_3 - R_2$: een nulrij. Twee spillen: rang 2.
+
+- id: h3-t6
+  soort: test
+  niveau: 2
+  thema: |-
+    inverteerbaar met een parameter
+  opgave: |-
+    Voor welke reële $k$ is $\begin{bmatrix} k & 1 & 0 \\ 1 & k & 0 \\ 0 & 0 & 2 \end{bmatrix}$ inverteerbaar?
+  antwoord: |-
+    $k \neq 1$ en $k \neq -1$
+  uitwerking: |-
+    Naar de derde rij: $\det = 2(k^2 - 1)$. Dat is 0 als $k = \pm 1$, dus inverteerbaar voor alle andere $k$.

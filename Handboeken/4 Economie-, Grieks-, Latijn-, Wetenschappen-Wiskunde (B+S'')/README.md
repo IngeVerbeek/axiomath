@@ -12,7 +12,7 @@ Leerplan: B+S'' (Katholiek Onderwijs Vlaanderen). Doelen volgens de tabel met le
 | Analyse/Rationale functies | LPD 24-25 | nog te maken |
 | Analyse/Limieten en afgeleiden | LPD 26-30 | nog te maken |
 | [Analyse/Integralen](Analyse/Integralen) | LPD 31-33 | vier hoofdstukken, eerste versie, nog na te lezen |
-| Algebra/Matrices | LPD 34-37 | nog te maken |
+| [Algebra/Matrices](Algebra/Matrices) | LPD 34-37 | vier hoofdstukken, eerste versie, nog na te lezen |
 | Algebra/Complexe getallen | LPD 38-42 | nog te maken |
 | Algebra/Groepen | LPD 43 | bestaat, wordt overgezet |
 | Meetkunde/Ruimtemeetkunde | LPD 5-8 | nog te maken |
