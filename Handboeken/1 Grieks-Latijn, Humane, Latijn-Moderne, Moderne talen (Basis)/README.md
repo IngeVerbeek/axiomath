@@ -6,10 +6,10 @@ Leerplan: Basis (Katholiek Onderwijs Vlaanderen). Doelen volgens de tabel met le
 | Cursus | Leerplandoelen | Status |
 | --- | --- | --- |
 | [Analyse/Algemene functies](Analyse/Algemene%20functies) | LPD 5-6 | 3 hoofdstukken, eerste versie (afgeleid van pakket 4), nog na te lezen |
-| Analyse/Exponentiële en logaritmische functies | LPD 7-10, K1 | nog te maken |
+| [Analyse/Exponentiële en logaritmische functies](Analyse/Exponenti%C3%ABle%20en%20logaritmische%20functies) | LPD 7-10, K1 | 3 hoofdstukken, eerste versie (afgeleid van pakket 4), nog na te lezen |
 | [Analyse/Goniometrische functies](Analyse/Goniometrische%20functies) | LPD 11-13, K2 | 4 hoofdstukken, eerste versie (afgeleid van pakket 4), nog na te lezen |
-| Analyse/Afgeleiden | LPD 14-15 | nog te maken |
+| [Analyse/Afgeleiden](Analyse/Afgeleiden) | LPD 14-15 | 4 hoofdstukken, eerste versie (afgeleid van pakket 4), nog na te lezen |
 | [Algebra/Matrices](Algebra/Matrices) | K3, K4 | eerste versie (2 hoofdstukken, 7 nov 2026), nog na te lezen |
 | Discrete wiskunde/Rijen | LPD 16 | nog te maken |
-| Data en onzekerheid/Kansrekenen | LPD 17 | nog te maken |
+| [Data en onzekerheid/Kansrekenen](Data%20en%20onzekerheid/Kansrekenen) | LPD 17 | 4 hoofdstukken, eerste versie (afgeleid van pakket 4), nog na te lezen |
 | [Data en onzekerheid/Statistiek](Data%20en%20onzekerheid/Statistiek) | LPD 18-21, K5 | 4 hoofdstukken, eerste versie (afgeleid van pakket 4), nog na te lezen |
