@@ -1,0 +1,369 @@
+# Oefeningen van hoofdstuk 1. Zie oefeningenbank.py voor de velden.
+
+- id: h1-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Werk uit: $(x - 2)(x^2 + x + 1)$.
+      antwoord: |-
+        $x^3 - x^2 - x - 2$
+      uitwerking: |-
+        $x^3 + x^2 + x - 2x^2 - 2x - 2 = x^3 - x^2 - x - 2$.
+    - opgave: |-
+        Ontbind: $x^2 - 5x + 6$.
+      antwoord: |-
+        $(x - 2)(x - 3)$
+      uitwerking: |-
+        Som $5$, product $6$.
+    - opgave: |-
+        Ontbind: $x^3 - 4x$.
+      antwoord: |-
+        $x(x - 2)(x + 2)$
+      uitwerking: |-
+        $x(x^2 - 4)$.
+    - opgave: |-
+        Geef alle gehele delers van $12$.
+      antwoord: |-
+        $\pm 1, \pm 2, \pm 3, \pm 4, \pm 6, \pm 12$
+      uitwerking: |-
+        $\pm 1$, $\pm 2$, $\pm 3$, $\pm 4$, $\pm 6$, $\pm 12$.
+    - opgave: |-
+        Deel $147$ door $12$: quotiënt en rest?
+      antwoord: |-
+        12, rest 3
+      uitwerking: |-
+        $147 = 12 \cdot 12 + 3$.
+    - opgave: |-
+        Bereken $f(-1)$ als $f(x) = x^3 + 2x^2 - 3$.
+      antwoord: |-
+        $-2$
+      uitwerking: |-
+        $-1 + 2 - 3 = -2$.
+
+- id: h1-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken} Neem $A(x) = x^3 - 1$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Werk uit: $(x - 1)(x^2 + x + 1)$. Wat valt op?
+      antwoord: |-
+        $x^3 - 1$
+      uitwerking: |-
+        $x^3 + x^2 + x - x^2 - x - 1 = x^3 - 1$: $x - 1$ is een deler van $A(x)$.
+    - opgave: |-
+        Bereken $A(1)$.
+      antwoord: |-
+        0
+      uitwerking: |-
+        $1 - 1 = 0$.
+    - opgave: |-
+        Is $x - 2$ een deler van $A(x)$? Bereken $A(2)$. Welk verband vermoed je?
+      antwoord: |-
+        nee; $A(2) = 7$
+      uitwerking: |-
+        $A(2) = 7 \neq 0$. Vermoeden: $x - a$ is een deler als en slechts als $A(a) = 0$.
+
+- id: h1-delen
+  soort: kort
+  opgave: |-
+    Bepaal quotiënt en rest.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $(x^3 + 4x^2 - 7) : (x + 3)$, met Horner
+      antwoord: |-
+        $Q = x^2 + x - 3$, $R = 2$
+      uitwerking: |-
+        $a = -3$, coëfficiënten $1, 4, 0, -7$: onderste rij $1, 1, -3, 2$. Controle: $A(-3) = -27 + 36 - 7 = 2$.
+    - opgave: |-
+        $(2x^3 + x^2 - 3x + 1) : (x^2 - 1)$
+      antwoord: |-
+        $Q = 2x + 1$, $R = -x + 2$
+      uitwerking: |-
+        $2x(x^2 - 1)$ aftrekken geeft $x^2 - x + 1$; $1 \cdot (x^2 - 1)$ aftrekken geeft $-x + 2$.
+
+- id: h1-ontbinden
+  soort: kort
+  opgave: |-
+    Ontbind volledig en geef de nulwaarden.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $x^3 - 7x + 6$
+      antwoord: |-
+        $(x - 1)(x - 2)(x + 3)$
+      uitwerking: |-
+        $f(1) = 0$; Horner geeft $x^2 + x - 6 = (x - 2)(x + 3)$. Nulwaarden $-3$, $1$, $2$.
+    - opgave: |-
+        $2x^3 - 3x^2 - 3x + 2$
+      antwoord: |-
+        $(x + 1)(2x - 1)(x - 2)$
+      uitwerking: |-
+        $f(-1) = 0$; Horner geeft $2x^2 - 5x + 2 = (2x - 1)(x - 2)$. Nulwaarden $-1$, $\frac12$, $2$.
+
+- id: h1-schets
+  soort: kort
+  opgave: |-
+    Geef de nulwaarden met multipliciteit, de tekentabel en het gedrag aan de uiteinden van $f(x) = x(x - 3)^2$. Schets de grafiek.
+  antwoord: |-
+    \tekentabel{cccccc}{x & & 0 & & 3 & }{f(x) & - & 0 & + & 0 & +}
+  uitwerking: |-
+    $0$ enkel (snijdt), $3$ dubbel (raakt). Hoogstegraadsterm $x^3$: links onder, rechts boven. \tekentabel{cccccc}{x & & 0 & & 3 & }{f(x) & - & 0 & + & 0 & +}
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h1-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    Horner
+  opgave: |-
+    Bepaal quotiënt en rest met Horner.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $(x^4 - 2x^2 + 3x - 1) : (x - 1)$
+      antwoord: |-
+        $Q = x^3 + x^2 - x + 2$, $R = 1$
+      uitwerking: |-
+        Coëfficiënten $1, 0, -2, 3, -1$; onderste rij $1, 1, -1, 2, 1$.
+    - opgave: |-
+        $(3x^3 - 2x + 4) : (x + 2)$
+      antwoord: |-
+        $Q = 3x^2 - 6x + 10$, $R = -16$
+      uitwerking: |-
+        Coëfficiënten $3, 0, -2, 4$, $a = -2$; onderste rij $3, -6, 10, -16$.
+
+- id: h1-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    reststelling
+  opgave: |-
+    Bepaal de rest zonder te delen.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $(x^5 - 3x + 1) : (x - 2)$
+      antwoord: |-
+        27
+      uitwerking: |-
+        $2^5 - 6 + 1 = 27$.
+    - opgave: |-
+        $(x^{100} + 1) : (x + 1)$
+      antwoord: |-
+        2
+      uitwerking: |-
+        $(-1)^{100} + 1 = 2$.
+
+- id: h1-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    ontbinden
+  opgave: |-
+    Ontbind volledig.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $x^3 - x^2 - 4x + 4$
+      antwoord: |-
+        $(x - 1)(x - 2)(x + 2)$
+      uitwerking: |-
+        $x^2(x - 1) - 4(x - 1) = (x - 1)(x^2 - 4)$.
+    - opgave: |-
+        $x^4 - 5x^2 + 4$
+      antwoord: |-
+        $(x - 1)(x + 1)(x - 2)(x + 2)$
+      uitwerking: |-
+        Stel $t = x^2$: $t^2 - 5t + 4 = (t - 1)(t - 4)$, dus $(x^2 - 1)(x^2 - 4)$.
+
+- id: h1-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een parameter
+  opgave: |-
+    Bepaal $k$ zodat $x - 2$ een deler is van $x^3 + kx^2 - 4$. Ontbind dan volledig.
+  antwoord: |-
+    $k = -1$; $(x - 2)(x^2 + x + 2)$
+  uitwerking: |-
+    $8 + 4k - 4 = 0$, dus $k = -1$. Horner: $x^3 - x^2 - 4 = (x - 2)(x^2 + x + 2)$; de discriminant van $x^2 + x + 2$ is $-7 < 0$, dus verder ontbinden kan niet.
+
+- id: h1-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    schetsen
+  opgave: |-
+    Schets de grafiek van $f(x) = x^4 - 4x^2$. Geef de nulwaarden met multipliciteit en de tekentabel. Welke symmetrie heeft de grafiek?
+  antwoord: |-
+    \tekentabel{cccccccc}{x & & -2 & & 0 & & 2 & }{f(x) & + & 0 & - & 0 & - & 0 & +}
+  uitwerking: |-
+    $f(x) = x^2(x - 2)(x + 2)$: $0$ dubbel (raakt), $\pm 2$ enkel. Hoogstegraadsterm $x^4$: aan beide uiteinden boven. $f$ is even: symmetrisch om de $y$-as. \tekentabel{cccccccc}{x & & -2 & & 0 & & 2 & }{f(x) & + & 0 & - & 0 & - & 0 & +}
+
+- id: h1-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    voorschrift uit een grafiek
+  figuur:
+    opties: |-
+      4.4cm
+    code: |-
+      \begin{tikzpicture}[x=.55cm,y=.3cm,font=\scriptsize]
+        \rooster{-3}{1}{2}{-5}{1}{4}
+        \kromme{-3.1}{1.3}{(\x+2)^2*(\x-1)}
+        \vol{(-2,0)} \vol{(1,0)} \vol{(0,-4)}
+      \end{tikzpicture}
+  opgave: |-
+    De grafiek van een veeltermfunctie van graad 3 raakt de $x$-as in $-2$, snijdt ze in $1$, en gaat door $(0, -4)$. Geef het voorschrift.
+  antwoord: |-
+    $f(x) = (x + 2)^2(x - 1)$
+  uitwerking: |-
+    $f(x) = a(x + 2)^2(x - 1)$ en $f(0) = a \cdot 4 \cdot (-1) = -4$, dus $a = 1$.
+
+- id: h1-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een doos
+  opgave: |-
+    Uit een karton van $20$ cm op $12$ cm knip je in elke hoek een vierkant met zijde $x$ weg. De doos heeft inhoud $V(x) = x(20 - 2x)(12 - 2x)$. Voor welke $x$ in $\left]0, 6\right[$ is de inhoud $256$ cm$^3$? Tip: probeer $x = 2$.
+  antwoord: |-
+    $x = 2$ of $x = 7 - \sqrt{17} \approx 2{,}88$
+  uitwerking: |-
+    $4x^3 - 64x^2 + 240x - 256 = 0$, of gedeeld door 4: $x^3 - 16x^2 + 60x - 64 = 0$. $x = 2$ is een nulwaarde; Horner geeft $x^2 - 14x + 32$, met nulwaarden $7 \pm \sqrt{17}$. Alleen $7 - \sqrt{17} \approx 2{,}88$ ligt in $\left]0, 6\right[$.
+
+- id: h1-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een veelterm opstellen
+  opgave: |-
+    Geef de veeltermfunctie van graad 3 met nulwaarden $1$, $2$ en $3$, waarvoor $f(0) = 12$. Is er maar één?
+  antwoord: |-
+    $f(x) = -2(x - 1)(x - 2)(x - 3)$; ja
+  uitwerking: |-
+    $f(x) = a(x - 1)(x - 2)(x - 3)$ en $f(0) = -6a = 12$, dus $a = -2$: $f(x) = -2x^3 + 12x^2 - 22x + 12$. Elke veelterm van graad 3 met die nulwaarden heeft deze vorm (factorstelling), dus er is er maar één.
+
+- id: h1-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een deelbaarheid
+  opgave: |-
+    Neem $y$ als een vast getal en bekijk $A(x) = x^n - y^n$ als veelterm in $x$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $x - y$ een deler is van $A(x)$.
+      antwoord: |-
+        $A(y) = 0$
+      uitwerking: |-
+        $A(y) = y^n - y^n = 0$, dus volgens de factorstelling is $x - y$ een deler.
+    - opgave: |-
+        Leid af dat $7^n - 1$ deelbaar is door $6$ voor elk natuurlijk getal $n \geqslant 1$.
+      antwoord: |-
+        neem $x = 7$, $y = 1$
+      uitwerking: |-
+        $x^n - 1 = (x - 1) \cdot Q(x)$ met $Q(x) = x^{n-1} + \cdots + x + 1$, een veelterm met gehele coëfficiënten. Voor $x = 7$: $7^n - 1 = 6 \cdot Q(7)$, en $Q(7)$ is een geheel getal.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h1-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: algebra
+    onderwerp: Complexe getallen
+  thema: |-
+    complexe nulwaarden
+  opgave: |-
+    Ontbind $x^3 - 1$ over $\R$, en zoek dan alle complexe nulwaarden. Hoeveel zijn het er?
+  antwoord: |-
+    $(x - 1)(x^2 + x + 1)$; $1$, $-\frac12 \pm \frac{\sqrt3}{2}i$: drie
+  uitwerking: |-
+    $x^3 - 1 = (x - 1)(x^2 + x + 1)$; de discriminant van de tweede factor is $-3$, dus $x = \frac{-1 \pm i\sqrt3}{2}$. Samen drie nulwaarden, zoveel als de graad.
+
+- id: h1-koppel-3
+  soort: koppel
+  niveau: 1
+  koppel:
+    rubriek: analyse
+    onderwerp: Algemene functies
+  thema: |-
+    even veeltermen
+  opgave: |-
+    Toon aan: een veeltermfunctie met alleen even machten van $x$, zoals $f(x) = x^4 - 3x^2 + 1$, is een even functie. Wat kun je zeggen als er alleen oneven machten in staan?
+  antwoord: |-
+    $f(-x) = f(x)$; dan oneven
+  uitwerking: |-
+    $(-x)^{2k} = x^{2k}$, dus $f(-x) = f(x)$. Met alleen oneven machten is $(-x)^{2k+1} = -x^{2k+1}$, dus $f(-x) = -f(x)$: oneven.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h1-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    Horner
+  opgave: |-
+    Bepaal quotiënt en rest van $(2x^3 + 5x^2 - x + 4) : (x + 3)$, en controleer met de reststelling.
+  antwoord: |-
+    $Q = 2x^2 - x + 2$, $R = -2$
+  uitwerking: |-
+    Coëfficiënten $2, 5, -1, 4$, $a = -3$: onderste rij $2, -1, 2, -2$. Controle: $-54 + 45 + 3 + 4 = -2$.
+
+- id: h1-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    staartdeling
+  opgave: |-
+    Bepaal quotiënt en rest van $(x^3 + 2x^2 + 3) : (x^2 + x)$.
+  antwoord: |-
+    $Q = x + 1$, $R = -x + 3$
+  uitwerking: |-
+    $x(x^2 + x)$ aftrekken geeft $x^2 + 3$; $1 \cdot (x^2 + x)$ aftrekken geeft $-x + 3$.
+
+- id: h1-t3
+  soort: test
+  niveau: 2
+  thema: |-
+    ontbinden
+  opgave: |-
+    Ontbind $x^3 + 2x^2 - 5x - 6$ volledig.
+  antwoord: |-
+    $(x + 1)(x - 2)(x + 3)$
+  uitwerking: |-
+    $f(-1) = -1 + 2 + 5 - 6 = 0$; Horner geeft $x^2 + x - 6 = (x - 2)(x + 3)$.
+
+- id: h1-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    schetsen
+  opgave: |-
+    Schets $f(x) = (x - 1)^2(x + 2)$ met de tekentabel en het snijpunt met de $y$-as.
+  antwoord: |-
+    \tekentabel{cccccc}{x & & -2 & & 1 & }{f(x) & - & 0 & + & 0 & +}
+  uitwerking: |-
+    $-2$ enkel (snijdt), $1$ dubbel (raakt). Hoogstegraadsterm $x^3$: links onder, rechts boven. $f(0) = 2$. \tekentabel{cccccc}{x & & -2 & & 1 & }{f(x) & - & 0 & + & 0 & +}
