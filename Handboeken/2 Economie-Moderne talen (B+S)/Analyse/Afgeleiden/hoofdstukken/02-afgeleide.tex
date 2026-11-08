@@ -1,0 +1,208 @@
+%----------------------------------------------------------------------------------------
+% DE AFGELEIDE. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h2-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{2}{De afgeleide}
+
+\lkr{Leerplan B+S: LPD 18-21 (afgeleiden), het deel over het differentiequotiënt, de afgeleide als limiet, de raaklijn, de afgeleide functie en de rekenregels. Het beeld van de voorkant (koorden door $P$ die naar de raaklijn draaien) is de figuur in sectie 1. Laat leerlingen de definitie een paar keer zelf uitwerken voor ze de rekenregels gebruiken.}
+
+Een snelheidsmeter toont hoe snel je \textit{nu} rijdt, niet gemiddeld over de rit. Maar snelheid is afstand gedeeld door tijd, en op één ogenblik leg je geen afstand af. Hoe kan dat dan? Het antwoord is een limiet: neem de gemiddelde snelheid over een steeds kortere tijd. Zo ontstaat de afgeleide, misschien het belangrijkste begrip van de analyse.
+
+\begin{oefeningen}[Start]
+\oef{h2-start-1}
+
+\oef{h2-verken}
+\end{oefeningen}
+
+%========================================================================================
+\section{De afgeleide in een punt}
+
+\naast{%
+De rechte door twee punten $P(a, f(a))$ en $Q(a + h, f(a + h))$ van de grafiek is een \textbf{koorde}. Haar richtingscoëfficiënt is het differentiequotiënt: de gemiddelde verandering van $f$ tussen $a$ en $a + h$.
+
+Laat $Q$ naar $P$ schuiven ($h \to 0$). De koorden draaien dan naar een grensstand: de \textbf{raaklijn} in $P$.}{%
+\begin{tikzpicture}[x=1.1cm,y=.55cm,font=\scriptsize]
+  \draw[->,lijngrijs] (-.3,0) -- (2.6,0) node[right,text=black] {$x$};
+  \draw[->,lijngrijs] (0,-.3) -- (0,5.6) node[above,text=black] {$y$};
+  \kromme{0}{2.3}{(\x)^2}
+  \draw[grijs] (.55,-.35) -- (2.3,4.9);
+  \draw[grijs,dashed] (.5,-.25) -- (2.3,4.25);
+  \draw[accent,thick] (.3,-.4) -- (2.2,3.4);
+  \fill[accent] (1,1) circle (.05) node[above left,text=black] {$P$};
+  \fill (2,4) circle (.05) node[right] {$Q$};
+  \fill (1.5,2.25) circle (.04);
+  \node[accent,right] at (2.2,3.3) {raaklijn};
+\end{tikzpicture}}
+
+\begin{theorie}
+Het \textbf{\textcolor{accent}{differentiequotiënt}} van $f$ tussen $a$ en $a + h$ is $\formule{\frac{f(a + h) - f(a)}{h}}$. De \textbf{\textcolor{accent}{afgeleide}} van $f$ in $a$ is
+\[\formule{f'(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}},\]
+als die limiet bestaat; $f$ is dan \textbf{\textcolor{accent}{afleidbaar}} in $a$. Het getal $f'(a)$ is de richtingscoëfficiënt van de raaklijn in $(a, f(a))$:
+\[\formule{y = f(a) + f'(a)(x - a)}.\]
+\end{theorie}
+
+\voorbeeld{}{Bereken met de definitie $f'(3)$ voor $f(x) = x^2$, en geef de raaklijn in $(3, 9)$.\label{vb:h2-definitie}}{%
+\uitleg{Werk het differentiequotiënt uit tot de $h$ in de noemer wegvalt. Neem dan de limiet.}
+\begin{stappenbreed}
+\frac{(3 + h)^2 - 9}{h} = \frac{6h + h^2}{h} = 6 + h & Voor $h \neq 0$. \\
+f'(3) = \lim_{h \to 0} (6 + h) = 6 & \\
+y = 9 + 6(x - 3) = 6x - 9 & Raaklijn.
+\end{stappenbreed}}
+
+Is $s(t)$ de afgelegde weg op tijdstip $t$, dan is het differentiequotiënt de gemiddelde snelheid, en $s'(t)$ de \textbf{ogenblikkelijke snelheid}.
+
+\voorbeeld{}{Een steen valt; na $t$ seconden heeft hij $s(t) = 5t^2$ meter afgelegd. Hoe snel valt hij na 2 seconden?\label{vb:h2-snelheid}}{%
+\uitleg{Neem de gemiddelde snelheid tussen $2$ en $2 + h$, en laat $h$ naar 0 gaan.}
+\begin{stappenbreed}
+\frac{5(2 + h)^2 - 20}{h} = \frac{20h + 5h^2}{h} = 20 + 5h & Gemiddelde snelheid. \\
+s'(2) = \lim_{h \to 0} (20 + 5h) = 20 & In m/s, ongeveer 72 km/h.
+\end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h2-definitie}
+\end{oefeningen}
+
+%========================================================================================
+\section{De afgeleide functie}
+
+Bereken je de afgeleide in elk punt $x$, dan krijg je een nieuwe functie.
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{afgeleide functie}} van $f$ is $\formule{f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}}$. Andere notaties: $\frac{\mathrm{d}f}{\mathrm{d}x}$ of $\frac{\mathrm{d}y}{\mathrm{d}x}$.
+\begin{stelling}{Afgeleide van een macht}
+Voor elk rationaal getal $r$: \quad $\formule{(x^r)' = r\,x^{r - 1}}$ \quad (waar $x^r$ en $x^{r-1}$ bestaan).
+\end{stelling}
+\begin{bewijs}
+Voor een natuurlijk getal $n$: met het binomium van Newton is
+\bewijsregel{(x + h)^n = x^n + n x^{n-1} h + h^2 \cdot (\ldots),}
+dus $\frac{(x + h)^n - x^n}{h} = n x^{n-1} + h \cdot (\ldots) \to n x^{n-1}$. Voor andere exponenten: zie de voorbeelden en opdrachten.
+\end{bewijs}
+\end{theorie}
+
+Zo is $(x^3)' = 3x^2$, $\bigl(\frac1x\bigr)' = (x^{-1})' = -x^{-2} = -\frac{1}{x^2}$ en $(\sqrt x)' = \bigl(x^{\frac12}\bigr)' = \frac12 x^{-\frac12} = \frac{1}{2\sqrt x}$. De afgeleide van een constante is $0$.
+
+\voorbeeld{}{Bewijs met de definitie dat $\bigl(\frac1x\bigr)' = -\frac{1}{x^2}$.\label{vb:h2-functie}}{%
+\uitleg{Zet de teller van het differentiequotiënt op één noemer.}
+\begin{stappenbreed}
+\frac{\frac{1}{x + h} - \frac1x}{h} = \frac{x - (x + h)}{h\,x(x + h)} = \frac{-1}{x(x + h)} & Op één noemer, $h$ schrappen. \\
+\lim_{h \to 0} \frac{-1}{x(x + h)} = -\frac{1}{x^2} &
+\end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h2-functie}
+\end{oefeningen}
+
+%========================================================================================
+\section{Rekenregels}
+
+\begin{theorie}
+\begin{stelling}{Rekenregels voor afgeleiden}
+Voor afleidbare functies $f$ en $g$ en een getal $c$:
+\[\formule{(cf)' = c f'} \qquad \formule{(f + g)' = f' + g'} \qquad \formule{(fg)' = f'g + fg'} \qquad \formule{\Bigl(\frac{f}{g}\Bigr)' = \frac{f'g - fg'}{g^2}}\]
+\end{stelling}
+\begin{bewijs}
+\textit{Productregel.} Tel $f(x)g(x + h)$ op en trek het af:
+\bewijsregel{f(x + h)g(x + h) - f(x)g(x) = \bigl(f(x + h) - f(x)\bigr)g(x + h) + f(x)\bigl(g(x + h) - g(x)\bigr).}
+Deel door $h$ en laat $h \to 0$: de eerste term gaat naar $f'(x)g(x)$ (want $g$ is continu), de tweede naar $f(x)g'(x)$.
+\end{bewijs}
+\end{theorie}
+
+\voorbeeld{}{Bereken de afgeleide van $f(x) = 3x^4 - 2\sqrt x + \dfrac5x$.\label{vb:h2-som}}{%
+\uitleg{Schrijf elke term als macht en gebruik de som- en veelvoudregel.}
+\begin{stappenbreed}
+f(x) = 3x^4 - 2x^{\frac12} + 5x^{-1} & Als machten. \\
+f'(x) = 12x^3 - x^{-\frac12} - 5x^{-2} = 12x^3 - \frac{1}{\sqrt x} - \frac{5}{x^2} &
+\end{stappenbreed}}
+
+\voorbeeld{}{Bereken de afgeleide van $f(x) = (x^2 + 1)(x^3 - x)$ met de productregel. Controleer door eerst uit te werken.\label{vb:h2-product}}{%
+\uitleg{Eerste factor afgeleid maal de tweede, plus de eerste maal de tweede afgeleid.}
+\begin{stappenbreed}
+f'(x) = 2x(x^3 - x) + (x^2 + 1)(3x^2 - 1) & Productregel. \\
+= 2x^4 - 2x^2 + 3x^4 + 2x^2 - 1 = 5x^4 - 1 & \\
+f(x) = x^5 - x \Rightarrow f'(x) = 5x^4 - 1 & Controle.
+\end{stappenbreed}}
+
+\voorbeeld{}{Bereken de afgeleide van $f(x) = \dfrac{2x + 1}{x - 3}$.\label{vb:h2-quotient}}{%
+\uitleg{Quotiëntregel: (teller afgeleid maal noemer min teller maal noemer afgeleid) gedeeld door de noemer in het kwadraat.}
+\begin{stappenbreed}
+f'(x) = \frac{2(x - 3) - (2x + 1) \cdot 1}{(x - 3)^2} = \frac{-7}{(x - 3)^2} & Quotiëntregel.
+\end{stappenbreed}
+De afgeleide is overal negatief: de functie daalt op elk interval van haar domein.}
+
+\begin{oefeningen}
+\oef{h2-rekenregels}
+\end{oefeningen}
+
+%========================================================================================
+\section{Afleidbaar en continu}
+
+Een functie is niet overal afleidbaar. Bij $f(x) = |x|$ is het differentiequotiënt in $0$ gelijk aan $\frac{|h|}{h}$: $-1$ voor $h < 0$ en $1$ voor $h > 0$. De limiet bestaat niet: de grafiek heeft een knik. Omgekeerd geldt wel: een functie die afleidbaar is in $a$, is daar ook continu. Een sprong in de grafiek maakt de afgeleide dus zeker onmogelijk.
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h2-o1}
+
+\oef{h2-o2}
+
+\oef{h2-o3}
+
+\oef{h2-o4}
+
+\oef{h2-o5}
+
+\oef{h2-o6}
+
+\oef{h2-o7}
+
+\oef{h2-o8}
+
+\oef{h2-o9}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{Integralen en Rationale functies: kijk na wat al gezien is. Het pakket legt de volgorde niet vast.}
+
+\begin{oefeningen}
+\oef{h2-koppel-1}
+
+\oef{h2-koppel-2}
+
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h2-t1}
+
+\oef{h2-t2}
+
+\oef{h2-t3}
+
+\oef{h2-t4}
+
+\oef{h2-t5}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h2-t1}{vb:h2-definitie}{oef:h2-definitie}%
+  \fv{oef:h2-t2}{vb:h2-definitie}{oef:h2-definitie}%
+  \fv{oef:h2-t3}{vb:h2-som}{oef:h2-rekenregels}%
+  \fv{oef:h2-t4}{vb:h2-product}{oef:h2-rekenregels}%
+  \fv{oef:h2-t5}{vb:h2-quotient}{oef:h2-rekenregels}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: het differentiequotiënt en zijn betekenis (koorde, gemiddelde snelheid), de definitie van $f'(a)$ en van de afgeleide functie, de vergelijking van de raaklijn, de afgeleide van $x^r$, de rekenregels met het bewijs van de productregel, en een voorbeeld van een functie die niet afleidbaar is. Vergelijk daarna met de kaders.
+\fi

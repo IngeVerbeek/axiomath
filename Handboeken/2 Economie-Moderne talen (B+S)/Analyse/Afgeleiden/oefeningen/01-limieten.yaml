@@ -1,0 +1,463 @@
+# Oefeningen van hoofdstuk 1. Zie oefeningenbank.py voor de velden.
+
+- id: h1-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Ontbind: $x^3 - 8$.
+      antwoord: |-
+        $(x - 2)(x^2 + 2x + 4)$
+      uitwerking: |-
+        Horner met $a = 2$: $1, 2, 4, 0$.
+    - opgave: |-
+        Werk uit: $(\sqrt{a} - b)(\sqrt{a} + b)$.
+      antwoord: |-
+        $a - b^2$
+      uitwerking: |-
+        $(\sqrt a)^2 - b^2 = a - b^2$.
+    - opgave: |-
+        Bereken $\frac{1}{x}$ voor $x = 0{,}001$ en $x = 10^6$.
+      antwoord: |-
+        $1000$; $10^{-6}$
+      uitwerking: |-
+        $1000$ en $0{,}000\,001$.
+    - opgave: |-
+        Los op: $|x - 2| < 0{,}1$.
+      antwoord: |-
+        $1{,}9 < x < 2{,}1$
+      uitwerking: |-
+        De afstand van $x$ tot $2$ is kleiner dan $0{,}1$.
+
+- id: h1-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken} Neem $g(x) = \dfrac{x^3 - 8}{x - 2}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Waarom kun je $g(2)$ niet berekenen?
+      antwoord: |-
+        de noemer is nul
+      uitwerking: |-
+        Invullen geeft $\frac00$: $2$ ligt niet in het domein.
+    - opgave: |-
+        Bereken $g(x)$ voor $x = 1{,}9$, $1{,}99$, $2{,}01$ en $2{,}1$. Naar welk getal gaan de waarden?
+      antwoord: |-
+        $11{,}41$; $11{,}94$; $12{,}06$; $12{,}61$; naar 12
+      uitwerking: |-
+        $11{,}41$, $11{,}9401$, $12{,}0601$ en $12{,}61$: ze naderen $12$.
+    - opgave: |-
+        Vereenvoudig $g(x)$ voor $x \neq 2$ met de opwarmer. Verklaar het getal.
+      antwoord: |-
+        $x^2 + 2x + 4$; $4 + 4 + 4 = 12$
+      uitwerking: |-
+        $g(x) = x^2 + 2x + 4$ voor $x \neq 2$, en dat is $12$ voor $x = 2$.
+
+- id: h1-begrip
+  soort: kort
+  figuur:
+    opties: |-
+      4.2cm
+    code: |-
+      \begin{tikzpicture}[x=.55cm,y=.55cm,font=\scriptsize]
+        \rooster{-2}{1}{3}{-2}{1}{3}
+        \draw[accent,thick] (-2,-1) -- (1,2);
+        \draw[accent,thick] (1,-1) -- (3,1);
+        \open{(1,2)} \vol{(1,-1)}
+      \end{tikzpicture}
+  opgave: |-
+    Limieten.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Lees af op de grafiek: $\liml{x}{1} f(x)$, $\limr{x}{1} f(x)$, $f(1)$. Bestaat $\lim_{x \to 1} f(x)$?
+      antwoord: |-
+        $2$; $-1$; $-1$; nee
+      uitwerking: |-
+        Linkerlimiet $2$, rechterlimiet $-1$, $f(1) = -1$ (het volle bolletje). De limiet bestaat niet: links en rechts verschillen.
+    - opgave: |-
+        Bewijs met de definitie: $\lim_{x \to 1} (2x + 3) = 5$.
+      antwoord: |-
+        $\delta = \frac{\varepsilon}{2}$
+      uitwerking: |-
+        $|(2x + 3) - 5| = 2|x - 1|$. Neem $\delta = \frac{\varepsilon}{2}$: als $0 < |x - 1| < \delta$, dan is $|f(x) - 5| < 2\delta = \varepsilon$.
+
+- id: h1-berekenen
+  soort: kort
+  opgave: |-
+    Bereken.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\displaystyle\lim_{x \to 2} \dfrac{x^2 - 3x + 2}{x - 2}$
+      antwoord: |-
+        1
+      uitwerking: |-
+        $\frac{(x - 1)(x - 2)}{x - 2} = x - 1 \to 1$.
+    - opgave: |-
+        $\displaystyle\lim_{x \to -1} \dfrac{x^3 + 1}{x + 1}$
+      antwoord: |-
+        3
+      uitwerking: |-
+        $x^2 - x + 1 \to 1 + 1 + 1 = 3$.
+    - opgave: |-
+        $\displaystyle\lim_{x \to 9} \dfrac{\sqrt{x} - 3}{x - 9}$
+      antwoord: |-
+        $\frac16$
+      uitwerking: |-
+        $x - 9 = (\sqrt x - 3)(\sqrt x + 3)$, dus $\frac{1}{\sqrt x + 3} \to \frac16$.
+    - opgave: |-
+        $\displaystyle\lim_{x \to 4} \dfrac{x^2 + 1}{x - 2}$
+      antwoord: |-
+        $\frac{17}{2}$
+      uitwerking: |-
+        Invullen: $\frac{17}{2}$. Geen onbepaalde vorm.
+
+- id: h1-oneindig
+  soort: kort
+  opgave: |-
+    Bereken.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\displaystyle\lim_{x \to +\infty} \dfrac{5x - 2}{x + 7}$
+      antwoord: |-
+        5
+      uitwerking: |-
+        $\frac{5 - 2/x}{1 + 7/x} \to 5$.
+    - opgave: |-
+        $\displaystyle\lim_{x \to -\infty} \dfrac{x^2 + 1}{x^3 - x}$
+      antwoord: |-
+        0
+      uitwerking: |-
+        Delen door $x^3$: $\frac{1/x + 1/x^3}{1 - 1/x^2} \to 0$.
+    - opgave: |-
+        $\limr{x}{3} \dfrac{2}{3 - x}$
+      antwoord: |-
+        $-\infty$
+      uitwerking: |-
+        Voor $x > 3$ is $3 - x < 0$ en dicht bij $0$: $-\infty$.
+    - opgave: |-
+        $\displaystyle\lim_{x \to +\infty} \dfrac{x^2 + 1}{x - 1}$
+      antwoord: |-
+        $+\infty$
+      uitwerking: |-
+        $\frac{x + 1/x}{1 - 1/x}$: de teller wordt onbeperkt groot, de noemer nadert 1.
+
+- id: h1-continu
+  soort: kort
+  opgave: |-
+    Continuïteit.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $f(x) = \dfrac{x^2 - 4}{x - 2}$ voor $x \neq 2$ en $f(2) = 3$. Is $f$ continu in $2$?
+      antwoord: |-
+        nee: de limiet is $4 \neq 3$
+      uitwerking: |-
+        $\displaystyle\lim_{x \to 2} f(x) = \lim_{x \to 2}(x + 2) = 4 \neq f(2)$.
+    - opgave: |-
+        Toon aan dat $\cos x = x$ een oplossing heeft in $\bigl[0, \frac{\pi}{2}\bigr]$.
+      antwoord: |-
+        tussenwaardestelling met $\cos x - x$
+      uitwerking: |-
+        $g(x) = \cos x - x$ is continu, $g(0) = 1 > 0$ en $g\bigl(\frac{\pi}{2}\bigr) = -\frac{\pi}{2} < 0$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h1-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    invullen
+  opgave: |-
+    Bereken.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\displaystyle\lim_{x \to 2} (x^3 - 2x)$
+      antwoord: |-
+        4
+      uitwerking: |-
+        $8 - 4 = 4$.
+    - opgave: |-
+        $\displaystyle\lim_{x \to \pi} \sin\frac{x}{2}$
+      antwoord: |-
+        1
+      uitwerking: |-
+        $\sin\frac{\pi}{2} = 1$.
+    - opgave: |-
+        $\displaystyle\lim_{x \to 0} \dfrac{\e^x}{x + 1}$
+      antwoord: |-
+        1
+      uitwerking: |-
+        $\frac{1}{1} = 1$.
+    - opgave: |-
+        $\displaystyle\lim_{x \to \e} \ln x$
+      antwoord: |-
+        1
+      uitwerking: |-
+        $\ln \e = 1$.
+
+- id: h1-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    onbepaalde vorm 0/0
+  opgave: |-
+    Bereken.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\displaystyle\lim_{x \to 1} \dfrac{x^2 + 2x - 3}{x^2 - 1}$
+      antwoord: |-
+        2
+      uitwerking: |-
+        $\frac{(x + 3)(x - 1)}{(x + 1)(x - 1)} = \frac{x + 3}{x + 1} \to 2$.
+    - opgave: |-
+        $\displaystyle\lim_{h \to 0} \dfrac{(2 + h)^2 - 4}{h}$
+      antwoord: |-
+        4
+      uitwerking: |-
+        $\frac{4h + h^2}{h} = 4 + h \to 4$.
+    - opgave: |-
+        $\displaystyle\lim_{x \to 0} \dfrac{x^2 + 5x}{x}$
+      antwoord: |-
+        5
+      uitwerking: |-
+        $x + 5 \to 5$.
+
+- id: h1-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    limieten in oneindig
+  opgave: |-
+    Bereken.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\displaystyle\lim_{x \to +\infty} \dfrac{2x^3 - x}{4x^3 + 1}$
+      antwoord: |-
+        $\frac12$
+      uitwerking: |-
+        Delen door $x^3$: $\frac{2 - 1/x^2}{4 + 1/x^3} \to \frac12$.
+    - opgave: |-
+        $\displaystyle\lim_{x \to +\infty} \dfrac{x + 1}{x^2 + 1}$
+      antwoord: |-
+        0
+      uitwerking: |-
+        Delen door $x^2$: $\frac{1/x + 1/x^2}{1 + 1/x^2} \to 0$.
+    - opgave: |-
+        $\displaystyle\lim_{x \to +\infty} \dfrac{1 - x^2}{x + 3}$
+      antwoord: |-
+        $-\infty$
+      uitwerking: |-
+        $\frac{1/x - x}{1 + 3/x}$: de teller gaat naar $-\infty$, de noemer naar 1.
+
+- id: h1-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    asymptoot of perforatie
+  opgave: |-
+    Neem $f(x) = \dfrac{2x^2 - 2}{x^2 - x - 2}$. Bereken de limieten in $-1$, in $2$ (links en rechts) en in $\pm\infty$. Welke asymptoten heeft de grafiek?
+  antwoord: |-
+    $\frac43$; $-\infty$ en $+\infty$; $2$; VA $x = 2$, HA $y = 2$
+  uitwerking: |-
+    $f(x) = \frac{2(x - 1)(x + 1)}{(x - 2)(x + 1)} = \frac{2(x - 1)}{x - 2}$ voor $x \neq -1$. In $-1$: $\frac{2 \cdot (-2)}{-3} = \frac43$: een perforatie, geen asymptoot. In $2$: links $-\infty$, rechts $+\infty$: VA $x = 2$. In $\pm\infty$: $2$, HA $y = 2$.
+
+- id: h1-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    eenzijdige limieten
+  opgave: |-
+    Bereken $\liml{x}{0} \dfrac{|x|}{x}$ en $\limr{x}{0} \dfrac{|x|}{x}$. Bestaat $\lim_{x \to 0} \dfrac{|x|}{x}$? Schets de grafiek.
+  antwoord: |-
+    $-1$; $1$; nee
+  uitwerking: |-
+    Voor $x < 0$ is $\frac{|x|}{x} = -1$, voor $x > 0$ is het $1$. De grafiek bestaat uit twee horizontale halve rechten. De limiet bestaat niet.
+
+- id: h1-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    met de toegevoegde
+  opgave: |-
+    Bereken.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\displaystyle\lim_{x \to 1} \dfrac{\sqrt{x} - 1}{x - 1}$
+      antwoord: |-
+        $\frac12$
+      uitwerking: |-
+        $\frac{\sqrt x - 1}{(\sqrt x - 1)(\sqrt x + 1)} = \frac{1}{\sqrt x + 1} \to \frac12$.
+    - opgave: |-
+        $\displaystyle\lim_{x \to +\infty} \bigl(\sqrt{x^2 + x} - x\bigr)$
+      antwoord: |-
+        $\frac12$
+      uitwerking: |-
+        Maal $\frac{\sqrt{x^2 + x} + x}{\sqrt{x^2 + x} + x}$: $\frac{x}{\sqrt{x^2 + x} + x} = \frac{1}{\sqrt{1 + 1/x} + 1} \to \frac12$.
+
+- id: h1-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    continu maken
+  opgave: |-
+    Bepaal $a$ zodat $f$ continu is: $f(x) = ax + 1$ voor $x < 2$ en $f(x) = x^2 - a$ voor $x \geqslant 2$.
+  antwoord: |-
+    $a = 1$
+  uitwerking: |-
+    Linkerlimiet $2a + 1$, rechterlimiet en $f(2)$: $4 - a$. $2a + 1 = 4 - a$ geeft $a = 1$.
+
+- id: h1-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    epsilon en delta
+  opgave: |-
+    Bewijs met de definitie: $\lim_{x \to 3} x^2 = 9$. Tip: $|x^2 - 9| = |x - 3| \cdot |x + 3|$; neem eerst $\delta \leqslant 1$ en schat $|x + 3|$ af.
+  antwoord: |-
+    $\delta = \min\bigl(1, \frac{\varepsilon}{7}\bigr)$
+  uitwerking: |-
+    Als $|x - 3| < 1$, dan $2 < x < 4$ en $|x + 3| < 7$. Neem $\delta = \min\bigl(1, \frac{\varepsilon}{7}\bigr)$. Als $0 < |x - 3| < \delta$, dan is $|x^2 - 9| < 7|x - 3| < 7 \cdot \frac{\varepsilon}{7} = \varepsilon$.
+
+- id: h1-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    snijpunten zoeken
+  opgave: |-
+    Toon aan dat $2^x = 3x$ een oplossing heeft tussen $0$ en $1$, en een tussen $3$ en $4$. Zoek de eerste op twee decimalen door het interval te halveren.
+  antwoord: |-
+    $x \approx 0{,}46$
+  uitwerking: |-
+    $g(x) = 2^x - 3x$ is continu. $g(0) = 1$, $g(1) = -1$; $g(3) = -1$, $g(4) = 4$: twee tekenwissels. $g(0{,}5) \approx -0{,}09$, $g(0{,}25) \approx 0{,}44$, $g(0{,}45) \approx 0{,}016$, $g(0{,}46) \approx -0{,}004$: $x \approx 0{,}46$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h1-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Rationale functies
+  thema: |-
+    schuine asymptoot met limieten
+  opgave: |-
+    Een schuine asymptoot $y = mx + q$ vind je ook met $m = \lim_{x \to \infty} \frac{f(x)}{x}$ en $q = \lim_{x \to \infty} \bigl(f(x) - mx\bigr)$. Doe dat voor $f(x) = \dfrac{x^2 + x - 1}{x - 1}$, en vergelijk met de deling.
+  antwoord: |-
+    $m = 1$, $q = 2$: $y = x + 2$
+  uitwerking: |-
+    $\frac{f(x)}{x} = \frac{x^2 + x - 1}{x^2 - x} \to 1$. $f(x) - x = \frac{x^2 + x - 1 - x^2 + x}{x - 1} = \frac{2x - 1}{x - 1} \to 2$. Dus $y = x + 2$, zoals met de deling: $f(x) = x + 2 + \frac{1}{x - 1}$.
+
+- id: h1-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: discreet
+    onderwerp: Rijen
+  thema: |-
+    een meetkundige reeks
+  opgave: |-
+    De som $1 + \frac12 + \frac14 + \cdots + \bigl(\frac12\bigr)^{n-1}$ is $S_n = \dfrac{1 - \bigl(\frac12\bigr)^n}{1 - \frac12}$. Bereken $\lim_{n \to +\infty} S_n$.
+  antwoord: |-
+    2
+  uitwerking: |-
+    $\bigl(\frac12\bigr)^n \to 0$, dus $S_n \to \frac{1}{1/2} = 2$.
+
+- id: h1-koppel-3
+  soort: koppel
+  niveau: 1
+  koppel:
+    rubriek: analyse
+    onderwerp: Exponentiële en logaritmische functies
+  thema: |-
+    asymptoten van exp en ln
+  opgave: |-
+    Schrijf met limieten waarom $y = 0$ een horizontale asymptoot is van $\e^x$, en $x = 0$ een verticale asymptoot van $\ln x$.
+  antwoord: |-
+    $\lim_{x \to -\infty} \e^x = 0$; $\limr{x}{0} \ln x = -\infty$
+  uitwerking: |-
+    $\lim_{x \to -\infty} \e^x = 0$ en $\limr{x}{0} \ln x = -\infty$. De grafieken zijn elkaars spiegelbeeld om $y = x$, en de asymptoten ook.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h1-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    ontbinden
+  opgave: |-
+    Bereken $\lim_{x \to -2} \dfrac{x^2 + x - 2}{x + 2}$.
+  antwoord: |-
+    $-3$
+  uitwerking: |-
+    $\frac{(x + 2)(x - 1)}{x + 2} = x - 1 \to -3$.
+
+- id: h1-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    toegevoegde
+  opgave: |-
+    Bereken $\lim_{x \to 0} \dfrac{\sqrt{9 + x} - 3}{x}$.
+  antwoord: |-
+    $\frac16$
+  uitwerking: |-
+    $\frac{9 + x - 9}{x(\sqrt{9 + x} + 3)} = \frac{1}{\sqrt{9 + x} + 3} \to \frac16$.
+
+- id: h1-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    oneindige limiet
+  opgave: |-
+    Bereken $\liml{x}{1} \dfrac{2x}{x - 1}$ en $\limr{x}{1} \dfrac{2x}{x - 1}$.
+  antwoord: |-
+    $-\infty$; $+\infty$
+  uitwerking: |-
+    Teller $\to 2$; noemer $\to 0$, links negatief, rechts positief.
+
+- id: h1-t4
+  soort: test
+  niveau: 1
+  thema: |-
+    limiet in oneindig
+  opgave: |-
+    Bereken $\lim_{x \to -\infty} \dfrac{4x^2 + 3}{2x^2 - x}$.
+  antwoord: |-
+    2
+  uitwerking: |-
+    $\frac{4 + 3/x^2}{2 - 1/x} \to 2$.
+
+- id: h1-t5
+  soort: test
+  niveau: 2
+  thema: |-
+    continuïteit
+  opgave: |-
+    Bepaal $k$ zodat $f$ continu is: $f(x) = x^2 + k$ voor $x < 3$ en $f(x) = 2x$ voor $x \geqslant 3$.
+  antwoord: |-
+    $k = -3$
+  uitwerking: |-
+    $9 + k = 6$, dus $k = -3$.

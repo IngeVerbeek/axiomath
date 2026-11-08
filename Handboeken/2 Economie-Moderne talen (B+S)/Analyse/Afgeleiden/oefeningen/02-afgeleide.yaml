@@ -1,0 +1,389 @@
+# Oefeningen van hoofdstuk 2. Zie oefeningenbank.py voor de velden.
+
+- id: h2-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Geef de richtingscoëfficiënt van de rechte door $(1, 1)$ en $(3, 9)$.
+      antwoord: |-
+        4
+      uitwerking: |-
+        $\frac{9 - 1}{3 - 1} = 4$.
+    - opgave: |-
+        Geef de rechte door $(2, 5)$ met richtingscoëfficiënt $3$.
+      antwoord: |-
+        $y = 3x - 1$
+      uitwerking: |-
+        $y - 5 = 3(x - 2)$.
+    - opgave: |-
+        Werk uit: $(x + h)^2$ en $(x + h)^3$.
+      antwoord: |-
+        $x^2 + 2xh + h^2$; $x^3 + 3x^2h + 3xh^2 + h^3$
+      uitwerking: |-
+        Merkwaardig product en binomium.
+    - opgave: |-
+        Schrijf als macht van $x$: $\sqrt x$, $\frac{1}{x^2}$, $\frac{1}{\sqrt x}$.
+      antwoord: |-
+        $x^{\frac12}$; $x^{-2}$; $x^{-\frac12}$
+      uitwerking: |-
+        $x^{\frac12}$, $x^{-2}$, $x^{-\frac12}$.
+
+- id: h2-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken} Een steen valt; na $t$ seconden heeft hij $s(t) = 5t^2$ meter afgelegd.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken de gemiddelde snelheid tussen $t = 2$ en $t = 3$, tussen $2$ en $2{,}1$, en tussen $2$ en $2{,}01$.
+      antwoord: |-
+        $25$; $20{,}5$; $20{,}05$ m/s
+      uitwerking: |-
+        $\frac{45 - 20}{1} = 25$, $\frac{22{,}05 - 20}{0{,}1} = 20{,}5$ en $\frac{20{,}2005 - 20}{0{,}01} = 20{,}05$ m/s.
+    - opgave: |-
+        Welke snelheid heeft de steen op het ogenblik $t = 2$, denk je?
+      antwoord: |-
+        20 m/s
+      uitwerking: |-
+        De gemiddelde snelheden naderen $20$ m/s.
+
+- id: h2-definitie
+  soort: kort
+  opgave: |-
+    Met de definitie.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $f'(1)$ voor $f(x) = x^2 + 3x$, en geef de raaklijn in $(1, 4)$.
+      antwoord: |-
+        $5$; $y = 5x - 1$
+      uitwerking: |-
+        $\frac{(1 + h)^2 + 3(1 + h) - 4}{h} = \frac{5h + h^2}{h} = 5 + h \to 5$. Raaklijn $y = 4 + 5(x - 1)$.
+    - opgave: |-
+        Een bal heeft na $t$ seconden een hoogte $s(t) = 20t - 5t^2$ meter. Bereken $s'(1)$. Wat betekent het?
+      antwoord: |-
+        $10$ m/s
+      uitwerking: |-
+        $\frac{20(1 + h) - 5(1 + h)^2 - 15}{h} = \frac{10h - 5h^2}{h} = 10 - 5h \to 10$: na 1 s stijgt de bal met 10 m/s.
+
+- id: h2-functie
+  soort: kort
+  opgave: |-
+    Bereken met de regel voor machten.
+  lijst: reeks
+  kolommen: 4
+  delen:
+    - opgave: |-
+        $x^7$
+      antwoord: |-
+        $7x^6$
+      uitwerking: |-
+        $7x^6$.
+    - opgave: |-
+        $\dfrac{1}{x^3}$
+      antwoord: |-
+        $-\frac{3}{x^4}$
+      uitwerking: |-
+        $(x^{-3})' = -3x^{-4}$.
+    - opgave: |-
+        $\sqrt[3]{x}$
+      antwoord: |-
+        $\frac{1}{3\sqrt[3]{x^2}}$
+      uitwerking: |-
+        $\bigl(x^{\frac13}\bigr)' = \frac13 x^{-\frac23}$.
+    - opgave: |-
+        $x\sqrt{x}$
+      antwoord: |-
+        $\frac32\sqrt x$
+      uitwerking: |-
+        $\bigl(x^{\frac32}\bigr)' = \frac32 x^{\frac12}$.
+
+- id: h2-rekenregels
+  soort: kort
+  opgave: |-
+    Bereken de afgeleide.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $x^5 - 3x^2 + 7$
+      antwoord: |-
+        $5x^4 - 6x$
+      uitwerking: |-
+        $5x^4 - 6x$.
+    - opgave: |-
+        $(2x - 1)(x^2 + 3)$
+      antwoord: |-
+        $6x^2 - 2x + 6$
+      uitwerking: |-
+        $2(x^2 + 3) + (2x - 1) \cdot 2x = 6x^2 - 2x + 6$.
+    - opgave: |-
+        $\dfrac{x^2}{x + 1}$
+      antwoord: |-
+        $\frac{x^2 + 2x}{(x + 1)^2}$
+      uitwerking: |-
+        $\frac{2x(x + 1) - x^2}{(x + 1)^2} = \frac{x^2 + 2x}{(x + 1)^2}$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h2-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    afgeleiden berekenen
+  opgave: |-
+    Bereken de afgeleide.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\dfrac{4}{x^3} - 2x$
+      antwoord: |-
+        $-\frac{12}{x^4} - 2$
+      uitwerking: |-
+        $(4x^{-3})' = -12x^{-4}$.
+    - opgave: |-
+        $\sqrt[3]{x^2}$
+      antwoord: |-
+        $\frac{2}{3\sqrt[3]{x}}$
+      uitwerking: |-
+        $\bigl(x^{\frac23}\bigr)' = \frac23 x^{-\frac13}$.
+    - opgave: |-
+        $(x - 1)^2$
+      antwoord: |-
+        $2x - 2$
+      uitwerking: |-
+        $x^2 - 2x + 1$ afleiden: $2x - 2$.
+    - opgave: |-
+        $\dfrac{x^3 + 1}{x}$
+      antwoord: |-
+        $2x - \frac{1}{x^2}$
+      uitwerking: |-
+        $x^2 + x^{-1}$ afleiden: $2x - x^{-2}$.
+
+- id: h2-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    raaklijn
+  opgave: |-
+    Geef de raaklijn aan de grafiek van $f(x) = x^3 - 2x$ in het punt met $x = 1$.
+  antwoord: |-
+    $y = x - 2$
+  uitwerking: |-
+    $f(1) = -1$, $f'(x) = 3x^2 - 2$ en $f'(1) = 1$: $y = -1 + 1(x - 1) = x - 2$.
+
+- id: h2-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    quotiëntregel
+  opgave: |-
+    Bereken de afgeleide.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\dfrac{x^2 - 1}{x^2 + 1}$
+      antwoord: |-
+        $\frac{4x}{(x^2 + 1)^2}$
+      uitwerking: |-
+        $\frac{2x(x^2 + 1) - (x^2 - 1)2x}{(x^2 + 1)^2} = \frac{4x}{(x^2 + 1)^2}$.
+    - opgave: |-
+        $\dfrac{1}{x^2 + 4}$
+      antwoord: |-
+        $-\frac{2x}{(x^2 + 4)^2}$
+      uitwerking: |-
+        $\frac{0 \cdot (x^2 + 4) - 1 \cdot 2x}{(x^2 + 4)^2}$.
+
+- id: h2-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    met de definitie
+  opgave: |-
+    Bereken met de definitie.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        De afgeleide functie van $f(x) = x^2 - 3x$.
+      antwoord: |-
+        $2x - 3$
+      uitwerking: |-
+        $\frac{(x + h)^2 - 3(x + h) - x^2 + 3x}{h} = \frac{2xh + h^2 - 3h}{h} = 2x + h - 3 \to 2x - 3$.
+    - opgave: |-
+        De afgeleide functie van $g(x) = \sqrt x$ (gebruik de toegevoegde).
+      antwoord: |-
+        $\frac{1}{2\sqrt x}$
+      uitwerking: |-
+        $\frac{\sqrt{x + h} - \sqrt x}{h} = \frac{x + h - x}{h(\sqrt{x + h} + \sqrt x)} = \frac{1}{\sqrt{x + h} + \sqrt x} \to \frac{1}{2\sqrt x}$ (voor $x > 0$).
+
+- id: h2-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    horizontale raaklijnen
+  opgave: |-
+    In welke punten heeft de grafiek van $f(x) = x^3 - 3x^2 + 1$ een horizontale raaklijn?
+  antwoord: |-
+    $(0, 1)$ en $(2, -3)$
+  uitwerking: |-
+    $f'(x) = 3x^2 - 6x = 3x(x - 2) = 0$ voor $x = 0$ en $x = 2$. $f(0) = 1$, $f(2) = -3$.
+
+- id: h2-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    evenwijdige raaklijn
+  opgave: |-
+    In welk punt is de raaklijn aan de parabool $y = x^2$ evenwijdig met de rechte $y = 4x - 1$? Geef die raaklijn.
+  antwoord: |-
+    $(2, 4)$; $y = 4x - 4$
+  uitwerking: |-
+    Evenwijdig: richtingscoëfficiënt $4$. $2x = 4$ geeft $x = 2$, het punt $(2, 4)$. Raaklijn $y = 4 + 4(x - 2) = 4x - 4$.
+
+- id: h2-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een worp omhoog
+  opgave: |-
+    Een bal wordt omhoog gegooid; zijn hoogte is $s(t) = -5t^2 + 20t + 2$ meter na $t$ seconden.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef de snelheid $v(t) = s'(t)$. Hoe snel gaat de bal na 1 s? En na 3 s?
+      antwoord: |-
+        $v(t) = -10t + 20$; $10$ m/s; $-10$ m/s
+      uitwerking: |-
+        $v(1) = 10$ m/s (omhoog), $v(3) = -10$ m/s (omlaag).
+    - opgave: |-
+        Wanneer is de bal op zijn hoogste punt, en hoe hoog is dat?
+      antwoord: |-
+        na 2 s, 22 m
+      uitwerking: |-
+        Op het hoogste punt is de snelheid $0$: $t = 2$, $s(2) = -20 + 40 + 2 = 22$ m.
+
+- id: h2-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    raaklijn door een punt
+  opgave: |-
+    Zoek de raaklijnen aan de parabool $y = x^2$ die door het punt $(1, -3)$ gaan. Tip: neem een raakpunt $(a, a^2)$.
+  antwoord: |-
+    $y = 6x - 9$ en $y = -2x - 1$
+  uitwerking: |-
+    De raaklijn in $(a, a^2)$ is $y = a^2 + 2a(x - a) = 2ax - a^2$. Door $(1, -3)$: $-3 = 2a - a^2$, dus $a^2 - 2a - 3 = 0$ en $a = 3$ of $a = -1$. Raaklijnen $y = 6x - 9$ en $y = -2x - 1$.
+
+- id: h2-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    afleidbaar maken
+  opgave: |-
+    $f(x) = x^2$ voor $x \leqslant 1$ en $f(x) = ax + b$ voor $x > 1$. Bepaal $a$ en $b$ zodat $f$ afleidbaar is in $1$ (de grafiek heeft dan geen knik).
+  antwoord: |-
+    $a = 2$, $b = -1$
+  uitwerking: |-
+    Continu: $1 = a + b$. Zelfde afgeleide links en rechts: $2 \cdot 1 = a$. Dus $a = 2$ en $b = -1$: de rechte is de raaklijn aan de parabool in $(1, 1)$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h2-koppel-1
+  soort: koppel
+  niveau: 1
+  koppel:
+    rubriek: analyse
+    onderwerp: Integralen
+  thema: |-
+    een primitieve controleren
+  opgave: |-
+    Een primitieve van $f$ is een functie $F$ met $F' = f$. Controleer dat $F(x) = \frac{x^3}{3} - x + 5$ een primitieve is van $f(x) = x^2 - 1$. Geef nog een andere primitieve.
+  antwoord: |-
+    $F'(x) = x^2 - 1$; bv. $\frac{x^3}{3} - x$
+  uitwerking: |-
+    $F'(x) = x^2 - 1$. Elke constante mag je veranderen: $\frac{x^3}{3} - x$ is ook een primitieve.
+
+- id: h2-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Rationale functies
+  thema: |-
+    toppen van een rationale functie
+  opgave: |-
+    Waar heeft de grafiek van $f(x) = \dfrac{x^2 + 1}{x}$ een horizontale raaklijn?
+  antwoord: |-
+    $(1, 2)$ en $(-1, -2)$
+  uitwerking: |-
+    $f(x) = x + \frac1x$, $f'(x) = 1 - \frac{1}{x^2} = 0$ voor $x = \pm 1$. Punten $(1, 2)$ en $(-1, -2)$.
+
+- id: h2-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    definitie
+  opgave: |-
+    Bereken met de definitie $f'(1)$ voor $f(x) = 2x^2$.
+  antwoord: |-
+    4
+  uitwerking: |-
+    $\frac{2(1 + h)^2 - 2}{h} = \frac{4h + 2h^2}{h} = 4 + 2h \to 4$.
+
+- id: h2-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    raaklijn
+  opgave: |-
+    Geef de raaklijn aan de grafiek van $f(x) = x^3$ in het punt met $x = 2$.
+  antwoord: |-
+    $y = 12x - 16$
+  uitwerking: |-
+    $f(2) = 8$, $f'(2) = 3 \cdot 4 = 12$: $y = 8 + 12(x - 2)$.
+
+- id: h2-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    machten
+  opgave: |-
+    Bereken de afgeleide van $f(x) = 5x^3 - 4\sqrt x + \dfrac2x$.
+  antwoord: |-
+    $15x^2 - \frac{2}{\sqrt x} - \frac{2}{x^2}$
+  uitwerking: |-
+    $15x^2 - 4 \cdot \frac{1}{2\sqrt x} - 2x^{-2}$.
+
+- id: h2-t4
+  soort: test
+  niveau: 1
+  thema: |-
+    productregel
+  opgave: |-
+    Bereken de afgeleide van $f(x) = (x^2 - 2)(3x + 1)$ met de productregel.
+  antwoord: |-
+    $9x^2 + 2x - 6$
+  uitwerking: |-
+    $2x(3x + 1) + (x^2 - 2) \cdot 3 = 9x^2 + 2x - 6$.
+
+- id: h2-t5
+  soort: test
+  niveau: 2
+  thema: |-
+    quotiëntregel
+  opgave: |-
+    Bereken de afgeleide van $f(x) = \dfrac{3x}{x^2 + 1}$.
+  antwoord: |-
+    $\frac{3 - 3x^2}{(x^2 + 1)^2}$
+  uitwerking: |-
+    $\frac{3(x^2 + 1) - 3x \cdot 2x}{(x^2 + 1)^2} = \frac{3 - 3x^2}{(x^2 + 1)^2}$.
