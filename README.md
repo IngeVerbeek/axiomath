@@ -53,7 +53,7 @@ Een percentage hoort bij een status: ⚪ **gepland** (0 %): nog niet begonnen, �
 
 | Handboek | Rubriek | Status | Voortgang | |
 |---|---|---|---|---:|
-| Algemene functies | Analyse | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
+| [Algemene functies](<Handboeken/1 Grieks-Latijn, Humane, Latijn-Moderne, Moderne talen (Basis)/Analyse/Algemene functies/README.md>) | Analyse | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | Exponentiële en logaritmische functies | Analyse | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Goniometrische functies | Analyse | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Afgeleiden | Analyse | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
