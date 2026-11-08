@@ -1,0 +1,352 @@
+# Oefeningen van hoofdstuk 3. Zie oefeningenbank.py voor de velden.
+
+- id: h3-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $X \sim B(20;\, 0{,}5)$. Bereken $P(X \geqslant 14)$.
+      antwoord: |-
+        $\approx 0{,}058$
+      uitwerking: |-
+        $1 - $ \texttt{binomcdf(20,0.5,13)} $\approx 0{,}058$.
+    - opgave: |-
+        $X \sim N(500;\, 0{,}4)$. Bereken $P(X \leqslant 499)$.
+      antwoord: |-
+        $\approx 0{,}006$
+      uitwerking: |-
+        \texttt{normalcdf(-1E99,499,500,0.4)} $\approx 0{,}006$.
+    - opgave: |-
+        Bereken $\frac{8}{\sqrt{16}}$ en $\frac{8}{\sqrt{64}}$.
+      antwoord: |-
+        2 en 1
+      uitwerking: |-
+        $\frac84 = 2$ en $\frac88 = 1$.
+    - opgave: |-
+        Wat is het complement van \textit{minstens 30} bij een aantal?
+      antwoord: |-
+        hoogstens 29
+      uitwerking: |-
+        \textit{Hoogstens 29}: daarom $P(X \geqslant 30) = 1 - P(X \leqslant 29)$.
+    - opgave: |-
+        Is 0,03 kleiner dan 5~\%?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $0{,}03 = 3$~\% $< 5$~\%.
+    - opgave: |-
+        Hoeveel zessen verwacht je bij 60 worpen met een eerlijke dobbelsteen?
+      antwoord: |-
+        10
+      uitwerking: |-
+        $60 \cdot \frac16 = 10$.
+
+- id: h3-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken}\quad Sam gooit 60 keer met een dobbelsteen en krijgt 16 keer zes. Hij zegt: \textit{de dobbelsteen is vervalst}.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel zessen verwacht je bij een eerlijke dobbelsteen? Is 16 veel meer?
+      antwoord: |-
+        10
+      uitwerking: |-
+        10. Zestien is meer, maar het toeval kan ook voor afwijkingen zorgen.
+    - opgave: |-
+        Kan een eerlijke dobbelsteen 16 keer zes geven bij 60 worpen?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        Ja, elke uitkomst van 0 tot 60 kan. De vraag is hoe waarschijnlijk dat is.
+    - opgave: |-
+        Bereken de kans dat een eerlijke dobbelsteen bij 60 worpen minstens 16 keer zes geeft. Vind jij Sams besluit overtuigend?
+      antwoord: |-
+        $\approx 0{,}034$
+      uitwerking: |-
+        $X \sim B(60;\, \frac16)$: $P(X \geqslant 16) = 1 - P(X \leqslant 15) \approx 0{,}034$. Een eerlijke dobbelsteen doet dit maar in ongeveer 3~\% van de reeksen: een sterke aanwijzing, maar geen bewijs.
+
+- id: h3-steekproef
+  soort: kort
+  opgave: |-
+    Een populatie heeft $\mu = 70$ en $\sigma = 8$. Je neemt een aselecte steekproef van 16. Bereken de standaardafwijking van $\overline{X}$, en de kans dat het steekproefgemiddelde minstens 74 is.
+  antwoord: |-
+    2; \ $\approx 0{,}023$
+  uitwerking: |-
+    $\sigma(\overline{X}) = \frac{8}{\sqrt{16}} = 2$. 74 ligt 2 standaardafwijkingen boven 70: $P(\overline{X} \geqslant 74) \approx 0{,}023$.
+
+- id: h3-toets
+  soort: kort
+  opgave: |-
+    Voer de toets uit bij $\alpha = 0{,}05$. Schrijf $H_0$, $H_1$, de p-waarde en je besluit.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Vroeger had 30~\% van de leerlingen een bijbaantje. In een aselecte steekproef van 40 leerlingen zijn het er 18. Is het aandeel gestegen?
+      antwoord: |-
+        p-waarde $\approx 0{,}032$: verwerpen
+      uitwerking: |-
+        $H_0\colon p = 0{,}3$, $H_1\colon p > 0{,}3$. Onder $H_0$ is $X \sim B(40;\, 0{,}3)$. p-waarde $= P(X \geqslant 18) \approx 0{,}032 \leqslant 0{,}05$: $H_0$ verwerpen. Het aandeel is waarschijnlijk gestegen.
+    - opgave: |-
+        De scores op een toets hadden vroeger $\mu = 70$ en $\sigma = 8$. Na een nieuwe aanpak haalt een aselecte groep van 36 leerlingen gemiddeld 72,4. Zijn de scores gestegen?
+      antwoord: |-
+        p-waarde $\approx 0{,}036$: verwerpen
+      uitwerking: |-
+        $H_0\colon \mu = 70$, $H_1\colon \mu > 70$. Onder $H_0$ is $\overline{X} \sim N\bigl(70;\, \frac86\bigr)$. p-waarde $= P(\overline{X} \geqslant 72{,}4) \approx 0{,}036 \leqslant 0{,}05$: $H_0$ verwerpen. De scores zijn waarschijnlijk gestegen (maar een experiment met controlegroep is nodig om het aan de aanpak toe te schrijven).
+
+- id: h3-tweezijdig
+  soort: kort
+  opgave: |-
+    Een machine snijdt staven met een gemiddelde lengte van 50~cm en $\sigma = 2$~cm. Een steekproef van 30 staven heeft gemiddeld 50,6~cm. Is de machine ontregeld (te lang of te kort)? Toets tweezijdig bij $\alpha = 0{,}05$.
+  antwoord: |-
+    p-waarde $\approx 0{,}10$: niet verwerpen
+  uitwerking: |-
+    $H_0\colon \mu = 50$, $H_1\colon \mu \neq 50$. $\sigma(\overline{X}) = \frac{2}{\sqrt{30}} \approx 0{,}365$, en $z = \frac{0{,}6}{0{,}365} \approx 1{,}64$. De rechterstaart is $\approx 0{,}050$, de p-waarde het dubbel: $\approx 0{,}10 > 0{,}05$. $H_0$ niet verwerpen: geen duidelijke aanwijzing dat de machine ontregeld is.
+
+- id: h3-fouten
+  soort: kort
+  opgave: |-
+    Een rechtbank gaat ervan uit dat een verdachte onschuldig is ($H_0$), en veroordeelt alleen bij sterk bewijs. Wat is hier een fout van de eerste soort, en wat een fout van de tweede soort? Welke wil de rechtbank vooral vermijden?
+  antwoord: |-
+    eerste: een onschuldige veroordelen; tweede: een schuldige vrijspreken
+  uitwerking: |-
+    Eerste soort: $H_0$ verwerpen terwijl ze waar is, dus een onschuldige veroordelen. Tweede soort: $H_0$ niet verwerpen terwijl ze niet waar is, dus een schuldige vrijspreken. De rechtbank wil vooral de eerste vermijden, en eist daarom sterk bewijs (een kleine $\alpha$), met als prijs dat soms een schuldige vrijuit gaat.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h3-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    toets voor een proportie, linkszijdig
+  opgave: |-
+    Een fabrikant beweert dat 40~\% van de snoepjes in een zak rood is. In een zak van 50 snoepjes zijn er 14 rood. Toets bij $\alpha = 0{,}05$ of er minder rode zijn dan beweerd.
+  antwoord: |-
+    p-waarde $\approx 0{,}054$: niet verwerpen
+  uitwerking: |-
+    $H_0\colon p = 0{,}4$, $H_1\colon p < 0{,}4$. Onder $H_0$: $X \sim B(50;\, 0{,}4)$, verwacht 20. p-waarde $= P(X \leqslant 14) \approx 0{,}054 > 0{,}05$: $H_0$ niet verwerpen. Er zijn net niet genoeg aanwijzingen dat er minder rode snoepjes zijn.
+
+- id: h3-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    toets voor een gemiddelde
+  opgave: |-
+    Jongeren slapen gemiddeld 7,6 uur met $\sigma = 0{,}9$ uur. In een aselecte steekproef van 64 jongeren met een gsm op hun kamer is het gemiddelde 7,3 uur. Slapen zij minder? Toets bij $\alpha = 0{,}01$.
+  antwoord: |-
+    p-waarde $\approx 0{,}004$: verwerpen
+  uitwerking: |-
+    $H_0\colon \mu = 7{,}6$, $H_1\colon \mu < 7{,}6$. $\sigma(\overline{X}) = \frac{0{,}9}{8} = 0{,}1125$, $z \approx -2{,}67$. p-waarde $\approx 0{,}004 \leqslant 0{,}01$: $H_0$ verwerpen. Ze slapen gemiddeld minder. Of de gsm de oorzaak is, toont deze observationele studie niet.
+
+- id: h3-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    hypothesen formuleren
+  opgave: |-
+    Formuleer $H_0$ en $H_1$. Is de toets eenzijdig of tweezijdig?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een nieuwe meststof zou de gemiddelde opbrengst van 8 ton per hectare verhogen.
+      antwoord: |-
+        $\mu = 8$ tegen $\mu > 8$; eenzijdig
+      uitwerking: |-
+        $H_0\colon \mu = 8$, $H_1\colon \mu > 8$: eenzijdig.
+    - opgave: |-
+        Een peiling wil weten of het aandeel voorstanders van een plan verschilt van de helft.
+      antwoord: |-
+        $p = 0{,}5$ tegen $p \neq 0{,}5$; tweezijdig
+      uitwerking: |-
+        $H_0\colon p = 0{,}5$, $H_1\colon p \neq 0{,}5$: tweezijdig.
+    - opgave: |-
+        Een school vermoedt dat minder dan 15~\% van haar leerlingen te laat komt.
+      antwoord: |-
+        $p = 0{,}15$ tegen $p < 0{,}15$; eenzijdig
+      uitwerking: |-
+        $H_0\colon p = 0{,}15$, $H_1\colon p < 0{,}15$: eenzijdig.
+
+- id: h3-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: bijwerkingen
+  opgave: |-
+    Volgens de bijsluiter krijgt 2~\% van de gebruikers een bepaalde bijwerking. Een arts ziet bij 200 patiënten 9 gevallen. Toets bij $\alpha = 0{,}05$ of de bijwerking vaker voorkomt.
+  antwoord: |-
+    p-waarde $\approx 0{,}020$: verwerpen
+  uitwerking: |-
+    $H_0\colon p = 0{,}02$, $H_1\colon p > 0{,}02$. Onder $H_0$: $X \sim B(200;\, 0{,}02)$, verwacht 4. p-waarde $= P(X \geqslant 9) \approx 0{,}020 \leqslant 0{,}05$: $H_0$ verwerpen. De bijwerking komt waarschijnlijk vaker voor dan vermeld (bij deze patiëntengroep).
+
+- id: h3-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    exact en benaderd
+  opgave: |-
+    In een peiling bij 400 kiezers is 220 voor een kandidaat. Toets bij $\alpha = 0{,}05$ of meer dan de helft van alle kiezers voor is, eerst exact met de binomiale verdeling, dan met de normale benadering van $\hat{p}$.
+  antwoord: |-
+    $\approx 0{,}026$ en $\approx 0{,}023$: verwerpen
+  uitwerking: |-
+    $H_0\colon p = 0{,}5$, $H_1\colon p > 0{,}5$. Exact: $P(X \geqslant 220) \approx 0{,}026$. Benaderd: $\hat{p} = 0{,}55$, $\sigma(\hat{p}) = \sqrt{\frac{0{,}25}{400}} = 0{,}025$, $z = 2$, p-waarde $\approx 0{,}023$. Beide $\leqslant 0{,}05$: $H_0$ verwerpen.
+
+- id: h3-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    misvattingen over de p-waarde
+  opgave: |-
+    Waar of vals? Verklaar.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een p-waarde van 0,03 betekent dat $H_0$ met kans 0,03 waar is.
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: de p-waarde is de kans op zo'n resultaat \textit{als} $H_0$ waar is, niet de kans dat $H_0$ waar is.
+    - opgave: |-
+        Verwerp je $H_0$, dan is $H_1$ bewezen.
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: je kunt een fout van de eerste soort maken, met kans hoogstens $\alpha$.
+    - opgave: |-
+        Verwerp je $H_0$ niet, dan is $H_0$ waar.
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: misschien is de steekproef te klein om een afwijking te zien (fout van de tweede soort).
+    - opgave: |-
+        Met $\alpha = 0{,}01$ verwerp je $H_0$ minder vaak ten onrechte dan met $\alpha = 0{,}05$.
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: de kans op een fout van de eerste soort is hoogstens $\alpha$.
+
+- id: h3-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    beslissingsregel
+  opgave: |-
+    Je gooit 20 keer met een munt om $H_0\colon p = 0{,}5$ te toetsen tegen $H_1\colon p > 0{,}5$ bij $\alpha = 0{,}05$. Vanaf hoeveel keer kop verwerp je $H_0$? Bereken daarvoor $P(X \geqslant k)$ voor enkele $k$.
+  antwoord: |-
+    vanaf 15
+  uitwerking: |-
+    $P(X \geqslant 14) \approx 0{,}058 > 0{,}05$ en $P(X \geqslant 15) \approx 0{,}021 \leqslant 0{,}05$. Je verwerpt $H_0$ vanaf 15 keer kop.
+
+- id: h3-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    veel toetsen
+  opgave: |-
+    Een onderzoeker toetst 20 verschillende voedingsmiddelen op een verband met hoofdpijn, telkens bij $\alpha = 0{,}05$. In werkelijkheid heeft geen enkel voedingsmiddel invloed, en de toetsen zijn onafhankelijk. Wat is de kans dat hij minstens één significant resultaat vindt? Wat leer je daaruit?
+  antwoord: |-
+    $\approx 0{,}64$
+  uitwerking: |-
+    Per toets is de kans op een (ten onrechte) significant resultaat 0,05. Geen enkele: $0{,}95^{20} \approx 0{,}36$. Minstens één: $\approx 0{,}64$. Wie veel toetsen doet en alleen de significante rapporteert, vindt bijna zeker iets, ook als er niets is.
+
+- id: h3-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    steekproefgrootte kiezen
+  opgave: |-
+    Een onderzoeker wil een gemiddelde schatten in een populatie met $\sigma = 8$, zo dat de standaardafwijking van $\overline{X}$ hoogstens 1 is. Hoe groot moet de steekproef minstens zijn? Hoe groot voor hoogstens 0,5?
+  antwoord: |-
+    64; \ 256
+  uitwerking: |-
+    $\frac{8}{\sqrt n} \leqslant 1 \iff \sqrt n \geqslant 8 \iff n \geqslant 64$. Voor 0,5: $\sqrt n \geqslant 16$, dus $n \geqslant 256$. De spreiding halveren kost vier keer zoveel waarnemingen.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h3-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: discreet
+    onderwerp: Logica en bewijzen
+  thema: |-
+    bewijs uit het ongerijmde
+  opgave: |-
+    Bij een bewijs uit het ongerijmde neem je aan dat een uitspraak waar is, en leid je een tegenspraak af. Vergelijk dat met een hypothesetoets. Wat is het belangrijke verschil?
+  antwoord: |-
+    een toets vindt geen tegenspraak, maar een onwaarschijnlijk resultaat
+  uitwerking: |-
+    In beide neem je iets aan ($H_0$) en kijk je naar de gevolgen. Bij een bewijs leidt de aanname tot iets wat onmogelijk is, en is het besluit zeker. Bij een toets leidt $H_0$ alleen tot iets wat onwaarschijnlijk is: het besluit kan fout zijn, met een kans die je beperkt met $\alpha$.
+
+- id: h3-koppel-2
+  soort: koppel
+  niveau: 3
+  koppel:
+    rubriek: data
+    onderwerp: Kansrekenen
+  thema: |-
+    hoeveel significante resultaten kloppen
+  opgave: |-
+    In een onderzoeksveld werkt maar 10~\% van de geteste behandelingen echt. Een toets bij $\alpha = 0{,}05$ ontdekt een werkzame behandeling met kans 0,8. Een toets is significant. Wat is de kans dat de behandeling toch niet werkt? Gebruik de wet van Bayes.
+  antwoord: |-
+    $0{,}36$
+  uitwerking: |-
+    $P(\text{significant}) = 0{,}9 \cdot 0{,}05 + 0{,}1 \cdot 0{,}8 = 0{,}125$. $P(\text{werkt niet} \gegeven \text{significant}) = \frac{0{,}045}{0{,}125} = 0{,}36$. Meer dan een derde van de significante resultaten is vals, veel meer dan $\alpha$. Herhalen van onderzoek is daarom belangrijk.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h3-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    toets voor een proportie
+  opgave: |-
+    Vroeger was een kwart van de bezoekers van een museum jonger dan 18. In een aselecte steekproef van 30 bezoekers zijn er 13 jonger dan 18. Toets bij $\alpha = 0{,}05$ of het aandeel jongeren gestegen is.
+  antwoord: |-
+    p-waarde $\approx 0{,}022$: verwerpen
+  uitwerking: |-
+    $H_0\colon p = 0{,}25$, $H_1\colon p > 0{,}25$. Onder $H_0$: $X \sim B(30;\, 0{,}25)$. p-waarde $= P(X \geqslant 13) \approx 0{,}022 \leqslant 0{,}05$: $H_0$ verwerpen.
+
+- id: h3-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    toets voor een gemiddelde
+  opgave: |-
+    Een machine vult zakken met gemiddeld 250~g, $\sigma = 3$~g. In een steekproef van 16 zakken is het gemiddelde 251,5~g. Vult de machine te veel? Toets bij $\alpha = 0{,}05$.
+  antwoord: |-
+    p-waarde $\approx 0{,}023$: verwerpen
+  uitwerking: |-
+    $H_0\colon \mu = 250$, $H_1\colon \mu > 250$. $\sigma(\overline{X}) = \frac34 = 0{,}75$, $z = 2$. p-waarde $\approx 0{,}023 \leqslant 0{,}05$: $H_0$ verwerpen.
+
+- id: h3-t3
+  soort: test
+  niveau: 2
+  thema: |-
+    tweezijdige toets
+  opgave: |-
+    Een munt landt 41 keer op kop bij 100 worpen. Toets tweezijdig bij $\alpha = 0{,}05$ of de munt oneerlijk is.
+  antwoord: |-
+    p-waarde $\approx 0{,}089$: niet verwerpen
+  uitwerking: |-
+    $H_0\colon p = 0{,}5$, $H_1\colon p \neq 0{,}5$. $P(X \leqslant 41) \approx 0{,}044$, dus p-waarde $\approx 0{,}089 > 0{,}05$: $H_0$ niet verwerpen.
+
+- id: h3-t4
+  soort: test
+  niveau: 1
+  thema: |-
+    soorten fouten
+  opgave: |-
+    Een fabriek toetst of een lading onderdelen te veel defecte stukken bevat ($H_0$: de lading is in orde). Beschrijf een fout van de eerste en van de tweede soort in deze context.
+  antwoord: |-
+    eerste: een goede lading afkeuren; tweede: een slechte lading aanvaarden
+  uitwerking: |-
+    Eerste soort: $H_0$ verwerpen terwijl ze waar is: een goede lading ten onrechte afkeuren. Tweede soort: $H_0$ niet verwerpen terwijl ze niet waar is: een slechte lading aanvaarden.

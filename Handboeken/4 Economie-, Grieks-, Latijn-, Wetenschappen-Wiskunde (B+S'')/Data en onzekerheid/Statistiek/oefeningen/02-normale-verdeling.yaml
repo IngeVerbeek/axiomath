@@ -1,0 +1,420 @@
+# Oefeningen van hoofdstuk 2. Zie oefeningenbank.py voor de velden.
+
+- id: h2-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Hoeveel standaardafwijkingen ligt 86 boven 70 als $\sigma = 8$?
+      antwoord: |-
+        2
+      uitwerking: |-
+        $\frac{86 - 70}{8} = 2$.
+    - opgave: |-
+        Wat is de oppervlakte van een rechthoek met breedte 5 en hoogte 0,04?
+      antwoord: |-
+        $0{,}2$
+      uitwerking: |-
+        $5 \cdot 0{,}04 = 0{,}2$.
+    - opgave: |-
+        Van 200 metingen liggen er 48 in een klasse van 5 cm breed. Wat is de relatieve frequentie? En per cm?
+      antwoord: |-
+        $0{,}24$; \ $0{,}048$
+      uitwerking: |-
+        $\frac{48}{200} = 0{,}24$, en per cm $\frac{0{,}24}{5} = 0{,}048$.
+    - opgave: |-
+        Een kromme is symmetrisch om $x = 10$. De oppervlakte rechts van 10 is 0,5. Wat is de oppervlakte links van 10?
+      antwoord: |-
+        $0{,}5$
+      uitwerking: |-
+        Door de symmetrie ook 0,5.
+    - opgave: |-
+        Is 0,04 meer of minder dan 5~\%? En 0,048?
+      antwoord: |-
+        minder; minder
+      uitwerking: |-
+        $0{,}04 = 4$~\% en $0{,}048 = 4{,}8$~\%: allebei minder dan 5~\%.
+    - opgave: |-
+        Waar ligt het buigpunt van een functie? Hoe vind je het?
+      antwoord: |-
+        waar de kromming verandert; $f''(x) = 0$ met tekenwissel
+      uitwerking: |-
+        Waar de grafiek overgaat van hol naar bol of omgekeerd: een nulpunt van $f''$ waar $f''$ van teken wisselt.
+
+- id: h2-verken
+  soort: start
+  figuur:
+    code: |-
+      \begin{tikzpicture}[x=.13cm,y=.035cm,font=\scriptsize]
+        \foreach \a/\n in {160/6,165/22,170/48,175/62,180/42,185/16,190/4}{\draw[accent,fill=accent!20] (\a,0) rectangle (\a+5,\n); \node[above] at (\a+2.5,\n) {\n};}
+        \draw[->,grijs] (158,0) -- (198,0) node[right,text=black] {cm};
+        \foreach \t in {160,170,180,190}{\node[below] at (\t,0) {\t};}
+      \end{tikzpicture}
+  opgave: |-
+    \blokkop{Verken}\quad Het histogram toont de lengte van 200 jongens van 18 jaar, in klassen van 5 cm.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Beschrijf de vorm van het histogram.
+      antwoord: |-
+        klokvormig, bijna symmetrisch
+      uitwerking: |-
+        Een klok: veel waarden in het midden (rond 175 tot 180 cm), minder naar de randen, bijna symmetrisch.
+    - opgave: |-
+        Welk percentage van de jongens is tussen 170 en 185 cm?
+      antwoord: |-
+        76~\%
+      uitwerking: |-
+        $\frac{48 + 62 + 42}{200} = \frac{152}{200} = 76$~\%.
+    - opgave: |-
+        Teken het histogram opnieuw met als hoogte de relatieve frequentie per cm. Wat is dan de totale oppervlakte van de staven? En de oppervlakte van de drie staven uit b?
+      antwoord: |-
+        1; \ $0{,}76$
+      uitwerking: |-
+        Elke staaf krijgt hoogte $\frac{n}{200 \cdot 5}$, en oppervlakte $\frac{n}{200}$: de relatieve frequentie. Samen 1. De drie staven samen: 0,76.
+
+- id: h2-vuistregel
+  soort: kort
+  opgave: |-
+    De scores op een grote toets zijn normaal verdeeld met $\mu = 70$ en $\sigma = 8$. Gebruik de 68-95-99,7-regel.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Tussen welke scores ligt het middelste 68~\%? En het middelste 95~\%?
+      antwoord: |-
+        $[62, 78]$; \ $[54, 86]$
+      uitwerking: |-
+        $70 \pm 8 = [62, 78]$ en $70 \pm 16 = [54, 86]$.
+    - opgave: |-
+        Welk percentage scoort meer dan 78? Minder dan 46?
+      antwoord: |-
+        16~\%; \ 0,15~\%
+      uitwerking: |-
+        Boven 78 ligt de helft van wat buiten $[62, 78]$ valt: $\frac{32}{2} = 16$~\%. 46 is $70 - 3 \cdot 8$: daaronder ligt $\frac{0{,}3}{2} = 0{,}15$~\%.
+
+- id: h2-normalcdf
+  soort: kort
+  opgave: |-
+    De scores zijn normaal verdeeld met $\mu = 70$ en $\sigma = 8$. Bereken met je rekentoestel het percentage dat
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        meer dan 85 scoort;
+      antwoord: |-
+        $\approx 3{,}0$~\%
+      uitwerking: |-
+        \texttt{normalcdf(85,1E99,70,8)} $\approx 0{,}030$.
+    - opgave: |-
+        minder dan 55 scoort;
+      antwoord: |-
+        $\approx 3{,}0$~\%
+      uitwerking: |-
+        \texttt{normalcdf(-1E99,55,70,8)} $\approx 0{,}030$: door de symmetrie gelijk aan a.
+    - opgave: |-
+        tussen 60 en 75 scoort.
+      antwoord: |-
+        $\approx 62{,}8$~\%
+      uitwerking: |-
+        \texttt{normalcdf(60,75,70,8)} $\approx 0{,}628$.
+
+- id: h2-invnorm
+  soort: kort
+  opgave: |-
+    De scores zijn normaal verdeeld met $\mu = 70$ en $\sigma = 8$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Vanaf welke score hoor je bij de beste 5~\%?
+      antwoord: |-
+        $\approx 83{,}2$
+      uitwerking: |-
+        Links van de grens ligt 95~\%: \texttt{invNorm(0.95,70,8)} $\approx 83{,}2$.
+    - opgave: |-
+        Tussen welke scores ligt het middelste 50~\%?
+      antwoord: |-
+        $\approx 64{,}6$ en $75{,}4$
+      uitwerking: |-
+        \texttt{invNorm(0.25,70,8)} $\approx 64{,}6$ en \texttt{invNorm(0.75,70,8)} $\approx 75{,}4$.
+
+- id: h2-model
+  soort: kort
+  opgave: |-
+    Welke variabelen zijn waarschijnlijk (ongeveer) normaal verdeeld? Verklaar.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        de massa van eieren van één kippenras
+      antwoord: |-
+        ja
+      uitwerking: |-
+        Waarschijnlijk wel: veel eieren rond een gemiddelde, symmetrisch afnemend naar lichter en zwaarder.
+    - opgave: |-
+        het maandloon van alle werknemers van een land
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: lonen zijn scheef, met een lange staart naar hoge lonen, en het gemiddelde ligt boven de mediaan.
+    - opgave: |-
+        de tijd tussen twee bussen bij een halte waar ze om de 10 minuten rijden
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Waarschijnlijk niet: de wachttijd ligt tussen 0 en ongeveer 10 minuten, en is eerder gelijkmatig dan klokvormig.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h2-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    vuistregels
+  opgave: |-
+    De lengte van pasgeboren baby's is normaal verdeeld met $\mu = 50$~cm en $\sigma = 2$~cm. Tussen welke grenzen ligt de lengte van 95~\% van de baby's? Welk percentage is langer dan 52~cm?
+  antwoord: |-
+    $[46, 54]$; \ 16~\%
+  uitwerking: |-
+    $50 \pm 4 = [46, 54]$. 52 is $\mu + \sigma$: boven 52 ligt $\frac{100 - 68}{2} = 16$~\%.
+
+- id: h2-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    kansen met het rekentoestel
+  opgave: |-
+    Het geboortegewicht van baby's is normaal verdeeld met $\mu = 3400$~g en $\sigma = 450$~g. Welk percentage weegt tussen 3000 en 4000~g? Minder dan 2500~g?
+  antwoord: |-
+    $\approx 72$~\%; \ $\approx 2{,}3$~\%
+  uitwerking: |-
+    \texttt{normalcdf(3000,4000,3400,450)} $\approx 0{,}722$. Minder dan 2500 g: \texttt{normalcdf(-1E99,2500,3400,450)} $\approx 0{,}023$; 2500 ligt precies $2\sigma$ onder $\mu$.
+
+- id: h2-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    z-scores vergelijken
+  opgave: |-
+    Lena haalt 78 op een toets met gemiddelde 65 en standaardafwijking 8. Jonas haalt 81 op een andere toets met gemiddelde 70 en standaardafwijking 6. Wie presteerde relatief beter?
+  antwoord: |-
+    Jonas
+  uitwerking: |-
+    Lena: $z = \frac{78 - 65}{8} \approx 1{,}63$. Jonas: $z = \frac{81 - 70}{6} \approx 1{,}83$. Jonas ligt verder boven het gemiddelde van zijn groep.
+
+- id: h2-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: vulmachine
+  opgave: |-
+    Een machine vult flessen met een hoeveelheid die normaal verdeeld is met $\mu = 500$~ml en $\sigma = 2$~ml. Op het etiket staat 497~ml.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Welk percentage van de flessen bevat minder dan 497~ml?
+      antwoord: |-
+        $\approx 6{,}7$~\%
+      uitwerking: |-
+        \texttt{normalcdf(-1E99,497,500,2)} $\approx 0{,}067$.
+    - opgave: |-
+        Op welk gemiddelde moet men de machine instellen zodat maar 1~\% onder 497~ml valt (met dezelfde $\sigma$)?
+      antwoord: |-
+        $\approx 501{,}7$~ml
+      uitwerking: |-
+        Voor $N(0, 1)$ ligt 1~\% links van $z = $ \texttt{invNorm(0.01)} $\approx -2{,}33$. Dus $497 = \mu - 2{,}33 \cdot 2$, en $\mu \approx 501{,}7$~ml.
+
+- id: h2-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een grens bepalen
+  opgave: |-
+    De slaapduur van jongeren is (in dit verhaal) normaal verdeeld met $\mu = 7{,}6$ uur en $\sigma = 0{,}9$ uur. Welk percentage slaapt minder dan 6 uur? Hoe lang slaapt iemand minstens om bij de 10~\% langste slapers te horen?
+  antwoord: |-
+    $\approx 3{,}8$~\%; \ $\approx 8{,}75$ uur
+  uitwerking: |-
+    \texttt{normalcdf(-1E99,6,7.6,0.9)} $\approx 0{,}038$. \texttt{invNorm(0.9,7.6,0.9)} $\approx 8{,}75$ uur, ongeveer 8 uur en 45 minuten.
+
+- id: h2-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    misvattingen
+  opgave: |-
+    Waar of vals? Verklaar.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bij een normale verdeling is $P(X = \mu)$ ongeveer 0,4.
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: bij een continue variabele is de kans op één waarde 0. De hoogte van de kromme is geen kans.
+    - opgave: |-
+        Een groter $\sigma$ maakt de Gausskromme breder en lager.
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: de oppervlakte blijft 1, dus breder betekent lager.
+    - opgave: |-
+        Bij elke normale verdeling ligt ongeveer 95~\% tussen $\mu - 2\sigma$ en $\mu + 2\sigma$.
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: dat is de vuistregel, voor elke $\mu$ en $\sigma$.
+    - opgave: |-
+        Elke variabele met veel metingen is normaal verdeeld.
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: lonen of wachttijden blijven scheef, hoeveel metingen je ook hebt.
+
+- id: h2-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een model beoordelen
+  opgave: |-
+    Van 500 appels is het gemiddelde 182~g en de standaardafwijking 11~g. Er wegen 330 appels tussen 171 en 193~g, en 480 tussen 160 en 204~g. Past een normaal model? Gebruik de vuistregels.
+  antwoord: |-
+    ja
+  uitwerking: |-
+    171 en 193 zijn $\mu \pm \sigma$: $\frac{330}{500} = 66$~\%, dicht bij 68~\%. 160 en 204 zijn $\mu \pm 2\sigma$: $\frac{480}{500} = 96$~\%, dicht bij 95~\%. Het normale model past goed (al kun je dat beter ook met een histogram nagaan).
+
+- id: h2-o8
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: vertraging
+  opgave: |-
+    De vertraging van een trein is in een model normaal verdeeld met $\mu = 2$ minuten en $\sigma = 1{,}5$ minuten. Bereken de kans op meer dan 5 minuten vertraging. Waarom is het model bij kleine vertragingen niet goed? Bereken daarvoor $P(X < 0)$.
+  antwoord: |-
+    $\approx 0{,}023$; \ $P(X < 0) \approx 0{,}09$
+  uitwerking: |-
+    $P(X > 5) \approx 0{,}023$ (5 is $\mu + 2\sigma$). Maar het model geeft ook $P(X < 0) \approx 0{,}09$: 9~\% van de treinen zou te vroeg zijn. Treinen vertrekken niet te vroeg: de echte verdeling is scheef, met een grens bij 0.
+
+- id: h2-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    gemiddelde en standaardafwijking terugvinden
+  opgave: |-
+    Een variabele is normaal verdeeld. 10~\% van de waarden ligt onder 40, en 20~\% boven 70. Bepaal $\mu$ en $\sigma$. Gebruik de z-scores van de standaardnormale verdeling.
+  antwoord: |-
+    $\mu \approx 58{,}1$; \ $\sigma \approx 14{,}1$
+  uitwerking: |-
+    \texttt{invNorm(0.1)} $\approx -1{,}2816$ en \texttt{invNorm(0.8)} $\approx 0{,}8416$. Dus $40 = \mu - 1{,}2816\sigma$ en $70 = \mu + 0{,}8416\sigma$. Aftrekken: $30 = 2{,}1232\sigma$, dus $\sigma \approx 14{,}1$, en dan $\mu = 40 + 1{,}2816 \cdot 14{,}13 \approx 58{,}1$. Controle: \texttt{normalcdf(-1E99,40,58.1,14.13)} $\approx 0{,}10$.
+
+- id: h2-o10
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een som van normale variabelen
+  opgave: |-
+    Een lift mag 630~kg dragen. Volwassenen wegen (in dit model) $N(75, 12)$, onafhankelijk van elkaar. Voor de som van 8 personen geldt: gemiddelde $8 \cdot 75$ en standaardafwijking $12\sqrt8$, en ze is ook normaal verdeeld. Wat is de kans dat 8 willekeurige volwassenen samen te zwaar zijn?
+  antwoord: |-
+    $\approx 0{,}19$
+  uitwerking: |-
+    Gemiddelde $600$~kg, standaardafwijking $12\sqrt8 \approx 33{,}9$~kg. $P(S > 630) = $ \texttt{normalcdf(630,1E99,600,33.94)} $\approx 0{,}19$. Merk op: de standaardafwijking groeit met $\sqrt8$, niet met 8.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h2-koppel-1
+  soort: koppel
+  niveau: 3
+  koppel:
+    rubriek: analyse
+    onderwerp: Afgeleiden
+  thema: |-
+    buigpunten van de Gausskromme
+  opgave: |-
+    Neem de standaardnormale dichtheid $f(x) = \frac{1}{\sqrt{2\pi}}\mathrm{e}^{-x^2/2}$. Bereken $f'(x)$ en $f''(x)$, en toon aan dat de top bij $x = 0$ ligt en de buigpunten bij $x = \pm 1$.
+  antwoord: |-
+    $f''(x) = \frac{1}{\sqrt{2\pi}}(x^2 - 1)\mathrm{e}^{-x^2/2}$
+  uitwerking: |-
+    $f'(x) = \frac{1}{\sqrt{2\pi}}(-x)\mathrm{e}^{-x^2/2}$: nul bij $x = 0$, positief links en negatief rechts: een maximum. $f''(x) = \frac{1}{\sqrt{2\pi}}(x^2 - 1)\mathrm{e}^{-x^2/2}$: nul bij $x = \pm 1$ met tekenwissel: buigpunten op afstand $\sigma = 1$ van de top.
+
+- id: h2-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: data
+    onderwerp: Kansrekenen
+  thema: |-
+    binomiaal en normaal
+  opgave: |-
+    Je gooit 100 keer met een eerlijke munt. Het aantal keer kop is $B(100;\, 0{,}5)$, met $\mu = 50$ en $\sigma = 5$. Vergelijk $P(45 \leqslant X \leqslant 55)$ binomiaal (met \texttt{binomcdf}) en met de normale verdeling tussen 44,5 en 55,5.
+  antwoord: |-
+    beide $\approx 0{,}729$
+  uitwerking: |-
+    Binomiaal: $P(X \leqslant 55) - P(X \leqslant 44) \approx 0{,}729$. Normaal: \texttt{normalcdf(44.5,55.5,50,5)} $\approx 0{,}729$. De normale verdeling benadert de binomiale goed; de grenzen 44,5 en 55,5 vangen de staven van 45 tot 55 helemaal.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h2-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    vuistregels
+  opgave: |-
+    $X \sim N(160, 6)$. Tussen welke waarden ligt het middelste 95~\%? Welk percentage ligt boven 166?
+  antwoord: |-
+    $[148, 172]$; \ 16~\%
+  uitwerking: |-
+    $160 \pm 12 = [148, 172]$. 166 is $\mu + \sigma$: $\frac{32}{2} = 16$~\%.
+
+- id: h2-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    kansen met het rekentoestel
+  opgave: |-
+    $X \sim N(160, 6)$. Bereken $P(150 < X < 170)$ en $P(X > 172)$.
+  antwoord: |-
+    $\approx 0{,}904$; \ $\approx 0{,}023$
+  uitwerking: |-
+    \texttt{normalcdf(150,170,160,6)} $\approx 0{,}904$ en \texttt{normalcdf(172,1E99,160,6)} $\approx 0{,}023$.
+
+- id: h2-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    een grens zoeken
+  opgave: |-
+    $X \sim N(160, 6)$. Bepaal de waarde $a$ waarvoor $P(X > a) = 0{,}10$.
+  antwoord: |-
+    $\approx 167{,}7$
+  uitwerking: |-
+    Links van $a$ ligt 90~\%: \texttt{invNorm(0.9,160,6)} $\approx 167{,}7$.
+
+- id: h2-t4
+  soort: test
+  niveau: 1
+  thema: |-
+    z-score
+  opgave: |-
+    Bereken de z-score van 175 als $X \sim N(160, 6)$. Is 175 uitzonderlijk?
+  antwoord: |-
+    $2{,}5$; ja
+  uitwerking: |-
+    $z = \frac{175 - 160}{6} = 2{,}5$: meer dan twee standaardafwijkingen boven het gemiddelde, dus uitzonderlijk.
+
+- id: h2-t5
+  soort: test
+  niveau: 2
+  thema: |-
+    model beoordelen
+  opgave: |-
+    Van 400 metingen is $\xbar = 50$ en $s = 5$. Er liggen 340 metingen tussen 45 en 55. Past een normaal model? Verklaar.
+  antwoord: |-
+    niet goed: 85~\% in plaats van 68~\%
+  uitwerking: |-
+    $\frac{340}{400} = 85$~\%, terwijl een normaal model 68~\% voorspelt tussen $\mu - \sigma$ en $\mu + \sigma$. De data zijn sterker rond het gemiddelde geconcentreerd: het model past niet goed.
