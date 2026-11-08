@@ -11,6 +11,16 @@ Cursus voor pakket 2 (B+S), LPD 25-27, volgens de [ontwerpregels](../../../../On
 | 3. Inverse, determinant en rang | `hoofdstukken/03-inverse-determinant-rang.tex` | LPD 25-27 | eerste versie, nog na te lezen |
 | 4. Matrixmodellen | `hoofdstukken/04-matrixmodellen.tex` | LPD 25-27 | eerste versie, nog na te lezen |
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Matrices-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Matrices-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Matrices-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Matrices-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Matrices-zelfstudie.pdf)
+
 ## Maken
 
 ```

@@ -8,6 +8,16 @@ Cursus voor pakket 4 (B+S''), leerplandoel 4 (bewijstechnieken), volgens de [ont
 | 2. Bewijstechnieken | `hoofdstukken/02-bewijstechnieken.tex` | LPD 4 (rechtstreeks, contrapositie, ongerijmde, tegenvoorbeeld) | eerste versie, nog na te lezen |
 | 3. Volledige inductie | `hoofdstukken/03-inductie.tex` | LPD 4 (volledige inductie) | eerste versie, nog na te lezen |
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Logica-en-bewijzen-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Logica-en-bewijzen-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Logica-en-bewijzen-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Logica-en-bewijzen-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Logica-en-bewijzen-zelfstudie.pdf)
+
 ## Maken
 
 ```

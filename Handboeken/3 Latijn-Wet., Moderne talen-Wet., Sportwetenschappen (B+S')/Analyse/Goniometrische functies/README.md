@@ -11,6 +11,16 @@ Cursus voor pakket 3 (B+S'), LPD 13-17, volgens de [ontwerpregels](../../../../O
 | 3. Goniometrische functies | `hoofdstukken/03-grafieken.tex` | LPD 13-17 | eerste versie, nog na te lezen |
 | 4. Goniometrische vergelijkingen | `hoofdstukken/04-vergelijkingen.tex` | LPD 13-17 | eerste versie, nog na te lezen |
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Goniometrische-functies-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Goniometrische-functies-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Goniometrische-functies-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Goniometrische-functies-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Goniometrische-functies-zelfstudie.pdf)
+
 ## Maken
 
 ```

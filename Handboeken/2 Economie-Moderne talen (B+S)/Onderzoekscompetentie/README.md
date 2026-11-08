@@ -10,6 +10,16 @@ Cursus voor pakket 2 (B+S), LPD 35, volgens de [ontwerpregels](../../../Ontwerp/
 | 2. Modelleren met data | `hoofdstukken/02-modelleren.tex` | LPD 35 | eerste versie, nog na te lezen |
 | 3. Rapporteren | `hoofdstukken/03-rapporteren.tex` | LPD 35 | eerste versie, nog na te lezen |
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Onderzoekscompetentie-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Onderzoekscompetentie-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Onderzoekscompetentie-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Onderzoekscompetentie-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Onderzoekscompetentie-zelfstudie.pdf)
+
 ## Maken
 
 ```

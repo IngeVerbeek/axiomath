@@ -13,6 +13,16 @@ Cursus voor pakket 4 (Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde), leer
 
 Hoofdstuk 1 en 4 zijn de twee hoofdstukken van [Matrices in pakket 1](<../../../1 Grieks-Latijn, Humane, Latijn-Moderne, Moderne talen (Basis)/Algebra/Matrices/README.md>), met dezelfde oefeningen (in hoofdstuk 4 met nieuwe nummers `h4-`). Aangepast: de leerplanverwijzingen, de verwijzingen tussen hoofdstukken, en het evenwicht bij drie toestanden in hoofdstuk 4, dat nu exact berekend wordt met Gauss-Jordan in plaats van alleen met een hoge macht. Hoofdstuk 2 en 3 zijn nieuw. Een verbetering in hoofdstuk 1 of 4 moet dus ook in pakket 1 gebeuren.
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Matrices-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Matrices-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Matrices-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Matrices-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Matrices-zelfstudie.pdf)
+
 ## Maken
 
 Vanuit de hoofdmap van de repo:

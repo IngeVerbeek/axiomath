@@ -8,6 +8,16 @@ Cursus voor pakket 4 (B+S''), leerplandoel 47, met het binomium van Newton en de
 | 2. Combinaties | `hoofdstukken/02-combinaties.tex` | LPD 47 (zonder volgorde), driehoek van Pascal | eerste versie, nog na te lezen |
 | 3. Het binomium van Newton | `hoofdstukken/03-binomium.tex` | binomium, sommatieteken | eerste versie, nog na te lezen |
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Telproblemen-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Telproblemen-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Telproblemen-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Telproblemen-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Telproblemen-zelfstudie.pdf)
+
 ## Maken
 
 ```

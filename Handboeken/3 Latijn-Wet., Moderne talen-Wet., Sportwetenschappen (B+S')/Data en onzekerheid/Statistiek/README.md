@@ -11,6 +11,16 @@ Cursus voor pakket 3 (B+S'), LPD 36-40, volgens de [ontwerpregels](../../../../O
 | 3. Hypothesetoetsen | `hoofdstukken/03-hypothesetoetsen.tex` | LPD 36-40 | eerste versie, nog na te lezen |
 | 4. Betrouwbaarheidsintervallen | `hoofdstukken/04-betrouwbaarheidsintervallen.tex` | LPD 36-40 | eerste versie, nog na te lezen |
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Statistiek-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Statistiek-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Statistiek-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Statistiek-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Statistiek-zelfstudie.pdf)
+
 ## Maken
 
 ```

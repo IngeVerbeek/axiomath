@@ -10,6 +10,16 @@ Cursus voor pakket 1 (Basis), LPD 5-6, volgens de [ontwerpregels](../../../../On
 | 2. Transformaties van grafieken | `hoofdstukken/02-transformaties.tex` | LPD 5-6 | eerste versie, nog na te lezen |
 | 3. Samenstellen en inverse functies | `hoofdstukken/03-samenstellen-inverse.tex` | LPD 5-6 | eerste versie, nog na te lezen |
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p1-Algemene-functies-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p1-Algemene-functies-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p1-Algemene-functies-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p1-Algemene-functies-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p1-Algemene-functies-zelfstudie.pdf)
+
 ## Maken
 
 ```

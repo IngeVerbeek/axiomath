@@ -10,6 +10,16 @@ Cursus voor pakket 4 (B+S''), leerplandoel 55, volgens de [ontwerpregels](../../
 
 Deze cursus staat niet in een rubriekmap (zoals in `maak-voorkanten.py`); `\hoofdmap` is daarom `../../../`. Wat de school precies verwacht van een onderzoeksopdracht (product, proces, evaluatie), staat niet in dit boek: kijk de leerplantekst en de schoolafspraken na.
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Onderzoekscompetentie-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Onderzoekscompetentie-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Onderzoekscompetentie-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Onderzoekscompetentie-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Onderzoekscompetentie-zelfstudie.pdf)
+
 ## Maken
 
 ```

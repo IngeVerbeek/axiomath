@@ -10,6 +10,16 @@ Cursus voor pakket 4 (B+S''), leerplandoelen 9-11, volgens de [ontwerpregels](..
 
 De verdeling van de leerstof over de afzonderlijke doelen 9, 10 en 11 is nog na te kijken met de leerplantekst.
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Algemene-functies-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Algemene-functies-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Algemene-functies-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Algemene-functies-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Algemene-functies-zelfstudie.pdf)
+
 ## Maken
 
 ```

@@ -9,6 +9,16 @@ Cursus voor pakket 4 (B+S''), leerplandoelen 38-42, volgens de [ontwerpregels](.
 | 3. De goniometrische vorm | `hoofdstukken/03-goniometrische-vorm.tex` | LPD 41, 42 (product en quotiënt) | eerste versie, nog na te lezen |
 | 4. Machten en wortels | `hoofdstukken/04-machten-en-wortels.tex` | LPD 42 (machten en machtswortels) | eerste versie, nog na te lezen |
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Complexe-getallen-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Complexe-getallen-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Complexe-getallen-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Complexe-getallen-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Complexe-getallen-zelfstudie.pdf)
+
 ## Maken
 
 Vanuit de hoofdmap van de repo:

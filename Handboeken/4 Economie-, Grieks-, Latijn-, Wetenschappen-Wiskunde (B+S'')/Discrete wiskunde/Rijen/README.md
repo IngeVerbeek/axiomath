@@ -9,6 +9,16 @@ Cursus voor pakket 4 (B+S''), leerplandoelen 44-46, volgens de [ontwerpregels](.
 | 3. Somformules | `hoofdstukken/03-somformules.tex` | LPD 44 | eerste versie, nog na te lezen |
 | 4. Limiet van een rij | `hoofdstukken/04-limiet-van-een-rij.tex` | LPD 45 en 46 | eerste versie, nog na te lezen |
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Rijen-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Rijen-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Rijen-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Rijen-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Rijen-zelfstudie.pdf)
+
 ## Maken
 
 Vanuit de hoofdmap van de repo, in PowerShell:

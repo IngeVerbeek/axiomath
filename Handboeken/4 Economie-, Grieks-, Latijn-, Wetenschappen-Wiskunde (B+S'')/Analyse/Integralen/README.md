@@ -11,13 +11,13 @@ Cursus voor pakket 4 (B+S''), leerplandoelen 31-33, volgens de [ontwerpregels](.
 
 ## PDF's
 
-De PDF's staan niet in git maar bij de [laatste release](https://github.com/Klaasvdb/axiomath/releases/latest):
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
 
-- [Handboek](https://github.com/Klaasvdb/axiomath/releases/latest/download/Integralen.-.handboek.pdf)
-- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/latest/download/Integralen.-.handboek.-.numerieke.oplossingen.pdf)
-- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/latest/download/Integralen.-.handboek.-.uitgewerkte.oplossingen.pdf)
-- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/latest/download/Integralen.-.leerkracht.pdf)
-- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/latest/download/Integralen.-.zelfstudie.pdf)
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Integralen-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Integralen-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Integralen-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Integralen-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Integralen-zelfstudie.pdf)
 
 ## Maken
 

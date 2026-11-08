@@ -11,6 +11,16 @@ Cursus voor pakket 4 (B+S''), leerplandoelen 5-8, volgens de [ontwerpregels](../
 
 De verdeling van de leerstof over de afzonderlijke doelen 5 tot 8 is nog na te kijken met de leerplantekst.
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Ruimtemeetkunde-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Ruimtemeetkunde-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Ruimtemeetkunde-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Ruimtemeetkunde-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Ruimtemeetkunde-zelfstudie.pdf)
+
 ## Maken
 
 ```

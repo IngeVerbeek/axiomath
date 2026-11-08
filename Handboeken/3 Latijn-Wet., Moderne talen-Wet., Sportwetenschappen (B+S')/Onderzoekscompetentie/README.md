@@ -10,6 +10,16 @@ Cursus voor pakket 3 (B+S'), LPD 41, volgens de [ontwerpregels](../../../Ontwerp
 | 2. Modelleren met data | `hoofdstukken/02-modelleren.tex` | LPD 41 | eerste versie, nog na te lezen |
 | 3. Rapporteren | `hoofdstukken/03-rapporteren.tex` | LPD 41 | eerste versie, nog na te lezen |
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Onderzoekscompetentie-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Onderzoekscompetentie-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Onderzoekscompetentie-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Onderzoekscompetentie-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Onderzoekscompetentie-zelfstudie.pdf)
+
 ## Maken
 
 ```

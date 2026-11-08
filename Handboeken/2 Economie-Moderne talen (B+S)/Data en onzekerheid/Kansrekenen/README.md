@@ -11,6 +11,16 @@ Cursus voor pakket 2 (B+S), LPD 29, volgens de [ontwerpregels](../../../../Ontwe
 | 3. Toevalsvariabelen | `hoofdstukken/03-toevalsvariabelen.tex` | LPD 29 | eerste versie, nog na te lezen |
 | 4. De binomiale verdeling | `hoofdstukken/04-binomiale-verdeling.tex` | LPD 29 | eerste versie, nog na te lezen |
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Kansrekenen-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Kansrekenen-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Kansrekenen-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Kansrekenen-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Kansrekenen-zelfstudie.pdf)
+
 ## Maken
 
 ```

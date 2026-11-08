@@ -10,6 +10,16 @@ Cursus voor pakket 4 (B+S''), leerplandoelen 24-25, volgens de [ontwerpregels](.
 
 Of de veeltermfuncties van hogere graad bij deze doelen horen of elders in het leerplan staan, is nog na te kijken met de leerplantekst.
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Rationale-functies-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Rationale-functies-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Rationale-functies-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Rationale-functies-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p4-Rationale-functies-zelfstudie.pdf)
+
 ## Maken
 
 ```

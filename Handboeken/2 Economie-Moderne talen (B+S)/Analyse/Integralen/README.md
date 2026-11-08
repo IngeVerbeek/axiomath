@@ -11,6 +11,16 @@ Cursus voor pakket 2 (B+S), LPD 22-24, volgens de [ontwerpregels](../../../../On
 | 3. Integratiemethoden | `hoofdstukken/03-integratiemethoden.tex` | LPD 22-24 | eerste versie, nog na te lezen |
 | 4. Toepassingen van integralen | `hoofdstukken/04-toepassingen.tex` | LPD 22-24 | eerste versie, nog na te lezen |
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Integralen-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Integralen-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Integralen-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Integralen-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Integralen-zelfstudie.pdf)
+
 ## Maken
 
 ```

@@ -10,6 +10,16 @@ Cursus voor pakket 2 (B+S), LPD 17 en K1, volgens de [ontwerpregels](../../../..
 | 2. Rationale functies | `hoofdstukken/02-rationale-functies.tex` | LPD 17 en K1 | eerste versie, nog na te lezen |
 | 3. Vergelijkingen en ongelijkheden | `hoofdstukken/03-vergelijkingen.tex` | LPD 17 en K1 | eerste versie, nog na te lezen |
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Rationale-functies-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Rationale-functies-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Rationale-functies-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Rationale-functies-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Rationale-functies-zelfstudie.pdf)
+
 ## Maken
 
 ```

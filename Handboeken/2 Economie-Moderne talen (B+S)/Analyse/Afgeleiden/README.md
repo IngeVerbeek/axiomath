@@ -11,6 +11,16 @@ Cursus voor pakket 2 (B+S), LPD 18-21, volgens de [ontwerpregels](../../../../On
 | 3. De kettingregel | `hoofdstukken/03-kettingregel.tex` | LPD 18-21 | eerste versie, nog na te lezen |
 | 4. Toepassingen van afgeleiden | `hoofdstukken/04-toepassingen.tex` | LPD 18-21 | eerste versie, nog na te lezen |
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Afgeleiden-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Afgeleiden-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Afgeleiden-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Afgeleiden-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p2-Afgeleiden-zelfstudie.pdf)
+
 ## Maken
 
 ```

@@ -11,6 +11,16 @@ Cursus voor pakket 3 (B+S'), LPD 29-33, volgens de [ontwerpregels](../../../../O
 | 3. De goniometrische vorm | `hoofdstukken/03-goniometrische-vorm.tex` | LPD 29-33 | eerste versie, nog na te lezen |
 | 4. Machten en wortels | `hoofdstukken/04-machten-en-wortels.tex` | LPD 29-33 | eerste versie, nog na te lezen |
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Complexe-getallen-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Complexe-getallen-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Complexe-getallen-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Complexe-getallen-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Complexe-getallen-zelfstudie.pdf)
+
 ## Maken
 
 ```
