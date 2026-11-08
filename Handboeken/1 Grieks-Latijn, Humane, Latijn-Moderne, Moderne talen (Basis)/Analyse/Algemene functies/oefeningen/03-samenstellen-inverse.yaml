@@ -1,0 +1,429 @@
+# Oefeningen van hoofdstuk 3. Zie oefeningenbank.py voor de velden.
+
+- id: h3-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Bereken $f(g(2))$ als $f(x) = x^2$ en $g(x) = x + 1$.
+      antwoord: |-
+        9
+      uitwerking: |-
+        $g(2) = 3$, $f(3) = 9$.
+    - opgave: |-
+        Los op naar $x$: $y = 4x - 2$.
+      antwoord: |-
+        $x = \frac{y + 2}{4}$
+      uitwerking: |-
+        $4x = y + 2$.
+    - opgave: |-
+        Los op naar $x$: $y = x^3$.
+      antwoord: |-
+        $x = \sqrt[3]{y}$
+      uitwerking: |-
+        $x = \sqrt[3]{y}$.
+    - opgave: |-
+        Vul in: $f(x) = 3x - 1$, dus $f(a^2) = \ldots$
+      antwoord: |-
+        $3a^2 - 1$
+      uitwerking: |-
+        $3a^2 - 1$.
+    - opgave: |-
+        Spiegel het punt $(2, 5)$ om de rechte $y = x$.
+      antwoord: |-
+        $(5, 2)$
+      uitwerking: |-
+        De coördinaten wisselen: $(5, 2)$.
+    - opgave: |-
+        Wat is het bereik van $x^2 + 1$?
+      antwoord: |-
+        $\left[1, +\infty\right[$
+      uitwerking: |-
+        $x^2 \geqslant 0$, dus $x^2 + 1 \geqslant 1$.
+
+- id: h3-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken} Een taxi rekent $3$ euro instap plus $2$ euro per kilometer.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef de prijs $p(x)$ voor een rit van $x$ km. Wat kost een rit van 8 km?
+      antwoord: |-
+        $p(x) = 2x + 3$; 19 euro
+      uitwerking: |-
+        $p(x) = 2x + 3$ en $p(8) = 19$ euro.
+    - opgave: |-
+        Een rit kostte 27 euro. Hoe ver was die? Geef een formule $k(p)$ voor de afstand bij een prijs $p$.
+      antwoord: |-
+        12 km; $k(p) = \frac{p - 3}{2}$
+      uitwerking: |-
+        $2x + 3 = 27$ geeft $x = 12$ km. Algemeen $k(p) = \frac{p - 3}{2}$.
+    - opgave: |-
+        Bereken $k\bigl(p(8)\bigr)$. Wat merk je op?
+      antwoord: |-
+        8
+      uitwerking: |-
+        $k(19) = 8$: $k$ draait $p$ terug.
+
+- id: h3-samenstellen
+  soort: kort
+  opgave: |-
+    Neem $f(x) = \dfrac1x$ en $g(x) = x - 2$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bepaal $f \circ g$ en $g \circ f$, met hun domein.
+      antwoord: |-
+        $\frac{1}{x - 2}$, $\R \setminus \{2\}$; $\frac1x - 2$, $\R \setminus \{0\}$
+      uitwerking: |-
+        $(f \circ g)(x) = \dfrac{1}{x - 2}$ met domein $\R \setminus \{2\}$; $(g \circ f)(x) = \dfrac1x - 2$ met domein $\R \setminus \{0\}$.
+    - opgave: |-
+        Schrijf $h(x) = \sqrt{x^2 + 4}$ als samenstelling van twee functies.
+      antwoord: |-
+        $\sqrt{x}$ na $x^2 + 4$
+      uitwerking: |-
+        $h = f \circ g$ met $g(x) = x^2 + 4$ en $f(x) = \sqrt{x}$.
+
+- id: h3-inverse
+  soort: kort
+  opgave: |-
+    Bepaal de inverse, met haar domein.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x) = 5 - \dfrac{x}{2}$
+      antwoord: |-
+        $\inv{f}(x) = 10 - 2x$, $\R$
+      uitwerking: |-
+        $y = 5 - \frac{x}{2} \iff x = 10 - 2y$, dus $\inv{f}(x) = 10 - 2x$ met domein $\R$.
+    - opgave: |-
+        $g(x) = \sqrt{x + 4}$
+      antwoord: |-
+        $\inv{g}(x) = x^2 - 4$, $\left[0, +\infty\right[$
+      uitwerking: |-
+        $\ber g = \left[0, +\infty\right[$. $y = \sqrt{x + 4} \iff x = y^2 - 4$ (met $y \geqslant 0$), dus $\inv{g}(x) = x^2 - 4$ met domein $\left[0, +\infty\right[$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h3-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    samenstellen
+  opgave: |-
+    Neem $f(x) = x^2 + 1$ en $g(x) = 2x - 3$. Bereken:
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $(f \circ g)(2)$
+      antwoord: |-
+        2
+      uitwerking: |-
+        $g(2) = 1$, $f(1) = 2$.
+    - opgave: |-
+        $(g \circ f)(2)$
+      antwoord: |-
+        7
+      uitwerking: |-
+        $f(2) = 5$, $g(5) = 7$.
+    - opgave: |-
+        $(f \circ g)(x)$
+      antwoord: |-
+        $4x^2 - 12x + 10$
+      uitwerking: |-
+        $(2x - 3)^2 + 1 = 4x^2 - 12x + 10$.
+    - opgave: |-
+        $(g \circ f)(x)$
+      antwoord: |-
+        $2x^2 - 1$
+      uitwerking: |-
+        $2(x^2 + 1) - 3 = 2x^2 - 1$.
+
+- id: h3-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    inverse bepalen
+  opgave: |-
+    Bepaal de inverse.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x) = x^3 + 1$
+      antwoord: |-
+        $\sqrt[3]{x - 1}$
+      uitwerking: |-
+        $y = x^3 + 1 \iff x = \sqrt[3]{y - 1}$.
+    - opgave: |-
+        $f(x) = \dfrac{1}{x - 2}$
+      antwoord: |-
+        $2 + \dfrac1x$
+      uitwerking: |-
+        $y = \frac{1}{x - 2} \iff x - 2 = \frac1y \iff x = 2 + \frac1y$. Domein van de inverse: $\R \setminus \{0\} = \ber f$.
+
+- id: h3-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    ontbinden
+  opgave: |-
+    Schrijf als samenstelling $f \circ g$ van twee eenvoudige functies.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\dfrac{1}{(3x - 1)^2}$
+      antwoord: |-
+        $\frac{1}{x^2}$ na $3x - 1$
+      uitwerking: |-
+        $g(x) = 3x - 1$, $f(x) = \frac{1}{x^2}$.
+    - opgave: |-
+        $|x^3 - 2|$
+      antwoord: |-
+        $|x|$ na $x^3 - 2$
+      uitwerking: |-
+        $g(x) = x^3 - 2$, $f(x) = |x|$.
+    - opgave: |-
+        $\sqrt{x} + 5$
+      antwoord: |-
+        $x + 5$ na $\sqrt{x}$
+      uitwerking: |-
+        $g(x) = \sqrt{x}$, $f(x) = x + 5$: hier is de wortel de binnenste functie.
+
+- id: h3-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    domein van een samenstelling
+  opgave: |-
+    Neem $f(x) = \sqrt{x}$ en $g(x) = x^2 - 4$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bepaal $f \circ g$ en $g \circ f$ met hun domein.
+      antwoord: |-
+        $\sqrt{x^2 - 4}$ op $\left]-\infty, -2\right] \cup \left[2, +\infty\right[$; $x - 4$ op $\left[0, +\infty\right[$
+      uitwerking: |-
+        $(f \circ g)(x) = \sqrt{x^2 - 4}$ met domein $\left]-\infty, -2\right] \cup \left[2, +\infty\right[$. $(g \circ f)(x) = (\sqrt{x})^2 - 4 = x - 4$ met domein $\left[0, +\infty\right[$.
+    - opgave: |-
+        Zijn $g \circ f$ en de functie $x - 4$ dezelfde functie?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: het voorschrift is hetzelfde, het domein niet. $(g \circ f)(-1)$ bestaat niet.
+
+- id: h3-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    inverse op een grafiek
+  figuur:
+    opties: |-
+      4.8cm
+    code: |-
+      \begin{tikzpicture}[x=.45cm,y=.45cm,font=\scriptsize]
+        \rooster{-3}{1}{4}{-3}{1}{4}
+        \draw[grijs,dashed] (-3,-3) -- (4.2,4.2);
+        \draw[accent,thick] (-2,-3) -- (0,-1) -- (2,0) -- (4,3);
+        \vol{(-2,-3)} \vol{(4,3)}
+      \end{tikzpicture}
+  opgave: |-
+    De grafiek van $f$ is de gebroken lijn van $(-2, -3)$ over $(0, -1)$ en $(2, 0)$ tot $(4, 3)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Waarom heeft $f$ een inverse?
+      antwoord: |-
+        $f$ stijgt overal
+      uitwerking: |-
+        $f$ stijgt op heel haar domein, dus verschillende $x$ hebben verschillende beelden.
+    - opgave: |-
+        Geef de hoekpunten van de grafiek van $\inv{f}$, en haar domein.
+      antwoord: |-
+        $(-3, -2)$, $(-1, 0)$, $(0, 2)$, $(3, 4)$; $[-3, 3]$
+      uitwerking: |-
+        Coördinaten wisselen: $(-3, -2)$, $(-1, 0)$, $(0, 2)$, $(3, 4)$. $\dom \inv{f} = \ber f = [-3, 3]$.
+    - opgave: |-
+        Bereken $\inv{f}(0)$ en $\inv{f}(-2)$.
+      antwoord: |-
+        2; $-1$
+      uitwerking: |-
+        $f(2) = 0$, dus $\inv{f}(0) = 2$. Op het eerste lijnstuk is $f(-1) = -2$, dus $\inv{f}(-2) = -1$.
+
+- id: h3-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    injectief of niet
+  opgave: |-
+    Is de functie injectief? Toon aan met een tegenvoorbeeld of met het verloop.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x) = x^3$
+      antwoord: |-
+        ja
+      uitwerking: |-
+        Ja: $x^3$ stijgt overal.
+    - opgave: |-
+        $f(x) = |x|$
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: $f(-1) = f(1)$.
+    - opgave: |-
+        $f(x) = x^2 - 2x$ met domein $\left[1, +\infty\right[$
+      antwoord: |-
+        ja
+      uitwerking: |-
+        Ja: $f(x) = (x - 1)^2 - 1$ stijgt rechts van de top in $x = 1$.
+    - opgave: |-
+        $f(x) = x^3 - 3x$
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: $f(0) = f(\sqrt3) = 0$.
+
+- id: h3-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    Celsius en Fahrenheit
+  opgave: |-
+    Een temperatuur van $C$ graden Celsius is $F(C) = 1{,}8\,C + 32$ graden Fahrenheit.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bepaal de inverse functie. Wat betekent ze?
+      antwoord: |-
+        $C(F) = \frac{F - 32}{1{,}8}$
+      uitwerking: |-
+        $C(F) = \dfrac{F - 32}{1{,}8}$: ze rekent Fahrenheit om naar Celsius.
+    - opgave: |-
+        Een lichaamstemperatuur van $98{,}6\,^\circ$F: hoeveel graden Celsius is dat?
+      antwoord: |-
+        $37\,^\circ$C
+      uitwerking: |-
+        $\frac{98{,}6 - 32}{1{,}8} = \frac{66{,}6}{1{,}8} = 37$.
+    - opgave: |-
+        Bij welke temperatuur geven beide schalen hetzelfde getal? Waar zie je dat op de grafieken?
+      antwoord: |-
+        $-40$; in het snijpunt met $y = x$
+      uitwerking: |-
+        $1{,}8\,C + 32 = C$ geeft $C = -40$. De grafieken van $F$ en haar inverse snijden elkaar daar op de rechte $y = x$.
+
+- id: h3-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    inverse van een breuk
+  opgave: |-
+    Bepaal de inverse van $f(x) = \dfrac{2x + 1}{x - 3}$. Controleer dat het domein van $\inv{f}$ het bereik van $f$ is.
+  antwoord: |-
+    $\inv{f}(x) = \dfrac{3x + 1}{x - 2}$; $\dom \inv{f} = \R \setminus \{2\}$
+  uitwerking: |-
+    $y(x - 3) = 2x + 1 \iff yx - 2x = 3y + 1 \iff x = \dfrac{3y + 1}{y - 2}$. Dus $\inv{f}(x) = \dfrac{3x + 1}{x - 2}$ met domein $\R \setminus \{2\}$. Het bereik van $f$ is ook $\R \setminus \{2\}$: de vergelijking $f(x) = 2$ zou $2x + 1 = 2x - 6$ geven, en dat kan niet.
+
+- id: h3-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    zijn eigen inverse
+  opgave: |-
+    Toon aan dat $f(x) = \dfrac{x + 1}{x - 1}$ haar eigen inverse is: $f\bigl(f(x)\bigr) = x$ voor $x \neq 1$. Wat betekent dat voor de grafiek? Geef nog twee functies die hun eigen inverse zijn.
+  antwoord: |-
+    symmetrisch om $y = x$; bv. $\frac1x$ en $-x$
+  uitwerking: |-
+    $f\bigl(f(x)\bigr) = \dfrac{\frac{x + 1}{x - 1} + 1}{\frac{x + 1}{x - 1} - 1} = \dfrac{\frac{2x}{x - 1}}{\frac{2}{x - 1}} = x$. De grafiek is haar eigen spiegelbeeld om $y = x$. Andere voorbeelden: $\frac1x$, $-x$, $5 - x$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h3-koppel-1
+  soort: koppel
+  niveau: 1
+  koppel:
+    rubriek: analyse
+    onderwerp: Exponentiële en logaritmische functies
+  thema: |-
+    de logaritme als inverse
+  opgave: |-
+    De functie $f(x) = 2^x$ heeft domein $\R$ en bereik $\left]0, +\infty\right[$, en stijgt overal. Haar inverse is $\log_2 x$. Geef het domein en het bereik van $\log_2$, en bereken $\log_2 8$ en $\log_2\bigl(2^{5}\bigr)$.
+  antwoord: |-
+    domein $\left]0, +\infty\right[$, bereik $\R$; 3; 5
+  uitwerking: |-
+    $\dom \log_2 = \ber f = \left]0, +\infty\right[$, $\ber \log_2 = \dom f = \R$. $2^3 = 8$, dus $\log_2 8 = 3$. $\log_2(2^5) = 5$: de inverse draait $f$ terug.
+
+- id: h3-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Goniometrische functies
+  thema: |-
+    een inverse voor de sinus
+  opgave: |-
+    Waarom heeft $\sin x$ op $\R$ geen inverse? Op welk interval rond $0$ is de sinus wel injectief, met als bereik heel $[-1, 1]$? Geef het domein en het bereik van de inverse $\operatorname{bgsin}$.
+  antwoord: |-
+    $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$; domein $[-1, 1]$, bereik $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$
+  uitwerking: |-
+    $\sin 0 = \sin \pi = 0$: niet injectief. Op $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$ stijgt de sinus van $-1$ tot $1$. Dus $\dom \operatorname{bgsin} = [-1, 1]$ en $\ber \operatorname{bgsin} = \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$.
+
+- id: h3-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    samenstellen
+  opgave: |-
+    Neem $f(x) = \sqrt{x}$ en $g(x) = x^2 - 1$. Bepaal $f \circ g$ en $g \circ f$ met hun domein.
+  antwoord: |-
+    $\sqrt{x^2 - 1}$ op $\left]-\infty, -1\right] \cup \left[1, +\infty\right[$; $x - 1$ op $\left[0, +\infty\right[$
+  uitwerking: |-
+    $(f \circ g)(x) = \sqrt{x^2 - 1}$ met domein $\left]-\infty, -1\right] \cup \left[1, +\infty\right[$. $(g \circ f)(x) = x - 1$ met domein $\left[0, +\infty\right[$.
+
+- id: h3-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    ontbinden
+  opgave: |-
+    Schrijf $h(x) = (x^2 - 3)^4$ als samenstelling van twee functies.
+  antwoord: |-
+    $x^4$ na $x^2 - 3$
+  uitwerking: |-
+    $g(x) = x^2 - 3$ en $f(x) = x^4$: $h = f \circ g$.
+
+- id: h3-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    inverse
+  opgave: |-
+    Bepaal de inverse van $f(x) = 4 - 3x$, en controleer met één getal.
+  antwoord: |-
+    $\inv{f}(x) = \dfrac{4 - x}{3}$
+  uitwerking: |-
+    $y = 4 - 3x \iff x = \frac{4 - y}{3}$. Controle: $f(1) = 1$ en $\inv{f}(1) = 1$; $f(0) = 4$ en $\inv{f}(4) = 0$.
+
+- id: h3-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    inverse met domein
+  opgave: |-
+    Bepaal de inverse van $f(x) = \sqrt{x + 2}$, met haar domein.
+  antwoord: |-
+    $\inv{f}(x) = x^2 - 2$, $\left[0, +\infty\right[$
+  uitwerking: |-
+    $\ber f = \left[0, +\infty\right[$. $y = \sqrt{x + 2} \iff x = y^2 - 2$ met $y \geqslant 0$. Dus $\inv{f}(x) = x^2 - 2$ met domein $\left[0, +\infty\right[$.

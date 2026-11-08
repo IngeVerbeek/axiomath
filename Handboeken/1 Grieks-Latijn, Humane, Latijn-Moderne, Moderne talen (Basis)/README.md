@@ -5,7 +5,7 @@ Leerplan: Basis (Katholiek Onderwijs Vlaanderen). Doelen volgens de tabel met le
 
 | Cursus | Leerplandoelen | Status |
 | --- | --- | --- |
-| Analyse/Algemene functies | LPD 5-6 | nog te maken |
+| [Analyse/Algemene functies](Analyse/Algemene%20functies) | LPD 5-6 | 3 hoofdstukken, eerste versie (afgeleid van pakket 4), nog na te lezen |
 | Analyse/Exponentiële en logaritmische functies | LPD 7-10, K1 | nog te maken |
 | Analyse/Goniometrische functies | LPD 11-13, K2 | nog te maken |
 | Analyse/Afgeleiden | LPD 14-15 | nog te maken |

@@ -22,7 +22,7 @@ Eerst maken we van elk handboek een eerste versie, daarna lezen leerkrachten ze 
 <!-- voortgang:begin -->
 **Totaal** &nbsp; `█░░░░░░░░░░░░░░░░░░░` &nbsp; **3 %** van 47 handboeken
 
-⚪ 44 gepland · 🟠 3 eerste versie · 🟡 0 nagelezen · 🟢 0 klaar
+⚪ 43 gepland · 🟠 4 eerste versie · 🟡 0 nagelezen · 🟢 0 klaar
 
 ### Per richting
 
@@ -30,10 +30,10 @@ Elke richting volgt één pakket, en de voortgang van de richting is het gemidde
 
 | Richting | Pakket | Voortgang | |
 |---|---|---|---:|
-| Grieks-Latijn | 1 (Basis) | `█░░░░░░░░░░░░░░░░░░░` |   5 % |
-| Humane wetenschappen | 1 (Basis) | `█░░░░░░░░░░░░░░░░░░░` |   5 % |
-| Latijn-Moderne talen | 1 (Basis) | `█░░░░░░░░░░░░░░░░░░░` |   5 % |
-| Moderne talen | 1 (Basis) | `█░░░░░░░░░░░░░░░░░░░` |   5 % |
+| Grieks-Latijn | 1 (Basis) | `██░░░░░░░░░░░░░░░░░░` |  10 % |
+| Humane wetenschappen | 1 (Basis) | `██░░░░░░░░░░░░░░░░░░` |  10 % |
+| Latijn-Moderne talen | 1 (Basis) | `██░░░░░░░░░░░░░░░░░░` |  10 % |
+| Moderne talen | 1 (Basis) | `██░░░░░░░░░░░░░░░░░░` |  10 % |
 | Economie-Moderne talen | 2 (B+S) | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Latijn-Wetenschappen | 3 (B+S') | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Moderne talen-Wetenschappen | 3 (B+S') | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
@@ -47,13 +47,13 @@ Elke richting volgt één pakket, en de voortgang van de richting is het gemidde
 
 Een percentage hoort bij een status: ⚪ **gepland** (0 %): nog niet begonnen, 🟠 **eerste versie** (40 %): tekst en oefeningen geschreven, nog niet nagelezen door andere leerkrachten, 🟡 **nagelezen** (70 %): nagelezen door leerkrachten, feedback verwerkt, 🟢 **klaar** (100 %): in de klas gebruikt en bijgewerkt, versie 1.0.
 
-#### Pakket 1 · Basis &nbsp; `█░░░░░░░░░░░░░░░░░░░` 5 %
+#### Pakket 1 · Basis &nbsp; `██░░░░░░░░░░░░░░░░░░` 10 %
 
 <sub>Grieks-Latijn, Humane wetenschappen, Latijn-Moderne talen, Moderne talen</sub>
 
 | Handboek | Rubriek | Status | Voortgang | |
 |---|---|---|---|---:|
-| Algemene functies | Analyse | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
+| [Algemene functies](<Handboeken/1 Grieks-Latijn, Humane, Latijn-Moderne, Moderne talen (Basis)/Analyse/Algemene functies/README.md>) | Analyse | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | Exponentiële en logaritmische functies | Analyse | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Goniometrische functies | Analyse | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Afgeleiden | Analyse | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |

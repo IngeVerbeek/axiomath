@@ -1,0 +1,242 @@
+%----------------------------------------------------------------------------------------
+% FUNCTIES EN HUN EIGENSCHAPPEN. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h1-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{1}{Functies en hun eigenschappen}
+
+\lkr{Leerplan Basis: LPD 5-6 (algemene functies). Dit hoofdstuk herhaalt en ordent wat leerlingen uit de 2de graad kennen over eerste- en tweedegraadsfuncties: domein, bereik, nulwaarden, tekenverloop, stijgen en dalen, extrema, en voegt symmetrie toe. Alles wordt eerst op een grafiek gelezen en pas daarna berekend. Afgeleiden komen later (Afgeleiden): extrema worden hier afgelezen, niet berekend.}
+
+Een functie beschrijft hoe een grootheid afhangt van een andere: de temperatuur van het uur, de kostprijs van het aantal stuks, de hoogte van een bal van de tijd. In de 2de graad onderzocht je eerste- en tweedegraadsfuncties. In dit hoofdstuk zetten we de begrippen op een rij die je bij \textit{elke} functie gebruikt.
+
+\begin{oefeningen}[Start]
+\oef{h1-start-1}
+
+\oef{h1-verken}
+\end{oefeningen}
+
+%========================================================================================
+\section{Domein en bereik}
+
+\begin{theorie}
+Een \textbf{\textcolor{accent}{functie}} $f$ van $\R$ naar $\R$ koppelt aan elk reëel getal $x$ \textit{hoogstens één} beeld $f(x)$.
+
+Het \textbf{\textcolor{accent}{domein}} is de verzameling van de getallen die een beeld hebben, het \textbf{\textcolor{accent}{bereik}} de verzameling van de beelden:
+\[\formule{\dom f = \{x \in \R \mid f(x) \text{ bestaat}\}} \qquad \formule{\ber f = \{f(x) \mid x \in \dom f\}}\]
+De \textbf{\textcolor{accent}{grafiek}} van $f$ is de verzameling punten $\formule{(x, f(x))}$ met $x \in \dom f$.
+\end{theorie}
+
+Omdat elke $x$ hoogstens één beeld heeft, snijdt een verticale rechte de grafiek van een functie in hoogstens één punt. Een cirkel is dus geen grafiek van een functie.
+
+\voorbeeld{}{Bepaal het domein van $f(x) = \dfrac{\sqrt{6 - 2x}}{x + 1}$.\label{vb:h1-domein}}{%
+\uitleg{Een vierkantswortel bestaat alleen voor getallen die niet negatief zijn, en een noemer mag niet nul zijn.}
+\begin{stappenbreed}
+6 - 2x \geqslant 0 \iff x \leqslant 3 & Voorwaarde voor de wortel. \\
+x + 1 \neq 0 \iff x \neq -1 & Voorwaarde voor de noemer. \\
+\dom f = \left]-\infty, 3\right] \setminus \{-1\} & Beide voorwaarden samen.
+\end{stappenbreed}}
+
+\begin{werkwijze}
+Zoek in het voorschrift alles wat niet voor elk getal bestaat: een \textbf{noemer} moet verschillend zijn van nul, wat onder een \textbf{vierkantswortel} staat (of een andere even wortel) moet positief of nul zijn. Los elke voorwaarde op en neem de getallen die aan alle voorwaarden voldoen.
+\end{werkwijze}
+
+Het bereik lees je meestal af op de grafiek: projecteer de grafiek op de $y$-as.
+
+\voorbeeld{}{Lees het domein en het bereik af van de functie $f$ met de grafiek hiernaast.\label{vb:h1-aflezen}}{%
+\naast{%
+\uitleg{Een vol bolletje hoort bij de grafiek, een open bolletje niet. Projecteer de grafiek op de $x$-as voor het domein en op de $y$-as voor het bereik.}
+\begin{stappenvrij}{3.6cm}{3.6cm}
+\dom f = \left[-3, 4\right[ & $x = 4$ hoort er niet bij. \\
+\ber f = [-2, 3] & Laagste punt $-2$, hoogste $3$.
+\end{stappenvrij}
+Het open bolletje in $(4, 1)$ verandert niets aan het bereik: de waarde $1$ wordt al bereikt, bijvoorbeeld in $x = -3$.}{%
+\begin{tikzpicture}[x=.55cm,y=.55cm,font=\scriptsize]
+  \rooster{-3}{1}{4}{-2}{1}{3}
+  \draw[accent,thick] (-3,1) -- (-1,3) -- (2,-2) -- (4,1);
+  \vol{(-3,1)} \open{(4,1)}
+\end{tikzpicture}}}
+
+\nujij{Bepaal het domein van $h(x) = \sqrt{x^2 - 9}$.}{$x^2 - 9 \geqslant 0 \iff x \leqslant -3$ of $x \geqslant 3$, dus $\dom h = \left]-\infty, -3\right] \cup \left[3, +\infty\right[$.}
+
+\begin{oefeningen}
+\oef{h1-domein}
+\end{oefeningen}
+
+%========================================================================================
+\section{Nulwaarden en tekenverloop}
+
+\begin{theorie}
+Een \textbf{\textcolor{accent}{nulwaarde}} van $f$ is een getal $a \in \dom f$ met $\formule{f(a) = 0}$. Het punt $(a, 0)$ is een snijpunt van de grafiek met de $x$-as.
+
+Het \textbf{\textcolor{accent}{tekenverloop}} van $f$ zegt waar $f(x) > 0$ (grafiek boven de $x$-as) en waar $f(x) < 0$ (grafiek eronder). Je noteert het in een \textbf{\textcolor{accent}{tekentabel}}.
+\end{theorie}
+
+\voorbeeld{}{Bepaal de nulwaarden en het tekenverloop van $f(x) = x^3 - 4x$.\label{vb:h1-teken}}{%
+\uitleg{Ontbind in factoren. Tussen twee opeenvolgende nulwaarden verandert een veeltermfunctie niet van teken: één getal in elk interval volstaat.}
+\begin{stappenbreed}
+f(x) = x(x^2 - 4) = x(x - 2)(x + 2) & Gemeenschappelijke factor, dan merkwaardig product. \\
+\text{nulwaarden: } -2,\ 0,\ 2 & Een product is nul als een factor nul is. \\
+f(-3) = -15,\ f(-1) = 3,\ f(1) = -3,\ f(3) = 15 & Eén getal in elk interval.
+\end{stappenbreed}
+\figuren{\tekentabel{cccccccc}{x & & -2 & & 0 & & 2 & }{f(x) & - & 0 & + & 0 & - & 0 & +}}
+Dus $f(x) > 0$ voor $x \in \left]-2, 0\right[ \cup \left]2, +\infty\right[$, en $f(x) < 0$ voor $x \in \left]-\infty, -2\right[ \cup \left]0, 2\right[$.}
+
+Bestaat $f$ niet in een getal, dan kan het teken daar ook wisselen. Zet zo'n getal mee in de tabel, met een streep: daar bestaat $f$ niet.
+
+\voorbeeld{}{Stel de tekentabel op van $f(x) = \dfrac{x - 1}{x + 2}$.\label{vb:h1-teken-breuk}}{%
+\uitleg{Teller en noemer krijgen elk een eigen rij; het teken van het quotiënt volgt uit de tekenregel.}
+\figuren{\tekentabel{cccccc}{x & & -2 & & 1 & \\\hline x - 1 & - & - & - & 0 & + \\ x + 2 & - & 0 & + & + & +}{f(x) & + & | & - & 0 & +}}
+Nulwaarde $1$; in $-2$ bestaat $f$ niet.}
+
+\begin{werkwijze}
+Ontbind het voorschrift in factoren en bepaal de nulwaarden van elke factor (ook van de noemer). Zet die getallen in volgorde bovenaan de tekentabel. Bepaal het teken in elk interval: met een rij per factor en de tekenregel, of door een getal in te vullen.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h1-teken}
+\end{oefeningen}
+
+%========================================================================================
+\section{Stijgen, dalen en extrema}
+
+\begin{theorie}
+Een functie $f$ is \textbf{\textcolor{accent}{stijgend}} op een interval $I$ als voor alle $x_1, x_2 \in I$ geldt: $\formule{x_1 < x_2 \Rightarrow f(x_1) < f(x_2)}$, en \textbf{\textcolor{accent}{dalend}} als $\formule{x_1 < x_2 \Rightarrow f(x_1) > f(x_2)}$.
+
+$f$ bereikt een \textbf{\textcolor{accent}{maximum}} $f(a)$ in $a$ als $\formule{f(x) \leqslant f(a)}$ voor alle $x$ uit het domein in de buurt van $a$, en een \textbf{\textcolor{accent}{minimum}} als $\formule{f(x) \geqslant f(a)}$. Maxima en minima heten samen \textbf{\textcolor{accent}{extrema}}. Geldt de ongelijkheid voor heel het domein, dan is het extremum \textbf{\textcolor{accent}{absoluut}}.
+\end{theorie}
+
+Je vat het verloop samen in een \textbf{verlooptabel}: een pijl omhoog waar $f$ stijgt, omlaag waar $f$ daalt, met de extrema erboven of eronder.
+
+\voorbeeld{}{De grafiek hiernaast is die van $f(x) = x^3 - 3x$. Lees af waar $f$ stijgt en daalt, en geef de extrema.\label{vb:h1-verloop}}{%
+\naast{%
+\uitleg{Volg de grafiek van links naar rechts. Waar ze van stijgen naar dalen gaat, ligt een maximum; omgekeerd een minimum.}
+\begin{stappenvrij}{4.2cm}{3.4cm}
+\text{stijgend op } \left]-\infty, -1\right] & Tot de top. \\
+\text{dalend op } [-1, 1] & Van top naar dal. \\
+\text{stijgend op } \left[1, +\infty\right[ & Daarna weer omhoog. \\
+\text{max. } f(-1) = 2 & De top. \\
+\text{min. } f(1) = -2 & Het dal.
+\end{stappenvrij}}{%
+\begin{tikzpicture}[x=.6cm,y=.42cm,font=\scriptsize]
+  \rooster{-2}{1}{2}{-4}{1}{4}
+  \kromme{-2.2}{2.2}{(\x)^3-3*\x}
+  \vol{(-1,2)} \vol{(1,-2)}
+\end{tikzpicture}}
+\figuren{\tekentabel{cccccc}{x & & -1 & & 1 & }{f(x) & \nearrow & 2 & \searrow & -2 & \nearrow}}
+De extrema zijn niet absoluut: voor grote $x$ wordt $f(x)$ groter dan $2$, en voor kleine $x$ kleiner dan $-2$.}
+
+\begin{werkwijze}
+Lees de grafiek van links naar rechts en noteer de $x$-waarden waar ze van richting verandert. Geef de intervallen waar ze stijgt en daalt, en per top of dal het extremum als \textit{functiewaarde} $f(a)$ en de plaats $a$ waar het bereikt wordt.
+\end{werkwijze}
+
+\nujij{Geef het verloop en de extrema van de functie uit voorbeeld~\ref{vb:h1-aflezen}.}{Stijgend op $[-3, -1]$, dalend op $[-1, 2]$, stijgend op $\left[2, 4\right[$. Maximum $3$ in $x = -1$ (absoluut), minimum $-2$ in $x = 2$ (absoluut).}
+
+\begin{oefeningen}
+\oef{h1-verloop}
+\end{oefeningen}
+
+%========================================================================================
+\section{Even en oneven functies}
+
+\begin{theorie}
+Een functie $f$ is \textbf{\textcolor{accent}{even}} als voor elke $x \in \dom f$ ook $-x \in \dom f$ en $\formule{f(-x) = f(x)}$. De grafiek is dan symmetrisch ten opzichte van de $y$-as.
+
+Een functie $f$ is \textbf{\textcolor{accent}{oneven}} als voor elke $x \in \dom f$ ook $-x \in \dom f$ en $\formule{f(-x) = -f(x)}$. De grafiek is dan puntsymmetrisch ten opzichte van de oorsprong.
+\end{theorie}
+
+\figuren{%
+\begin{tikzpicture}[x=.55cm,y=.4cm,font=\scriptsize]
+  \roosterleeg{-3}{1}{3}{-4}{1}{3}
+  \kromme{-2.9}{2.9}{(\x)^4/4-2*(\x)^2}
+  \node[below,text=black] at (0,-4.3) {even: $\frac14x^4 - 2x^2$};
+\end{tikzpicture}\hspace{1.2cm}
+\begin{tikzpicture}[x=.55cm,y=.4cm,font=\scriptsize]
+  \roosterleeg{-3}{1}{3}{-4}{1}{3}
+  \kromme{-2.2}{2.2}{(\x)^3-3*\x}
+  \vol{(-1,2)} \vol{(1,-2)}
+  \draw[accent,dashed] (-1,2) -- (1,-2);
+  \node[below,text=black] at (0,-4.3) {oneven: $x^3 - 3x$};
+\end{tikzpicture}}
+
+\voorbeeld{}{Toon aan dat $f(x) = x^3 - 3x$ oneven is.\label{vb:h1-even}}{%
+\uitleg{Het domein is $\R$, dus met $x$ zit ook $-x$ erin. Bereken $f(-x)$ en vergelijk met $-f(x)$.}
+\begin{stappenbreed}
+f(-x) = (-x)^3 - 3(-x) = -x^3 + 3x & Vul $-x$ in. \\
+-f(x) = -(x^3 - 3x) = -x^3 + 3x & Hetzelfde: $f(-x) = -f(x)$.
+\end{stappenbreed}}
+
+Om aan te tonen dat een functie \textit{niet} even of oneven is, volstaat één tegenvoorbeeld.
+
+\voorbeeld{}{Toon aan dat $g(x) = x^2 + x$ even noch oneven is.\label{vb:h1-geen}}{%
+\uitleg{Zoek één getal waarvoor de gelijkheid niet klopt.}
+\begin{stappenbreed}
+g(1) = 2,\ g(-1) = 0 & Twee beelden berekenen. \\
+g(-1) \neq g(1) \text{ en } g(-1) \neq -g(1) & Dus niet even en niet oneven.
+\end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h1-even}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h1-o1}
+
+\oef{h1-o2}
+
+\oef{h1-o3}
+
+\oef{h1-o4}
+
+\oef{h1-o5}
+
+\oef{h1-o6}
+
+\oef{h1-o7}
+
+\oef{h1-o8}
+
+\oef{h1-o9}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{Statistiek: kijk na wat al gezien is. Het pakket legt de volgorde niet vast.}
+
+\begin{oefeningen}
+\oef{h1-koppel-1}
+
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h1-t1}
+
+\oef{h1-t2}
+
+\oef{h1-t3}
+
+\oef{h1-t4}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h1-t1}{vb:h1-domein}{oef:h1-domein}%
+  \fv{oef:h1-t2}{vb:h1-teken}{oef:h1-teken}%
+  \fv{oef:h1-t3}{vb:h1-verloop}{oef:h1-verloop}%
+  \fv{oef:h1-t4}{vb:h1-even}{oef:h1-even}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: wat een functie, het domein, het bereik en een nulwaarde zijn, hoe je een tekentabel opstelt, de definities van stijgend, dalend, maximum en minimum, en wanneer een functie even of oneven is (met de symmetrie van de grafiek). Vergelijk daarna met de kaders.
+\fi
