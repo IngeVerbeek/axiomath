@@ -1,0 +1,172 @@
+%----------------------------------------------------------------------------------------
+% RECHTEN EN VLAKKEN. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h2-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{2}{Rechten en vlakken}
+
+\lkr{Leerplan B+S'': LPD 5-8 (ruimtemeetkunde), het deel over vectoriële, parameter- en cartesiaanse vergelijkingen van rechten en vlakken. In het vlak had een rechte één cartesiaanse vergelijking; in de ruimte is dat een vlak. Een rechte in de ruimte heeft er twee nodig. Dat is het belangrijkste inzicht van dit hoofdstuk.}
+
+In het vlak beschrijft $y = 2x + 1$ een rechte. Wat beschrijft $z = 2x + 1$ in de ruimte? Er staat geen voorwaarde op $y$: voor elk punt van de rechte in het $xz$-vlak mag $y$ alles zijn. Het is dus een vlak. Om rechten en vlakken in de ruimte te beschrijven, gebruiken we vectoren.
+
+\begin{oefeningen}[Start]
+\oef{h2-start-1}
+
+\oef{h2-verken}
+\end{oefeningen}
+
+%========================================================================================
+\section{Vergelijkingen van een rechte}
+
+\naast{%
+\begin{theorie}
+De rechte door het punt $A$ met \textbf{\textcolor{accent}{richtingsvector}} $\vec u \neq \vec 0$ bestaat uit de punten
+\[\formule{P = A + r\,\vec u} \qquad (r \in \R).\]
+Met $A(a_1, a_2, a_3)$ en $\vec u = \vcr{u_1}{u_2}{u_3}$ geeft dat de \textbf{\textcolor{accent}{parametervergelijkingen}}
+\[\formule{x = a_1 + r u_1,\quad y = a_2 + r u_2,\quad z = a_3 + r u_3}.\]
+\end{theorie}}{%
+\begin{tikzpicture}[ruimte,scale=.75,font=\scriptsize]
+  \assendrie{4}
+  \draw[accent,thick] (2,-.5,0.5) -- (-.5,4.5,3.5);
+  \fill[accent] (1.5,.5,1.1) circle (.07) node[below right,text=black] {$A$};
+  \draw[->,accent,very thick] (1.5,.5,1.1) -- (1,1.5,1.7) node[above left,text=black] {$\vec u$};
+  \fill (0,3.5,2.9) circle (.06) node[right] {$P$};
+\end{tikzpicture}}
+
+Elke waarde van de parameter $r$ geeft een punt van de rechte: $r = 0$ geeft $A$, $r = 1$ het punt $A + \vec u$. Een richtingsvector vind je met twee punten: $\vec u = \overrightarrow{AB}$. Elk veelvoud ervan (behalve $\vec 0$) is ook een richtingsvector.
+
+\voorbeeld{}{Geef parametervergelijkingen van de rechte $AB$ met $A(1, 2, 0)$ en $B(3, -1, 4)$. Liggen $C(5, -4, 8)$ en $D(4, 0, 6)$ op de rechte?\label{vb:h2-rechte}}{%
+\uitleg{Een punt ligt op de rechte als er één waarde van $r$ is die alle drie de vergelijkingen klopt.}
+\begin{stappenbreed}
+\vec u = \overrightarrow{AB} = \vcr{2}{-3}{4}\colon\ x = 1 + 2r,\ y = 2 - 3r,\ z = 4r & Parametervergelijkingen. \\
+C\colon\ 5 = 1 + 2r \iff r = 2;\ y = -4,\ z = 8 & Klopt: $C$ ligt erop. \\
+D\colon\ 4 = 1 + 2r \iff r = \tfrac32;\ y = -\tfrac52 \neq 0 & $D$ ligt er niet op.
+\end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h2-rechte}
+\end{oefeningen}
+
+%========================================================================================
+\section{Vergelijkingen van een vlak}
+
+\begin{theorie}
+Het vlak door $A$ met twee niet-collineaire \textbf{\textcolor{accent}{richtingsvectoren}} $\vec u$ en $\vec v$ bestaat uit de punten
+\[\formule{P = A + r\,\vec u + s\,\vec v} \qquad (r, s \in \R).\]
+Elk vlak heeft een \textbf{\textcolor{accent}{cartesiaanse vergelijking}} $\formule{ax + by + cz = d}$, met $a$, $b$, $c$ niet alle nul. Omgekeerd stelt zo'n vergelijking altijd een vlak voor.
+\end{theorie}
+
+Een vlak heeft twee parameters, omdat het twee richtingen heeft. Je vindt de cartesiaanse vergelijking door $r$ en $s$ te elimineren uit de drie parametervergelijkingen.
+
+\voorbeeld{}{Geef een cartesiaanse vergelijking van het vlak door $A(1, 1, 1)$ met richtingsvectoren $\vec u = \vcr{1}{0}{2}$ en $\vec v = \vcr{0}{1}{-1}$.\label{vb:h2-vlak}}{%
+\uitleg{Schrijf de parametervergelijkingen. Uit de eerste twee haal je $r$ en $s$; vul ze in de derde in.}
+\begin{stappenbreed}
+x = 1 + r,\quad y = 1 + s,\quad z = 1 + 2r - s & Parametervergelijkingen. \\
+r = x - 1,\quad s = y - 1 & \\
+z = 1 + 2(x - 1) - (y - 1) \iff 2x - y - z = 0 & Controle: $A$ geeft $2 - 1 - 1 = 0$.
+\end{stappenbreed}}
+
+\naast{%
+\voorbeeld{}{Geef een cartesiaanse vergelijking van het vlak door $A(1, 0, 0)$, $B(0, 2, 0)$ en $C(0, 0, 3)$.\label{vb:h2-asafsneden}}{%
+\uitleg{Zoek $a$, $b$, $c$ en $d$ door de drie punten in te vullen in $ax + by + cz = d$.}
+\begin{stappenvrij}{4.6cm}{2.8cm}
+a = d,\quad 2b = d,\quad 3c = d & De drie punten. \\
+d = 6\colon\ 6x + 3y + 2z = 6 & Kies $d = 6$. \\
+\tfrac{x}{1} + \tfrac{y}{2} + \tfrac{z}{3} = 1 & Gedeeld door 6.
+\end{stappenvrij}
+De laatste vorm heet de asafsnedenvergelijking: de noemers zijn de snijpunten met de assen.}}{%
+\begin{tikzpicture}[ruimte,scale=.75,font=\scriptsize]
+  \assendrie{3.8}
+  \fill[accent!15] (1,0,0) -- (0,2,0) -- (0,0,3) -- cycle;
+  \draw[accent,thick] (1,0,0) -- (0,2,0) -- (0,0,3) -- cycle;
+  \node[left] at (1,0,0) {$A$}; \node[below] at (0,2,0) {$B$}; \node[left] at (0,0,3) {$C$};
+\end{tikzpicture}}
+
+\begin{oefeningen}
+\oef{h2-vlak}
+\end{oefeningen}
+
+%========================================================================================
+\section{Een rechte als snijlijn van twee vlakken}
+
+Eén cartesiaanse vergelijking beschrijft een vlak. Twee vlakken die niet evenwijdig zijn, snijden elkaar in een rechte: een rechte heeft dus \textit{twee} cartesiaanse vergelijkingen nodig. Een parametervergelijking vind je door één onbekende als parameter te kiezen.
+
+\voorbeeld{}{Geef parametervergelijkingen van de snijlijn van de vlakken \mbox{$x + y + z = 3$} en \mbox{$x - y = 1$}.\label{vb:h2-snijlijn}}{%
+\uitleg{Twee vergelijkingen met drie onbekenden: neem $y = r$ en druk $x$ en $z$ uit in $r$.}
+\begin{stappenbreed}
+y = r,\quad x = 1 + r & Uit de tweede vergelijking. \\
+z = 3 - x - y = 2 - 2r & Uit de eerste. \\
+(x, y, z) = (1, 0, 2) + r\,\vcr{1}{1}{-2} & Punt $(1, 0, 2)$, richting $\vcr{1}{1}{-2}$.
+\end{stappenbreed}}
+
+\begin{werkwijze}
+Van parameters naar cartesiaans: elimineer de parameters (bij een rechte krijg je twee vergelijkingen, bij een vlak één). Van cartesiaans naar parameters: kies zoveel onbekenden als parameter als er vrijheid is (een rechte: één, een vlak: twee), en druk de andere erin uit.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h2-snijlijn}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h2-o1}
+
+\oef{h2-o2}
+
+\oef{h2-o3}
+
+\oef{h2-o4}
+
+\oef{h2-o5}
+
+\oef{h2-o6}
+
+\oef{h2-o7}
+
+\oef{h2-o8}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{Matrices, Algemene functies en Kansrekenen: kijk na wat al gezien is. Het pakket legt de volgorde niet vast.}
+
+\begin{oefeningen}
+\oef{h2-koppel-1}
+
+\oef{h2-koppel-2}
+
+\oef{h2-koppel-3}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h2-t1}
+
+\oef{h2-t2}
+
+\oef{h2-t3}
+
+\oef{h2-t4}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h2-t1}{vb:h2-rechte}{oef:h2-rechte}%
+  \fv{oef:h2-t2}{vb:h2-vlak}{oef:h2-vlak}%
+  \fv{oef:h2-t3}{vb:h2-asafsneden}{oef:h2-vlak}%
+  \fv{oef:h2-t4}{vb:h2-snijlijn}{oef:h2-snijlijn}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: de vector- en parametervergelijkingen van een rechte en van een vlak, de cartesiaanse vergelijking van een vlak, hoe je van parameters naar een cartesiaanse vergelijking gaat en omgekeerd, en waarom een rechte in de ruimte twee cartesiaanse vergelijkingen nodig heeft. Vergelijk daarna met de kaders.
+\fi

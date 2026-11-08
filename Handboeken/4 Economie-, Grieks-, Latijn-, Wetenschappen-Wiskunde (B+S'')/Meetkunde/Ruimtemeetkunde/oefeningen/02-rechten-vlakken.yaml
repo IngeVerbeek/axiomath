@@ -1,0 +1,337 @@
+# Oefeningen van hoofdstuk 2. Zie oefeningenbank.py voor de velden.
+
+- id: h2-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Geef een vergelijking van de rechte door $(1, 2)$ en $(3, 8)$ in het vlak.
+      antwoord: |-
+        $y = 3x - 1$
+      uitwerking: |-
+        Richtingscoëfficiënt $3$, door $(1, 2)$.
+    - opgave: |-
+        Los op: $x + y = 5$ en $x - y = 1$.
+      antwoord: |-
+        $x = 3$, $y = 2$
+      uitwerking: |-
+        Optellen: $2x = 6$.
+    - opgave: |-
+        Bereken $(1, 2, 0) + 3 \cdot (2, -1, 1)$.
+      antwoord: |-
+        $(7, -1, 3)$
+      uitwerking: |-
+        $(1 + 6, 2 - 3, 0 + 3)$.
+    - opgave: |-
+        Welke punten van de ruimte voldoen aan $z = 0$?
+      antwoord: |-
+        het $xy$-vlak
+      uitwerking: |-
+        Alle punten $(x, y, 0)$: het $xy$-vlak.
+
+- id: h2-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken} Een mier loopt in rechte lijn. Op $t = 0$ is ze in $(1, 2, 0)$, en elke seconde verplaatst ze zich over $\vcr{2}{-3}{4}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Waar is ze na $1$, $2$ en $t$ seconden? En $1$ seconde voor $t = 0$?
+      antwoord: |-
+        $(3, -1, 4)$; $(5, -4, 8)$; $(1 + 2t, 2 - 3t, 4t)$; $(-1, 5, -4)$
+      uitwerking: |-
+        Telkens $\vcr{2}{-3}{4}$ erbij: $(3, -1, 4)$, $(5, -4, 8)$, algemeen $(1 + 2t, 2 - 3t, 4t)$. Voor $t = -1$: $(-1, 5, -4)$.
+    - opgave: |-
+        Komt ze ooit in $(9, -10, 16)$? En in $(9, -10, 15)$?
+      antwoord: |-
+        ja, na 4 s; nee
+      uitwerking: |-
+        $1 + 2t = 9$ geeft $t = 4$, en dan is $y = -10$ en $z = 16$: ja. Voor $(9, -10, 15)$ klopt $z$ niet: nee.
+
+- id: h2-rechte
+  soort: kort
+  opgave: |-
+    Rechten.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef parametervergelijkingen van de rechte door $A(2, 0, -1)$ en $B(4, 1, 1)$.
+      antwoord: |-
+        $x = 2 + 2r$, $y = r$, $z = -1 + 2r$
+      uitwerking: |-
+        $\vec u = \overrightarrow{AB} = \vcr{2}{1}{2}$: $x = 2 + 2r$, $y = r$, $z = -1 + 2r$.
+    - opgave: |-
+        Ligt $C(8, 3, 5)$ op die rechte?
+      antwoord: |-
+        ja, $r = 3$
+      uitwerking: |-
+        $y = 3$ geeft $r = 3$; dan $x = 8$ en $z = 5$: ja.
+
+- id: h2-vlak
+  soort: kort
+  opgave: |-
+    Geef een cartesiaanse vergelijking van het vlak.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Door $A(0, 1, 2)$ met richtingsvectoren $\vcr{1}{1}{0}$ en $\vcr{0}{1}{1}$.
+      antwoord: |-
+        $x - y + z = 1$
+      uitwerking: |-
+        $x = r$, $y = 1 + r + s$, $z = 2 + s$: $s = z - 2$, dus $y = 1 + x + z - 2$, of $x - y + z = 1$. Controle: $0 - 1 + 2 = 1$.
+    - opgave: |-
+        Door $(2, 0, 0)$, $(0, 4, 0)$ en $(0, 0, 4)$.
+      antwoord: |-
+        $2x + y + z = 4$
+      uitwerking: |-
+        $\frac{x}{2} + \frac{y}{4} + \frac{z}{4} = 1$, of $2x + y + z = 4$.
+
+- id: h2-snijlijn
+  soort: kort
+  opgave: |-
+    Geef parametervergelijkingen van de snijlijn van de vlakken $2x + y - z = 1$ en $x + y = 2$.
+  antwoord: |-
+    $(x, y, z) = (0, 2, 1) + r\vcr{1}{-1}{1}$
+  uitwerking: |-
+    Neem $x = r$: $y = 2 - r$ en $z = 2x + y - 1 = 2r + 2 - r - 1 = 1 + r$. Punt $(0, 2, 1)$, richting $\vcr{1}{-1}{1}$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h2-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    snijpunten met de coördinaatvlakken
+  opgave: |-
+    De rechte $l$ gaat door $A(1, 2, 3)$ met richtingsvector $\vcr{1}{-1}{2}$. Bereken de snijpunten van $l$ met het $xy$-vlak en met het $xz$-vlak.
+  antwoord: |-
+    $\bigl(-\frac12, \frac72, 0\bigr)$; $(3, 0, 7)$
+  uitwerking: |-
+    $z = 3 + 2r = 0$ geeft $r = -\frac32$: $\bigl(-\frac12, \frac72, 0\bigr)$. $y = 2 - r = 0$ geeft $r = 2$: $(3, 0, 7)$.
+
+- id: h2-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    bijzondere vlakken
+  opgave: |-
+    Beschrijf in woorden welk vlak de vergelijking voorstelt.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $x = 0$
+      antwoord: |-
+        het $yz$-vlak
+      uitwerking: |-
+        Alle punten met $x = 0$: het $yz$-vlak.
+    - opgave: |-
+        $z = 4$
+      antwoord: |-
+        horizontaal, op hoogte 4
+      uitwerking: |-
+        Evenwijdig met het $xy$-vlak, op hoogte $4$.
+    - opgave: |-
+        $x + y = 2$
+      antwoord: |-
+        verticaal, evenwijdig met de $z$-as
+      uitwerking: |-
+        Er staat geen $z$: met elk punt van de rechte $x + y = 2$ in het $xy$-vlak horen alle punten erboven en eronder.
+
+- id: h2-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    asafsneden
+  opgave: |-
+    Bepaal de snijpunten van het vlak $3x + 2y + 6z = 12$ met de drie assen, en schets het stuk van het vlak in het eerste octant.
+  antwoord: |-
+    $(4, 0, 0)$, $(0, 6, 0)$, $(0, 0, 2)$
+  uitwerking: |-
+    $y = z = 0$ geeft $x = 4$, enzovoort. Asafsnedenvergelijking $\frac{x}{4} + \frac{y}{6} + \frac{z}{2} = 1$.
+
+- id: h2-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    vlak door drie punten
+  opgave: |-
+    Geef een cartesiaanse vergelijking van het vlak door $A(1, 0, 1)$, $B(2, 1, 0)$ en $C(0, 2, 3)$.
+  antwoord: |-
+    $4x - y + 3z = 7$
+  uitwerking: |-
+    Richtingsvectoren $\overrightarrow{AB} = \vcr{1}{1}{-1}$ en $\overrightarrow{AC} = \vcr{-1}{2}{2}$. Parametervergelijkingen $x = 1 + r - s$, $y = r + 2s$, $z = 1 - r + 2s$. Uit de eerste twee: $3s = y - x + 1$ en $3r = 2x + y - 2$. Invullen in de derde: $3z = 3 - (2x + y - 2) + 2(y - x + 1)$, dus $4x - y + 3z = 7$. Controle: $A$: $4 + 3 = 7$, $B$: $8 - 1 = 7$, $C$: $-2 + 9 = 7$.
+
+- id: h2-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    van cartesiaans naar parameters
+  opgave: |-
+    Geef parametervergelijkingen van het vlak $x - 2y + 3z = 6$.
+  antwoord: |-
+    $x = 6 + 2r - 3s$, $y = r$, $z = s$
+  uitwerking: |-
+    Twee vrije onbekenden: $y = r$ en $z = s$, dan $x = 6 + 2r - 3s$. Punt $(6, 0, 0)$, richtingsvectoren $\vcr{2}{1}{0}$ en $\vcr{-3}{0}{1}$.
+
+- id: h2-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    rechte in een vlak
+  opgave: |-
+    Ligt de rechte $x = 1 + r$, $y = 2r$, $z = 3 - r$ in het vlak $x + y + 3z = 10$?
+  antwoord: |-
+    ja
+  uitwerking: |-
+    Invullen: $1 + r + 2r + 9 - 3r = 10$ voor elke $r$. Alle punten van de rechte liggen in het vlak.
+
+- id: h2-o7
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een kubus doorsnijden
+  figuur:
+    opties: |-
+      3.6cm
+    code: |-
+      \begin{tikzpicture}[ruimte,scale=.65,font=\scriptsize]
+        \assendrie{3.5}
+        \draw[grijs] (2,0,0) -- (2,2,0) -- (0,2,0) (2,0,0) -- (2,0,2) -- (0,0,2) -- (0,2,2) -- (2,2,2) -- (2,0,2) (2,2,0) -- (2,2,2) (0,2,0) -- (0,2,2);
+        \fill[accent!20] (2,0,0) -- (0,2,0) -- (0,0,2) -- cycle;
+        \draw[accent,thick] (2,0,0) -- (0,2,0) -- (0,0,2) -- cycle;
+      \end{tikzpicture}
+  opgave: |-
+    Een kubus heeft hoekpunten $(0, 0, 0)$ en $(2, 2, 2)$ en ribben langs de assen. Het vlak $x + y + z = 2$ snijdt de kubus.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Welke hoekpunten van de kubus liggen in het vlak? Welke vorm heeft de doorsnede?
+      antwoord: |-
+        $(2, 0, 0)$, $(0, 2, 0)$, $(0, 0, 2)$; een gelijkzijdige driehoek
+      uitwerking: |-
+        De drie hoekpunten met één coördinaat $2$. De doorsnede is de driehoek met die hoekpunten, met zijden $2\sqrt2$: gelijkzijdig.
+    - opgave: |-
+        Welke vorm heeft de doorsnede met het vlak $x + y + z = 3$?
+      antwoord: |-
+        een regelmatige zeshoek
+      uitwerking: |-
+        Het vlak snijdt zes ribben in hun midden, bijvoorbeeld $(2, 1, 0)$, $(1, 2, 0)$, $(0, 2, 1)$, $(0, 1, 2)$, $(1, 0, 2)$, $(2, 0, 1)$: alle zijden zijn $\sqrt2$. Een regelmatige zeshoek.
+
+- id: h2-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    twee voorstellingen
+  opgave: |-
+    Toon aan dat $x = 1 + 2r$, $y = -1 + r$, $z = 3r$ en $x = 3 + 4s$, $y = 2s$, $z = 3 + 6s$ dezelfde rechte zijn.
+  antwoord: |-
+    zelfde richting, en $(3, 0, 3)$ ligt op de eerste
+  uitwerking: |-
+    De richtingsvectoren $\vcr{2}{1}{3}$ en $\vcr{4}{2}{6}$ zijn collineair. Het punt $(3, 0, 3)$ van de tweede ligt op de eerste: $r = 1$ geeft $(3, 0, 3)$. Twee evenwijdige rechten met een gemeenschappelijk punt vallen samen.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h2-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: algebra
+    onderwerp: Matrices
+  thema: |-
+    een stelsel als snijlijn
+  opgave: |-
+    Los het stelsel $x + y + z = 3$, $x - y = 1$ op met de methode van Gauss. Waarom zijn er oneindig veel oplossingen, en wat stellen ze meetkundig voor?
+  antwoord: |-
+    de punten van een rechte
+  uitwerking: |-
+    Twee vergelijkingen, drie onbekenden: er blijft één vrije onbekende over. De oplossingen $(1 + r, r, 2 - 2r)$ vormen de snijlijn van twee vlakken.
+
+- id: h2-koppel-2
+  soort: koppel
+  niveau: 1
+  koppel:
+    rubriek: analyse
+    onderwerp: Algemene functies
+  thema: |-
+    een grafiek in de ruimte
+  opgave: |-
+    In het vlak is $y = 2x + 1$ een rechte. Wat stelt dezelfde vergelijking voor in de ruimte? En $z = 2x + 1$?
+  antwoord: |-
+    telkens een vlak
+  uitwerking: |-
+    In de ruimte ontbreekt telkens een onbekende ($z$ of $y$), die vrij is: beide vergelijkingen stellen een vlak voor. $y = 2x + 1$ is evenwijdig met de $z$-as, $z = 2x + 1$ met de $y$-as.
+
+- id: h2-koppel-3
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: data
+    onderwerp: Kansrekenen
+  thema: |-
+    kansen in een vlak
+  opgave: |-
+    Drie kansen $p_1$, $p_2$, $p_3$ van een kansverdeling tellen op tot $1$. Welke figuur vormen alle mogelijke $(p_1, p_2, p_3)$ in de ruimte?
+  antwoord: |-
+    een gelijkzijdige driehoek
+  uitwerking: |-
+    Het stuk van het vlak $p_1 + p_2 + p_3 = 1$ met alle coördinaten $\geqslant 0$: de driehoek met hoekpunten $(1, 0, 0)$, $(0, 1, 0)$, $(0, 0, 1)$.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h2-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    rechte
+  opgave: |-
+    Geef parametervergelijkingen van de rechte door $A(3, 1, -2)$ en $B(1, 2, 0)$. Ligt $C(-1, 3, 2)$ erop?
+  antwoord: |-
+    $x = 3 - 2r$, $y = 1 + r$, $z = -2 + 2r$; ja
+  uitwerking: |-
+    $\overrightarrow{AB} = \vcr{-2}{1}{2}$. Voor $C$: $y = 3$ geeft $r = 2$, dan $x = -1$ en $z = 2$: ja.
+
+- id: h2-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    vlak met parameters
+  opgave: |-
+    Geef een cartesiaanse vergelijking van het vlak door $A(1, 2, 0)$ met richtingsvectoren $\vcr{1}{0}{1}$ en $\vcr{0}{1}{3}$.
+  antwoord: |-
+    $x + 3y - z = 7$
+  uitwerking: |-
+    $x = 1 + r$, $y = 2 + s$, $z = r + 3s = (x - 1) + 3(y - 2)$, dus $x + 3y - z = 7$. Controle met $A$: $1 + 6 = 7$.
+
+- id: h2-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    asafsneden
+  opgave: |-
+    Geef een vergelijking van het vlak door $(3, 0, 0)$, $(0, 3, 0)$ en $(0, 0, 1)$.
+  antwoord: |-
+    $x + y + 3z = 3$
+  uitwerking: |-
+    $\frac{x}{3} + \frac{y}{3} + \frac{z}{1} = 1$.
+
+- id: h2-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    snijlijn
+  opgave: |-
+    Geef parametervergelijkingen van de snijlijn van $x + 2y + z = 4$ en $y - z = 1$.
+  antwoord: |-
+    $(x, y, z) = (2, 1, 0) + r\vcr{-3}{1}{1}$
+  uitwerking: |-
+    Neem $z = r$: $y = 1 + r$ en $x = 4 - 2y - z = 2 - 3r$.

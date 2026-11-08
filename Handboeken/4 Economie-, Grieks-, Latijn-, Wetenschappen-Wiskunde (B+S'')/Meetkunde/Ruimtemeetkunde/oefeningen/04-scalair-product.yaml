@@ -1,0 +1,321 @@
+# Oefeningen van hoofdstuk 4. Zie oefeningenbank.py voor de velden.
+
+- id: h4-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Geef de cosinusregel in een driehoek met zijden $a$, $b$, $c$ en hoek $\gamma$ tegenover $c$.
+      antwoord: |-
+        $c^2 = a^2 + b^2 - 2ab\cos\gamma$
+      uitwerking: |-
+        $c^2 = a^2 + b^2 - 2ab\cos\gamma$.
+    - opgave: |-
+        Bereken de norm van $\vcr{2}{-1}{2}$.
+      antwoord: |-
+        3
+      uitwerking: |-
+        $\sqrt{4 + 1 + 4} = 3$.
+    - opgave: |-
+        Welke hoek heeft cosinus $\frac12$? En $0$?
+      antwoord: |-
+        $60^\circ$; $90^\circ$
+      uitwerking: |-
+        $60^\circ$ en $90^\circ$.
+    - opgave: |-
+        Wanneer staan twee rechten $y = m_1x + q_1$ en $y = m_2x + q_2$ in het vlak loodrecht op elkaar?
+      antwoord: |-
+        als $m_1m_2 = -1$
+      uitwerking: |-
+        Als het product van de richtingscoëfficiënten $-1$ is.
+
+- id: h4-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken} Neem de vectoren $\vec v = \vcr{1}{0}{0}$, $\vec w = \vcr{0}{1}{0}$ en $\vec u = \vcr{1}{1}{0}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken telkens $v_1w_1 + v_2w_2 + v_3w_3$ voor de paren $(\vec v, \vec w)$, $(\vec v, \vec u)$ en $(\vec u, \vec u)$.
+      antwoord: |-
+        $0$; $1$; $2$
+      uitwerking: |-
+        $0$, $1$ en $2$.
+    - opgave: |-
+        Welke hoeken maken die paren? Wat valt op bij het eerste paar? En bij het laatste?
+      antwoord: |-
+        $90^\circ$; $45^\circ$; $0^\circ$
+      uitwerking: |-
+        $\vec v \perp \vec w$ geeft $0$. Het laatste is $\norm{\vec u}^2 = 2$: de vector met zichzelf geeft het kwadraat van de lengte.
+
+- id: h4-scalair
+  soort: kort
+  opgave: |-
+    Scalair product.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken de hoek tussen $\vcr{1}{1}{0}$ en $\vcr{0}{1}{1}$.
+      antwoord: |-
+        $60^\circ$
+      uitwerking: |-
+        $\cos\theta = \frac{1}{\sqrt2 \cdot \sqrt2} = \frac12$: $60^\circ$.
+    - opgave: |-
+        Voor welke $k$ staan $\vcr{2}{k}{1}$ en $\vcr{1}{3}{-5}$ loodrecht op elkaar?
+      antwoord: |-
+        $k = 1$
+      uitwerking: |-
+        $2 + 3k - 5 = 0$, dus $k = 1$.
+
+- id: h4-normaal
+  soort: kort
+  opgave: |-
+    Normaalvectoren.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef een vergelijking van het vlak door $(2, -1, 0)$ met normaalvector $\vcr{3}{1}{-2}$.
+      antwoord: |-
+        $3x + y - 2z = 5$
+      uitwerking: |-
+        $3(x - 2) + (y + 1) - 2z = 0$, dus $3x + y - 2z = 5$.
+    - opgave: |-
+        Staat de rechte $(1, 0, 0) + r\vcr{2}{4}{-2}$ loodrecht op het vlak $x + 2y - z = 7$?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $\vcr{2}{4}{-2} = 2\vcr{1}{2}{-1}$: collineair met de normaalvector.
+
+- id: h4-afstand
+  soort: kort
+  opgave: |-
+    Afstanden.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken de afstand van de oorsprong tot het vlak $x + 2y + 2z = 9$.
+      antwoord: |-
+        3
+      uitwerking: |-
+        $\frac{|0 - 9|}{\sqrt{1 + 4 + 4}} = 3$.
+    - opgave: |-
+        Bereken de afstand tussen de evenwijdige vlakken $x + 2y + 2z = 9$ en $x + 2y + 2z = 3$.
+      antwoord: |-
+        2
+      uitwerking: |-
+        Neem een punt van het tweede vlak, bijvoorbeeld $(3, 0, 0)$: $\frac{|3 - 9|}{3} = 2$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h4-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    hoeken in een driehoek
+  opgave: |-
+    Bereken de hoek in $A$ van de driehoek met $A(1, 0, 0)$, $B(0, 1, 0)$ en $C(0, 0, 1)$.
+  antwoord: |-
+    $60^\circ$
+  uitwerking: |-
+    $\overrightarrow{AB} = \vcr{-1}{1}{0}$, $\overrightarrow{AC} = \vcr{-1}{0}{1}$: $\cos\theta = \frac{1}{2}$. Logisch: de driehoek is gelijkzijdig.
+
+- id: h4-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    loodrecht of niet
+  opgave: |-
+    Staan de vlakken loodrecht op elkaar?
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $2x - y + z = 1$ en $x + y + z = 4$
+      antwoord: |-
+        nee
+      uitwerking: |-
+        $\vcr{2}{-1}{1} \cdot \vcr{1}{1}{1} = 2 \neq 0$.
+    - opgave: |-
+        $x + y + z = 0$ en $x - y = 2$
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $1 - 1 + 0 = 0$.
+
+- id: h4-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    loodlijn
+  opgave: |-
+    Geef parametervergelijkingen van de rechte door $P(1, -1, 2)$ die loodrecht staat op het vlak $3x - 2y + z = 0$, en bereken het voetpunt van die loodlijn op het vlak.
+  antwoord: |-
+    $(1, -1, 2) + r\vcr{3}{-2}{1}$; voetpunt $\bigl(-\frac12, 0, \frac32\bigr)$
+  uitwerking: |-
+    Richting $\vcr{3}{-2}{1}$. Invullen in het vlak: $3(1 + 3r) - 2(-1 - 2r) + 2 + r = 0$, dus $14r + 7 = 0$ en $r = -\frac12$. Voetpunt $\bigl(-\frac12, 0, \frac32\bigr)$.
+
+- id: h4-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    hoek tussen vlakken
+  opgave: |-
+    Bereken de hoek tussen de vlakken $x + y = 1$ en $y + z = 1$.
+  antwoord: |-
+    $60^\circ$
+  uitwerking: |-
+    Normaalvectoren $\vcr{1}{1}{0}$ en $\vcr{0}{1}{1}$: $\cos\theta = \frac12$, dus $60^\circ$.
+
+- id: h4-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een piramide
+  opgave: |-
+    Een piramide heeft een vierkant grondvlak met hoekpunten $(\pm 2, \pm 2, 0)$ en top $T(0, 0, 3)$. Bereken de hoek tussen een opstaande ribbe en het grondvlak, en de hoogte van een zijvlak (de apothema).
+  antwoord: |-
+    $\approx 46{,}7^\circ$; $\sqrt{13} \approx 3{,}61$
+  uitwerking: |-
+    Ribbe van $(2, 2, 0)$ naar $T$: $\vcr{-2}{-2}{3}$, lengte $\sqrt{17}$. De hoek met het grondvlak: $\sin\alpha = \frac{3}{\sqrt{17}}$, $\alpha \approx 46{,}7^\circ$. Apothema: van $(2, 0, 0)$ naar $T$: $\sqrt{4 + 9} = \sqrt{13}$.
+
+- id: h4-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    afstand tot een rechte
+  opgave: |-
+    Bereken de afstand van $P(1, 2, 0)$ tot de rechte $l\colon (1, 0, 1) + r\vcr{0}{1}{1}$.
+  antwoord: |-
+    $\frac{3\sqrt2}{2} \approx 2{,}12$
+  uitwerking: |-
+    Loodvlak door $P$: $y + z = 2$. Snijpunt met $l$: $r + 1 + r = 2$, $r = \frac12$: $V\bigl(1, \frac12, \frac32\bigr)$. $|PV| = \sqrt{0 + \frac94 + \frac94} = \frac{3}{\sqrt2} = \frac{3\sqrt2}{2} \approx 2{,}12$.
+
+- id: h4-o7
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een spiegelbeeld
+  opgave: |-
+    Bereken het spiegelbeeld van $P(3, 3, 3)$ ten opzichte van het vlak $x + y + z = 3$.
+  antwoord: |-
+    $(-1, -1, -1)$
+  uitwerking: |-
+    Loodlijn $(3 + r, 3 + r, 3 + r)$; in het vlak als $9 + 3r = 3$, $r = -2$: voetpunt $(1, 1, 1)$. Het spiegelbeeld ligt even ver aan de andere kant: $r = -4$, het punt $(-1, -1, -1)$.
+
+- id: h4-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    de afstandsformule bewijzen
+  opgave: |-
+    Bewijs de formule voor de afstand van $P(x_0, y_0, z_0)$ tot het vlak $ax + by + cz = d$. Tip: de loodlijn is $P + r\vec n$; bereken $r$ voor het snijpunt met het vlak, en dan de lengte $|r|\,\norm{\vec n}$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Invullen: $a(x_0 + ra) + b(y_0 + rb) + c(z_0 + rc) = d$, dus $r = \frac{d - (ax_0 + by_0 + cz_0)}{a^2 + b^2 + c^2}$. De afstand is $|r|\,\norm{\vec n} = \frac{|ax_0 + by_0 + cz_0 - d|}{a^2 + b^2 + c^2} \cdot \sqrt{a^2 + b^2 + c^2} = \frac{|ax_0 + by_0 + cz_0 - d|}{\sqrt{a^2 + b^2 + c^2}}$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h4-koppel-1
+  soort: koppel
+  niveau: 1
+  koppel:
+    rubriek: analyse
+    onderwerp: Goniometrische functies
+  thema: |-
+    de cosinusregel
+  opgave: |-
+    Gebruik het scalair product om in de driehoek met $A(0, 0, 0)$, $B(4, 0, 0)$ en $C(1, 3, 0)$ de hoek in $A$ te berekenen. Controleer met de cosinusregel.
+  antwoord: |-
+    $\approx 71{,}6^\circ$
+  uitwerking: |-
+    $\cos\theta = \frac{4}{4\sqrt{10}} = \frac{1}{\sqrt{10}}$, $\theta \approx 71{,}6^\circ$. Cosinusregel: $|BC|^2 = 18 = 16 + 10 - 2 \cdot 4 \cdot \sqrt{10}\cos\theta$, dus $\cos\theta = \frac{8}{8\sqrt{10}}$: hetzelfde.
+
+- id: h4-koppel-2
+  soort: koppel
+  niveau: 3
+  koppel:
+    rubriek: data
+    onderwerp: Statistiek
+  thema: |-
+    correlatie als cosinus
+  opgave: |-
+    Drie metingen van $x$ en $y$ hebben afwijkingen van het gemiddelde $\vec a = \vcr{-1}{0}{1}$ en $\vec b = \vcr{-2}{1}{1}$. De correlatiecoëfficiënt is $r = \frac{\vec a \cdot \vec b}{\norm{\vec a}\,\norm{\vec b}}$. Bereken $r$. Wat betekent $r = 1$ meetkundig?
+  antwoord: |-
+    $r = \frac{3}{\sqrt{12}} \approx 0{,}87$; de vectoren zijn collineair
+  uitwerking: |-
+    $\vec a \cdot \vec b = 2 + 0 + 1 = 3$, $\norm{\vec a} = \sqrt2$, $\norm{\vec b} = \sqrt6$: $r = \frac{3}{\sqrt{12}} \approx 0{,}87$. De correlatie is de cosinus van de hoek tussen de afwijkingsvectoren; $r = 1$ betekent hoek $0$: de punten liggen op een stijgende rechte.
+
+- id: h4-koppel-3
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: algebra
+    onderwerp: Matrices
+  thema: |-
+    een rotatie bewaart lengtes
+  opgave: |-
+    De rotatie om de $z$-as over $90^\circ$ stuurt $(x, y, z)$ naar $(-y, x, z)$. Toon aan dat ze het scalair product van twee vectoren niet verandert. Wat betekent dat voor lengtes en hoeken?
+  antwoord: |-
+    lengtes en hoeken blijven gelijk
+  uitwerking: |-
+    $(-v_2)(-w_2) + v_1w_1 + v_3w_3 = \vec v \cdot \vec w$. Omdat lengtes en hoeken met het scalair product berekend worden, blijven ze gelijk: een rotatie vervormt niets.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h4-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    hoek
+  opgave: |-
+    Bereken de hoek tussen $\vcr{2}{1}{2}$ en $\vcr{1}{0}{-1}$.
+  antwoord: |-
+    $90^\circ$
+  uitwerking: |-
+    $2 + 0 - 2 = 0$: loodrecht.
+
+- id: h4-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    loodvlak
+  opgave: |-
+    Geef een vergelijking van het vlak door $(1, 0, -2)$ dat loodrecht staat op de rechte $(3, 1, 1) + r\vcr{1}{-2}{3}$.
+  antwoord: |-
+    $x - 2y + 3z = -5$
+  uitwerking: |-
+    $(x - 1) - 2y + 3(z + 2) = 0$, dus $x - 2y + 3z = -5$.
+
+- id: h4-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    afstand tot een vlak
+  opgave: |-
+    Bereken de afstand van $P(2, 1, -1)$ tot het vlak $2x + 2y - z = 1$.
+  antwoord: |-
+    2
+  uitwerking: |-
+    $\frac{|4 + 2 + 1 - 1|}{3} = 2$.
+
+- id: h4-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    afstand tot een rechte
+  opgave: |-
+    Bereken de afstand van $P(0, 3, 0)$ tot de rechte $r\vcr{1}{1}{0}$ door de oorsprong.
+  antwoord: |-
+    $\frac{3\sqrt2}{2} \approx 2{,}12$
+  uitwerking: |-
+    Loodvlak $x + y = 3$; snijpunt $2r = 3$, $V\bigl(\frac32, \frac32, 0\bigr)$. $|PV| = \sqrt{\frac94 + \frac94} = \frac{3\sqrt2}{2}$.
