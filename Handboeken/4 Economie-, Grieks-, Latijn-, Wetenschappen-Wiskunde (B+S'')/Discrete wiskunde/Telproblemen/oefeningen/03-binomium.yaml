@@ -1,0 +1,449 @@
+# Oefeningen van hoofdstuk 3. Zie oefeningenbank.py voor de velden.
+
+- id: h3-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Werk uit: $(2x - 1)^2$.
+      antwoord: |-
+        $4x^2 - 4x + 1$
+      uitwerking: |-
+        $(2x)^2 - 2 \cdot 2x \cdot 1 + 1 = 4x^2 - 4x + 1$.
+    - opgave: |-
+        Werk uit: $(x + 3)^3$.
+      antwoord: |-
+        $x^3 + 9x^2 + 27x + 27$
+      uitwerking: |-
+        $(x + 3)(x^2 + 6x + 9) = x^3 + 9x^2 + 27x + 27$.
+    - opgave: |-
+        Schrijf de rijen voor $n = 4$ en $n = 5$ van de driehoek van Pascal.
+      antwoord: |-
+        1 4 6 4 1; \ 1 5 10 10 5 1
+      uitwerking: |-
+        Telkens de som van de twee getallen erboven: $1 \ 4 \ 6 \ 4 \ 1$ en $1 \ 5 \ 10 \ 10 \ 5 \ 1$.
+    - opgave: |-
+        Bereken $\binom{6}{2}$ en $\binom{6}{4}$.
+      antwoord: |-
+        15 en 15
+      uitwerking: |-
+        $\binom62 = \frac{6 \cdot 5}{2} = 15$, en door de symmetrie ook $\binom64 = 15$.
+    - opgave: |-
+        Bereken $(-1)^7$, $(-2)^4$ en $(-2)^3$.
+      antwoord: |-
+        $-1$, $16$, $-8$
+      uitwerking: |-
+        Een oneven macht van een negatief getal is negatief, een even macht positief.
+    - opgave: |-
+        Bereken $(x^2)^3 \cdot x^{-2}$.
+      antwoord: |-
+        $x^4$
+      uitwerking: |-
+        $x^6 \cdot x^{-2} = x^4$.
+
+- id: h3-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken}\quad Je werkt $(a + b)^4 = (a + b)(a + b)(a + b)(a + b)$ uit door uit elke factor $a$ of $b$ te kiezen en de vier keuzes te vermenigvuldigen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel producten krijg je in totaal, voor je gelijke termen samenneemt?
+      antwoord: |-
+        16
+      uitwerking: |-
+        Vier keuzes met elk 2 mogelijkheden: $2^4 = 16$.
+    - opgave: |-
+        Hoeveel van die producten zijn gelijk aan $a^2b^2$? Waarom is dat een combinatie?
+      antwoord: |-
+        6 $= \binom42$
+      uitwerking: |-
+        Je kiest uit 2 van de 4 factoren $b$, uit de andere $a$. Welke 2 factoren, dat is een combinatie van 2 uit 4: $\binom42 = 6$.
+    - opgave: |-
+        Schrijf zo $(a + b)^4$ volledig uit. Vergelijk de coëfficiënten met de driehoek van Pascal, en voorspel $(a + b)^5$.
+      antwoord: |-
+        $a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4$
+      uitwerking: |-
+        $a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4$: de coëfficiënten $1, 4, 6, 4, 1$ zijn rij 4. Dan is $(a + b)^5 = a^5 + 5a^4b + 10a^3b^2 + 10a^2b^3 + 5ab^4 + b^5$.
+
+- id: h3-binomium
+  soort: kort
+  opgave: |-
+    Werk uit met het binomium van Newton.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $(x + 1)^5$
+      antwoord: |-
+        $x^5 + 5x^4 + 10x^3 + 10x^2 + 5x + 1$
+      uitwerking: |-
+        Rij 5 met $a = x$ en $b = 1$: $x^5 + 5x^4 + 10x^3 + 10x^2 + 5x + 1$.
+    - opgave: |-
+        $(3 + x^2)^3$
+      antwoord: |-
+        $27 + 27x^2 + 9x^4 + x^6$
+      uitwerking: |-
+        $3^3 + 3 \cdot 3^2 x^2 + 3 \cdot 3 (x^2)^2 + (x^2)^3 = 27 + 27x^2 + 9x^4 + x^6$.
+    - opgave: |-
+        $(x - 3)^4$
+      antwoord: |-
+        $x^4 - 12x^3 + 54x^2 - 108x + 81$
+      uitwerking: |-
+        $x^4 - 4 \cdot 3x^3 + 6 \cdot 9x^2 - 4 \cdot 27x + 81 = x^4 - 12x^3 + 54x^2 - 108x + 81$.
+
+- id: h3-term
+  soort: kort
+  opgave: |-
+    Bepaal zonder volledig uit te werken.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        de coëfficiënt van $x^4$ in $(2 + x)^6$
+      antwoord: |-
+        60
+      uitwerking: |-
+        Algemene term $\binom6k 2^{6 - k} x^k$. Met $k = 4$: $\binom64 \cdot 2^2 = 15 \cdot 4 = 60$.
+    - opgave: |-
+        de coëfficiënt van $x^5$ in $(1 - x)^9$
+      antwoord: |-
+        $-126$
+      uitwerking: |-
+        Algemene term $\binom9k (-x)^k = \binom9k (-1)^k x^k$. Met $k = 5$: $-\binom95 = -126$.
+    - opgave: |-
+        de term zonder $x$ in $\Bigl(2x + \dfrac1x\Bigr)^4$
+      antwoord: |-
+        24
+      uitwerking: |-
+        Algemene term $\binom4k (2x)^{4 - k} x^{-k} = \binom4k 2^{4 - k} x^{4 - 2k}$. Exponent 0 voor $k = 2$: $\binom42 \cdot 2^2 = 24$.
+
+- id: h3-som
+  soort: kort
+  opgave: |-
+    Bereken zonder rekentoestel.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\displaystyle\sum_{k=0}^{8} \binom{8}{k}$
+      antwoord: |-
+        256
+      uitwerking: |-
+        $2^8 = 256$.
+    - opgave: |-
+        $\displaystyle\sum_{k=0}^{10} (-1)^k \binom{10}{k}$
+      antwoord: |-
+        0
+      uitwerking: |-
+        $(1 - 1)^{10} = 0$.
+    - opgave: |-
+        $\displaystyle\sum_{k=1}^{4} k \cdot 2^k$
+      antwoord: |-
+        98
+      uitwerking: |-
+        $2 + 8 + 24 + 64 = 98$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h3-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    binomium uitwerken
+  opgave: |-
+    Werk uit.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $(1 + 2y)^4$
+      antwoord: |-
+        $1 + 8y + 24y^2 + 32y^3 + 16y^4$
+      uitwerking: |-
+        $1 + 4 \cdot 2y + 6 \cdot 4y^2 + 4 \cdot 8y^3 + 16y^4$.
+    - opgave: |-
+        $(a - b)^6$
+      antwoord: |-
+        $a^6 - 6a^5b + 15a^4b^2 - 20a^3b^3 + 15a^2b^4 - 6ab^5 + b^6$
+      uitwerking: |-
+        Rij 6, $1, 6, 15, 20, 15, 6, 1$, met afwisselende tekens.
+
+- id: h3-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    sommatieteken
+  opgave: |-
+    Schrijf uit en bereken, of schrijf met het sommatieteken.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\displaystyle\sum_{k=2}^{5} (2k - 1)$
+      antwoord: |-
+        24
+      uitwerking: |-
+        $3 + 5 + 7 + 9 = 24$.
+    - opgave: |-
+        $3 + 6 + 9 + \cdots + 30$
+      antwoord: |-
+        $\sum_{k=1}^{10} 3k = 165$
+      uitwerking: |-
+        $\displaystyle\sum_{k=1}^{10} 3k = 3 \cdot 55 = 165$.
+
+- id: h3-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    coëfficiënt van een macht
+  opgave: |-
+    Bepaal de coëfficiënt van $x^6$ in $(x + 2)^9$.
+  antwoord: |-
+    672
+  uitwerking: |-
+    Algemene term $\binom9k x^{9 - k} 2^k$. Voor $x^6$ is $k = 3$: $\binom93 \cdot 8 = 84 \cdot 8 = 672$.
+
+- id: h3-o4
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    aantal termen en middelste term
+  opgave: |-
+    Hoeveel termen heeft $(a + b)^{12}$ na uitwerken? Wat is de middelste term?
+  antwoord: |-
+    13; \ $924a^6b^6$
+  uitwerking: |-
+    $n + 1 = 13$ termen. De middelste is de zevende, met $k = 6$: $\binom{12}{6}a^6b^6 = 924a^6b^6$.
+
+- id: h3-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    term zonder x
+  opgave: |-
+    Bepaal de term zonder $x$ in $\Bigl(x^3 - \dfrac2x\Bigr)^8$.
+  antwoord: |-
+    1792
+  uitwerking: |-
+    Algemene term $\binom8k (x^3)^{8 - k}\bigl(-\frac2x\bigr)^k = \binom8k (-2)^k x^{24 - 4k}$. Exponent 0 voor $k = 6$: $\binom86 \cdot 64 = 28 \cdot 64 = 1792$.
+
+- id: h3-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    benaderen
+  opgave: |-
+    Een gletsjer verliest elk jaar 1~\% van zijn volume. Benader met de eerste drie termen van het binomium welk deel van zijn volume na 5 jaar overblijft. Vergelijk met het rekentoestel.
+  antwoord: |-
+    $\approx 0{,}951$
+  uitwerking: |-
+    $(1 - 0{,}01)^5 \approx 1 - 5 \cdot 0{,}01 + 10 \cdot 0{,}0001 = 0{,}951$. Het rekentoestel geeft $0{,}99^5 \approx 0{,}95099$.
+
+- id: h3-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    klassieke fouten
+  opgave: |-
+    Waar of vals? Verbeter wat vals is.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $(a + b)^n$ heeft $n$ termen.
+      antwoord: |-
+        vals: $n + 1$
+      uitwerking: |-
+        Vals: $k$ loopt van 0 tot $n$, dat zijn $n + 1$ termen.
+    - opgave: |-
+        $(a + b)^n = a^n + b^n$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals voor $n \geqslant 2$: er zijn ook tussenliggende termen, zoals $2ab$ bij $n = 2$.
+    - opgave: |-
+        De coëfficiënt van $x^k$ in $(1 + x)^n$ is $\binom{n}{k}$.
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: met $a = 1$ en $b = x$ is de algemene term $\binom{n}{k}x^k$.
+    - opgave: |-
+        In $(2x + 1)^3$ is de coëfficiënt van $x^2$ gelijk aan $\binom32 = 3$.
+      antwoord: |-
+        vals: 12
+      uitwerking: |-
+        Vals: de term is $\binom31 (2x)^2 \cdot 1 = 3 \cdot 4x^2 = 12x^2$. De macht van 2 hoort erbij.
+
+- id: h3-o8
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    exponent zoeken
+  opgave: |-
+    De coëfficiënt van $x^2$ in $(1 + x)^n$ is 45. Bepaal $n$.
+  antwoord: |-
+    $n = 10$
+  uitwerking: |-
+    $\binom{n}{2} = \frac{n(n - 1)}{2} = 45$, dus $n^2 - n - 90 = 0$, met oplossingen $n = 10$ en $n = -9$. Alleen $n = 10$ is een natuurlijk getal.
+
+- id: h3-o9
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    rekenen met het binomium
+  opgave: |-
+    Bereken $101^4$ zonder rekentoestel, door $101 = 100 + 1$ te schrijven.
+  antwoord: |-
+    $104\,060\,401$
+  uitwerking: |-
+    $(100 + 1)^4 = 100^4 + 4 \cdot 100^3 + 6 \cdot 100^2 + 4 \cdot 100 + 1 = 100\,000\,000 + 4\,000\,000 + 60\,000 + 400 + 1 = 104\,060\,401$.
+
+- id: h3-o10
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    machten van 11
+  opgave: |-
+    Bereken $11^2$, $11^3$ en $11^4$, en vergelijk met de driehoek van Pascal. Leg uit met het binomium. Waarom lukt het niet meer voor $11^5 = 161\,051$?
+  antwoord: |-
+    121, 1331, 14641; bij $11^5$ zijn er coëfficiënten $\geqslant 10$
+  uitwerking: |-
+    $11^n = (10 + 1)^n = \sum \binom{n}{k}10^{n - k}$: de coëfficiënten zijn de cijfers, zolang ze kleiner zijn dan 10. Bij $n = 5$ zijn er coëfficiënten 10: dan schuift er een 1 door naar het volgende cijfer, en $1 \ 5 \ 10 \ 10 \ 5 \ 1$ wordt $161\,051$.
+
+- id: h3-o11
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een identiteit afleiden
+  opgave: |-
+    In hoofdstuk 2 (opdracht \ref{oef:h2-o13}) zag je dat $k\binom{n}{k} = n\binom{n - 1}{k - 1}$. Toon daarmee aan dat $\displaystyle\sum_{k=1}^{n} k\binom{n}{k} = n \cdot 2^{n - 1}$. Controleer voor $n = 4$.
+  antwoord: |-
+    bewijs; $4 + 12 + 12 + 4 = 32 = 4 \cdot 8$
+  uitwerking: |-
+    $\displaystyle\sum_{k=1}^{n} k\binom{n}{k} = \sum_{k=1}^{n} n\binom{n - 1}{k - 1} = n\sum_{j=0}^{n - 1}\binom{n - 1}{j} = n \cdot 2^{n - 1}$, met $j = k - 1$ en de som van rij $n - 1$.\par
+    Voor $n = 4$: $1 \cdot 4 + 2 \cdot 6 + 3 \cdot 4 + 4 \cdot 1 = 32 = 4 \cdot 2^3$.
+
+- id: h3-o12
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    som van kwadraten van een rij
+  opgave: |-
+    Bekijk de coëfficiënt van $x^n$ in $(1 + x)^{2n} = (1 + x)^n(1 + x)^n$ op twee manieren, en leid af dat $\displaystyle\sum_{k=0}^{n}\binom{n}{k}^2 = \binom{2n}{n}$. Controleer voor $n = 3$.
+  antwoord: |-
+    bewijs; $1 + 9 + 9 + 1 = 20 = \binom63$
+  uitwerking: |-
+    Links is de coëfficiënt $\binom{2n}{n}$. Rechts krijg je $x^n$ door $x^k$ uit de eerste factor te vermenigvuldigen met $x^{n - k}$ uit de tweede: $\sum_k \binom{n}{k}\binom{n}{n - k} = \sum_k \binom{n}{k}^2$, met de symmetrie. Voor $n = 3$: $1 + 9 + 9 + 1 = 20 = \binom63$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h3-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: algebra
+    onderwerp: Complexe getallen
+  thema: |-
+    een macht van 1 + i
+  opgave: |-
+    Bereken $(1 + i)^8$ met het binomium. Gebruik dat $i^2 = -1$, $i^3 = -i$ en $i^4 = 1$. Controleer met de formule van De Moivre.
+  antwoord: |-
+    16
+  uitwerking: |-
+    $\sum_{k=0}^{8}\binom8k i^k = 1 + 8i - 28 - 56i + 70 + 56i - 28 - 8i + 1 = 16$: de imaginaire delen vallen weg, en $1 - 28 + 70 - 28 + 1 = 16$.\par
+    Met De Moivre: $1 + i = \sqrt2\bigl(\cos\frac{\pi}{4} + i\sin\frac{\pi}{4}\bigr)$, dus $(1 + i)^8 = 16(\cos 2\pi + i\sin 2\pi) = 16$.
+
+- id: h3-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: data
+    onderwerp: Kansrekenen
+  thema: |-
+    aantal keer kop
+  opgave: |-
+    Je gooit 5 keer met een eerlijke munt.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bij hoeveel van de $2^5$ rijtjes komt precies $k$ keer kop voor? Geef een tabel voor $k = 0, 1, \ldots, 5$.
+      antwoord: |-
+        1, 5, 10, 10, 5, 1
+      uitwerking: |-
+        Kies de $k$ worpen met kop: $\binom5k$. Dat is rij 5 van de driehoek: $1, 5, 10, 10, 5, 1$.
+    - opgave: |-
+        Wat is de kans op precies 3 keer kop? Waarom zijn alle kansen samen 1?
+      antwoord: |-
+        $\frac{10}{32} = 0{,}3125$
+      uitwerking: |-
+        $\frac{\binom53}{2^5} = \frac{10}{32}$. Samen: $\frac{1}{32}\sum_k\binom5k = \frac{2^5}{32} = 1$, de som van rij 5.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h3-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    binomium uitwerken
+  opgave: |-
+    Werk uit: $(2x - 3)^3$.
+  antwoord: |-
+    $8x^3 - 36x^2 + 54x - 27$
+  uitwerking: |-
+    $(2x)^3 - 3(2x)^2 \cdot 3 + 3(2x) \cdot 9 - 27 = 8x^3 - 36x^2 + 54x - 27$.
+
+- id: h3-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    coëfficiënt van een macht
+  opgave: |-
+    Bepaal de coëfficiënt van $x^3$ in $(3 - x)^5$.
+  antwoord: |-
+    $-90$
+  uitwerking: |-
+    Algemene term $\binom5k 3^{5 - k}(-x)^k$. Met $k = 3$: $\binom53 \cdot 9 \cdot (-1) = -90$.
+
+- id: h3-t3
+  soort: test
+  niveau: 2
+  thema: |-
+    term zonder x
+  opgave: |-
+    Bepaal de term zonder $x$ in $\Bigl(x + \dfrac3x\Bigr)^4$.
+  antwoord: |-
+    54
+  uitwerking: |-
+    Algemene term $\binom4k x^{4 - k}3^k x^{-k} = \binom4k 3^k x^{4 - 2k}$. Met $k = 2$: $6 \cdot 9 = 54$.
+
+- id: h3-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    benaderen
+  opgave: |-
+    Benader $0{,}98^6$ met de eerste drie termen van het binomium.
+  antwoord: |-
+    $0{,}886$
+  uitwerking: |-
+    $(1 - 0{,}02)^6 \approx 1 - 6 \cdot 0{,}02 + 15 \cdot 0{,}0004 = 0{,}886$ (exact: $0{,}88584\ldots$).
+
+- id: h3-t5
+  soort: test
+  niveau: 1
+  thema: |-
+    som van een rij en regel van Pascal
+  opgave: |-
+    Bereken $\displaystyle\sum_{k=0}^{7}\binom7k$ en $\binom94 + \binom95$ zonder rekentoestel.
+  antwoord: |-
+    128; \ 252
+  uitwerking: |-
+    $2^7 = 128$. Met de regel van Pascal: $\binom94 + \binom95 = \binom{10}{5} = 252$.

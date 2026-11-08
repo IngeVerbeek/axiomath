@@ -1,0 +1,545 @@
+# Oefeningen van hoofdstuk 2. Zie oefeningenbank.py voor de velden.
+
+- id: h2-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Bereken $\dfrac{5!}{2! \cdot 3!}$.
+      antwoord: |-
+        10
+      uitwerking: |-
+        $\frac{120}{2 \cdot 6} = 10$.
+    - opgave: |-
+        Bereken $\Var{6}{2}$ en $\Var{8}{2}$.
+      antwoord: |-
+        30 en 56
+      uitwerking: |-
+        $6 \cdot 5 = 30$ en $8 \cdot 7 = 56$.
+    - opgave: |-
+        Schrijf alle deelverzamelingen met 2 elementen van $\{a, b, c, d\}$ op.
+      antwoord: |-
+        6
+      uitwerking: |-
+        $\{a, b\}$, $\{a, c\}$, $\{a, d\}$, $\{b, c\}$, $\{b, d\}$, $\{c, d\}$: 6.
+    - opgave: |-
+        Werk uit: $(a + b)^2$ en $(a + b)^3$.
+      antwoord: |-
+        $a^2 + 2ab + b^2$; \ $a^3 + 3a^2b + 3ab^2 + b^3$
+      uitwerking: |-
+        $(a + b)^3 = (a + b)(a^2 + 2ab + b^2) = a^3 + 3a^2b + 3ab^2 + b^3$.
+    - opgave: |-
+        Schrijf alle rangschikkingen van de letters A, A en B op.
+      antwoord: |-
+        3
+      uitwerking: |-
+        AAB, ABA, BAA: 3.
+    - opgave: |-
+        Hoeveel delen van het type $\{x, y\}$ (dus zonder volgorde) zitten er in de $\Var{4}{2} = 12$ rijtjes van twee uit $a, b, c, d$?
+      antwoord: |-
+        6
+      uitwerking: |-
+        Elk deel $\{x, y\}$ hoort bij twee rijtjes, $(x, y)$ en $(y, x)$: $12 : 2 = 6$.
+
+- id: h2-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken}\quad Vijf leerlingen, Anouk, Bram, Cato, Daan en Eva, zitten in een werkgroep.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Ze kiezen een comité van drie leerlingen. Schrijf alle mogelijke comités op. Hoeveel zijn er?
+      antwoord: |-
+        10
+      uitwerking: |-
+        Met de beginletters: ABC, ABD, ABE, ACD, ACE, ADE, BCD, BCE, BDE, CDE: 10 comités.
+    - opgave: |-
+        Ze kiezen een voorzitter, een secretaris en een penningmeester, drie verschillende personen. Op hoeveel manieren kan dat?
+      antwoord: |-
+        60
+      uitwerking: |-
+        $\Var{5}{3} = 5 \cdot 4 \cdot 3 = 60$.
+    - opgave: |-
+        Hoe hangen de antwoorden van a en b samen? Waarom?
+      antwoord: |-
+        $60 = 10 \cdot 6$
+      uitwerking: |-
+        Elk comité van drie kan de drie functies op $3! = 6$ manieren verdelen. Dus $60 = 10 \cdot 6$, en het aantal comités is $\frac{60}{6} = 10$.
+
+- id: h2-comb
+  soort: kort
+  opgave: |-
+    Op hoeveel manieren kan dat?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een leerkracht kiest 4 leerlingen uit 10 om een spreekbeurt te geven.
+      antwoord: |-
+        210
+      uitwerking: |-
+        $\Comb{10}{4} = \frac{10 \cdot 9 \cdot 8 \cdot 7}{4!} = 210$.
+    - opgave: |-
+        Je beantwoordt 5 van de 8 vragen op een examen.
+      antwoord: |-
+        56
+      uitwerking: |-
+        $\Comb{8}{5} = \Comb{8}{3} = 56$.
+    - opgave: |-
+        Je krijgt 5 kaarten uit een spel van 52 kaarten, met precies 2 harten.
+      antwoord: |-
+        $712\,842$
+      uitwerking: |-
+        2 harten uit 13 en 3 andere kaarten uit 39: $\Comb{13}{2} \cdot \Comb{39}{3} = 78 \cdot 9139 = 712\,842$.
+
+- id: h2-pascal
+  soort: kort
+  opgave: |-
+    Gebruik de driehoek van Pascal en de eigenschappen van de combinaties.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Schrijf de rijen voor $n = 7$ en $n = 8$ van de driehoek op.
+      antwoord: |-
+        1 7 21 35 35 21 7 1; \ 1 8 28 56 70 56 28 8 1
+      uitwerking: |-
+        Vanuit de rij $1 \ 6 \ 15 \ 20 \ 15 \ 6 \ 1$: telkens de som van de twee getallen erboven. Rij 7: $1 \ 7 \ 21 \ 35 \ 35 \ 21 \ 7 \ 1$. Rij 8: $1 \ 8 \ 28 \ 56 \ 70 \ 56 \ 28 \ 8 \ 1$.
+    - opgave: |-
+        Bereken $\binom{9}{7}$ zonder rekentoestel.
+      antwoord: |-
+        36
+      uitwerking: |-
+        $\binom{9}{7} = \binom{9}{2} = \frac{9 \cdot 8}{2} = 36$.
+
+- id: h2-schema
+  soort: kort
+  opgave: |-
+    Telt de volgorde? Mag er herhaling zijn? Tel.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel woorden kun je vormen met alle letters van KAKAO? En van PARALLEL?
+      antwoord: |-
+        30; \ 3360
+      uitwerking: |-
+        KAKAO: 2 K's, 2 A's, 1 O: $\frac{5!}{2! \, 2!} = 30$. PARALLEL: 8 letters met 2 A's en 3 L's: $\frac{8!}{2! \, 3!} = 3360$.
+    - opgave: |-
+        Een ijssalon heeft 4 smaken. Je neemt 3 bollen in een potje (de volgorde in het potje telt niet; dezelfde smaak mag twee of drie keer).
+      antwoord: |-
+        20
+      uitwerking: |-
+        Combinaties met herhaling: $\binom{4 + 3 - 1}{3} = \binom{6}{3} = 20$.
+    - opgave: |-
+        Hoeveel kortste wegen zijn er in een rooster van 4 bij 4, van de ene hoek naar de overstaande hoek?
+      antwoord: |-
+        70
+      uitwerking: |-
+        4 stappen naar rechts en 4 naar boven: $\frac{8!}{4! \, 4!} = \binom{8}{4} = 70$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h2-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    combinaties berekenen
+  opgave: |-
+    Bereken zonder rekentoestel.
+  lijst: reeks
+  kolommen: 4
+  delen:
+    - opgave: |-
+        $\binom{7}{3}$
+      antwoord: |-
+        35
+      uitwerking: |-
+        $\frac{7 \cdot 6 \cdot 5}{6} = 35$.
+    - opgave: |-
+        $\binom{20}{18}$
+      antwoord: |-
+        190
+      uitwerking: |-
+        $\binom{20}{2} = \frac{20 \cdot 19}{2} = 190$.
+    - opgave: |-
+        $\binom{100}{1}$
+      antwoord: |-
+        100
+      uitwerking: |-
+        Eén element kiezen uit 100: 100 manieren.
+    - opgave: |-
+        $\binom{n}{0}$
+      antwoord: |-
+        1
+      uitwerking: |-
+        $\frac{n!}{0! \, n!} = 1$: niets kiezen kan op één manier.
+
+- id: h2-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    kaarten
+  opgave: |-
+    Hoeveel verschillende handen van 5 kaarten kun je krijgen uit een spel van 52 kaarten? Hoeveel daarvan bevatten alleen harten?
+  antwoord: |-
+    $2\,598\,960$; \ 1287
+  uitwerking: |-
+    $\Comb{52}{5} = 2\,598\,960$. Alleen harten: $\Comb{13}{5} = 1287$.
+
+- id: h2-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    pizza: met en zonder herhaling
+  opgave: |-
+    Een pizzeria heeft 10 toppings. Hoeveel pizza's met 3 toppings zijn er, als de toppings verschillend moeten zijn? En als je ook dubbele of driedubbele porties van een topping mag nemen?
+  antwoord: |-
+    120; \ 220
+  uitwerking: |-
+    Zonder herhaling: $\Comb{10}{3} = 120$. Met herhaling: $\binom{10 + 3 - 1}{3} = \binom{12}{3} = 220$.
+
+- id: h2-o4
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    diagonalen van een veelhoek
+  opgave: |-
+    Hoeveel diagonalen heeft een achthoek? En een $n$-hoek?
+  antwoord: |-
+    20; \ $\binom{n}{2} - n = \frac{n(n - 3)}{2}$
+  uitwerking: |-
+    Twee hoekpunten bepalen een zijde of een diagonaal: $\binom{8}{2} = 28$, min de 8 zijden: 20. Algemeen: $\binom{n}{2} - n = \frac{n(n - 1)}{2} - n = \frac{n(n - 3)}{2}$.
+
+- id: h2-o5
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    permutaties met herhaling
+  opgave: |-
+    Hoeveel woorden (ook zonder betekenis) kun je vormen met alle letters van TOETER?
+  antwoord: |-
+    180
+  uitwerking: |-
+    6 letters: 2 T's, 2 E's, 1 O en 1 R: $\frac{6!}{2! \, 2!} = 180$.
+
+- id: h2-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    de juiste formule kiezen
+  opgave: |-
+    Beslis telkens of de volgorde telt en of herhaling mag. Tel dan.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Je trekt 4 kaarten uit een spel van 52 en houdt ze in je hand.
+      antwoord: |-
+        $270\,725$
+      uitwerking: |-
+        Geen volgorde, geen herhaling: $\Comb{52}{4} = 270\,725$.
+    - opgave: |-
+        Een code van 4 verschillende cijfers.
+      antwoord: |-
+        5040
+      uitwerking: |-
+        Volgorde, geen herhaling: $\Var{10}{4} = 5040$.
+    - opgave: |-
+        4 bollen ijs in een potje, uit 6 smaken.
+      antwoord: |-
+        126
+      uitwerking: |-
+        Geen volgorde, wel herhaling: $\binom{6 + 4 - 1}{4} = \binom{9}{4} = 126$.
+    - opgave: |-
+        4 bollen ijs op elkaar op een hoorn, uit 6 smaken (de volgorde van onder naar boven telt).
+      antwoord: |-
+        1296
+      uitwerking: |-
+        Volgorde en herhaling: $6^4 = 1296$.
+
+- id: h2-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    minstens
+  opgave: |-
+    Een jury van 5 personen wordt gekozen uit 7 vrouwen en 6 mannen. Hoeveel jury's bevatten minstens 2 vrouwen? Los op twee manieren op: met het tegendeel, en door gevallen op te tellen.
+  antwoord: |-
+    1176
+  uitwerking: |-
+    Tegendeel: alle jury's $\binom{13}{5} = 1287$, min die met 0 vrouwen ($\binom{6}{5} = 6$) en met 1 vrouw ($7 \cdot \binom{6}{4} = 105$): $1287 - 111 = 1176$.\par
+    Gevallen: $\binom72\binom63 + \binom73\binom62 + \binom74\binom61 + \binom75 = 420 + 525 + 210 + 21 = 1176$.
+
+- id: h2-o8
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    wegen in een rooster
+  figuur:
+    code: |-
+      \begin{tikzpicture}[x=.5cm,y=.5cm,font=\scriptsize]
+        \draw[black!20] (0,0) grid (5,3);
+        \fill[accent] (0,0) circle (2.5pt) node[below left] {$A$};
+        \fill[accent] (2,1) circle (2.5pt) node[below right] {$C$};
+        \fill[accent] (5,3) circle (2.5pt) node[above right] {$B$};
+      \end{tikzpicture}
+  opgave: |-
+    In het rooster ga je met stappen naar rechts en naar boven van $A$ naar $B$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel kortste wegen zijn er?
+      antwoord: |-
+        56
+      uitwerking: |-
+        5 stappen naar rechts en 3 naar boven: $\binom{8}{3} = 56$.
+    - opgave: |-
+        Hoeveel daarvan gaan door $C$?
+      antwoord: |-
+        30
+      uitwerking: |-
+        Van $A$ naar $C$: 2 rechts, 1 boven: $\binom{3}{1} = 3$. Van $C$ naar $B$: 3 rechts, 2 boven: $\binom{5}{2} = 10$. Productregel: $3 \cdot 10 = 30$.
+
+- id: h2-o9
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    groepen verdelen
+  opgave: |-
+    Twaalf leerlingen worden verdeeld in drie groepen van 4.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Op hoeveel manieren kan dat als de groepen elk een andere taak krijgen (A, B en C)?
+      antwoord: |-
+        $34\,650$
+      uitwerking: |-
+        Kies 4 voor taak A, dan 4 van de overige 8 voor taak B; de rest doet C: $\binom{12}{4}\binom{8}{4} = 495 \cdot 70 = 34\,650$.
+    - opgave: |-
+        En als de groepen geen taak krijgen, en dus niet van elkaar te onderscheiden zijn?
+      antwoord: |-
+        5775
+      uitwerking: |-
+        Elke verdeling in drie groepen is in a $3! = 6$ keer geteld, één keer voor elke manier om de taken te verdelen: $\frac{34\,650}{6} = 5775$.
+
+- id: h2-o10
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    oplossingen van een vergelijking tellen
+  opgave: |-
+    Hoeveel oplossingen heeft $x + y + z = 10$ met $x, y, z$ natuurlijke getallen (0 mag)? Gebruik sterretjes en streepjes.
+  antwoord: |-
+    66
+  uitwerking: |-
+    Verdeel 10 sterretjes over 3 vakjes $x$, $y$, $z$ met 2 streepjes: $\binom{12}{2} = 66$.
+
+- id: h2-o11
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    eigenschappen
+  opgave: |-
+    Waar of vals? Verklaar.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\binom{10}{3} = \binom{10}{7}$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: de symmetrie, met $10 - 3 = 7$.
+    - opgave: |-
+        $\Comb{n}{p} = \dfrac{n!}{p!}$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: $\Comb{n}{p} = \frac{n!}{p!\,(n - p)!}$. Zonder $(n - p)!$ heb je iets anders, bv. $\frac{5!}{2!} = 60 \neq 10$.
+    - opgave: |-
+        Voor elke $n$ en $p$ is $\Var{n}{p} \geqslant \Comb{n}{p}$.
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $\Var{n}{p} = p! \cdot \Comb{n}{p}$ en $p! \geqslant 1$.
+    - opgave: |-
+        De som van de getallen in rij 5 van de driehoek van Pascal is 32.
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $1 + 5 + 10 + 10 + 5 + 1 = 32 = 2^5$. In hoofdstuk 3 zie je waarom dat altijd een macht van 2 is.
+
+- id: h2-o12
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    regel van Pascal algebraïsch
+  opgave: |-
+    Bewijs de regel van Pascal $\binom{n}{p} = \binom{n - 1}{p - 1} + \binom{n - 1}{p}$ met de formule met faculteiten. Breng daarvoor de twee breuken rechts op dezelfde noemer $p!\,(n - p)!$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    $\binom{n - 1}{p - 1} + \binom{n - 1}{p} = \frac{(n - 1)!}{(p - 1)!\,(n - p)!} + \frac{(n - 1)!}{p!\,(n - 1 - p)!} = \frac{(n - 1)! \cdot p}{p!\,(n - p)!} + \frac{(n - 1)! \cdot (n - p)}{p!\,(n - p)!} = \frac{(n - 1)!\,(p + n - p)}{p!\,(n - p)!} = \frac{n!}{p!\,(n - p)!}$.
+
+- id: h2-o13
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    dubbel tellen
+  opgave: |-
+    Uit $n$ personen kies je een comité van $p$ personen, met een voorzitter uit dat comité. Tel op twee manieren, en leid af dat $p \binom{n}{p} = n \binom{n - 1}{p - 1}$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Eerst het comité ($\binom{n}{p}$), dan de voorzitter erin ($p$): $p\binom{n}{p}$. Of eerst de voorzitter ($n$), dan de andere $p - 1$ leden uit de overige $n - 1$: $n\binom{n - 1}{p - 1}$. Beide tellen hetzelfde, dus zijn ze gelijk.
+
+- id: h2-o14
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    driehoeken tellen
+  opgave: |-
+    In een vlak liggen 10 punten. Precies 4 ervan liggen op één rechte; verder liggen er nooit drie op één rechte. Hoeveel driehoeken hebben drie van die punten als hoekpunten?
+  antwoord: |-
+    116
+  uitwerking: |-
+    Drie punten vormen een driehoek, tenzij ze op één rechte liggen. Alle drietallen: $\binom{10}{3} = 120$. Op de rechte: $\binom{4}{3} = 4$. Dus $120 - 4 = 116$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h2-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: data
+    onderwerp: Kansrekenen
+  thema: |-
+    kansen bij de lotto
+  opgave: |-
+    Bij de lotto worden 6 getallen getrokken uit 1 tot en met 45. Je hebt één formulier met 6 getallen ingevuld.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Wat is de kans dat je alle 6 getallen juist hebt?
+      antwoord: |-
+        $\frac{1}{8\,145\,060} \approx 1{,}2 \cdot 10^{-7}$
+      uitwerking: |-
+        Er zijn $\binom{45}{6} = 8\,145\,060$ even waarschijnlijke trekkingen, en één ervan is jouw formulier.
+    - opgave: |-
+        Wat is de kans dat je precies 3 getallen juist hebt?
+      antwoord: |-
+        $\approx 0{,}022$
+      uitwerking: |-
+        3 van jouw 6 getallen en 3 van de 39 andere: $\binom63\binom{39}{3} = 20 \cdot 9139 = 182\,780$ gunstige trekkingen. De kans is $\frac{182\,780}{8\,145\,060} \approx 0{,}022$.
+
+- id: h2-koppel-2
+  soort: koppel
+  niveau: 3
+  koppel:
+    rubriek: meetkunde
+    onderwerp: Veelhoeken
+  thema: |-
+    snijpunten van diagonalen
+  figuur:
+    code: |-
+      \begin{tikzpicture}[scale=1.1]
+        \coordinate (q0) at (0,1.1); \coordinate (q1) at (-.95,.45); \coordinate (q2) at (-.8,-.6);
+        \coordinate (q3) at (.1,-1); \coordinate (q4) at (.95,-.5); \coordinate (q5) at (1,.55);
+        \draw[accent,thick] (q0) -- (q1) -- (q2) -- (q3) -- (q4) -- (q5) -- cycle;
+        \draw[accent!50] (q0) -- (q2) (q0) -- (q3) (q0) -- (q4) (q1) -- (q3) (q1) -- (q4) (q1) -- (q5) (q2) -- (q4) (q2) -- (q5) (q3) -- (q5);
+      \end{tikzpicture}
+  opgave: |-
+    In een convexe $n$-hoek gaan nooit drie diagonalen door één punt binnen de veelhoek (zoals bij een onregelmatige zeshoek).
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Leg uit: elk snijpunt van twee diagonalen binnen de veelhoek hoort bij precies één groepje van 4 hoekpunten.
+      antwoord: |-
+        de twee diagonalen hebben samen 4 eindpunten
+      uitwerking: |-
+        Twee diagonalen die elkaar binnen de veelhoek snijden, hebben samen 4 verschillende eindpunten. Omgekeerd vormen 4 hoekpunten een convexe vierhoek, waarvan de twee diagonalen elkaar in precies één punt snijden.
+    - opgave: |-
+        Hoeveel snijpunten zijn er dan bij een zevenhoek?
+      antwoord: |-
+        35
+      uitwerking: |-
+        Evenveel als groepjes van 4 hoekpunten: $\binom{7}{4} = 35$.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h2-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    combinaties
+  opgave: |-
+    Een trainer kiest 4 spelers uit 15 voor een estafette, zonder de volgorde vast te leggen. Op hoeveel manieren kan dat?
+  antwoord: |-
+    1365
+  uitwerking: |-
+    $\binom{15}{4} = \frac{15 \cdot 14 \cdot 13 \cdot 12}{24} = 1365$.
+
+- id: h2-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    combinaties en productregel
+  opgave: |-
+    Uit 8 jongens en 6 meisjes wordt een groep gekozen met 3 jongens en 2 meisjes. Hoeveel groepen zijn er mogelijk?
+  antwoord: |-
+    840
+  uitwerking: |-
+    $\binom83 \cdot \binom62 = 56 \cdot 15 = 840$.
+
+- id: h2-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    symmetrie
+  opgave: |-
+    Bereken $\binom{20}{17}$ zonder rekentoestel.
+  antwoord: |-
+    1140
+  uitwerking: |-
+    $\binom{20}{17} = \binom{20}{3} = \frac{20 \cdot 19 \cdot 18}{6} = 1140$.
+
+- id: h2-t4
+  soort: test
+  niveau: 1
+  thema: |-
+    permutaties met herhaling
+  opgave: |-
+    Hoeveel woorden (ook zonder betekenis) kun je vormen met alle letters van SNOEPEN?
+  antwoord: |-
+    1260
+  uitwerking: |-
+    7 letters, met 2 N's en 2 E's: $\frac{7!}{2! \, 2!} = 1260$.
+
+- id: h2-t5
+  soort: test
+  niveau: 2
+  thema: |-
+    combinaties met herhaling
+  opgave: |-
+    Je neemt 5 knikkers uit een bak met knikkers in 3 kleuren (van elke kleur genoeg). Hoeveel verschillende keuzes zijn er, als alleen het aantal knikkers van elke kleur telt?
+  antwoord: |-
+    21
+  uitwerking: |-
+    Combinaties met herhaling: $\binom{3 + 5 - 1}{5} = \binom{7}{5} = 21$.
+
+- id: h2-t6
+  soort: test
+  niveau: 2
+  thema: |-
+    de juiste formule kiezen
+  opgave: |-
+    Een klas van 20 leerlingen kiest een bestuur van 4 leerlingen. Op hoeveel manieren kan dat als de vier gelijkwaardig zijn? En als ze vier verschillende functies krijgen?
+  antwoord: |-
+    4845; \ $116\,280$
+  uitwerking: |-
+    Gelijkwaardig: $\binom{20}{4} = 4845$. Met functies telt de volgorde: $\Var{20}{4} = 116\,280 = 4! \cdot 4845$.

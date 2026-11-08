@@ -1,0 +1,220 @@
+%----------------------------------------------------------------------------------------
+% HET BINOMIUM VAN NEWTON. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h3-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{3}{Het binomium van Newton}
+
+\lkr{Leerplan B+S'': het binomium van Newton en de driehoek van Pascal, bij LPD 47, met de wenk om het sommatieteken te gebruiken. Het bewijs is combinatorisch: het steunt op de betekenis van $\binom{n}{k}$ uit hoofdstuk 2, niet op inductie. Het binomium komt terug in Kansrekenen, bij de binomiale verdeling.}
+
+Het merkwaardig product $(a + b)^2 = a^2 + 2ab + b^2$ ken je al lang, en $(a + b)^3$ kun je nog uitwerken. Maar $(a + b)^{10}$? Haakjes uitwerken is dan veel werk. Toch zie je de coëfficiënten meteen, als je ze herkent: het zijn de getallen uit de driehoek van Pascal. Dat volgt uit wat je in hoofdstuk 2 over combinaties leerde. Het resultaat heet het \textbf{binomium van Newton}, naar Isaac Newton, die het uitbreidde naar exponenten die geen natuurlijke getallen zijn.
+
+\begin{oefeningen}[Start]
+\oef{h3-start-1}
+
+\oef{h3-verken}
+\end{oefeningen}
+
+\lkr{Laat oefening \ref{oef:h3-verken} maken vóór de uitleg. De kern is vraag b: een term $a^2b^2$ ontstaat door uit 2 van de 4 factoren $b$ te kiezen, en dat kan op $\binom42$ manieren.}
+
+%========================================================================================
+\section{Het binomium}
+
+\subsection{Het sommatieteken}
+
+Een som met veel termen die volgens een regel gemaakt zijn, schrijf je kort met het sommatieteken $\sum$, de Griekse hoofdletter sigma. Onder het teken staat waar de teller begint, erboven waar hij stopt.
+
+\figuren{$\displaystyle\sum_{k=1}^{5} k^2 = 1^2 + 2^2 + 3^2 + 4^2 + 5^2 = 55$ \qquad\qquad $\displaystyle\sum_{k=0}^{3} 2^k = 1 + 2 + 4 + 8 = 15$}
+
+De letter $k$ is een teller: je vult achtereenvolgens elke gehele waarde in, en telt de uitkomsten op. Welke letter je kiest, maakt niet uit.
+
+\subsection{De formule}
+
+In de Verken werkte je $(a + b)^4$ uit als een product van vier factoren $(a + b)$. Elke term ontstaat door uit elke factor $a$ of $b$ te kiezen. Kies je uit $k$ factoren $b$, en uit de andere $n - k$ factoren $a$, dan krijg je $a^{n - k}b^k$. Hoe vaak? Even vaak als je $k$ factoren kunt kiezen uit $n$.
+
+\begin{theorie}
+\begin{stelling}{Binomium van Newton}
+Voor alle getallen $a$ en $b$ en elk natuurlijk getal $n$ is
+
+\vspace{1mm}
+\qquad $\formule{(a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n - k} b^k = \binom{n}{0}a^n + \binom{n}{1}a^{n - 1}b + \binom{n}{2}a^{n - 2}b^2 + \cdots + \binom{n}{n}b^n}$
+\end{stelling}
+
+\begin{bewijs}
+Werk het product $(a + b)(a + b) \cdots (a + b)$ met $n$ factoren uit: kies uit elke factor $a$ of $b$, vermenigvuldig, en tel alle $2^n$ producten op. Een product is $a^{n - k}b^k$ als je uit precies $k$ factoren $b$ kiest. Die $k$ factoren kies je uit $n$ op $\binom{n}{k}$ manieren, dus staat $a^{n - k}b^k$ er $\binom{n}{k}$ keer.
+\end{bewijs}
+\end{theorie}
+
+\naast{\begin{minipage}{9.2cm}
+Het boomdiagram toont het bewijs voor $n = 3$. In elke factor kies je $a$ of $b$: dat geeft $2^3 = 8$ producten. Met één $b$ zijn er drie, want die ene $b$ kan uit elk van de drie factoren komen: $\binom31 = 3$. Samen: $(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$.
+\end{minipage}}{\begin{tikzpicture}[x=1.15cm,y=.36cm,font=\scriptsize]
+  \node[blad] (s) at (0,0) {};
+  \foreach \i/\y/\l in {0/4/a,1/-4/b}{\node[blad] (n\i) at (1,\y) {$\l$}; \draw[tak] (s) -- (n\i);}
+  \foreach \i/\j/\y/\l in {0/0/6/a,0/1/2/b,1/0/-2/a,1/1/-6/b}{\node[blad] (m\i\j) at (2,\y) {$\l$}; \draw[tak] (n\i) -- (m\i\j);}
+  \foreach \i/\j/\k/\y/\l/\w in {0/0/0/7/a/aaa,0/0/1/5/b/aab,0/1/0/3/a/aba,0/1/1/1/b/abb,1/0/0/-1/a/baa,1/0/1/-3/b/bab,1/1/0/-5/a/bba,1/1/1/-7/b/bbb}{
+    \node[blad] (l\i\j\k) at (3,\y) {$\l$}; \draw[tak] (m\i\j) -- (l\i\j\k);
+    \node[anchor=west,font=\scriptsize] at (3.25,\y) {$\w$};}
+\end{tikzpicture}}
+
+De coëfficiënten $\binom{n}{k}$ heten daarom ook \textbf{binomiaalcoëfficiënten}: ze staan in rij $n$ van de driehoek van Pascal. De exponent van $a$ daalt van $n$ tot 0, die van $b$ stijgt van 0 tot $n$, en hun som is altijd $n$. Er zijn $n + 1$ termen.
+
+\voorbeeld{}{Werk uit: $(x + 2)^4$.\label{vb:h3-binomium}}{%
+\uitleg{We nemen de coëfficiënten uit rij 4 van de driehoek, $1, 4, 6, 4, 1$, met $a = x$ en $b = 2$. Vergeet niet dat ook de machten van 2 meetellen.}
+\begin{stappenbreed}
+(x + 2)^4 = x^4 + 4x^3 \cdot 2 + 6x^2 \cdot 2^2 + 4x \cdot 2^3 + 2^4 & De exponent van $x$ daalt, die van 2 stijgt. \\[1ex]
+= x^4 + 8x^3 + 24x^2 + 32x + 16 & Vereenvoudigen.
+\end{stappenbreed}}
+
+\voorbeeld{}{Werk uit: $(2x - 1)^5$.\label{vb:h3-binomium2}}{%
+\uitleg{Nu is $a = 2x$ en $b = -1$. Een min-teken in $b$ geeft afwisselende tekens, want $(-1)^k$ is $+1$ als $k$ even is en $-1$ als $k$ oneven is.}
+\begin{stappenbreed}
+(2x)^5 - 5(2x)^4 + 10(2x)^3 - 10(2x)^2 + 5(2x) - 1 & Rij 5: $1, 5, 10, 10, 5, 1$, met afwisselende tekens. \\[1ex]
+= 32x^5 - 80x^4 + 80x^3 - 40x^2 + 10x - 1 & Vergeet de machten van 2 niet: $(2x)^4 = 16x^4$.
+\end{stappenbreed}}
+
+\begin{werkwijze}
+Bepaal $a$, $b$ (met zijn teken) en $n$. Haal de coëfficiënten uit rij $n$ van de driehoek van Pascal, of bereken ze als $\binom{n}{k}$. Schrijf de termen $\binom{n}{k}a^{n - k}b^k$ voor $k = 0, 1, \ldots, n$, en werk elke macht volledig uit, ook de getallen.
+\end{werkwijze}
+
+\nujij{Werk uit: $(a - 2)^4$.}{$a^4 - 4 \cdot 2a^3 + 6 \cdot 4a^2 - 4 \cdot 8a + 16 = a^4 - 8a^3 + 24a^2 - 32a + 16$.}
+
+\begin{oefeningen}
+\oef{h3-binomium}
+\end{oefeningen}
+
+%========================================================================================
+\section{Eén term berekenen}
+
+Soms heb je maar één term nodig, bijvoorbeeld de coëfficiënt van $x^3$ in $(1 + 2x)^7$. Dan schrijf je de algemene term op, en zoek je welke $k$ de gevraagde macht geeft.
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{algemene term}} van $(a + b)^n$ is \quad $\formule{\binom{n}{k} a^{n - k} b^k}$, \quad met $k = 0, 1, \ldots, n$.
+\end{theorie}
+
+\voorbeeld{}{Bepaal de coëfficiënt van $x^3$ in $(1 + 2x)^7$.\label{vb:h3-term}}{%
+\uitleg{De algemene term met $a = 1$ en $b = 2x$ bevat $x^k$. Voor $x^3$ is $k = 3$.}
+\begin{stappen}
+\binom{7}{k} 1^{7 - k} (2x)^k = \binom{7}{k} 2^k x^k & De algemene term. \\[3ex]
+k = 3: \ \binom{7}{3} \cdot 2^3 = 35 \cdot 8 = 280 & De coëfficiënt van $x^3$ is 280.
+\end{stappen}}
+
+\voorbeeld{}{Bepaal de term zonder $x$ in $\Bigl(x^2 + \dfrac1x\Bigr)^6$.\label{vb:h3-term2}}{%
+\uitleg{Hier komt $x$ in $a$ en in $b$ voor. We schrijven de macht van $x$ in de algemene term als één exponent, en zoeken de $k$ waarvoor die 0 is.}
+\begin{stappenbreed}
+\binom{6}{k} (x^2)^{6 - k} \Bigl(\frac1x\Bigr)^k = \binom{6}{k} x^{12 - 2k} x^{-k} = \binom{6}{k} x^{12 - 3k} & De algemene term. \\[3ex]
+12 - 3k = 0 \ \Rightarrow \ k = 4 & Geen $x$: exponent 0. \\[1ex]
+\binom{6}{4} = 15 & De term zonder $x$ is 15.
+\end{stappenbreed}}
+
+\begin{werkwijze}
+Schrijf de algemene term en breng alle machten van $x$ samen tot één macht $x^{\ldots}$ met $k$ in de exponent. Stel die exponent gelijk aan de gevraagde, los op naar $k$, en vul in. Is er geen natuurlijke $k$ tussen 0 en $n$, dan komt die macht niet voor.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h3-term}
+\end{oefeningen}
+
+%========================================================================================
+\section{Gevolgen}
+
+Vul je in het binomium bijzondere waarden in voor $a$ en $b$, dan vind je eigenschappen van de driehoek van Pascal.
+
+\begin{theorie}
+\begin{stelling}{Som van een rij}
+Voor elk natuurlijk getal $n$ is \quad $\formule{\sum_{k=0}^{n} \binom{n}{k} = 2^n}$ \quad en, als $n \geqslant 1$, \quad $\formule{\sum_{k=0}^{n} (-1)^k \binom{n}{k} = 0}$
+\end{stelling}
+
+\begin{bewijs}
+Neem $a = b = 1$ in het binomium: $(1 + 1)^n = \sum_{k=0}^{n} \binom{n}{k} 1^{n - k} 1^k$, dus $2^n = \sum_{k=0}^n \binom{n}{k}$. Neem $a = 1$ en $b = -1$: $(1 - 1)^n = 0$ voor $n \geqslant 1$, en rechts staat $\sum_{k=0}^{n} (-1)^k \binom{n}{k}$.
+\end{bewijs}
+\end{theorie}
+
+De eerste formule ken je al uit opdracht \ref{oef:h1-o14} van hoofdstuk 1: een verzameling met $n$ elementen heeft $2^n$ deelverzamelingen. De som $\sum \binom{n}{k}$ telt ze ook, gerangschikt per aantal elementen $k$. De tweede formule zegt dat er evenveel deelverzamelingen met een even aantal elementen zijn als met een oneven aantal.
+
+Het binomium is ook handig om te benaderen. Is $b$ klein, dan worden de hogere machten van $b$ snel verwaarloosbaar.
+
+\voorbeeld{}{Een spaarrekening geeft 2~\% intrest per jaar. Benader met de eerste drie termen van het binomium met welke factor het kapitaal in 10 jaar groeit.\label{vb:h3-benadering}}{%
+\uitleg{Elk jaar wordt het kapitaal met $1{,}02 = 1 + 0{,}02$ vermenigvuldigd. Na 10 jaar is dat $(1 + 0{,}02)^{10}$. De termen met $0{,}02^3$ en hoger zijn heel klein.}
+\begin{stappen}
+(1 + 0{,}02)^{10} \approx 1 + 10 \cdot 0{,}02 + \binom{10}{2} \cdot 0{,}02^2 & De eerste drie termen, met $a = 1$. \\[3ex]
+= 1 + 0{,}2 + 45 \cdot 0{,}0004 = 1{,}218 & Het rekentoestel geeft $1{,}02^{10} \approx 1{,}21899$.
+\end{stappen}}
+
+Wie alleen de eerste twee termen gebruikt, vindt $1{,}2$: dat is de groei zonder samengestelde intrest. De derde term is de \textit{intrest op intrest}.
+
+\begin{oefeningen}
+\oef{h3-som}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h3-o1}
+
+\oef{h3-o2}
+
+\oef{h3-o3}
+
+\oef{h3-o4}
+
+\oef{h3-o5}
+
+\oef{h3-o6}
+
+\oef{h3-o7}
+
+\oef{h3-o8}
+
+\oef{h3-o9}
+
+\oef{h3-o10}
+
+\oef{h3-o11}
+
+\oef{h3-o12}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{Complexe getallen is een cursus van het 5de jaar. De tweede oefening is een voorsmaak van de binomiale verdeling in Kansrekenen.}
+
+\begin{oefeningen}
+\oef{h3-koppel-1}
+
+\oef{h3-koppel-2}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h3-t1}
+
+\oef{h3-t2}
+
+\oef{h3-t3}
+
+\oef{h3-t4}
+
+\oef{h3-t5}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h3-t1}{vb:h3-binomium2}{oef:h3-binomium}%
+  \fv{oef:h3-t2}{vb:h3-term}{oef:h3-term}%
+  \fv{oef:h3-t3}{vb:h3-term2}{oef:h3-term}%
+  \fv{oef:h3-t4}{vb:h3-benadering}{oef:h3-som}%
+  \fzv{oef:h3-t5}{oef:h3-som}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: wat het sommatieteken betekent, het binomium van Newton met zijn bewijs, het verband met de driehoek van Pascal, de algemene term en hoe je er één term mee vindt, en de som van een rij van de driehoek. Vergelijk daarna met de kaders.
+\fi
