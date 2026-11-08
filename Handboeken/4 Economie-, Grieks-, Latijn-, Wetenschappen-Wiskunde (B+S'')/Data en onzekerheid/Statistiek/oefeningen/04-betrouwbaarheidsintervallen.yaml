@@ -1,0 +1,279 @@
+# Oefeningen van hoofdstuk 4. Zie oefeningenbank.py voor de velden.
+
+- id: h4-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Bereken $\sqrt{\frac{0{,}5 \cdot 0{,}5}{100}}$.
+      antwoord: |-
+        $0{,}05$
+      uitwerking: |-
+        $\sqrt{0{,}0025} = 0{,}05$.
+    - opgave: |-
+        Bereken \texttt{invNorm(0.975)}. Waarom is dat ongeveer 1,96?
+      antwoord: |-
+        $\approx 1{,}96$
+      uitwerking: |-
+        Links van 1,96 ligt 97,5~\%, dus tussen $-1{,}96$ en $1{,}96$ ligt 95~\%.
+    - opgave: |-
+        Hoeveel is 2,6 procentpunt meer dan 23~\%?
+      antwoord: |-
+        25,6~\%
+      uitwerking: |-
+        $23 + 2{,}6 = 25{,}6$~\%.
+    - opgave: |-
+        Los op: $\frac{8}{\sqrt n} \leqslant 2$.
+      antwoord: |-
+        $n \geqslant 16$
+      uitwerking: |-
+        $\sqrt n \geqslant 4$, dus $n \geqslant 16$.
+
+- id: h4-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken}\quad In een aselecte steekproef van 1000 Belgen overweegt 23~\% een elektrische auto.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Stel dat in werkelijkheid $p = 0{,}23$. Bereken de standaardafwijking van $\hat{p}$ voor steekproeven van 1000.
+      antwoord: |-
+        $\approx 0{,}0133$
+      uitwerking: |-
+        $\sqrt{\frac{0{,}23 \cdot 0{,}77}{1000}} \approx 0{,}0133$.
+    - opgave: |-
+        Tussen welke grenzen ligt $\hat{p}$ dan in ongeveer 95~\% van de steekproeven? Gebruik de vuistregel met 2 standaardafwijkingen.
+      antwoord: |-
+        ongeveer $[0{,}204;\ 0{,}256]$
+      uitwerking: |-
+        $0{,}23 \pm 2 \cdot 0{,}0133 \approx [0{,}203;\ 0{,}257]$.
+    - opgave: |-
+        Je kent $p$ eigenlijk niet. Wat zegt b over waar $p$ waarschijnlijk ligt, als je $\hat{p} = 0{,}23$ gevonden hebt?
+      antwoord: |-
+        binnen ongeveer 2,6 procentpunt van 0,23
+      uitwerking: |-
+        Als $\hat{p}$ meestal binnen 0,026 van $p$ ligt, dan ligt $p$ meestal binnen 0,026 van $\hat{p}$: ongeveer tussen 20,4~\% en 25,6~\%.
+
+- id: h4-proportie
+  soort: kort
+  opgave: |-
+    In een aselecte steekproef van 600 leerlingen eet 312 elke dag ontbijt. Bereken een 95~\%-betrouwbaarheidsinterval voor het aandeel van alle leerlingen, en formuleer je besluit.
+  antwoord: |-
+    $[0{,}48;\ 0{,}56]$
+  uitwerking: |-
+    $\hat{p} = 0{,}52$, $E = 1{,}96\sqrt{\frac{0{,}52 \cdot 0{,}48}{600}} \approx 0{,}040$. Interval $[0{,}48;\ 0{,}56]$: met 95~\% betrouwbaarheid ontbijt tussen 48~\% en 56~\% van alle leerlingen elke dag. Of het meer dan de helft is, kun je hieruit niet besluiten.
+
+- id: h4-gemiddelde
+  soort: kort
+  opgave: |-
+    Een aselecte groep van 36 leerlingen haalt gemiddeld 72,4 op een toets met $\sigma = 8$. Bereken een 95~\%-betrouwbaarheidsinterval voor het gemiddelde van alle leerlingen.
+  antwoord: |-
+    $[69{,}8;\ 75{,}0]$
+  uitwerking: |-
+    $E = 1{,}96 \cdot \frac{8}{6} \approx 2{,}61$. Interval $[69{,}8;\ 75{,}0]$.
+
+- id: h4-marge
+  soort: kort
+  opgave: |-
+    Hoe verandert de foutenmarge als je
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        de steekproef vier keer zo groot maakt?
+      antwoord: |-
+        ze halveert
+      uitwerking: |-
+        $\sqrt{4n} = 2\sqrt n$: de marge wordt de helft.
+    - opgave: |-
+        99~\% in plaats van 95~\% betrouwbaarheid vraagt?
+      antwoord: |-
+        ze wordt ongeveer 1,3 keer zo groot
+      uitwerking: |-
+        $z$ gaat van 1,96 naar 2,576: $\frac{2{,}576}{1{,}96} \approx 1{,}31$ keer zo groot.
+    - opgave: |-
+        een foutenmarge van 2 procentpunt wilt voor een proportie? Hoeveel personen heb je minstens nodig?
+      antwoord: |-
+        2401
+      uitwerking: |-
+        $1{,}96\sqrt{\frac{0{,}25}{n}} \leqslant 0{,}02 \iff \sqrt n \geqslant 49 \iff n \geqslant 2401$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h4-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    interval voor een proportie
+  opgave: |-
+    Van 120 aselect gekozen bezoekers van een festival komt 54 met de trein. Bereken een 95~\%-betrouwbaarheidsinterval voor het aandeel treinreizigers. Doe hetzelfde als er 540 van de 1200 met de trein kwamen. Vergelijk.
+  antwoord: |-
+    $[0{,}361;\ 0{,}539]$; \ $[0{,}422;\ 0{,}478]$
+  uitwerking: |-
+    $\hat{p} = 0{,}45$ in beide gevallen. $n = 120$: $E \approx 0{,}089$, interval $[0{,}361;\ 0{,}539]$. $n = 1200$: $E \approx 0{,}028$, interval $[0{,}422;\ 0{,}478]$. Tien keer zoveel bezoekers geeft een $\sqrt{10} \approx 3{,}2$ keer kleinere marge.
+
+- id: h4-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    interval voor een gemiddelde
+  opgave: |-
+    40 aselect gekozen appels wegen gemiddeld 182~g. De standaardafwijking van alle appels is 11~g. Bereken een 95~\%-betrouwbaarheidsinterval voor het gemiddelde gewicht.
+  antwoord: |-
+    $[178{,}6;\ 185{,}4]$
+  uitwerking: |-
+    $E = 1{,}96 \cdot \frac{11}{\sqrt{40}} \approx 3{,}41$. Interval $[178{,}6;\ 185{,}4]$~g.
+
+- id: h4-o3
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    interpretatie
+  opgave: |-
+    Een 95~\%-betrouwbaarheidsinterval voor de gemiddelde slaapduur van jongeren is $[7{,}08;\ 7{,}52]$ uur. Welke uitspraken zijn juist? Verbeter de foute.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        95~\% van de jongeren slaapt tussen 7,08 en 7,52 uur.
+      antwoord: |-
+        fout
+      uitwerking: |-
+        Fout: het interval gaat over het gemiddelde van alle jongeren, niet over individuele jongeren, die veel meer verschillen.
+    - opgave: |-
+        De methode geeft intervallen die in 95~\% van de steekproeven het echte gemiddelde bevatten.
+      antwoord: |-
+        juist
+      uitwerking: |-
+        Juist: dat is de betekenis van het betrouwbaarheidsniveau.
+    - opgave: |-
+        Het steekproefgemiddelde was 7,3 uur.
+      antwoord: |-
+        juist
+      uitwerking: |-
+        Juist: het midden van het interval, $\frac{7{,}08 + 7{,}52}{2} = 7{,}3$.
+
+- id: h4-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    peilingen vergelijken
+  opgave: |-
+    Partij A haalt 21~\% in een peiling bij 1000 kiezers, een maand later 23~\%. Een krant schrijft: \textit{Partij A wint 2 procent}. Bereken de foutenmarges en bespreek de kop.
+  antwoord: |-
+    marges $\approx 2{,}5$ en $2{,}6$ procentpunt: geen duidelijke winst
+  uitwerking: |-
+    $E_1 = 1{,}96\sqrt{\frac{0{,}21 \cdot 0{,}79}{1000}} \approx 0{,}025$ en $E_2 \approx 0{,}026$. De intervallen $[18{,}5;\ 23{,}5]$ en $[20{,}4;\ 25{,}6]$ overlappen sterk: de stijging kan toeval zijn. Bovendien is het 2 procentpunt, geen 2~\%.
+
+- id: h4-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    benodigde steekproefgrootte voor een gemiddelde
+  opgave: |-
+    Een onderzoeker wil een gemiddelde schatten tot op 1 eenheid nauwkeurig (foutenmarge 1) bij 95~\% betrouwbaarheid. De standaardafwijking is 8. Hoeveel waarnemingen heeft hij nodig?
+  antwoord: |-
+    246
+  uitwerking: |-
+    $1{,}96 \cdot \frac{8}{\sqrt n} \leqslant 1 \iff \sqrt n \geqslant 15{,}68 \iff n \geqslant 245{,}9$: dus 246.
+
+- id: h4-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    interval en toets
+  opgave: |-
+    Een 95~\%-betrouwbaarheidsinterval voor een proportie is $[0{,}48;\ 0{,}56]$. Zou een tweezijdige toets van $H_0\colon p = 0{,}5$ bij $\alpha = 0{,}05$ de nulhypothese verwerpen? En van $H_0\colon p = 0{,}45$? Verklaar met het interval.
+  antwoord: |-
+    0,5 niet verwerpen; 0,45 wel
+  uitwerking: |-
+    0,5 ligt in het interval: de steekproef is verenigbaar met $p = 0{,}5$, dus niet verwerpen. 0,45 ligt erbuiten: verwerpen. Bij benadering geldt: een tweezijdige toets bij 5~\% verwerpt precies de waarden buiten het 95~\%-interval.
+
+- id: h4-o7
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    simulatie interpreteren
+  opgave: |-
+    Een leerkracht laat 30 leerlingen elk een eigen aselecte steekproef trekken uit dezelfde populatie, en een 95~\%-betrouwbaarheidsinterval voor $p$ berekenen. Hoeveel intervallen verwacht je die $p$ niet bevatten? Wat is de kans dat alle 30 intervallen $p$ bevatten?
+  antwoord: |-
+    $1{,}5$; \ $\approx 0{,}21$
+  uitwerking: |-
+    Elk interval mist $p$ met kans 0,05: verwacht $30 \cdot 0{,}05 = 1{,}5$ intervallen. Alle 30 raak: $0{,}95^{30} \approx 0{,}21$ (als de steekproeven onafhankelijk zijn).
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h4-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Tweedegraadsfuncties
+  thema: |-
+    het ongunstigste geval
+  opgave: |-
+    Toon aan dat $f(p) = p(1 - p)$ op $[0, 1]$ maximaal is voor $p = 0{,}5$, met maximum 0,25. Waarom gebruikt een peilingbureau dat maximum om de steekproefgrootte te bepalen?
+  antwoord: |-
+    top van een bergparabool; de marge is dan het grootst
+  uitwerking: |-
+    $f(p) = -p^2 + p$ is een bergparabool met top bij $p = \frac{-1}{2 \cdot (-1)} = 0{,}5$ en $f(0{,}5) = 0{,}25$. De foutenmarge is het grootst als $p(1 - p)$ het grootst is. Wie met 0,25 rekent, haalt de gewenste marge zeker, welke $p$ het ook is.
+
+- id: h4-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: data
+    onderwerp: Kansrekenen
+  thema: |-
+    hoeveel intervallen missen
+  opgave: |-
+    Een onderzoeksbureau publiceert per jaar 40 peilingen met een 95~\%-interval. Het aantal intervallen dat de echte waarde mist, is binomiaal verdeeld. Bereken de verwachtingswaarde, en de kans dat meer dan 4 intervallen missen.
+  antwoord: |-
+    2; \ $\approx 0{,}048$
+  uitwerking: |-
+    $X \sim B(40;\, 0{,}05)$: $\E(X) = 2$. $P(X > 4) = 1 - P(X \leqslant 4) \approx 0{,}048$.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h4-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    interval voor een proportie
+  opgave: |-
+    Van 500 aselect gekozen inwoners fietst 130 naar het werk. Bereken een 95~\%-betrouwbaarheidsinterval voor het aandeel van alle inwoners.
+  antwoord: |-
+    $[0{,}222;\ 0{,}298]$
+  uitwerking: |-
+    $\hat{p} = 0{,}26$, $E = 1{,}96\sqrt{\frac{0{,}26 \cdot 0{,}74}{500}} \approx 0{,}038$. Interval $[0{,}222;\ 0{,}298]$.
+
+- id: h4-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    interval voor een gemiddelde
+  opgave: |-
+    64 aselect gekozen jongeren slapen gemiddeld 7,3 uur, met $\sigma = 0{,}9$ uur. Bereken een 95~\%-betrouwbaarheidsinterval voor de gemiddelde slaapduur.
+  antwoord: |-
+    $[7{,}08;\ 7{,}52]$
+  uitwerking: |-
+    $E = 1{,}96 \cdot \frac{0{,}9}{8} \approx 0{,}22$. Interval $[7{,}08;\ 7{,}52]$ uur.
+
+- id: h4-t3
+  soort: test
+  niveau: 2
+  thema: |-
+    steekproefgrootte
+  opgave: |-
+    Hoeveel personen moet je ondervragen om een aandeel te schatten met een foutenmarge van hoogstens 4 procentpunt, bij 95~\% betrouwbaarheid?
+  antwoord: |-
+    601
+  uitwerking: |-
+    $1{,}96\sqrt{\frac{0{,}25}{n}} \leqslant 0{,}04 \iff \sqrt n \geqslant 24{,}5 \iff n \geqslant 600{,}25$: dus 601.

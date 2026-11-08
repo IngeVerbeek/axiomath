@@ -37,4 +37,5 @@ Een nieuwe cursus begint met een kopie van de cursus [Integralen](<4 Economie-, 
 |---|---|---|
 | Integralen | [Pakket 4 / Analyse](<4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Analyse/Integralen/README.md>) | eerste versie, nog na te lezen |
 | Matrices | [Pakket 1 / Algebra](<1 Grieks-Latijn, Humane, Latijn-Moderne, Moderne talen (Basis)/Algebra/Matrices/README.md>) | eerste versie, nog na te lezen |
+| Statistiek | [Pakket 4 / Data en onzekerheid](<4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Data en onzekerheid/Statistiek/README.md>) | eerste versie, nog na te lezen |
 | alle overige | per pakket | nog te maken |
