@@ -1,0 +1,176 @@
+%----------------------------------------------------------------------------------------
+% KETTINGREGEL EN STANDAARDFUNCTIES. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h3-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{3}{De kettingregel}
+
+\lkr{Leerplan B+S'': LPD 26-30 (limieten en afgeleiden), het deel over de kettingregel en de afgeleiden van goniometrische, exponentiële en logaritmische functies. Het bewijs van de kettingregel wordt hier alleen aannemelijk gemaakt. De limiet $\lim_{h \to 0} \frac{\sin h}{h} = 1$ is in Goniometrische functies numeriek verkend; hier wordt ze meetkundig verklaard.}
+
+Met de rekenregels uit hoofdstuk 2 kun je veeltermen en quotiënten afleiden. Maar hoe leid je $(2x + 1)^{10}$ af zonder alles uit te werken? En wat is de afgeleide van $\sin x$, $\e^x$ of $\ln x$? Daarvoor dient dit hoofdstuk. Op het einde heb je een tabel waarmee je elke functie uit deze cursussen kunt afleiden.
+
+\begin{oefeningen}[Start]
+\oef{h3-start-1}
+
+\oef{h3-verken}
+\end{oefeningen}
+
+%========================================================================================
+\section{De kettingregel}
+
+\begin{theorie}
+\begin{stelling}{Kettingregel}
+Is $g$ afleidbaar in $x$ en $f$ afleidbaar in $g(x)$, dan is
+\[\formule{\bigl(f(g(x))\bigr)' = f'\bigl(g(x)\bigr) \cdot g'(x)}.\]
+\end{stelling}
+\end{theorie}
+
+In woorden: leid de buitenste functie af en vul de binnenste in, en vermenigvuldig met de afgeleide van de binnenste. Dat is aannemelijk: verandert $x$ een beetje, dan verandert $g(x)$ ongeveer $g'(x)$ keer zoveel, en $f(g(x))$ daardoor nog eens ongeveer $f'(g(x))$ keer zoveel. In de notatie van Leibniz, met $u = g(x)$: $\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\mathrm{d}y}{\mathrm{d}u} \cdot \frac{\mathrm{d}u}{\mathrm{d}x}$.
+
+\voorbeeld{}{Bereken de afgeleide van $h(x) = (2x + 1)^{10}$.\label{vb:h3-ketting}}{%
+\uitleg{Buitenste functie $u^{10}$, binnenste $u = 2x + 1$ (zie Algemene functies: ontbinden).}
+\begin{stappenbreed}
+h'(x) = 10(2x + 1)^9 \cdot 2 = 20(2x + 1)^9 & Buitenste afgeleid, maal $(2x + 1)' = 2$.
+\end{stappenbreed}}
+
+\voorbeeld{}{Bereken de afgeleide van $h(x) = \sqrt{x^2 + 1}$.\label{vb:h3-wortel}}{%
+\uitleg{Buitenste functie $\sqrt u$ met afgeleide $\frac{1}{2\sqrt u}$, binnenste $u = x^2 + 1$.}
+\begin{stappenbreed}
+h'(x) = \frac{1}{2\sqrt{x^2 + 1}} \cdot 2x = \frac{x}{\sqrt{x^2 + 1}} &
+\end{stappenbreed}}
+
+\begin{werkwijze}
+Zoek de buitenste en de binnenste functie: wat reken je als laatste uit? Leid de buitenste af en laat de binnenste ongewijzigd staan. Vermenigvuldig met de afgeleide van de binnenste. Bij meer lagen herhaal je dat.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h3-ketting}
+\end{oefeningen}
+
+%========================================================================================
+\section{Goniometrische functies}
+
+\naast{%
+Voor een kleine hoek $h$ (in radialen) is de boog $h$ op de eenheidscirkel bijna even lang als de verticale $\sin h$: dus $\frac{\sin h}{h} \to 1$. Ook $\frac{1 - \cos h}{h} \to 0$: het verschil tussen $1$ en $\cos h$ is veel kleiner dan $h$.}{%
+\begin{tikzpicture}[scale=2.2,font=\scriptsize]
+  \draw[grijs] (0,0) -- (1.1,0);
+  \draw[grijs] (1,0) arc (0:60:1);
+  \draw[accent] (0,0) -- (35:1);
+  \draw[accent,thick] (1,0) arc (0:35:1) node[midway,right] {$h$};
+  \draw[accent,dashed] (35:1) -- ({cos(35)},0) node[midway,left] {$\sin h$};
+\end{tikzpicture}}
+
+\begin{theorie}
+\begin{stelling}{Afgeleiden van goniometrische functies}
+\[\formule{(\sin x)' = \cos x} \qquad \formule{(\cos x)' = -\sin x} \qquad \formule{(\tan x)' = \frac{1}{\cos^2 x} = 1 + \tan^2 x}\]
+\end{stelling}
+\begin{bewijs}
+Met de somformule: $\frac{\sin(x + h) - \sin x}{h} = \sin x \cdot \frac{\cos h - 1}{h} + \cos x \cdot \frac{\sin h}{h}$. Voor $h \to 0$ gaat dat naar
+\bewijsregel{\sin x \cdot 0 + \cos x \cdot 1 = \cos x.}
+De cosinus gaat net zo. De tangens volgt met de quotiëntregel en de grondformule.
+\end{bewijs}
+\end{theorie}
+
+\voorbeeld{}{Bereken de afgeleide van $f(x) = \sin^2 x$ en van $g(x) = \cos 3x$.\label{vb:h3-gonio}}{%
+\uitleg{$\sin^2 x = (\sin x)^2$: buitenste $u^2$. Bij $\cos 3x$ is de binnenste $3x$.}
+\begin{stappenbreed}
+f'(x) = 2\sin x \cdot \cos x = \sin 2x & Kettingregel, dan verdubbelingsformule. \\
+g'(x) = -\sin 3x \cdot 3 = -3\sin 3x &
+\end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h3-gonio}
+\end{oefeningen}
+
+%========================================================================================
+\section{Exponentiële en logaritmische functies}
+
+\begin{theorie}
+\begin{stelling}{Afgeleiden van exponentiële en logaritmische functies}
+\[\formule{(\e^x)' = \e^x} \qquad \formule{(a^x)' = a^x \ln a} \qquad \formule{(\ln x)' = \frac1x} \qquad \formule{(\log_a x)' = \frac{1}{x \ln a}}\]
+\end{stelling}
+\end{theorie}
+
+Dat $\e^x$ haar eigen afgeleide is, is de reden waarom $\e$ het natuurlijke grondtal heet (zie Exponentiële en logaritmische functies). Een bewijs vraagt een nauwkeurigere definitie van $\e$; we nemen het aan. De andere volgen eruit: $a^x = \e^{x\ln a}$ geeft met de kettingregel $a^x \ln a$. En omdat $\e^{\ln x} = x$, is $\e^{\ln x} \cdot (\ln x)' = 1$, dus $(\ln x)' = \frac{1}{x}$.
+
+\voorbeeld{}{Bereken de afgeleide van $f(x) = \e^{-x^2}$ en van $g(x) = \ln(x^2 + 1)$.\label{vb:h3-explog}}{%
+\uitleg{Telkens de kettingregel, met binnenste $-x^2$ en $x^2 + 1$.}
+\begin{stappenbreed}
+f'(x) = \e^{-x^2} \cdot (-2x) = -2x\,\e^{-x^2} & \\
+g'(x) = \frac{1}{x^2 + 1} \cdot 2x = \frac{2x}{x^2 + 1} &
+\end{stappenbreed}}
+
+\voorbeeld{}{Bereken de afgeleide van $f(x) = x^2\e^x$ en van $g(x) = \dfrac{\ln x}{x}$.\label{vb:h3-combinatie}}{%
+\uitleg{Product- en quotiëntregel met de nieuwe afgeleiden.}
+\begin{stappenbreed}
+f'(x) = 2x\,\e^x + x^2\e^x = (x^2 + 2x)\e^x & Productregel. \\
+g'(x) = \frac{\frac1x \cdot x - \ln x \cdot 1}{x^2} = \frac{1 - \ln x}{x^2} & Quotiëntregel.
+\end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h3-explog}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h3-o1}
+
+\oef{h3-o2}
+
+\oef{h3-o3}
+
+\oef{h3-o4}
+
+\oef{h3-o5}
+
+\oef{h3-o6}
+
+\oef{h3-o7}
+
+\oef{h3-o8}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{Integralen, Exponentiële en logaritmische functies en Goniometrische functies: kijk na wat al gezien is. Het pakket legt de volgorde niet vast.}
+
+\begin{oefeningen}
+\oef{h3-koppel-1}
+
+\oef{h3-koppel-2}
+
+\oef{h3-koppel-3}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h3-t1}
+
+\oef{h3-t2}
+
+\oef{h3-t3}
+
+\oef{h3-t4}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h3-t1}{vb:h3-ketting}{oef:h3-ketting}%
+  \fv{oef:h3-t2}{vb:h3-gonio}{oef:h3-gonio}%
+  \fv{oef:h3-t3}{vb:h3-explog}{oef:h3-explog}%
+  \fv{oef:h3-t4}{vb:h3-combinatie}{oef:h3-explog}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: de kettingregel in woorden en in formule, de afgeleiden van $\sin$, $\cos$, $\tan$, $\e^x$, $a^x$, $\ln x$ en $\log_a x$, en waarom $\frac{\sin h}{h} \to 1$. Maak er een tabel van, samen met de regels uit hoofdstuk 2. Vergelijk daarna met de kaders.
+\fi

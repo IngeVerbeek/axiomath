@@ -1,0 +1,340 @@
+# Oefeningen van hoofdstuk 4. Zie oefeningenbank.py voor de velden.
+
+- id: h4-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Leid af: $x^3 - 6x^2 + 9x$.
+      antwoord: |-
+        $3x^2 - 12x + 9$
+      uitwerking: |-
+        $3x^2 - 12x + 9 = 3(x - 1)(x - 3)$.
+    - opgave: |-
+        Stel de tekentabel op van \mbox{$3(x - 1)(x - 3)$}.
+      antwoord: |-
+        $+$, $0$, $-$, $0$, $+$
+      uitwerking: |-
+        Positief buiten $[1, 3]$, negatief ertussen.
+    - opgave: |-
+        Een rechthoek heeft omtrek 20. Druk de oppervlakte uit met één zijde $x$.
+      antwoord: |-
+        $x(10 - x)$
+      uitwerking: |-
+        De andere zijde is $10 - x$.
+    - opgave: |-
+        Waar ligt de top van de parabool $y = x(10 - x)$?
+      antwoord: |-
+        $(5, 25)$
+      uitwerking: |-
+        Midden tussen de nulwaarden $0$ en $10$.
+
+- id: h4-verken
+  soort: start
+  figuur:
+    opties: |-
+      4.4cm
+    code: |-
+      \begin{tikzpicture}[x=.6cm,y=.45cm,font=\scriptsize]
+        \rooster{-1}{1}{4}{-1}{1}{5}
+        \kromme{-.4}{4.3}{(\x)^3-6*(\x)^2+9*\x}
+        \draw[accent,dashed] (0,4) -- (2,4);
+        \draw[accent,dashed] (2,0) -- (4,0);
+      \end{tikzpicture}
+  opgave: |-
+    \blokkop{Verken} De figuur toont de grafiek van $f(x) = x^3 - 6x^2 + 9x$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Lees af waar $f$ een top en een dal heeft. Hoe ziet de raaklijn er daar uit?
+      antwoord: |-
+        top $(1, 4)$, dal $(3, 0)$; horizontaal
+      uitwerking: |-
+        Top in $(1, 4)$, dal in $(3, 0)$. De raaklijn is daar horizontaal.
+    - opgave: |-
+        Vergelijk met de nulwaarden van $f'$ uit de opwarmer. Wat valt op?
+      antwoord: |-
+        dezelfde $x$-waarden
+      uitwerking: |-
+        $f'(x) = 0$ voor $x = 1$ en $x = 3$: precies de top en het dal.
+    - opgave: |-
+        Waar stijgt $f$? Vergelijk met het teken van $f'$.
+      antwoord: |-
+        waar $f' > 0$
+      uitwerking: |-
+        $f$ stijgt voor $x < 1$ en $x > 3$, waar $f'$ positief is.
+
+- id: h4-extrema
+  soort: kort
+  opgave: |-
+    Bepaal het verloop en de extrema.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x) = 2x^3 - 9x^2 + 12x$
+      antwoord: |-
+        max. $f(1) = 5$, min. $f(2) = 4$
+      uitwerking: |-
+        $f'(x) = 6x^2 - 18x + 12 = 6(x - 1)(x - 2)$: $+$, $0$, $-$, $0$, $+$. Maximum $f(1) = 5$, minimum $f(2) = 4$.
+    - opgave: |-
+        $g(x) = \dfrac{x^2 + 1}{x}$
+      antwoord: |-
+        max. $g(-1) = -2$, min. $g(1) = 2$
+      uitwerking: |-
+        $g'(x) = 1 - \frac{1}{x^2} = \frac{(x - 1)(x + 1)}{x^2}$: $+$, $0$, $-$, $|$, $-$, $0$, $+$. Maximum $g(-1) = -2$, minimum $g(1) = 2$.
+
+- id: h4-buigpunt
+  soort: kort
+  opgave: |-
+    Bepaal de holheid en de buigpunten van $f(x) = x^3 - 6x^2 + 9x + 1$.
+  antwoord: |-
+    bol voor $x < 2$, hol voor $x > 2$; buigpunt $(2, 3)$
+  uitwerking: |-
+    $f''(x) = 6x - 12$: negatief voor $x < 2$ (bol), positief voor $x > 2$ (hol). Buigpunt $(2, f(2)) = (2, 3)$.
+
+- id: h4-optimaal
+  soort: kort
+  opgave: |-
+    Van alle rechthoeken met omtrek $40$ cm: welke heeft de grootste oppervlakte? En van alle rechthoeken met oppervlakte $36$ cm$^2$: welke heeft de kleinste omtrek?
+  antwoord: |-
+    het vierkant met zijde $10$; het vierkant met zijde $6$
+  uitwerking: |-
+    $A(x) = x(20 - x)$, $A'(x) = 20 - 2x = 0$ voor $x = 10$: een vierkant. $O(x) = 2x + \frac{72}{x}$, $O'(x) = 2 - \frac{72}{x^2} = 0$ voor $x = 6$, en $O'$ wisselt van $-$ naar $+$: een vierkant met zijde 6.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h4-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    extrema
+  opgave: |-
+    Bepaal het verloop en de extrema van $f(x) = x^4 - 2x^2$.
+  antwoord: |-
+    min. $f(\pm 1) = -1$, max. $f(0) = 0$
+  uitwerking: |-
+    $f'(x) = 4x^3 - 4x = 4x(x - 1)(x + 1)$: $-$, $0$, $+$, $0$, $-$, $0$, $+$. Minima $f(-1) = f(1) = -1$, maximum $f(0) = 0$.
+
+- id: h4-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    de grafiek van de afgeleide
+  figuur:
+    opties: |-
+      4.2cm
+    code: |-
+      \begin{tikzpicture}[x=.55cm,y=.4cm,font=\scriptsize]
+        \rooster{-3}{1}{4}{-3}{1}{4}
+        \kromme{-2.3}{3.3}{(\x+1)*(\x-2)}
+        \node[accent,right] at (3.1,3) {$f'$};
+      \end{tikzpicture}
+  opgave: |-
+    De figuur toont de grafiek van de \textit{afgeleide} $f'$ van een functie $f$. Waar stijgt $f$? Waar heeft $f$ een maximum en een minimum? Waar heeft $f$ een buigpunt?
+  antwoord: |-
+    stijgt voor $x < -1$ en $x > 2$; max. in $-1$, min. in $2$; buigpunt in $\frac12$
+  uitwerking: |-
+    $f' > 0$ voor $x < -1$ en $x > 2$: daar stijgt $f$. $f'$ wisselt in $-1$ van $+$ naar $-$ (maximum) en in $2$ van $-$ naar $+$ (minimum). Een buigpunt ligt waar $f'$ zelf een extremum heeft (dan wisselt $f''$ van teken): in $x = \frac12$.
+
+- id: h4-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    snelheid en versnelling
+  opgave: |-
+    Een wagentje beweegt op een rechte baan: $s(t) = t^3 - 6t^2 + 9t$ (in m, $t$ in s).
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef de snelheid $v(t) = s'(t)$ en de versnelling $a(t) = v'(t)$.
+      antwoord: |-
+        $v(t) = 3t^2 - 12t + 9$; $a(t) = 6t - 12$
+      uitwerking: |-
+        $v(t) = 3t^2 - 12t + 9$ en $a(t) = 6t - 12$.
+    - opgave: |-
+        Wanneer staat het wagentje even stil? Wanneer rijdt het achteruit?
+      antwoord: |-
+        $t = 1$ en $t = 3$; tussen 1 en 3 s
+      uitwerking: |-
+        $v(t) = 3(t - 1)(t - 3) = 0$ voor $t = 1$ en $t = 3$; negatief ertussen: dan rijdt het achteruit.
+
+- id: h4-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een doos
+  opgave: |-
+    Uit een karton van $20$ cm op $12$ cm knip je in elke hoek een vierkant met zijde $x$ en plooit een doos zonder deksel: $V(x) = x(20 - 2x)(12 - 2x)$. Voor welke $x$ is de inhoud maximaal? (In Algemene functies las je dat af op een grafiek.)
+  antwoord: |-
+    $x = \frac{16 - 2\sqrt{19}}{3} \approx 2{,}43$ cm; $V \approx 262{,}7$ cm$^3$
+  uitwerking: |-
+    $V(x) = 4x^3 - 64x^2 + 240x$ op $\left]0, 6\right[$. $V'(x) = 12x^2 - 128x + 240 = 0 \iff 3x^2 - 32x + 60 = 0 \iff x = \frac{16 \pm 2\sqrt{19}}{3}$. Alleen $x \approx 2{,}43$ ligt in het domein ($8{,}24$ niet). $V'$ wisselt daar van $+$ naar $-$: maximum $V \approx 262{,}7$ cm$^3$.
+
+- id: h4-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    ln x gedeeld door x
+  opgave: |-
+    Bepaal het verloop, de extrema en de buigpunten van $f(x) = \dfrac{\ln x}{x}$.
+  antwoord: |-
+    max. $f(\e) = \frac1\e$; buigpunt in $x = \e^{3/2}$
+  uitwerking: |-
+    $f'(x) = \frac{1 - \ln x}{x^2}$: positief voor $x < \e$, negatief erna. Maximum $f(\e) = \frac1\e$. $f''(x) = \frac{2\ln x - 3}{x^3}$: nul voor $x = \e^{3/2} \approx 4{,}48$, en wisselt daar van teken: buigpunt $\bigl(\e^{3/2}, \frac{3}{2}\e^{-3/2}\bigr)$.
+
+- id: h4-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een open doos
+  opgave: |-
+    Een verpakking heeft de vorm van een open doos met vierkant grondvlak en een inhoud van $32$ dm$^3$. Welke afmetingen vragen het minste karton (grondvlak en vier zijvlakken)?
+  antwoord: |-
+    grondvlak $4 \times 4$ dm, hoogte $2$ dm
+  uitwerking: |-
+    Zijde $x$, hoogte $h = \frac{32}{x^2}$. Karton $K(x) = x^2 + 4xh = x^2 + \frac{128}{x}$. $K'(x) = 2x - \frac{128}{x^2} = 0 \iff x^3 = 64 \iff x = 4$; $K'$ wisselt van $-$ naar $+$. Dan $h = 2$ dm.
+
+- id: h4-o7
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    kortste afstand
+  opgave: |-
+    Welk punt van de parabool $y = x^2$ ligt het dichtst bij het punt $(0, 2)$? Tip: minimaliseer het kwadraat van de afstand.
+  antwoord: |-
+    $\bigl(\pm\sqrt{\tfrac32}, \tfrac32\bigr)$, afstand $\frac{\sqrt7}{2}$
+  uitwerking: |-
+    $d^2(x) = x^2 + (x^2 - 2)^2 = x^4 - 3x^2 + 4$. Afgeleide $4x^3 - 6x = 2x(2x^2 - 3) = 0$ voor $x = 0$ of $x = \pm\sqrt{\frac32}$. $d^2(0) = 4$ is een maximum, $d^2\bigl(\pm\sqrt{\frac32}\bigr) = \frac94 - \frac92 + 4 = \frac74$ een minimum. Afstand $\frac{\sqrt7}{2} \approx 1{,}32$.
+
+- id: h4-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    e tot de pi of pi tot de e
+  opgave: |-
+    Welk getal is groter: $\e^{\pi}$ of $\pi^{\e}$? Beslis zonder rekentoestel, met de functie $\frac{\ln x}{x}$ uit opdracht~\ref{oef:h4-o5}.
+  antwoord: |-
+    $\e^\pi$
+  uitwerking: |-
+    $\frac{\ln x}{x}$ heeft haar maximum in $\e$, dus $\frac{\ln \pi}{\pi} < \frac{\ln \e}{\e} = \frac1\e$. Vermenigvuldig met $\e\pi > 0$: $\e\ln\pi < \pi$, dus $\ln \pi^\e < \ln \e^\pi$ en $\pi^\e < \e^\pi$. (Controle: $22{,}46 < 23{,}14$.)
+
+- id: h4-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    licht breekt
+  opgave: |-
+    Een redder staat op het strand in $A(0, 30)$ en wil zo snel mogelijk bij een zwemmer in $B(40, -20)$ (in m; de waterlijn is de $x$-as). Hij loopt $5$ m/s en zwemt $1$ m/s. Hij loopt naar het punt $(x, 0)$ en zwemt dan verder. Stel de tijd $T(x)$ op en zoek met je rekentoestel (door in te vullen) de beste $x$ op een meter.
+  antwoord: |-
+    $T(x) = \frac{\sqrt{x^2 + 900}}{5} + \sqrt{(40 - x)^2 + 400}$; $x \approx 37$ m
+  uitwerking: |-
+    $T(x) = \frac{\sqrt{x^2 + 900}}{5} + \sqrt{(40 - x)^2 + 400}$ (in s). Waarden: $T(30) \approx 30{,}85$, $T(35) \approx 29{,}84$, $T(36) \approx 29{,}77$, $T(37) \approx 29{,}75$, $T(38) \approx 29{,}78$. Het minimum ligt bij $x \approx 37$ m: hij loopt bijna tot recht tegenover de zwemmer, want zwemmen is veel trager.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h4-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: data
+    onderwerp: Statistiek
+  thema: |-
+    buigpunten van de klokkromme
+  opgave: |-
+    De standaardnormale dichtheid is
+    \[\varphi(z) = \frac{1}{\sqrt{2\pi}}\,\e^{-z^2/2}.\]
+    Bepaal het maximum en de buigpunten. Wat betekenen ze voor de normale verdeling?
+  antwoord: |-
+    max. in $0$; buigpunten in $z = \pm 1$
+  uitwerking: |-
+    $\varphi'(z) = -z\,\varphi(z)$: maximum in $z = 0$. $\varphi''(z) = (z^2 - 1)\varphi(z)$: nul en tekenwissel in $z = \pm 1$. Bij $N(\mu, \sigma)$ liggen de buigpunten dus op $\mu \pm \sigma$: daar zie je de standaardafwijking op de grafiek.
+
+- id: h4-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Rationale functies
+  thema: |-
+    toppen berekenen
+  opgave: |-
+    In Rationale functies schetste je $f(x) = \dfrac{x}{x^2 + 1}$ zonder de toppen te kennen. Bereken nu de extrema.
+  antwoord: |-
+    max. $f(1) = \frac12$, min. $f(-1) = -\frac12$
+  uitwerking: |-
+    $f'(x) = \frac{x^2 + 1 - 2x^2}{(x^2 + 1)^2} = \frac{1 - x^2}{(x^2 + 1)^2}$: $-$, $0$, $+$, $0$, $-$. Minimum $f(-1) = -\frac12$, maximum $f(1) = \frac12$.
+
+- id: h4-koppel-3
+  soort: koppel
+  niveau: 3
+  koppel:
+    rubriek: analyse
+    onderwerp: Exponentiële en logaritmische functies
+  thema: |-
+    logistische groei
+  opgave: |-
+    Een populatie groeit volgens $N(t) = \dfrac{1000}{1 + 9\e^{-t}}$. Bepaal $\lim_{t \to +\infty} N(t)$. Op welk tijdstip groeit ze het snelst, en hoe groot is ze dan? (Tip: het buigpunt.)
+  antwoord: |-
+    1000; $t = \ln 9 \approx 2{,}2$, $N = 500$
+  uitwerking: |-
+    $\e^{-t} \to 0$, dus $N \to 1000$. De groeisnelheid $N'$ is maximaal in het buigpunt: dat ligt waar $9\e^{-t} = 1$, dus $t = \ln 9 \approx 2{,}2$, en dan is $N = \frac{1000}{2} = 500$: de helft van de grens.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h4-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    extrema
+  opgave: |-
+    Bepaal het verloop en de extrema van $f(x) = x^3 - 12x$.
+  antwoord: |-
+    max. $f(-2) = 16$, min. $f(2) = -16$
+  uitwerking: |-
+    $f'(x) = 3(x - 2)(x + 2)$: $+$, $0$, $-$, $0$, $+$. Maximum $f(-2) = 16$, minimum $f(2) = -16$.
+
+- id: h4-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    extrema met e
+  opgave: |-
+    Bepaal de extrema van $f(x) = x\,\e^x$.
+  antwoord: |-
+    min. $f(-1) = -\frac1\e$
+  uitwerking: |-
+    $f'(x) = (1 + x)\e^x$: negatief voor $x < -1$, positief erna. Minimum $f(-1) = -\frac1\e$.
+
+- id: h4-t3
+  soort: test
+  niveau: 2
+  thema: |-
+    buigpunt
+  opgave: |-
+    Bepaal de holheid en het buigpunt van $f(x) = x^3 + 3x^2 - 1$.
+  antwoord: |-
+    bol voor $x < -1$, hol voor $x > -1$; buigpunt $(-1, 1)$
+  uitwerking: |-
+    $f''(x) = 6x + 6$: negatief voor $x < -1$, positief erna. Buigpunt $(-1, f(-1)) = (-1, 1)$.
+
+- id: h4-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    optimaliseren
+  opgave: |-
+    Een tuin is een rechthoek met oppervlakte $50$ m$^2$, aan één kant tegen een muur. Op de drie andere zijden komt een haag. Welke afmetingen geven de kortste haag?
+  antwoord: |-
+    $5$ m loodrecht op de muur, $10$ m langs de muur
+  uitwerking: |-
+    Zijde $x$ loodrecht op de muur, langs de muur $\frac{50}{x}$. Haag $L(x) = 2x + \frac{50}{x}$, $L'(x) = 2 - \frac{50}{x^2} = 0$ voor $x = 5$, en $L'$ wisselt van $-$ naar $+$. Dus $5$ m en $10$ m, haag $20$ m.
