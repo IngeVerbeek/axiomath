@@ -1,0 +1,354 @@
+# Oefeningen van hoofdstuk 3. Zie oefeningenbank.py voor de velden.
+
+- id: h3-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Zet op één noemer: $\dfrac1x + \dfrac{1}{x + 1}$.
+      antwoord: |-
+        $\frac{2x + 1}{x(x + 1)}$
+      uitwerking: |-
+        $\frac{x + 1 + x}{x(x + 1)} = \frac{2x + 1}{x(x + 1)}$.
+    - opgave: |-
+        Los op: $3x^2 - 7x + 2 = 0$.
+      antwoord: |-
+        $x = 2$ of $x = \frac13$
+      uitwerking: |-
+        $D = 49 - 24 = 25$, $x = \frac{7 \pm 5}{6}$.
+    - opgave: |-
+        Los op: $-3x > 6$.
+      antwoord: |-
+        $x < -2$
+      uitwerking: |-
+        Delen door $-3$ keert het teken om.
+    - opgave: |-
+        Wat is het teken van $\frac{x - 1}{x + 2}$ voor $x = 0$?
+      antwoord: |-
+        negatief
+      uitwerking: |-
+        $\frac{-1}{2} < 0$.
+
+- id: h3-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken} Een leerling lost $\dfrac{1}{x} < 2$ op door met $x$ te vermenigvuldigen: $1 < 2x$, dus $x > \frac12$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Vul $x = -1$ in de oorspronkelijke ongelijkheid in. Klopt ze?
+      antwoord: |-
+        ja: $-1 < 2$
+      uitwerking: |-
+        $\frac{1}{-1} = -1 < 2$: klopt, maar $-1$ zit niet in de oplossing van de leerling.
+    - opgave: |-
+        Waar zit de fout?
+      antwoord: |-
+        $x$ kan negatief zijn
+      uitwerking: |-
+        Voor $x < 0$ keert het teken om bij vermenigvuldigen met $x$. De leerling heeft alleen het geval $x > 0$ opgelost.
+    - opgave: |-
+        Wat is de juiste oplossing? Gebruik de grafiek van $\frac1x$.
+      antwoord: |-
+        $x < 0$ of $x > \frac12$
+      uitwerking: |-
+        De grafiek ligt onder $y = 2$ voor alle negatieve $x$ en voor $x > \frac12$.
+
+- id: h3-vergelijking
+  soort: kort
+  opgave: |-
+    Los op.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\dfrac{x + 1}{x - 2} = 3$
+      antwoord: |-
+        $x = \frac72$
+      uitwerking: |-
+        $x \neq 2$; $x + 1 = 3x - 6$, $x = \frac72$.
+    - opgave: |-
+        $\dfrac{2x}{x + 1} = \dfrac{x - 2}{x + 1}$
+      antwoord: |-
+        $x = -2$
+      uitwerking: |-
+        $x \neq -1$; $2x = x - 2$ geeft $x = -2$, en dat voldoet.
+
+- id: h3-ongelijkheid
+  soort: kort
+  opgave: |-
+    Los op.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\dfrac{x - 3}{x + 1} \leqslant 0$
+      antwoord: |-
+        $\left]-1, 3\right]$
+      uitwerking: |-
+        Tekentabel met nulwaarde $3$ en pool $-1$: negatief tussen $-1$ en $3$. Oplossing $\left]-1, 3\right]$.
+    - opgave: |-
+        $\dfrac{1}{x} < 2$
+      antwoord: |-
+        $\left]-\infty, 0\right[ \cup \left]\frac12, +\infty\right[$
+      uitwerking: |-
+        $\frac{1 - 2x}{x} < 0$: nulwaarde $\frac12$, pool $0$. Negatief voor $x < 0$ en $x > \frac12$.
+
+- id: h3-context
+  soort: kort
+  opgave: |-
+    Een lens met brandpuntsafstand $f = 5$ cm vormt een scherp beeld op afstand $b$ van een voorwerp op afstand $v$, met $\frac1v + \frac1b = \frac1f$. Bereken $b$ voor $v = 15$ cm. Voor welke $v$ is het beeld verder dan $10$ cm van de lens?
+  antwoord: |-
+    $b = 7{,}5$ cm; $5 < v < 10$
+  uitwerking: |-
+    $\frac1b = \frac15 - \frac{1}{15} = \frac{2}{15}$, dus $b = 7{,}5$ cm. Algemeen $b = \frac{5v}{v - 5}$ (voor $v > 5$). $\frac{5v}{v - 5} > 10 \iff 5v > 10v - 50 \iff v < 10$ (vermenigvuldigen met $v - 5 > 0$). Dus $5 < v < 10$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h3-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    vergelijkingen
+  opgave: |-
+    Los op.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\dfrac{3}{x - 1} = \dfrac{2}{x + 1}$
+      antwoord: |-
+        $x = -5$
+      uitwerking: |-
+        $x \neq \pm 1$; $3(x + 1) = 2(x - 1)$, $x = -5$.
+    - opgave: |-
+        $x + \dfrac{4}{x} = 5$
+      antwoord: |-
+        $x = 1$ of $x = 4$
+      uitwerking: |-
+        $x \neq 0$; $x^2 - 5x + 4 = 0$.
+    - opgave: |-
+        $\dfrac{x^2 - 1}{x + 1} = 0$
+      antwoord: |-
+        $x = 1$
+      uitwerking: |-
+        $x \neq -1$; $x^2 - 1 = 0$ geeft $\pm 1$, maar $-1$ voldoet niet.
+    - opgave: |-
+        $\dfrac{x}{x - 3} = \dfrac{3}{x - 3}$
+      antwoord: |-
+        geen oplossing
+      uitwerking: |-
+        $x \neq 3$; $x = 3$ voldoet niet.
+
+- id: h3-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    ongelijkheden
+  opgave: |-
+    Los op.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\dfrac{2x - 4}{x + 3} > 0$
+      antwoord: |-
+        $x < -3$ of $x > 2$
+      uitwerking: |-
+        Nulwaarde $2$, pool $-3$: positief buiten $[-3, 2]$.
+    - opgave: |-
+        $\dfrac{x^2 - 4}{x} \geqslant 0$
+      antwoord: |-
+        $[-2, 0[ \cup [2, +\infty[$
+      uitwerking: |-
+        Nulwaarden $\pm 2$, pool $0$: \tekentabel{cccccccc}{x & & -2 & & 0 & & 2 & }{f & - & 0 & + & | & - & 0 & +}
+
+- id: h3-o3
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    met twee breuken
+  opgave: |-
+    Los op: $\dfrac{2}{x - 1} \leqslant \dfrac{1}{x + 1}$.
+  antwoord: |-
+    $\left]-\infty, -3\right] \cup \left]-1, 1\right[$
+  uitwerking: |-
+    $\frac{2(x + 1) - (x - 1)}{(x - 1)(x + 1)} \leqslant 0$, dus $\frac{x + 3}{(x - 1)(x + 1)} \leqslant 0$. Nulwaarde $-3$, polen $\pm 1$: \tekentabel{cccccccc}{x & & -3 & & -1 & & 1 & }{f & - & 0 & + & | & - & | & +} Oplossing $\left]-\infty, -3\right] \cup \left]-1, 1\right[$.
+
+- id: h3-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    gemiddelde snelheid
+  opgave: |-
+    Een fietser rijdt $30$ km heen met snelheid $v$ (in km/h), en terug met $5$ km/h minder. De hele rit duurt $5$ uur. Hoe snel reed hij heen?
+  antwoord: |-
+    $15$ km/h
+  uitwerking: |-
+    $\frac{30}{v} + \frac{30}{v - 5} = 5$ met $v > 5$. Maal $v(v - 5)$: $30(v - 5) + 30v = 5v(v - 5)$, dus $5v^2 - 85v + 150 = 0$ of $v^2 - 17v + 30 = 0$, en $v = 15$ of $v = 2$. Alleen $v = 15$ voldoet. Controle: $2$ uur heen, $3$ uur terug.
+
+- id: h3-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een concentratie
+  opgave: |-
+    Een bak bevat $10$ liter water met $2$ kg zout. Je voegt $x$ liter water toe met $0{,}5$ kg zout per liter. De concentratie is $C(x) = \dfrac{2 + 0{,}5x}{10 + x}$ kg per liter.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef de horizontale asymptoot. Wat betekent ze?
+      antwoord: |-
+        $y = 0{,}5$
+      uitwerking: |-
+        $y = 0{,}5$: na veel toevoegen nadert de concentratie die van het toegevoegde water.
+    - opgave: |-
+        Hoeveel liter moet je toevoegen opdat de concentratie minstens $0{,}4$ kg per liter is?
+      antwoord: |-
+        minstens $20$ liter
+      uitwerking: |-
+        $\frac{2 + 0{,}5x}{10 + x} \geqslant 0{,}4$ met $x \geqslant 0$: $2 + 0{,}5x \geqslant 4 + 0{,}4x$, dus $x \geqslant 20$.
+
+- id: h3-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    snijpunten
+  opgave: |-
+    Bepaal de snijpunten van de grafiek van $f(x) = \dfrac{x + 3}{x - 1}$ met de rechte $y = x$.
+  antwoord: |-
+    $(3, 3)$ en $(-1, -1)$
+  uitwerking: |-
+    $\frac{x + 3}{x - 1} = x$ met $x \neq 1$: $x + 3 = x^2 - x$, dus $x^2 - 2x - 3 = 0$ en $x = 3$ of $x = -1$.
+
+- id: h3-o7
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    fouten zoeken
+  opgave: |-
+    Elk van deze oplossingen bevat een fout. Zoek ze en verbeter.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\dfrac{x}{x - 1} \geqslant 2 \Rightarrow x \geqslant 2(x - 1) \Rightarrow x \leqslant 2$.
+      antwoord: |-
+        $\left]1, 2\right]$
+      uitwerking: |-
+        Vermenigvuldigen met $x - 1$ mag alleen als $x - 1 > 0$. Met een tekentabel: $\frac{x - 2(x - 1)}{x - 1} = \frac{2 - x}{x - 1} \geqslant 0$ geeft $\left]1, 2\right]$. Bijvoorbeeld $x = 0$ voldoet niet ($0 \geqslant 2$ is vals), maar zat wel in $x \leqslant 2$.
+    - opgave: |-
+        $\dfrac{x^2 + x}{x} = 0 \Rightarrow x + 1 = 0 \Rightarrow x = -1$, en ook $x = 0$ want dan is de teller nul.
+      antwoord: |-
+        alleen $x = -1$
+      uitwerking: |-
+        $x = 0$ is uitgesloten: de noemer is dan nul. Alleen $x = -1$.
+
+- id: h3-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    weerstanden
+  opgave: |-
+    Twee weerstanden $R_1$ en $R_2$ in parallel hebben samen een weerstand $R$ met $\dfrac1R = \dfrac{1}{R_1} + \dfrac{1}{R_2}$. Neem $R_1 = 6$ ohm.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $R = \dfrac{6R_2}{R_2 + 6}$. Wat is de horizontale asymptoot, en wat betekent ze?
+      antwoord: |-
+        $y = 6$
+      uitwerking: |-
+        $\frac1R = \frac{R_2 + 6}{6R_2}$. HA $y = 6$: hoe groot $R_2$ ook is, samen is het altijd minder dan $6$ ohm.
+    - opgave: |-
+        Welke $R_2$ geeft samen precies $4$ ohm? En wanneer is het samen minder dan $2$ ohm?
+      antwoord: |-
+        $12$ ohm; $R_2 < 3$ ohm
+      uitwerking: |-
+        $\frac{6R_2}{R_2 + 6} = 4 \iff 2R_2 = 24$, dus $R_2 = 12$. $\frac{6R_2}{R_2 + 6} < 2 \iff 6R_2 < 2R_2 + 12 \iff R_2 < 3$ (met $R_2 > 0$, dus de noemer is positief).
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h3-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: data
+    onderwerp: Kansrekenen
+  thema: |-
+    een kans met een breuk
+  opgave: |-
+    Een zak bevat $3$ rode en $x$ blauwe knikkers. Je trekt er twee zonder teruglegging. De kans op twee rode is $\dfrac{3 \cdot 2}{(x + 3)(x + 2)}$. Hoeveel blauwe knikkers zitten er in de zak als die kans $\frac{1}{5}$ is?
+  antwoord: |-
+    $x = 3$
+  uitwerking: |-
+    $(x + 3)(x + 2) = 30$, dus $x^2 + 5x - 24 = 0$ en $x = 3$ of $x = -8$. Alleen $x = 3$ kan.
+
+- id: h3-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: discreet
+    onderwerp: Rijen
+  thema: |-
+    een telescopische som
+  opgave: |-
+    Toon aan dat $\dfrac{1}{n(n + 1)} = \dfrac1n - \dfrac{1}{n + 1}$. Bereken daarmee
+    \[\frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \cdots + \frac{1}{99 \cdot 100}.\]
+  antwoord: |-
+    $\frac{99}{100}$
+  uitwerking: |-
+    $\frac1n - \frac{1}{n + 1} = \frac{n + 1 - n}{n(n + 1)}$. In de som vallen alle tussenliggende termen weg: $1 - \frac{1}{100} = \frac{99}{100}$.
+
+- id: h3-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    vergelijking
+  opgave: |-
+    Los op: $\dfrac{2}{x} - \dfrac{1}{x + 2} = \dfrac12$.
+  antwoord: |-
+    $x = \pm 2\sqrt2$
+  uitwerking: |-
+    $x \neq 0, -2$. Maal $2x(x + 2)$: $4(x + 2) - 2x = x(x + 2)$, dus $2x + 8 = x^2 + 2x$ en $x^2 = 8$. Beide oplossingen $\pm 2\sqrt2$ voldoen.
+
+- id: h3-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    valse oplossing
+  opgave: |-
+    Los op: $\dfrac{x^2 - 2x}{x - 2} = 3$.
+  antwoord: |-
+    $x = 3$
+  uitwerking: |-
+    $x \neq 2$; $x^2 - 2x = 3x - 6$, dus $x^2 - 5x + 6 = 0$ en $x = 2$ of $x = 3$. Alleen $x = 3$ voldoet.
+
+- id: h3-t3
+  soort: test
+  niveau: 2
+  thema: |-
+    ongelijkheid
+  opgave: |-
+    Los op: $\dfrac{x + 4}{x - 1} \leqslant 2$.
+  antwoord: |-
+    $\left]-\infty, 1\right[ \cup \left[6, +\infty\right[$
+  uitwerking: |-
+    $\frac{x + 4 - 2(x - 1)}{x - 1} = \frac{6 - x}{x - 1} \leqslant 0$. Nulwaarde $6$, pool $1$: \tekentabel{cccccc}{x & & 1 & & 6 & }{f & - & | & + & 0 & -} Oplossing $\left]-\infty, 1\right[ \cup \left[6, +\infty\right[$.
+
+- id: h3-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    context
+  opgave: |-
+    De gemiddelde kost per stuk is $G(q) = 3 + \dfrac{800}{q}$ euro. Vanaf hoeveel stuks is ze lager dan $5$ euro?
+  antwoord: |-
+    vanaf 401 stuks
+  uitwerking: |-
+    $\frac{800}{q} < 2$ met $q > 0$: $q > 400$. Vanaf $401$ stuks.
