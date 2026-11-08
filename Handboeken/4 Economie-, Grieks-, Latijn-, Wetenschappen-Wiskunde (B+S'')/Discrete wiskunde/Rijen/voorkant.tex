@@ -1,0 +1,59 @@
+%----------------------------------------------------------------------------------------
+% VOORKANT: dezelfde indeling voor alle handboeken. Dit bestand wordt gekopieerd door
+% Ontwerp/voorkanten/maak-voorkanten.py: pas het daar aan, niet in een cursus.
+%
+% Per cursus:  motief.tex             kunstwerk, bovenrand van de band en vormen
+%              voorkant-gegevens.tex  rubriek, richtingen, graad, uren en titel
+% Coördinaten in cm, met de oorsprong linksonder op de pagina (A4: 21 x 29,7).
+%----------------------------------------------------------------------------------------
+\providecommand{\omslagsamples}{120}
+
+% Hoogte van de bovenrand op plaats #1, in macro #2. Handig om iets op de rand te zetten.
+\newcommand{\randwaarde}[2]{\def\x{#1}\pgfmathsetmacro{#2}{\omslagrand}}
+\newcommand{\randlijn}{%
+  \draw[white,line width=2pt,line cap=round,line join=round]
+    plot[domain=0:21,samples=\omslagsamples,variable=\x] (\x,{\omslagrand});}
+\newcommand{\standaardband}{%
+  \fill[accent] (0,0) -- plot[domain=0:21,samples=\omslagsamples,variable=\x] (\x,{\omslagrand}) -- (21,0) -- cycle;}
+
+% Witte lijnen met een rand in de bandkleur, zodat ze ook op een licht schilderij zichtbaar blijven.
+\tikzset{
+  omslaglijn/.style={draw=white,line width=#1,preaction={draw=accent,line width=#1+1.8pt}},
+  omslaglijn/.default=1pt,
+  omslagstip/.style={fill=white,draw=accent,line width=.7pt},
+  omslaglabel/.style={fill=accent,text=white,inner sep=2pt,rounded corners=1.5pt,font=\small},
+}
+
+\InputIfFileExists{motief}{}{}
+
+\newcommand{\maakomslag}{%
+  \begingroup\thispagestyle{empty}%
+  \begin{tikzpicture}[remember picture,overlay]
+  \begin{scope}[shift={(current page.south west)}]
+    \node[anchor=north west,inner sep=0pt] at (0,29.7)
+      {\includegraphics[width=\paperwidth]{\omslagbestand}};
+    \ifcsname omslagband\endcsname\omslagband\else\standaardband\fi
+    \omslagmotief
+    % titel, met de rubriek erboven en de versie eronder
+    \node[name=omslagtitelnode,anchor=south west,inner sep=0pt,text=white,align=left,
+      font=\kopletter\fontsize{\omslagtitelgrootte}{\numexpr\omslagtitelgrootte*107/100\relax}\selectfont]
+      at (2,5.2) {\strut\omslagtitel\strut};
+    \node[anchor=south west,inner sep=0pt,text=fel,font=\sffamily\bfseries\normalsize]
+      at ([yshift=2mm]omslagtitelnode.north west)
+      {Wiskunde\ifdefempty{\cursusrubriek}{}{ \textbullet\ \cursusrubriek}};
+    \node[anchor=north west,fill=fel,text=inkt,rounded corners=2.5pt,inner xsep=2.5mm,inner ysep=1.2mm,
+      font=\kopletter\large] at (2,5.15) {\cursusondertitel};
+    % de gegevens
+    \node[anchor=south west,inner sep=0pt,text=white] at (2,1.45)
+      {\sffamily\small\renewcommand{\arraystretch}{1.15}\hyphenpenalty=10000\exhyphenpenalty=10000%
+       \begin{tabular}{@{}>{\bfseries}l@{\hspace{4mm}}>{\RaggedRight\arraybackslash}p{9.2cm}@{}}
+         Richtingen & \cursusrichtingen \\
+         Graad      & \cursusgraad \\
+         Wiskunde   & \cursusuren
+       \end{tabular}};
+    \node[anchor=south west,inner sep=0pt,text=white,font=\sffamily\tiny] at (2,.75) {Omslag: \omslagbron};
+    \node[anchor=south east,inner sep=0pt] at (19,1.5)
+      {\includegraphics[width=4.6cm]{axioma-logo-wit.pdf}};
+  \end{scope}
+  \end{tikzpicture}%
+  \vfill\endgroup\clearpage}

@@ -1,0 +1,75 @@
+%----------------------------------------------------------------------------------------
+% RIJEN: HANDBOEK (hoofdbestand). De oude cursus staat lokaal in ../oud/ (niet in git).
+%
+% Vanuit deze map:
+%     py -3.13 -P maak-pdf.py handboek.tex     handboek + numerieke + uitgewerkte oplossingen
+%     latexmk -pdf leerkracht.tex              leerkrachtenversie
+%     latexmk -pdf zelfstudie.tex              zelfstudieversie
+%----------------------------------------------------------------------------------------
+\documentclass[11pt,fleqn,oneside,openany]{book}
+
+\newcommand{\cursustitel}{Rijen}
+\newcommand{\cursusondertitel}{Handboek}
+\newcommand{\cursusauteur}{Heilige-Drievuldigheidscollege Leuven}
+
+% De voorkant: gegevens, kunstwerk en motief. Gemaakt door Ontwerp/voorkanten/maak-voorkanten.py.
+\input{voorkant-gegevens}
+
+\input{opmaak-v2}
+
+\ifleerkracht\renewcommand{\cursusondertitel}{Leerkrachtenversie}\fi
+\ifzelfstudie\renewcommand{\cursusondertitel}{Zelfstudie voor thuis}\fi
+
+\providecommand{\uitvoer}{cursus}
+\newif\ifcursus
+\ifdefstring{\uitvoer}{cursus}{\cursustrue}{\cursusfalse}
+
+\begin{document}
+
+\ifcursus
+\Opensolutionfile{oplossingen}
+\Opensolutionfile{uitgewerkteoplossingen}
+\fi
+
+\ifcursus\else
+\renewcommand{\cursusondertitel}{\ifdefstring{\uitvoer}{numeriek}{Numerieke oplossingen}{Uitgewerkte oplossingen}}
+\fi
+\maakomslag
+
+\ifcursus
+
+\input{hoofdstukken/00-zo-werk-je}
+\clearpage % voor de teller van het hoofdstuk verandert: deze pagina krijgt geen tab
+
+\input{hoofdstukken/01-rijen-begrippen}
+\input{hoofdstukken/02-rekenkundige-en-meetkundige-rijen}
+\input{hoofdstukken/03-somformules}
+\input{hoofdstukken/04-limiet-van-een-rij}
+
+\Closesolutionfile{oplossingen}
+\Closesolutionfile{uitgewerkteoplossingen}
+
+% De leerkrachten- en zelfstudieversie krijgen de antwoorden meteen achteraan
+\ifuitwerking
+\clearpage\global\opdrachtdeelfalse
+\section*{Antwoorden}
+\begin{multicols}{2}\footnotesize
+\input{oplossingen}
+\end{multicols}
+\fi
+
+\else
+
+\ifdefstring{\uitvoer}{numeriek}{%
+\chapter*{Numerieke oplossingen}
+\begin{multicols}{2}
+\input{oplossingen}
+\end{multicols}
+}{%
+\chapter*{Uitgewerkte oplossingen}
+\input{uitgewerkteoplossingen}
+}
+
+\fi
+
+\end{document}
