@@ -8,7 +8,7 @@ Leerplan: B+S (Katholiek Onderwijs Vlaanderen). Doelen volgens de tabel met leer
 | Analyse/Algemene functies | LPD 5-6 | nog te maken |
 | Analyse/Exponentiële en logaritmische functies | LPD 7-12 | nog te maken |
 | Analyse/Goniometrische functies | LPD 13-16 | nog te maken |
-| Analyse/Rationale functies | LPD 17, K1 | nog te maken |
+| [Analyse/Rationale functies](Analyse/Rationale%20functies) | LPD 17, K1 | 3 hoofdstukken, eerste versie (afgeleid van pakket 4), nog na te lezen |
 | Analyse/Afgeleiden | LPD 18-21 | nog te maken |
 | Analyse/Integralen | LPD 22-24 | nog te maken |
 | Algebra/Matrices | LPD 25-27 | nog te maken |
