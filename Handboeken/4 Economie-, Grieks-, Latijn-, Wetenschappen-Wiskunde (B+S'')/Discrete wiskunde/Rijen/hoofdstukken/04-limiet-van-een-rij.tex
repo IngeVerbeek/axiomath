@@ -6,46 +6,16 @@
 % Labels van dit hoofdstuk beginnen met h4-. \minigrafiek staat in hoofdstuk 1.
 %----------------------------------------------------------------------------------------
 
-\mychapter{4}{Limiet van een rij}
+﻿\mychapter{4}{Limiet van een rij}
 
 \lkr{Leerplan B+S'': LPD 45 (formele definitie, met kwantoren, toegepast op een concreet voorbeeld) en LPD 46 (limieten bepalen, convergentie, rekenregels, insluitstelling). De meetkundige reeks is een suggestie bij LPD 44 en staat hier omdat ze de limiet nodig heeft. Voorkennis: limieten van functies op oneindig. Rode draad: je kunt de limiet op drie manieren vinden, uit de grafiek, met rekenregels en uit een vergelijking, maar elke manier heeft haar voorwaarden.}
 
-\begin{oefeningen}[Start]
-\begin{oefening}
-\blokkop{Opwarmer}
-\begin{enumerate}
-  \item Bereken $\displaystyle\lim_{x\to+\infty} \frac{1}{x}$, $\displaystyle\lim_{x\to+\infty} \frac{2x+1}{x-3}$ en $\displaystyle\lim_{x\to+\infty} (1 - x^2)$.
-  \item Schrijf $|x - 5| < 0{,}1$ als een open interval.
-  \item Voor welke $n > 0$ is $\dfrac{1}{n} < 0{,}001$?
-  \item Voor welke $n$ is $0{,}5^{\,n} < 0{,}01$?
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~0; 2; $-\infty$ \quad \textbf{b.}~$]4{,}9;\ 5{,}1[$ \quad \textbf{c.}~$n>1000$ \quad \textbf{d.}~$n>6{,}64$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~De noemer wordt onbegrensd groot: 0. Hoogste machten: $\tfrac{2x}{x}=2$. De term $-x^2$ beslist: $-\infty$.\\
-\textbf{b.}~$-0{,}1<x-5<0{,}1$, dus $4{,}9<x<5{,}1$.\\
-\textbf{c.}~Omgekeerde nemen, en dan keert het teken om: $n>1000$.\\
-\textbf{d.}~$n>\log_{0{,}5} 0{,}01\approx 6{,}64$. Het teken keert om, want het grondtal is kleiner dan 1.
-\end{fullsolution}
-\end{oefening}
+Een rij gaat altijd verder: na elke term komt er nog een. De vraag is dus niet wat de laatste term is, maar wat er op de lange duur gebeurt. Komen de termen steeds dichter bij een bepaald getal? Groeien ze onbegrensd? Of blijven ze schommelen? Je kent die vraag al van functies, waar je de limiet voor $x \to +\infty$ bepaalde. In dit hoofdstuk stel je ze voor rijen, en maak je eindelijk precies wat \textit{naderen} betekent. Daarmee kun je ook iets dat op het eerste gezicht onmogelijk lijkt: oneindig veel getallen optellen.
 
-\begin{oefening}\label{oef:h4-verken}
-\blokkop{Verken}\quad Gegeven: $u_n = \dfrac{2n+3}{n}$.
-\begin{enumerate}
-  \item Bereken $u_{10}$, $u_{100}$ en $u_{1000}$. Welk getal naderen de termen?
-  \item Vanaf welk volgnummer ligt $u_n$ minder dan 0,01 van dat getal? En minder dan 0,0001?
-  \item Kun je voor elke afstand, hoe klein ook, zo'n volgnummer vinden? Hoe?
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~2,3; 2,03; 2,003; het getal 2 \quad \textbf{b.}~vanaf 301; vanaf 30\,001 \quad \textbf{c.}~ja
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$u_n=2+\tfrac3n$, dus 2,3; 2,03 en 2,003. De termen naderen 2.\\
-\textbf{b.}~$\tfrac3n<0{,}01$ geeft $n>300$, dus vanaf 301. $\tfrac3n<0{,}0001$ geeft $n>30\,000$, dus vanaf 30\,001.\\
-\textbf{c.}~Ja: voor een afstand $\varepsilon>0$ geeft $\tfrac3n<\varepsilon$ dat $n>\tfrac{3}{\varepsilon}$.
-\end{fullsolution}
-\end{oefening}
+\begin{oefeningen}[Start]
+\oef{h4-start-1}
+
+\oef{h4-verken}
 \end{oefeningen}
 
 \lkr{Laat oefening \ref{oef:h4-verken} maken vóór de uitleg. Vraag c is de kern van de formele definitie: die komt straks in sectie 2 terug. Stel ook de vraag wat `naderen' eigenlijk betekent.}
@@ -55,23 +25,27 @@
 
 \subsection{De begrippen}
 
-\begin{theorie}
-Een rij is \emph{convergent} als de termen willekeurig dicht bij een reëel getal $L$ komen en daar blijven. $L$ is de \emph{limiet}: \ $\formule{\displaystyle\lim_{n\to+\infty} u_n = L}$. Een rij die niet convergeert, is \emph{divergent}.
+In de verkenning kwamen de termen steeds dichter bij een getal, en bleven ze er ook dicht bij. Zo'n getal heet de limiet van de rij. Niet elke rij heeft er een.
 
-\vspace{1mm}
-\noindent\minigrafiek{limiet 2}{-.5}{5.5}{2,4}{1/5,2/3.5,3/3,4/2.75,5/2.6,6/2.5}\hfill
-\minigrafiek{limiet $+\infty$}{-.5}{10}{5,10}{1/.5,2/2,3/3,4/5,5/7,6/9.5}\hfill
-\minigrafiek{geen limiet}{-3}{3}{-2,2}{1/-2,2/2,3/-2,4/2,5/-2,6/2}
+\begin{theorie}
+Een rij is \emph{convergent} als de termen willekeurig dicht bij een reëel getal $L$ komen en daar blijven. $L$ is de \emph{limiet} van de rij: \ $\formule{\displaystyle\lim_{n\to+\infty} u_n = L}$. Een rij die niet convergeert, is \emph{divergent}.
 \end{theorie}
+
+Een divergente rij kan op twee manieren mislopen. Ze kan onbegrensd groeien (of dalen): dan schrijven we $\lim_{n\to+\infty} u_n = +\infty$ (of $-\infty$). Of ze kan blijven schommelen zonder ergens heen te gaan: dan bestaat de limiet niet.
+
+\figuren{\minigrafiek{limiet 2}{-.5}{5.5}{2,4}{1/5,2/3.5,3/3,4/2.75,5/2.6,6/2.5}\qquad\qquad
+\minigrafiek{limiet $+\infty$}{-.5}{10}{5,10}{1/.5,2/2,3/3,4/5,5/7,6/9.5}\qquad\qquad
+\minigrafiek{geen limiet}{-3}{3}{-2,2}{1/-2,2/2,3/-2,4/2,5/-2,6/2}}
 
 De limiet hoeft niet bereikt te worden, maar het mag wel: de rij $5,\ 5,\ 5,\ \ldots$ heeft limiet 5.
 
 \voorbeeld{}{Bepaal de limiet. Is de rij convergent of divergent?\\[.5ex]
 \textbf{a.}~$u_n = 4 - \tfrac1n$ \qquad \textbf{b.}~$u_n = 3n - n^2$ \qquad \textbf{c.}~$u_n = 1 + (-1)^n$\label{vb:h4-soort}}{%
+\uitleg{Drie rijen die elk op een andere manier verlopen. Bij elke rij vragen we ons af wat er met de termen gebeurt als $n$ heel groot wordt.}
 \begin{stappen}
-\text{a. } \lim_{n\to+\infty} \left(4 - \dfrac1n\right) = 4 & $\tfrac1n$ wordt willekeurig klein: \textbf{convergent}. \\[1.5ex]
-\text{b. } \lim_{n\to+\infty} \left(3n - n^2\right) = -\infty & De term $-n^2$ beslist: \textbf{divergent}. \\[1ex]
-\text{c. } 0,\ 2,\ 0,\ 2,\ \ldots & De limiet bestaat niet: \textbf{divergent}.
+\text{a. } \lim_{n\to+\infty} \left(4 - \dfrac1n\right) = 4 & De breuk $\tfrac1n$ wordt willekeurig klein, dus de termen komen willekeurig dicht bij 4: de rij is convergent. \\[1.5ex]
+\text{b. } \lim_{n\to+\infty} \left(3n - n^2\right) = -\infty & Voor grote $n$ is $n^2$ veel groter dan $3n$, dus de term $-n^2$ beslist: de rij is divergent. \\[1ex]
+\text{c. } 0,\ 2,\ 0,\ 2,\ \ldots & De termen springen heen en weer, en komen nooit dicht bij één getal. De limiet bestaat niet: de rij is divergent.
 \end{stappen}}
 
 \lkr{Veel leerlingen denken dat een limiet nooit bereikt wordt, en dat divergent hetzelfde is als `naar oneindig gaan'. De constante rij en de rij $1 + (-1)^n$ weerleggen allebei.}
@@ -79,83 +53,69 @@ De limiet hoeft niet bereikt te worden, maar het mag wel: de rij $5,\ 5,\ 5,\ \l
 \nujij{Bepaal de limiet van $u_n = \dfrac{(-1)^n}{n}$ en van $u_n = (-1)^n \cdot n$.}{Eerste rij: 0, convergent. Tweede rij: de limiet bestaat niet, divergent.}
 
 \begin{oefeningen}
-\begin{oefening}
-Bepaal de limiet. Is de rij convergent of divergent?
-\begin{reeks}
-  \item $u_n = 2 + \tfrac3n$
-  \item $u_n = n^2 + 1$
-  \item $u_n = 3 \cdot (-1)^n$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~2, convergent \quad \textbf{b.}~$+\infty$, divergent \quad \textbf{c.}~bestaat niet, divergent
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$\tfrac3n$ wordt willekeurig klein.\\
-\textbf{b.}~$n^2$ groeit onbegrensd.\\
-\textbf{c.}~$-3,\ 3,\ {-3},\ \ldots$: de termen naderen geen vast getal.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-k1}
 \end{oefeningen}
 
 \subsection{Rekenkundige en meetkundige rijen}
 
+Bij rekenkundige en meetkundige rijen kun je de limiet meteen aflezen uit $v$ of $q$. De grafieken uit hoofdstuk 2 tonen het al: een rechte die stijgt of daalt, en een exponentiële kromme die groeit of naar 0 krimpt.
+
 \begin{theorie}
-\begin{tabular}{@{}>{\RaggedRight\arraybackslash}p{6.2cm}>{\RaggedRight\arraybackslash}p{8.4cm}@{}}
-\textbf{Rekenkundige rij} & \textbf{Meetkundige rij} ($u_1 \neq 0$) \\[1mm]
-$v > 0$: limiet $+\infty$ & $|q| < 1$: limiet 0 \\
-$v < 0$: limiet $-\infty$ & $q = 1$: limiet $u_1$ \\
-$v = 0$: limiet $u_1$ & $q > 1$: limiet $+\infty$ of $-\infty$, volgens het teken van $u_1$ \\
- & $q \leqslant -1$: de limiet bestaat niet
-\end{tabular}
+\begin{stelling}{Limiet van een rekenkundige en een meetkundige rij}
+{\renewcommand{\arraystretch}{1.35}%
+\begin{tabular}{|>{\centering\arraybackslash}p{2.3cm}|>{\centering\arraybackslash}p{2.3cm}||>{\centering\arraybackslash}p{2.6cm}|>{\centering\arraybackslash}p{4.6cm}|}
+\hline
+\multicolumn{2}{|c||}{\textbf{rekenkundige rij}} & \multicolumn{2}{c|}{\textbf{meetkundige rij} ($u_1 \neq 0$)} \\ \hline
+$v > 0$ & $\formule{+\infty}$ & $-1 < q < 1$ & $\formule{0}$ \\ \hline
+$v < 0$ & $\formule{-\infty}$ & $q = 1$ & $\formule{u_1}$ \\ \hline
+$v = 0$ & $\formule{u_1}$ & $q > 1$ & $\formule{+\infty}$ als $u_1 > 0$, $\formule{-\infty}$ als $u_1 < 0$ \\ \hline
+ & & $q \leqslant -1$ & bestaat niet \\ \hline
+\end{tabular}}
+\end{stelling}
+
+\begin{bewijs}
+Een rekenkundige rij is $u_n = v\,n + (u_1 - v)$: de limiet van een eerstegraadsfunctie met richtingscoëfficiënt $v$. Een meetkundige rij is $u_n = u_1 \cdot q^{\,n-1}$. Bij $q > 0$ ken je de limiet van de exponentiële functie $q^x$: 0 als $q < 1$, en $+\infty$ als $q > 1$. Bij $-1 < q < 0$ is $|u_n| = |u_1| \cdot |q|^{\,n-1}$, en dat gaat naar 0, dus ook $u_n$. Bij $q \leqslant -1$ wisselen de termen van teken, terwijl $|u_n| \geqslant |u_1|$: ze kunnen dus niet dicht bij één getal blijven.
+\end{bewijs}
 \end{theorie}
 
 \voorbeeld{}{Bepaal de limiet.\\[.5ex]
 \textbf{a.}~$9,\ 7,\ 5,\ \ldots$ \qquad \textbf{b.}~$-3,\ {-6},\ {-12},\ \ldots$ \qquad \textbf{c.}~$8,\ {-4},\ 2,\ \ldots$ \qquad \textbf{d.}~$1,\ {-3},\ 9,\ \ldots$\label{vb:h4-rrmr}}{%
+\uitleg{Eén rij per regel van de tabel. We bepalen telkens eerst de soort rij en $v$ of $q$, en zoeken dan de juiste regel.}
 \begin{stappen}
-\text{a. } v = -2 < 0 & Limiet $-\infty$. \\
-\text{b. } q = 2 > 1 \text{ en } u_1 < 0 & Limiet $-\infty$. \\
-\text{c. } q = -\tfrac12,\ |q| < 1 & Limiet 0, ook al wisselt het teken. \\
-\text{d. } q = -3 \leqslant -1 & De limiet bestaat niet.
+\text{a. } v = -2 < 0 & Rekenkundig en dalend: de limiet is $-\infty$. \\
+\text{b. } q = 2 > 1 \text{ en } u_1 < 0 & Meetkundig, en de termen worden steeds negatiever: de limiet is $-\infty$. \\
+\text{c. } q = -\tfrac12 & Meetkundig met $-1 < q < 1$: de limiet is 0, ook al wisselt het teken. \\
+\text{d. } q = -3 \leqslant -1 & Meetkundig, met tekens die wisselen en termen die groter worden: de limiet bestaat niet.
 \end{stappen}}
 
 \begin{oefeningen}
-\begin{oefening}
-Bepaal de limiet van \ \textbf{a.}~$2,\ 6,\ 18,\ \ldots$ \quad \textbf{b.}~$100,\ 10,\ 1,\ \ldots$ \quad \textbf{c.}~$5,\ {-5},\ 5,\ \ldots$
-\begin{solution}
-\textbf{a.}~$+\infty$ \quad \textbf{b.}~0 \quad \textbf{c.}~bestaat niet
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$q=3>1$ en $u_1>0$.\\
-\textbf{b.}~$q=\tfrac{1}{10}$, dus $|q|<1$.\\
-\textbf{c.}~$q=-1$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-k2}
 \end{oefeningen}
 
 %========================================================================================
 \section{De formele definitie}
 
+`Willekeurig dicht' klinkt duidelijk, maar wat betekent het precies? Hoe dicht is dicht genoeg? Wiskundigen hebben daar in de 19de eeuw een nauwkeurige definitie voor gevonden. Kies een band rond $L$, zo smal als je wilt, met breedte $\varepsilon$ (de Griekse letter epsilon) boven en onder $L$. Dan moeten vanaf een bepaald volgnummer $N$ alle termen in die band liggen. Kies je de band smaller, dan mag die $N$ groter worden, maar er moet er altijd een zijn.
+
 \begin{theorie}
 \begin{minipage}[t]{.57\linewidth}
-`Willekeurig dicht' betekent: hoe smal je een band rond $L$ ook kiest, vanaf een bepaald volgnummer liggen alle termen in die band.
-
-\vspace{1.5mm}
+\vspace{0pt}
 $\formule{\displaystyle\lim_{n\to+\infty} u_n = L \ \Leftrightarrow}$
 
 \vspace{.5mm}
 $\formule{\forall\, \varepsilon > 0,\ \exists\, N \in \mathbb{N}: \ n > N \Rightarrow |u_n - L| < \varepsilon}$
 
-\vspace{1.5mm}
+\vspace{2.5mm}
 $\formule{\displaystyle\lim_{n\to+\infty} u_n = +\infty \ \Leftrightarrow}$
 
 \vspace{.5mm}
 $\formule{\forall\, r > 0,\ \exists\, N \in \mathbb{N}: \ n > N \Rightarrow u_n > r}$
 
-\vspace{1mm}
-Bij $-\infty$ staat er op het einde $u_n < -r$.
+\vspace{2.5mm}
+Bij $-\infty$ staat er op het einde $\formule{u_n < -r}$.
 \end{minipage}\hfill
 \begin{minipage}[t]{.4\linewidth}
-\vspace{-2mm}
+\vspace{0pt}
 \begin{tikzpicture}[x=.33cm,y=.72cm,>={Stealth[length=1.6mm]},font=\scriptsize]
   \fill[accent!18] (0,1.4) rectangle (13,2.6);
   \draw[lijngrijs,dashed] (0,2) -- (13,2);
@@ -172,36 +132,34 @@ Bij $-\infty$ staat er op het einde $u_n < -r$.
 \end{minipage}
 \end{theorie}
 
-\thuis{Lees de definitie als een spel. Je tegenstander kiest een $\varepsilon$, hoe klein ook. Jij moet dan een $N$ vinden zodat alle termen na $u_N$ minder dan $\varepsilon$ van $L$ liggen. Lukt dat voor elke $\varepsilon$, dan is $L$ de limiet. De volgorde telt: $N$ mag van $\varepsilon$ afhangen.}
+Lees de definitie als een spel. Je tegenstander kiest een $\varepsilon$, hoe klein ook. Jij moet dan een $N$ vinden zodat alle termen na $u_N$ minder dan $\varepsilon$ van $L$ liggen. Lukt dat voor elke $\varepsilon$, dan is $L$ de limiet. De volgorde telt: $N$ mag van $\varepsilon$ afhangen. Bij een limiet $+\infty$ kiest je tegenstander geen band, maar een hoogte $r$, en moeten alle termen vanaf een bepaald volgnummer boven die hoogte liggen.
 
 \voorbeeld{}{Bewijs met de definitie: $\displaystyle\lim_{n\to+\infty} \dfrac{2n+3}{n} = 2$.\label{vb:h4-bewijs}}{%
+\uitleg{We moeten voor elke $\varepsilon$ een $N$ vinden. Daarvoor werken we de afstand tot de limiet uit, en zoeken we voor welke $n$ die kleiner is dan $\varepsilon$. Dat is kladwerk: het eigenlijke bewijs is de laatste stap.}
 \begin{stappen}
-\left|\dfrac{2n+3}{n} - 2\right| = \dfrac{3}{n} & Neem een willekeurige $\varepsilon > 0$ en werk de afstand uit. \\[1.5ex]
-\dfrac{3}{n} < \varepsilon \ \Leftrightarrow \ n > \dfrac{3}{\varepsilon} & Los op naar $n$. \\[1.5ex]
-N \geqslant \dfrac{3}{\varepsilon},\ N \in \mathbb{N} & Kies zo'n $N$. Dan geldt voor elke $n > N$ dat $\left|u_n - 2\right| < \varepsilon$. \textbf{Bewezen.} \\[1.5ex]
-\varepsilon = 0{,}01 \ \Rightarrow \ N = 300 & Controle met oefening \ref{oef:h4-verken}: vanaf $n = 301$.
+\left|\dfrac{2n+3}{n} - 2\right| = \left|\dfrac{3}{n}\right| = \dfrac{3}{n} & Neem een willekeurige $\varepsilon > 0$. We werken de afstand tot 2 uit. \\[1.5ex]
+\dfrac{3}{n} < \varepsilon \ \Leftrightarrow \ n > \dfrac{3}{\varepsilon} & We lossen op naar $n$. \\[1.5ex]
+N \geqslant \dfrac{3}{\varepsilon},\ N \in \mathbb{N} & Kies zo'n $N$. Voor elke $n > N$ is dan $n > \tfrac{3}{\varepsilon}$, en dus $\left|u_n - 2\right| < \varepsilon$. Dat bewijst de limiet. \\[1.5ex]
+\varepsilon = 0{,}01 \ \Rightarrow \ N = 300 & Bij een concrete $\varepsilon$ vind je een concrete $N$: vanaf $n = 301$ liggen alle termen in de band. Vergelijk met oefening \ref{oef:h4-verken}.
 \end{stappen}}
 
 \lkr{Laat het verschil zien tussen het kladwerk (oplossen naar $n$) en het bewijs zelf (kies $N$, en dan volgt het). Een concreet voorbeeld volstaat volgens het leerplan; de oefeningen op niveau 3 gaan verder.}
 
 \voorbeeld{}{Bewijs met de definitie: $\displaystyle\lim_{n\to+\infty} \sqrt{n} = +\infty$.\label{vb:h4-bewijsinf}}{%
+\uitleg{Nu zoeken we bij elke hoogte $r$ een $N$ waarna alle termen boven $r$ liggen.}
 \begin{stappen}
-\sqrt{n} > r \ \Leftrightarrow \ n > r^2 & Neem een willekeurige $r > 0$ en los op naar $n$. \\
-N \geqslant r^2,\ N \in \mathbb{N} & Kies zo'n $N$. Dan geldt voor elke $n > N$ dat $\sqrt{n} > r$. \textbf{Bewezen.}
+\sqrt{n} > r \ \Leftrightarrow \ n > r^2 & Neem een willekeurige $r > 0$. Omdat beide leden positief zijn, mogen we kwadrateren. \\
+N \geqslant r^2,\ N \in \mathbb{N} & Kies zo'n $N$. Voor elke $n > N$ is dan $n > r^2$, en dus $\sqrt{n} > r$. Dat bewijst de limiet.
 \end{stappen}}
+
+\begin{werkwijze}
+Een limiet bewijzen met de definitie: neem een willekeurige $\varepsilon > 0$ (of $r > 0$), werk $|u_n - L| < \varepsilon$ (of $u_n > r$) uit tot een voorwaarde $n > \ldots$, en kies $N$ minstens zo groot. Schrijf daarna op dat voor elke $n > N$ de ongelijkheid geldt.
+\end{werkwijze}
 
 \nujij{Bewijs met de definitie: $\displaystyle\lim_{n\to+\infty} \dfrac{5}{n} = 0$.}{$\tfrac5n < \varepsilon$ geeft $n > \tfrac{5}{\varepsilon}$. Kies $N \geqslant \tfrac{5}{\varepsilon}$.}
 
 \begin{oefeningen}
-\begin{oefening}
-Bewijs met de definitie: $\displaystyle\lim_{n\to+\infty} \dfrac{4n+1}{n} = 4$. Welke $N$ past bij $\varepsilon = 0{,}02$?
-\begin{solution}
-Kies $N\geqslant\tfrac{1}{\varepsilon}$; bij $\varepsilon=0{,}02$ is $N=50$.
-\end{solution}
-\begin{fullsolution}
-Neem $\varepsilon>0$. $\left|\dfrac{4n+1}{n}-4\right|=\dfrac1n$ en $\dfrac1n<\varepsilon$ geeft $n>\dfrac{1}{\varepsilon}$. Kies $N\geqslant\dfrac{1}{\varepsilon}$: dan geldt voor elke $n>N$ dat $|u_n-4|<\varepsilon$. Bij $\varepsilon=0{,}02$ is $N=50$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-k3}
 \end{oefeningen}
 
 %========================================================================================
@@ -209,199 +167,217 @@ Neem $\varepsilon>0$. $\left|\dfrac{4n+1}{n}-4\right|=\dfrac1n$ en $\dfrac1n<\va
 
 \subsection{Rekenregels}
 
+Voor elke limiet een bewijs met $\varepsilon$ schrijven, is veel werk. Gelukkig hoeft dat niet: als de rij een voorschrift heeft dat ook voor alle reële $x$ zin heeft, mag je de limiet van die functie gebruiken. De functie neemt in de natuurlijke getallen precies de waarden van de rij aan.
+
 \begin{theorie}
-Is $u_n = f(n)$ en $\displaystyle\lim_{x\to+\infty} f(x) = L$, dan is ook $\displaystyle\lim_{n\to+\infty} u_n = L$. De rekenregels voor limieten van functies mogen dus: limiet van een som, verschil, product en quotiënt. De rijen $\tfrac1n$ en $\tfrac{1}{n^2}$ hebben limiet 0.
+\begin{stelling}{Limiet van een rij en van een functie}
+Is $u_n = f(n)$ en $\displaystyle\lim_{x\to+\infty} f(x) = L$, dan is $\formule{\displaystyle\lim_{n\to+\infty} u_n = L}$.
+\end{stelling}
+
+\begin{bewijs}
+Neem $\varepsilon > 0$. Omdat $\lim_{x\to+\infty} f(x) = L$, is er een $X$ met $|f(x) - L| < \varepsilon$ voor elke $x > X$. Kies een natuurlijk getal $N \geqslant X$. Voor elke $n > N$ is dan ook $n > X$, dus $|u_n - L| = |f(n) - L| < \varepsilon$.
+\end{bewijs}
 \end{theorie}
 
-Let op: het omgekeerde geldt niet. $u_n = \sin(n\pi)$ is de rij $0,\ 0,\ 0,\ \ldots$ met limiet 0, maar $\displaystyle\lim_{x\to+\infty} \sin(x\pi)$ bestaat niet. En $\infty - \infty$ is niet 0: reken eerst om.
+Zo mag je alle rekenregels voor limieten van functies gebruiken: de limiet van een som, een verschil, een product en een quotiënt. De rijen $\tfrac1n$ en $\tfrac{1}{n^2}$ hebben bijvoorbeeld limiet 0.
 
-\voorbeeld{}{Bereken \ \textbf{a.}~$\displaystyle\lim_{n\to+\infty} \dfrac{3n^2 - n}{n^2 + 2}$ \quad \textbf{b.}~$\displaystyle\lim_{n\to+\infty} \left(\sqrt{n+1} - \sqrt{n}\right)$\label{vb:h4-reken}}{%
+Het omgekeerde geldt niet. De rij $u_n = \sin(n\pi)$ is $0,\ 0,\ 0,\ \ldots$ met limiet 0, maar $\lim_{x\to+\infty} \sin(x\pi)$ bestaat niet: tussen de natuurlijke getallen blijft de sinus schommelen. Let ook op met $\infty - \infty$: dat is niet 0, maar een onbepaaldheid. Reken eerst om.
+
+\voorbeeld{}{Bereken $\displaystyle\lim_{n\to+\infty} \dfrac{3n^2 - n}{n^2 + 2}$.\label{vb:h4-reken}}{%
+\uitleg{Teller en noemer gaan allebei naar $+\infty$. Daarom delen we ze door de hoogste macht van $n$ die in de noemer staat: dan blijven er termen over die naar 0 gaan.}
 \begin{stappen}
-\text{a. } \lim_{n\to+\infty} \dfrac{3 - \tfrac1n}{1 + \tfrac{2}{n^2}} = \dfrac{3 - 0}{1 + 0} = 3 & Deel teller en noemer door de hoogste macht, $n^2$. \\[3ex]
-\text{b. } \sqrt{n+1} - \sqrt{n} = \dfrac{1}{\sqrt{n+1} + \sqrt{n}} & Dit is $\infty - \infty$. Vermenigvuldig teller en noemer met de toegevoegde uitdrukking. \\[3ex]
-\lim_{n\to+\infty} \dfrac{1}{\sqrt{n+1} + \sqrt{n}} = 0 & De noemer wordt onbegrensd groot.
+\dfrac{3n^2 - n}{n^2 + 2} = \dfrac{3 - \tfrac1n}{1 + \tfrac{2}{n^2}} & We delen teller en noemer door $n^2$. \\[3ex]
+\lim_{n\to+\infty} \dfrac{3 - \tfrac1n}{1 + \tfrac{2}{n^2}} = \dfrac{3 - 0}{1 + 0} = 3 & De breuken $\tfrac1n$ en $\tfrac{2}{n^2}$ gaan naar 0.
+\end{stappen}}
+
+\voorbeeld{}{Bereken $\displaystyle\lim_{n\to+\infty} \left(\sqrt{n+1} - \sqrt{n}\right)$.\label{vb:h4-reken2}}{%
+\uitleg{Beide wortels gaan naar $+\infty$: dit is de onbepaaldheid $\infty - \infty$. Met de toegevoegde uitdrukking maken we er een breuk van, zodat de wortels niet meer van elkaar afgetrokken worden.}
+\begin{stappen}
+\sqrt{n+1} - \sqrt{n} = \dfrac{(n+1) - n}{\sqrt{n+1} + \sqrt{n}} & We vermenigvuldigen teller en noemer met $\sqrt{n+1} + \sqrt{n}$. In de teller staat dan een merkwaardig product. \\[3ex]
+\lim_{n\to+\infty} \dfrac{1}{\sqrt{n+1} + \sqrt{n}} = 0 & De teller is 1, en de noemer wordt onbegrensd groot.
 \end{stappen}}
 
 \nujij{Bereken $\displaystyle\lim_{n\to+\infty} \dfrac{2n - n^2}{4n^2 + 1}$.}{$-\tfrac14$: deel teller en noemer door $n^2$.}
 
 \begin{oefeningen}
-\begin{oefening}
-Bereken.
-\begin{reeks}[2]
-  \item $\displaystyle\lim_{n\to+\infty} \dfrac{5n + 2}{3n - 1}$
-  \item $\displaystyle\lim_{n\to+\infty} \left(\sqrt{n+4} - \sqrt{n}\right)$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~$\tfrac53$ \quad \textbf{b.}~0
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~Deel door $n$: $\dfrac{5+\tfrac2n}{3-\tfrac1n}\to\dfrac53$.\\
-\textbf{b.}~$\sqrt{n+4}-\sqrt{n}=\dfrac{4}{\sqrt{n+4}+\sqrt{n}}\to 0$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-k4}
 \end{oefeningen}
 
 \subsection{De insluitstelling}
 
+Sommige rijen bevatten een factor die blijft schommelen, zoals $\sin n$, $\cos n$ of $(-1)^n$. Daarvan bestaat de limiet niet, dus de rekenregels helpen niet. Zo'n factor is wel begrensd. Kun je de rij dan insluiten tussen twee rijen met dezelfde limiet, dan heeft ze geen andere keuze.
+
 \begin{theorie}
-Als $t_n \leqslant u_n \leqslant v_n$ vanaf een bepaald volgnummer, en $\displaystyle\lim_{n\to+\infty} t_n = \lim_{n\to+\infty} v_n = L$, dan is ook $\displaystyle\lim_{n\to+\infty} u_n = L$.
+\begin{stelling}{Insluitstelling}
+Als $t_n \leqslant u_n \leqslant v_n$ vanaf een bepaald volgnummer, en $\displaystyle\lim_{n\to+\infty} t_n = \lim_{n\to+\infty} v_n = L$, dan is ook $\formule{\displaystyle\lim_{n\to+\infty} u_n = L}$.
+\end{stelling}
+
+\begin{bewijs}
+Neem $\varepsilon > 0$. Vanaf een bepaald volgnummer ligt $t_n$ boven $L - \varepsilon$, vanaf een ander volgnummer ligt $v_n$ onder $L + \varepsilon$, en vanaf een derde geldt $t_n \leqslant u_n \leqslant v_n$. Neem voor $N$ het grootste van de drie. Voor elke $n > N$ is dan
+\bewijsregel{L - \varepsilon < t_n \leqslant u_n \leqslant v_n < L + \varepsilon , \quad\text{dus}\quad |u_n - L| < \varepsilon .}
+\end{bewijs}
 \end{theorie}
 
-\begin{minipage}[t]{.6\linewidth}
-Handig bij een factor die blijft schommelen, zoals $\sin n$, $\cos n$ of $(-1)^n$: die laat zich niet met rekenregels aanpakken, maar is wel begrensd.
-\end{minipage}\hfill
-\begin{minipage}[t]{.37\linewidth}
-\vspace{-1mm}
-\begin{tikzpicture}[x=.56cm,y=1.05cm,>={Stealth[length=1.6mm]},font=\scriptsize]
-  \draw[->,lijngrijs] (-.1,0) -- (8.8,0) node[right,text=black] {$n$};
-  \draw[->,lijngrijs] (0,-1.1) -- (0,1.2) node[above,text=black] {$u_n$};
-  \draw[lijngrijs,dashed,domain=.9:8.5,samples=40] plot (\x,{1/\x});
-  \draw[lijngrijs,dashed,domain=.9:8.5,samples=40] plot (\x,{-1/\x});
+Informeel gezegd: zit een rij geklemd tussen twee rijen die naar hetzelfde getal gaan, dan moet ze mee.
+
+\voorbeeld{}{Bereken $\displaystyle\lim_{n\to+\infty} \dfrac{\cos n}{n}$.\label{vb:h4-insluit}}{%
+\naast{\uitleg{De limiet van $\cos n$ bestaat niet, maar $\cos n$ ligt altijd tussen $-1$ en 1. We sluiten de rij in tussen twee eenvoudige rijen.}
+\begin{stappenvrij}{4cm}{4.6cm}
+-1 \leqslant \cos n \leqslant 1 & De cosinus is begrensd. \\[1ex]
+-\dfrac1n \leqslant \dfrac{\cos n}{n} \leqslant \dfrac1n & We delen door $n > 0$: de tekens blijven. \\[1.5ex]
+\lim_{n\to+\infty} \dfrac{\cos n}{n} = 0 & Beide grenzen hebben limiet 0, dus ook de ingesloten rij.
+\end{stappenvrij}}{\begin{tikzpicture}[x=.5cm,y=1.05cm,font=\scriptsize]
+  \draw[black!14,very thin,xstep=1,ystep=.5] (0,-1) grid (8.4,1);
+  \draw[->,grijs] (0,0) -- (8.8,0) node[right,text=black] {$n$};
+  \draw[->,grijs] (0,-1.1) -- (0,1.2) node[above,text=black] {$u_n$};
+  \foreach \t in {2,4,6,8}{\node[below,inner sep=1.5pt] at (\t,-1) {$\t$};}
+  \foreach \t in {-1,1}{\node[left,inner sep=1.5pt] at (0,\t) {$\t$};}
+  \draw[grijs,dashed,domain=.9:8.4,samples=40] plot (\x,{1/\x});
+  \draw[grijs,dashed,domain=.9:8.4,samples=40] plot (\x,{-1/\x});
   \node[right=-1pt] at (1.25,.82) {$\tfrac1n$};
   \node[right=-1pt] at (1.25,-.82) {$-\tfrac1n$};
   \foreach \x/\y in {1/.54,2/-.208,3/-.33,4/-.163,5/.057,6/.16,7/.108,8/-.018}
     \fill[accent] (\x,\y) circle (1.6pt);
-\end{tikzpicture}
-\end{minipage}
-
-\voorbeeld{}{Bereken $\displaystyle\lim_{n\to+\infty} \dfrac{\cos n}{n}$. (Zie de figuur.)\label{vb:h4-insluit}}{%
-\begin{stappen}
--1 \leqslant \cos n \leqslant 1 & De cosinus is begrensd. \\[1ex]
--\dfrac1n \leqslant \dfrac{\cos n}{n} \leqslant \dfrac1n & Delen door $n > 0$. \\[1.5ex]
-\lim_{n\to+\infty} \dfrac{\cos n}{n} = 0 & Beide grenzen hebben limiet 0: de rij wordt ingesloten.
-\end{stappen}}
+\end{tikzpicture}}}
 
 \begin{oefeningen}
-\begin{oefening}
-Bereken $\displaystyle\lim_{n\to+\infty} \dfrac{\sin n}{n^2}$.
-\begin{solution}
-0
-\end{solution}
-\begin{fullsolution}
-$-\dfrac{1}{n^2}\leqslant\dfrac{\sin n}{n^2}\leqslant\dfrac{1}{n^2}$, en beide grenzen hebben limiet 0.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-k5}
 \end{oefeningen}
 
 %========================================================================================
 \section{Stijgende en dalende rijen}
 
-\begin{theorie}
-Een rij is \emph{stijgend} als $u_{n+1} > u_n$ voor elke $n$, en \emph{dalend} als $u_{n+1} < u_n$ voor elke $n$. Een rij is \emph{naar boven begrensd} als er een $M$ is met $u_n \leqslant M$ voor elke $n$, en \emph{naar onder begrensd} als er een $m$ is met $u_n \geqslant m$ voor elke $n$. Begrensd is allebei.
+Soms kun je een limiet niet uitrekenen, maar wil je toch weten of ze bestaat. Dan helpt het verloop van de rij: gaan de termen alleen maar omhoog, en is er een plafond dat ze nooit doorbreken?
 
-\vspace{1.5mm}
-\textbf{Eigenschap.} Een stijgende, naar boven begrensde rij is convergent. Een dalende, naar onder begrensde rij ook.
+\begin{theorie}
+Een rij is \emph{stijgend} als $\formule{u_{n+1} > u_n}$ voor elke $n$, en \emph{dalend} als $\formule{u_{n+1} < u_n}$ voor elke $n$.
+
+\vspace{1mm}
+Een rij is \emph{naar boven begrensd} als er een $M$ is met $\formule{u_n \leqslant M}$ voor elke $n$, en \emph{naar onder begrensd} als er een $m$ is met $\formule{u_n \geqslant m}$ voor elke $n$. Is ze allebei, dan is ze \emph{begrensd}.
+
+\begin{stelling}{Stijgend en begrensd}
+Een stijgende, naar boven begrensde rij is convergent. Een dalende, naar onder begrensde rij ook.
+\end{stelling}
 \end{theorie}
 
-Eén voorwaarde volstaat niet: $u_n = n$ is stijgend en $u_n = (-1)^n$ is begrensd, maar beide zijn divergent.
-
-\thuis{Stel je de grafiek voor: de punten gaan alleen maar omhoog, maar er is een plafond dat ze niet kunnen doorbreken. Dan moeten ze zich wel ophopen onder een bepaalde hoogte. Die hoogte is de limiet. Het bewijs gebruiken we hier niet.}
+Stel je de grafiek voor: de punten gaan alleen maar omhoog, maar er is een plafond dat ze niet kunnen doorbreken. Dan moeten ze zich wel ophopen onder een bepaalde hoogte, en die hoogte is de limiet. Het bewijs steunt op een eigenschap van de reële getallen die je in het secundair niet ziet: we gebruiken de stelling dus zonder bewijs. Eén voorwaarde volstaat niet: $u_n = n$ is stijgend en $u_n = (-1)^n$ is begrensd, maar beide zijn divergent.
 
 \voorbeeld{}{Toon aan dat $u_n = \dfrac{n}{n+2}$ stijgend en naar boven begrensd is. Wat is de limiet?\label{vb:h4-monotoon}}{%
+\uitleg{Voor de bovengrens herschrijven we de breuk, zodat we zien dat ze kleiner is dan 1. Om te tonen dat de rij stijgt, berekenen we het verschil van twee opeenvolgende termen, en tonen we dat het positief is.}
 \begin{stappen}
-u_n = 1 - \dfrac{2}{n+2} & Herschrijf. Dan is $u_n < 1$ voor elke $n$: bovengrens 1. \\[2ex]
-u_{n+1} - u_n = \dfrac{2}{n+2} - \dfrac{2}{n+3} & Bereken het verschil van twee opeenvolgende termen. \\[2ex]
-\phantom{u_{n+1} - u_n} = \dfrac{2}{(n+2)(n+3)} > 0 & Positief voor elke $n$: stijgend, dus convergent. \\[2ex]
-\lim_{n\to+\infty} u_n = 1 & De eigenschap zegt dat er een limiet is. De rekenregels geven hier de waarde.
-\end{stappen}}
+u_n = \dfrac{(n+2) - 2}{n+2} = 1 - \dfrac{2}{n+2} & We trekken 2 af in de teller, en tellen het er weer bij. Dus $u_n < 1$ voor elke $n$: 1 is een bovengrens. \\[2ex]
+u_{n+1} - u_n = \dfrac{2}{n+2} - \dfrac{2}{n+3} = \dfrac{2}{(n+2)(n+3)} & Het verschil van twee opeenvolgende termen, op gelijke noemer gezet. \\[2ex]
+u_{n+1} - u_n > 0 & Teller en noemer zijn positief voor elke $n$: de rij stijgt. Volgens de stelling is ze dus convergent. \\[1ex]
+\lim_{n\to+\infty} u_n = 1 & De stelling zegt dat er een limiet is. De rekenregels geven de waarde.
+\end{stappen}
+\naast{De figuur toont het: de punten stijgen, maar blijven onder het plafond 1, en kruipen er steeds dichter tegenaan.}{\begin{tikzpicture}[x=.4cm,y=2cm,font=\scriptsize]
+  \draw[black!14,very thin,xstep=1,ystep=.25] (0,0) grid (10.4,1.1);
+  \draw[->,grijs] (0,0) -- (10.8,0) node[right,text=black] {$n$};
+  \draw[->,grijs] (0,0) -- (0,1.2) node[above,text=black] {$u_n$};
+  \foreach \t in {2,4,...,10}{\node[below,inner sep=1.5pt] at (\t,0) {$\t$};}
+  \node[left,inner sep=1.5pt] at (0,.5) {$0{,}5$};
+  \node[left,inner sep=1.5pt] at (0,1) {$1$};
+  \draw[grijs,dashed] (0,1) -- (10.4,1);
+  \foreach \x in {1,...,10}{\fill[accent] (\x,{\x/(\x+2)}) circle (1.6pt);}
+\end{tikzpicture}}}
 
 \begin{oefeningen}
-\begin{oefening}
-Toon aan dat $u_n = 4 + \dfrac{3}{n}$ dalend en naar onder begrensd is. Wat is de limiet?
-\begin{solution}
-Ondergrens 4; limiet 4
-\end{solution}
-\begin{fullsolution}
-$u_n>4$ voor elke $n$, dus 4 is een ondergrens. $u_{n+1}-u_n=\dfrac{3}{n+1}-\dfrac3n=\dfrac{-3}{n(n+1)}<0$, dus de rij is dalend. De limiet is 4.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-k6}
 \end{oefeningen}
 
 %========================================================================================
 \section{Discrete dynamische processen}
 
+In opdracht \ref{oef:h1-o14} van hoofdstuk 1 verdween er elke nacht 20\,\% van het chloor in een zwembad, en kwam er elke ochtend 50 g bij. Zo'n rij met $u_n = a\,u_{n-1} + b$ heet een \textit{discreet dynamisch proces}. Discreet: je kijkt met vaste tussenpozen. Dynamisch: er verandert iets. Op de lange duur komt zo'n proces vaak tot rust in een \textit{evenwicht}: er verdwijnt dan evenveel als er bijkomt.
+
 \begin{theorie}
-Een proces met $u_n = a\,u_{n-1} + b$ en $|a| < 1$ gaat naar een \emph{evenwicht}. Dat vind je door $u_n$ en $u_{n-1}$ gelijk te stellen aan de limiet $L$:
+\begin{stelling}{Evenwicht van een dynamisch proces}
+Is $u_n = a\,u_{n-1} + b$ met $|a| < 1$, dan is de rij convergent, en haar limiet $L$ voldoet aan
 
 \vspace{1mm}
-\qquad $\formule{L = a L + b}$
+\qquad $\formule{L = a L + b}$ \quad dus \quad $\formule{L = \dfrac{b}{1 - a}}$
+\end{stelling}
+
+\begin{bewijs}
+Neem $L = \tfrac{b}{1 - a}$, zodat $L = aL + b$, en bekijk de hulprij $v_n = u_n - L$. Trek de twee gelijkheden af:
+\bewijsregel{v_n = u_n - L = (a\,u_{n-1} + b) - (aL + b) = a\,(u_{n-1} - L) = a\,v_{n-1} .}
+De hulprij is meetkundig met quotiënt $a$, en omdat $|a| < 1$, gaat ze naar 0. Dan gaat $u_n = L + v_n$ naar $L$.
+\end{bewijs}
 \end{theorie}
 
-\begin{minipage}[t]{.6\linewidth}
-Discreet: je kijkt met vaste tussenpozen. Dynamisch: er verandert iets. In het evenwicht blijft de hoeveelheid gelijk, maar er verdwijnt en er komt evenveel bij.
-\end{minipage}\hfill
-\begin{minipage}[t]{.37\linewidth}
-\vspace{-1mm}
-\begin{tikzpicture}[x=.39cm,y=.0095cm,>={Stealth[length=1.6mm]},font=\scriptsize]
-  \draw[->,lijngrijs] (-.1,0) -- (11,0) node[right,text=black] {$n$};
-  \draw[->,lijngrijs] (0,-10) -- (0,450) node[above,text=black] {$u_n$};
-  \foreach \x in {2,4,...,10} \draw[lijngrijs] (\x,6) -- (\x,-6) node[below=-1pt,text=grijs] {\x};
-  \foreach \y in {100,200,300,400} \draw[lijngrijs] (.07,\y) -- (-.07,\y) node[left=-1pt,text=grijs] {\y};
-  \draw[lijngrijs,dashed] (0,250) -- (10.6,250) node[below=-1pt,pos=.9,text=black] {250};
+\voorbeeld{}{Het zwembad: $u_0 = 400$ en $u_n = 0{,}8\,u_{n-1} + 50$. Bepaal het evenwicht $L$ en een expliciet voorschrift.\label{vb:h4-dyn}}{%
+\naast{\uitleg{Omdat $|0{,}8| < 1$, bestaat de limiet. We vinden ze uit de vergelijking, en het expliciet voorschrift met de hulprij uit het bewijs.}
+\begin{stappenvrij}{4.6cm}{4.2cm}
+L = 0{,}8\,L + 50 \ \Rightarrow \ L = 250 & $0{,}2\,L = 50$: het evenwicht is 250 g chloor. \\
+v_n = u_n - 250 & De hulprij is meetkundig met $q = 0{,}8$ en $v_0 = 400 - 250 = 150$. \\
+u_n = 250 + 150 \cdot 0{,}8^{\,n} & Dus $v_n = 150 \cdot 0{,}8^{\,n}$. Controle: $u_1 = 250 + 120 = 370$. \\
+\lim_{n\to+\infty} u_n = 250 & Want $0{,}8^{\,n} \to 0$.
+\end{stappenvrij}}{\begin{tikzpicture}[x=.38cm,y=.0095cm,font=\scriptsize]
+  \draw[black!14,very thin,xstep=1,ystep=50] (0,0) grid (10.4,420);
+  \draw[->,grijs] (0,0) -- (10.8,0) node[right,text=black] {$n$};
+  \draw[->,grijs] (0,0) -- (0,450) node[above,text=black] {$u_n$};
+  \foreach \t in {2,4,...,10}{\node[below,inner sep=1.5pt] at (\t,0) {$\t$};}
+  \foreach \t in {100,200,300,400}{\node[left,inner sep=1.5pt] at (0,\t) {$\t$};}
+  \draw[grijs,dashed] (0,250) -- (10.4,250) node[right,text=black] {250};
   \foreach \x/\y in {0/400,1/370,2/346,3/326.8,4/311.4,5/299.2,6/289.3,7/281.5,8/275.2,9/270.1,10/266.1}
     \fill[accent] (\x,\y) circle (1.6pt);
-\end{tikzpicture}
-\end{minipage}
+\end{tikzpicture}}}
 
-\voorbeeld{}{Het zwembad uit hoofdstuk 1: $u_0 = 400$ en $u_n = 0{,}8\,u_{n-1} + 50$. Bepaal het evenwicht $L$. Toon aan dat de rij $v_n = u_n - L$ meetkundig is, en leid daaruit af dat de limiet echt $L$ is.\label{vb:h4-dyn}}{%
-\begin{stappen}
-L = 0{,}8\,L + 50 \ \Rightarrow \ L = 250 & Het evenwicht: 250 g chloor. \\
-v_n = u_n - 250 = 0{,}8\,u_{n-1} - 200 & Vervang $u_n$ door het voorschrift. \\
-\phantom{v_n} = 0{,}8\,(u_{n-1} - 250) = 0{,}8\,v_{n-1} & Meetkundig met $q = 0{,}8$ en $v_0 = 150$. \\
-u_n = 250 + 150 \cdot 0{,}8^{\,n} & Controle: $u_1 = 250 + 120 = 370$. \\
-\lim_{n\to+\infty} u_n = 250 & Want $|q| < 1$, dus $0{,}8^{\,n} \to 0$.
-\end{stappen}}
+De vergelijking $L = aL + b$ veronderstelt dat de limiet bestaat. Is $|a| \geqslant 1$, dan levert ze vaak toch een getal op, terwijl de rij geen limiet heeft. Kijk dus altijd eerst naar $a$.
 
-\lkr{De vergelijking $L = aL + b$ veronderstelt dat de limiet bestaat. De hulprij $v_n$ bewijst dat, en sluit aan bij de hulprij uit hoofdstuk 1. Bij $|a| \geqslant 1$ levert de vergelijking vaak nog een getal op, ook al is er geen limiet: zie de opdrachten.}
+\lkr{De hulprij $v_n$ sluit aan bij opdracht \ref{oef:h1-o21} van hoofdstuk 1. In de opdrachten staat ook een geval met $|a| \geqslant 1$.}
 
 \nujij{$u_0 = 90$ en $u_n = 0{,}5\,u_{n-1} + 10$. Bepaal het evenwicht en een expliciet voorschrift.}{$L = 20$ en $u_n = 20 + 70 \cdot 0{,}5^{\,n}$.}
 
 \begin{oefeningen}
-\begin{oefening}
-Een bedrijf heeft 300 werknemers. Elk jaar vertrekt 10\% en komen er 20 nieuwe bij. Geef een recursief voorschrift. Hoeveel werknemers zijn er op lange termijn?
-\begin{solution}
-$u_n=0{,}9\,u_{n-1}+20$, $u_0=300$; 200
-\end{solution}
-\begin{fullsolution}
-Na het vertrek blijft 90\% over, dus $u_n=0{,}9\,u_{n-1}+20$ met $u_0=300$. $L=0{,}9\,L+20$ geeft $L=200$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-k7}
 \end{oefeningen}
 
 %========================================================================================
 \section{De meetkundige reeks}
 
+Een slak kruipt een meter, dan een halve meter, dan een kwart meter, en zo verder. Komt ze ooit voorbij twee meter? De afgelegde weg na $n$ dagen is de som $s_n = 1 + \tfrac12 + \cdots + \tfrac{1}{2^{n-1}} = 2 - \tfrac{1}{2^{n-1}}$, en die komt willekeurig dicht bij 2. Zo kunnen oneindig veel getallen samen toch een eindige som hebben.
+
 \begin{theorie}
-Een \emph{reeks} is een oneindige som. Haar waarde is de limiet van de sommen $s_n$. Bij een meetkundige rij met $|q| < 1$ gaat $q^{\,n}$ naar 0, dus:
+Een \emph{reeks} is een oneindige som. Haar waarde is de limiet van de sommen $s_n$, als die bestaat.
+
+\begin{stelling}{Meetkundige reeks}
+Voor een meetkundige rij met $|q| < 1$ is
 
 \vspace{1mm}
-\qquad $u_1 + u_1 q + u_1 q^2 + \cdots = \displaystyle\lim_{n\to+\infty} u_1 \cdot \frac{q^{\,n} - 1}{q - 1} = \formule{\dfrac{u_1}{1 - q}}$
+\qquad $\formule{u_1 + u_1 q + u_1 q^2 + \cdots = \dfrac{u_1}{1 - q}}$
 
-\vspace{1.5mm}
+\vspace{1mm}
 Bij $|q| \geqslant 1$ en $u_1 \neq 0$ heeft de reeks geen eindige waarde: ze \emph{divergeert}.
+\end{stelling}
+
+\begin{bewijs}
+Volgens de somformule is $s_n = u_1 \cdot \dfrac{q^{\,n} - 1}{q - 1} = u_1 \cdot \dfrac{1 - q^{\,n}}{1 - q}$. Bij $|q| < 1$ gaat $q^{\,n}$ naar 0, zodat
+\bewijsregel{\lim_{n\to+\infty} s_n = u_1 \cdot \dfrac{1 - 0}{1 - q} = \dfrac{u_1}{1 - q} .}
+Bij $|q| \geqslant 1$ gaan de termen zelf niet naar 0, en dan kan de som niet tot rust komen.
+\end{bewijs}
 \end{theorie}
 
-\voorbeeld{}{Bereken $8 + 2 + \tfrac12 + \cdots$ en schrijf $0{,}272727\ldots$ als een breuk.\label{vb:h4-reeks}}{%
+\voorbeeld{}{Bereken $8 + 2 + \tfrac12 + \cdots$\label{vb:h4-reeks}}{%
+\uitleg{De termen worden telkens vier keer kleiner: dit is een meetkundige reeks. De formule mag alleen als $|q| < 1$.}
 \begin{stappen}
-q = \dfrac14,\quad \dfrac{8}{1 - \tfrac14} = \dfrac{32}{3} & $|q| < 1$: de formule mag. \\[2ex]
-0{,}27 + 0{,}0027 + 0{,}000027 + \cdots & Schrijf het getal als een som: $u_1 = 0{,}27$ en $q = 0{,}01$. \\[1ex]
-\dfrac{0{,}27}{1 - 0{,}01} = \dfrac{27}{99} = \dfrac{3}{11} & Controle met het rekentoestel: $3 : 11 = 0{,}2727\ldots$
+q = \dfrac28 = \dfrac14 & De reeks is meetkundig, en $|q| < 1$. \\[1.5ex]
+\dfrac{8}{1 - \tfrac14} = \dfrac{8}{\tfrac34} = \dfrac{32}{3} & De som van alle termen is $\tfrac{32}{3} \approx 10{,}67$.
+\end{stappen}}
+
+\voorbeeld{}{Schrijf $0{,}272727\ldots$ als een breuk.\label{vb:h4-reeks2}}{%
+\uitleg{Een repeterend decimaal getal is een oneindige som: het blok 27 komt telkens terug, honderd keer kleiner.}
+\begin{stappen}
+0{,}27 + 0{,}0027 + 0{,}000027 + \cdots & We schrijven het getal als een reeks, met $u_1 = 0{,}27$ en $q = 0{,}01$. \\[1ex]
+\dfrac{0{,}27}{1 - 0{,}01} = \dfrac{27}{99} = \dfrac{3}{11} & De formule voor de meetkundige reeks. Controle met het rekentoestel: $3 : 11 = 0{,}2727\ldots$
 \end{stappen}}
 
 \nujij{Bereken $9 - 3 + 1 - \cdots$ en schrijf $0{,}1515\ldots$ als een breuk.}{$\tfrac{9}{1 + 1/3} = \tfrac{27}{4}$ en $\tfrac{15}{99} = \tfrac{5}{33}$.}
 
-\lkr{De slak uit hoofdstuk 3 past hier: $1 + \tfrac12 + \tfrac14 + \cdots = 2$. De reeks is een suggestie in het leerplan, geen doel.}
+\lkr{De slak kwam al voor in een opdracht van hoofdstuk 3. De reeks is een suggestie in het leerplan, geen doel.}
 
 \begin{oefeningen}
-\begin{oefening}
-Bereken $12 + 4 + \tfrac43 + \cdots$ en schrijf $0{,}888\ldots$ als een breuk.
-\begin{solution}
-18 en $\tfrac89$
-\end{solution}
-\begin{fullsolution}
-$q=\tfrac13$, dus $\dfrac{12}{1-\tfrac13}=18$. Verder is $0{,}8+0{,}08+\cdots=\dfrac{0{,}8}{1-0{,}1}=\dfrac89$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-k8}
 \end{oefeningen}
 
 %----------------------------------------------------------------------------------------
@@ -412,434 +388,57 @@ $q=\tfrac13$, dus $\dfrac{12}{1-\tfrac13}=18$. Verder is $0{,}8+0{,}08+\cdots=\d
 \lkr{De opdrachten staan bewust door elkaar, met stijgende moeilijkheid. In deze versie staat bij elke opdracht het onderwerp, zodat je kunt kiezen. Vraag bij elke limiet ook: convergent of divergent?}
 
 \begin{oefeningen}
-\begin{oefening}[1]\label{oef:h4-soort}
-\thema{convergent en divergent}Bepaal de limiet. Is de rij convergent of divergent?
-\begin{reeks}
-  \item $u_n = 5 + \tfrac2n$
-  \item $u_n = n^2 - 3$
-  \item $u_n = 4 \cdot (-1)^n$
-  \item $u_n = 7$
-  \item $u_n = \tfrac{(-1)^n}{n}$
-  \item $u_n = 1 - n$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~5, conv. \quad \textbf{b.}~$+\infty$, div. \quad \textbf{c.}~bestaat niet, div. \quad \textbf{d.}~7, conv. \quad \textbf{e.}~0, conv. \quad \textbf{f.}~$-\infty$, div.
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$\tfrac2n\to 0$.\\
-\textbf{b.}~$n^2$ groeit onbegrensd.\\
-\textbf{c.}~$-4,\ 4,\ {-4},\ \ldots$: geen vast getal.\\
-\textbf{d.}~Een constante rij heeft die constante als limiet.\\
-\textbf{e.}~Het teken wisselt, maar de termen komen willekeurig dicht bij 0.\\
-\textbf{f.}~De termen dalen onbegrensd.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-soort}
 
-\begin{oefening}[1]\label{oef:h4-reeks}
-\thema{meetkundige reeks}Bereken, of zeg dat de reeks divergeert.
-\begin{reeks}[2]
-  \item $6 + 3 + \tfrac32 + \cdots$
-  \item $1 - \tfrac12 + \tfrac14 - \cdots$
-  \item $1 + 3 + 9 + \cdots$
-  \item $0{,}444\ldots$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~12 \quad \textbf{b.}~$\tfrac23$ \quad \textbf{c.}~divergeert \quad \textbf{d.}~$\tfrac49$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$q=\tfrac12$: $\dfrac{6}{1-\tfrac12}=12$.\\
-\textbf{b.}~$q=-\tfrac12$: $\dfrac{1}{1+\tfrac12}=\dfrac23$.\\
-\textbf{c.}~$q=3$: de formule mag niet.\\
-\textbf{d.}~$u_1=0{,}4$ en $q=0{,}1$: $\dfrac{0{,}4}{0{,}9}=\dfrac49$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-reeks}
 
-\begin{oefening}[1]\label{oef:h4-ratio}
-\thema{rekenregels}Bereken.
-\begin{reeks}[2]
-  \item $\displaystyle\lim_{n\to+\infty} \dfrac{5n - 1}{2n + 3}$
-  \item $\displaystyle\lim_{n\to+\infty} \dfrac{n^2 + 1}{n^3 - 2}$
-  \item $\displaystyle\lim_{n\to+\infty} \dfrac{4 - n^2}{n^2 + n}$
-  \item $\displaystyle\lim_{n\to+\infty} \dfrac{n^2 + 3}{n + 1}$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~$\tfrac52$ \quad \textbf{b.}~0 \quad \textbf{c.}~$-1$ \quad \textbf{d.}~$+\infty$
-\end{solution}
-\begin{fullsolution}
-Vergelijk de hoogste machten in teller en noemer.\\
-\textbf{a.}~$\dfrac{5n}{2n}=\dfrac52$.\\
-\textbf{b.}~De noemer heeft de hoogste macht: 0.\\
-\textbf{c.}~$\dfrac{-n^2}{n^2}=-1$.\\
-\textbf{d.}~De teller heeft de hoogste macht, en beide zijn positief: $+\infty$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-ratio}
 
-\begin{oefening}[1]\label{oef:h4-rrmr}
-\thema{rekenkundige en meetkundige rijen}Bepaal de limiet.
-\begin{reeks}
-  \item $2,\ 5,\ 8,\ \ldots$
-  \item $100,\ 50,\ 25,\ \ldots$
-  \item $3,\ {-6},\ 12,\ \ldots$
-  \item $-1,\ {-3},\ {-9},\ \ldots$
-  \item $9,\ 7,\ 5,\ \ldots$
-  \item $8,\ {-4},\ 2,\ \ldots$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~$+\infty$ \quad \textbf{b.}~0 \quad \textbf{c.}~bestaat niet \quad \textbf{d.}~$-\infty$ \quad \textbf{e.}~$-\infty$ \quad \textbf{f.}~0
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$v=3>0$.\\
-\textbf{b.}~$q=\tfrac12$.\\
-\textbf{c.}~$q=-2$.\\
-\textbf{d.}~$q=3$ en $u_1<0$.\\
-\textbf{e.}~$v=-2<0$.\\
-\textbf{f.}~$q=-\tfrac12$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-rrmr}
 
-\begin{oefening}[1]
-\thema{fouten: limiet bereiken}Iemand schrijft: `Een limiet wordt nooit bereikt, dus de rij $5,\ 5,\ 5,\ \ldots$ heeft geen limiet.' Wat is er fout?
-\begin{solution}
-De limiet is 5: de limiet mag bereikt worden.
-\end{solution}
-\begin{fullsolution}
-Voor elke $\varepsilon>0$ is $|u_n-5|=0<\varepsilon$, dus de limiet is 5. De definitie vraagt niet dat de termen van $L$ verschillen.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-o1}
 
-\begin{oefening}[1]\label{oef:h4-monotoon}
-\thema{stijgend, dalend, begrensd}Is de rij stijgend, dalend of geen van beide? Is ze naar boven begrensd? Naar onder? Is ze convergent?
-\begin{reeks}[4]
-  \item $u_n = \tfrac1n$
-  \item $u_n = n^2$
-  \item $u_n = (-1)^n$
-  \item $u_n = 5 - \tfrac1n$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~dalend; boven 1, onder 0; conv. \quad \textbf{b.}~stijgend; enkel onder (1); div. \quad \textbf{c.}~geen van beide; boven 1, onder $-1$; div. \quad \textbf{d.}~stijgend; boven 5, onder 4; conv.
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~Dalend, met $0<u_n\leqslant 1$. Limiet 0.\\
-\textbf{b.}~Stijgend, met $u_n\geqslant 1$, en geen bovengrens. Limiet $+\infty$.\\
-\textbf{c.}~Wisselt, met $-1\leqslant u_n\leqslant 1$. Begrensd, maar de limiet bestaat niet.\\
-\textbf{d.}~Stijgend, met $4\leqslant u_n<5$. Limiet 5.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-monotoon}
 
-\begin{oefening}[1]\label{oef:h4-evenwicht}
-\thema{dynamisch proces}Bepaal het evenwicht.
-\begin{reeks}
-  \item $u_n = 0{,}5\,u_{n-1} + 6$
-  \item $u_n = 0{,}9\,u_{n-1} + 20$
-  \item $u_n = 0{,}75\,u_{n-1} - 3$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~12 \quad \textbf{b.}~200 \quad \textbf{c.}~$-12$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$0{,}5\,L=6$.\\
-\textbf{b.}~$0{,}1\,L=20$.\\
-\textbf{c.}~$0{,}25\,L=-3$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-evenwicht}
 
-\begin{oefening}[1]\label{oef:h4-epsgetal}
-\thema{definitie: met getallen}Vanaf welk volgnummer geldt dit?
-\begin{enumerate}
-  \item $u_n = \dfrac{1}{n^2}$ ligt minder dan 0,0001 van 0.
-  \item $u_n = \dfrac{n+1}{n}$ ligt minder dan 0,001 van 1.
-  \item $u_n = \dfrac{(-1)^n}{n}$ ligt minder dan 0,05 van 0.
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~101 \quad \textbf{b.}~1001 \quad \textbf{c.}~21
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$\dfrac{1}{n^2}<0{,}0001$ geeft $n^2>10\,000$, dus $n>100$.\\
-\textbf{b.}~$\left|\dfrac{n+1}{n}-1\right|=\dfrac1n<0{,}001$ geeft $n>1000$.\\
-\textbf{c.}~$\left|\dfrac{(-1)^n}{n}\right|=\dfrac1n<0{,}05$ geeft $n>20$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-epsgetal}
 
-\begin{oefening}[2]\label{oef:h4-bewijs}
-\thema{definitie: bewijs}Bewijs met de definitie.
-\begin{reeks}
-  \item $\displaystyle\lim_{n\to+\infty} \dfrac{7}{n} = 0$
-  \item $\displaystyle\lim_{n\to+\infty} \dfrac{4n+1}{2n} = 2$
-  \item $\displaystyle\lim_{n\to+\infty} \dfrac{n-1}{n+3} = 1$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~$N\geqslant\tfrac{7}{\varepsilon}$ \quad \textbf{b.}~$N\geqslant\tfrac{1}{2\varepsilon}$ \quad \textbf{c.}~$N\geqslant\tfrac{4}{\varepsilon}$
-\end{solution}
-\begin{fullsolution}
-Neem telkens een willekeurige $\varepsilon>0$.\\
-\textbf{a.}~$\tfrac7n<\varepsilon$ geeft $n>\tfrac{7}{\varepsilon}$. Kies $N\geqslant\tfrac{7}{\varepsilon}$.\\
-\textbf{b.}~$\left|\dfrac{4n+1}{2n}-2\right|=\dfrac{1}{2n}<\varepsilon$ geeft $n>\dfrac{1}{2\varepsilon}$. Kies $N\geqslant\dfrac{1}{2\varepsilon}$.\\
-\textbf{c.}~$\left|\dfrac{n-1}{n+3}-1\right|=\dfrac{4}{n+3}<\varepsilon$ geeft $n>\dfrac{4}{\varepsilon}-3$. Elke $N\geqslant\dfrac{4}{\varepsilon}$ is goed, want dan is ook $n>\dfrac{4}{\varepsilon}-3$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-bewijs}
 
-\begin{oefening}[2]
-\thema{context: dynamisch proces}Een sportclub telt 800 leden. Elk jaar stopt 25\% en sluiten er 150 nieuwe leden aan.
-\begin{enumerate}
-  \item Geef een recursief voorschrift. Hoeveel leden zijn er op lange termijn?
-  \item Toon aan dat $u_n = 600 + 200 \cdot 0{,}75^{\,n}$.
-  \item Na hoeveel jaar zijn er voor het eerst minder dan 650 leden?
-  \item Hoeveel nieuwe leden per jaar zijn nodig om op lange termijn 1000 leden te hebben?
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~$u_n=0{,}75\,u_{n-1}+150$, $u_0=800$; 600 \quad \textbf{c.}~na 5 jaar \quad \textbf{d.}~250
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$L=0{,}75\,L+150$ geeft $L=600$.\\
-\textbf{b.}~$v_n=u_n-600=0{,}75\,u_{n-1}-450=0{,}75\,v_{n-1}$ met $v_0=200$, dus $v_n=200\cdot 0{,}75^{\,n}$.\\
-\textbf{c.}~$200\cdot 0{,}75^{\,n}<50$ geeft $0{,}75^{\,n}<0{,}25$ en $n>4{,}82$, dus na 5 jaar.\\
-\textbf{d.}~$1000=750+b$ geeft $b=250$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-o2}
 
-\begin{oefening}[2]
-\thema{definitie: oneindig}Bewijs met de definitie.
-\begin{reeks}[2]
-  \item $\displaystyle\lim_{n\to+\infty} (2n + 1) = +\infty$
-  \item $\displaystyle\lim_{n\to+\infty} (5 - n^2) = -\infty$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~$N\geqslant\tfrac{r-1}{2}$ \quad \textbf{b.}~$N\geqslant\sqrt{r+5}$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~Neem $r>0$. $2n+1>r$ geeft $n>\dfrac{r-1}{2}$. Kies $N\in\mathbb{N}$ met $N\geqslant\dfrac{r-1}{2}$.\\
-\textbf{b.}~Neem $r>0$. $5-n^2<-r$ geeft $n^2>r+5$, dus $n>\sqrt{r+5}$. Kies $N\in\mathbb{N}$ met $N\geqslant\sqrt{r+5}$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-o3}
 
-\begin{oefening}[2]\label{oef:h4-insluit}
-\thema{insluitstelling}Bereken.
-\begin{reeks}
-  \item $\displaystyle\lim_{n\to+\infty} \dfrac{(-1)^n}{\sqrt{n}}$
-  \item $\displaystyle\lim_{n\to+\infty} \dfrac{3 + \cos n}{n}$
-  \item $\displaystyle\lim_{n\to+\infty} \left(2 + \dfrac{\sin n}{n}\right)$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~0 \quad \textbf{b.}~0 \quad \textbf{c.}~2
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$-\dfrac{1}{\sqrt n}\leqslant u_n\leqslant\dfrac{1}{\sqrt n}$, en beide grenzen gaan naar 0.\\
-\textbf{b.}~$2\leqslant 3+\cos n\leqslant 4$, dus $\dfrac2n\leqslant u_n\leqslant\dfrac4n$.\\
-\textbf{c.}~$2-\dfrac1n\leqslant u_n\leqslant 2+\dfrac1n$, en beide grenzen gaan naar 2.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-insluit}
 
-\begin{oefening}[2]
-\thema{context: reeks}Een bal valt van 3 m hoogte en stuit telkens terug tot 80\% van de vorige hoogte. Welke afstand legt de bal in totaal af, als hij blijft stuiten tot hij stil ligt?
-\begin{solution}
-27 m
-\end{solution}
-\begin{fullsolution}
-De stuithoogtes $2{,}4;\ 1{,}92;\ \ldots$ tel je dubbel, omhoog en omlaag. De som is $\dfrac{2{,}4}{1-0{,}8}=12$, dus de afstand is $3+2\cdot 12=27$ m.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-o4}
 
-\begin{oefening}[2]
-\thema{rekenregels: machten}Bereken.
-\begin{reeks}
-  \item $\displaystyle\lim_{n\to+\infty} \dfrac{3^n + 1}{3^n}$
-  \item $\displaystyle\lim_{n\to+\infty} \dfrac{2^n - 1}{3^n}$
-  \item $\displaystyle\lim_{n\to+\infty} \dfrac{2^{n+1} + 3^n}{3^{n+1}}$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~1 \quad \textbf{b.}~0 \quad \textbf{c.}~$\tfrac13$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$1+(\tfrac13)^n\to 1$.\\
-\textbf{b.}~$(\tfrac23)^n-(\tfrac13)^n\to 0$.\\
-\textbf{c.}~$\tfrac23\cdot(\tfrac23)^n+\tfrac13\to\tfrac13$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-o5}
 
-\begin{oefening}[2]
-\thema{functie en rij}Gegeven: $u_n = \sin(2n\pi)$ en $f(x) = \sin(2x\pi)$.
-\begin{enumerate}
-  \item Bereken $u_1$, $u_2$ en $u_3$. Wat is de limiet van de rij?
-  \item Bestaat $\displaystyle\lim_{x\to+\infty} f(x)$? Wat leer je hieruit?
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~0, 0, 0; limiet 0 \quad \textbf{b.}~Nee.
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$\sin(2n\pi)=0$ voor elk natuurlijk getal $n$, dus de limiet is 0.\\
-\textbf{b.}~$f$ blijft schommelen tussen $-1$ en 1, dus die limiet bestaat niet. Uit de limiet van de rij volgt dus niets over de limiet van de functie: alleen het omgekeerde geldt.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-o6}
 
-\begin{oefening}[2]
-\thema{dynamisch proces: niet stijgend of dalend}Gegeven: $u_0 = 10$ en $u_n = -0{,}5\,u_{n-1} + 6$.
-\begin{enumerate}
-  \item Bereken $u_1$, $u_2$ en $u_3$. Is de rij stijgend of dalend?
-  \item Bepaal het evenwicht $L$ en een expliciet voorschrift.
-  \item De rij is niet stijgend of dalend en toch convergent. Is dat in strijd met de eigenschap uit sectie 4?
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~1; 5,5; 3,25; geen van beide \quad \textbf{b.}~$L=4$, $u_n=4+6\cdot(-0{,}5)^n$ \quad \textbf{c.}~nee
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$-5+6=1$, $-0{,}5+6=5{,}5$, $-2{,}75+6=3{,}25$. De termen gaan op en neer.\\
-\textbf{b.}~$L=-0{,}5\,L+6$ geeft $L=4$. Met $v_n=u_n-4$ is $v_n=-0{,}5\,v_{n-1}$ en $v_0=6$.\\
-\textbf{c.}~Nee: de eigenschap zegt dat stijgend en begrensd voldoende is om te convergeren, niet dat het nodig is.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-o7}
 
-\begin{oefening}[2]
-\thema{reeks: repeterende decimalen}Schrijf als een breuk.
-\begin{reeks}
-  \item $0{,}121212\ldots$
-  \item $1{,}2555\ldots$
-  \item $0{,}999\ldots$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~$\tfrac{4}{33}$ \quad \textbf{b.}~$\tfrac{113}{90}$ \quad \textbf{c.}~1
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$\dfrac{0{,}12}{1-0{,}01}=\dfrac{12}{99}=\dfrac{4}{33}$.\\
-\textbf{b.}~$1{,}2+\dfrac{0{,}05}{1-0{,}1}=\dfrac65+\dfrac{1}{18}=\dfrac{113}{90}$.\\
-\textbf{c.}~$\dfrac{0{,}9}{1-0{,}1}=1$. Dus $0{,}999\ldots$ en 1 zijn hetzelfde getal.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-o8}
 
-\begin{oefening}[2]
-\thema{rekenregels: toegevoegde}Bereken.
-\begin{reeks}[2]
-  \item $\displaystyle\lim_{n\to+\infty} \left(\sqrt{n^2 + n} - n\right)$
-  \item $\displaystyle\lim_{n\to+\infty} \left(n^2 - n\right)$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~$\tfrac12$ \quad \textbf{b.}~$+\infty$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$\sqrt{n^2+n}-n=\dfrac{n}{\sqrt{n^2+n}+n}=\dfrac{1}{\sqrt{1+\tfrac1n}+1}\to\dfrac12$.\\
-\textbf{b.}~$n(n-1)$: een product van twee factoren die onbegrensd groeien. Het antwoord 0, uit $\infty-\infty$, is fout.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-o9}
 
-\begin{oefening}[2]
-\begin{metprent}{schildpad}
-\thema{context: reeks}Een loper start 100 m achter een schildpad. De loper loopt 10 m/s, de schildpad 1 m/s. Als de loper op de startplaats van de schildpad is, is die 10 m verder. Als de loper daar is, is ze nog 1 m verder, enzovoort.
-\begin{enumerate}
-  \item Schrijf de tijd tot de loper de schildpad inhaalt als een oneindige som. Bereken ze.
-  \item Controleer met een vergelijking.
-\end{enumerate}
-\end{metprent}
-\begin{solution}
-\textbf{a.}~$10+1+0{,}1+\cdots=\tfrac{100}{9}$ s, ongeveer 11,11 s
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~De stukken duren 10 s, 1 s, 0,1 s, \ldots, dus $\dfrac{10}{1-0{,}1}=\dfrac{100}{9}$ s.\\
-\textbf{b.}~$10t=100+t$ geeft $t=\dfrac{100}{9}$. Een oneindig aantal stukken kan dus samen een eindige tijd duren.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-o10}
 
-\begin{oefening}[2]
-\thema{reeks: parameter}Voor welke $x \neq 1$ convergeert $1 + (x-1) + (x-1)^2 + \cdots$? Wat is dan de som?
-\begin{solution}
-$0<x<2$ met $x\neq 1$; de som is $\dfrac{1}{2-x}$
-\end{solution}
-\begin{fullsolution}
-$q=x-1$, en $|x-1|<1$ geeft $0<x<2$. De som is $\dfrac{1}{1-(x-1)}=\dfrac{1}{2-x}$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-o11}
 
-\begin{oefening}[2]
-\thema{rekenregels: parameter}Bepaal $k$ zodat $\displaystyle\lim_{n\to+\infty} \dfrac{k\,n^2 - 1}{4n^2 + n} = 3$.
-\begin{solution}
-$k=12$
-\end{solution}
-\begin{fullsolution}
-De hoogste machten geven $\dfrac{k}{4}=3$, dus $k=12$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-o12}
 
-\begin{oefening}[3]
-\thema{dynamisch proces: voorwaarde}Bekijk $u_n = a\,u_{n-1} + b$ met $a \neq 1$.
-\begin{enumerate}
-  \item Stel $L = \dfrac{b}{1-a}$ en $v_n = u_n - L$. Toon aan dat $v_n = a\,v_{n-1}$.
-  \item Voor welke $a$ is de rij convergent, als $u_0 \neq L$?
-  \item Neem $u_0 = 1$ en $u_n = 2u_{n-1} - 3$. De vergelijking $L = 2L - 3$ geeft $L = 3$. Is 3 de limiet?
-\end{enumerate}
-\begin{solution}
-\textbf{b.}~$|a|<1$ \quad \textbf{c.}~nee: limiet $-\infty$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~Uit $L=aL+b$ volgt $v_n=au_{n-1}+b-L=au_{n-1}-aL=a\,v_{n-1}$.\\
-\textbf{b.}~$v_n=v_0\cdot a^n$ met $v_0\neq 0$. Dat gaat enkel naar een eindige limiet als $|a|<1$ (want $a\neq 1$).\\
-\textbf{c.}~Nee: $1,\ {-1},\ {-5},\ {-13},\ \ldots$ Hier is $u_n=3-2\cdot 2^n$, met limiet $-\infty$. De vergelijking vindt alleen de waarde die de limiet zou moeten hebben, als hij bestaat.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-o13}
 
-\begin{oefening}[3]
-\thema{stijgend en begrensd: inductie}Gegeven: $u_1 = 1$ en $u_n = \sqrt{2 + u_{n-1}}$.
-\begin{enumerate}
-  \item Bereken $u_2$, $u_3$ en $u_4$ op drie decimalen.
-  \item Bewijs met volledige inductie dat $0 < u_n < 2$ voor elke $n$.
-  \item Toon aan dat de rij stijgend is. Kijk daarvoor naar $u_{n+1}^{\,2} - u_n^{\,2}$.
-  \item Waarom is de rij convergent? Bereken de limiet.
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~1,732; 1,932; 1,983 \quad \textbf{d.}~2
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$\sqrt3\approx 1{,}732$, $\sqrt{3{,}732}\approx 1{,}932$, $\sqrt{3{,}932}\approx 1{,}983$.\\
-\textbf{b.}~Basis: $0<1<2$. Stap: uit $0<u_k<2$ volgt $0<\sqrt{2+u_k}<\sqrt4=2$.\\
-\textbf{c.}~$u_{n+1}^{\,2}-u_n^{\,2}=2+u_n-u_n^{\,2}=(2-u_n)(1+u_n)>0$, en alle termen zijn positief.\\
-\textbf{d.}~Stijgend en naar boven begrensd. Voor de limiet geldt $L=\sqrt{2+L}$, dus $L^2-L-2=0$ en $L=2$ of $L=-1$. Omdat de termen positief zijn, is $L=2$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-o14}
 
-\begin{oefening}[3]
-\thema{definitie: rekenregel}Stel dat $\displaystyle\lim_{n\to+\infty} u_n = L$ en $k \neq 0$. Bewijs met de definitie dat $\displaystyle\lim_{n\to+\infty} k\,u_n = kL$.
-\begin{solution}
-Gebruik de $N$ die bij $\tfrac{\varepsilon}{|k|}$ hoort.
-\end{solution}
-\begin{fullsolution}
-Neem $\varepsilon>0$. Dan is ook $\dfrac{\varepsilon}{|k|}>0$, dus er is een $N$ met $|u_n-L|<\dfrac{\varepsilon}{|k|}$ voor elke $n>N$. Voor die $n$ geldt $|ku_n-kL|=|k|\cdot|u_n-L|<\varepsilon$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-o15}
 
-\begin{oefening}[3]
-\thema{waar of niet waar}Waar of niet waar? Bewijs kort, of geef een tegenvoorbeeld.
-\begin{enumerate}
-  \item Elke begrensde rij is convergent.
-  \item Elke stijgende rij is divergent.
-  \item Elke convergente rij is begrensd.
-  \item Als $u_n + v_n$ convergent is, dan zijn $u_n$ en $v_n$ allebei convergent.
-  \item Als $\displaystyle\lim_{n\to+\infty} u_n = 0$, dan is $\displaystyle\lim_{n\to+\infty} u_n v_n = 0$.
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~niet waar \quad \textbf{b.}~niet waar \quad \textbf{c.}~waar \quad \textbf{d.}~niet waar \quad \textbf{e.}~niet waar
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~Niet waar: $(-1)^n$.\\
-\textbf{b.}~Niet waar: $1-\tfrac1n$.\\
-\textbf{c.}~Waar: neem $\varepsilon=1$. Vanaf een bepaalde $N$ liggen alle termen tussen $L-1$ en $L+1$, en er blijven maar eindig veel andere termen over.\\
-\textbf{d.}~Niet waar: $u_n=(-1)^n$ en $v_n=-(-1)^n$ geven som 0.\\
-\textbf{e.}~Niet waar: $u_n=\tfrac1n$ en $v_n=n$ geven product 1.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-o16}
 
-\begin{oefening}[3]
-\thema{reeks: telescoperen}Gegeven: $u_i = \dfrac{1}{i(i+1)}$.
-\begin{enumerate}
-  \item Toon aan dat $u_i = \dfrac1i - \dfrac{1}{i+1}$.
-  \item Schrijf $s_n = u_1 + u_2 + \cdots + u_n$ uit en vereenvoudig.
-  \item Bereken $\tfrac12 + \tfrac16 + \tfrac{1}{12} + \tfrac{1}{20} + \cdots$
-\end{enumerate}
-\begin{solution}
-\textbf{b.}~$s_n=1-\dfrac{1}{n+1}$ \quad \textbf{c.}~1
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$\dfrac1i-\dfrac{1}{i+1}=\dfrac{i+1-i}{i(i+1)}=\dfrac{1}{i(i+1)}$.\\
-\textbf{b.}~$s_n=\left(1-\tfrac12\right)+\left(\tfrac12-\tfrac13\right)+\cdots+\left(\tfrac1n-\tfrac{1}{n+1}\right)=1-\dfrac{1}{n+1}$: bijna alles valt weg.\\
-\textbf{c.}~De rij is $u_i$, en de som is de limiet van $s_n$: 1. Deze reeks is niet meetkundig, en toch heeft ze een som.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-o17}
 \end{oefeningen}
 
 %----------------------------------------------------------------------------------------
@@ -850,183 +449,36 @@ Neem $\varepsilon>0$. Dan is ook $\dfrac{\varepsilon}{|k|}>0$, dus er is een $N$
 \lkr{Exponentiële functies, complexe getallen en matrices zijn gezien in het 5de jaar. Kijk na of het getal $e$ al ingevoerd is. Logica en kansrekenen staan ook in het 6de jaar: kijk na of ze al aan bod kwamen, of laat die oefeningen weg.}
 
 \begin{oefeningen}
-\begin{oefening}[3]
-\koppel{discreet}{Logica en bewijzen} De definitie van de limiet heeft de vorm $\forall\, \varepsilon > 0,\ \exists\, N \in \mathbb{N},\ \forall\, n > N: \ |u_n - L| < \varepsilon$.
-\begin{enumerate}
-  \item Schrijf de ontkenning met kwantoren. Wat betekent ze in woorden?
-  \item Bewijs daarmee dat 1 niet de limiet is van $u_n = (-1)^n$.
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~$\exists\,\varepsilon>0,\ \forall\,N\in\mathbb{N},\ \exists\,n>N:\ |u_n-L|\geqslant\varepsilon$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$\exists\,\varepsilon>0,\ \forall\,N\in\mathbb{N},\ \exists\,n>N:\ |u_n-L|\geqslant\varepsilon$. In woorden: er is een band waar steeds opnieuw termen buiten vallen, hoe ver je ook gaat.\\
-\textbf{b.}~Neem $\varepsilon=1$. Voor elke $N$ is er een oneven $n>N$, en dan is $|u_n-1|=|-1-1|=2\geqslant 1$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-koppel-1}
 
-\begin{oefening}[2]
-\koppel{analyse}{Exponentiële functies} Je belegt \eur 1 aan 100\% per jaar. Je krijgt de intrest niet één keer, maar $n$ keer per jaar, telkens $\tfrac{100}{n}$\%. Na een jaar heb je $u_n = \left(1 + \tfrac1n\right)^n$.
-\begin{enumerate}
-  \item Bereken $u_1$, $u_{12}$, $u_{365}$ en $u_{1\,000\,000}$ op vier decimalen.
-  \item Word je zo onbeperkt rijk? Welk getal herken je?
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~2; 2,6130; 2,7146; 2,7183 \quad \textbf{b.}~nee: de limiet is $\mathrm{e}$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$2^1=2$, $u_{12}\approx 2{,}6130$, $u_{365}\approx 2{,}7146$, $u_{1\,000\,000}\approx 2{,}7183$.\\
-\textbf{b.}~Nee: de waarden stijgen, maar komen nooit boven $\mathrm{e}\approx 2{,}71828$. De rij is stijgend en naar boven begrensd.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-koppel-2}
 
-\begin{oefening}[2]
-\koppel{algebra}{Complexe getallen} Gegeven: $z = \tfrac12 + \tfrac12\mathrm{i}$.
-\begin{enumerate}
-  \item Bereken $|z|$. Wat is de limiet van $|z^n|$? Wat betekent dat voor $z^n$ in het complexe vlak?
-  \item Bereken $1 + z + z^2 + \cdots$ met de formule van de meetkundige reeks.
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~$\tfrac{\sqrt2}{2}$; 0; de punten spiraleren naar de oorsprong \quad \textbf{b.}~$1+\mathrm{i}$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$|z|=\sqrt{\tfrac14+\tfrac14}=\tfrac{\sqrt2}{2}<1$, dus $|z^n|=|z|^n\to 0$. De punten $z^n$ draaien telkens 45° en komen steeds dichter bij de oorsprong.\\
-\textbf{b.}~$\dfrac{1}{1-z}=\dfrac{1}{\tfrac12-\tfrac12\mathrm{i}}=\dfrac{2}{1-\mathrm{i}}=\dfrac{2(1+\mathrm{i})}{2}=1+\mathrm{i}$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-koppel-3}
 
-\begin{oefening}[2]
-\begin{metprent}{bakker}
-\koppel{algebra}{Matrices} In een dorp zijn er twee bakkers. Elke maand stapt 10\% van de klanten van A over naar B, en 20\% van de klanten van B naar A. De aantallen klanten zijn $X_n = \begin{pmatrix} a_n \\ b_n \end{pmatrix}$, met $X_{n} = M X_{n-1}$ en $M = \begin{pmatrix} 0{,}9 & 0{,}2 \\ 0{,}1 & 0{,}8 \end{pmatrix}$.
-\begin{enumerate}
-  \item Bereken $X_1$ en $X_2$ als $X_0 = \begin{pmatrix} 300 \\ 0 \end{pmatrix}$.
-  \item Zoek het evenwicht: los $X = MX$ op met $a + b = 300$. Vergelijk met $L = aL + b$.
-\end{enumerate}
-\end{metprent}
-\begin{solution}
-\textbf{a.}~$\begin{pmatrix} 270 \\ 30 \end{pmatrix}$, $\begin{pmatrix} 249 \\ 51 \end{pmatrix}$ \quad \textbf{b.}~200 en 100
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$X_1=\begin{pmatrix} 270 \\ 30 \end{pmatrix}$ en $X_2=\begin{pmatrix} 243+6 \\ 27+24 \end{pmatrix}=\begin{pmatrix} 249 \\ 51 \end{pmatrix}$.\\
-\textbf{b.}~$a=0{,}9\,a+0{,}2\,b$ geeft $0{,}1\,a=0{,}2\,b$, dus $a=2b$. Met $a+b=300$ is $a=200$ en $b=100$. Het is dezelfde redenering, met een matrix in plaats van een getal: de limiet verandert niet meer bij nog een stap.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-koppel-4}
 
-\begin{oefening}[2]
-\koppel{data}{Kansrekenen} Twee spelers gooien om beurt met een dobbelsteen. Wie eerst een zes gooit, wint. Speler A begint.
-\begin{enumerate}
-  \item Bereken de kans dat A wint in zijn eerste, tweede en derde beurt. Welke soort rij is dat?
-  \item Bereken de kans dat A het spel wint.
-  \item Is het voordeel van beginnen groot?
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~$\tfrac16$, $\tfrac{25}{216}$, $\tfrac{625}{7776}$; meetkundig, $q=\tfrac{25}{36}$ \quad \textbf{b.}~$\tfrac{6}{11}$ \quad \textbf{c.}~ongeveer 54,5\% tegen 45,5\%
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~Voor elke volgende beurt moeten beide spelers eerst geen zes gooien: telkens maal $(\tfrac56)^2=\tfrac{25}{36}$.\\
-\textbf{b.}~$\dfrac{\tfrac16}{1-\tfrac{25}{36}}=\dfrac16\cdot\dfrac{36}{11}=\dfrac{6}{11}$.\\
-\textbf{c.}~A wint met kans $\tfrac{6}{11}\approx 54{,}5\%$ en B met $\tfrac{5}{11}\approx 45{,}5\%$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-koppel-5}
 \end{oefeningen}
 
 %----------------------------------------------------------------------------------------
 \opdrachtsectie{Test jezelf}
 
 \begin{oefeningen}
-\begin{oefening}[1]\label{oef:h4-t1}
-Bepaal de limiet. Is de rij convergent of divergent?
-\begin{reeks}
-  \item $u_n = 3 - \tfrac4n$
-  \item $u_n = (-1)^n \cdot n$
-  \item $u_n = 2n + 1$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~3, conv. \quad \textbf{b.}~bestaat niet, div. \quad \textbf{c.}~$+\infty$, div.
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$\tfrac4n\to 0$.\\
-\textbf{b.}~De termen wisselen van teken en worden steeds groter in absolute waarde.\\
-\textbf{c.}~De termen stijgen onbegrensd.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-t1}
 
-\begin{oefening}[1]\label{oef:h4-t2}
-Bepaal de limiet.
-\begin{reeks}
-  \item $5,\ 10,\ 20,\ \ldots$
-  \item $16,\ {-8},\ 4,\ \ldots$
-  \item $7,\ 4,\ 1,\ \ldots$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~$+\infty$ \quad \textbf{b.}~0 \quad \textbf{c.}~$-\infty$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$q=2$ en $u_1>0$.\\
-\textbf{b.}~$q=-\tfrac12$, dus $|q|<1$.\\
-\textbf{c.}~$v=-3$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-t2}
 
-\begin{oefening}[2]\label{oef:h4-t3}
-Bewijs met de definitie: $\displaystyle\lim_{n\to+\infty} \dfrac{3n+2}{n} = 3$.
-\begin{solution}
-Kies $N\geqslant\tfrac{2}{\varepsilon}$.
-\end{solution}
-\begin{fullsolution}
-Neem $\varepsilon>0$. $\left|\dfrac{3n+2}{n}-3\right|=\dfrac2n<\varepsilon$ geeft $n>\dfrac{2}{\varepsilon}$. Kies $N\geqslant\dfrac{2}{\varepsilon}$: dan geldt voor elke $n>N$ dat $|u_n-3|<\varepsilon$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-t3}
 
-\begin{oefening}[1]\label{oef:h4-t4}
-Bereken $\displaystyle\lim_{n\to+\infty} \dfrac{2n^2 - n}{5n^2 + 3}$.
-\begin{solution}
-$\tfrac25$
-\end{solution}
-\begin{fullsolution}
-Deel teller en noemer door $n^2$: $\dfrac{2-\tfrac1n}{5+\tfrac{3}{n^2}}\to\dfrac25$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-t4}
 
-\begin{oefening}[2]\label{oef:h4-t5}
-Bereken $\displaystyle\lim_{n\to+\infty} \dfrac{2 + \sin n}{n^2}$.
-\begin{solution}
-0
-\end{solution}
-\begin{fullsolution}
-$1\leqslant 2+\sin n\leqslant 3$, dus $\dfrac{1}{n^2}\leqslant u_n\leqslant\dfrac{3}{n^2}$. Beide grenzen hebben limiet 0.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-t5}
 
-\begin{oefening}[2]\label{oef:h4-t6}
-Toon aan dat $u_n = \dfrac{3n}{n+1}$ stijgend en naar boven begrensd is. Wat is de limiet?
-\begin{solution}
-Bovengrens 3; limiet 3
-\end{solution}
-\begin{fullsolution}
-$u_n=3-\dfrac{3}{n+1}<3$. $u_{n+1}-u_n=\dfrac{3}{n+1}-\dfrac{3}{n+2}=\dfrac{3}{(n+1)(n+2)}>0$. De limiet is 3.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-t6}
 
-\begin{oefening}[1]\label{oef:h4-t7}
-Gegeven: $u_0 = 100$ en $u_n = 0{,}6\,u_{n-1} + 20$. Bepaal het evenwicht.
-\begin{solution}
-50
-\end{solution}
-\begin{fullsolution}
-$L=0{,}6\,L+20$ geeft $0{,}4\,L=20$, dus $L=50$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-t7}
 
-\begin{oefening}[1]\label{oef:h4-t8}
-Bereken $20 + 5 + \tfrac54 + \cdots$ en schrijf $0{,}363636\ldots$ als een breuk.
-\begin{solution}
-$\tfrac{80}{3}$ en $\tfrac{4}{11}$
-\end{solution}
-\begin{fullsolution}
-$q=\tfrac14$, dus $\dfrac{20}{1-\tfrac14}=\dfrac{80}{3}$. Verder is $\dfrac{0{,}36}{1-0{,}01}=\dfrac{36}{99}=\dfrac{4}{11}$.
-\end{fullsolution}
-\end{oefening}
+\oef{h4-t8}
 \end{oefeningen}
 
 \herhaalschema{%

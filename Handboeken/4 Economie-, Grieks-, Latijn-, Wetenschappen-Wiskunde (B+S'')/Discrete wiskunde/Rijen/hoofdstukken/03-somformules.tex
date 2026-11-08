@@ -10,46 +10,12 @@
 
 \lkr{Leerplan B+S'': LPD 44, formule voor de som van de eerste $n$ termen, met samengestelde intrest als context. Twee bewijzen die leerlingen moeten kunnen volgen en navertellen: de som tweemaal schrijven, en $q \cdot s_n - s_n$. De rode draad in de opdrachten: eerst herkennen welke soort rij het is, dan het aantal termen bepalen, dan pas de formule gebruiken. Oneindige sommen komen niet in dit hoofdstuk: die vragen de limiet uit hoofdstuk 4.}
 
-\begin{oefeningen}[Start]
-\begin{oefening}
-\blokkop{Opwarmer}
-\begin{enumerate}
-  \item Een rekenkundige rij heeft $u_1 = 4$ en $v = 3$. Bereken $u_{10}$.
-  \item Een meetkundige rij heeft $u_1 = 2$ en $q = 3$. Bereken $u_5$.
-  \item Hoeveel termen telt de rij $8,\ 11,\ 14,\ \ldots,\ 77$?
-  \item Los op: $n^2 + 3n - 40 = 0$.
-  \item Werk uit: $(x-1)(x^3 + x^2 + x + 1)$.
-  \item Los op: $2^x = 1024$ en $3^x = 200$.
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~31 \quad \textbf{b.}~162 \quad \textbf{c.}~24 \quad \textbf{d.}~$n=5$ of $n=-8$ \quad \textbf{e.}~$x^4-1$ \quad \textbf{f.}~$x=10$; $x\approx 4{,}82$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$u_{10}=4+9\cdot 3=31$.\\
-\textbf{b.}~$u_5=2\cdot 3^4=162$.\\
-\textbf{c.}~$8+(n-1)\cdot 3=77$ geeft $n-1=23$, dus $n=24$.\\
-\textbf{d.}~$(n-5)(n+8)=0$.\\
-\textbf{e.}~$x^4+x^3+x^2+x-x^3-x^2-x-1=x^4-1$: bijna alles valt weg.\\
-\textbf{f.}~$2^{10}=1024$, dus $x=10$. $x=\log_3 200=\dfrac{\log 200}{\log 3}\approx 4{,}82$.
-\end{fullsolution}
-\end{oefening}
+Hoeveel heb je gespaard als je elke week wat meer opzijlegt? Hoeveel stoelen staan er in een zaal waar elke rij twee stoelen meer telt dan de vorige? Telkens tel je de termen van een rij op. Met tien termen kan dat nog met de hand, maar met honderd of duizend termen niet meer. Voor rekenkundige en meetkundige rijen bestaat er gelukkig een formule voor die som. In dit hoofdstuk leer je die formules, en vooral waarom ze kloppen: elk berust op een slimme truc die je zelf kunt navertellen.
 
-\begin{oefening}\label{oef:h3-verken}
-\blokkop{Verken}\quad Je spaart tien weken lang. In week 1 leg je \eur 3 opzij, en elke week \eur 2 meer dan de week ervoor.
-\begin{enumerate}
-  \item Schrijf de tien bedragen op een rij. Schrijf daaronder dezelfde bedragen in omgekeerde volgorde.
-  \item Tel per kolom de twee getallen op. Wat valt op?
-  \item Hoeveel heb je na tien weken gespaard? Gebruik de twee rijen, zonder alle bedragen op te tellen.
-\end{enumerate}
-\begin{solution}
-\textbf{b.}~elke kolom geeft 24 \quad \textbf{c.}~\eur 120
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$3,\ 5,\ 7,\ 9,\ 11,\ 13,\ 15,\ 17,\ 19,\ 21$ en daaronder $21,\ 19,\ \ldots,\ 3$.\\
-\textbf{b.}~Bovenaan komt er telkens 2 bij, onderaan gaat er telkens 2 af: elke kolom geeft 24.\\
-\textbf{c.}~De twee rijen samen zijn $10\cdot 24=240$. Dat is twee keer het gespaarde bedrag, dus \eur 120.
-\end{fullsolution}
-\end{oefening}
+\begin{oefeningen}[Start]
+\oef{h3-start-1}
+
+\oef{h3-verken}
 \end{oefeningen}
 
 \lkr{Laat oefening \ref{oef:h3-verken} maken vóór de uitleg. Vraag waarom je deelt door 2: dat is de stap die leerlingen het vaakst vergeten als ze de formule later moeten verklaren.}
@@ -59,212 +25,191 @@
 
 \subsection{De somformule}
 
+In de verkenning schreef je de bedragen twee keer onder elkaar, de tweede keer in omgekeerde volgorde. Elke kolom gaf dan hetzelfde getal, en het gespaarde bedrag was de helft van alle kolommen samen. Die truc werkt bij elke rekenkundige rij. Eerst geven we de som een naam.
+
 \begin{theorie}
-\begin{minipage}[t]{.64\linewidth}
-$s_n$ is de som van de eerste $n$ termen:
+De \emph{som van de eerste $n$ termen} van een rij is
 
 \qquad $\formule{s_n = u_1 + u_2 + \cdots + u_n}$
 
-\vspace{1.5mm}
-Bij een rekenkundige rij is dat $n$ keer het gemiddelde van de eerste en de laatste term:
+\begin{stelling}{Som van een rekenkundige rij}
+\begin{minipage}[t]{.6\linewidth}
+\vspace{0pt}
+De som van de eerste $n$ termen van een rekenkundige rij is $n$ keer het gemiddelde van de eerste en de laatste term:
 
 \vspace{1mm}
 \qquad $\formule{s_n = n \cdot \dfrac{u_1 + u_n}{2}}$
-
-\vspace{1.5mm}
-De figuur toont het idee: twee keer dezelfde rij vormt een rechthoek van $n$ op $u_1 + u_n$.
 \end{minipage}\hfill
-\begin{minipage}[t]{.32\linewidth}
-\vspace{-1mm}
-\begin{tikzpicture}[x=5.4mm,y=2.7mm,font=\scriptsize]
+\begin{minipage}[t]{.34\linewidth}
+\vspace{0pt}
+\begin{tikzpicture}[x=5mm,y=2.5mm,font=\scriptsize]
   \foreach \i/\h in {0/2,1/3,2/4,3/5,4/6}{
     \fill[accent!45] (\i,0) rectangle (\i+1,\h);
     \draw[accent] (\i,0) rectangle (\i+1,\h);
     \draw[accent] (\i,\h) rectangle (\i+1,8);}
-  \draw[decorate,decoration={brace,mirror,amplitude=3pt},grijs] (0,-.3) -- (5,-.3) node[midway,below=2pt,text=black] {$n$ termen};
+  \draw[decorate,decoration={brace,mirror,amplitude=3pt},grijs] (0,-.3) -- (5,-.3) node[midway,below=2pt,text=black] {$n$ kolommen};
   \draw[decorate,decoration={brace,mirror,amplitude=3pt},grijs] (5.15,0) -- (5.15,8) node[midway,right=2pt,text=black] {$u_1 + u_n$};
 \end{tikzpicture}
 \end{minipage}
+\end{stelling}
 
 \begin{bewijs}
-\begin{stappen}
-s_n = u_1 + u_2 + \cdots + u_n & De som. \\
-s_n = u_n + u_{n-1} + \cdots + u_1 & Dezelfde som, omgekeerd. \\
-2 s_n = (u_1 + u_n) + \cdots + (u_n + u_1) & Optellen per kolom. Bovenaan komt er telkens $v$ bij, onderaan gaat er telkens $v$ af: elke kolom geeft $u_1 + u_n$. \\
-2 s_n = n \,(u_1 + u_n) & Er zijn $n$ kolommen. \\[1ex]
-s_n = n \cdot \dfrac{u_1 + u_n}{2} & Delen door 2.
-\end{stappen}
+Schrijf de som twee keer, de tweede keer in omgekeerde volgorde, en tel kolom per kolom op:
+\bewijsregel{\begin{array}{r@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c}
+s_n &=& u_1 &+& u_2 &+ \cdots +& u_n \\
+s_n &=& u_n &+& u_{n-1} &+ \cdots +& u_1 \\ \hline
+2s_n &=& (u_1 + u_n) &+& (u_2 + u_{n-1}) &+ \cdots +& (u_n + u_1)
+\end{array}}
+Van kolom tot kolom komt er bovenaan $v$ bij en gaat er onderaan $v$ af, dus elke kolom is gelijk aan $u_1 + u_n$. Er zijn $n$ kolommen, zodat
+\bewijsregel{2s_n = n\,(u_1 + u_n) \quad\Rightarrow\quad s_n = n \cdot \dfrac{u_1 + u_n}{2} .}
 \end{bewijs}
 \end{theorie}
 
+De figuur toont hetzelfde: twee keer dezelfde trap vormt een rechthoek van $n$ op $u_1 + u_n$, en de som is de helft van die rechthoek. Zo kun je de formule ook lezen als: aantal termen maal gemiddelde term.
+
 \voorbeeld{}{Bereken $s_{20}$ van de rij $7,\ 11,\ 15,\ \ldots$\label{vb:h3-rr}}{%
+\uitleg{De formule vraagt de eerste en de laatste term. De laatste term, $u_{20}$, staat er niet: die berekenen we eerst met het expliciet voorschrift.}
 \begin{stappen}
-v = 11 - 7 = 4 & Rekenkundig. Controle: $15 - 11 = 4$. \\
-u_{20} = 7 + 19 \cdot 4 = 83 & Eerst de laatste term: 19 sprongen. \\[1ex]
-s_{20} = 20 \cdot \dfrac{7 + 83}{2} = 900 & Twintig keer het gemiddelde, en dat is 45.
-\end{stappen}}
+v = 11 - 7 = 4 & De rij is rekenkundig, met verschil 4. Controle: $15 - 11 = 4$. \\
+u_{20} = 7 + 19 \cdot 4 = 83 & Van $u_1$ naar $u_{20}$ zijn het 19 sprongen. \\[1ex]
+s_{20} = 20 \cdot \dfrac{7 + 83}{2} = 900 & De gemiddelde term is $\tfrac{7 + 83}{2} = 45$, en er zijn 20 termen.
+\end{stappen}
+\naast{De figuur toont de twintig termen als staven. De stippellijn ligt op de gemiddelde term 45: wat de staven rechts erboven uitsteken, vult precies de ruimte links eronder. De som is dus even groot als twintig staven van 45.}{\begin{tikzpicture}[x=.26cm,y=.022cm,font=\scriptsize]
+  \foreach \i in {1,...,20}{\pgfmathsetmacro{\h}{3+4*\i}\draw[accent,fill=accent!22] (\i-1,0) rectangle (\i,\h);}
+  \draw[grijs,dashed,thick] (0,45) -- (20,45) node[right,text=black] {45};
+  \draw[->,grijs] (0,0) -- (20.8,0) node[right,text=black] {$n$};
+  \node[below,inner sep=1.5pt] at (.5,0) {1};
+  \node[below,inner sep=1.5pt] at (19.5,0) {20};
+  \node[above,inner sep=1pt] at (.5,7) {7};
+  \node[above,inner sep=1pt] at (19.5,83) {83};
+\end{tikzpicture}}}
 
 \nujij{Bereken $s_{30}$ van de rij $20,\ 18,\ 16,\ \ldots$}{$v = -2$, $u_{30} = -38$, $s_{30} = 30 \cdot \tfrac{20 - 38}{2} = -270$.}
 
 \thuis{Vul je $u_n = u_1 + (n-1)v$ in, dan krijg je een tweede vorm: $s_n = \tfrac{n}{2}\bigl(2u_1 + (n-1)v\bigr)$. Die is handig als je $u_n$ nog niet kent.}
 
 \begin{oefeningen}
-\begin{oefening}
-Bereken $s_{25}$ van de rij $9,\ 13,\ 17,\ \ldots$
-\begin{solution}
-1425
-\end{solution}
-\begin{fullsolution}
-$v=4$, dus $u_{25}=9+24\cdot 4=105$ en $s_{25}=25\cdot\dfrac{9+105}{2}=1425$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-k1}
 \end{oefeningen}
 
 \subsection{Eerst het aantal termen}
+
+Vaak staat een som er met een laatste term, maar zonder het aantal termen. De formule heeft dat aantal wel nodig, dus dan moet je het eerst zelf zoeken.
+
+\voorbeeld{}{Bereken de som van alle veelvouden van 6 tussen 100 en 400.\label{vb:h3-aantal}}{%
+\uitleg{De veelvouden van 6 vormen een rekenkundige rij met $v = 6$. We zoeken eerst de eerste en de laatste term, dan het aantal termen, en pas daarna de som.}
+\begin{stappen}
+102 + 108 + \cdots + 396 & Het eerste veelvoud boven 100 is $102 = 6 \cdot 17$, het laatste onder 400 is $396 = 6 \cdot 66$. \\
+102 + (n-1) \cdot 6 = 396 & De laatste term is $u_n$. We lossen op naar $n$. \\
+n - 1 = 49 \ \Rightarrow \ n = 50 & Er zijn 49 sprongen, dus 50 termen. Ook zo: van $6 \cdot 17$ tot $6 \cdot 66$ zijn het $66 - 17 + 1 = 50$ veelvouden. \\[1ex]
+s_{50} = 50 \cdot \dfrac{102 + 396}{2} = 12\,450 & Nu pas gebruiken we de somformule.
+\end{stappen}}
 
 \begin{werkwijze}
 Is de laatste term gegeven en niet het aantal termen, bereken dan eerst $n$ met het expliciet voorschrift. Het aantal termen is één meer dan het aantal sprongen.
 \end{werkwijze}
 
-\voorbeeld{}{Bereken de som van alle veelvouden van 6 tussen 100 en 400.\label{vb:h3-aantal}}{%
-\begin{stappen}
-102 + 108 + \cdots + 396 & Eerst uitschrijven: $102 = 6 \cdot 17$ en $396 = 6 \cdot 66$. \\
-102 + (n-1) \cdot 6 = 396 \ \Rightarrow \ n = 50 & 49 sprongen, dus 50 termen. \\[1ex]
-s_{50} = 50 \cdot \dfrac{102 + 396}{2} = 12\,450 &
-\end{stappen}}
-
 \nujij{Bereken $50 + 54 + 58 + \cdots + 250$.}{$n = 51$, en de som is $51 \cdot 150 = 7650$.}
 
 \begin{oefeningen}
-\begin{oefening}
-Bereken $15 + 22 + 29 + \cdots + 204$.
-\begin{solution}
-3066
-\end{solution}
-\begin{fullsolution}
-$15+(n-1)\cdot 7=204$ geeft $n-1=27$, dus $n=28$. Dan is de som $28\cdot\dfrac{15+204}{2}=3066$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-k2}
 \end{oefeningen}
 
 \subsection{Het aantal termen uit de som}
 
-\begin{werkwijze}
-Is de som gegeven, schrijf dan $s_n$ met $n$ als onbekende. Dat geeft een vierkantsvergelijking. Enkel een oplossing in $\mathbb{N}_0$ is een aantal termen.
-\end{werkwijze}
+Je kunt de vraag ook omdraaien: de som is gegeven, en je zoekt hoeveel termen je moet optellen. Dan is $n$ de onbekende in de somformule.
 
 \voorbeeld{}{Hoeveel termen van $3,\ 7,\ 11,\ \ldots$ moet je optellen om 210 te krijgen?\label{vb:h3-nuit}}{%
+\uitleg{In de somformule staat $u_n$, en die hangt ook af van $n$. We schrijven dus eerst $u_n$ met $n$, en daarna de hele som. Omdat $n$ dan twee keer voorkomt, krijgen we een vierkantsvergelijking.}
 \begin{stappen}
 u_n = 3 + (n-1) \cdot 4 = 4n - 1 & De laatste term, met $n$ als onbekende. \\[1ex]
-s_n = n \cdot \dfrac{3 + 4n - 1}{2} = n\,(2n + 1) & Invullen in de somformule. \\
-2n^2 + n - 210 = 0 & $s_n = 210$ stellen. \\[1ex]
-n = 10 \quad\text{of}\quad n = -\dfrac{21}{2} & Enkel $n = 10$ kan. Controle: $10 \cdot 21 = 210$.
+s_n = n \cdot \dfrac{3 + 4n - 1}{2} = n\,(2n + 1) & We vullen $u_1$ en $u_n$ in de somformule in. \\
+2n^2 + n - 210 = 0 & We stellen $s_n$ gelijk aan 210. \\[1ex]
+n = 10 \quad\text{of}\quad n = -\dfrac{21}{2} & Alleen $n = 10$ is een aantal termen. Controle: $10 \cdot 21 = 210$.
 \end{stappen}}
+
+\begin{werkwijze}
+Is de som gegeven, schrijf dan $s_n$ met $n$ als onbekende. Dat geeft een vierkantsvergelijking. Alleen een oplossing in $\mathbb{N}_0$ is een aantal termen.
+\end{werkwijze}
 
 \nujij{Hoeveel termen van $6,\ 8,\ 10,\ \ldots$ moet je optellen om 150 te krijgen?}{$s_n = n(n+5)$, dus $n = 10$.}
 
 \begin{oefeningen}
-\begin{oefening}
-Hoeveel termen van $4,\ 7,\ 10,\ \ldots$ moet je optellen om 175 te krijgen?
-\begin{solution}
-10
-\end{solution}
-\begin{fullsolution}
-$u_n=3n+1$, dus $s_n=n\cdot\dfrac{4+3n+1}{2}=\dfrac{n(3n+5)}{2}$. Uit $3n^2+5n-350=0$ volgt $n=10$ of $n=-\tfrac{35}{3}$. Enkel $n=10$ kan.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-k3}
 \end{oefeningen}
 
 %========================================================================================
 \section{Som van een meetkundige rij}
 
+Bij een meetkundige rij helpt omkeren niet: de kolommen zijn dan niet meer gelijk. Er is wel een andere truc. Probeer ze eerst zelf.
+
 \begin{oefeningen}
-\begin{oefening}\label{oef:h3-mverken}
-\blokkop{Verken}\quad Bij sneeuw verwittigt de school 1 leerling. Die belt 3 andere leerlingen. Elk van hen belt er weer 3, enzovoort. Noem $S = 1 + 3 + 9 + 27 + 81$ het aantal verwittigde leerlingen na vier belrondes.
-\begin{enumerate}
-  \item Schrijf ook $3S$ uit, als som van vijf termen.
-  \item Bereken $3S - S$. Wat valt weg?
-  \item Bereken daarmee $S$ zonder de termen op te tellen.
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~$3+9+27+81+243$ \quad \textbf{b.}~$243-1=242$ \quad \textbf{c.}~121
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~Elke term maal 3: $3S=3+9+27+81+243$.\\
-\textbf{b.}~De termen 3, 9, 27 en 81 staan in beide sommen en vallen weg: $3S-S=243-1=242$.\\
-\textbf{c.}~$2S=242$, dus $S=121$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-mverken}
 \end{oefeningen}
 
 \lkr{Laat de leerlingen vergelijken met de spaaroefening: bij een rekenkundige rij kies je voor optellen in omgekeerde volgorde, bij een meetkundige rij voor vermenigvuldigen met $q$. Vraag waarom de truc van de ene niet werkt bij de andere.}
 
 \subsection{De somformule}
 
-\begin{theorie}
-Voor een meetkundige rij met $q \neq 1$: \qquad $\formule{s_n = u_1 \cdot \dfrac{q^{\,n} - 1}{q - 1}}$
+In de verkenning vermenigvuldigde je de som met 3. Daardoor schoof elke term een plaats op, en vielen bij het aftrekken bijna alle termen weg. Hetzelfde lukt met elk quotiënt $q$.
 
-\vspace{1.5mm}
-Voor $q = 1$ zijn alle termen gelijk: \quad $\formule{s_n = n \cdot u_1}$
+\begin{theorie}
+\begin{stelling}{Som van een meetkundige rij}
+Voor een meetkundige rij met $q \neq 1$ is
+
+\vspace{1mm}
+\qquad $\formule{s_n = u_1 \cdot \dfrac{q^{\,n} - 1}{q - 1}}$
+\end{stelling}
 
 \begin{bewijs}
-\begin{stappen}
-s_n = u_1 + u_1 q + \cdots + u_1 q^{\,n-1} & De som. \\
-q\, s_n = u_1 q + \cdots + u_1 q^{\,n-1} + u_1 q^{\,n} & Vermenigvuldig met $q$: alles schuift een plaats op. \\
-q\, s_n - s_n = u_1 q^{\,n} - u_1 & Aftrekken: de termen ertussen vallen weg. \\
-s_n (q - 1) = u_1 (q^{\,n} - 1) & Links en rechts buiten haakjes brengen. \\[1ex]
-s_n = u_1 \cdot \dfrac{q^{\,n} - 1}{q - 1} & Delen door $q - 1$, wat mag omdat $q \neq 1$.
-\end{stappen}
+Schrijf de som, en daaronder de som maal $q$. Elke term schuift dan een plaats op. Trek de bovenste van de onderste af: alle termen in het midden vallen weg.
+\bewijsregel{\begin{array}{r@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c@{\;}c}
+s_n &=& u_1 &+& u_1 q &+ \cdots +& u_1 q^{\,n-1} & \\
+q\,s_n &=& &&  u_1 q &+ \cdots +& u_1 q^{\,n-1} &+\ u_1 q^{\,n} \\ \hline
+q\,s_n - s_n &=& -u_1 &&&&& +\ u_1 q^{\,n}
+\end{array}}
+Brengen we links $s_n$ en rechts $u_1$ buiten haakjes, dan is
+\bewijsregel{s_n\,(q - 1) = u_1\,(q^{\,n} - 1) .}
+Omdat $q \neq 1$, mogen we delen door $q - 1$, en dat geeft de formule.
 \end{bewijs}
 \end{theorie}
 
-Let op: in de somformule staat de exponent $n$, het aantal termen. In het expliciet voorschrift staat $n - 1$, het aantal sprongen.
+Voor $q = 1$ zijn alle termen gelijk aan $u_1$, en is de som gewoon $n \cdot u_1$. Let ook op de exponent: in de somformule staat $n$, het aantal termen. In het expliciet voorschrift staat $n - 1$, het aantal sprongen.
 
 \voorbeeld{}{Bereken $s_{10}$ van de rij $3,\ 6,\ 12,\ \ldots$\label{vb:h3-mr}}{%
+\uitleg{Elke term is het dubbele van de vorige, dus we gebruiken de somformule voor een meetkundige rij. Daarvoor hebben we alleen $u_1$, $q$ en het aantal termen nodig, en niet de laatste term.}
 \begin{stappen}
-q = \dfrac{6}{3} = 2 & Meetkundig. Controle: $\dfrac{12}{6} = 2$. \\[1.5ex]
-s_{10} = 3 \cdot \dfrac{2^{10} - 1}{2 - 1} = 3069 & Exponent 10, want er zijn 10 termen.
+q = \dfrac{6}{3} = 2 & De rij is meetkundig, met quotiënt 2. Controle: $\dfrac{12}{6} = 2$. \\[1.5ex]
+s_{10} = 3 \cdot \dfrac{2^{10} - 1}{2 - 1} = 3069 & De exponent is 10, want we tellen 10 termen op.
 \end{stappen}}
 
 \nujij{Bereken $s_9$ van de rij $1,\ {-2},\ 4,\ \ldots$}{$q = -2$, dus $s_9 = \tfrac{(-2)^9 - 1}{-2 - 1} = \tfrac{-513}{-3} = 171$.}
 
 \begin{oefeningen}
-\begin{oefening}
-Bereken $s_6$ van de rij $2,\ 10,\ 50,\ \ldots$
-\begin{solution}
-7812
-\end{solution}
-\begin{fullsolution}
-$q=5$, dus $s_6=2\cdot\dfrac{5^6-1}{5-1}=2\cdot\dfrac{15\,624}{4}=7812$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-k4}
 \end{oefeningen}
 
 \subsection{Eerst het aantal termen}
+
+Ook bij een meetkundige rij staat er soms een laatste term in plaats van een aantal termen. Dan zoek je het aantal eerst met het expliciet voorschrift, net zoals bij een rekenkundige rij. Alleen staat $n$ nu in een exponent.
+
+\voorbeeld{}{Bereken $2 + 6 + 18 + \cdots + 4374$.\label{vb:h3-mrn}}{%
+\uitleg{De rij is meetkundig met $q = 3$. We kennen de laatste term, maar niet het aantal termen. Dat zoeken we eerst, en pas dan gebruiken we de somformule.}
+\begin{stappen}
+2 \cdot 3^{\,n-1} = 4374 & De laatste term is $u_n = 2 \cdot 3^{\,n-1}$. \\
+3^{\,n-1} = 2187 & We delen beide leden door 2. \\
+n - 1 = 7 \ \Rightarrow \ n = 8 & Omdat $3^7 = 2187$, zijn het 7 sprongen en dus 8 termen. \\[1ex]
+s_8 = 2 \cdot \dfrac{3^8 - 1}{3 - 1} = 6560 & De somformule met 8 termen.
+\end{stappen}}
 
 \begin{werkwijze}
 Is de laatste term gegeven, bereken dan eerst $n$ uit $u_n = u_1 \cdot q^{\,n-1}$, zo nodig met een logaritme. Werk met de exacte machten, niet met afgeronde getallen.
 \end{werkwijze}
 
-\voorbeeld{}{Bereken $2 + 6 + 18 + \cdots + 4374$.\label{vb:h3-mrn}}{%
-\begin{stappen}
-2 \cdot 3^{\,n-1} = 4374 \ \Rightarrow \ 3^{\,n-1} = 2187 & $q = 3$. Delen door 2. \\
-n - 1 = 7 \ \Rightarrow \ n = 8 & Want $3^7 = 2187$. Dus 8 termen. \\[1ex]
-s_8 = 2 \cdot \dfrac{3^8 - 1}{3 - 1} = 6560 &
-\end{stappen}}
-
 \nujij{Bereken $7 + 14 + 28 + \cdots + 448$.}{$2^{n-1} = 64$, dus $n = 7$, en de som is $7 \cdot (2^7 - 1) = 889$.}
 
 \begin{oefeningen}
-\begin{oefening}
-Bereken $5 + 15 + 45 + \cdots + 3645$.
-\begin{solution}
-5465
-\end{solution}
-\begin{fullsolution}
-$5\cdot 3^{n-1}=3645$ geeft $3^{n-1}=729=3^6$, dus $n=7$. Dan is $s_7=5\cdot\dfrac{3^7-1}{3-1}=5465$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-k5}
 \end{oefeningen}
 
 %========================================================================================
@@ -272,93 +217,87 @@ $5\cdot 3^{n-1}=3645$ geeft $3^{n-1}=729=3^6$, dus $n=7$. Dan is $s_7=5\cdot\dfr
 
 \subsection{Lezen en berekenen}
 
-\begin{theorie}
-\begin{minipage}[t]{.56\linewidth}
-Een som schrijf je kort met het \emph{somteken} $\Sigma$:
+Een som met veel termen voluit schrijven, is lang en onoverzichtelijk. Wiskundigen gebruiken daarom een kort teken: de Griekse hoofdletter sigma, de S van \textit{som}.
 
-\vspace{1mm}
+\begin{theorie}
+Met het \emph{somteken} $\Sigma$ schrijf je een som kort:
+
 \qquad $\formule{\displaystyle\sum_{i=1}^{n} u_i = u_1 + u_2 + \cdots + u_n}$
 
-\vspace{1.5mm}
+\vspace{1mm}
 De letter $i$ is de \emph{lopende index}: die neemt elk geheel getal aan van de beginwaarde tot en met de eindwaarde.
-\end{minipage}\hfill
-\begin{minipage}[t]{.4\linewidth}
-\textbf{Aantal termen:} eindwaarde $-$ beginwaarde $+ 1$
 
-\vspace{1.5mm}
-\textbf{Rekenregels:}
+\begin{stelling}{Rekenregels voor het somteken}
+\qquad $\formule{\displaystyle\sum_{i=1}^{n} (u_i + w_i) = \sum_{i=1}^{n} u_i + \sum_{i=1}^{n} w_i}$ \qquad\qquad $\formule{\displaystyle\sum_{i=1}^{n} c \cdot u_i = c \cdot \sum_{i=1}^{n} u_i}$
+\end{stelling}
 
-$\formule{\displaystyle\sum (u_i + w_i) = \sum u_i + \sum w_i}$
-
-$\formule{\displaystyle\sum c \cdot u_i = c \cdot \sum u_i}$
-\end{minipage}
+\begin{bewijs}
+Schrijf beide leden voluit. Links staat $(u_1 + w_1) + \cdots + (u_n + w_n)$: bij een som mag je de termen in elke volgorde optellen, dus dat is $(u_1 + \cdots + u_n) + (w_1 + \cdots + w_n)$. In $c\,u_1 + \cdots + c\,u_n$ breng je $c$ buiten haakjes.
+\end{bewijs}
 \end{theorie}
 
-\thuis{Je leest $\sum_{i=1}^{n} u_i$ als: de som van de $u_i$ voor $i$ van 1 tot $n$. Het teken is de Griekse hoofdletter sigma, de S van \emph{som}. De naam van de index maakt niet uit: $\sum_{i=1}^{5} i$ en $\sum_{k=1}^{5} k$ zijn hetzelfde getal.}
+Je leest $\sum_{i=1}^{n} u_i$ als: de som van de $u_i$ voor $i$ van 1 tot $n$. De naam van de index maakt niet uit: $\sum_{i=1}^{5} i$ en $\sum_{k=1}^{5} k$ zijn hetzelfde getal. De index hoeft ook niet bij 1 te beginnen. Van $i = 3$ tot $i = 12$ zijn er $12 - 3 + 1 = 10$ termen: niet 12 en niet 9.
 
-\voorbeeld{}{Bereken $\displaystyle\sum_{i=3}^{12} (2i + 1)$ en $\displaystyle\sum_{j=1}^{5} 3 \cdot 2^{\,j}$.\label{vb:h3-somteken}}{%
+\voorbeeld{}{Bereken $\displaystyle\sum_{i=3}^{12} (2i + 1)$.\label{vb:h3-somteken}}{%
+\uitleg{We weten nog niet om welke soort rij het gaat. Daarom schrijven we eerst een paar termen uit, door de waarden van $i$ in te vullen.}
 \begin{stappen}
-7 + 9 + 11 + \cdots + 25 & Vul $i = 3$, 4, 5 en 12 in: rekenkundig. \\
-12 - 3 + 1 = 10 \text{ termen} & Niet 12 en niet 9. \\[1ex]
-10 \cdot \dfrac{7 + 25}{2} = 160 & De eerste som. \\
-6 + 12 + 24 + 48 + 96 & Vul $j = 1$, 2, 3 in: meetkundig, met $u_1 = 6$ en niet 3. \\[1ex]
-6 \cdot \dfrac{2^5 - 1}{2 - 1} = 186 & De tweede som.
+7 + 9 + 11 + \cdots + 25 & Voor $i = 3$, 4 en 5 krijgen we 7, 9 en 11, en voor $i = 12$ krijgen we 25. Er komt telkens 2 bij: de rij is rekenkundig. \\
+12 - 3 + 1 = 10 \text{ termen} & De index loopt van 3 tot en met 12. \\[1ex]
+10 \cdot \dfrac{7 + 25}{2} = 160 & De somformule voor een rekenkundige rij.
 \end{stappen}}
+
+\voorbeeld{}{Bereken $\displaystyle\sum_{j=1}^{5} 3 \cdot 2^{\,j}$.\label{vb:h3-somteken2}}{%
+\uitleg{Opnieuw schrijven we eerst termen uit. Let op de eerste term: die is niet 3, want de index begint bij $j = 1$, en dan staat er al $2^1$.}
+\begin{stappen}
+6 + 12 + 24 + 48 + 96 & Voor $j = 1$, 2 en 3 krijgen we 6, 12 en 24. Elke term is het dubbele van de vorige: de rij is meetkundig, met $u_1 = 6$ en $q = 2$. \\[1ex]
+6 \cdot \dfrac{2^5 - 1}{2 - 1} = 186 & De somformule met 5 termen.
+\end{stappen}}
+
+\begin{werkwijze}
+Schrijf de eerste termen uit door de index in te vullen. Herken de soort rij, tel het aantal termen (eindwaarde $-$ beginwaarde $+ 1$), en gebruik dan de somformule.
+\end{werkwijze}
 
 \lkr{Laat leerlingen altijd de eerste drie termen uitschrijven voor ze een formule kiezen. Dat voorkomt de twee klassieke fouten: het verkeerde aantal termen, en $u_1$ aflezen zonder invullen.}
 
 \nujij{Bereken $\displaystyle\sum_{k=2}^{9} (5k - 3)$.}{Termen $7,\ 12,\ \ldots,\ 42$; 8 termen; de som is $8 \cdot \tfrac{7 + 42}{2} = 196$.}
 
 \begin{oefeningen}
-\begin{oefening}
-Bereken.
-\begin{reeks}[2]
-  \item $\displaystyle\sum_{i=2}^{11} (3i + 1)$
-  \item $\displaystyle\sum_{j=1}^{6} 2 \cdot 3^{\,j}$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~205 \quad \textbf{b.}~2184
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$7+10+\cdots+34$: 10 termen, dus $10\cdot\dfrac{7+34}{2}=205$.\\
-\textbf{b.}~$6+18+\cdots$: $u_1=6$, $q=3$ en 6 termen, dus $6\cdot\dfrac{3^6-1}{3-1}=2184$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-k6}
 \end{oefeningen}
 
 \subsection{De som als rij}
 
-\begin{theorie}
-De sommen $s_1,\ s_2,\ s_3,\ \ldots$ vormen zelf een rij. Daaruit vind je de termen terug:
+De sommen $s_1,\ s_2,\ s_3,\ \ldots$ vormen zelf een nieuwe rij. Ken je die rij van sommen, dan kun je de oorspronkelijke termen terugvinden: het verschil tussen twee opeenvolgende sommen is precies de term die erbij kwam.
 
-\vspace{1mm}
+\begin{theorie}
+\begin{stelling}{Termen uit de sommen}
 \qquad $\formule{u_1 = s_1} \quad\text{en}\quad \formule{u_n = s_n - s_{n-1}} \quad\text{voor } n \geqslant 2$
+\end{stelling}
+
+\begin{bewijs}
+De som $s_n$ is $s_{n-1}$ met de term $u_n$ erbij: $s_n = (u_1 + \cdots + u_{n-1}) + u_n = s_{n-1} + u_n$.
+\end{bewijs}
 \end{theorie}
 
 \voorbeeld{}{Gegeven: $s_n = n^2 + 2n$. Bepaal $u_n$. Welke soort rij is dat?\label{vb:h3-uitsom}}{%
+\uitleg{De eerste term is de eerste som. Voor de andere termen trekken we twee opeenvolgende sommen af. Daarvoor schrijven we $s_{n-1}$ eerst met $n$.}
 \begin{stappen}
-u_1 = s_1 = 3 & Vervang $n$ door 1. \\
-s_{n-1} = (n-1)^2 + 2(n-1) = n^2 - 1 & Vervang $n$ door $n - 1$. \\
-u_n = n^2 + 2n - (n^2 - 1) = 2n + 1 & Voor $n \geqslant 2$. Ook $u_1 = 3$ past in dit voorschrift. \\
-\text{rekenkundig met } v = 2 & Controle: $3 + 5 + 7 = 15 = s_3$.
+u_1 = s_1 = 3 & We vervangen $n$ door 1. \\
+s_{n-1} = (n-1)^2 + 2(n-1) = n^2 - 1 & We vervangen $n$ door $n - 1$ en werken uit. \\
+u_n = n^2 + 2n - (n^2 - 1) = 2n + 1 & Dit geldt voor $n \geqslant 2$. Ook $u_1 = 3$ past in dit voorschrift. \\
+\text{rekenkundig met } v = 2 & De rij is $3,\ 5,\ 7,\ \ldots$ Controle: $3 + 5 + 7 = 15 = s_3$.
 \end{stappen}}
 
 \begin{oefeningen}
-\begin{oefening}
-Gegeven: $s_n = n^2 + 4n$. Bepaal $u_n$.
-\begin{solution}
-$u_n=2n+3$
-\end{solution}
-\begin{fullsolution}
-$s_{n-1}=(n-1)^2+4(n-1)=n^2+2n-3$, dus $u_n=s_n-s_{n-1}=2n+3$ voor $n\geqslant 2$. Ook $u_1=s_1=5$ past hierin.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-k7}
 \end{oefeningen}
 
 %========================================================================================
 \section{Sparen met vaste stortingen}
 
-Je stort aan het einde van elk jaar een bedrag $a$ op een rekening met $p\%$ samengestelde intrest per jaar. Elke storting groeit apart aan, met $q = 1 + \tfrac{p}{100}$. De laatste storting brengt nog niets op.
+Wie elk jaar hetzelfde bedrag spaart op een rekening met samengestelde intrest, wil weten hoeveel er na een aantal jaar op staat. Elke storting groeit apart aan, maar niet even lang. Kijk eerst naar een eenvoudig geval: je stort drie jaar lang aan het einde van elk jaar \eur 100, aan 10\,\% intrest. De eerste storting staat er nog twee jaar en wordt $100 \cdot 1{,}1^2 = 121$. De tweede staat er een jaar en wordt $100 \cdot 1{,}1 = 110$. De laatste brengt nog niets op. Samen is dat $100 + 110 + 121 = 331$ euro: de som van een meetkundige rij.
+
+In het algemeen stort je $n$ jaar lang aan het einde van elk jaar een bedrag $a$, aan $p\,\%$ samengestelde intrest, met $q = 1 + \tfrac{p}{100}$:
 
 \vspace{2mm}
 \begin{tikzpicture}[x=2.25cm,font=\small]
@@ -371,30 +310,32 @@ Je stort aan het einde van elk jaar een bedrag $a$ op een rekening met $p\%$ sam
 \end{tikzpicture}
 
 \begin{theorie}
-De eindwaarde na $n$ jaar is de som van een meetkundige rij met eerste term $a$: \quad $\formule{E = a \cdot \dfrac{q^{\,n} - 1}{q - 1}}$
+\begin{stelling}{Eindwaarde van vaste stortingen}
+Stort je $n$ jaar lang aan het einde van elk jaar een bedrag $a$ aan $p\,\%$ samengestelde intrest, dan staat er na de laatste storting
+
+\vspace{1mm}
+\qquad $\formule{E = a \cdot \dfrac{q^{\,n} - 1}{q - 1}}$ \quad met $\formule{q = 1 + \dfrac{p}{100}}$
+\end{stelling}
+
+\begin{bewijs}
+Lees de stortingen van de laatste naar de eerste: $E = a + a\,q + \cdots + a\,q^{\,n-1}$. Dat is de som van $n$ termen van een meetkundige rij met eerste term $a$ en quotiënt $q$.
+\end{bewijs}
 \end{theorie}
 
 \lkr{Dit deel past het best bij Economie-Wiskunde. Het leerplan noemt enkel samengestelde intrest als context: sla de opdrachten over sparen over als je dit deel niet behandelt. Leningen komen alleen voor in een opdracht op niveau 3.}
 
-\voorbeeld{}{Je stort 6 jaar lang aan het einde van elk jaar \eur 1000 op een rekening met 3\% intrest. Hoeveel staat er na de laatste storting op? Hoeveel daarvan is intrest?\label{vb:h3-sparen}}{%
+\voorbeeld{}{Je stort 6 jaar lang aan het einde van elk jaar \eur 1000 op een rekening met 3\,\% intrest. Hoeveel staat er na de laatste storting op? Hoeveel daarvan is intrest?\label{vb:h3-sparen}}{%
+\uitleg{Dit is de situatie van de formule, met $a = 1000$ en $n = 6$. De intrest is wat er meer op staat dan wat je zelf gestort hebt.}
 \begin{stappen}
-q = 1 + \dfrac{3}{100} = 1{,}03 & \\[1.5ex]
-E = 1000 \cdot \dfrac{1{,}03^6 - 1}{1{,}03 - 1} \approx 6468{,}41 & Na 6 jaar: ongeveer \textbf{\eur 6468,41}. \\[1.5ex]
-6468{,}41 - 6 \cdot 1000 = 468{,}41 & \textbf{\eur 468,41} is intrest.
+q = 1 + \dfrac{3}{100} = 1{,}03 & De groeifactor bij 3\,\% intrest. \\[1.5ex]
+E = 1000 \cdot \dfrac{1{,}03^6 - 1}{1{,}03 - 1} \approx 6468{,}41 & Na de laatste storting staat er ongeveer \eur 6468,41 op. \\[1.5ex]
+6468{,}41 - 6 \cdot 1000 = 468{,}41 & Je stortte zelf \eur 6000, dus \eur 468,41 is intrest.
 \end{stappen}}
 
-\nujij{Je stort 10 jaar lang aan het einde van elk jaar \eur 500 op een rekening met 2\% intrest. Hoeveel staat er na de laatste storting op?}{$500 \cdot \tfrac{1{,}02^{10} - 1}{0{,}02} \approx 5474{,}86$ euro.}
+\nujij{Je stort 10 jaar lang aan het einde van elk jaar \eur 500 op een rekening met 2\,\% intrest. Hoeveel staat er na de laatste storting op?}{$500 \cdot \tfrac{1{,}02^{10} - 1}{0{,}02} \approx 5474{,}86$ euro.}
 
 \begin{oefeningen}
-\begin{oefening}
-Je stort 8 jaar lang aan het einde van elk jaar \eur 1500 op een rekening met 2\% intrest. Hoeveel staat er na de laatste storting op?
-\begin{solution}
-Ongeveer \eur 12\,874,45
-\end{solution}
-\begin{fullsolution}
-$E=1500\cdot\dfrac{1{,}02^8-1}{0{,}02}\approx 12\,874{,}45$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-k8}
 \end{oefeningen}
 
 %----------------------------------------------------------------------------------------
@@ -405,464 +346,73 @@ $E=1500\cdot\dfrac{1{,}02^8-1}{0{,}02}\approx 12\,874{,}45$.
 \lkr{De opdrachten staan bewust door elkaar, met stijgende moeilijkheid. In deze versie staat bij elke opdracht het onderwerp, zodat je kunt kiezen.}
 
 \begin{oefeningen}
-\begin{oefening}[1]\label{oef:h3-soort}
-\thema{gemengd: soort rij herkennen}Is de rij rekenkundig of meetkundig? Bereken dan de som.
-\begin{enumerate}
-  \item $4 + 9 + 14 + \cdots$ (12 termen)
-  \item $3 + 6 + 12 + \cdots$ (7 termen)
-  \item $20 + 17 + 14 + \cdots$ (10 termen)
-  \item $2 - 6 + 18 - \cdots$ (6 termen)
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~rekenkundig, 378 \quad \textbf{b.}~meetkundig, 381 \quad \textbf{c.}~rekenkundig, 65 \quad \textbf{d.}~meetkundig, $-364$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$v=5$, $u_{12}=59$, dus $12\cdot\dfrac{4+59}{2}=378$.\\
-\textbf{b.}~$q=2$, dus $3\cdot(2^7-1)=381$.\\
-\textbf{c.}~$v=-3$, $u_{10}=-7$, dus $10\cdot\dfrac{20-7}{2}=65$.\\
-\textbf{d.}~$q=-3$, dus $2\cdot\dfrac{(-3)^6-1}{-3-1}=2\cdot\dfrac{728}{-4}=-364$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-soort}
 
-\begin{oefening}[1]\label{oef:h3-rrsom}
-\thema{rekenkundig: som}Bereken de som van de rekenkundige rij.
-\begin{enumerate}
-  \item $s_{15}$ als $u_1 = 8$ en $v = 3$
-  \item $s_{11}$ als $u_1 = 40$ en $v = -6$
-  \item $s_9$ als $u_1 = \tfrac12$ en $v = \tfrac14$
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~435 \quad \textbf{b.}~110 \quad \textbf{c.}~$\tfrac{27}{2}$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$u_{15}=8+14\cdot 3=50$, dus $15\cdot\dfrac{8+50}{2}=435$.\\
-\textbf{b.}~$u_{11}=40-60=-20$, dus $11\cdot\dfrac{40-20}{2}=110$.\\
-\textbf{c.}~$u_9=\tfrac12+8\cdot\tfrac14=\tfrac52$, dus $9\cdot\dfrac{\tfrac12+\tfrac52}{2}=\tfrac{27}{2}$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-rrsom}
 
-\begin{oefening}[1]\label{oef:h3-sigma}
-\thema{somteken: uitschrijven}Schrijf uit en bereken.
-\begin{reeks}[4]
-  \item $\displaystyle\sum_{i=1}^{4} (2i + 1)$
-  \item $\displaystyle\sum_{k=2}^{5} k^2$
-  \item $\displaystyle\sum_{j=0}^{3} 2^{\,j}$
-  \item $\displaystyle\sum_{i=1}^{5} (-1)^i$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~24 \quad \textbf{b.}~54 \quad \textbf{c.}~15 \quad \textbf{d.}~$-1$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$3+5+7+9=24$.\\
-\textbf{b.}~$4+9+16+25=54$.\\
-\textbf{c.}~$1+2+4+8=15$.\\
-\textbf{d.}~$-1+1-1+1-1=-1$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-sigma}
 
-\begin{oefening}[1]\label{oef:h3-mrsom}
-\thema{meetkundig: som}Bereken de som van de meetkundige rij.
-\begin{enumerate}
-  \item $s_8$ als $u_1 = 5$ en $q = 2$
-  \item $s_5$ als $u_1 = 81$ en $q = \tfrac13$
-  \item $s_5$ als $u_1 = -2$ en $q = -3$
-  \item $s_{20}$ als $u_1 = 7$ en $q = 1$
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~1275 \quad \textbf{b.}~121 \quad \textbf{c.}~$-122$ \quad \textbf{d.}~140
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$5\cdot(2^8-1)=1275$.\\
-\textbf{b.}~$81\cdot\dfrac{(\tfrac13)^5-1}{\tfrac13-1}=81\cdot\dfrac{-\tfrac{242}{243}}{-\tfrac23}=121$.\\
-\textbf{c.}~$-2\cdot\dfrac{(-3)^5-1}{-3-1}=-2\cdot\dfrac{-244}{-4}=-122$.\\
-\textbf{d.}~$q=1$: alle termen zijn 7, dus $20\cdot 7=140$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-mrsom}
 
-\begin{oefening}[1]\label{oef:h3-aantal}
-\thema{aantal termen}Bereken de som.
-\begin{enumerate}
-  \item $11 + 14 + 17 + \cdots + 95$
-  \item $6 + 12 + 24 + \cdots + 1536$
-  \item $100 + 96 + 92 + \cdots + 4$
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~1537 \quad \textbf{b.}~3066 \quad \textbf{c.}~1300
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$v=3$: $11+(n-1)\cdot 3=95$ geeft $n=29$. Som: $29\cdot\dfrac{11+95}{2}=1537$.\\
-\textbf{b.}~$q=2$: $6\cdot 2^{n-1}=1536$ geeft $2^{n-1}=256$, dus $n=9$. Som: $6\cdot(2^9-1)=3066$.\\
-\textbf{c.}~$v=-4$: $100+(n-1)\cdot(-4)=4$ geeft $n=25$. Som: $25\cdot\dfrac{100+4}{2}=1300$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-aantal}
 
-\begin{oefening}[1]
-\thema{fouten: exponent}Iemand schrijft: `$u_1 = 3$ en $q = 2$, dus $s_5 = 3 \cdot \dfrac{2^4 - 1}{2 - 1} = 45$.' Wat is er fout? Geef het juiste antwoord.
-\begin{solution}
-De exponent is $n$, niet $n-1$: $s_5=93$.
-\end{solution}
-\begin{fullsolution}
-In de somformule staat de exponent $n$: $s_5=3\cdot(2^5-1)=93$. Controle: $3+6+12+24+48=93$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o1}
 
-\begin{oefening}[1]\label{oef:h3-noteer}
-\thema{somteken: noteren}Noteer met het somteken.
-\begin{enumerate}
-  \item $5 + 10 + 15 + \cdots + 200$
-  \item $1 + 4 + 9 + \cdots + 144$
-  \item $2 + 4 + 8 + \cdots + 1024$
-  \item $1 - 2 + 3 - 4 + \cdots - 20$
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~$\displaystyle\sum_{i=1}^{40} 5i$ \quad \textbf{b.}~$\displaystyle\sum_{i=1}^{12} i^2$ \quad \textbf{c.}~$\displaystyle\sum_{i=1}^{10} 2^{\,i}$ \quad \textbf{d.}~$\displaystyle\sum_{i=1}^{20} (-1)^{i+1} i$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~De veelvouden van 5, en $200=5\cdot 40$: $\displaystyle\sum_{i=1}^{40} 5i$.\\
-\textbf{b.}~De kwadraten, en $144=12^2$: $\displaystyle\sum_{i=1}^{12} i^2$.\\
-\textbf{c.}~De machten van 2, en $1024=2^{10}$: $\displaystyle\sum_{i=1}^{10} 2^{\,i}$.\\
-\textbf{d.}~Positief bij oneven $i$: $\displaystyle\sum_{i=1}^{20} (-1)^{i+1} i$.\\
-Andere schrijfwijzen kunnen ook, bijvoorbeeld met een andere beginwaarde.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-noteer}
 
-\begin{oefening}[1]
-\thema{fouten: aantal termen}Iemand schrijft: `$12 + 15 + \cdots + 60$ telt $\dfrac{60 - 12}{3} = 16$ termen.' Wat is er fout? Bereken de som.
-\begin{solution}
-Dat zijn 16 sprongen, dus 17 termen; de som is 612.
-\end{solution}
-\begin{fullsolution}
-$\dfrac{60-12}{3}=16$ is het aantal sprongen. Er zijn dus 17 termen, en de som is $17\cdot\dfrac{12+60}{2}=612$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o2}
 
-\begin{oefening}[1]
-\begin{metprent}{fiets}
-\thema{context: rekenkundig}Een wielrenner fietst op de eerste dag van zijn trainingsperiode 20 km. Elke dag fietst hij 3 km meer dan de dag ervoor. Hoeveel kilometer fietst hij in 30 dagen?
-\end{metprent}
-\begin{solution}
-1905 km
-\end{solution}
-\begin{fullsolution}
-$u_{30}=20+29\cdot 3=107$, dus $s_{30}=30\cdot\dfrac{20+107}{2}=1905$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o3}
 
-\begin{oefening}[1]
-\thema{de som als rij}Van een rij is $s_1 = 4$, $s_2 = 10$ en $s_3 = 18$. Bepaal $u_1$, $u_2$ en $u_3$.
-\begin{solution}
-4, 6, 8
-\end{solution}
-\begin{fullsolution}
-$u_1=s_1=4$, $u_2=s_2-s_1=6$ en $u_3=s_3-s_2=8$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o4}
 
-\begin{oefening}[1]
-\thema{somteken: berekenen}Bereken.
-\begin{reeks}[2]
-  \item $\displaystyle\sum_{i=1}^{30} (4i - 1)$
-  \item $\displaystyle\sum_{i=1}^{6} 3 \cdot 2^{\,i}$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~1830 \quad \textbf{b.}~378
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$3+7+\cdots+119$: 30 termen, dus $30\cdot\dfrac{3+119}{2}=1830$.\\
-\textbf{b.}~$6+12+\cdots+192$: $u_1=6$, $q=2$, dus $6\cdot(2^6-1)=378$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o5}
 
-\begin{oefening}[1]
-\thema{rekenkundig: voorbeeld uit hoofdstuk 1}In hoofdstuk 1 telde trap $n$ precies $1 + 2 + \cdots + n$ blokjes. Toon met de somformule aan dat dit $\dfrac{n(n+1)}{2}$ is.
-\begin{solution}
-$u_1=1$, $u_n=n$, $n$ termen.
-\end{solution}
-\begin{fullsolution}
-Dit is een rekenkundige rij met $u_1=1$, $u_n=n$ en $n$ termen, dus $s_n=n\cdot\dfrac{1+n}{2}=\dfrac{n(n+1)}{2}$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o6}
 
-\begin{oefening}[2]\label{oef:h3-somindex}
-\thema{somteken: andere beginwaarde}Bereken.
-\begin{reeks}
-  \item $\displaystyle\sum_{k=5}^{24} (3k + 2)$
-  \item $\displaystyle\sum_{j=3}^{8} 2^{\,j}$
-  \item $\displaystyle\sum_{i=0}^{9} (10 - i)$
-\end{reeks}
-\begin{solution}
-\textbf{a.}~910 \quad \textbf{b.}~504 \quad \textbf{c.}~55
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$17+20+\cdots+74$: $24-5+1=20$ termen, dus $20\cdot\dfrac{17+74}{2}=910$.\\
-\textbf{b.}~$8+16+\cdots+256$: $8-3+1=6$ termen, dus $8\cdot(2^6-1)=504$.\\
-\textbf{c.}~$10+9+\cdots+1$: $9-0+1=10$ termen, dus $10\cdot\dfrac{10+1}{2}=55$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-somindex}
 
-\begin{oefening}[2]\label{oef:h3-nuitsom}
-\thema{aantal termen uit de som}Hoeveel termen van $2,\ 5,\ 8,\ \ldots$ moet je optellen om 155 te krijgen?
-\begin{solution}
-10
-\end{solution}
-\begin{fullsolution}
-$u_n=3n-1$, dus $s_n=n\cdot\dfrac{2+3n-1}{2}=\dfrac{n(3n+1)}{2}$. Uit $3n^2+n-310=0$ volgt $n=10$ of $n=-\tfrac{31}{3}$. Enkel $n=10$ kan.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-nuitsom}
 
-\begin{oefening}[2]\label{oef:h3-mrcontext}
-\thema{context: meetkundig}Een filmpje krijgt op de eerste dag 200 weergaven. Elke dag zijn er 1,5 keer zoveel weergaven als de dag ervoor.
-\begin{enumerate}
-  \item Hoeveel weergaven zijn er in totaal na 10 dagen?
-  \item Na hoeveel dagen is het totaal voor het eerst meer dan 100\,000?
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~ongeveer 22\,666 \quad \textbf{b.}~na 14 dagen
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$s_{10}=200\cdot\dfrac{1{,}5^{10}-1}{0{,}5}\approx 22\,666$.\\
-\textbf{b.}~$400\,(1{,}5^{\,n}-1)>100\,000$ geeft $1{,}5^{\,n}>251$ en $n>13{,}63$, dus na 14 dagen.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-mrcontext}
 
-\begin{oefening}[2]\label{oef:h3-uitsom}
-\thema{de som als rij}Bepaal $u_n$. Is de rij rekenkundig, meetkundig of geen van beide?
-\begin{enumerate}
-  \item $s_n = 2n^2 + n$
-  \item $s_n = 3^n - 1$
-  \item $s_n = n^2 + 1$
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~$u_n=4n-1$, rekenkundig \quad \textbf{b.}~$u_n=2\cdot 3^{n-1}$, meetkundig \quad \textbf{c.}~$u_1=2$ en $u_n=2n-1$ voor $n\geqslant 2$: geen van beide
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$s_{n-1}=2n^2-3n+1$, dus $u_n=4n-1$. Ook $u_1=3$ past hierin.\\
-\textbf{b.}~$u_n=3^n-3^{n-1}=3^{n-1}(3-1)=2\cdot 3^{n-1}$. Ook $u_1=2$ past hierin.\\
-\textbf{c.}~$u_n=n^2+1-\bigl((n-1)^2+1\bigr)=2n-1$ voor $n\geqslant 2$. Maar $u_1=s_1=2$ past daar niet in: de rij is $2,\ 3,\ 5,\ 7,\ \ldots$
-\end{fullsolution}
-\end{oefening}
+\oef{h3-uitsom}
 
-\begin{oefening}[2]\label{oef:h3-sparen}
-\thema{sparen}Je stort 10 jaar lang aan het einde van elk jaar \eur 600 op een rekening met 2,5\% intrest.
-\begin{enumerate}
-  \item Hoeveel staat er na de laatste storting op?
-  \item Hoeveel daarvan is intrest?
-  \item Hoeveel had er gestaan als je de \eur 6000 meteen aan het begin had gestort?
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~ongeveer \eur 6722,03 \quad \textbf{b.}~ongeveer \eur 722,03 \quad \textbf{c.}~ongeveer \eur 7680,51
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$E=600\cdot\dfrac{1{,}025^{10}-1}{0{,}025}\approx 6722{,}03$.\\
-\textbf{b.}~$6722{,}03-6000=722{,}03$.\\
-\textbf{c.}~$6000\cdot 1{,}025^{10}\approx 7680{,}51$: het geld staat dan langer op de rekening.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-sparen}
 
-\begin{oefening}[2]
-\thema{rekenkundig: onbekende uit de som}Bepaal de onbekende van de rekenkundige rij.
-\begin{enumerate}
-  \item $v = 3$ en $s_{12} = 342$. Bepaal $u_1$.
-  \item $u_1 = 5$ en $s_{10} = 185$. Bepaal $v$.
-  \item $s_5 = 40$ en $s_{10} = 130$. Bepaal $u_1$ en $v$.
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~$u_1=12$ \quad \textbf{b.}~$v=3$ \quad \textbf{c.}~$u_1=4$, $v=2$
-\end{solution}
-\begin{fullsolution}
-Gebruik $s_n=\tfrac{n}{2}\bigl(2u_1+(n-1)v\bigr)$.\\
-\textbf{a.}~$6(2u_1+33)=342$ geeft $2u_1+33=57$, dus $u_1=12$.\\
-\textbf{b.}~$5(10+9v)=185$ geeft $10+9v=37$, dus $v=3$.\\
-\textbf{c.}~$\tfrac52(2u_1+4v)=40$ geeft $u_1+2v=8$. $5(2u_1+9v)=130$ geeft $2u_1+9v=26$. Dus $5v=10$, $v=2$ en $u_1=4$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o7}
 
-\begin{oefening}[2]
-\begin{metprent}{klok}
-\thema{context: rekenkundig}Een klok slaat elk heel uur het aantal uren, van 1 tot en met 12, en elk half uur één keer. Hoeveel slagen hoor je in één etmaal?
-\end{metprent}
-\begin{solution}
-180
-\end{solution}
-\begin{fullsolution}
-Elke twaalf uur: $1+2+\cdots+12=12\cdot\dfrac{1+12}{2}=78$ slagen. In een etmaal is dat $2\cdot 78=156$. Daar komen 24 halve uren bij: $156+24=180$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o8}
 
-\begin{oefening}[2]
-\thema{meetkundig: onbekende uit de som}Bepaal de onbekende van de meetkundige rij.
-\begin{enumerate}
-  \item $q = 2$ en $s_6 = 189$. Bepaal $u_1$.
-  \item $u_1 = 2$ en $s_3 = 14$. Bepaal $q$. Let op: er zijn twee oplossingen.
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~$u_1=3$ \quad \textbf{b.}~$q=2$ of $q=-3$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$u_1\cdot(2^6-1)=63\,u_1=189$, dus $u_1=3$.\\
-\textbf{b.}~$s_3=u_1+u_1q+u_1q^2$, dus $2+2q+2q^2=14$ en $q^2+q-6=0$. Dat geeft $q=2$ of $q=-3$. Controle: $2+4+8=14$ en $2-6+18=14$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o9}
 
-\begin{oefening}[2]
-\thema{aantal termen: voorwaarde}Bereken de som van alle getallen van drie cijfers die bij deling door 7 als rest 2 geven.
-\begin{solution}
-70\,692
-\end{solution}
-\begin{fullsolution}
-Het kleinste is $100=7\cdot 14+2$ en het grootste is $996=7\cdot 142+2$. Dat zijn $142-14+1=129$ termen, dus de som is $129\cdot\dfrac{100+996}{2}=70\,692$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o10}
 
-\begin{oefening}[2]
-\thema{fouten: geen rekenkundige rij}Iemand berekent $1 + 4 + 9 + 16 + \cdots + 100$ als $10 \cdot \dfrac{1 + 100}{2} = 505$. Wat is er fout? Wat is de juiste uitkomst?
-\begin{solution}
-De rij is niet rekenkundig; de som is 385.
-\end{solution}
-\begin{fullsolution}
-De verschillen 3, 5, 7 zijn niet gelijk, dus de rij is niet rekenkundig en de formule geldt niet. Optellen geeft $1+4+9+16+25+36+49+64+81+100=385$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o11}
 
-\begin{oefening}[2]
-\thema{meetkundig: wisselend teken}Bereken $1 - \tfrac12 + \tfrac14 - \tfrac18 + \cdots - \tfrac{1}{128}$.
-\begin{solution}
-$\tfrac{85}{128}$
-\end{solution}
-\begin{fullsolution}
-$q=-\tfrac12$ en $\tfrac{1}{128}=(\tfrac12)^7$, dus $n-1=7$ en $n=8$. De som is $\dfrac{(-\tfrac12)^8-1}{-\tfrac12-1}=\dfrac{-\tfrac{255}{256}}{-\tfrac32}=\dfrac{85}{128}$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o12}
 
-\begin{oefening}[2]
-\thema{somteken: splitsen}Bereken $\displaystyle\sum_{i=1}^{10} \left(2i + 2^{\,i}\right)$.
-\begin{solution}
-2156
-\end{solution}
-\begin{fullsolution}
-Splits de som: $\displaystyle\sum_{i=1}^{10} 2i=10\cdot\dfrac{2+20}{2}=110$ en $\displaystyle\sum_{i=1}^{10} 2^{\,i}=2\cdot(2^{10}-1)=2046$. Samen 2156.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o13}
 
-\begin{oefening}[2]
-\thema{context: meetkundig}Een bal valt van 3 m hoogte en stuit telkens terug tot 80\% van de vorige hoogte. Welke afstand heeft de bal afgelegd op het moment dat hij voor de zesde keer de grond raakt?
-\begin{solution}
-Ongeveer 19,14 m
-\end{solution}
-\begin{fullsolution}
-De bal valt 3 m, en daarna gaat hij 5 keer omhoog en weer omlaag. De stuithoogtes zijn $2{,}4;\ 1{,}92;\ \ldots$ met $q=0{,}8$. Hun som is $2{,}4\cdot\dfrac{0{,}8^5-1}{0{,}8-1}=8{,}06784$. De afstand is $3+2\cdot 8{,}06784\approx 19{,}14$ m.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o14}
 
-\begin{oefening}[2]
-\thema{meetkundig: aantal termen uit de som}Hoeveel termen van $3,\ 6,\ 12,\ \ldots$ moet je minstens optellen om meer dan een miljoen te krijgen?
-\begin{solution}
-19
-\end{solution}
-\begin{fullsolution}
-$3\,(2^{\,n}-1)>1\,000\,000$ geeft $2^{\,n}>333\,334{,}33\ldots$ en $n>18{,}35$, dus $n=19$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o15}
 
-\begin{oefening}[2]
-\thema{rekenkundig: grootste som}Je telt de termen van $61,\ 57,\ 53,\ \ldots$ één voor één op. Bij hoeveel termen is de som het grootst? Hoe groot is ze dan?
-\begin{solution}
-Bij 16 termen; 496
-\end{solution}
-\begin{fullsolution}
-De som groeit zolang de termen positief zijn. $u_n=65-4n>0$ geeft $n<16{,}25$, dus $u_{16}=1$ is de laatste positieve term. Dan is $s_{16}=16\cdot\dfrac{61+1}{2}=496$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o16}
 
-\begin{oefening}[2]
-\thema{context: meetkundig}Je mag kiezen: \eur 100\,000 ineens, of 30 dagen lang geld volgens dit schema: 1 cent op dag 1, 2 cent op dag 2, 4 cent op dag 3, enzovoort. Wat kies je?
-\begin{solution}
-Het schema: \eur 10\,737\,418,23
-\end{solution}
-\begin{fullsolution}
-$s_{30}=1\cdot(2^{30}-1)=1\,073\,741\,823$ cent, dat is \eur 10\,737\,418,23. Dat is ruim 100 keer meer. Na 20 dagen heb je nochtans maar $2^{20}-1$ cent, ongeveer \eur 10\,486.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o17}
 
-\begin{oefening}[3]
-\thema{rekenkundig: bewijs}Bewijs: als $s_n = an^2 + bn$ voor alle $n$, met $a$ en $b$ vaste getallen, dan is de rij rekenkundig. Wat is het verschil?
-\begin{solution}
-Het verschil is $2a$.
-\end{solution}
-\begin{fullsolution}
-$s_{n-1}=a(n-1)^2+b(n-1)=an^2-2an+a+bn-b$, dus $u_n=s_n-s_{n-1}=2an-a+b$ voor $n\geqslant 2$. Ook $u_1=s_1=a+b$ past hierin. De coëfficiënt van $n$ is $2a$, dus $v=2a$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o18}
 
-\begin{oefening}[3]
-\begin{metprent}{slak}
-\thema{meetkundig: de som loopt niet op}Een slak kruipt op dag 1 een meter. Elke dag kruipt ze de helft van de dag ervoor.
-\begin{enumerate}
-  \item Toon aan dat de afstand na $n$ dagen $s_n = 2 - 2 \cdot (\tfrac12)^n$ meter is.
-  \item Na hoeveel dagen heeft de slak voor het eerst meer dan 1,99 m afgelegd?
-  \item Haalt de slak ooit 2 m? Leg uit.
-\end{enumerate}
-\end{metprent}
-\begin{solution}
-\textbf{b.}~na 8 dagen \quad \textbf{c.}~nee
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$s_n=\dfrac{(\tfrac12)^n-1}{\tfrac12-1}=-2\bigl((\tfrac12)^n-1\bigr)=2-2\cdot(\tfrac12)^n$.\\
-\textbf{b.}~$2\cdot(\tfrac12)^n<0{,}01$ geeft $(\tfrac12)^n<0{,}005$ en $n>7{,}64$, dus na 8 dagen.\\
-\textbf{c.}~Nee: $2\cdot(\tfrac12)^n$ is altijd positief, dus $s_n<2$. De som komt wel zo dicht bij 2 als je wilt. In hoofdstuk 4 noemen we dat een limiet.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o19}
 
-\begin{oefening}[3]
-\thema{rekenkundig: slim groeperen}Bereken $100^2 - 99^2 + 98^2 - 97^2 + \cdots + 2^2 - 1^2$ zonder rekentoestel.
-\begin{solution}
-5050
-\end{solution}
-\begin{fullsolution}
-Gebruik $a^2-b^2=(a-b)(a+b)$: elk paar is $(a+b)$ met $a-b=1$. Dat geeft $199+195+\cdots+3$. Dit is een rekenkundige rij met 50 termen, dus de som is $50\cdot\dfrac{199+3}{2}=5050$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o20}
 
-\begin{oefening}[3]
-\thema{lening}Je leent \eur 10\,000 aan 4\% per jaar, en betaalt 5 jaar lang aan het einde van elk jaar een vast bedrag $a$. Na de laatste betaling is de lening volledig terugbetaald.
-\begin{enumerate}
-  \item Waarom geldt $a \cdot \dfrac{1{,}04^5 - 1}{1{,}04 - 1} = 10\,000 \cdot 1{,}04^5$? Denk aan twee rekeningen die na 5 jaar evenveel waard moeten zijn.
-  \item Bereken $a$. Hoeveel intrest betaal je in totaal?
-\end{enumerate}
-\begin{solution}
-\textbf{b.}~$a\approx$ \eur 2246,27; ongeveer \eur 1231,36 intrest
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~Links: de betalingen, elk aangegroeid tot het einde van jaar 5. Rechts: de schuld, die zonder betalingen tot dan aangroeit. Die twee moeten gelijk zijn.\\
-\textbf{b.}~$a=10\,000\cdot 1{,}04^5\cdot\dfrac{0{,}04}{1{,}04^5-1}\approx 2246{,}27$. In totaal betaal je $5a\approx 11\,231{,}36$, dus ongeveer \eur 1231,36 intrest.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o21}
 
-\begin{oefening}[3]
-\thema{som in een tabel}Je telt alle getallen op in de tafels van vermenigvuldiging van 1 tot en met 10, dus de $10 \times 10$ producten van $1 \cdot 1$ tot en met $10 \cdot 10$.
-\begin{enumerate}
-  \item Hoeveel is de som van de tafel van $k$?
-  \item Toon aan dat het totaal gelijk is aan $(1 + 2 + \cdots + 10)^2$ en bereken het.
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~$55k$ \quad \textbf{b.}~3025
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$k\cdot 1+k\cdot 2+\cdots+k\cdot 10=k\,(1+2+\cdots+10)=55k$.\\
-\textbf{b.}~Het totaal is $55\cdot 1+55\cdot 2+\cdots+55\cdot 10=55\cdot(1+2+\cdots+10)=55^2=3025$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o22}
 
-\begin{oefening}[3]
-\thema{bewijs: rekenkundige som}Bewijs: bij een rekenkundige rij is $s_n = \dfrac{n}{2}\bigl(2u_1 + (n-1)v\bigr)$. Toon daarmee aan dat de som van de eerste $n$ oneven getallen gelijk is aan $n^2$.
-\begin{solution}
-$u_1=1$, $v=2$ invullen geeft $n^2$.
-\end{solution}
-\begin{fullsolution}
-Vul $u_n=u_1+(n-1)v$ in de somformule in: $s_n=n\cdot\dfrac{u_1+u_1+(n-1)v}{2}=\dfrac{n}{2}\bigl(2u_1+(n-1)v\bigr)$.\\
-Voor de oneven getallen is $u_1=1$ en $v=2$, dus $s_n=\dfrac{n}{2}\bigl(2+2(n-1)\bigr)=\dfrac{n}{2}\cdot 2n=n^2$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-o23}
 \end{oefeningen}
 
 %----------------------------------------------------------------------------------------
@@ -873,189 +423,38 @@ Voor de oneven getallen is $u_1=1$ en $v=2$, dus $s_n=\dfrac{n}{2}\bigl(2+2(n-1)
 \lkr{Matrices en complexe getallen zijn gezien in het 5de jaar. Logica, kansrekenen en integralen staan ook in het 6de jaar: kijk na of ze al aan bod kwamen, of laat die oefeningen weg.}
 
 \begin{oefeningen}
-\begin{oefening}[3]\label{oef:h3-inductie}
-\koppel{discreet}{Logica en bewijzen} Voor kwadraten bestaat geen rekenkundige of meetkundige som, maar wel een formule: $\displaystyle\sum_{i=1}^{n} i^2 = \dfrac{n(n+1)(2n+1)}{6}$.
-\begin{enumerate}
-  \item Controleer de formule voor $n = 10$.
-  \item Bewijs de formule met volledige inductie.
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~385
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$\dfrac{10\cdot 11\cdot 21}{6}=385$.\\
-\textbf{b.}~Basis: voor $n=1$ staat er $1=\dfrac{1\cdot 2\cdot 3}{6}$.\\
-Stap: stel dat de formule geldt voor $n=k$. Dan is de som tot $k+1$ gelijk aan\\
-$\dfrac{k(k+1)(2k+1)}{6}+(k+1)^2=\dfrac{(k+1)\bigl(2k^2+k+6k+6\bigr)}{6}=\dfrac{(k+1)(k+2)(2k+3)}{6}$.\\
-Dat is de formule voor $n=k+1$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-inductie}
 
-\begin{oefening}[2]
-\koppel{data}{Kansrekenen} Je gooit met een dobbelsteen tot je een zes gooit. $u_i$ is de kans dat de eerste zes valt bij worp $i$.
-\begin{enumerate}
-  \item Bereken met de somformule de kans dat de eerste zes valt in de eerste $n$ worpen.
-  \item Bereken diezelfde kans via de complementaire gebeurtenis. Komt hetzelfde uit?
-  \item Hoeveel worpen heb je nodig om minstens 90\% kans op een zes te hebben?
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~$1-(\tfrac56)^n$ \quad \textbf{b.}~ja \quad \textbf{c.}~13
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$u_i=\tfrac16\cdot(\tfrac56)^{i-1}$, dus $s_n=\tfrac16\cdot\dfrac{(\tfrac56)^n-1}{\tfrac56-1}=1-(\tfrac56)^n$.\\
-\textbf{b.}~De kans op $n$ keer geen zes is $(\tfrac56)^n$, dus de gevraagde kans is $1-(\tfrac56)^n$.\\
-\textbf{c.}~$(\tfrac56)^n\leqslant 0{,}1$ geeft $n\geqslant 12{,}63$, dus 13 worpen.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-koppel-1}
 
-\begin{oefening}[2]
-\koppel{algebra}{Complexe getallen} De somformule geldt ook als $q$ een complex getal is.
-\begin{enumerate}
-  \item Bereken $1 + \mathrm{i} + \mathrm{i}^2 + \cdots + \mathrm{i}^{10}$ met de somformule, en controleer door de termen uit te schrijven.
-  \item Stel dat $w \neq 1$ en $w^n = 1$. Toon aan dat $1 + w + w^2 + \cdots + w^{n-1} = 0$. Wat betekent dat voor de $n$-de wortels uit 1?
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~$\mathrm{i}$ \quad \textbf{b.}~Hun som is 0.
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$\dfrac{\mathrm{i}^{11}-1}{\mathrm{i}-1}=\dfrac{-\mathrm{i}-1}{\mathrm{i}-1}=\dfrac{(-\mathrm{i}-1)(-\mathrm{i}-1)}{(\mathrm{i}-1)(-\mathrm{i}-1)}=\dfrac{2\mathrm{i}}{2}=\mathrm{i}$. Controle: per vier termen is de som 0, en $1+\mathrm{i}-1=\mathrm{i}$ blijft over.\\
-\textbf{b.}~$\dfrac{w^n-1}{w-1}=\dfrac{0}{w-1}=0$. Neem voor $w$ de wortel met het kleinste positieve argument: dan zijn $1,\ w,\ \ldots,\ w^{n-1}$ precies alle $n$-de wortels uit 1. Hun som is dus 0 (voor $n\geqslant 2$).
-\end{fullsolution}
-\end{oefening}
+\oef{h3-koppel-2}
 
-\begin{oefening}[2]
-\koppel{algebra}{Matrices} Gegeven: $A = \begin{pmatrix} 2 & 0 \\ 0 & 3 \end{pmatrix}$ en $I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$.
-\begin{enumerate}
-  \item Bereken $S = I + A + A^2 + A^3$. Welke twee sommen herken je?
-  \item Toon aan: $(A - I)\,S = A^4 - I$. Vergelijk met het bewijs van de somformule.
-\end{enumerate}
-\begin{solution}
-\textbf{a.}~$S=\begin{pmatrix} 15 & 0 \\ 0 & 40 \end{pmatrix}$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~$S=\begin{pmatrix} 15 & 0 \\ 0 & 40 \end{pmatrix}$: op de diagonaal staan $1+2+4+8$ en $1+3+9+27$.\\
-\textbf{b.}~$(A-I)S=AS-S=A+A^2+A^3+A^4-I-A-A^2-A^3=A^4-I$. Dit is dezelfde redenering als $q\cdot s_n-s_n$. Controle: $\begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}\begin{pmatrix} 15 & 0 \\ 0 & 40 \end{pmatrix}=\begin{pmatrix} 15 & 0 \\ 0 & 80 \end{pmatrix}$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-koppel-3}
 
-\begin{oefening}[3]
-\koppel{analyse}{Integralen} Verdeel $[0, 1]$ in $n$ gelijke stukken en teken onder de grafiek van $f(x) = x^2$ de rechthoeken met breedte $\tfrac1n$ en als hoogte de functiewaarde rechts in elk stuk.
-
-\begin{tikzpicture}[x=2.6cm,y=1.7cm,font=\scriptsize]
-  \foreach \i in {1,2,3,4,5}{
-    \draw[accent,fill=accent!15] ({(\i-1)/5},0) rectangle ({\i/5},{(\i/5)^2});}
-  \draw[->,lijngrijs] (-.05,0) -- (1.15,0) node[right,text=black] {$x$};
-  \draw[->,lijngrijs] (0,-.05) -- (0,1.15) node[above,text=black] {$y$};
-  \draw[thick,domain=0:1.04,samples=30] plot (\x,{\x*\x});
-  \node[below=1pt,text=grijs] at (1,0) {1};
-\end{tikzpicture}
-\begin{enumerate}
-  \item Toon aan dat de totale oppervlakte van de rechthoeken gelijk is aan $\dfrac{1}{n^3} \displaystyle\sum_{i=1}^{n} i^2$.
-  \item Gebruik de formule uit oefening \ref{oef:h3-inductie} en bereken die oppervlakte voor $n = 10$ en $n = 100$. Welk getal benader je?
-\end{enumerate}
-\begin{solution}
-\textbf{b.}~0,385 en 0,33835; de benadering gaat naar $\tfrac13$
-\end{solution}
-\begin{fullsolution}
-\textbf{a.}~De $i$-de rechthoek heeft breedte $\tfrac1n$ en hoogte $(\tfrac{i}{n})^2$, dus oppervlakte $\dfrac{i^2}{n^3}$.\\
-\textbf{b.}~$n=10$: $\dfrac{385}{1000}=0{,}385$. $n=100$: $\dfrac{338\,350}{1\,000\,000}=0{,}33835$. Het getal is $\displaystyle\int_0^1 x^2\,\mathrm{d}x=\tfrac13$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-koppel-4}
 \end{oefeningen}
 
 %----------------------------------------------------------------------------------------
 \opdrachtsectie{Test jezelf}
 
 \begin{oefeningen}
-\begin{oefening}[1]\label{oef:h3-t1}
-Een rekenkundige rij heeft $u_1 = 6$ en $v = 5$. Bereken $s_{12}$.
-\begin{solution}
-402
-\end{solution}
-\begin{fullsolution}
-$u_{12}=6+55=61$, dus $s_{12}=12\cdot\dfrac{6+61}{2}=402$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-t1}
 
-\begin{oefening}[1]\label{oef:h3-t2}
-Bereken $13 + 17 + 21 + \cdots + 93$.
-\begin{solution}
-1113
-\end{solution}
-\begin{fullsolution}
-$13+(n-1)\cdot 4=93$ geeft $n=21$, dus de som is $21\cdot\dfrac{13+93}{2}=1113$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-t2}
 
-\begin{oefening}[1]\label{oef:h3-t3}
-Bereken $s_7$ van de rij $4,\ 12,\ 36,\ \ldots$
-\begin{solution}
-4372
-\end{solution}
-\begin{fullsolution}
-$q=3$, dus $s_7=4\cdot\dfrac{3^7-1}{3-1}=4372$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-t3}
 
-\begin{oefening}[2]\label{oef:h3-t4}
-Bereken $\displaystyle\sum_{k=4}^{13} (3k - 2)$.
-\begin{solution}
-235
-\end{solution}
-\begin{fullsolution}
-$10+13+\cdots+37$: $13-4+1=10$ termen, dus $10\cdot\dfrac{10+37}{2}=235$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-t4}
 
-\begin{oefening}[1]\label{oef:h3-t5}
-Noteer met het somteken: $7 + 14 + 21 + \cdots + 84$.
-\begin{solution}
-$\displaystyle\sum_{i=1}^{12} 7i$
-\end{solution}
-\begin{fullsolution}
-De veelvouden van 7, en $84=7\cdot 12$: $\displaystyle\sum_{i=1}^{12} 7i$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-t5}
 
-\begin{oefening}[2]\label{oef:h3-t6}
-Hoeveel termen van $5,\ 9,\ 13,\ \ldots$ moet je optellen om 230 te krijgen?
-\begin{solution}
-10
-\end{solution}
-\begin{fullsolution}
-$u_n=4n+1$, dus $s_n=n\cdot\dfrac{5+4n+1}{2}=n(2n+3)$. Uit $2n^2+3n-230=0$ volgt $n=10$ of $n=-\tfrac{23}{2}$. Enkel $n=10$ kan.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-t6}
 
-\begin{oefening}[2]\label{oef:h3-t7}
-Gegeven: $s_n = 3n^2 - n$. Bepaal $u_n$.
-\begin{solution}
-$u_n=6n-4$
-\end{solution}
-\begin{fullsolution}
-$s_{n-1}=3(n-1)^2-(n-1)=3n^2-7n+4$, dus $u_n=6n-4$ voor $n\geqslant 2$. Ook $u_1=s_1=2$ past hierin.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-t7}
 
-\begin{oefening}[2]\label{oef:h3-t8}
-Je loopt op dag 1 een afstand van 2 km, en elke dag 10\% meer dan de dag ervoor. Hoeveel kilometer loop je in 7 dagen?
-\begin{solution}
-Ongeveer 18,97 km
-\end{solution}
-\begin{fullsolution}
-$s_7=2\cdot\dfrac{1{,}1^7-1}{0{,}1}\approx 18{,}97$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-t8}
 
-\begin{oefening}[2]\label{oef:h3-t9}
-Je stort 5 jaar lang aan het einde van elk jaar \eur 800 op een rekening met 3\% intrest. Hoeveel staat er na de laatste storting op?
-\begin{solution}
-Ongeveer \eur 4247,31
-\end{solution}
-\begin{fullsolution}
-$E=800\cdot\dfrac{1{,}03^5-1}{0{,}03}\approx 4247{,}31$.
-\end{fullsolution}
-\end{oefening}
+\oef{h3-t9}
 \end{oefeningen}
 
 \herhaalschema{%
