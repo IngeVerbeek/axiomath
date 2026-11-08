@@ -7,6 +7,16 @@ Cursus voor pakket 1 (Grieks-Latijn, Humane wetenschappen, Latijn-Moderne talen,
 | 1. Rekenen met matrices | `hoofdstukken/01-rekenen-met-matrices.tex` | K3 | eerste versie, nog na te lezen |
 | 2. Matrixmodellen | `hoofdstukken/02-matrixmodellen.tex` | K4 | eerste versie, nog na te lezen |
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [laatste release](https://github.com/Klaasvdb/axiomath/releases/latest):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/latest/download/Matrices.-.handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/latest/download/Matrices.-.handboek.-.numerieke.oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/latest/download/Matrices.-.handboek.-.uitgewerkte.oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/latest/download/Matrices.-.leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/latest/download/Matrices.-.zelfstudie.pdf)
+
 ## Maken
 
 Vanuit de hoofdmap van de repo, in PowerShell:

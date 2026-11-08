@@ -9,6 +9,16 @@ Cursus voor pakket 4 (B+S''), leerplandoelen 31-33, volgens de [ontwerpregels](.
 | 3. Integratiemethoden | `hoofdstukken/03-integratiemethoden.tex` | LPD 33 | eerste versie, nog na te lezen |
 | 4. Toepassingen van integralen | `hoofdstukken/04-toepassingen.tex` | wenken bij LPD 31 en 33 | eerste versie, nog na te lezen |
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [laatste release](https://github.com/Klaasvdb/axiomath/releases/latest):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/latest/download/Integralen.-.handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/latest/download/Integralen.-.handboek.-.numerieke.oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/latest/download/Integralen.-.handboek.-.uitgewerkte.oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/latest/download/Integralen.-.leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/latest/download/Integralen.-.zelfstudie.pdf)
+
 ## Maken
 
 Vanuit de hoofdmap van de repo, in PowerShell:
