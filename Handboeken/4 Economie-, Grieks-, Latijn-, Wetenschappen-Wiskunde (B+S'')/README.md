@@ -21,5 +21,5 @@ Leerplan: B+S'' (Katholiek Onderwijs Vlaanderen). Doelen volgens de tabel met le
 | Discrete wiskunde/Logica en bewijzen | LPD 4 (bewijstechnieken) | nog te maken |
 | [Data en onzekerheid/Kansrekenen](Data%20en%20onzekerheid/Kansrekenen) | LPD 48-49 | vier hoofdstukken, eerste versie, nog na te lezen |
 | Data en onzekerheid/Statistiek | LPD 50-54, K1 | nog te maken |
-| Onderzoekscompetentie | LPD 55 | nog te maken |
+| [Onderzoekscompetentie](Onderzoekscompetentie) | LPD 55 | drie hoofdstukken, eerste versie, nog na te lezen |
 

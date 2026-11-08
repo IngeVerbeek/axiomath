@@ -1,0 +1,142 @@
+%----------------------------------------------------------------------------------------
+% VAN VRAAG TOT ONDERZOEK. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h1-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{1}{Van vraag tot onderzoek}
+
+\lkr{Leerplan B+S'': LPD 55 (onderzoekscompetentie). Deze cursus is geen leerstof die je in één blok geeft: de hoofdstukken ondersteunen een onderzoeksopdracht die over meerdere weken loopt, en kunnen bij elke andere cursus gebruikt worden. Hoofdstuk 1 gaat over de vraag en over wiskundig onderzoek in de enge zin (vermoeden en bewijs), hoofdstuk 2 over modelleren met data, hoofdstuk 3 over rapporteren. De precieze verwachtingen (product, proces, evaluatie) legt de school vast; kijk die na.}
+
+Een onderzoek begint niet met een antwoord, maar met een goede vraag. \textit{Hoe moeilijk is schaken?} is een interessante vraag, maar je kunt ze niet beantwoorden: wat betekent \textit{moeilijk}? Dit hoofdstuk toont hoe je van een onderwerp tot een vraag komt die je met wiskunde kunt beantwoorden, en hoe een wiskundig onderzoek verloopt: experimenteren, een vermoeden opstellen, en het bewijzen.
+
+\begin{oefeningen}[Start]
+\oef{h1-start-1}
+
+\oef{h1-verken}
+\end{oefeningen}
+
+%========================================================================================
+\section{De onderzoeksvraag}
+
+\naast{%
+Een onderzoek doorloopt een cyclus. Je verkent het onderwerp, stelt een vraag, maakt een plan, voert het uit en trekt een besluit. Daarna rapporteer je, en kijk je terug: wat ging goed, wat zou je anders doen? Vaak leidt het besluit tot een nieuwe vraag, en begint de cyclus opnieuw.}{%
+\begin{tikzpicture}[font=\scriptsize]
+  \foreach \i/\t in {0/oriënteren,1/vraag stellen,2/plannen,3/uitvoeren,4/besluiten,5/rapporteren}{
+    \node[draw=accent,fill=accent!10,rounded corners=2pt,inner sep=2pt,minimum width=1.6cm] (n\i) at ({90-60*\i}:1.55) {\t};}
+  \foreach \i in {0,...,5}{\pgfmathtruncatemacro{\j}{mod(\i+1,6)}
+    \draw[->,accent] (n\i) -- (n\j);}
+\end{tikzpicture}}
+
+\begin{theorie}
+Een goede \textbf{\textcolor{accent}{onderzoeksvraag}} is
+\begin{itemize}
+\item \textbf{afgebakend}: ze gaat over één duidelijk omschreven situatie;
+\item \textbf{precies}: elk begrip erin is gedefinieerd of meetbaar;
+\item \textbf{beantwoordbaar}: met wiskunde, met de middelen en de tijd die je hebt.
+\end{itemize}
+Een grote vraag splits je in \textbf{\textcolor{accent}{deelvragen}} die je een voor een kunt beantwoorden.
+\end{theorie}
+
+\voorbeeld{}{Maak van het onderwerp \textit{schaken} een goede onderzoeksvraag, met deelvragen.\label{vb:h1-vraag}}{%
+\uitleg{Vertrek van een concrete situatie op het bord en een grootheid die je kunt tellen of berekenen.}
+\begin{itemize}
+\item \textit{Hoe moeilijk is schaken?} Niet precies en niet beantwoordbaar.
+\item \textit{Op hoeveel manieren zet je 8 torens op een schaakbord zo dat ze elkaar niet aanvallen?} Afgebakend en precies.
+\item Deelvraag: hoeveel manieren zijn er op een bord van $2 \times 2$, $3 \times 3$, \ldots? Kleine gevallen eerst.
+\item Deelvraag: wat verandert er met lopers in plaats van torens? Een uitbreiding.
+\end{itemize}
+Het antwoord op de hoofdvraag is $8! = 40\,320$: in elke rij staat één toren, telkens in een andere kolom (zie Telproblemen).}
+
+\begin{oefeningen}
+\oef{h1-vraag}
+\end{oefeningen}
+
+%========================================================================================
+\section{Experimenteren, vermoeden, bewijzen}
+
+In de wiskunde is een onderzoek pas af als het resultaat bewezen is. De weg ernaartoe is wel experimenteel: je probeert kleine gevallen, zet ze in een tabel, en zoekt een patroon.
+
+\voorbeeld{}{Hoeveel diagonalen heeft een veelhoek met $n$ hoekpunten?\label{vb:h1-diagonalen}}{%
+\naast{%
+\uitleg{Teken en tel voor kleine $n$, zoek een patroon, en zoek dan een redenering die het verklaart.}
+\begin{stappenvrij}{3.8cm}{4.2cm}
+n\colon 3, 4, 5, 6, 7 & Tellen op tekeningen. \\
+d\colon 0, 2, 5, 9, 14 & Verschillen $2, 3, 4, 5$. \\
+d = \frac{n(n - 3)}{2} & Vermoeden; klopt voor alle vijf.
+\end{stappenvrij}
+\textit{Bewijs.} Uit elk hoekpunt vertrekken $n - 3$ diagonalen: niet naar zichzelf en niet naar de twee buren. Samen $n(n - 3)$, maar zo is elke diagonaal twee keer geteld.}{%
+\begin{tikzpicture}[scale=.9]
+  \foreach \i in {0,...,5}{\coordinate (P\i) at ({90+60*\i}:1);}
+  \draw[accent,thick] (P0) -- (P1) -- (P2) -- (P3) -- (P4) -- (P5) -- cycle;
+  \draw[accent!60] (P0) -- (P2) (P0) -- (P3) (P0) -- (P4) (P1) -- (P3) (P1) -- (P4) (P1) -- (P5) (P2) -- (P4) (P2) -- (P5) (P3) -- (P5);
+  \foreach \i in {0,...,5}{\fill[accent] (P\i) circle (1.6pt);}
+\end{tikzpicture}}}
+
+\begin{werkwijze}
+\textbf{1.} Bekijk kleine gevallen systematisch en zet de resultaten in een tabel. \textbf{2.} Zoek een patroon (verschillen, verhoudingen, bekende rijen) en formuleer een vermoeden. \textbf{3.} Test het vermoeden op een nieuw geval dat je nog niet gebruikte. \textbf{4.} Zoek een bewijs, of een tegenvoorbeeld. Een patroon in een tabel is nog geen bewijs.
+\end{werkwijze}
+
+Dat laatste is geen detail. Zet $n$ punten op een cirkel en verbind ze allemaal met elkaar (met niet drie koorden door één punt). Het aantal stukken waarin de schijf verdeeld wordt, is voor $n = 1, \ldots, 5$ gelijk aan $1, 2, 4, 8, 16$. Het vermoeden $2^{n-1}$ ligt voor de hand. Maar voor $n = 6$ vind je $31$ stukken, niet $32$.
+
+\begin{oefeningen}
+\oef{h1-vermoeden}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h1-o1}
+
+\oef{h1-o2}
+
+\oef{h1-o3}
+
+\oef{h1-o4}
+
+\oef{h1-o5}
+
+\oef{h1-o6}
+
+\oef{h1-o7}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{Logica en bewijzen, Telproblemen en Rijen: kijk na wat al gezien is. Het pakket legt de volgorde niet vast.}
+
+\begin{oefeningen}
+\oef{h1-koppel-1}
+
+\oef{h1-koppel-2}
+
+\oef{h1-koppel-3}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h1-t1}
+
+\oef{h1-t2}
+
+\oef{h1-t3}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h1-t1}{vb:h1-vraag}{oef:h1-vraag}%
+  \fv{oef:h1-t2}{vb:h1-diagonalen}{oef:h1-vermoeden}%
+  \fv{oef:h1-t3}{vb:h1-diagonalen}{oef:h1-vermoeden}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: de stappen van de onderzoekscyclus, de drie eisen aan een goede onderzoeksvraag, en de vier stappen van een wiskundig onderzoek, met een voorbeeld van een vermoeden dat fout bleek. Vergelijk daarna met de kaders.
+\fi
