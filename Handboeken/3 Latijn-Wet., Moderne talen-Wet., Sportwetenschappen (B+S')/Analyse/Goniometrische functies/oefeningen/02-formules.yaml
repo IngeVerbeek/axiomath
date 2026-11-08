@@ -1,0 +1,417 @@
+# Oefeningen van hoofdstuk 2. Zie oefeningenbank.py voor de velden.
+
+- id: h2-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Bereken de afstand tussen $(1, 0)$ en $(0, 1)$.
+      antwoord: |-
+        $\sqrt2$
+      uitwerking: |-
+        $\sqrt{1 + 1} = \sqrt2$.
+    - opgave: |-
+        Werk uit: $(a - b)^2 + (c - d)^2$.
+      antwoord: |-
+        $a^2 - 2ab + b^2 + c^2 - 2cd + d^2$
+      uitwerking: |-
+        $a^2 - 2ab + b^2 + c^2 - 2cd + d^2$.
+    - opgave: |-
+        Schrijf $\frac{\pi}{12}$ als verschil van twee hoeken uit de tabel.
+      antwoord: |-
+        $\frac{\pi}{3} - \frac{\pi}{4}$
+      uitwerking: |-
+        $\frac{4\pi}{12} - \frac{3\pi}{12}$, of $\frac{\pi}{4} - \frac{\pi}{6}$.
+    - opgave: |-
+        Geef $\cos\alpha$ als $\sin\alpha = \frac{5}{13}$ en $\alpha$ in het eerste kwadrant.
+      antwoord: |-
+        $\frac{12}{13}$
+      uitwerking: |-
+        $\sqrt{1 - \frac{25}{169}} = \frac{12}{13}$.
+
+- id: h2-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken} Gebruik je rekentoestel (in radialen).
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Neem $\alpha = 0{,}5$ en $\beta = 0{,}3$. Bereken $\cos(\alpha - \beta)$ en $\cos\alpha - \cos\beta$. Zijn ze gelijk?
+      antwoord: |-
+        $0{,}9801$ en $-0{,}0777$; nee
+      uitwerking: |-
+        $\cos 0{,}2 \approx 0{,}9801$ en $\cos 0{,}5 - \cos 0{,}3 \approx 0{,}8776 - 0{,}9553 = -0{,}0777$. Niet gelijk.
+    - opgave: |-
+        Bereken $\cos\alpha\cos\beta + \sin\alpha\sin\beta$. Wat valt op?
+      antwoord: |-
+        $0{,}9801$: gelijk aan $\cos(\alpha - \beta)$
+      uitwerking: |-
+        $0{,}8776 \cdot 0{,}9553 + 0{,}4794 \cdot 0{,}2955 \approx 0{,}9801 = \cos(\alpha - \beta)$.
+    - opgave: |-
+        Probeer met twee andere hoeken. Klopt het nog?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        Ja: dat is de verschilformule, die in deze sectie bewezen wordt.
+
+- id: h2-som
+  soort: kort
+  opgave: |-
+    Bepaal exact.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\sin\frac{5\pi}{12}$
+      antwoord: |-
+        $\frac{\sqrt6 + \sqrt2}{4}$
+      uitwerking: |-
+        $\sin\bigl(\frac{\pi}{4} + \frac{\pi}{6}\bigr) = \frac{\sqrt2}{2} \cdot \frac{\sqrt3}{2} + \frac{\sqrt2}{2} \cdot \frac12 = \frac{\sqrt6 + \sqrt2}{4}$.
+    - opgave: |-
+        $\cos(\alpha + \beta)$ als $\cos\alpha = \frac45$, $\sin\beta = \frac{5}{13}$, beide hoeken in het eerste kwadrant
+      antwoord: |-
+        $\frac{33}{65}$
+      uitwerking: |-
+        $\sin\alpha = \frac35$, $\cos\beta = \frac{12}{13}$: $\frac45 \cdot \frac{12}{13} - \frac35 \cdot \frac{5}{13} = \frac{48 - 15}{65} = \frac{33}{65}$.
+
+- id: h2-dubbel
+  soort: kort
+  opgave: |-
+    Gegeven: $\cos\alpha = \frac13$ en $\frac{3\pi}{2} < \alpha < 2\pi$. Bereken exact $\sin 2\alpha$, $\cos 2\alpha$ en $\tan 2\alpha$.
+  antwoord: |-
+    $-\frac{4\sqrt2}{9}$; $-\frac79$; $\frac{4\sqrt2}{7}$
+  uitwerking: |-
+    Vierde kwadrant: $\sin\alpha = -\frac{2\sqrt2}{3}$. $\sin 2\alpha = 2 \cdot \bigl(-\frac{2\sqrt2}{3}\bigr) \cdot \frac13 = -\frac{4\sqrt2}{9}$. $\cos 2\alpha = 2 \cdot \frac19 - 1 = -\frac79$. $\tan 2\alpha = \frac{-4\sqrt2/9}{-7/9} = \frac{4\sqrt2}{7}$.
+
+- id: h2-samenvoegen
+  soort: kort
+  opgave: |-
+    Schrijf als $R\sin(x + \varphi)$, en geef de grootste en de kleinste waarde.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\sqrt3\sin x - \cos x$
+      antwoord: |-
+        $2\sin\bigl(x - \frac{\pi}{6}\bigr)$; $2$ en $-2$
+      uitwerking: |-
+        $R = 2$, $\cos\varphi = \frac{\sqrt3}{2}$, $\sin\varphi = -\frac12$: $\varphi = -\frac{\pi}{6}$.
+    - opgave: |-
+        $3\sin x + 4\cos x$
+      antwoord: |-
+        $5\sin(x + \varphi)$ met $\varphi \approx 0{,}927$; $5$ en $-5$
+      uitwerking: |-
+        $R = 5$, $\cos\varphi = \frac35$, $\sin\varphi = \frac45$: $\varphi \approx 0{,}927$ rad.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h2-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    exacte waarden
+  opgave: |-
+    Bepaal exact.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\cos\frac{7\pi}{12}$
+      antwoord: |-
+        $\frac{\sqrt2 - \sqrt6}{4}$
+      uitwerking: |-
+        $\cos\bigl(\frac{\pi}{3} + \frac{\pi}{4}\bigr) = \frac12 \cdot \frac{\sqrt2}{2} - \frac{\sqrt3}{2} \cdot \frac{\sqrt2}{2} = \frac{\sqrt2 - \sqrt6}{4}$.
+    - opgave: |-
+        $\sin\frac{\pi}{12}$
+      antwoord: |-
+        $\frac{\sqrt6 - \sqrt2}{4}$
+      uitwerking: |-
+        $\sin\bigl(\frac{\pi}{3} - \frac{\pi}{4}\bigr) = \frac{\sqrt3}{2} \cdot \frac{\sqrt2}{2} - \frac12 \cdot \frac{\sqrt2}{2} = \frac{\sqrt6 - \sqrt2}{4}$.
+    - opgave: |-
+        $\tan\frac{\pi}{12}$
+      antwoord: |-
+        $2 - \sqrt3$
+      uitwerking: |-
+        $\frac{\sqrt3 - 1}{1 + \sqrt3} = \frac{(\sqrt3 - 1)^2}{3 - 1} = \frac{4 - 2\sqrt3}{2} = 2 - \sqrt3$.
+
+- id: h2-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    formules herkennen
+  opgave: |-
+    Schrijf korter.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\sin 3x\cos x - \cos 3x\sin x$
+      antwoord: |-
+        $\sin 2x$
+      uitwerking: |-
+        $\sin(3x - x) = \sin 2x$.
+    - opgave: |-
+        $\cos^2 2x - \sin^2 2x$
+      antwoord: |-
+        $\cos 4x$
+      uitwerking: |-
+        Verdubbelingsformule met $\alpha = 2x$.
+    - opgave: |-
+        $2\sin\frac{\pi}{8}\cos\frac{\pi}{8}$
+      antwoord: |-
+        $\frac{\sqrt2}{2}$
+      uitwerking: |-
+        $\sin\frac{\pi}{4} = \frac{\sqrt2}{2}$.
+
+- id: h2-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    verdubbelen
+  opgave: |-
+    Gegeven: $\tan\alpha = \frac12$. Bereken $\tan 2\alpha$ en $\tan 3\alpha$.
+  antwoord: |-
+    $\frac43$; $\frac{11}{2}$
+  uitwerking: |-
+    $\tan 2\alpha = \frac{1}{1 - \frac14} = \frac43$. $\tan 3\alpha = \tan(2\alpha + \alpha) = \frac{\frac43 + \frac12}{1 - \frac43 \cdot \frac12} = \frac{11/6}{1/3} = \frac{11}{2}$.
+
+- id: h2-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    identiteiten
+  opgave: |-
+    Bewijs.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\sin\bigl(x + \frac{\pi}{2}\bigr) = \cos x$, met de somformule
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $\sin x \cdot 0 + \cos x \cdot 1 = \cos x$.
+    - opgave: |-
+        $\cos(x + y)\cos(x - y) = \cos^2 x - \sin^2 y$
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $(\cos x\cos y)^2 - (\sin x\sin y)^2 = \cos^2 x(1 - \sin^2 y) - (1 - \cos^2 x)\sin^2 y = \cos^2 x - \sin^2 y$.
+    - opgave: |-
+        $(\sin x + \cos x)^2 = 1 + \sin 2x$
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $\sin^2 x + \cos^2 x + 2\sin x\cos x = 1 + \sin 2x$.
+
+- id: h2-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    halve hoeken
+  opgave: |-
+    Bereken exact $\cos\frac{\pi}{8}$ en $\sin\frac{\pi}{8}$ met de formules van Carnot.
+  antwoord: |-
+    $\frac{\sqrt{2 + \sqrt2}}{2}$; $\frac{\sqrt{2 - \sqrt2}}{2}$
+  uitwerking: |-
+    $\cos^2\frac{\pi}{8} = \frac{1 + \cos\frac{\pi}{4}}{2} = \frac{2 + \sqrt2}{4}$; positief, dus $\cos\frac{\pi}{8} = \frac{\sqrt{2 + \sqrt2}}{2}$. Net zo $\sin\frac{\pi}{8} = \frac{\sqrt{2 - \sqrt2}}{2}$.
+
+- id: h2-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    som van twee hoeken
+  opgave: |-
+    Twee hoeken $\alpha$ en $\beta$ in het eerste kwadrant hebben $\tan\alpha = 2$ en $\tan\beta = 3$. Bereken $\tan(\alpha + \beta)$ en leid daaruit $\alpha + \beta$ af.
+  antwoord: |-
+    $-1$; $\frac{3\pi}{4}$
+  uitwerking: |-
+    $\tan(\alpha + \beta) = \frac{2 + 3}{1 - 6} = -1$. Beide hoeken liggen tussen $\frac{\pi}{4}$ en $\frac{\pi}{2}$ (de tangens is groter dan 1), dus $\frac{\pi}{2} < \alpha + \beta < \pi$, en daar is de tangens $-1$ bij $\frac{3\pi}{4}$.
+
+- id: h2-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    samenvoegen
+  opgave: |-
+    Schrijf $f(x) = \sin x - \cos x$ als $R\sin(x + \varphi)$. Wat is de grootste waarde, en voor welke $x$ in $[0, 2\pi]$ wordt ze bereikt?
+  antwoord: |-
+    $\sqrt2\sin\bigl(x - \frac{\pi}{4}\bigr)$; $\sqrt2$ in $x = \frac{3\pi}{4}$
+  uitwerking: |-
+    $R = \sqrt2$, $\cos\varphi = \frac{\sqrt2}{2}$, $\sin\varphi = -\frac{\sqrt2}{2}$: $\varphi = -\frac{\pi}{4}$. Maximum $\sqrt2$ als $x - \frac{\pi}{4} = \frac{\pi}{2}$, dus $x = \frac{3\pi}{4}$.
+
+- id: h2-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    de drievoudige hoek
+  opgave: |-
+    Bewijs dat $\sin 3x = 3\sin x - 4\sin^3 x$. Tip: $3x = 2x + x$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    $\sin 3x = \sin 2x\cos x + \cos 2x\sin x = 2\sin x\cos^2 x + (1 - 2\sin^2 x)\sin x = 2\sin x(1 - \sin^2 x) + \sin x - 2\sin^3 x = 3\sin x - 4\sin^3 x$.
+
+- id: h2-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een schilderij bekijken
+  figuur:
+    opties: |-
+      3.6cm
+    code: |-
+      \begin{tikzpicture}[scale=.6,font=\scriptsize]
+        \draw[thick] (0,-.4) -- (0,4);
+        \fill[accent!25] (-.15,1.5) rectangle (0,3.5);
+        \draw[accent] (-.15,1.5) rectangle (0,3.5);
+        \fill (4,0) circle (.08) node[below] {oog};
+        \draw[grijs,dashed] (4,0) -- (0,0);
+        \draw[accent] (4,0) -- (0,1.5) (4,0) -- (0,3.5);
+        \node[below] at (2,0) {$x$};
+        \node[left] at (-.15,.75) {$1$};
+        \node[left] at (-.15,2.5) {$2$};
+        \draw[|-|,grijs] (-.6,0) -- (-.6,1.5);
+        \draw[|-|,grijs] (-.6,1.5) -- (-.6,3.5);
+      \end{tikzpicture}
+  opgave: |-
+    Een schilderij van 2 m hoog hangt met de onderrand 1 m boven je ooghoogte. Je staat op $x$ m van de muur. De kijkhoek is $\theta = \beta - \alpha$, met $\tan\beta = \frac{3}{x}$ en $\tan\alpha = \frac{1}{x}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $\tan\theta = \dfrac{2x}{x^2 + 3}$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $\tan(\beta - \alpha) = \frac{\frac3x - \frac1x}{1 + \frac{3}{x^2}} = \frac{\frac2x}{\frac{x^2 + 3}{x^2}} = \frac{2x}{x^2 + 3}$.
+    - opgave: |-
+        Bereken $\theta$ voor $x = 1$, $x = \sqrt3$ en $x = 3$.
+      antwoord: |-
+        $\approx 0{,}464$; $\frac{\pi}{6} \approx 0{,}524$; $\approx 0{,}464$
+      uitwerking: |-
+        $\tan\theta = \frac12$, $\frac{2\sqrt3}{6} = \frac{\sqrt3}{3}$ en $\frac12$: $\theta \approx 0{,}464$ rad, $\frac{\pi}{6} \approx 0{,}524$ rad en $0{,}464$ rad.
+    - opgave: |-
+        Waar sta je best? Verklaar met de vorm van $\frac{2x}{x^2 + 3}$.
+      antwoord: |-
+        op $\sqrt3 \approx 1{,}73$ m
+      uitwerking: |-
+        $\frac{2x}{x^2 + 3} \leqslant \frac{\sqrt3}{3}$, want $\sqrt3 x^2 - 6x + 3\sqrt3 = \sqrt3(x - \sqrt3)^2 \geqslant 0$. Gelijkheid alleen voor $x = \sqrt3$: daar is de kijkhoek het grootst.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h2-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: algebra
+    onderwerp: Complexe getallen
+  thema: |-
+    vermenigvuldigen draait
+  opgave: |-
+    Werk het product $(\cos\alpha + i\sin\alpha)(\cos\beta + i\sin\beta)$ uit. Toon met de somformules aan dat het gelijk is aan $\cos(\alpha + \beta) + i\sin(\alpha + \beta)$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    $\cos\alpha\cos\beta - \sin\alpha\sin\beta + i(\sin\alpha\cos\beta + \cos\alpha\sin\beta) = \cos(\alpha + \beta) + i\sin(\alpha + \beta)$: de argumenten worden opgeteld.
+
+- id: h2-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Integralen
+  thema: |-
+    een kwadraat integreren
+  opgave: |-
+    Bereken $\int_0^{\pi} \sin^2 x\,\mathrm{d}x$ met een formule van Carnot.
+  antwoord: |-
+    $\frac{\pi}{2}$
+  uitwerking: |-
+    $\int_0^{\pi} \frac{1 - \cos 2x}{2}\,\mathrm{d}x = \Bigl[\frac{x}{2} - \frac{\sin 2x}{4}\Bigr]_0^{\pi} = \frac{\pi}{2}$.
+
+- id: h2-koppel-3
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: algebra
+    onderwerp: Matrices
+  thema: |-
+    twee rotaties na elkaar
+  opgave: |-
+    De rotatiematrix over de hoek $\theta$ is
+    \[R_\theta = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}.\]
+    Bereken $R_\alpha R_\beta$ en toon aan dat het $R_{\alpha + \beta}$ is.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    $R_\alpha R_\beta = \begin{pmatrix} \cos\alpha\cos\beta - \sin\alpha\sin\beta & -(\cos\alpha\sin\beta + \sin\alpha\cos\beta) \\ \sin\alpha\cos\beta + \cos\alpha\sin\beta & \cos\alpha\cos\beta - \sin\alpha\sin\beta \end{pmatrix} = R_{\alpha + \beta}$ volgens de somformules.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h2-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    exacte waarde
+  opgave: |-
+    Bepaal exact $\cos\frac{5\pi}{12}$.
+  antwoord: |-
+    $\frac{\sqrt6 - \sqrt2}{4}$
+  uitwerking: |-
+    $\cos\bigl(\frac{\pi}{4} + \frac{\pi}{6}\bigr) = \frac{\sqrt2}{2} \cdot \frac{\sqrt3}{2} - \frac{\sqrt2}{2} \cdot \frac12 = \frac{\sqrt6 - \sqrt2}{4}$.
+
+- id: h2-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    verschilformule
+  opgave: |-
+    Gegeven: $\sin\alpha = \frac45$ met $\alpha$ in het eerste kwadrant, en $\cos\beta = -\frac{12}{13}$ met $\beta$ in het tweede kwadrant. Bereken $\cos(\alpha - \beta)$.
+  antwoord: |-
+    $-\frac{16}{65}$
+  uitwerking: |-
+    $\cos\alpha = \frac35$, $\sin\beta = \frac{5}{13}$. $\frac35 \cdot \bigl(-\frac{12}{13}\bigr) + \frac45 \cdot \frac{5}{13} = \frac{-36 + 20}{65} = -\frac{16}{65}$.
+
+- id: h2-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    verdubbelen
+  opgave: |-
+    Gegeven: $\cos\alpha = -\frac35$ en $\pi < \alpha < \frac{3\pi}{2}$. Bereken $\sin 2\alpha$ en $\cos 2\alpha$.
+  antwoord: |-
+    $\frac{24}{25}$; $-\frac{7}{25}$
+  uitwerking: |-
+    $\sin\alpha = -\frac45$. $\sin 2\alpha = 2 \cdot \bigl(-\frac45\bigr)\bigl(-\frac35\bigr) = \frac{24}{25}$ en $\cos 2\alpha = \frac{9}{25} - \frac{16}{25} = -\frac{7}{25}$.
+
+- id: h2-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    identiteit
+  opgave: |-
+    Bewijs: $\dfrac{\sin 2x}{1 + \cos 2x} = \tan x$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    $\frac{2\sin x\cos x}{1 + 2\cos^2 x - 1} = \frac{2\sin x\cos x}{2\cos^2 x} = \tan x$.
+
+- id: h2-t5
+  soort: test
+  niveau: 2
+  thema: |-
+    samenvoegen
+  opgave: |-
+    Schrijf $\sin x + \cos x$ als $R\sin(x + \varphi)$.
+  antwoord: |-
+    $\sqrt2\sin\bigl(x + \frac{\pi}{4}\bigr)$
+  uitwerking: |-
+    $R = \sqrt2$, $\cos\varphi = \sin\varphi = \frac{\sqrt2}{2}$: $\varphi = \frac{\pi}{4}$.
