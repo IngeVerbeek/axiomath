@@ -15,4 +15,4 @@ Leerplan: B+S (Katholiek Onderwijs Vlaanderen). Doelen volgens de tabel met leer
 | Discrete wiskunde/Rijen | LPD 28 | nog te maken |
 | Data en onzekerheid/Kansrekenen | LPD 29 | nog te maken |
 | Data en onzekerheid/Statistiek | LPD 30-34 | nog te maken |
-| Onderzoekscompetentie | LPD 35 | nog te maken |
+| [Onderzoekscompetentie](Onderzoekscompetentie) | LPD 35 | 3 hoofdstukken, eerste versie (afgeleid van pakket 4), nog na te lezen |

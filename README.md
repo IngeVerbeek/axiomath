@@ -22,7 +22,7 @@ Eerst maken we van elk handboek een eerste versie, daarna lezen leerkrachten ze 
 <!-- voortgang:begin -->
 **Totaal** &nbsp; `█░░░░░░░░░░░░░░░░░░░` &nbsp; **3 %** van 47 handboeken
 
-⚪ 44 gepland · 🟠 3 eerste versie · 🟡 0 nagelezen · 🟢 0 klaar
+⚪ 43 gepland · 🟠 4 eerste versie · 🟡 0 nagelezen · 🟢 0 klaar
 
 ### Per richting
 
@@ -34,7 +34,7 @@ Elke richting volgt één pakket, en de voortgang van de richting is het gemidde
 | Humane wetenschappen | 1 (Basis) | `█░░░░░░░░░░░░░░░░░░░` |   5 % |
 | Latijn-Moderne talen | 1 (Basis) | `█░░░░░░░░░░░░░░░░░░░` |   5 % |
 | Moderne talen | 1 (Basis) | `█░░░░░░░░░░░░░░░░░░░` |   5 % |
-| Economie-Moderne talen | 2 (B+S) | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
+| Economie-Moderne talen | 2 (B+S) | `█░░░░░░░░░░░░░░░░░░░` |   4 % |
 | Latijn-Wetenschappen | 3 (B+S') | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Moderne talen-Wetenschappen | 3 (B+S') | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Sportwetenschappen | 3 (B+S') | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
@@ -62,7 +62,7 @@ Een percentage hoort bij een status: ⚪ **gepland** (0 %): nog niet begonnen, �
 | Kansrekenen | Data en onzekerheid | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Statistiek | Data en onzekerheid | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 
-#### Pakket 2 · B+S &nbsp; `░░░░░░░░░░░░░░░░░░░░` 0 %
+#### Pakket 2 · B+S &nbsp; `█░░░░░░░░░░░░░░░░░░░` 4 %
 
 <sub>Economie-Moderne talen</sub>
 
@@ -78,7 +78,7 @@ Een percentage hoort bij een status: ⚪ **gepland** (0 %): nog niet begonnen, �
 | Rijen | Discrete wiskunde | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Kansrekenen | Data en onzekerheid | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Statistiek | Data en onzekerheid | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
-| Onderzoekscompetentie | – | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
+| [Onderzoekscompetentie](<Handboeken/2 Economie-Moderne talen (B+S)/Onderzoekscompetentie/README.md>) | – | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 
 #### Pakket 3 · B+S' &nbsp; `░░░░░░░░░░░░░░░░░░░░` 0 %
 
