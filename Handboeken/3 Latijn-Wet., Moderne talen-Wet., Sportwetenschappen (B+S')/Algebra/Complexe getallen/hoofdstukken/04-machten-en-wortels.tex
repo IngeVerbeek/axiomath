@@ -1,0 +1,250 @@
+%----------------------------------------------------------------------------------------
+% MACHTEN EN WORTELS. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h4-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{4}{Machten en wortels}
+
+\lkr{Leerplan B+S': het tweede deel van LPD 33 (machtsverheffing en $n$-de machtsworteltrekking in goniometrische vorm), met de formule van De Moivre en de wenk over de meetkundige betekenis: de $n$-de machtswortels vormen een regelmatige $n$-hoek, opeenvolgende machten liggen op een spiraal. Het bewijs van De Moivre is een herhaling van de productregel.}
+
+Een hoge macht als $(1 + i\sqrt3)^6$ uitrekenen met het binomium is veel werk. In goniometrische vorm is het bijna niets: een macht is een product van gelijke factoren, dus je vermenigvuldigt de modulus een paar keer met zichzelf en telt het argument een paar keer op. Omgekeerd kun je zo ook wortels trekken. Dan blijkt dat elk complex getal $z \neq 0$ precies drie derdemachtswortels heeft, vier vierdemachtswortels, en zo verder, en dat ze altijd mooi regelmatig in het vlak liggen.
+
+\begin{oefeningen}[Start]
+\oef{h4-start-1}
+
+\oef{h4-verken}
+\end{oefeningen}
+
+\lkr{Laat oefening \ref{oef:h4-verken} maken vóór de uitleg. In a en b ontdekken leerlingen de formule van De Moivre. In c raden ze een derdemachtswortel van $i$ door terug te rekenen; dat er nog een tweede (en een derde) is, is de verrassing waarmee sectie 2 begint.}
+
+%========================================================================================
+\section{De formule van De Moivre}
+
+\subsection{Machten in goniometrische vorm}
+
+Neem je in de productregel twee keer hetzelfde getal $z = r(\cos\theta + i\sin\theta)$, dan vind je $z^2 = r^2(\cos 2\theta + i\sin 2\theta)$. Vermenigvuldig je nog eens met $z$, dan komt er weer een factor $r$ bij de modulus en een $\theta$ bij het argument.
+
+\begin{theorie}
+\begin{stelling}{Formule van De Moivre}
+Voor $z = r(\cos\theta + i\sin\theta)$ en elk natuurlijk getal $n$ is
+
+\vspace{1mm}
+\qquad $\formule{z^n = r^n(\cos n\theta + i\sin n\theta)}$
+\end{stelling}
+
+\begin{bewijs}
+Voor $n = 0$ staan er links en rechts 1. Geldt de formule voor een exponent $n$, dan geeft de productregel
+\bewijsregel{z^{n+1} = z^n \cdot z = r^n \cdot r\bigl(\cos(n\theta + \theta) + i\sin(n\theta + \theta)\bigr) = r^{n+1}\bigl(\cos(n+1)\theta + i\sin(n+1)\theta\bigr) ,}
+dus geldt ze ook voor $n + 1$. Zo volgt ze uit $n = 0$ voor $n = 1$, daaruit voor $n = 2$, en zo verder voor elk natuurlijk getal.
+\end{bewijs}
+\end{theorie}
+
+De formule draagt de naam van Abraham de Moivre, een Franse wiskundige die in Londen leefde. Ze geldt ook voor negatieve gehele exponenten, zoals je in opdracht \ref{oef:h4-o12} nagaat.
+
+\voorbeeld{}{Bereken $(1 + i\sqrt3)^6$.\label{vb:h4-moivre}}{%
+\uitleg{We zetten het grondtal in goniometrische vorm, en passen De Moivre toe: de modulus tot de zesde, het argument maal zes.}
+\begin{stappen}
+1 + i\sqrt3 = 2\Bigl(\cos\frac{\pi}{3} + i\sin\frac{\pi}{3}\Bigr) & $r = \sqrt{1 + 3} = 2$ en $\theta = \frac{\pi}{3}$. \\[3ex]
+(1 + i\sqrt3)^6 = 2^6\bigl(\cos 2\pi + i\sin 2\pi\bigr) & $6 \cdot \frac{\pi}{3} = 2\pi$. \\[1ex]
+= 64 & $\cos 2\pi = 1$ en $\sin 2\pi = 0$.
+\end{stappen}}
+
+\voorbeeld{}{Bereken $(1 - i)^{10}$.\label{vb:h4-moivre2}}{%
+\uitleg{Ook hier eerst de goniometrische vorm. Het argument maal tien valt buiten $]-\pi, \pi]$: we brengen het terug met een veelvoud van $2\pi$.}
+\begin{stappen}
+1 - i = \sqrt2\Bigl(\cos\Bigl(-\frac{\pi}{4}\Bigr) + i\sin\Bigl(-\frac{\pi}{4}\Bigr)\Bigr) & $r = \sqrt2$, vierde kwadrant. \\[3ex]
+(1 - i)^{10} = \bigl(\sqrt2\bigr)^{10}\Bigl(\cos\Bigl(-\frac{5\pi}{2}\Bigr) + i\sin\Bigl(-\frac{5\pi}{2}\Bigr)\Bigr) & $10 \cdot (-\frac{\pi}{4}) = -\frac{5\pi}{2}$. \\[3ex]
+= 32\Bigl(\cos\Bigl(-\frac{\pi}{2}\Bigr) + i\sin\Bigl(-\frac{\pi}{2}\Bigr)\Bigr) = -32i & $(\sqrt2)^{10} = 2^5$, en $-\frac{5\pi}{2} + 2\pi = -\frac{\pi}{2}$.
+\end{stappen}}
+
+\begin{werkwijze}
+Schrijf het grondtal in goniometrische vorm. Neem de modulus tot de macht $n$ en vermenigvuldig het argument met $n$. Breng het argument terug naar $]-\pi, \pi]$ door een veelvoud van $2\pi$ op te tellen of af te trekken, en zet het resultaat in cartesische vorm.
+\end{werkwijze}
+
+\nujij{Bereken $(\sqrt3 + i)^3$.}{$\sqrt3 + i = 2\bigl(\cos\frac{\pi}{6} + i\sin\frac{\pi}{6}\bigr)$, dus $(\sqrt3 + i)^3 = 8\bigl(\cos\frac{\pi}{2} + i\sin\frac{\pi}{2}\bigr) = 8i$.}
+
+\begin{oefeningen}
+\oef{h4-moivre}
+\end{oefeningen}
+
+\subsection{Machten op een spiraal}
+
+\naast{\begin{minipage}{8.8cm}
+Teken je de opeenvolgende machten $1, z, z^2, z^3, \ldots$, dan draait elk punt over hetzelfde argument $\theta$ verder, en wordt de afstand tot de oorsprong telkens met $r$ vermenigvuldigd. Is $r > 1$, dan liggen de punten op een spiraal die naar buiten draait, zoals in de figuur voor $z = 1{,}15\bigl(\cos\frac{\pi}{6} + i\sin\frac{\pi}{6}\bigr)$. Is $r < 1$, dan draait de spiraal naar de oorsprong toe. Is $r = 1$, dan blijven alle machten op de cirkel met straal 1.
+
+Bij $1 + i$ uit de Verken van hoofdstuk 3 was $r = \sqrt2$ en $\theta = \frac{\pi}{4}$: na acht stappen ben je een hele toer rond, op $(\sqrt2)^8 = 16$ keer de afstand.
+\end{minipage}}{\begin{tikzpicture}[x=.58cm,y=.58cm,font=\scriptsize]
+  \draw[->,grijs] (-4.2,0) -- (6,0) node[right,text=black] {Re};
+  \draw[->,grijs] (0,-2.4) -- (0,3.6) node[above,text=black] {Im};
+  \draw[accent!45,thick] plot[domain=0:12,samples=80,smooth] ({1.15^\x*cos(30*\x)},{1.15^\x*sin(30*\x)});
+  \foreach \n in {0,...,12}{\fill[accent] ({1.15^\n*cos(30*\n)},{1.15^\n*sin(30*\n)}) circle (1.8pt);}
+  \node[below right,inner sep=1pt] at (1,0) {$1$};
+  \node[above right,inner sep=1pt] at ({1.15*cos(30)},{1.15*sin(30)}) {$z$};
+  \node[above right,inner sep=1pt] at ({1.3225*cos(60)},{1.3225*sin(60)}) {$z^2$};
+  \node[above,inner sep=2pt] at ({1.15^12},0) {$z^{12}$};
+\end{tikzpicture}}
+
+%========================================================================================
+\section{Machtswortels}
+
+\subsection{De \texorpdfstring{$n$}{n}-de machtswortels}
+
+In de Verken vond je dat $\cos\frac{\pi}{6} + i\sin\frac{\pi}{6}$ een derdemachtswortel is van $i$, maar ook $-i$, want $(-i)^3 = -i^3 = i$. Dat komt doordat een argument maar vastligt op een veelvoud van $2\pi$ na: het argument van $i$ is $\frac{\pi}{2}$, maar ook $\frac{\pi}{2} + 2\pi$ en $\frac{\pi}{2} + 4\pi$. Delen door 3 geeft drie verschillende hoeken: $\frac{\pi}{6}$, $\frac{5\pi}{6}$ en $\frac{3\pi}{2}$.
+
+\begin{theorie}
+Een complex getal $w$ is een \textbf{\textcolor{accent}{$n$-de machtswortel}} van $z$ als \quad $\formule{w^n = z}$ \qquad ($n \geqslant 1$ natuurlijk)
+
+\begin{stelling}{De $n$-de machtswortels}
+Een complex getal $z = r(\cos\theta + i\sin\theta) \neq 0$ heeft precies $n$ verschillende $n$-de machtswortels:
+
+\vspace{1mm}
+\qquad $\formule{w_k = \sqrt[n]{r}\,\Bigl(\cos\frac{\theta + k \cdot 2\pi}{n} + i\sin\frac{\theta + k \cdot 2\pi}{n}\Bigr)}$ \qquad met $k = 0, 1, \ldots, n - 1$
+\end{stelling}
+
+\begin{bewijs}
+Zoek $w = s(\cos\varphi + i\sin\varphi)$ met $s > 0$. Volgens De Moivre is $w^n = s^n(\cos n\varphi + i\sin n\varphi)$, en dat is gelijk aan $z$ als
+\bewijsregel{s^n = r \quad \text{en} \quad n\varphi = \theta + k \cdot 2\pi \text{ voor een geheel getal } k ,}
+dus $s = \sqrt[n]{r}$ en $\varphi = \frac{\theta + k \cdot 2\pi}{n}$. Voor $k = 0, 1, \ldots, n - 1$ verschillen die hoeken minder dan $2\pi$, dus geven ze $n$ verschillende getallen. Elke andere $k$ geeft een hoek die op een veelvoud van $2\pi$ na een van die $n$ is.
+\end{bewijs}
+\end{theorie}
+
+Alle $n$-de machtswortels hebben dezelfde modulus $\sqrt[n]{r}$, en hun argumenten liggen telkens $\frac{2\pi}{n}$ uit elkaar. Meetkundig zijn ze de hoekpunten van een \textbf{regelmatige $n$-hoek} met middelpunt 0. Voor $n = 2$ vind je de twee vierkantswortels uit hoofdstuk 2 terug: $w$ en $-w$, een halve toer uit elkaar.
+
+Let op: $\sqrt[n]{r}$ is hier de gewone reële wortel van het positieve getal $r$. Het wortelteken gebruiken we niet voor de complexe wortels: $8$ heeft drie derdemachtswortels, maar $\sqrt[3]{8}$ is alleen $2$.
+
+\voorbeeld{}{Bepaal de derdemachtswortels van $8i$, en stel ze voor in het vlak van Gauss.\label{vb:h4-wortel}}{%
+\uitleg{We schrijven $8i$ in goniometrische vorm, nemen de reële derdemachtswortel van de modulus, en delen het argument plus $k \cdot 2\pi$ door 3.}
+\begin{stappenbreed}
+8i = 8\Bigl(\cos\frac{\pi}{2} + i\sin\frac{\pi}{2}\Bigr) & $r = 8$ en $\theta = \frac{\pi}{2}$. \\[3ex]
+w_k = 2\Bigl(\cos\Bigl(\frac{\pi}{6} + k\frac{2\pi}{3}\Bigr) + i\sin\Bigl(\frac{\pi}{6} + k\frac{2\pi}{3}\Bigr)\Bigr) & $\sqrt[3]{8} = 2$, en $\frac{\pi}{2} : 3 = \frac{\pi}{6}$. \\[3ex]
+w_0 = 2\Bigl(\cos\frac{\pi}{6} + i\sin\frac{\pi}{6}\Bigr) = \sqrt3 + i & $k = 0$. \\[3ex]
+w_1 = 2\Bigl(\cos\frac{5\pi}{6} + i\sin\frac{5\pi}{6}\Bigr) = -\sqrt3 + i & $k = 1$: $\frac{\pi}{6} + \frac{4\pi}{6}$. \\[3ex]
+w_2 = 2\Bigl(\cos\frac{3\pi}{2} + i\sin\frac{3\pi}{2}\Bigr) = -2i & $k = 2$: $\frac{\pi}{6} + \frac{8\pi}{6}$.
+\end{stappenbreed}
+\naast{\begin{minipage}{10cm}
+Controle: $(-2i)^3 = -8i^3 = 8i$. De drie wortels liggen op de cirkel met straal 2, en vormen een gelijkzijdige driehoek. Het argument $\frac{3\pi}{2}$ van $w_2$ is geen hoofdwaarde, maar dat hoeft hier niet: het getal is hetzelfde.
+\end{minipage}}{\begin{tikzpicture}[x=.7cm,y=.7cm,font=\small]
+  \gaussleeg{-2}{2}{-2}{2}
+  \draw[hulplijn] (0,0) circle (2);
+  \draw[accent!60] (1.732,1) -- (-1.732,1) -- (0,-2) -- cycle;
+  \cpunt[above right]{1.732}{1}{$w_0$}
+  \cpunt[above left]{-1.732}{1}{$w_1$}
+  \cpunt[below right]{0}{-2}{$w_2$}
+\end{tikzpicture}}}
+
+\voorbeeld{}{Los op in $\C$: $z^4 + 16 = 0$.\label{vb:h4-vgl}}{%
+\uitleg{De oplossingen zijn de vierdemachtswortels van $-16$. Het argument van $-16$ is $\pi$, en de hoeken liggen telkens $\frac{2\pi}{4} = \frac{\pi}{2}$ uit elkaar.}
+\begin{stappenbreed}
+z^4 = -16 = 16(\cos\pi + i\sin\pi) & $r = 16$ en $\theta = \pi$. \\[1ex]
+z_k = 2\Bigl(\cos\Bigl(\frac{\pi}{4} + k\frac{\pi}{2}\Bigr) + i\sin\Bigl(\frac{\pi}{4} + k\frac{\pi}{2}\Bigr)\Bigr) & $\sqrt[4]{16} = 2$, $k = 0, 1, 2, 3$. \\[3ex]
+z = \sqrt2 + i\sqrt2 \quad \text{of} \quad z = -\sqrt2 + i\sqrt2 & De hoeken $\frac{\pi}{4}$ en $\frac{3\pi}{4}$, \\[1ex]
+z = -\sqrt2 - i\sqrt2 \quad \text{of} \quad z = \sqrt2 - i\sqrt2 & en $\frac{5\pi}{4}$ en $\frac{7\pi}{4}$: een vierkant.
+\end{stappenbreed}}
+
+\begin{werkwijze}
+Schrijf $z$ in goniometrische vorm. De modulus van elke wortel is $\sqrt[n]{r}$. Het eerste argument is $\frac{\theta}{n}$; tel er telkens $\frac{2\pi}{n}$ bij tot je $n$ wortels hebt. Zet ze in cartesische vorm als de hoeken bijzonder zijn, en controleer één wortel door ze tot de $n$-de macht te verheffen.
+\end{werkwijze}
+
+\nujij{Bepaal de vierkantswortels van $-9$ met deze methode.}{$-9 = 9(\cos\pi + i\sin\pi)$: modulus 3, argumenten $\frac{\pi}{2}$ en $\frac{3\pi}{2}$, dus $3i$ en $-3i$.}
+
+\begin{oefeningen}
+\oef{h4-wortel}
+
+\oef{h4-vgl}
+\end{oefeningen}
+
+\subsection{Eenheidswortels}
+
+\naast{\begin{minipage}{10.2cm}
+De $n$-de machtswortels van 1 heten de \textbf{$n$-de eenheidswortels}. Met $r = 1$ en $\theta = 0$ zijn het
+\[ \cos\frac{k \cdot 2\pi}{n} + i\sin\frac{k \cdot 2\pi}{n} , \qquad k = 0, 1, \ldots, n - 1 . \]
+Ze liggen op de cirkel met straal 1, en vormen een regelmatige $n$-hoek met een hoekpunt in 1. De figuur toont de zesde eenheidswortels. Omdat de vergelijking $z^n = 1$ reële coëfficiënten heeft, komen de niet-reële eenheidswortels in toegevoegde paren: de figuur is symmetrisch ten opzichte van de reële as.
+\end{minipage}}{\begin{tikzpicture}[x=1.05cm,y=1.05cm,font=\scriptsize]
+  \draw[->,grijs] (-1.4,0) -- (1.5,0) node[right,text=black] {Re};
+  \draw[->,grijs] (0,-1.3) -- (0,1.4) node[above,text=black] {Im};
+  \draw[hulplijn] (0,0) circle (1);
+  \draw[accent!60] (0:1) \foreach \h in {60,120,...,300}{-- (\h:1)} -- cycle;
+  \foreach \h in {0,60,...,300}{\fill[accent] (\h:1) circle (2pt);}
+  \node[below right,inner sep=1.5pt] at (0:1) {$1$};
+  \node[above right,inner sep=1.5pt] at (60:1) {$\frac12 + \frac{\sqrt3}{2}i$};
+  \node[below left,inner sep=1.5pt] at (180:1) {$-1$};
+\end{tikzpicture}}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h4-o1}
+
+\oef{h4-o2}
+
+\oef{h4-o3}
+
+\oef{h4-o4}
+
+\oef{h4-o5}
+
+\oef{h4-o6}
+
+\oef{h4-o7}
+
+\oef{h4-o8}
+
+\oef{h4-o9}
+
+\oef{h4-o10}
+
+\oef{h4-o11}
+
+\oef{h4-o12}
+
+\oef{h4-o13}
+
+\oef{h4-o14}
+
+\oef{h4-o15}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{De eerste oefening gebruikt het merkwaardig product $(a + b)^3$. De tweede is een recursieve rij, uit de cursus Rijen (6de jaar): het begrip volstaat, de leerstof van die cursus is niet nodig. Het leerplan noemt fractalen als mogelijke uitbreiding.}
+
+\begin{oefeningen}
+\oef{h4-koppel-1}
+
+\oef{h4-koppel-2}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h4-t1}
+
+\oef{h4-t2}
+
+\oef{h4-t3}
+
+\oef{h4-t4}
+
+\oef{h4-t5}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h4-t1}{vb:h4-moivre}{oef:h4-moivre}%
+  \fv{oef:h4-t2}{vb:h4-moivre}{oef:h4-moivre}%
+  \fv{oef:h4-t3}{vb:h4-wortel}{oef:h4-wortel}%
+  \fv{oef:h4-t4}{vb:h4-vgl}{oef:h4-vgl}%
+  \fv{oef:h4-t5}{vb:h4-moivre2}{oef:h4-moivre}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: de formule van De Moivre en hoe je ze bewijst, hoe je een hoge macht berekent, waarom opeenvolgende machten op een spiraal liggen, wat een $n$-de machtswortel is, de formule voor de $n$-de machtswortels en waarom er precies $n$ zijn, hoe ze in het vlak liggen, en wat eenheidswortels zijn. Vergelijk daarna met de kaders.
+\fi

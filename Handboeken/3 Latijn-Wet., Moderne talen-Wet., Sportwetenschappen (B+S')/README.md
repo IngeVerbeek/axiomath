@@ -12,7 +12,7 @@ Leerplan: B+S' (Katholiek Onderwijs Vlaanderen). Doelen volgens de tabel met lee
 | Analyse/Afgeleiden | LPD 19-22 | nog te maken |
 | Analyse/Integralen | LPD 23-25 | nog te maken |
 | Algebra/Matrices | LPD 26-28 | nog te maken |
-| Algebra/Complexe getallen | LPD 29-33 | nog te maken |
+| [Algebra/Complexe getallen](Algebra/Complexe%20getallen) | LPD 29-33 | 4 hoofdstukken, eerste versie (afgeleid van pakket 4), nog na te lezen |
 | Discrete wiskunde/Rijen | LPD 34 | nog te maken |
 | Data en onzekerheid/Kansrekenen | LPD 35 | nog te maken |
 | Data en onzekerheid/Statistiek | LPD 36-40 | nog te maken |
