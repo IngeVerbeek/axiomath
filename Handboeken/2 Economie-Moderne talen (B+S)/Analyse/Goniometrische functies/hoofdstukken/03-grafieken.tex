@@ -1,0 +1,200 @@
+%----------------------------------------------------------------------------------------
+% GRAFIEKEN VAN GONIOMETRISCHE FUNCTIES. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h3-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{3}{Goniometrische functies}
+
+\lkr{Leerplan B+S: LPD 13-16 (goniometrische functies), het deel over de grafieken van $\sin$, $\cos$ en $\tan$, de algemene sinusfunctie en periodieke modellen. De transformaties komen uit Algemene functies; hier krijgen ze namen (amplitude, periode, evenwichtslijn, faseverschuiving). Zonder grafisch rekentoestel: laat leerlingen schetsen vanuit vijf punten per periode.}
+
+Eb en vloed, de lengte van de dag, de stand van een slinger, de spanning op het stopcontact: ze komen telkens terug, met een vast ritme. Zulke periodieke verschijnselen beschrijf je met de functies sinus en cosinus. In dit hoofdstuk teken je hun grafieken en pas je ze aan aan een situatie.
+
+\begin{oefeningen}[Start]
+\oef{h3-start-1}
+
+\oef{h3-verken}
+\end{oefeningen}
+
+%========================================================================================
+\section{Sinus, cosinus en tangens als functie}
+
+Laat de hoek $x$ (in radialen) doorlopen, en zet $\sin x$ uit als functiewaarde. Elke volle toer begint alles opnieuw.
+
+\figuren{%
+\begin{tikzpicture}[x=.62cm,y=.8cm,font=\scriptsize]
+  \draw[black!14,very thin] (-3.14,-1) grid[xstep=1.5708,ystep=.5] (9.42,1);
+  \draw[->,grijs] (-3.6,0) -- (9.9,0) node[right,text=black] {$x$};
+  \draw[->,grijs] (0,-1.4) -- (0,1.5) node[above,text=black] {$y$};
+  \foreach \t/\n in {-3.1416/-\pi,1.5708/\frac{\pi}{2},3.1416/\pi,4.7124/\frac{3\pi}{2},6.2832/2\pi,9.4248/3\pi}{\node[below,inner sep=1.5pt] at (\t,0) {$\n$};}
+  \node[left] at (0,1) {$1$}; \node[left] at (0,-1) {$-1$};
+  \draw[accent,thick] plot[domain=-3.1416:9.4248,samples=150,smooth] (\x,{sin(\x r)});
+  \draw[accent,thick,dashed] plot[domain=-3.1416:9.4248,samples=150,smooth] (\x,{cos(\x r)});
+  \node[accent,above] at (1.5708,1) {$\sin x$};
+  \node[accent,above] at (6.2832,1) {$\cos x$};
+\end{tikzpicture}}
+
+\begin{theorie}
+Een functie $f$ is \textbf{\textcolor{accent}{periodiek}} met \textbf{\textcolor{accent}{periode}} $p > 0$ als $\formule{f(x + p) = f(x)}$ voor alle $x$, en $p$ het kleinste getal is waarvoor dat geldt.
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}l@{\hspace{6mm}}lll@{}}
+ & $\formule{\sin x}$ & $\formule{\cos x}$ & $\formule{\tan x}$ \\ \hline
+domein & $\R$ & $\R$ & $\R \setminus \bigl\{\frac{\pi}{2} + k\pi \mid k \in \Z\bigr\}$ \\
+bereik & $[-1, 1]$ & $[-1, 1]$ & $\R$ \\
+periode & $\formule{2\pi}$ & $\formule{2\pi}$ & $\formule{\pi}$ \\
+nulwaarden & $k\pi$ & $\frac{\pi}{2} + k\pi$ & $k\pi$ \quad ($k \in \Z$)
+\end{tabular}
+\end{theorie}
+
+De grafiek van de cosinus is die van de sinus, $\frac{\pi}{2}$ naar links geschoven: $\cos x = \sin\bigl(x + \frac{\pi}{2}\bigr)$. De tangens heeft verticale asymptoten waar $\cos x = 0$, en herhaalt zich al na $\pi$, want $\tan(x + \pi) = \tan x$.
+
+\naast{%
+\voorbeeld{}{Hoeveel oplossingen heeft $\sin x = 0{,}4$ in $[0, 4\pi]$? En $\tan x = 2$?\label{vb:h3-aflezen}}{%
+\uitleg{Snijd de grafiek met een horizontale rechte, per periode.}
+\begin{stappenvrij}{3.4cm}{4.4cm}
+\sin x = 0{,}4\colon\ 4 & Twee per periode $2\pi$, twee periodes. \\
+\tan x = 2\colon\ 4 & Eén per periode $\pi$, vier periodes.
+\end{stappenvrij}}}{%
+\begin{tikzpicture}[x=.36cm,y=.5cm,font=\scriptsize]
+  \draw[->,grijs] (-.5,0) -- (13.2,0) node[right,text=black] {$x$};
+  \draw[->,grijs] (0,-3.3) -- (0,3.4) node[above,text=black] {$y$};
+  \foreach \lo/\hi in {0/1.27,1.87/4.41,5.01/7.55,8.15/10.69,11.29/12.566}{\draw[accent,thick] plot[domain=\lo:\hi,samples=40,smooth] (\x,{tan(\x r)});}
+  \foreach \k in {0,1,2,3}{\draw[grijs,dashed] ({\k*3.1416+1.5708},-3.3) -- ({\k*3.1416+1.5708},3.3);}
+  \draw[grijs] (0,2) -- (12.6,2) node[right,text=black] {$2$};
+  \node[below] at (6.2832,0) {$2\pi$}; \node[below] at (12.566,0) {$4\pi$};
+\end{tikzpicture}}
+
+\begin{oefeningen}
+\oef{h3-periode}
+\end{oefeningen}
+
+%========================================================================================
+\section{De algemene sinusfunctie}
+
+\begin{theorie}
+De grafiek van $\formule{f(x) = a\sin\bigl(b(x - c)\bigr) + d}$ (met $a, b > 0$) is een sinusgrafiek met
+\[\formule{\text{amplitude } a} \qquad \formule{\text{periode } \frac{2\pi}{b}} \qquad \formule{\text{evenwichtslijn } y = d} \qquad \formule{\text{faseverschuiving } c}.\]
+De grootste waarde is $d + a$, de kleinste $d - a$.
+\end{theorie}
+
+Dit zijn de transformaties uit Algemene functies: verticaal uitrekken met $a$, horizontaal met $\frac1b$, verschuiven over $c$ naar rechts en $d$ naar boven. Het beginpunt $(0, 0)$ van de sinus gaat naar $(c, d)$: daar snijdt de grafiek de evenwichtslijn stijgend.
+
+\voorbeeld{}{Schets $f(x) = 3\sin\bigl(2(x - \frac{\pi}{4})\bigr) + 1$ over één periode.\label{vb:h3-schets}}{%
+\naast{%
+\uitleg{Lees amplitude, periode, evenwichtslijn en beginpunt af. Verdeel de periode in vier gelijke stukken: evenwicht, top, evenwicht, dal, evenwicht.}
+\begin{stappenvrij}{3.6cm}{3.8cm}
+a = 3,\ \tfrac{2\pi}{b} = \pi,\ d = 1 & Amplitude, periode, evenwicht. \\
+(c, d) = \bigl(\tfrac{\pi}{4}, 1\bigr) & Beginpunt. \\
+\text{top } \bigl(\tfrac{\pi}{2}, 4\bigr) & Een kwart periode later. \\
+\text{dal } \bigl(\pi, -2\bigr) & Driekwart periode. \\
+\text{einde } \bigl(\tfrac{5\pi}{4}, 1\bigr) & Na een volle periode.
+\end{stappenvrij}}{%
+\begin{tikzpicture}[x=1.15cm,y=.42cm,font=\scriptsize]
+  \draw[black!14,very thin] (0,-2) grid[xstep=.7854,ystep=1] (4.1,4);
+  \draw[->,grijs] (-.2,0) -- (4.4,0) node[right,text=black] {$x$};
+  \draw[->,grijs] (0,-2.4) -- (0,4.6) node[above,text=black] {$y$};
+  \foreach \t/\n in {.7854/\frac{\pi}{4},1.5708/\frac{\pi}{2},3.1416/\pi,3.927/\frac{5\pi}{4}}{\node[below,inner sep=1.5pt] at (\t,0) {$\n$};}
+  \foreach \t in {-2,1,4}{\node[left,inner sep=1.5pt] at (0,\t) {$\t$};}
+  \draw[grijs,dashed] (0,1) -- (4.1,1);
+  \draw[accent,thick] plot[domain=0:4.1,samples=100,smooth] (\x,{3*sin(2*(\x-.7854) r)+1});
+  \foreach \p in {(.7854,1),(1.5708,4),(2.3562,1),(3.1416,-2),(3.927,1)}{\fill[accent] \p circle (1.6pt);}
+\end{tikzpicture}}}
+
+\begin{werkwijze}
+Om een sinusgrafiek te schetsen: teken de evenwichtslijn $y = d$, zet het beginpunt $(c, d)$, en daarna om de kwart periode een top ($d + a$), een evenwichtspunt, een dal ($d - a$) en een evenwichtspunt. Verbind met een golvende lijn en herhaal links en rechts.
+\end{werkwijze}
+
+Omgekeerd haal je uit een grafiek het voorschrift: de evenwichtslijn ligt midden tussen top en dal, de amplitude is de helft van het verschil, en de periode is twee keer de afstand van top tot dal.
+
+\voorbeeld{}{Een sinusgrafiek heeft een top in $(1, 5)$ en het eerstvolgende dal in $(4, -1)$. Geef een voorschrift.\label{vb:h3-voorschrift}}{%
+\uitleg{Een cosinus begint in een top: $\cos x = \sin\bigl(x + \frac{\pi}{2}\bigr)$ is ook een sinusfunctie. Met een cosinus is $c$ dan de plaats van de top.}
+\begin{stappenbreed}
+d = \tfrac{5 + (-1)}{2} = 2,\quad a = \tfrac{5 - (-1)}{2} = 3 & Evenwicht en amplitude. \\
+\tfrac{2\pi}{b} = 2 \cdot (4 - 1) = 6 \iff b = \tfrac{\pi}{3} & Periode. \\
+f(x) = 3\cos\bigl(\tfrac{\pi}{3}(x - 1)\bigr) + 2 & Top in $x = 1$.
+\end{stappenbreed}
+Als sinus: het stijgende evenwichtspunt ligt een kwart periode vóór de top, in $x = -\frac12$, dus ook $f(x) = 3\sin\bigl(\frac{\pi}{3}(x + \frac12)\bigr) + 2$.}
+
+\begin{oefeningen}
+\oef{h3-sinusfunctie}
+\end{oefeningen}
+
+%========================================================================================
+\section{Periodieke verschijnselen}
+
+\voorbeeld{}{In Brussel is de langste dag (21 juni, dag 172 van het jaar) ongeveer $16{,}4$ uur lang, de kortste (21 december, dag 355) ongeveer $8{,}1$ uur. Stel een model op voor de daglengte $L$ op dag $t$, en bereken de daglengte op 1 mei (dag 121).\label{vb:h3-model}}{%
+\uitleg{De periode is een jaar. Neem een cosinus met de top op dag 172.}
+\begin{stappenbreed}
+d = \tfrac{16{,}4 + 8{,}1}{2} = 12{,}25,\quad a = \tfrac{16{,}4 - 8{,}1}{2} = 4{,}15 & Evenwicht en amplitude, in uur. \\
+b = \tfrac{2\pi}{365} & Periode 365 dagen. \\
+L(t) = 4{,}15\cos\bigl(\tfrac{2\pi}{365}(t - 172)\bigr) + 12{,}25 & Top op dag 172. \\
+L(121) = 4{,}15\cos\bigl(\tfrac{2\pi}{365} \cdot (-51)\bigr) + 12{,}25 \approx 14{,}9 & Ongeveer 14 uur 54 minuten.
+\end{stappenbreed}
+Het model is een benadering: de echte daglengte volgt niet precies een sinus, en wijkt enkele minuten af. Het dal valt in het model op dag $172 + 182{,}5 = 354{,}5$, een halve dag vóór 21 december.}
+
+\begin{oefeningen}
+\oef{h3-model}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h3-o1}
+
+\oef{h3-o2}
+
+\oef{h3-o3}
+
+\oef{h3-o4}
+
+\oef{h3-o5}
+
+\oef{h3-o6}
+
+\oef{h3-o7}
+
+\oef{h3-o8}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{Afgeleiden en Integralen: kijk na wat al gezien is. Het pakket legt de volgorde niet vast.}
+
+\begin{oefeningen}
+\oef{h3-koppel-1}
+
+\oef{h3-koppel-2}
+
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h3-t1}
+
+\oef{h3-t2}
+
+\oef{h3-t3}
+
+\oef{h3-t4}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h3-t1}{vb:h3-aflezen}{oef:h3-periode}%
+  \fv{oef:h3-t2}{vb:h3-schets}{oef:h3-sinusfunctie}%
+  \fv{oef:h3-t3}{vb:h3-voorschrift}{oef:h3-sinusfunctie}%
+  \fv{oef:h3-t4}{vb:h3-model}{oef:h3-model}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: de grafieken van $\sin$, $\cos$ en $\tan$ met domein, bereik, periode en nulwaarden, de betekenis van $a$, $b$, $c$ en $d$ in $a\sin\bigl(b(x - c)\bigr) + d$, hoe je zo'n grafiek schetst met vijf punten, en hoe je uit een top en een dal een voorschrift opstelt. Vergelijk daarna met de kaders.
+\fi
