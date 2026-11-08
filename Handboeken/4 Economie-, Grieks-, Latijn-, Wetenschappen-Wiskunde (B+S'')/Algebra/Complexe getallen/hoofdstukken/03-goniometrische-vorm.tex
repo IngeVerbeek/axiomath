@@ -1,0 +1,332 @@
+%----------------------------------------------------------------------------------------
+% DE GONIOMETRISCHE VORM. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h3-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{3}{De goniometrische vorm}
+
+\lkr{Leerplan B+S'': LPD 41 (cartesische vorm omzetten naar goniometrische vorm en omgekeerd) en het eerste deel van LPD 42 (vermenigvuldigen en delen in goniometrische vorm), met de wenken over het verband met de somformules en de meetkundige betekenis. Machten en $n$-de machtswortels volgen in hoofdstuk 4. Het argument staat in radialen, met de hoofdwaarde in $]-\pi, \pi]$; wie liever in graden werkt, kan dat overal doen.}
+
+In hoofdstuk 1 zag je dat vermenigvuldigen met $i$ een kwartslag is: het punt draait om de oorsprong, en zijn afstand tot de oorsprong blijft dezelfde. Dat is geen toeval voor $i$ alleen. Vermenigvuldigen met een complex getal is altijd een draaiing gevolgd door een uitrekking. Je ziet dat het best als je een complex getal niet beschrijft met zijn reëel en imaginair deel, maar met zijn afstand tot de oorsprong en een hoek. Dat is de goniometrische vorm.
+
+\begin{oefeningen}[Start]
+\oef{h3-start-1}
+
+\oef{h3-verken}
+\end{oefeningen}
+
+\lkr{Laat oefening \ref{oef:h3-verken} maken vóór de uitleg. Leerlingen meten de hoeken in de figuur, in graden of in radialen. Het patroon (moduli vermenigvuldigen, hoeken optellen) is de kern van het hoofdstuk.}
+
+%========================================================================================
+\section{Modulus en argument}
+
+Een punt in het vlak ligt vast door zijn twee coördinaten, maar ook door zijn afstand tot de oorsprong en de richting waarin het ligt. Voor een complex getal is die afstand de modulus. De richting geven we met een hoek, zoals op de goniometrische cirkel.
+
+\begin{theorie}
+\begin{minipage}[t]{.57\linewidth}
+\vspace{0pt}
+Een \textbf{\textcolor{accent}{argument}} van een complex getal $z \neq 0$ is een hoek $\theta$ van de positieve reële as naar de vector $z$, tegen de wijzers van de klok in gemeten.
+
+\vspace{1mm}
+Met $r = |z|$ is \ $\formule{a = r\cos\theta}$ \ en \ $\formule{b = r\sin\theta}$, \ dus
+
+\vspace{1mm}
+\qquad $\formule{z = r(\cos\theta + i\sin\theta)}$
+
+\vspace{1mm}
+Dat is de \textbf{\textcolor{accent}{goniometrische vorm}} van $z$. De \textbf{\textcolor{accent}{hoofdwaarde}} $\formule{\arg z}$ is het argument in $]-\pi, \pi]$.
+\end{minipage}\hfill
+\begin{minipage}[t]{.38\linewidth}
+\vspace{0pt}
+\begin{tikzpicture}[x=.8cm,y=.8cm,font=\small]
+  \draw[->,grijs] (-1,0) -- (4.2,0) node[right,text=black,font=\scriptsize] {Re};
+  \draw[->,grijs] (0,-.8) -- (0,3.2) node[above,text=black,font=\scriptsize] {Im};
+  \draw[hulplijn] (3,0) node[below,text=black] {$a$} -- (3,2.4) -- (0,2.4) node[left,text=black] {$b$};
+  \draw[vector] (0,0) -- node[above left=-1pt,text=black] {$r$} (3,2.4);
+  \draw[accent,thick] (1,0) arc[start angle=0,end angle=38.66,radius=1];
+  \node[text=black] at (19:1.35) {$\theta$};
+  \cpunt{3}{2.4}{$z$}
+\end{tikzpicture}
+\end{minipage}
+\end{theorie}
+
+Een argument ligt niet helemaal vast: tel je er $2\pi$ bij, dan wijst de vector in dezelfde richting. Daarom spreken we een hoofdwaarde af. Getallen boven de reële as hebben een hoofdwaarde tussen 0 en $\pi$, getallen eronder een negatieve. Het getal 0 heeft geen argument, want de vector heeft geen richting.
+
+De vorm is pas goniometrisch als er precies $r(\cos\theta + i\sin\theta)$ staat, met $r > 0$ en twee keer dezelfde hoek. In $2(\cos\frac{\pi}{3} - i\sin\frac{\pi}{3})$ staat een minteken: dat is $2(\cos(-\frac{\pi}{3}) + i\sin(-\frac{\pi}{3}))$, met argument $-\frac{\pi}{3}$.
+
+\figuren{\begin{tikzpicture}[x=.55cm,y=.55cm,font=\scriptsize]
+  \draw[->,grijs] (-3,0) -- (3.4,0) node[right,text=black] {Re};
+  \draw[->,grijs] (0,-2.6) -- (0,2.9) node[above,text=black] {Im};
+  \foreach \x/\y/\l/\p in {2.5/0/{0}/above,0/2.5/{\frac{\pi}{2}}/right,-2.5/0/{\pi}/above,0/-2.5/{-\frac{\pi}{2}}/right}{\cpunt[\p]{\x}{\y}{$\l$}}
+  \node[below,align=center,text=black] at (0,-3) {argument van de getallen\\op de assen};
+\end{tikzpicture}\qquad\qquad
+\begin{tikzpicture}[x=.55cm,y=.55cm,font=\scriptsize]
+  \fill[accent!12] (0,0) -- (3,0) arc[start angle=0,end angle=180,radius=3] -- cycle;
+  \fill[fel!20] (0,0) -- (-3,0) arc[start angle=180,end angle=360,radius=3] -- cycle;
+  \draw[->,grijs] (-3.2,0) -- (3.4,0) node[right,text=black] {Re};
+  \draw[->,grijs] (0,-3.1) -- (0,3.3) node[above,text=black] {Im};
+  \fill[white] (0,0) circle (2.5pt); \draw[grijs] (0,0) circle (2.5pt);
+  \node[text=black,fill=accent!12,inner sep=1pt] at (0,1.6) {$0 < \arg z < \pi$};
+  \node[text=black,fill=fel!20,inner sep=1pt] at (0,-1.6) {$-\pi < \arg z < 0$};
+  \node[below,align=center,text=black] at (0,-3.2) {boven en onder de reële as\\(0 heeft geen argument)};
+\end{tikzpicture}}
+
+%========================================================================================
+\section{Omzetten}
+
+\subsection{Van cartesisch naar goniometrisch}
+
+De modulus ken je al. Voor het argument gebruik je dat $\cos\theta = \frac{a}{r}$ en $\sin\theta = \frac{b}{r}$. Bij een bijzondere hoek herken je die waarden op de goniometrische cirkel.
+
+\voorbeeld{}{Schrijf $z = -1 + i\sqrt3$ in goniometrische vorm.\label{vb:h3-omzet}}{%
+\uitleg{We berekenen de modulus, en zoeken dan een hoek met de juiste cosinus en sinus. Een schets toont in welk kwadrant $z$ ligt.}
+\naast{\begin{minipage}{10.4cm}
+\begin{stappenvrij}{4.6cm}{5.5cm}
+r = \sqrt{1 + 3} = 2 & De modulus. \\[1ex]
+\cos\theta = -\tfrac12, \quad \sin\theta = \tfrac{\sqrt3}{2} & Deel $a$ en $b$ door $r$. \\[1ex]
+\theta = \tfrac{2\pi}{3} & Het tweede kwadrant: $\pi - \tfrac{\pi}{3}$. \\[1ex]
+z = 2\bigl(\cos\tfrac{2\pi}{3} + i\sin\tfrac{2\pi}{3}\bigr) & De goniometrische vorm.
+\end{stappenvrij}
+\end{minipage}}{\begin{tikzpicture}[x=.6cm,y=.6cm,font=\small]
+  \gauss{-2}{2}{-1}{2}
+  \draw[vector] (0,0) -- (-1,1.732);
+  \draw[accent,thick] (.6,0) arc[start angle=0,end angle=120,radius=.6];
+  \cpunt[above left]{-1}{1.732}{$z$}
+\end{tikzpicture}}}
+
+Ligt de hoek niet op de goniometrische cirkel, dan gebruik je je rekentoestel. Pas op met de tangens: $\tan\theta = \frac{b}{a}$ geeft voor $-1 - i$ en voor $1 + i$ allebei 1, terwijl die getallen tegenover elkaar liggen. De toets $\tan^{-1}$ geeft altijd een hoek tussen $-\frac{\pi}{2}$ en $\frac{\pi}{2}$, dus in het eerste of vierde kwadrant.
+
+\voorbeeld{}{Schrijf $z = -3 - 3i$ in goniometrische vorm.\label{vb:h3-omzet2}}{%
+\uitleg{Het getal ligt in het derde kwadrant. We berekenen de modulus en zoeken een hoek in $]-\pi, -\frac{\pi}{2}[$.}
+\begin{stappen}
+r = \sqrt{9 + 9} = 3\sqrt2 & De modulus. \\[1ex]
+\cos\theta = \sin\theta = \frac{-3}{3\sqrt2} = -\frac{\sqrt2}{2} & Een bijzondere hoek. \\[3ex]
+\theta = -\tfrac{3\pi}{4} & In het derde kwadrant, met een negatieve hoofdwaarde: $-\pi + \frac{\pi}{4}$. \\[1ex]
+z = 3\sqrt2\bigl(\cos(-\tfrac{3\pi}{4}) + i\sin(-\tfrac{3\pi}{4})\bigr) &
+\end{stappen}}
+
+\voorbeeld{}{Schrijf $z = 4 - 3i$ in goniometrische vorm, met het argument op drie decimalen.\label{vb:h3-omzet3}}{%
+\uitleg{Dit is geen bijzondere hoek. Het getal ligt in het vierde kwadrant, en daar geeft de tangens meteen de juiste hoek.}
+\begin{stappen}
+r = \sqrt{16 + 9} = 5 & De modulus. \\[1ex]
+\theta = \bgtan\bigl(-\tfrac34\bigr) \approx -0{,}644 & Vierde kwadrant: de rekentoestel geeft de juiste hoek, in radialen. \\[1ex]
+z \approx 5\bigl(\cos(-0{,}644) + i\sin(-0{,}644)\bigr) &
+\end{stappen}}
+
+\begin{werkwijze}
+Schets het punt, zodat je het kwadrant kent. Bereken $r = \sqrt{a^2 + b^2}$. Zoek $\theta$ met $\cos\theta = \frac{a}{r}$ en $\sin\theta = \frac{b}{r}$, of met $\bgtan\frac{b}{a}$: in het tweede kwadrant tel je er dan $\pi$ bij, in het derde trek je er $\pi$ van af.
+\end{werkwijze}
+
+\nujij{Schrijf $1 - i$ in goniometrische vorm.}{$r = \sqrt2$ en $\theta = -\frac{\pi}{4}$: $\sqrt2\bigl(\cos(-\frac{\pi}{4}) + i\sin(-\frac{\pi}{4})\bigr)$.}
+
+\begin{oefeningen}
+\oef{h3-omzet}
+\end{oefeningen}
+
+\subsection{Van goniometrisch naar cartesisch}
+
+De omgekeerde weg is korter: je rekent de cosinus en de sinus uit, en werkt de haakjes uit.
+
+\voorbeeld{}{Schrijf $z = 4\bigl(\cos\frac{5\pi}{6} + i\sin\frac{5\pi}{6}\bigr)$ in cartesische vorm.\label{vb:h3-terug}}{%
+\uitleg{De hoek $\frac{5\pi}{6}$ ligt in het tweede kwadrant: de cosinus is negatief en de sinus positief.}
+\begin{stappen}
+z = 4\Bigl(-\frac{\sqrt3}{2} + \frac12 i\Bigr) & $\cos\frac{5\pi}{6} = -\frac{\sqrt3}{2}$ en $\sin\frac{5\pi}{6} = \frac12$. \\[3ex]
+z = -2\sqrt3 + 2i & Haakjes uitwerken.
+\end{stappen}}
+
+Twee complexe getallen in goniometrische vorm zijn gelijk als hun moduli gelijk zijn en hun argumenten op een veelvoud van $2\pi$ na: $\frac{\pi}{4}$ en $\frac{9\pi}{4}$ geven hetzelfde getal.
+
+\begin{oefeningen}
+\oef{h3-terug}
+\end{oefeningen}
+
+%========================================================================================
+\section{Vermenigvuldigen en delen}
+
+\subsection{Het product}
+
+In de Verken werd de modulus bij elke vermenigvuldiging met $1 + i$ met $\sqrt2$ vermenigvuldigd, en kwam er bij de hoek telkens $\frac{\pi}{4}$ bij. Dat geldt voor elk product, en het bewijs gebruikt de somformules uit de goniometrie.
+
+\begin{theorie}
+\begin{stelling}{Product in goniometrische vorm}
+Voor $z_1 = r_1(\cos\theta_1 + i\sin\theta_1)$ en $z_2 = r_2(\cos\theta_2 + i\sin\theta_2)$ is
+
+\vspace{1mm}
+\qquad $\formule{z_1 z_2 = r_1 r_2 \bigl(\cos(\theta_1 + \theta_2) + i\sin(\theta_1 + \theta_2)\bigr)}$
+\end{stelling}
+
+\begin{bewijs}
+Werk het product uit:
+\bewijsregel{z_1 z_2 = r_1 r_2 \bigl((\cos\theta_1\cos\theta_2 - \sin\theta_1\sin\theta_2) + i(\sin\theta_1\cos\theta_2 + \cos\theta_1\sin\theta_2)\bigr) .}
+Volgens de somformules is het eerste haakje $\cos(\theta_1 + \theta_2)$ en het tweede $\sin(\theta_1 + \theta_2)$.
+\end{bewijs}
+\end{theorie}
+
+\naast{\begin{minipage}{9.6cm}
+Bij een product vermenigvuldig je de moduli en tel je de argumenten op. Meetkundig: vermenigvuldigen met $z_2$ draait $z_1$ over de hoek $\theta_2$ om de oorsprong, en rekt de afstand tot de oorsprong uit met de factor $r_2$. Zo is vermenigvuldigen met $i = \cos\frac{\pi}{2} + i\sin\frac{\pi}{2}$ een kwartslag zonder uitrekking.
+
+Let op: de som van twee hoofdwaarden ligt niet altijd in $]-\pi, \pi]$. Valt ze erbuiten, tel er dan $2\pi$ bij of trek er $2\pi$ van af.
+\end{minipage}}{\begin{tikzpicture}[x=.62cm,y=.62cm,font=\small]
+  \draw[->,grijs] (-3.3,0) -- (3.4,0) node[right,text=black,font=\scriptsize] {Re};
+  \draw[->,grijs] (0,-.4) -- (0,4.4) node[above,text=black,font=\scriptsize] {Im};
+  \draw[vector] (0,0) -- (2.6,1.5);
+  \draw[vector,grijs] (0,0) -- (.345,1.288);
+  \draw[vector,fel!80!black] (0,0) -- (-1.04,3.86);
+  \draw[accent,thick] (1,0) arc[start angle=0,end angle=30,radius=1];
+  \draw[fel!80!black,thick] (30:2.3) arc[start angle=30,end angle=105,radius=2.3];
+  \node at (15:1.35) {$\theta_1$};
+  \node at (66:2.7) {$\theta_2$};
+  \cpunt[right]{2.6}{1.5}{$z_1$}
+  \cpunt[right]{.345}{1.288}{$z_2$}
+  \cpunt[left]{-1.04}{3.86}{$z_1 z_2$}
+\end{tikzpicture}}
+
+\voorbeeld{}{Bereken $z_1 z_2$ voor $z_1 = 2\bigl(\cos\frac{\pi}{3} + i\sin\frac{\pi}{3}\bigr)$ en $z_2 = 3\bigl(\cos\frac{\pi}{4} + i\sin\frac{\pi}{4}\bigr)$.\label{vb:h3-product}}{%
+\uitleg{Beide getallen staan in goniometrische vorm: we vermenigvuldigen de moduli en tellen de argumenten op.}
+\begin{stappen}
+r_1 r_2 = 2 \cdot 3 = 6 & De moduli vermenigvuldigen. \\[1ex]
+\theta_1 + \theta_2 = \frac{\pi}{3} + \frac{\pi}{4} = \frac{7\pi}{12} & De argumenten optellen. \\[3ex]
+z_1 z_2 = 6\Bigl(\cos\frac{7\pi}{12} + i\sin\frac{7\pi}{12}\Bigr) & In de cartesische vorm zou je $\cos\frac{7\pi}{12}$ nodig hebben, en dat is geen bijzondere waarde.
+\end{stappen}}
+
+\subsection{Het quotiënt}
+
+Delen is het omgekeerde van vermenigvuldigen. Dus deel je de moduli, en trek je de argumenten af.
+
+\begin{theorie}
+\begin{stelling}{Quotiënt in goniometrische vorm}
+Voor $z_1 = r_1(\cos\theta_1 + i\sin\theta_1)$ en $z_2 = r_2(\cos\theta_2 + i\sin\theta_2)$, met $z_2 \neq 0$, is
+
+\vspace{1mm}
+\qquad $\formule{\dfrac{z_1}{z_2} = \dfrac{r_1}{r_2} \bigl(\cos(\theta_1 - \theta_2) + i\sin(\theta_1 - \theta_2)\bigr)}$
+\end{stelling}
+
+\begin{bewijs}
+Noem $w = \frac{r_1}{r_2}\bigl(\cos(\theta_1 - \theta_2) + i\sin(\theta_1 - \theta_2)\bigr)$. Met de regel voor het product is
+\bewijsregel{w \cdot z_2 = \frac{r_1}{r_2} \cdot r_2 \bigl(\cos(\theta_1 - \theta_2 + \theta_2) + i\sin(\theta_1 - \theta_2 + \theta_2)\bigr) = z_1 ,}
+dus $w = \frac{z_1}{z_2}$.
+\end{bewijs}
+\end{theorie}
+
+\voorbeeld{}{Bereken $\dfrac{z_1}{z_2}$ voor dezelfde $z_1 = 2\bigl(\cos\frac{\pi}{3} + i\sin\frac{\pi}{3}\bigr)$ en $z_2 = 3\bigl(\cos\frac{\pi}{4} + i\sin\frac{\pi}{4}\bigr)$.\label{vb:h3-quotient}}{%
+\uitleg{We delen de moduli en trekken de argumenten af, in de volgorde van het quotiënt.}
+\begin{stappen}
+\frac{z_1}{z_2} = \frac23\Bigl(\cos\Bigl(\frac{\pi}{3} - \frac{\pi}{4}\Bigr) + i\sin\Bigl(\frac{\pi}{3} - \frac{\pi}{4}\Bigr)\Bigr) & Moduli delen, argumenten aftrekken. \\[3ex]
+= \frac23\Bigl(\cos\frac{\pi}{12} + i\sin\frac{\pi}{12}\Bigr) & $\frac{4\pi}{12} - \frac{3\pi}{12} = \frac{\pi}{12}$.
+\end{stappen}}
+
+\begin{werkwijze}
+Zet de getallen in goniometrische vorm, als ze dat nog niet zijn. Bij een product vermenigvuldig je de moduli en tel je de argumenten op, bij een quotiënt deel je de moduli en trek je de argumenten af. Breng het argument terug naar $]-\pi, \pi]$, en zet het resultaat in cartesische vorm als de hoek bijzonder is.
+\end{werkwijze}
+
+\nujij{Bereken $zw$ en $\frac{z}{w}$ voor $z = 4\bigl(\cos\frac{3\pi}{4} + i\sin\frac{3\pi}{4}\bigr)$ en $w = 2\bigl(\cos\frac{\pi}{2} + i\sin\frac{\pi}{2}\bigr)$.}{$zw = 8\bigl(\cos\frac{5\pi}{4} + i\sin\frac{5\pi}{4}\bigr) = 8\bigl(\cos(-\frac{3\pi}{4}) + i\sin(-\frac{3\pi}{4})\bigr)$ en $\frac{z}{w} = 2\bigl(\cos\frac{\pi}{4} + i\sin\frac{\pi}{4}\bigr) = \sqrt2 + i\sqrt2$.}
+
+\begin{oefeningen}
+\oef{h3-product}
+\end{oefeningen}
+
+\subsection{Draaien om de oorsprong}
+
+Een getal met modulus 1 rekt niets uit: vermenigvuldigen met $\cos\alpha + i\sin\alpha$ is een draaiing over de hoek $\alpha$ om de oorsprong. Zo kun je een punt draaien zonder goniometrie op de figuur zelf.
+
+\voorbeeld{}{Draai het punt $z = 2\sqrt3 + 2i$ over $\frac{\pi}{3}$ om de oorsprong.\label{vb:h3-draai}}{%
+\uitleg{We vermenigvuldigen met $\cos\frac{\pi}{3} + i\sin\frac{\pi}{3}$. Dat kan in goniometrische vorm of in cartesische vorm; we doen het op beide manieren.}
+\naast{\begin{minipage}{10.6cm}
+\begin{stappenvrij}{5.4cm}{4.8cm}
+z = 4\bigl(\cos\tfrac{\pi}{6} + i\sin\tfrac{\pi}{6}\bigr) & $r = \sqrt{12 + 4} = 4$ en $\theta = \frac{\pi}{6}$. \\[1ex]
+4\bigl(\cos\tfrac{\pi}{2} + i\sin\tfrac{\pi}{2}\bigr) = 4i & Argument $\frac{\pi}{6} + \frac{\pi}{3} = \frac{\pi}{2}$. \\[1ex]
+(2\sqrt3 + 2i)\Bigl(\frac12 + \frac{\sqrt3}{2} i\Bigr) & Cartesisch: $\cos\frac{\pi}{3} + i\sin\frac{\pi}{3} = \frac12 + \frac{\sqrt3}{2}i$. \\[3ex]
+= \sqrt3 + 3i + i - \sqrt3 = 4i & Dezelfde uitkomst.
+\end{stappenvrij}
+\end{minipage}}{\begin{tikzpicture}[x=.55cm,y=.55cm,font=\small]
+  \gaussstap{2}{-1}{4}{-1}{4}
+  \draw[vector] (0,0) -- (3.464,2);
+  \draw[vector,fel!80!black] (0,0) -- (0,4);
+  \draw[hulplijn] (30:4) arc[start angle=30,end angle=90,radius=4];
+  \cpunt[right]{3.464}{2}{$z$}
+  \cpunt[right]{0}{4}{$4i$}
+\end{tikzpicture}}}
+
+\begin{oefeningen}
+\oef{h3-draai}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h3-o1}
+
+\oef{h3-o2}
+
+\oef{h3-o3}
+
+\oef{h3-o4}
+
+\oef{h3-o5}
+
+\oef{h3-o6}
+
+\oef{h3-o7}
+
+\oef{h3-o8}
+
+\oef{h3-o9}
+
+\oef{h3-o10}
+
+\oef{h3-o11}
+
+\oef{h3-o12}
+
+\oef{h3-o13}
+
+\oef{h3-o14}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{De somformules komen uit de cursus Goniometrische functies (5de jaar). Kijk na of ze al gezien zijn: het product in goniometrische vorm steunt erop. De tweede oefening bouwt voort op de eerste Koppel-oefening van hoofdstuk 1.}
+
+\begin{oefeningen}
+\oef{h3-koppel-1}
+
+\oef{h3-koppel-2}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h3-t1}
+
+\oef{h3-t2}
+
+\oef{h3-t3}
+
+\oef{h3-t4}
+
+\oef{h3-t5}
+
+\oef{h3-t6}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h3-t1}{vb:h3-omzet}{oef:h3-omzet}%
+  \fv{oef:h3-t2}{vb:h3-omzet2}{oef:h3-omzet}%
+  \fv{oef:h3-t3}{vb:h3-terug}{oef:h3-terug}%
+  \fv{oef:h3-t4}{vb:h3-product}{oef:h3-product}%
+  \fv{oef:h3-t5}{vb:h3-draai}{oef:h3-draai}%
+  \fv{oef:h3-t6}{vb:h3-omzet3}{oef:h3-omzet}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: wat het argument en de hoofdwaarde zijn, de goniometrische vorm, hoe je omzet van cartesisch naar goniometrisch en terug (en waar je moet opletten met de tangens), hoe je vermenigvuldigt en deelt in goniometrische vorm, en wat vermenigvuldigen meetkundig betekent. Vergelijk daarna met de kaders.
+\fi
