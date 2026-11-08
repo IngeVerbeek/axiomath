@@ -1,0 +1,274 @@
+%----------------------------------------------------------------------------------------
+% KANS. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h1-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{1}{Kans}
+
+\lkr{Leerplan Basis: LPD 17 (kansen met kruistabellen, boomdiagrammen en de wet van Laplace), met het verband tussen relatieve frequentie en kans en de terminologie uitkomst, gebeurtenis en uitkomstenverzameling. Dit hoofdstuk legt de basis: Laplace, de wet van de grote aantallen en de rekenregels. Kruistabellen en boomdiagrammen volgen in hoofdstuk 2. Dit pakket heeft geen aparte cursus Telproblemen: waar combinaties ($\binom{n}{k}$) nodig zijn, gebruiken leerlingen het rekentoestel. Kijk na of het leerplan van dit pakket meer telwerk vraagt.}
+
+Gooi je met een dobbelsteen, dan weet je niet welk getal er komt. Toch is er orde in het toeval: gooi je heel vaak, dan komt elk getal ongeveer even vaak. Kansrekenen maakt die orde precies. Je gebruikt het om een spel te ontwerpen, een risico te schatten of een medische test te beoordelen. In dit hoofdstuk leer je wat een kans is, hoe je ze berekent als alle uitkomsten even waarschijnlijk zijn, en welke rekenregels altijd gelden.
+
+\begin{oefeningen}[Start]
+\oef{h1-start-1}
+
+\oef{h1-verken}
+\end{oefeningen}
+
+\lkr{Laat oefening \ref{oef:h1-verken} maken vóór de uitleg. De fout in vraag d is de belangrijkste misvatting van het hoofdstuk: de wet van Laplace geldt alleen als alle uitkomsten even waarschijnlijk zijn, en de 11 sommen zijn dat niet.}
+
+%========================================================================================
+\section{Uitkomsten en gebeurtenissen}
+
+Een \textbf{kansexperiment} is een experiment waarvan je de uitkomst niet op voorhand kent, zoals een worp met een dobbelsteen of een trekking uit een vaas. Om erover te rekenen, spreken we een paar woorden af.
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{uitkomstenverzameling}} $\formule{\Omega}$ van een kansexperiment is de verzameling van alle mogelijke uitkomsten. Een \textbf{\textcolor{accent}{gebeurtenis}} is een deelverzameling $A \subseteq \Omega$.
+
+\vspace{1mm}
+{\centering\arrayrulecolor{accent}\renewcommand{\arraystretch}{1.45}%
+\begin{tabular}{|>{\centering\arraybackslash}m{3.6cm}|>{\centering\arraybackslash}m{2.6cm}|>{\centering\arraybackslash}m{6.4cm}|}
+\hline
+\textbf{gebeurtenis} & \textbf{notatie} & \textbf{betekenis} \\ \hline
+niet $A$ (complement) & $\formule{\compl{A}}$ & alle uitkomsten die niet in $A$ zitten \\ \hline
+$A$ en $B$ & $\formule{A \cap B}$ & de uitkomsten die in $A$ én in $B$ zitten \\ \hline
+$A$ of $B$ & $\formule{A \cup B}$ & de uitkomsten in $A$, in $B$, of in beide \\ \hline
+\end{tabular}\par}
+
+\vspace{1mm}
+$A$ en $B$ zijn \textbf{\textcolor{accent}{onverenigbaar}} als $\formule{A \cap B = \emptyset}$: ze kunnen niet samen gebeuren.
+\end{theorie}
+
+Het woord \textit{of} betekent in de wiskunde altijd \textit{of beide}. Een uitkomst is een element van $\Omega$, een gebeurtenis een verzameling van uitkomsten: \textit{een even getal gooien} is de gebeurtenis $\{2, 4, 6\}$.
+
+\voorbeeld{}{Je gooit met een dobbelsteen. Noem $A$ \textit{een even getal} en $B$ \textit{minstens 4}. Bepaal $\compl{A}$, $A \cap B$ en $A \cup B$.\label{vb:h1-gebeurtenis}}{%
+\uitleg{We schrijven elke gebeurtenis als verzameling van uitkomsten, en lezen de bewerkingen af.}
+\naast{\begin{minipage}{10.2cm}
+\begin{stappenvrij}{5.2cm}{4.7cm}
+\Omega = \{1, 2, 3, 4, 5, 6\} & De uitkomstenverzameling. \\[.6ex]
+A = \{2, 4, 6\}, \ B = \{4, 5, 6\} & De twee gebeurtenissen. \\[.6ex]
+\compl{A} = \{1, 3, 5\} & Een oneven getal. \\[.6ex]
+A \cap B = \{4, 6\} & Even én minstens 4. \\[.6ex]
+A \cup B = \{2, 4, 5, 6\} & Even, of minstens 4, of beide.
+\end{stappenvrij}
+\end{minipage}}{\begin{tikzpicture}[font=\small]
+  \draw[grijs] (-1.3,-1.1) rectangle (2.5,1.1); \node[grijs,anchor=north east] at (2.5,1.1) {$\Omega$};
+  \draw[verz] (0,0) circle (.85); \draw[verz] (1.15,0) circle (.85);
+  \node at (-.4,0) {2}; \node at (.58,.25) {4}; \node at (.58,-.25) {6}; \node at (1.55,0) {5};
+  \node at (-1.05,-.85) {1}; \node at (2.25,-.85) {3};
+  \node[text=accent] at (-.5,.62) {$A$}; \node[text=accent] at (1.65,.62) {$B$};
+\end{tikzpicture}}}
+
+\begin{oefeningen}
+\oef{h1-gebeurtenis}
+\end{oefeningen}
+
+%========================================================================================
+\section{De wet van Laplace}
+
+Bij een eerlijke dobbelsteen heeft elk van de zes getallen dezelfde kans: $\frac16$. Een even getal komt in drie van de zes gevallen, dus de kans is $\frac36$. Zo rekende de Franse wiskundige Pierre-Simon Laplace.
+
+\begin{theorie}
+\begin{stelling}{Wet van Laplace}
+Heeft een kansexperiment een eindig aantal uitkomsten die allemaal even waarschijnlijk zijn, dan is de kans op een gebeurtenis $A$
+
+\vspace{1mm}
+\qquad $\formule{P(A) = \dfrac{\#A}{\#\Omega} = \dfrac{\text{aantal gunstige uitkomsten}}{\text{aantal mogelijke uitkomsten}}}$
+\end{stelling}
+\end{theorie}
+
+De voorwaarde is belangrijk. Met twee dobbelstenen zijn er 11 mogelijke sommen, van 2 tot 12, maar die zijn niet even waarschijnlijk. De 36 koppels $(a, b)$ zijn dat wel: daarom tel je koppels, met een \textbf{roosterdiagram}.
+
+\voorbeeld{}{Je gooit met twee dobbelstenen. Wat is de kans dat de som 7 is? En dat de som minstens 10 is?\label{vb:h1-laplace}}{%
+\uitleg{De 36 koppels zijn even waarschijnlijk. In het rooster lezen we af hoeveel koppels gunstig zijn.}
+\naast{\begin{minipage}{9.4cm}
+\begin{stappenvrij}{4.2cm}{4.8cm}
+\#\Omega = 6 \cdot 6 = 36 & Koppels (eerste, tweede dobbelsteen). \\[1ex]
+P(\text{som } 7) = \frac{6}{36} = \frac16 & De diagonaal $(1, 6), (2, 5), \ldots, (6, 1)$. \\[3ex]
+P(\text{som} \geqslant 10) = \frac{6}{36} = \frac16 & Som 10: 3 koppels, 11: 2, 12: 1.
+\end{stappenvrij}
+\end{minipage}}{\begin{tikzpicture}[x=.48cm,y=.48cm,font=\scriptsize]
+  \foreach \a in {1,...,6}{\foreach \b in {1,...,6}{
+    \pgfmathtruncatemacro{\s}{\a+\b}
+    \ifnum\s=7 \fill[accent!35] (\a-.5,\b-.5) rectangle (\a+.5,\b+.5);\fi
+    \ifnum\s>9 \fill[fel!45] (\a-.5,\b-.5) rectangle (\a+.5,\b+.5);\fi
+    \node at (\a,\b) {\s};}}
+  \draw[grijs] (.5,.5) grid (6.5,6.5);
+  \foreach \t in {1,...,6}{\node[grijs] at (\t,0) {\t}; \node[grijs] at (0,\t) {\t};}
+\end{tikzpicture}}}
+
+Bij ingewikkelder experimenten tel je de gunstige en de mogelijke uitkomsten met telmethodes, bijvoorbeeld het aantal combinaties $\binom{n}{k}$ (op het rekentoestel: nCr).
+
+\voorbeeld{}{Je trekt 3 kaarten uit een spel van 52 kaarten. Wat is de kans dat het drie harten zijn?\label{vb:h1-kaarten}}{%
+\uitleg{Elke groep van 3 kaarten is even waarschijnlijk. De volgorde telt niet, dus tellen we combinaties.}
+\begin{stappen}
+\#\Omega = \binom{52}{3} = 22\,100 & Alle groepen van 3 kaarten. \\[2ex]
+\#A = \binom{13}{3} = 286 & Groepen van 3 harten. \\[2ex]
+P(A) = \frac{286}{22\,100} = \frac{11}{850} \approx 0{,}013 & Iets meer dan 1~\%.
+\end{stappen}}
+
+\begin{werkwijze}
+Zoek een uitkomstenverzameling met even waarschijnlijke uitkomsten (bij twee dobbelstenen: koppels, geen sommen). Tel de mogelijke en de gunstige uitkomsten, met een rooster, een boomdiagram of de telformules, en deel.
+\end{werkwijze}
+
+\nujij{Wat is de kans dat het product van de ogen van twee dobbelstenen even is?}{Het product is oneven als beide oneven zijn: $3 \cdot 3 = 9$ koppels. Even: $36 - 9 = 27$, dus $\frac{27}{36} = \frac34$.}
+
+\begin{oefeningen}
+\oef{h1-laplace}
+\end{oefeningen}
+
+%========================================================================================
+\section{Relatieve frequentie}
+
+Is een punaise op een tafel geworpen, dan landt ze op haar kop of op haar punt. Die twee uitkomsten zijn niet even waarschijnlijk, en een formule voor de kans is er niet. Dan doe je het experiment vaak, en kijk je hoe vaak elke uitkomst voorkomt.
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{relatieve frequentie}} van een gebeurtenis $A$ na $n$ herhalingen is \quad $\formule{\dfrac{\text{aantal keer } A}{n}}$
+
+\vspace{1mm}
+\textbf{\textcolor{accent}{Wet van de grote aantallen}}: herhaal je een kansexperiment heel vaak, dan nadert de relatieve frequentie van $A$ tot $P(A)$.
+\end{theorie}
+
+\naast{\begin{minipage}{9cm}
+De figuur toont een simulatie: een computer gooide 2000 keer met een dobbelsteen, en na elke worp is de relatieve frequentie van een zes berekend. In het begin schommelt ze sterk: na 20 worpen is ze $0{,}25$. Hoe meer worpen, hoe dichter ze bij $\frac16 \approx 0{,}167$ blijft. Zo schat je een kans die je niet kunt berekenen: de relatieve frequentie na veel herhalingen is een goede schatting.
+\end{minipage}}{\begin{tikzpicture}[x=.0026cm,y=14cm,font=\scriptsize]
+  \draw[black!14,very thin] (0,0) grid[xstep=500,ystep=.05] (2000,.3);
+  \draw[->,grijs] (0,0) -- (2120,0) node[right,text=black] {$n$};
+  \draw[->,grijs] (0,0) -- (0,.32);
+  \foreach \t in {500,1000,1500,2000}{\node[below] at (\t,0) {\t};}
+  \foreach \t/\l in {.1/{0,1},.2/{0,2},.3/{0,3}}{\node[left] at (0,\t) {\l};}
+  \draw[accent,dashed] (0,1/6) -- (2000,1/6) node[right,text=accent] {$\tfrac16$};
+  \draw[fel!80!black,thick] plot[smooth] coordinates {(10,.1) (20,.25) (40,.15) (60,.183) (100,.23) (150,.18) (200,.16) (300,.157) (400,.165) (600,.167) (800,.166) (1000,.168) (1200,.168) (1400,.164) (1600,.165) (1800,.166) (2000,.168)};
+\end{tikzpicture}}
+
+Een veelgemaakte fout: na vijf keer kop is munt niet \textit{aan de beurt}. Een munt heeft geen geheugen; de kans blijft $\frac12$. De wet van de grote aantallen gaat over de verhouding op lange termijn, niet over de volgende worp.
+
+\voorbeeld{}{Een punaise wordt 1000 keer geworpen en landt 412 keer op haar punt. Schat de kans op \textit{punt}. Hoe vaak verwacht je \textit{punt} bij 250 worpen?\label{vb:h1-frequentie}}{%
+\uitleg{De relatieve frequentie na 1000 worpen is een schatting van de kans. Met die kans schatten we het aantal bij een nieuwe reeks.}
+\begin{stappen}
+P(\text{punt}) \approx \frac{412}{1000} = 0{,}412 & De relatieve frequentie. \\[2.5ex]
+250 \cdot 0{,}412 = 103 & Ongeveer 103 keer, maar het werkelijke aantal schommelt.
+\end{stappen}}
+
+\begin{oefeningen}
+\oef{h1-frequentie}
+\end{oefeningen}
+
+%========================================================================================
+\section{Rekenregels}
+
+Zowel met Laplace als met relatieve frequenties gelden dezelfde regels. Ze volgen uit het tellen.
+
+\begin{theorie}
+\begin{stelling}{Rekenregels voor kansen}
+Voor gebeurtenissen $A$ en $B$:
+
+\vspace{1mm}
+\qquad $\formule{0 \leqslant P(A) \leqslant 1} \qquad \formule{P(\Omega) = 1} \qquad \formule{P(\compl{A}) = 1 - P(A)}$
+
+\vspace{1mm}
+\qquad $\formule{P(A \cup B) = P(A) + P(B) - P(A \cap B)}$, \quad en dus $\formule{P(A \cup B) = P(A) + P(B)}$ als $A$ en $B$ onverenigbaar zijn.
+\end{stelling}
+
+\begin{bewijs}
+We bewijzen ze voor de wet van Laplace. Uit $0 \leqslant \#A \leqslant \#\Omega$ volgt de eerste, en $\#\Omega / \#\Omega = 1$. Omdat $A$ en $\compl{A}$ samen $\Omega$ vormen zonder overlap, is $\#\compl{A} = \#\Omega - \#A$; deel door $\#\Omega$. Uit de somregel met overlap $\#(A \cup B) = \#A + \#B - \#(A \cap B)$ volgt na deling door $\#\Omega$ de laatste regel.
+\end{bewijs}
+\end{theorie}
+
+De regel voor het complement is vooral handig bij \textit{minstens één}: het tegendeel is \textit{geen enkele}, en dat is vaak één eenvoudig geval.
+
+\voorbeeld{}{Je gooit vier keer met een dobbelsteen. Wat is de kans op minstens één zes?\label{vb:h1-complement}}{%
+\uitleg{\textit{Minstens één zes} omvat veel gevallen. Het tegendeel is \textit{geen enkele zes}: bij elke worp een van de 5 andere getallen.}
+\begin{stappen}
+P(\text{geen zes}) = \frac{5^4}{6^4} = \frac{625}{1296} & Laplace, met $6^4$ even waarschijnlijke rijtjes. \\[3ex]
+P(\text{minstens één zes}) = 1 - \frac{625}{1296} \approx 0{,}518 & Het complement: iets meer dan een half.
+\end{stappen}}
+
+\voorbeeld{}{Je trekt een kaart uit een spel van 52. Wat is de kans op een harten of een aas?\label{vb:h1-som}}{%
+\uitleg{De gebeurtenissen overlappen: de hartenaas is beide. We gebruiken de somregel met overlap.}
+\begin{stappen}
+P(H \cup A) = \frac{13}{52} + \frac{4}{52} - \frac{1}{52} = \frac{16}{52} = \frac{4}{13} & De hartenaas zou anders twee keer geteld zijn.
+\end{stappen}}
+
+\begin{werkwijze}
+Bij \textit{minstens één}: bereken de kans op het tegendeel en trek af van 1. Bij \textit{$A$ of $B$}: tel de kansen op en trek de kans op \textit{$A$ en $B$} af, behalve als ze onverenigbaar zijn.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h1-regels}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h1-o1}
+
+\oef{h1-o2}
+
+\oef{h1-o3}
+
+\oef{h1-o4}
+
+\oef{h1-o5}
+
+\oef{h1-o6}
+
+\oef{h1-o7}
+
+\oef{h1-o8}
+
+\oef{h1-o9}
+
+\oef{h1-o10}
+
+\oef{h1-o11}
+
+\oef{h1-o12}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{De oefening gebruikt de oppervlakte van een cirkel.}
+
+\begin{oefeningen}
+\oef{h1-koppel-1}
+
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h1-t1}
+
+\oef{h1-t2}
+
+\oef{h1-t3}
+
+\oef{h1-t4}
+
+\oef{h1-t5}
+
+\oef{h1-t6}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h1-t1}{vb:h1-laplace}{oef:h1-laplace}%
+  \fv{oef:h1-t2}{vb:h1-complement}{oef:h1-regels}%
+  \fv{oef:h1-t3}{vb:h1-som}{oef:h1-regels}%
+  \fv{oef:h1-t4}{vb:h1-kaarten}{oef:h1-laplace}%
+  \fv{oef:h1-t5}{vb:h1-frequentie}{oef:h1-frequentie}%
+  \fv{oef:h1-t6}{vb:h1-gebeurtenis}{oef:h1-gebeurtenis}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: wat een kansexperiment, een uitkomstenverzameling en een gebeurtenis zijn, de notaties $\compl{A}$, $A \cap B$ en $A \cup B$, de wet van Laplace met haar voorwaarde, de relatieve frequentie en de wet van de grote aantallen, en de rekenregels voor kansen. Vergelijk daarna met de kaders.
+\fi

@@ -1,0 +1,443 @@
+# Oefeningen van hoofdstuk 2. Zie oefeningenbank.py voor de velden.
+
+- id: h2-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Bereken $0{,}3 \cdot 0{,}4$ en $\frac12 \cdot \frac13$.
+      antwoord: |-
+        $0{,}12$ en $\tfrac16$
+      uitwerking: |-
+        $0{,}3 \cdot 0{,}4 = 0{,}12$ en $\frac12 \cdot \frac13 = \frac16$.
+    - opgave: |-
+        Hoeveel procent is 40~\% van 25~\%?
+      antwoord: |-
+        10~\%
+      uitwerking: |-
+        $0{,}4 \cdot 0{,}25 = 0{,}10$.
+    - opgave: |-
+        Van 48 leerlingen zijn er 12 linkshandig. Welk deel is dat?
+      antwoord: |-
+        $0{,}25$
+      uitwerking: |-
+        $\frac{12}{48} = 0{,}25$.
+    - opgave: |-
+        De kans op regen is 0,15. Wat is de kans op geen regen?
+      antwoord: |-
+        $0{,}85$
+      uitwerking: |-
+        $1 - 0{,}15 = 0{,}85$.
+    - opgave: |-
+        Een vaas bevat 5 rode en 3 witte knikkers. Je neemt een rode weg. Hoeveel rode en hoeveel knikkers blijven er?
+      antwoord: |-
+        4 rode van 7
+      uitwerking: |-
+        4 rode en 3 witte: 7 knikkers.
+    - opgave: |-
+        Je gooit met twee dobbelstenen. Wat is de kans dat de eerste een zes is? Dat de som 12 is?
+      antwoord: |-
+        $\tfrac16$; \ $\tfrac{1}{36}$
+      uitwerking: |-
+        De eerste: $\frac{6}{36} = \frac16$. Som 12: alleen $(6, 6)$, $\frac{1}{36}$.
+
+- id: h2-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken}\quad Een school vroeg aan 200 leerlingen of ze met de fiets komen en of ze aan sport doen.
+    \figuren{\small\renewcommand{\arraystretch}{1.2}\begin{tabular}{l|cc|c} & sport & geen sport & totaal \\ \hline fiets & 60 & 40 & 100 \\ geen fiets & 30 & 70 & 100 \\ \hline totaal & 90 & 110 & 200 \end{tabular}}
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Wat is de kans dat een willekeurige leerling aan sport doet?
+      antwoord: |-
+        $0{,}45$
+      uitwerking: |-
+        $\frac{90}{200} = 0{,}45$.
+    - opgave: |-
+        Je kiest een willekeurige leerling die met de fiets komt. Wat is de kans dat die aan sport doet?
+      antwoord: |-
+        $0{,}6$
+      uitwerking: |-
+        Alleen de rij fiets telt: $\frac{60}{100} = 0{,}6$.
+    - opgave: |-
+        Je kiest een willekeurige leerling die aan sport doet. Wat is de kans dat die met de fiets komt?
+      antwoord: |-
+        $\tfrac23$
+      uitwerking: |-
+        Alleen de kolom sport telt: $\frac{60}{90} = \frac23$.
+    - opgave: |-
+        Waarom zijn de antwoorden van b en c verschillend? Wat zegt a en b samen over fietsers?
+      antwoord: |-
+        andere noemer; fietsers sporten vaker
+      uitwerking: |-
+        De teller is dezelfde (60), maar je deelt door een ander totaal: alle fietsers of alle sporters. Uit a en b: van alle leerlingen sport 45~\%, van de fietsers 60~\%. Fietsers sporten vaker.
+
+- id: h2-kruistabel
+  soort: kort
+  opgave: |-
+    Een school telt 240 leerlingen in het 5de jaar, naar keuzevak en geslacht.
+    \figuren{\small\renewcommand{\arraystretch}{1.2}\begin{tabular}{l|cc|c} & Frans & Duits & totaal \\ \hline jongen & 50 & 70 & 120 \\ meisje & 80 & 40 & 120 \\ \hline totaal & 130 & 110 & 240 \end{tabular}}
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $P(\text{Frans})$
+      antwoord: |-
+        $\tfrac{13}{24}$
+      uitwerking: |-
+        $\frac{130}{240} = \frac{13}{24} \approx 0{,}54$.
+    - opgave: |-
+        $P(\text{Frans} \gegeven \text{meisje})$
+      antwoord: |-
+        $\tfrac23$
+      uitwerking: |-
+        $\frac{80}{120} = \frac23$.
+    - opgave: |-
+        $P(\text{meisje} \gegeven \text{Frans})$
+      antwoord: |-
+        $\tfrac{8}{13}$
+      uitwerking: |-
+        $\frac{80}{130} = \frac{8}{13} \approx 0{,}62$.
+
+- id: h2-boom
+  soort: kort
+  opgave: |-
+    In een vaas zitten 4 rode en 6 groene knikkers. Je trekt er twee zonder teruglegging. Teken een boomdiagram.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Wat is de kans op twee groene?
+      antwoord: |-
+        $\tfrac13$
+      uitwerking: |-
+        $\frac{6}{10} \cdot \frac59 = \frac{30}{90} = \frac13$.
+    - opgave: |-
+        Wat is de kans op minstens één rode?
+      antwoord: |-
+        $\tfrac23$
+      uitwerking: |-
+        Het complement van twee groene: $1 - \frac13 = \frac23$.
+    - opgave: |-
+        Wat is de kans op twee groene als je de eerste knikker wel teruglegt?
+      antwoord: |-
+        $0{,}36$
+      uitwerking: |-
+        Dan zijn de trekkingen onafhankelijk: $0{,}6 \cdot 0{,}6 = 0{,}36$.
+
+- id: h2-onafhankelijk
+  soort: kort
+  opgave: |-
+    Onafhankelijk of niet?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $P(A) = 0{,}4$, $P(B) = 0{,}5$ en $P(A \cap B) = 0{,}2$.
+      antwoord: |-
+        onafhankelijk
+      uitwerking: |-
+        $0{,}4 \cdot 0{,}5 = 0{,}2 = P(A \cap B)$: onafhankelijk.
+    - opgave: |-
+        Een speler scoort 80~\% van zijn strafschoppen, onafhankelijk van vorige. Wat is de kans dat hij er twee na elkaar scoort? Dat hij er precies één van twee scoort?
+      antwoord: |-
+        $0{,}64$; \ $0{,}32$
+      uitwerking: |-
+        $0{,}8 \cdot 0{,}8 = 0{,}64$. Precies één: $0{,}8 \cdot 0{,}2 + 0{,}2 \cdot 0{,}8 = 0{,}32$.
+
+- id: h2-bayes
+  soort: kort
+  opgave: |-
+    Een fabriek maakt lampen op twee machines. Machine $A$ maakt 60~\% van de lampen, waarvan 2~\% defect. Machine $B$ maakt de rest, waarvan 5~\% defect.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Wat is de kans dat een willekeurige lamp defect is?
+      antwoord: |-
+        $0{,}032$
+      uitwerking: |-
+        Totale kans: $0{,}6 \cdot 0{,}02 + 0{,}4 \cdot 0{,}05 = 0{,}012 + 0{,}020 = 0{,}032$.
+    - opgave: |-
+        Een lamp is defect. Wat is de kans dat ze van machine $A$ komt?
+      antwoord: |-
+        $0{,}375$
+      uitwerking: |-
+        Bayes: $\frac{0{,}012}{0{,}032} = 0{,}375$. Machine $A$ maakt meer lampen, maar minder dan de helft van de defecte.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h2-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    kruistabel
+  opgave: |-
+    Een bedrijf vroeg aan 300 personen of ze een bepaalde app gebruiken. Van de 120 personen jonger dan 30 gebruiken er 90 de app, van de 180 anderen 60. Maak een kruistabel en bereken de kans dat een willekeurige persoon de app gebruikt, dat iemand jonger dan 30 de app gebruikt, en dat een gebruiker jonger is dan 30.
+  antwoord: |-
+    $0{,}5$; \ $0{,}75$; \ $0{,}6$
+  uitwerking: |-
+    Gebruikers: $90 + 60 = 150$ van de 300: $0{,}5$. Jonger dan 30: $\frac{90}{120} = 0{,}75$. Gebruiker jonger dan 30: $\frac{90}{150} = 0{,}6$.
+
+- id: h2-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    zonder teruglegging
+  opgave: |-
+    Je trekt drie kaarten na elkaar uit een spel van 52, zonder teruglegging. Wat is de kans op drie azen?
+  antwoord: |-
+    $\tfrac{1}{5525}$
+  uitwerking: |-
+    $\frac{4}{52} \cdot \frac{3}{51} \cdot \frac{2}{50} = \frac{24}{132\,600} = \frac{1}{5525}$.
+
+- id: h2-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    met en zonder teruglegging
+  opgave: |-
+    In een vaas zitten 3 rode en 2 blauwe knikkers. Je trekt er twee. Wat is de kans op twee rode als je de eerste teruglegt? En als je ze niet teruglegt?
+  antwoord: |-
+    $\tfrac{9}{25}$; \ $\tfrac{3}{10}$
+  uitwerking: |-
+    Met teruglegging: $\frac35 \cdot \frac35 = \frac{9}{25} = 0{,}36$. Zonder: $\frac35 \cdot \frac24 = \frac{3}{10} = 0{,}3$.
+
+- id: h2-o4
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    wachten op een zes
+  opgave: |-
+    Je gooit met een dobbelsteen tot je een zes hebt. Wat is de kans dat de eerste zes bij de derde worp valt?
+  antwoord: |-
+    $\tfrac{25}{216}$
+  uitwerking: |-
+    Twee keer geen zes, dan een zes: $\frac56 \cdot \frac56 \cdot \frac16 = \frac{25}{216} \approx 0{,}116$.
+
+- id: h2-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: spamfilter
+  opgave: |-
+    Van alle e-mails is 30~\% spam. Het woord \textit{gratis} komt voor in 40~\% van de spam en in 2~\% van de andere e-mails. Een e-mail bevat het woord \textit{gratis}. Wat is de kans dat het spam is? Los op met een tabel van 1000 e-mails, en controleer met de wet van Bayes.
+  antwoord: |-
+    $\approx 0{,}90$
+  uitwerking: |-
+    Van 1000 e-mails zijn er 300 spam, waarvan 120 met \textit{gratis}, en 700 andere, waarvan 14 met \textit{gratis}. De kans is $\frac{120}{134} \approx 0{,}90$.\par
+    Bayes: $\frac{0{,}3 \cdot 0{,}4}{0{,}3 \cdot 0{,}4 + 0{,}7 \cdot 0{,}02} = \frac{0{,}12}{0{,}134} \approx 0{,}90$.
+
+- id: h2-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    onafhankelijkheid in een kruistabel
+  opgave: |-
+    Twee onderzoekers vroegen telkens aan 400 personen of ze een bril dragen ($B$) en of ze rechts- of linkshandig zijn ($L$: linkshandig). In welke tabel zijn $B$ en $L$ onafhankelijk? Verklaar.
+    \figuren{\small\renewcommand{\arraystretch}{1.2}\begin{tabular}{l|cc} \textbf{tabel 1} & $L$ & niet $L$ \\ \hline $B$ & 45 & 155 \\ niet $B$ & 45 & 155 \end{tabular}\qquad\qquad
+    \begin{tabular}{l|cc} \textbf{tabel 2} & $L$ & niet $L$ \\ \hline $B$ & 60 & 140 \\ niet $B$ & 30 & 170 \end{tabular}}
+  antwoord: |-
+    tabel 1
+  uitwerking: |-
+    Tabel 1: $P(B) = 0{,}5$, $P(L) = \frac{90}{400} = 0{,}225$ en $P(B \cap L) = \frac{45}{400} = 0{,}1125 = 0{,}5 \cdot 0{,}225$: onafhankelijk. Ook: $P(L \gegeven B) = \frac{45}{200} = P(L)$.\par
+    Tabel 2: $P(B \cap L) = \frac{60}{400} = 0{,}15$, maar $P(B)P(L) = 0{,}5 \cdot 0{,}225 = 0{,}1125$: afhankelijk.
+
+- id: h2-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    misvattingen
+  opgave: |-
+    Waar of vals? Verklaar.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Altijd is $P(A \gegeven B) = P(B \gegeven A)$.
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: in de Verken is $P(\text{sport} \gegeven \text{fiets}) = 0{,}6$ maar $P(\text{fiets} \gegeven \text{sport}) = \frac23$.
+    - opgave: |-
+        Onverenigbare gebeurtenissen zijn onafhankelijk.
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals (als beide een positieve kans hebben): dan is $P(A \cap B) = 0$, maar $P(A)P(B) > 0$.
+    - opgave: |-
+        $P(A \gegeven B) + P(\compl{A} \gegeven B) = 1$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: binnen $B$ gebeurt $A$ of niet $A$.
+    - opgave: |-
+        Zijn $A$ en $B$ onafhankelijk, dan is $P(A \cup B) = P(A) + P(B) - P(A)P(B)$.
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: de somregel met $P(A \cap B) = P(A)P(B)$.
+
+- id: h2-o8
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    dezelfde test, een andere groep
+  opgave: |-
+    De sneltest uit voorbeeld \ref{vb:h2-bayes} (positief bij 95~\% van de besmetten, vals positief bij 4~\% van de anderen) wordt gebruikt in een ziekenhuis, waar 30~\% van de geteste personen besmet is. Wat is nu de kans dat iemand die positief test, besmet is? Vergelijk met het voorbeeld en verklaar.
+  antwoord: |-
+    $\approx 0{,}91$
+  uitwerking: |-
+    $\frac{0{,}3 \cdot 0{,}95}{0{,}3 \cdot 0{,}95 + 0{,}7 \cdot 0{,}04} = \frac{0{,}285}{0{,}313} \approx 0{,}91$. In de stad was dat maar 0,33: de test is dezelfde, maar nu zijn er veel meer besmetten in verhouding tot de valse positieven.
+
+- id: h2-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    drie deuren
+  opgave: |-
+    In een spel staat achter één van drie gesloten deuren een prijs. Je kiest een deur. De presentator, die weet waar de prijs is, opent een andere deur zonder prijs, en vraagt of je van deur wilt wisselen. Wat is de kans om te winnen als je blijft, en als je wisselt? Gebruik een boomdiagram.
+  antwoord: |-
+    blijven $\tfrac13$, wisselen $\tfrac23$
+  uitwerking: |-
+    Met kans $\frac13$ koos je meteen de prijs: blijven wint, wisselen verliest. Met kans $\frac23$ koos je een lege deur: dan opent de presentator de andere lege deur, en wisselen brengt je naar de prijs. Dus blijven wint met kans $\frac13$, wisselen met kans $\frac23$.
+
+- id: h2-o10
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    twee kinderen
+  opgave: |-
+    Een gezin heeft twee kinderen. Neem aan dat elk kind met kans $\frac12$ een jongen of een meisje is, onafhankelijk van het andere.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Je weet dat het oudste kind een meisje is. Wat is de kans dat beide kinderen meisjes zijn?
+      antwoord: |-
+        $\tfrac12$
+      uitwerking: |-
+        De uitkomsten (oudste, jongste) zijn MM, MJ, JM, JJ. Gegeven: MM of MJ. Dus $\frac12$.
+    - opgave: |-
+        Je weet alleen dat er minstens één meisje is. Wat is nu de kans op twee meisjes?
+      antwoord: |-
+        $\tfrac13$
+      uitwerking: |-
+        Gegeven: MM, MJ of JM, even waarschijnlijk. Dus $\frac13$. De voorwaarde is zwakker, en dat verandert de kans.
+
+- id: h2-o11
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    twee keer testen
+  opgave: |-
+    Iemand uit de stad van voorbeeld \ref{vb:h2-bayes} (2~\% besmet) test twee keer positief met de sneltest. Neem aan dat de twee tests onafhankelijk zijn bij een besmette en bij een niet-besmette persoon. Wat is de kans dat de persoon besmet is?
+  antwoord: |-
+    $\approx 0{,}92$
+  uitwerking: |-
+    $P(\text{2 keer positief} \gegeven \text{besmet}) = 0{,}95^2$ en $P(\text{2 keer positief} \gegeven \text{niet besmet}) = 0{,}04^2$. Bayes: $\frac{0{,}02 \cdot 0{,}95^2}{0{,}02 \cdot 0{,}95^2 + 0{,}98 \cdot 0{,}04^2} = \frac{0{,}01805}{0{,}019618} \approx 0{,}92$.
+
+- id: h2-o12
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    onafhankelijkheid en complement
+  opgave: |-
+    Toon aan: zijn $A$ en $B$ onafhankelijk, dan zijn ook $A$ en $\compl{B}$ onafhankelijk. Gebruik dat $A$ uiteenvalt in $A \cap B$ en $A \cap \compl{B}$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    $P(A \cap \compl{B}) = P(A) - P(A \cap B) = P(A) - P(A)P(B) = P(A)\bigl(1 - P(B)\bigr) = P(A)P(\compl{B})$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h2-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: algebra
+    onderwerp: Matrices
+  thema: |-
+    overgangsmatrix als voorwaardelijke kansen
+  opgave: |-
+    Regent het vandaag, dan regent het morgen met kans 0,6. Is het vandaag droog, dan regent het morgen met kans 0,3. Vandaag regent het.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken met een boomdiagram de kans dat het overmorgen regent.
+      antwoord: |-
+        $0{,}48$
+      uitwerking: |-
+        Regen-regen: $0{,}6 \cdot 0{,}6 = 0{,}36$. Droog-regen: $0{,}4 \cdot 0{,}3 = 0{,}12$. Samen $0{,}48$.
+    - opgave: |-
+        Schrijf de voorwaardelijke kansen als overgangsmatrix $M$ (kolom: vandaag, rij: morgen), en bereken $M^2 \km{1 \\ 0}$. Vergelijk.
+      antwoord: |-
+        $\km{0{,}48 \\ 0{,}52}$
+      uitwerking: |-
+        $M = \km{0{,}6 & 0{,}3 \\ 0{,}4 & 0{,}7}$ en $M^2 \km{1 \\ 0} = M\km{0{,}6 \\ 0{,}4} = \km{0{,}36 + 0{,}12 \\ 0{,}24 + 0{,}28} = \km{0{,}48 \\ 0{,}52}$. Elk element van het product is een som over de paden in het boomdiagram.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h2-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    kruistabel
+  opgave: |-
+    Een winkel vroeg aan 200 klanten of ze tevreden zijn. Van de 100 online klanten zijn er 70 tevreden, van de 100 klanten in de winkel 60. Wat is de kans dat een online klant tevreden is? En dat een tevreden klant online kocht?
+  antwoord: |-
+    $0{,}7$; \ $\tfrac{7}{13}$
+  uitwerking: |-
+    $\frac{70}{100} = 0{,}7$. Tevreden klanten: $70 + 60 = 130$, dus $\frac{70}{130} = \frac{7}{13} \approx 0{,}54$.
+
+- id: h2-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    boomdiagram zonder teruglegging
+  opgave: |-
+    In een zakje zitten 4 aardbeisnoepjes en 3 citroensnoepjes. Je neemt er twee zonder te kijken. Wat is de kans op twee aardbeisnoepjes? Op één van elke smaak?
+  antwoord: |-
+    $\tfrac27$; \ $\tfrac47$
+  uitwerking: |-
+    $\frac47 \cdot \frac36 = \frac{2}{7}$. Eén van elke: $\frac47 \cdot \frac36 + \frac37 \cdot \frac46 = \frac{24}{42} = \frac47$.
+
+- id: h2-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    onafhankelijkheid
+  opgave: |-
+    Gegeven: $P(A) = 0{,}3$, $P(B) = 0{,}6$ en $P(A \cap B) = 0{,}2$. Zijn $A$ en $B$ onafhankelijk? Bereken $P(A \gegeven B)$.
+  antwoord: |-
+    nee; \ $\tfrac13$
+  uitwerking: |-
+    $0{,}3 \cdot 0{,}6 = 0{,}18 \neq 0{,}2$: afhankelijk. $P(A \gegeven B) = \frac{0{,}2}{0{,}6} = \frac13$.
+
+- id: h2-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    wet van Bayes
+  opgave: |-
+    Een ziekte komt voor bij 1~\% van de bevolking. Een test is positief bij 90~\% van de zieken en bij 5~\% van de gezonden. Wat is de kans dat iemand met een positieve test ziek is?
+  antwoord: |-
+    $\approx 0{,}15$
+  uitwerking: |-
+    $P(\text{positief}) = 0{,}01 \cdot 0{,}9 + 0{,}99 \cdot 0{,}05 = 0{,}009 + 0{,}0495 = 0{,}0585$. Dus $\frac{0{,}009}{0{,}0585} \approx 0{,}15$.
+
+- id: h2-t5
+  soort: test
+  niveau: 1
+  thema: |-
+    onafhankelijke herhaling
+  opgave: |-
+    Je gooit drie keer met een dobbelsteen. Wat is de kans op drie keer zes? Op geen enkele zes?
+  antwoord: |-
+    $\tfrac{1}{216}$; \ $\tfrac{125}{216}$
+  uitwerking: |-
+    De worpen zijn onafhankelijk: $\bigl(\frac16\bigr)^3 = \frac{1}{216}$ en $\bigl(\frac56\bigr)^3 = \frac{125}{216}$.

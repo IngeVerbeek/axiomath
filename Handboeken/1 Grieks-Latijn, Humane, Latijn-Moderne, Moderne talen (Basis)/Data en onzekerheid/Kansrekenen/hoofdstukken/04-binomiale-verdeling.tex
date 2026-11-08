@@ -1,0 +1,210 @@
+%----------------------------------------------------------------------------------------
+% DE BINOMIALE VERDELING. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h4-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{4}{De binomiale verdeling}
+
+\lkr{Leerplan Basis: LPD 17 (kansen berekenen en interpreteren met de binomiale verdeling), met de wenken over ICT, verwachtingswaarde en standaardafwijking, en het grafische verband met de normale verdeling. Die normale verdeling zelf (kansen berekenen) hoort bij de cursus Statistiek; hier blijft het bij de figuur. Op de TI-84: \texttt{binompdf(n,p,k)} en \texttt{binomcdf(n,p,k)} in het menu DISTR.}
+
+Een leerling gokt op een meerkeuzetoets. Een speler neemt vijf strafschoppen. Een fabriek controleert vijftig lampen. Telkens herhaal je hetzelfde experiment een aantal keer, met elke keer dezelfde kans op succes, en tel je de successen. Het aantal successen volgt dan altijd hetzelfde patroon: de binomiale verdeling. In dit hoofdstuk leer je de formule, het gebruik van je rekentoestel, en hoe je beoordeelt of een uitkomst verrassend is.
+
+\begin{oefeningen}[Start]
+\oef{h4-start-1}
+
+\oef{h4-verken}
+\end{oefeningen}
+
+\lkr{Laat oefening \ref{oef:h4-verken} maken vóór de uitleg. Leerlingen tellen de paden met precies twee successen in een boomdiagram, en zien dat elk pad dezelfde kans heeft: de formule is dan \textit{aantal paden maal kans per pad}.}
+
+%========================================================================================
+\section{De formule}
+
+\subsection{Binomiale experimenten}
+
+\begin{theorie}
+Een \textbf{\textcolor{accent}{binomiaal experiment}} bestaat uit $n$ herhalingen van een kansexperiment met twee uitkomsten, \textit{succes} en \textit{mislukking}, waarbij
+
+\vspace{1mm}
+\quad 1.\ \ de kans op succes $p$ bij elke herhaling dezelfde is, en
+
+\quad 2.\ \ de herhalingen onafhankelijk zijn.
+
+\vspace{1mm}
+Het aantal successen $X$ heeft dan een \textbf{\textcolor{accent}{binomiale verdeling}} met parameters $n$ en $p$, en je schrijft $\formule{X \sim B(n, p)}$.
+
+\begin{stelling}{Binomiale kans}
+Voor $k = 0, 1, \ldots, n$ is \quad $\formule{P(X = k) = \binom{n}{k} p^k (1 - p)^{n - k}}$
+\end{stelling}
+
+\begin{bewijs}
+Een rijtje van $n$ uitkomsten met precies $k$ successen heeft, door de onafhankelijkheid, kans $p^k(1 - p)^{n - k}$. Zo'n rijtje ligt vast als je kiest op welke $k$ van de $n$ plaatsen de successen staan: dat kan op $\binom{n}{k}$ manieren. De rijtjes zijn onverenigbaar, dus tel je op.
+\end{bewijs}
+\end{theorie}
+
+\textit{Succes} is gewoon de uitkomst die je telt, ook als het iets slechts is, zoals een defecte lamp. Trek je zonder teruglegging uit een kleine groep, dan is de kans niet elke keer dezelfde, en is het model niet binomiaal. Uit een grote groep mag het wel bij benadering.
+
+\voorbeeld{}{Een leerling gokt op 10 meerkeuzevragen met elk 4 antwoorden. Wat is de kans op precies 5 juiste antwoorden?\label{vb:h4-formule}}{%
+\uitleg{Elke vraag is een herhaling met succeskans $\frac14$, onafhankelijk van de andere. Het aantal juiste antwoorden is binomiaal met $n = 10$ en $p = 0{,}25$.}
+\begin{stappenbreed}
+X \sim B(10;\, 0{,}25) & De herhalingen zijn onafhankelijk, met dezelfde kans. \\[1ex]
+P(X = 5) = \binom{10}{5} \cdot 0{,}25^5 \cdot 0{,}75^5 = 252 \cdot 0{,}25^5 \cdot 0{,}75^5 \approx 0{,}058 & Op het rekentoestel: \texttt{binompdf(10,0.25,5)}.
+\end{stappenbreed}}
+
+\subsection{Cumulatieve kansen}
+
+Vraag je naar \textit{hoogstens} of \textit{minstens}, dan tel je kansen op. Met de hand is dat veel werk; je rekentoestel geeft $P(X \leqslant k)$ meteen.
+
+\voorbeeld{}{Wat is de kans dat de leerling uit het vorige voorbeeld minstens 6 juiste antwoorden gokt, en dus slaagt?\label{vb:h4-cumulatief}}{%
+\uitleg{\textit{Minstens 6} is het complement van \textit{hoogstens 5}, en dat geeft het rekentoestel als cumulatieve kans.}
+\begin{stappenbreed}
+P(X \geqslant 6) = 1 - P(X \leqslant 5) & Het complement. \\[1ex]
+= 1 - \texttt{binomcdf(10,0.25,5)} \approx 1 - 0{,}980 = 0{,}020 & Ongeveer 2~\%: slagen door te gokken is onwaarschijnlijk.
+\end{stappenbreed}}
+
+\begin{werkwijze}
+Ga na: zijn er $n$ onafhankelijke herhalingen met telkens dezelfde kans $p$ op succes? Bepaal $n$, $p$ en de gevraagde $k$. Voor $P(X = k)$: de formule of \texttt{binompdf}. Voor $P(X \leqslant k)$: \texttt{binomcdf}. Voor $P(X \geqslant k)$: $1 - P(X \leqslant k - 1)$. Let op de grens: \textit{minder dan 4} is $X \leqslant 3$.
+\end{werkwijze}
+
+\nujij{Je gooit 8 keer met een munt. Wat is de kans op precies 4 keer kop?}{$\binom84 \cdot 0{,}5^8 = \frac{70}{256} \approx 0{,}273$.}
+
+\begin{oefeningen}
+\oef{h4-formule}
+\end{oefeningen}
+
+%========================================================================================
+\section{Verwachtingswaarde en standaardafwijking}
+
+Gokt de leerling op 10 vragen met kans $\frac14$, dan verwacht je gemiddeld $10 \cdot \frac14 = 2{,}5$ juiste antwoorden. Dat geldt algemeen; ook voor de standaardafwijking is er een eenvoudige formule.
+
+\begin{theorie}
+\begin{stelling}{Verwachtingswaarde en standaardafwijking}
+Voor $X \sim B(n, p)$ is \quad $\formule{\E(X) = np}$ \quad en \quad $\formule{\sigma = \sqrt{np(1 - p)}}$
+\end{stelling}
+\end{theorie}
+
+Die formules bewijzen we niet in het algemeen. Voor $n = 2$ en $p = \frac16$, het aantal zessen bij twee worpen, vond je in hoofdstuk 3 $\mu = \frac13 = 2 \cdot \frac16$ en $\sigma^2 = \frac{5}{18} = 2 \cdot \frac16 \cdot \frac56$.
+
+\naast{\begin{minipage}{7.6cm}
+Het staafdiagram van $B(10;\, 0{,}25)$ heeft zijn top bij 2, dicht bij $\mu = 2{,}5$. De meeste kansmassa ligt binnen $\mu \pm 2\sigma$, met $\sigma = \sqrt{10 \cdot 0{,}25 \cdot 0{,}75} \approx 1{,}37$: tussen ongeveer $-0{,}2$ en $5{,}2$. Een uitkomst ver buiten dat interval, zoals 8 juiste antwoorden, is bij gokken zeer onwaarschijnlijk.
+\end{minipage}}{\begin{tikzpicture}[x=.62cm,y=11cm,font=\scriptsize]
+  \draw[black!14,very thin] (-.5,0) grid[xstep=20,ystep=.1] (10.5,.3);
+  \foreach \k/\h in {0/.0563,1/.1877,2/.2816,3/.2503,4/.1460,5/.0584,6/.0162,7/.0031,8/.0004,9/0,10/0}{\staaf{\k}{\h}{.6}}
+  \draw[->,grijs] (-.5,0) -- (10.8,0) node[right,text=black] {$k$};
+  \draw[->,grijs] (-.5,0) -- (-.5,.32);
+  \foreach \k in {0,2,...,10}{\node[below] at (\k,0) {\k};}
+  \foreach \t/\l in {.1/{0,1},.2/{0,2},.3/{0,3}}{\node[left] at (-.5,\t) {\l};}
+  \draw[fel!80!black,thick] (2.5,0) -- (2.5,.3) node[above,text=black] {$\mu$};
+\end{tikzpicture}}
+
+\voorbeeld{}{Een zaadje kiemt met kans 0,9. Je zaait er 12. Hoeveel kiemen er gemiddeld, met welke standaardafwijking? Wat is de kans dat ze allemaal kiemen?\label{vb:h4-mu}}{%
+\uitleg{De zaadjes kiemen onafhankelijk van elkaar met dezelfde kans: $X \sim B(12;\, 0{,}9)$.}
+\begin{stappen}
+\mu = 12 \cdot 0{,}9 = 10{,}8 & Gemiddeld bijna 11 van de 12. \\[1ex]
+\sigma = \sqrt{12 \cdot 0{,}9 \cdot 0{,}1} \approx 1{,}04 & Kleine spreiding, want $p$ ligt dicht bij 1. \\[1ex]
+P(X = 12) = 0{,}9^{12} \approx 0{,}28 & Alle twaalf: maar in 28~\% van de gevallen.
+\end{stappen}}
+
+\begin{oefeningen}
+\oef{h4-mu}
+\end{oefeningen}
+
+%========================================================================================
+\section{Vorm van de verdeling}
+
+\subsection{De normale verdeling als benadering}
+
+Hoe groter $n$, hoe meer het staafdiagram van een binomiale verdeling op een klok lijkt, ook als $p$ niet $\frac12$ is. Die klokvorm is de grafiek van de \textbf{normale verdeling} met hetzelfde gemiddelde en dezelfde standaardafwijking. De figuur toont $B(40;\, 0{,}3)$, met $\mu = 12$ en $\sigma \approx 2{,}9$, en de normale kromme.
+
+\figuren{\begin{tikzpicture}[x=.48cm,y=30cm,font=\scriptsize]
+  \draw[black!14,very thin] (0,0) grid[xstep=40,ystep=.05] (26,.15);
+  \foreach \k/\h in {2/.0001,3/.0005,4/.002,5/.0061,6/.0151,7/.0315,8/.0557,9/.0849,10/.1128,11/.1319,12/.1366,13/.1261,14/.1042,15/.0774,16/.0518,17/.0314,18/.0172,19/.0085,20/.0038,21/.0016,22/.0006}{\staaf{\k}{\h}{.7}}
+  \draw[fel!80!black,very thick] plot[domain=1:25,samples=120,smooth] (\x,{exp(-((\x-12)^2)/16.8)/sqrt(2*pi*8.4)});
+  \draw[->,grijs] (0,0) -- (26.5,0) node[right,text=black] {$k$};
+  \draw[->,grijs] (0,0) -- (0,.16);
+  \foreach \k in {0,4,...,24}{\node[below] at (\k,0) {\k};}
+  \foreach \t/\l in {.05/{0,05},.1/{0,10},.15/{0,15}}{\node[left] at (0,\t) {\l};}
+\end{tikzpicture}}
+
+Als vuistregel is de benadering goed als $np \geqslant 5$ en $n(1 - p) \geqslant 5$. Hier is $np = 12$ en $n(1 - p) = 28$. In de cursus Statistiek leer je met de normale verdeling rekenen. Voor de binomiale verdeling zelf gebruik je gewoon je rekentoestel.
+
+\subsection{Is een uitkomst verrassend?}
+
+Met de binomiale verdeling kun je beoordelen of een uitkomst nog bij het toeval past. Is de kans op een uitkomst die minstens zo extreem is heel klein, dan twijfel je aan het model.
+
+\voorbeeld{}{Een munt landt 62 keer op kop bij 100 worpen. Is dat verrassend voor een eerlijke munt?\label{vb:h4-verrassend}}{%
+\uitleg{Voor een eerlijke munt is $X \sim B(100;\, 0{,}5)$, met $\mu = 50$ en $\sigma = 5$. We berekenen de kans op 62 of meer keer kop.}
+\begin{stappenbreed}
+P(X \geqslant 62) = 1 - P(X \leqslant 61) \approx 0{,}010 & Met \texttt{binomcdf(100,0.5,61)}. \\[1ex]
+62 \text{ ligt } \tfrac{62 - 50}{5} = 2{,}4 \text{ standaardafwijkingen boven } \mu & Ver buiten $\mu \pm 2\sigma$.
+\end{stappenbreed}
+Bij een eerlijke munt gebeurt dit maar in ongeveer 1~\% van de reeksen. Dat is een sterke aanwijzing dat de munt niet eerlijk is, maar geen bewijs.}
+
+\begin{oefeningen}
+\oef{h4-verrassend}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h4-o1}
+
+\oef{h4-o2}
+
+\oef{h4-o3}
+
+\oef{h4-o4}
+
+\oef{h4-o5}
+
+\oef{h4-o6}
+
+\oef{h4-o7}
+
+\oef{h4-o8}
+
+\oef{h4-o9}
+
+\oef{h4-o10}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{De oefening gebruikt logaritmen (Exponentiële en logaritmische functies).}
+
+\begin{oefeningen}
+
+\oef{h4-koppel-2}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h4-t1}
+
+\oef{h4-t2}
+
+\oef{h4-t3}
+
+\oef{h4-t4}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h4-t1}{vb:h4-formule}{oef:h4-formule}%
+  \fv{oef:h4-t2}{vb:h4-cumulatief}{oef:h4-formule}%
+  \fv{oef:h4-t3}{vb:h4-mu}{oef:h4-mu}%
+  \fv{oef:h4-t4}{vb:h4-verrassend}{oef:h4-verrassend}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: wanneer een experiment binomiaal is, de formule voor $P(X = k)$ en waarom ze klopt, hoe je \textit{hoogstens} en \textit{minstens} met het rekentoestel berekent, de verwachtingswaarde en standaardafwijking, het verband met de normale verdeling, en hoe je beoordeelt of een uitkomst verrassend is. Vergelijk daarna met de kaders.
+\fi
