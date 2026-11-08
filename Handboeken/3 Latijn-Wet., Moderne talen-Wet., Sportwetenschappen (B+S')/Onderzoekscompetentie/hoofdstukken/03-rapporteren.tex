@@ -1,0 +1,146 @@
+%----------------------------------------------------------------------------------------
+% RAPPORTEREN. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h3-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{3}{Rapporteren}
+
+\lkr{Leerplan B+S': LPD 41 (onderzoekscompetentie), het deel over rapporteren en reflecteren. Wat hier staat over de vorm van een verslag is een voorstel; volg de afspraken van de school als die anders zijn (bijvoorbeeld voor bronvermelding of het gebruik van AI-hulpmiddelen). Laat leerlingen elkaars tekst nalezen met de checklist: dat leert meer dan de leerkracht alleen.}
+
+Een onderzoek dat niemand begrijpt, heeft weinig zin. Een goed verslag laat de lezer je redenering volgen, en overtuigt met argumenten, niet met veel tekst. Wiskundig schrijven is een vaardigheid apart: precies, kort, en met formules die in zinnen staan.
+
+\begin{oefeningen}[Start]
+\oef{h3-start-1}
+
+\oef{h3-verken}
+\end{oefeningen}
+
+%========================================================================================
+\section{Een verslag opbouwen}
+
+\begin{theorie}
+Een onderzoeksverslag bestaat uit:
+\begin{itemize}
+\item \textbf{\textcolor{accent}{inleiding}}: de onderzoeksvraag, waarom ze interessant is, en de deelvragen;
+\item \textbf{\textcolor{accent}{methode}}: hoe je gewerkt hebt (metingen, modellen, redeneringen), zo dat iemand anders het kan herhalen;
+\item \textbf{\textcolor{accent}{resultaten}}: tabellen, figuren en berekeningen, met uitleg;
+\item \textbf{\textcolor{accent}{besluit}}: het antwoord op de onderzoeksvraag, en de grenzen ervan;
+\item \textbf{\textcolor{accent}{reflectie}}: wat ging goed, wat zou je anders doen, welke nieuwe vragen;
+\item \textbf{\textcolor{accent}{bronnen}}: alles wat je gebruikt hebt.
+\end{itemize}
+\end{theorie}
+
+Het besluit moet passen bij de vraag uit de inleiding: lees ze op het einde nog eens na elkaar. Een besluit als \textit{we hebben veel geleerd} is geen antwoord.
+
+%========================================================================================
+\section{Wiskunde opschrijven}
+
+\begin{werkwijze}
+Definieer elk symbool voor je het gebruikt. Zet formules in zinnen: ook een formule eindigt met een punt of een komma. Schrijf bij elke stap waarom ze klopt. Geef getallen met een eenheid en met een zinvolle nauwkeurigheid: niet meer cijfers dan je metingen toelaten.
+\end{werkwijze}
+
+\voorbeeld{}{Verbeter deze tekst uit een verslag: \textit{T = 2,006, dus g = 4pi² L/T² = 9,8083 want L = 1.}\label{vb:h3-tekst}}{%
+\uitleg{Wat is $T$? Waar komt de formule vandaan? Hoe nauwkeurig is de meting? En wat is de eenheid?}
+\begin{itemize}
+\item \textit{Voor een slinger met lengte $L = 1{,}00$ m maten we een periode $T = 2{,}01$ s (gemiddelde van tien metingen).}
+\item \textit{Uit $T = 2\pi\sqrt{L/g}$ volgt $g = \frac{4\pi^2 L}{T^2}$, en dus $g \approx 9{,}8$ m/s$^2$.}
+\end{itemize}
+Met een periode op twee decimalen is $g$ hooguit op één decimaal betrouwbaar; $9{,}8083$ suggereert een nauwkeurigheid die er niet is.}
+
+\begin{oefeningen}
+\oef{h3-schrijven}
+\end{oefeningen}
+
+%========================================================================================
+\section{Figuren en tabellen}
+
+Een goede figuur kan zonder de tekst gelezen worden: de assen hebben een naam en een eenheid, de schaal is duidelijk, en er is een bijschrift dat zegt wat je moet zien.
+
+\figuren{%
+\begin{tikzpicture}[x=.7cm,y=.45cm,font=\scriptsize]
+  \draw[->] (0,0) -- (5.6,0);
+  \draw[->] (0,0) -- (0,6);
+  \foreach \x/\y in {1/2,2/4,3/5,4/4,5/5}{\fill (\x,\y) circle (2pt);}
+  \node[below] at (2.8,-.6) {\textit{niet goed}};
+\end{tikzpicture}\hspace{1.2cm}
+\begin{tikzpicture}[x=.7cm,y=.45cm,font=\scriptsize]
+  \draw[black!14,very thin] (0,0) grid (5,6);
+  \draw[->,grijs] (0,0) -- (5.6,0) node[right,text=black] {uren};
+  \draw[->,grijs] (0,0) -- (0,6.6) node[above,text=black] {score (op 10)};
+  \foreach \t in {1,...,5}{\node[below,inner sep=1.5pt] at (\t,0) {$\t$};}
+  \foreach \t in {2,4,6}{\node[left,inner sep=1.5pt] at (0,\t) {$\t$};}
+  \draw[accent,thick] (0,2.2) -- (5.5,5.5);
+  \foreach \x/\y in {1/2,2/4,3/5,4/4,5/5}{\fill[accent] (\x,\y) circle (2pt);}
+  \node[below] at (2.8,-.7) {\textit{beter}: assen met naam en schaal, met model};
+\end{tikzpicture}}
+
+\voorbeeld{}{Schrijf een bijschrift bij de rechtse figuur hierboven. Ze toont de score van vijf leerlingen op een test, tegen het aantal uren dat ze studeerden.\label{vb:h3-figuur}}{%
+\uitleg{Een bijschrift zegt wat er staat, en wat de lezer moet opvallen.}
+\textit{Figuur 2: testscore (op 10) tegen het aantal uren studie, voor vijf leerlingen, met de kleinste-kwadratenrechte $y = 0{,}6x + 2{,}2$. Na drie uur stijgt de score nauwelijks nog: het lineaire model past maar matig ($r \approx 0{,}77$).}}
+
+\begin{oefeningen}
+\oef{h3-figuren}
+\end{oefeningen}
+
+%========================================================================================
+\section{Bronnen en eerlijkheid}
+
+Alles wat niet van jezelf komt, vermeld je: een formule uit een boek, gegevens van een website, een idee van een klasgenoot, hulp van een AI-hulpmiddel. Dat is eerlijk tegenover anderen, en het laat de lezer toe je bronnen na te kijken. Tekst overnemen zonder bron is plagiaat, ook als je ze een beetje herschrijft.
+
+Vermeld bij een bron minstens: wie (auteur of organisatie), wat (titel), waar (uitgever of website) en wanneer (jaar, of de datum waarop je een website raadpleegde). Volg de afspraken van je school over de precieze vorm.
+
+\begin{oefeningen}
+\oef{h3-bronnen}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h3-o1}
+
+\oef{h3-o2}
+
+\oef{h3-o3}
+
+\oef{h3-o4}
+
+\oef{h3-o5}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{Statistiek: kijk na wat al gezien is. Het pakket legt de volgorde niet vast.}
+
+\begin{oefeningen}
+
+\oef{h3-koppel-2}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h3-t1}
+
+\oef{h3-t2}
+
+\oef{h3-t3}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h3-t1}{vb:h3-tekst}{oef:h3-schrijven}%
+  \fv{oef:h3-t2}{vb:h3-figuur}{oef:h3-figuren}%
+  \fzv{oef:h3-t3}{oef:h3-bronnen}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: de onderdelen van een verslag en wat erin hoort, de regels voor wiskundig schrijven, waaraan een goede figuur voldoet, en wat je bij een bron vermeldt. Maak er een checklist van die je bij je eigen verslag gebruikt.
+\fi
