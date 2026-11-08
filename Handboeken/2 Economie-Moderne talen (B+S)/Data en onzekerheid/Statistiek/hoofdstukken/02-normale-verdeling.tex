@@ -1,0 +1,249 @@
+%----------------------------------------------------------------------------------------
+% DE NORMALE VERDELING. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h2-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{2}{De normale verdeling}
+
+\lkr{Leerplan B+S: LPD 32 (de normale verdeling als continu model bij gegeven data, met grafische beoordeling, schatting van de parameters en de grafische betekenis van $\mu$ en $\sigma$) en LPD 33 (kansen berekenen bij een normaal verdeelde kansvariabele). De wenken noemen de overgang van histogram naar dichtheid, z-scores, de 68-95-99,7-regel en ICT. Op de TI-84: \texttt{normalcdf(a,b,$\mu$,$\sigma$)} en \texttt{invNorm(opp,$\mu$,$\sigma$)} in het menu DISTR. Het voorschrift van de Gausskromme hoeft niet gekend te zijn.}
+
+Meet je de lengte van veel volwassenen, de massa van appels uit een boomgaard of de reactietijd van veel proefpersonen, dan krijg je telkens een histogram in de vorm van een klok: veel waarden in het midden, minder naar de randen toe, ongeveer symmetrisch. Die vorm is zo gewoon dat ze een eigen naam heeft: de normale verdeling. In dit hoofdstuk leer je ze herkennen, de betekenis van haar gemiddelde en standaardafwijking aflezen, en er kansen mee berekenen.
+
+\begin{oefeningen}[Start]
+\oef{h2-start-1}
+
+\oef{h2-verken}
+\end{oefeningen}
+
+\lkr{Laat oefening \ref{oef:h2-verken} maken vóór de uitleg. Het histogram is een klok; in vraag c zien leerlingen dat een kans een oppervlakte is, wat de rest van het hoofdstuk draagt.}
+
+%========================================================================================
+\section{Van histogram naar dichtheid}
+
+In een histogram met klassen van gelijke breedte stelt de hoogte van een staaf het aantal waarden voor. Deel je elke relatieve frequentie door de klassebreedte, dan wordt de \textit{oppervlakte} van elke staaf gelijk aan de relatieve frequentie, en is de totale oppervlakte 1. Teken je door de staven een vloeiende kromme, dan krijg je een dichtheidsfunctie.
+
+\begin{theorie}
+Een \textbf{\textcolor{accent}{continue toevalsvariabele}} $X$ wordt beschreven door een \textbf{\textcolor{accent}{dichtheidsfunctie}} $f$ met $f(x) \geqslant 0$ en een totale oppervlakte onder de grafiek gelijk aan 1. De kans dat $X$ tussen $a$ en $b$ ligt, is de oppervlakte onder de grafiek van $f$ tussen $a$ en $b$:
+
+\vspace{1mm}
+\qquad $\formule{P(a \leqslant X \leqslant b) = \text{oppervlakte onder } f \text{ tussen } a \text{ en } b}$
+\end{theorie}
+
+Bij een continue variabele is de kans op één bepaalde waarde 0: de oppervlakte boven één punt is 0. Daarom is $P(X \leqslant a) = P(X < a)$. Met de cursus Integralen kun je zo'n oppervlakte als integraal schrijven.
+
+%========================================================================================
+\section{De normale verdeling}
+
+\subsection{De Gausskromme}
+
+\begin{theorie}
+Een toevalsvariabele $X$ is \textbf{\textcolor{accent}{normaal verdeeld}} met gemiddelde $\mu$ en standaardafwijking $\sigma$, kort $\formule{X \sim N(\mu, \sigma)}$, als haar dichtheidsfunctie de \textbf{\textcolor{accent}{Gausskromme}} is:
+
+\vspace{1mm}
+\qquad $\formule{f(x) = \dfrac{1}{\sigma\sqrt{2\pi}}\, \mathrm{e}^{-\frac{(x - \mu)^2}{2\sigma^2}}}$
+
+\vspace{1mm}
+De top ligt bij $x = \mu$, en de twee buigpunten bij $x = \mu - \sigma$ en $x = \mu + \sigma$. De kromme is symmetrisch ten opzichte van de rechte $x = \mu$.
+\end{theorie}
+
+Het voorschrift moet je niet kennen: je rekentoestel kent het. Belangrijk is wat $\mu$ en $\sigma$ met de vorm doen. Een groter $\mu$ verschuift de klok naar rechts. Een groter $\sigma$ maakt ze breder en, omdat de oppervlakte 1 blijft, ook lager.
+
+\figuren{\begin{tikzpicture}[x=.5cm,y=10cm,font=\scriptsize]
+  \draw[->,grijs] (-1,0) -- (21,0) node[right,text=black] {$x$};
+  \foreach \t in {0,4,...,20}{\node[below] at (\t,0) {\t};}
+  \draw[accent,thick] plot[domain=0:20,samples=100,smooth] (\x,{gauss(\x,8,2)});
+  \draw[fel!80!black,thick] plot[domain=0:20,samples=100,smooth] (\x,{gauss(\x,12,2)});
+  \draw[grijs,thick,dashed] plot[domain=0:20,samples=100,smooth] (\x,{gauss(\x,8,4)});
+  \node[text=accent] at (5.6,.19) {$N(8, 2)$};
+  \node[text=fel!80!black] at (15,.19) {$N(12, 2)$};
+  \node[text=black] at (2.2,.07) {$N(8, 4)$};
+\end{tikzpicture}\qquad
+\begin{tikzpicture}[x=.9cm,y=8cm,font=\scriptsize]
+  \fill[accent!25] plot[domain=-1:1,samples=40] (\x,{gauss(\x,0,1)}) -- (1,0) -- (-1,0) -- cycle;
+  \draw[->,grijs] (-3.4,0) -- (3.5,0);
+  \draw[accent,thick] plot[domain=-3.3:3.3,samples=100,smooth] (\x,{gauss(\x,0,1)});
+  \foreach \t/\l in {-2/{\mu - 2\sigma},-1/{\mu - \sigma},0/{\mu},1/{\mu + \sigma},2/{\mu + 2\sigma}}{\draw[grijs] (\t,0) -- (\t,-.01) node[below,text=black] {$\l$};}
+  \fill[fel!80!black] (-1,{gauss(-1,0,1)}) circle (1.5pt) (1,{gauss(1,0,1)}) circle (1.5pt);
+  \node[text=black] at (0,.15) {68~\%};
+  \node[fel!80!black,right] at (1.05,.25) {buigpunt};
+\end{tikzpicture}}
+
+\subsection{De vuistregels}
+
+Voor elke normale verdeling ligt dezelfde fractie binnen 1, 2 of 3 standaardafwijkingen van het gemiddelde.
+
+\begin{theorie}
+\begin{stelling}{De 68-95-99,7-regel}
+Voor $X \sim N(\mu, \sigma)$ is
+
+\vspace{1mm}
+\qquad $\formule{P(\mu - \sigma \leqslant X \leqslant \mu + \sigma) \approx 0{,}68}$
+
+\vspace{.5mm}
+\qquad $\formule{P(\mu - 2\sigma \leqslant X \leqslant \mu + 2\sigma) \approx 0{,}95}$
+
+\vspace{.5mm}
+\qquad $\formule{P(\mu - 3\sigma \leqslant X \leqslant \mu + 3\sigma) \approx 0{,}997}$
+\end{stelling}
+\end{theorie}
+
+\voorbeeld{}{De massa van de appels uit een boomgaard is normaal verdeeld met $\mu = 180$~g en $\sigma = 12$~g. Tussen welke grenzen ligt de massa van 95~\% van de appels? Welk percentage weegt meer dan 204~g?\label{vb:h2-vuistregel}}{%
+\uitleg{204 g ligt precies twee standaardafwijkingen boven het gemiddelde. We gebruiken de vuistregel en de symmetrie.}
+\begin{stappen}
+180 \pm 2 \cdot 12: \quad [156, 204] & 95~\% ligt binnen twee standaardafwijkingen. \\[1ex]
+P(X > 204) \approx \frac{1 - 0{,}95}{2} = 0{,}025 & De overige 5~\% ligt in twee gelijke staarten: 2,5~\% boven 204 g.
+\end{stappen}}
+
+\begin{oefeningen}
+\oef{h2-vuistregel}
+\end{oefeningen}
+
+%========================================================================================
+\section{Kansen berekenen}
+
+\subsection{Met het rekentoestel}
+
+Voor grenzen die geen gehele aantal standaardafwijkingen van $\mu$ liggen, gebruik je je rekentoestel. Het berekent de oppervlakte onder de Gausskromme tussen twee grenzen. Voor \textit{meer dan} of \textit{minder dan} neem je een zeer grote of zeer kleine grens, zoals $10^{99}$.
+
+\voorbeeld{}{Welk percentage van de appels weegt meer dan 200~g? Welk percentage tussen 170 en 190~g?\label{vb:h2-normalcdf}}{%
+\uitleg{We tekenen een schets met het gevraagde gebied, en laten het rekentoestel de oppervlakte berekenen.}
+\begin{stappenbreed}
+P(X > 200) \approx 0{,}048 & \texttt{normalcdf(200,1E99,180,12)}: ongeveer 4,8~\%. \\[1ex]
+P(170 < X < 190) \approx 0{,}595 & \texttt{normalcdf(170,190,180,12)}: ongeveer 60~\%.
+\end{stappenbreed}
+\figuren{\begin{tikzpicture}[x=.09cm,y=65cm,font=\scriptsize]
+  \fill[accent!25] plot[domain=170:190,samples=30] (\x,{gauss(\x,180,12)}) -- (190,0) -- (170,0) -- cycle;
+  \fill[fel!50] plot[domain=200:222,samples=30] (\x,{gauss(\x,180,12)}) -- (222,0) -- (200,0) -- cycle;
+  \draw[->,grijs] (136,0) -- (226,0) node[right,text=black] {g};
+  \draw[accent,thick] plot[domain=138:222,samples=80,smooth] (\x,{gauss(\x,180,12)});
+  \foreach \t in {150,160,170,180,190,200,210}{\node[below] at (\t,0) {\t};}
+  \node[text=black] at (180,.012) {0,595};
+  \node[text=black,anchor=south west] at (203,.006) {0,048};
+\end{tikzpicture}}}
+
+\subsection{Z-scores}
+
+Een z-score zegt hoeveel standaardafwijkingen een waarde boven of onder het gemiddelde ligt. Zo vergelijk je waarden uit verschillende verdelingen.
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{z-score}} van een waarde $x$ is \quad $\formule{z = \dfrac{x - \mu}{\sigma}}$
+
+\vspace{1mm}
+Is $X \sim N(\mu, \sigma)$, dan is $Z = \frac{X - \mu}{\sigma}$ \textbf{\textcolor{accent}{standaardnormaal}} verdeeld: $\formule{Z \sim N(0, 1)}$.
+\end{theorie}
+
+Een appel van 200 g heeft $z = \frac{200 - 180}{12} \approx 1{,}67$. Met de standaardnormale verdeling vind je dezelfde kans: $P(Z > 1{,}67) \approx 0{,}048$. Een z-score groter dan 2 of kleiner dan $-2$ is uitzonderlijk: dat gebeurt maar bij ongeveer 5~\% van de waarden.
+
+\subsection{Een grens zoeken}
+
+Soms ken je de kans, en zoek je de grens: hoe zwaar moet een appel zijn om bij de zwaarste 10~\% te horen? Dan gebruik je \texttt{invNorm}, dat de grens geeft waarvoor de oppervlakte \textit{links} gelijk is aan de gegeven kans.
+
+\voorbeeld{}{Vanaf welke massa hoort een appel bij de zwaarste 10~\%?\label{vb:h2-invnorm}}{%
+\uitleg{Rechts van de grens ligt 10~\%, dus links 90~\%. Dat getal geven we aan \texttt{invNorm}.}
+\begin{stappen}
+a = \texttt{invNorm(0.9,180,12)} \approx 195{,}4 & Vanaf ongeveer 195 g. \\[1ex]
+z = \frac{195{,}4 - 180}{12} \approx 1{,}28 & Controle: de grens ligt 1,28 standaardafwijkingen boven $\mu$.
+\end{stappen}}
+
+\begin{werkwijze}
+Maak een schets met $\mu$ en het gevraagde gebied. Kans tussen twee grenzen: \texttt{normalcdf(a,b,$\mu$,$\sigma$)}; meer dan $a$: bovengrens $10^{99}$; minder dan $b$: ondergrens $-10^{99}$. Grens bij een gegeven kans: \texttt{invNorm} met de oppervlakte links van de grens. Controleer met de vuistregels of je antwoord kan kloppen.
+\end{werkwijze}
+
+\nujij{Een toets heeft scores die normaal verdeeld zijn met $\mu = 70$ en $\sigma = 8$. Welk percentage scoort tussen 60 en 80?}{\texttt{normalcdf(60,80,70,8)} $\approx 0{,}789$: ongeveer 79~\%.}
+
+\begin{oefeningen}
+\oef{h2-normalcdf}
+
+\oef{h2-invnorm}
+\end{oefeningen}
+
+%========================================================================================
+\section{Is het model goed?}
+
+Niet alle data zijn normaal verdeeld. Om te beslissen of het model past, schat je $\mu$ en $\sigma$ met het gemiddelde en de standaardafwijking van de data, en vergelijk je.
+
+\voorbeeld{}{Bekijk het histogram uit de Verken: de lengtes van 200 jongens, met gemiddelde 176,9 cm en standaardafwijking 6,4 cm. Past een normale verdeling?\label{vb:h2-model}}{%
+\uitleg{We tekenen de Gausskromme met dezelfde $\mu$ en $\sigma$ over het histogram (met de hoogte per cm), en vergelijken een percentage uit de data met het model.}
+\naast{\begin{minipage}{8.4cm}
+Het histogram is klokvormig en bijna symmetrisch, en de kromme volgt de staven goed. Tussen 170 en 185 cm liggen 152 van de 200 lengtes, of 76~\%. Het model geeft \texttt{normalcdf(170,185,176.9,6.4)} $\approx 0{,}756$. Dat komt goed overeen: het normale model is hier bruikbaar.
+\end{minipage}}{\begin{tikzpicture}[x=.12cm,y=50cm,font=\scriptsize]
+  \foreach \a/\n in {160/6,165/22,170/48,175/62,180/42,185/16,190/4}{\draw[accent,fill=accent!20] (\a,0) rectangle (\a+5,{\n/1000});}
+  \draw[fel!80!black,thick] plot[domain=156:198,samples=80,smooth] (\x,{gauss(\x,176.9,6.4)});
+  \draw[->,grijs] (155,0) -- (199,0);
+  \foreach \t in {160,170,180,190}{\node[below] at (\t,0) {\t};}
+\end{tikzpicture}}}
+
+Lonen, huizenprijzen of wachttijden zijn meestal niet normaal verdeeld: ze zijn scheef, met een lange staart naar rechts, en kunnen niet negatief zijn. Bij zulke data geeft de normale verdeling verkeerde kansen.
+
+\begin{oefeningen}
+\oef{h2-model}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h2-o1}
+
+\oef{h2-o2}
+
+\oef{h2-o3}
+
+\oef{h2-o4}
+
+\oef{h2-o5}
+
+\oef{h2-o6}
+
+\oef{h2-o7}
+
+\oef{h2-o8}
+
+\oef{h2-o9}
+
+\oef{h2-o10}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{De eerste oefening gebruikt de tweede afgeleide (Afgeleiden, 5de jaar), de tweede de binomiale verdeling (Kansrekenen).}
+
+\begin{oefeningen}
+\oef{h2-koppel-1}
+
+\oef{h2-koppel-2}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h2-t1}
+
+\oef{h2-t2}
+
+\oef{h2-t3}
+
+\oef{h2-t4}
+
+\oef{h2-t5}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h2-t1}{vb:h2-vuistregel}{oef:h2-vuistregel}%
+  \fv{oef:h2-t2}{vb:h2-normalcdf}{oef:h2-normalcdf}%
+  \fv{oef:h2-t3}{vb:h2-invnorm}{oef:h2-invnorm}%
+  \fzv{oef:h2-t4}{oef:h2-normalcdf}%
+  \fv{oef:h2-t5}{vb:h2-model}{oef:h2-model}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: wat een dichtheidsfunctie is en waarom een kans een oppervlakte is, hoe de Gausskromme eruitziet en wat $\mu$ en $\sigma$ betekenen, de 68-95-99,7-regel, hoe je kansen en grenzen berekent met het rekentoestel, wat een z-score is, en hoe je beoordeelt of een normaal model bij data past. Vergelijk daarna met de kaders.
+\fi
