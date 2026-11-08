@@ -1,0 +1,571 @@
+# Oefeningen van hoofdstuk 1. Zie oefeningenbank.py voor de velden.
+
+- id: h1-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Een rechthoekige driehoek heeft schuine zijde $10$ en een hoek van $30^\circ$. Hoe lang is de overstaande zijde?
+      antwoord: |-
+        5
+      uitwerking: |-
+        $10 \sin 30^\circ = 5$.
+    - opgave: |-
+        Geef $\sin 30^\circ$, $\cos 60^\circ$ en $\tan 45^\circ$.
+      antwoord: |-
+        $\frac12$; $\frac12$; $1$
+      uitwerking: |-
+        $\frac12$, $\frac12$ en $1$.
+    - opgave: |-
+        Wat is de omtrek van een cirkel met straal 3?
+      antwoord: |-
+        $6\pi$
+      uitwerking: |-
+        $2\pi \cdot 3 = 6\pi$.
+    - opgave: |-
+        Bereken $\sqrt{1 - 0{,}6^2}$.
+      antwoord: |-
+        $0{,}8$
+      uitwerking: |-
+        $\sqrt{0{,}64} = 0{,}8$.
+    - opgave: |-
+        In welk kwadrant ligt het punt $(-2, 3)$?
+      antwoord: |-
+        het tweede
+      uitwerking: |-
+        $x < 0$ en $y > 0$: het tweede kwadrant.
+    - opgave: |-
+        Spiegel $(3, 1)$ om de rechte $y = x$.
+      antwoord: |-
+        $(1, 3)$
+      uitwerking: |-
+        $(1, 3)$.
+
+- id: h1-verken
+  soort: start
+  figuur:
+    opties: |-
+      3.6cm
+    code: |-
+      \begin{tikzpicture}[scale=1.3,font=\scriptsize]
+        \eenheidscirkel
+        \draw[->,accent] (.3,0) arc (0:30:.3);
+        \draw[accent] (0,0) -- (30:1);
+        \fill[accent] (30:1) circle (.035) node[above right] {$G$};
+        \fill[accent] (1,0) circle (.035);
+      \end{tikzpicture}
+  opgave: |-
+    \blokkop{Verken} Een gondel van een reuzenrad met straal 1 vertrekt in $(1, 0)$ en draait in tegenwijzerzin rond de oorsprong.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Wat zijn de coördinaten na een draaiing over $90^\circ$, $180^\circ$ en $270^\circ$?
+      antwoord: |-
+        $(0, 1)$; $(-1, 0)$; $(0, -1)$
+      uitwerking: |-
+        $(0, 1)$, $(-1, 0)$ en $(0, -1)$.
+    - opgave: |-
+        Na $30^\circ$ is de gondel in $G$. Bereken de coördinaten met een rechthoekige driehoek.
+      antwoord: |-
+        $\bigl(\frac{\sqrt3}{2}, \frac12\bigr)$
+      uitwerking: |-
+        Schuine zijde 1: $x = \cos 30^\circ = \frac{\sqrt3}{2}$ en $y = \sin 30^\circ = \frac12$.
+    - opgave: |-
+        Waar is de gondel na $150^\circ$? Gebruik een spiegeling.
+      antwoord: |-
+        $\bigl(-\frac{\sqrt3}{2}, \frac12\bigr)$
+      uitwerking: |-
+        Het spiegelbeeld van $G$ om de $y$-as: $\bigl(-\frac{\sqrt3}{2}, \frac12\bigr)$.
+
+- id: h1-radialen
+  soort: kort
+  opgave: |-
+    Zet om, en bereken.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $60^\circ$ naar radialen
+      antwoord: |-
+        $\frac{\pi}{3}$
+      uitwerking: |-
+        $60 \cdot \frac{\pi}{180} = \frac{\pi}{3}$.
+    - opgave: |-
+        $210^\circ$ naar radialen
+      antwoord: |-
+        $\frac{7\pi}{6}$
+      uitwerking: |-
+        $210 \cdot \frac{\pi}{180} = \frac{7\pi}{6}$.
+    - opgave: |-
+        $\frac{5\pi}{4}$ naar graden
+      antwoord: |-
+        $225^\circ$
+      uitwerking: |-
+        $\frac54 \cdot 180^\circ = 225^\circ$.
+    - opgave: |-
+        $1$ rad naar graden
+      antwoord: |-
+        $\approx 57{,}3^\circ$
+      uitwerking: |-
+        $\frac{180^\circ}{\pi} \approx 57{,}3^\circ$.
+    - opgave: |-
+        de booglengte bij $\frac{3\pi}{4}$ op een cirkel met straal 4
+      antwoord: |-
+        $3\pi \approx 9{,}42$
+      uitwerking: |-
+        $4 \cdot \frac{3\pi}{4} = 3\pi \approx 9{,}42$.
+
+- id: h1-waarden
+  soort: kort
+  opgave: |-
+    Bepaal exact.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\sin\frac{2\pi}{3}$
+      antwoord: |-
+        $\frac{\sqrt3}{2}$
+      uitwerking: |-
+        $\sin\bigl(\pi - \frac{\pi}{3}\bigr) = \sin\frac{\pi}{3} = \frac{\sqrt3}{2}$.
+    - opgave: |-
+        $\cos\frac{3\pi}{4}$
+      antwoord: |-
+        $-\frac{\sqrt2}{2}$
+      uitwerking: |-
+        Tweede kwadrant: $-\cos\frac{\pi}{4} = -\frac{\sqrt2}{2}$.
+    - opgave: |-
+        $\tan\frac{5\pi}{6}$
+      antwoord: |-
+        $-\frac{\sqrt3}{3}$
+      uitwerking: |-
+        Zie voorbeeld~\ref{vb:h1-waarden}: $-\frac{\sqrt3}{3}$.
+    - opgave: |-
+        $\sin\theta$ en $\tan\theta$ als $\cos\theta = -\frac{5}{13}$ en $\pi < \theta < \frac{3\pi}{2}$
+      antwoord: |-
+        $-\frac{12}{13}$; $\frac{12}{5}$
+      uitwerking: |-
+        $\sin^2\theta = 1 - \frac{25}{169} = \frac{144}{169}$; derde kwadrant: $\sin\theta = -\frac{12}{13}$. $\tan\theta = \frac{-12/13}{-5/13} = \frac{12}{5}$.
+
+- id: h1-verwant
+  soort: kort
+  opgave: |-
+    Bepaal exact, of vereenvoudig.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\sin\frac{11\pi}{6}$
+      antwoord: |-
+        $-\frac12$
+      uitwerking: |-
+        $\frac{11\pi}{6} = 2\pi - \frac{\pi}{6}$, dus $\sin\bigl(-\frac{\pi}{6}\bigr) = -\frac12$.
+    - opgave: |-
+        $\cos\bigl(-\frac{2\pi}{3}\bigr)$
+      antwoord: |-
+        $-\frac12$
+      uitwerking: |-
+        $\cos\frac{2\pi}{3} = -\cos\frac{\pi}{3} = -\frac12$.
+    - opgave: |-
+        $\tan\frac{5\pi}{4}$
+      antwoord: |-
+        1
+      uitwerking: |-
+        $\tan\bigl(\pi + \frac{\pi}{4}\bigr) = \tan\frac{\pi}{4} = 1$.
+    - opgave: |-
+        $\sin(\pi - x) + \sin(-x)$
+      antwoord: |-
+        0
+      uitwerking: |-
+        $\sin x - \sin x = 0$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h1-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    omrekenen
+  opgave: |-
+    Zet om naar radialen (exact) of naar graden.
+  lijst: reeks
+  kolommen: 5
+  delen:
+    - opgave: |-
+        $15^\circ$
+      antwoord: |-
+        $\frac{\pi}{12}$
+      uitwerking: |-
+        $\frac{\pi}{12}$.
+    - opgave: |-
+        $300^\circ$
+      antwoord: |-
+        $\frac{5\pi}{3}$
+      uitwerking: |-
+        $\frac{5\pi}{3}$.
+    - opgave: |-
+        $-45^\circ$
+      antwoord: |-
+        $-\frac{\pi}{4}$
+      uitwerking: |-
+        $-\frac{\pi}{4}$.
+    - opgave: |-
+        $\frac{7\pi}{12}$
+      antwoord: |-
+        $105^\circ$
+      uitwerking: |-
+        $105^\circ$.
+    - opgave: |-
+        $3$ rad
+      antwoord: |-
+        $\approx 171{,}9^\circ$
+      uitwerking: |-
+        $3 \cdot \frac{180^\circ}{\pi} \approx 171{,}9^\circ$.
+
+- id: h1-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    exacte waarden
+  opgave: |-
+    Bepaal exact.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\sin\frac{3\pi}{2}$
+      antwoord: |-
+        $-1$
+      uitwerking: |-
+        Het punt $(0, -1)$.
+    - opgave: |-
+        $\cos\frac{5\pi}{3}$
+      antwoord: |-
+        $\frac12$
+      uitwerking: |-
+        $\cos\bigl(-\frac{\pi}{3}\bigr) = \frac12$.
+    - opgave: |-
+        $\tan\bigl(-\frac{\pi}{4}\bigr)$
+      antwoord: |-
+        $-1$
+      uitwerking: |-
+        $-\tan\frac{\pi}{4} = -1$.
+    - opgave: |-
+        $\sin\frac{13\pi}{6}$
+      antwoord: |-
+        $\frac12$
+      uitwerking: |-
+        $\frac{13\pi}{6} - 2\pi = \frac{\pi}{6}$.
+    - opgave: |-
+        $\cos 3\pi$
+      antwoord: |-
+        $-1$
+      uitwerking: |-
+        $3\pi - 2\pi = \pi$: het punt $(-1, 0)$.
+    - opgave: |-
+        $\tan\frac{7\pi}{6}$
+      antwoord: |-
+        $\frac{\sqrt3}{3}$
+      uitwerking: |-
+        $\tan\bigl(\pi + \frac{\pi}{6}\bigr) = \tan\frac{\pi}{6} = \frac{\sqrt3}{3}$.
+
+- id: h1-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    kwadranten
+  opgave: |-
+    In welk kwadrant ligt het punt bij de hoek (in radialen)? Geef het teken van de sinus en de cosinus.
+  lijst: reeks
+  kolommen: 4
+  delen:
+    - opgave: |-
+        $2$
+      antwoord: |-
+        II; $\sin > 0$, $\cos < 0$
+      uitwerking: |-
+        $\frac{\pi}{2} \approx 1{,}57 < 2 < \pi$: tweede kwadrant.
+    - opgave: |-
+        $4$
+      antwoord: |-
+        III; beide $< 0$
+      uitwerking: |-
+        $\pi < 4 < \frac{3\pi}{2} \approx 4{,}71$: derde kwadrant.
+    - opgave: |-
+        $-1$
+      antwoord: |-
+        IV; $\sin < 0$, $\cos > 0$
+      uitwerking: |-
+        $-\frac{\pi}{2} < -1 < 0$: vierde kwadrant.
+    - opgave: |-
+        $5$
+      antwoord: |-
+        IV; $\sin < 0$, $\cos > 0$
+      uitwerking: |-
+        $\frac{3\pi}{2} < 5 < 2\pi \approx 6{,}28$: vierde kwadrant.
+
+- id: h1-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    uit de tangens
+  opgave: |-
+    Gegeven: $\tan\theta = 2$ en $\pi < \theta < \frac{3\pi}{2}$. Bepaal exact $\cos\theta$ en $\sin\theta$. Tip: deel de grondformule door $\cos^2\theta$.
+  antwoord: |-
+    $\cos\theta = -\frac{\sqrt5}{5}$, $\sin\theta = -\frac{2\sqrt5}{5}$
+  uitwerking: |-
+    $\tan^2\theta + 1 = \frac{1}{\cos^2\theta}$, dus $\cos^2\theta = \frac15$. Derde kwadrant: $\cos\theta = -\frac{1}{\sqrt5} = -\frac{\sqrt5}{5}$, en $\sin\theta = \tan\theta \cdot \cos\theta = -\frac{2\sqrt5}{5}$.
+
+- id: h1-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    vereenvoudigen
+  opgave: |-
+    Vereenvoudig.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\cos(\pi - x) + \cos(-x)$
+      antwoord: |-
+        0
+      uitwerking: |-
+        $-\cos x + \cos x = 0$.
+    - opgave: |-
+        $\sin\bigl(\frac{\pi}{2} - x\bigr) \cos x + \sin(\pi + x)\sin(-x)$
+      antwoord: |-
+        1
+      uitwerking: |-
+        $\cos x \cdot \cos x + (-\sin x)(-\sin x) = \cos^2 x + \sin^2 x = 1$.
+    - opgave: |-
+        $\tan(\pi + x) \cdot \tan\bigl(\frac{\pi}{2} - x\bigr)$
+      antwoord: |-
+        1
+      uitwerking: |-
+        $\tan\bigl(\frac{\pi}{2} - x\bigr) = \frac{\cos x}{\sin x}$ en $\tan(\pi + x) = \frac{\sin x}{\cos x}$: het product is 1.
+
+- id: h1-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    identiteiten
+  opgave: |-
+    Bewijs (voor alle $x$ waarvoor beide leden bestaan).
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $(\sin x + \cos x)^2 = 1 + 2\sin x\cos x$
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $\sin^2 x + 2\sin x \cos x + \cos^2 x = 1 + 2\sin x \cos x$.
+    - opgave: |-
+        $1 + \tan^2 x = \dfrac{1}{\cos^2 x}$
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $1 + \frac{\sin^2 x}{\cos^2 x} = \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x}$.
+    - opgave: |-
+        $\sin^4 x - \cos^4 x = \sin^2 x - \cos^2 x$
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $(\sin^2 x - \cos^2 x)(\sin^2 x + \cos^2 x) = \sin^2 x - \cos^2 x$.
+
+- id: h1-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een klok
+  opgave: |-
+    De minutenwijzer van een klok is $12$ cm lang.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Over welke hoek (in radialen) draait hij in 20 minuten?
+      antwoord: |-
+        $\frac{2\pi}{3}$
+      uitwerking: |-
+        Een derde van een volle toer: $\frac{2\pi}{3}$.
+    - opgave: |-
+        Welke afstand legt de punt van de wijzer dan af?
+      antwoord: |-
+        $8\pi \approx 25{,}1$ cm
+      uitwerking: |-
+        $12 \cdot \frac{2\pi}{3} = 8\pi \approx 25{,}1$ cm.
+    - opgave: |-
+        Hoe groot is de oppervlakte die de wijzer bestrijkt?
+      antwoord: |-
+        $48\pi \approx 150{,}8$ cm$^2$
+      uitwerking: |-
+        $\frac12 \cdot 144 \cdot \frac{2\pi}{3} = 48\pi \approx 150{,}8$ cm$^2$.
+
+- id: h1-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    op de aardbol
+  opgave: |-
+    De aarde is (bijna) een bol met straal $6371$ km. Brussel ligt op $50{,}85^\circ$ noorderbreedte.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoe ver ligt Brussel, langs het aardoppervlak, van het punt op de evenaar met dezelfde lengtegraad?
+      antwoord: |-
+        $\approx 5654$ km
+      uitwerking: |-
+        $6371 \cdot 50{,}85 \cdot \frac{\pi}{180} \approx 5654$ km.
+    - opgave: |-
+        Door de draaiing van de aarde beschrijft Brussel elke 24 uur een cirkel. Wat is de straal van die cirkel? Hoe snel beweegt Brussel?
+      antwoord: |-
+        $\approx 4022$ km; $\approx 1053$ km/h
+      uitwerking: |-
+        De straal is $6371 \cos 50{,}85^\circ \approx 4022$ km. Per uur draait de aarde $\frac{2\pi}{24}$ rad, dus $4022 \cdot \frac{\pi}{12} \approx 1053$ km/h.
+
+- id: h1-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een reuzenrad
+  opgave: |-
+    Een reuzenrad heeft straal $20$ m; de as staat op $25$ m hoogte. Een gondel staat bij de hoek $\theta$, gemeten vanaf de horizontale door de as, in tegenwijzerzin.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat de hoogte van de gondel $h = 25 + 20\sin\theta$ is.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Neem de as als oorsprong. De gondel is het punt $(20\cos\theta, 20\sin\theta)$ van de cirkel met straal 20, en ligt dus $20\sin\theta$ boven de as.
+    - opgave: |-
+        Bereken de hoogte bij $\theta = \frac{7\pi}{6}$.
+      antwoord: |-
+        15 m
+      uitwerking: |-
+        $25 + 20 \cdot \bigl(-\frac12\bigr) = 15$ m.
+    - opgave: |-
+        Bij welke hoeken in $[0, 2\pi[$ is de gondel $35$ m hoog?
+      antwoord: |-
+        $\frac{\pi}{6}$ en $\frac{5\pi}{6}$
+      uitwerking: |-
+        $\sin\theta = \frac12$: $\theta = \frac{\pi}{6}$ of $\theta = \pi - \frac{\pi}{6} = \frac{5\pi}{6}$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h1-koppel-1
+  soort: koppel
+  niveau: 1
+  koppel:
+    rubriek: algebra
+    onderwerp: Complexe getallen
+  thema: |-
+    goniometrische vorm
+  opgave: |-
+    Schrijf in de vorm $r(\cos\theta + i\sin\theta)$: $z = 1 + i\sqrt3$ en $w = -1 + i$.
+  antwoord: |-
+    $2\bigl(\cos\frac{\pi}{3} + i\sin\frac{\pi}{3}\bigr)$; $\sqrt2\bigl(\cos\frac{3\pi}{4} + i\sin\frac{3\pi}{4}\bigr)$
+  uitwerking: |-
+    $|z| = 2$ en $\cos\theta = \frac12$, $\sin\theta = \frac{\sqrt3}{2}$: $\theta = \frac{\pi}{3}$. $|w| = \sqrt2$ en $\cos\theta = -\frac{\sqrt2}{2}$, $\sin\theta = \frac{\sqrt2}{2}$: $\theta = \frac{3\pi}{4}$.
+
+- id: h1-koppel-2
+  soort: koppel
+  niveau: 1
+  koppel:
+    rubriek: analyse
+    onderwerp: Algemene functies
+  thema: |-
+    even en oneven
+  opgave: |-
+    Zijn de functies $\sin x$, $\cos x$ en $\tan x$ even, oneven of geen van beide? Gebruik de verwante hoeken.
+  antwoord: |-
+    oneven; even; oneven
+  uitwerking: |-
+    $\sin(-x) = -\sin x$: oneven. $\cos(-x) = \cos x$: even. $\tan(-x) = \frac{-\sin x}{\cos x} = -\tan x$: oneven.
+
+- id: h1-koppel-3
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: algebra
+    onderwerp: Matrices
+  thema: |-
+    rotatiematrix
+  opgave: |-
+    De matrix
+    \[R = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}\]
+    draait een punt over de hoek $\theta$ rond de oorsprong. Bereken het beeld van $(1, 0)$ en van $(0, 1)$ voor $\theta = \frac{\pi}{3}$. Liggen ze op de eenheidscirkel?
+  antwoord: |-
+    $\bigl(\frac12, \frac{\sqrt3}{2}\bigr)$ en $\bigl(-\frac{\sqrt3}{2}, \frac12\bigr)$; ja
+  uitwerking: |-
+    $R\binom{1}{0} = \binom{\cos\theta}{\sin\theta} = \binom{1/2}{\sqrt3/2}$, het punt bij $\frac{\pi}{3}$. $R\binom{0}{1} = \binom{-\sin\theta}{\cos\theta} = \binom{-\sqrt3/2}{1/2}$, het punt bij $\frac{\pi}{3} + \frac{\pi}{2} = \frac{5\pi}{6}$. Beide liggen op de eenheidscirkel.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h1-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    omrekenen
+  opgave: |-
+    Zet $240^\circ$ om naar radialen en $\frac{5\pi}{12}$ naar graden.
+  antwoord: |-
+    $\frac{4\pi}{3}$; $75^\circ$
+  uitwerking: |-
+    $240 \cdot \frac{\pi}{180} = \frac{4\pi}{3}$ en $\frac{5}{12} \cdot 180^\circ = 75^\circ$.
+
+- id: h1-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    boog en sector
+  opgave: |-
+    Een boog op een cirkel met straal $8$ cm is $10$ cm lang. Hoe groot is de middelpuntshoek in radialen? Hoe groot is de sector?
+  antwoord: |-
+    $1{,}25$ rad; $40$ cm$^2$
+  uitwerking: |-
+    $\theta = \frac{10}{8} = 1{,}25$ rad en $A = \frac12 \cdot 64 \cdot 1{,}25 = 40$ cm$^2$.
+
+- id: h1-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    exacte waarden
+  opgave: |-
+    Bepaal exact $\sin\frac{3\pi}{4}$, $\cos\frac{3\pi}{4}$ en $\tan\frac{3\pi}{4}$.
+  antwoord: |-
+    $\frac{\sqrt2}{2}$; $-\frac{\sqrt2}{2}$; $-1$
+  uitwerking: |-
+    $\frac{3\pi}{4} = \pi - \frac{\pi}{4}$: $\sin = \frac{\sqrt2}{2}$, $\cos = -\frac{\sqrt2}{2}$, $\tan = -1$.
+
+- id: h1-t4
+  soort: test
+  niveau: 1
+  thema: |-
+    grondformule
+  opgave: |-
+    Gegeven: $\cos\theta = 0{,}6$ en $\frac{3\pi}{2} < \theta < 2\pi$. Bepaal $\sin\theta$ en $\tan\theta$.
+  antwoord: |-
+    $-0{,}8$; $-\frac43$
+  uitwerking: |-
+    $\sin^2\theta = 1 - 0{,}36 = 0{,}64$; vierde kwadrant: $\sin\theta = -0{,}8$. $\tan\theta = \frac{-0{,}8}{0{,}6} = -\frac43$.
+
+- id: h1-t5
+  soort: test
+  niveau: 2
+  thema: |-
+    verwante hoeken
+  opgave: |-
+    Bepaal exact $\cos\bigl(-\frac{5\pi}{6}\bigr)$ en $\sin\frac{7\pi}{3}$.
+  antwoord: |-
+    $-\frac{\sqrt3}{2}$; $\frac{\sqrt3}{2}$
+  uitwerking: |-
+    $\cos\frac{5\pi}{6} = -\cos\frac{\pi}{6} = -\frac{\sqrt3}{2}$. $\frac{7\pi}{3} - 2\pi = \frac{\pi}{3}$, dus $\sin\frac{\pi}{3} = \frac{\sqrt3}{2}$.
