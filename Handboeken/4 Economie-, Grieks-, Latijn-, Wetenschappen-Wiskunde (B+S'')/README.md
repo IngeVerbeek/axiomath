@@ -18,7 +18,7 @@ Leerplan: B+S'' (Katholiek Onderwijs Vlaanderen). Doelen volgens de tabel met le
 | Meetkunde/Ruimtemeetkunde | LPD 5-8 | nog te maken |
 | [Discrete wiskunde/Rijen](Discrete%20wiskunde/Rijen) | LPD 44-46 | vier hoofdstukken, eerste versie in de oude opmaak, nog om te zetten en na te lezen |
 | Discrete wiskunde/Telproblemen | LPD 47 | nog te maken |
-| Discrete wiskunde/Logica en bewijzen | LPD 4 (bewijstechnieken) | nog te maken |
+| [Discrete wiskunde/Logica en bewijzen](Discrete%20wiskunde/Logica%20en%20bewijzen) | LPD 4 (bewijstechnieken) | drie hoofdstukken, eerste versie, nog na te lezen |
 | Data en onzekerheid/Kansrekenen | LPD 48-49 | nog te maken |
 | Data en onzekerheid/Statistiek | LPD 50-54, K1 | nog te maken |
 | Onderzoekscompetentie | LPD 55 | nog te maken |

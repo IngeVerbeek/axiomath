@@ -1,0 +1,287 @@
+# Oefeningen van hoofdstuk 3. Zie oefeningenbank.py voor de velden.
+
+- id: h3-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Bereken $1 + 2 + \cdots + 10$.
+      antwoord: |-
+        55
+      uitwerking: |-
+        $55$.
+    - opgave: |-
+        Schrijf $\frac{k(k + 1)}{2}$ met $k$ vervangen door $k + 1$.
+      antwoord: |-
+        $\frac{(k + 1)(k + 2)}{2}$
+      uitwerking: |-
+        $\frac{(k + 1)(k + 2)}{2}$.
+    - opgave: |-
+        Breng de factor $k + 1$ buiten haakjes: $k(k + 1) + 2(k + 1)$.
+      antwoord: |-
+        $(k + 1)(k + 2)$
+      uitwerking: |-
+        $(k + 1)(k + 2)$.
+    - opgave: |-
+        Schrijf $4^{k + 1}$ met $4^k$.
+      antwoord: |-
+        $4 \cdot 4^k$
+      uitwerking: |-
+        $4^{k + 1} = 4 \cdot 4^k$.
+    - opgave: |-
+        Bereken $2^n$ en $n^2$ voor $n = 1, \ldots, 6$. Voor welke $n$ is $2^n > n^2$?
+      antwoord: |-
+        $n = 1$ en $n \geqslant 5$
+      uitwerking: |-
+        $2, 4, 8, 16, 32, 64$ tegenover $1, 4, 9, 16, 25, 36$: groter bij $n = 1$, en vanaf $n = 5$.
+    - opgave: |-
+        Wat is de laatste term van $1 + 3 + 5 + \cdots$ met $n$ termen?
+      antwoord: |-
+        $2n - 1$
+      uitwerking: |-
+        Het $n$-de oneven getal is $2n - 1$.
+
+- id: h3-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken}
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $1$, $1 + 3$, $1 + 3 + 5$, $1 + 3 + 5 + 7$. Welk patroon zie je?
+      antwoord: |-
+        1, 4, 9, 16: kwadraten
+      uitwerking: |-
+        1, 4, 9, 16: de som van de eerste $n$ oneven getallen lijkt $n^2$.
+    - opgave: |-
+        Stel dat je weet dat de som van de eerste 50 oneven getallen $50^2$ is. Hoe vind je dan de som van de eerste 51, zonder alles opnieuw op te tellen?
+      antwoord: |-
+        $50^2 + 101 = 51^2$
+      uitwerking: |-
+        Tel het 51ste oneven getal, 101, erbij: $2500 + 101 = 2601 = 51^2$.
+    - opgave: |-
+        Doe hetzelfde algemeen: als de som van de eerste $k$ oneven getallen $k^2$ is, wat is dan de som van de eerste $k + 1$?
+      antwoord: |-
+        $k^2 + 2k + 1 = (k + 1)^2$
+      uitwerking: |-
+        Het $(k + 1)$-ste oneven getal is $2k + 1$: $k^2 + 2k + 1 = (k + 1)^2$. Het patroon wordt dus altijd doorgegeven.
+
+- id: h3-som
+  soort: kort
+  opgave: |-
+    Bewijs met volledige inductie: $1 + 3 + 5 + \cdots + (2n - 1) = n^2$ voor alle $n \geqslant 1$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Basisstap: $1 = 1^2$. Inductiestap: stel $1 + 3 + \cdots + (2k - 1) = k^2$. Dan is $1 + 3 + \cdots + (2k - 1) + (2k + 1) = k^2 + 2k + 1 = (k + 1)^2$. Volgens het principe van volledige inductie geldt de formule voor alle $n \geqslant 1$.
+
+- id: h3-deelbaar
+  soort: kort
+  opgave: |-
+    Bewijs met volledige inductie: $5^n - 1$ is deelbaar door 4 voor elk natuurlijk getal $n$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Basisstap: $5^0 - 1 = 0$. Inductiestap: stel $5^k - 1 = 4m$. Dan is $5^{k + 1} - 1 = 5(4m + 1) - 1 = 20m + 4 = 4(5m + 1)$.
+
+- id: h3-ongelijkheid
+  soort: kort
+  opgave: |-
+    Bewijs met volledige inductie: $n! > 2^n$ voor alle $n \geqslant 4$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Basisstap: $4! = 24 > 16$. Inductiestap: stel $k! > 2^k$ met $k \geqslant 4$. Dan is $(k + 1)! = (k + 1) \cdot k! > (k + 1) \cdot 2^k > 2 \cdot 2^k = 2^{k + 1}$, want $k + 1 > 2$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h3-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    somformule
+  opgave: |-
+    Bewijs met volledige inductie: $2 + 4 + 6 + \cdots + 2n = n(n + 1)$ voor alle $n \geqslant 1$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Basisstap: $2 = 1 \cdot 2$. Inductiestap: $k(k + 1) + 2(k + 1) = (k + 1)(k + 2)$.
+
+- id: h3-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    deelbaarheid
+  opgave: |-
+    Bewijs met volledige inductie: $7^n - 1$ is deelbaar door 6.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Basisstap: $7^0 - 1 = 0$. Inductiestap: $7^{k + 1} - 1 = 7(6m + 1) - 1 = 42m + 6 = 6(7m + 1)$.
+
+- id: h3-o3
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    som van kwadraten
+  opgave: |-
+    Bewijs: $1^2 + 2^2 + \cdots + n^2 = \dfrac{n(n + 1)(2n + 1)}{6}$ voor alle $n \geqslant 1$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Basisstap: $1 = \frac{1 \cdot 2 \cdot 3}{6}$. Inductiestap: $\frac{k(k + 1)(2k + 1)}{6} + (k + 1)^2 = \frac{(k + 1)\bigl(k(2k + 1) + 6(k + 1)\bigr)}{6} = \frac{(k + 1)(2k^2 + 7k + 6)}{6} = \frac{(k + 1)(k + 2)(2k + 3)}{6}$, de formule voor $n = k + 1$.
+
+- id: h3-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een foute inductie
+  opgave: |-
+    Iemand \textit{bewijst} dat alle paarden dezelfde kleur hebben: \textit{Basisstap: één paard heeft één kleur. Inductiestap: neem $k + 1$ paarden. Zonder het eerste zijn het er $k$, dus hebben ze dezelfde kleur. Zonder het laatste ook. Dus hebben ze allemaal dezelfde kleur als de paarden in het midden.} Waar zit de fout?
+  antwoord: |-
+    de inductiestap faalt van 1 naar 2
+  uitwerking: |-
+    Van $k = 1$ naar $k + 1 = 2$ is er geen paard in het midden: de twee groepen van één paard overlappen niet. De inductiestap moet voor elke $k \geqslant n_0$ werken, en hier faalt hij voor $k = 1$.
+
+- id: h3-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    ongelijkheid van Bernoulli
+  opgave: |-
+    Bewijs dat $(1 + x)^n \geqslant 1 + nx$ voor elk natuurlijk getal $n$ en elk reëel getal $x \geqslant -1$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Basisstap $n = 0$: $1 \geqslant 1$. Inductiestap: $(1 + x)^{k + 1} = (1 + x)^k(1 + x) \geqslant (1 + kx)(1 + x)$, want $1 + x \geqslant 0$. En $(1 + kx)(1 + x) = 1 + (k + 1)x + kx^2 \geqslant 1 + (k + 1)x$.
+
+- id: h3-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een formule raden en bewijzen
+  opgave: |-
+    Bereken $\frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \cdots + \frac{1}{n(n + 1)}$ voor $n = 1, 2, 3, 4$. Raad een formule en bewijs ze met volledige inductie.
+  antwoord: |-
+    $\frac{n}{n + 1}$
+  uitwerking: |-
+    $\frac12$, $\frac23$, $\frac34$, $\frac45$: vermoedelijk $\frac{n}{n + 1}$. Inductiestap: $\frac{k}{k + 1} + \frac{1}{(k + 1)(k + 2)} = \frac{k(k + 2) + 1}{(k + 1)(k + 2)} = \frac{(k + 1)^2}{(k + 1)(k + 2)} = \frac{k + 1}{k + 2}$.
+
+- id: h3-o7
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    deelbaarheid met twee termen
+  opgave: |-
+    Bewijs dat $n^3 + 2n$ deelbaar is door 3 voor elk natuurlijk getal $n$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Basisstap: $0$. Inductiestap: $(k + 1)^3 + 2(k + 1) = k^3 + 3k^2 + 3k + 1 + 2k + 2 = (k^3 + 2k) + 3(k^2 + k + 1)$. Het eerste deel is deelbaar door 3 volgens de hypothese, het tweede is een veelvoud van 3.
+
+- id: h3-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    stukken van een vlak
+  opgave: |-
+    $n$ rechten in een vlak, waarvan er geen twee evenwijdig zijn en geen drie door één punt gaan, verdelen het vlak in $p_n$ stukken. Toon aan dat $p_{n + 1} = p_n + (n + 1)$, en bewijs met inductie dat $p_n = \dfrac{n^2 + n + 2}{2}$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    De nieuwe rechte snijdt de $n$ andere in $n$ verschillende punten, en wordt zo in $n + 1$ stukken verdeeld. Elk stuk verdeelt een bestaand gebied in twee: er komen $n + 1$ gebieden bij. Basisstap: $p_0 = 1 = \frac{2}{2}$. Inductiestap: $\frac{k^2 + k + 2}{2} + k + 1 = \frac{k^2 + 3k + 4}{2} = \frac{(k + 1)^2 + (k + 1) + 2}{2}$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h3-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: discreet
+    onderwerp: Rijen
+  thema: |-
+    somformule van een meetkundige rij
+  opgave: |-
+    Bewijs met volledige inductie dat voor $q \neq 1$ en alle $n \geqslant 1$ geldt:
+    \[1 + q + q^2 + \cdots + q^{n - 1} = \frac{q^n - 1}{q - 1}.\]
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Basisstap: $1 = \frac{q - 1}{q - 1}$. Inductiestap: $\frac{q^k - 1}{q - 1} + q^k = \frac{q^k - 1 + q^{k + 1} - q^k}{q - 1} = \frac{q^{k + 1} - 1}{q - 1}$.
+
+- id: h3-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: algebra
+    onderwerp: Complexe getallen
+  thema: |-
+    de formule van De Moivre
+  opgave: |-
+    Bewijs met volledige inductie dat $(\cos\theta + i\sin\theta)^n = \cos n\theta + i\sin n\theta$ voor elk natuurlijk getal $n$. Gebruik de regel voor het product in goniometrische vorm.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Basisstap: $n = 0$ geeft $1 = \cos 0 + i\sin 0$. Inductiestap: $(\cos\theta + i\sin\theta)^{k + 1} = (\cos k\theta + i\sin k\theta)(\cos\theta + i\sin\theta) = \cos(k\theta + \theta) + i\sin(k\theta + \theta)$ volgens de productregel.
+
+- id: h3-koppel-3
+  soort: koppel
+  niveau: 3
+  koppel:
+    rubriek: discreet
+    onderwerp: Telproblemen
+  thema: |-
+    deelverzamelingen tellen
+  opgave: |-
+    Bewijs met volledige inductie dat een verzameling met $n$ elementen $2^n$ deelverzamelingen heeft. Tip: neem een element $x$ van een verzameling met $k + 1$ elementen, en splits de deelverzamelingen in die met en die zonder $x$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Basisstap: de lege verzameling heeft $1 = 2^0$ deelverzameling. Inductiestap: de deelverzamelingen zonder $x$ zijn de deelverzamelingen van de overige $k$ elementen: $2^k$ (hypothese). Die met $x$ krijg je door aan elk van die $2^k$ het element $x$ toe te voegen: ook $2^k$. Samen $2^{k + 1}$.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h3-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    somformule
+  opgave: |-
+    Bewijs met volledige inductie: $3 + 7 + 11 + \cdots + (4n - 1) = n(2n + 1)$ voor alle $n \geqslant 1$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Basisstap: $3 = 1 \cdot 3$. Inductiestap: $k(2k + 1) + 4(k + 1) - 1 = 2k^2 + 5k + 3 = (k + 1)(2k + 3)$, de formule voor $n = k + 1$.
+
+- id: h3-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    deelbaarheid
+  opgave: |-
+    Bewijs met volledige inductie: $3^n - 1$ is even voor elk natuurlijk getal $n$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Basisstap: $3^0 - 1 = 0$. Inductiestap: $3^{k + 1} - 1 = 3(2m + 1) - 1 = 6m + 2 = 2(3m + 1)$.
+
+- id: h3-t3
+  soort: test
+  niveau: 2
+  thema: |-
+    ongelijkheid
+  opgave: |-
+    Bewijs met volledige inductie: $3^n > 2n + 1$ voor alle $n \geqslant 2$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Basisstap: $9 > 5$. Inductiestap: $3^{k + 1} = 3 \cdot 3^k > 3(2k + 1) = 6k + 3 > 2k + 3 = 2(k + 1) + 1$, want $6k + 3 > 2k + 3$ voor $k \geqslant 1$.
