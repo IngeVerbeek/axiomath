@@ -1,0 +1,156 @@
+%----------------------------------------------------------------------------------------
+% MODELLEREN MET DATA. Alle opgaven zijn eigen werk; de gegevens zijn voorbeeldgegevens.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h2-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{2}{Modelleren met data}
+
+\lkr{Leerplan B+S'': LPD 55 (onderzoekscompetentie), met het modelleren van meetgegevens. De kleinste-kwadratenrechte wordt hier ingevoerd zoals ze in een onderzoek gebruikt wordt; de afleiding van de formules staat als opdracht (met afgeleiden). Met een rekentoestel of rekenblad thuis gaat het rekenwerk sneller; in de klas volstaan kleine datasets. Alle getallen in dit hoofdstuk zijn voorbeeldgegevens, geen echte metingen.}
+
+Bij veel onderzoeksvragen meet je iets: hoe lang een slinger is en hoe snel hij slingert, hoe snel thee afkoelt. De punten liggen nooit precies op een mooie grafiek: er zijn meetfouten, en het model is een vereenvoudiging. Toch wil je weten welk verband het best past. Dat is modelleren.
+
+\begin{oefeningen}[Start]
+\oef{h2-start-1}
+
+\oef{h2-verken}
+\end{oefeningen}
+
+%========================================================================================
+\section{De best passende rechte}
+
+\naast{%
+Zet de metingen $(x_i, y_i)$ uit in een \textbf{spreidingsdiagram}. Liggen ze ongeveer op een rechte $y = ax + b$, dan zoek je de rechte waarbij de verticale afstanden tot de punten samen zo klein mogelijk zijn. Die afstanden heten \textbf{residuen}: $r_i = y_i - (ax_i + b)$.}{%
+\begin{tikzpicture}[x=.7cm,y=.5cm,font=\scriptsize]
+  \rooster{0}{1}{5}{0}{1}{6}
+  \draw[accent,thick] (0,2.2) -- (5.5,5.5);
+  \foreach \x/\y in {1/2,2/4,3/5,4/4,5/5}{
+    \draw[grijs,dashed] (\x,\y) -- (\x,{0.6*\x+2.2});
+    \fill[accent] (\x,\y) circle (2pt);}
+\end{tikzpicture}}
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{kleinste-kwadratenrechte}} van $n$ punten $(x_i, y_i)$ is de rechte $y = ax + b$ waarvoor de som van de kwadraten van de residuen minimaal is. Met de gemiddelden $\xbar$ en $\ybar$ is
+\[\formule{a = \frac{\sum (x_i - \xbar)(y_i - \ybar)}{\sum (x_i - \xbar)^2}} \qquad \formule{b = \ybar - a\,\xbar}.\]
+De \textbf{\textcolor{accent}{correlatiecoëfficiënt}} $\formule{r = \frac{\sum (x_i - \xbar)(y_i - \ybar)}{\sqrt{\sum (x_i - \xbar)^2 \cdot \sum (y_i - \ybar)^2}}}$ ligt tussen $-1$ en $1$, en meet hoe goed de punten op een rechte liggen.
+\end{theorie}
+
+\voorbeeld{}{Bepaal de kleinste-kwadratenrechte en $r$ voor de punten $(1, 2)$, $(2, 4)$, $(3, 5)$, $(4, 4)$, $(5, 5)$.\label{vb:h2-rechte}}{%
+\uitleg{Zet de afwijkingen van het gemiddelde in een tabel en tel op.}
+\figuren{\renewcommand{\arraystretch}{1.2}%
+\begin{tabular}{c|ccccc|c}
+$x_i - \xbar$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & \\
+$y_i - \ybar$ & $-2$ & $0$ & $1$ & $0$ & $1$ & \\ \hline
+product & $4$ & $0$ & $0$ & $0$ & $2$ & $6$
+\end{tabular}}
+\begin{stappenbreed}
+\xbar = 3,\quad \ybar = 4 & Gemiddelden. \\
+a = \tfrac{6}{10} = 0{,}6,\quad b = 4 - 0{,}6 \cdot 3 = 2{,}2 & $\sum(x_i - \xbar)^2 = 4 + 1 + 0 + 1 + 4$. \\
+r = \tfrac{6}{\sqrt{10 \cdot 6}} \approx 0{,}77 & $\sum(y_i - \ybar)^2 = 6$.
+\end{stappenbreed}
+De rechte is $y = 0{,}6x + 2{,}2$. Met $r \approx 0{,}77$ is er een duidelijk stijgend verband, maar de punten liggen niet mooi op een rechte.}
+
+\begin{oefeningen}
+\oef{h2-rechte}
+\end{oefeningen}
+
+%========================================================================================
+\section{Niet-lineaire verbanden}
+
+Niet elk verband is lineair. Vaak kun je het wel lineair maken door een van de grootheden te transformeren. Dan bepaal je de best passende rechte voor de getransformeerde gegevens.
+
+\begin{itemize}
+\item Bij een vermoeden $y = c \cdot x^2$ zet je $y$ uit tegen $x^2$.
+\item Bij exponentiële groei $y = N_0 \cdot g^x$ is $\ln y = \ln N_0 + x\ln g$: zet $\ln y$ uit tegen $x$ (zie Exponentiële en logaritmische functies).
+\end{itemize}
+
+\voorbeeld{}{Voor een slinger met lengte $L$ (in m) meet je de periode $T$ (in s). Volgens de natuurkunde is $T^2 = \frac{4\pi^2}{g}L$. Bepaal $g$ uit de metingen.\label{vb:h2-slinger}}{%
+\uitleg{Zet $T^2$ uit tegen $L$: dat moet een rechte door de oorsprong zijn, met richtingscoëfficiënt $\frac{4\pi^2}{g}$.}
+\figuren{\renewcommand{\arraystretch}{1.2}%
+\begin{tabular}{c|ccccc}
+$L$ & $0{,}2$ & $0{,}4$ & $0{,}6$ & $0{,}8$ & $1{,}0$ \\
+$T$ & $0{,}90$ & $1{,}27$ & $1{,}55$ & $1{,}79$ & $2{,}01$ \\ \hline
+$T^2$ & $0{,}81$ & $1{,}61$ & $2{,}40$ & $3{,}20$ & $4{,}04$
+\end{tabular}}
+\begin{stappenbreed}
+T^2 \approx 4{,}025\,L - 0{,}003 & Kleinste-kwadratenrechte, $r \approx 1$. \\
+g \approx \frac{4\pi^2}{4{,}025} \approx 9{,}81 & In m/s$^2$.
+\end{stappenbreed}}
+
+\begin{werkwijze}
+\textbf{Modelleren:} beschrijf de situatie en je aannames, kies een model (lineair, macht, exponentieel) op basis van theorie of van het spreidingsdiagram, transformeer zo nodig tot een rechte, bepaal de parameters, en controleer het model: liggen de residuen willekeurig rond nul, of zie je een patroon? Rapporteer ook de grenzen van het model.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h2-transformeren}
+\end{oefeningen}
+
+%========================================================================================
+\section{Een model kritisch bekijken}
+
+Een model is een vereenvoudiging. Drie valkuilen komen in bijna elk onderzoek terug.
+\begin{itemize}
+\item \textbf{Extrapoleren.} Een rechte die past tussen $x = 1$ en $x = 5$, hoeft niet te kloppen voor $x = 50$. Een kind dat elk jaar 6 cm groeit, is op 40 jaar geen 3 meter.
+\item \textbf{Correlatie is geen oorzaak.} De verkoop van ijsjes en het aantal verdrinkingen stijgen samen, maar het ene veroorzaakt het andere niet: beide hangen af van het weer.
+\item \textbf{Een hoge $r$ bewijst geen lineair verband.} Ook punten op een licht gebogen kromme kunnen $r = 0{,}98$ geven. Kijk naar de residuen: een systematisch patroon (eerst positief, dan negatief, dan weer positief) wijst op een ander model.
+\end{itemize}
+
+\begin{oefeningen}
+\oef{h2-kritisch}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h2-o1}
+
+\oef{h2-o2}
+
+\oef{h2-o3}
+
+\oef{h2-o4}
+
+\oef{h2-o5}
+
+\oef{h2-o6}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{Limieten en afgeleiden, Statistiek en Ruimtemeetkunde: kijk na wat al gezien is. Het pakket legt de volgorde niet vast.}
+
+\begin{oefeningen}
+\oef{h2-koppel-1}
+
+\oef{h2-koppel-2}
+
+\oef{h2-koppel-3}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h2-t1}
+
+\oef{h2-t2}
+
+\oef{h2-t3}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h2-t1}{vb:h2-rechte}{oef:h2-rechte}%
+  \fv{oef:h2-t2}{vb:h2-slinger}{oef:h2-transformeren}%
+  \fzv{oef:h2-t3}{oef:h2-kritisch}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: wat een residu is, de formules voor de kleinste-kwadratenrechte en de correlatiecoëfficiënt, hoe je een macht- of exponentieel verband lineair maakt, de stappen van het modelleren, en de drie valkuilen. Vergelijk daarna met de kaders.
+\fi
