@@ -1,0 +1,240 @@
+%----------------------------------------------------------------------------------------
+% VOORWAARDELIJKE KANS. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h2-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{2}{Voorwaardelijke kans}
+
+\lkr{Leerplan B+S': LPD 35, met de wenken over voorwaardelijke en marginale kansen in kruistabellen en boomdiagrammen, de wet van de totale kans en de wet van Bayes. De wet van Bayes wordt eerst met aantallen (een kruistabel van 10\,000 personen) uitgelegd en pas daarna met de formule: onderzoek toont dat dat de klassieke denkfout bij medische tests sterk vermindert.}
+
+Is de kans dat het morgen regent dezelfde als de kans dat het morgen regent \textit{als het vandaag regent}? Meestal niet. Extra informatie verandert een kans. In dit hoofdstuk leer je met zulke voorwaardelijke kansen rekenen, met kruistabellen en boomdiagrammen. Op het einde begrijp je waarom een positieve medische test lang niet altijd betekent dat je ziek bent.
+
+\begin{oefeningen}[Start]
+\oef{h2-start-1}
+
+\oef{h2-verken}
+\end{oefeningen}
+
+\lkr{Laat oefening \ref{oef:h2-verken} maken vóór de uitleg. Het verschil tussen b en c, de kans dat een fietser sport en de kans dat een sporter fietst, is de kern van de voorwaardelijke kans: de voorwaarde bepaalt door welk totaal je deelt.}
+
+%========================================================================================
+\section{Kruistabellen}
+
+Een \textbf{kruistabel} telt een groep volgens twee kenmerken tegelijk. De totalen staan in de marge: daarom heten de kansen daaruit \textbf{marginale kansen}. Weet je al dat een persoon een kenmerk heeft, dan kijk je alleen naar die rij of kolom.
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{voorwaardelijke kans}} op $A$ als $B$ gegeven is, met $P(B) > 0$, is
+
+\vspace{1mm}
+\qquad $\formule{P(A \gegeven B) = \dfrac{P(A \cap B)}{P(B)}}$
+\end{theorie}
+
+Je leest $P(A \gegeven B)$ als \textit{de kans op $A$ als $B$}. Bij gelijke kansen voor alle uitkomsten is dat $\frac{\#(A \cap B)}{\#B}$: je beperkt de uitkomstenverzameling tot $B$. In een kruistabel deel je dus door het totaal van de rij of kolom van $B$.
+
+\voorbeeld{}{Een bibliotheek telde 500 ontleningen, naar soort boek en leeftijd van de lener. Wat is de kans dat een ontlening een strip is? Dat een ontlening door een jongere een strip is? Dat een strip ontleend werd door een jongere?\label{vb:h2-kruistabel}}{%
+\uitleg{Bij de eerste vraag deel je door het totaal, bij de tweede door het aantal ontleningen door jongeren, bij de derde door het aantal strips.}
+\figuren{\renewcommand{\arraystretch}{1.25}\begin{tabular}{l|cc|c}
+ & strip & roman & totaal \\ \hline
+jongere & 96 & 104 & 200 \\
+volwassene & 54 & 246 & 300 \\ \hline
+totaal & 150 & 350 & 500
+\end{tabular}}
+\begin{stappen}
+P(S) = \frac{150}{500} = 0{,}30 & Een marginale kans: het totaal van de kolom strip. \\[3ex]
+P(S \gegeven J) = \frac{96}{200} = 0{,}48 & Alleen de rij jongere telt mee. \\[3ex]
+P(J \gegeven S) = \frac{96}{150} = 0{,}64 & Alleen de kolom strip telt mee.
+\end{stappen}}
+
+Let op: $P(S \gegeven J)$ en $P(J \gegeven S)$ zijn verschillende kansen. De teller is dezelfde, de noemer niet. Die twee door elkaar halen is een van de bekendste denkfouten in de kansrekening.
+
+\begin{oefeningen}
+\oef{h2-kruistabel}
+\end{oefeningen}
+
+%========================================================================================
+\section{Boomdiagrammen}
+
+\subsection{De productregel}
+
+Uit de definitie van $P(A \gegeven B)$ volgt meteen een formule voor de kans dat twee gebeurtenissen na elkaar gebeuren.
+
+\begin{theorie}
+\begin{stelling}{Productregel}
+Voor gebeurtenissen $A$ en $B$ met $P(A) > 0$ is \quad $\formule{P(A \cap B) = P(A) \cdot P(B \gegeven A)}$
+\end{stelling}
+\end{theorie}
+
+In een \textbf{boomdiagram} zet je op elke tak de voorwaardelijke kans, gegeven alles wat ervoor kwam. De kans op een pad is het product van de kansen langs het pad. Leiden meerdere paden naar wat je zoekt, dan tel je hun kansen op, want verschillende paden zijn onverenigbaar.
+
+\voorbeeld{}{In een vaas zitten 5 rode en 3 witte knikkers. Je trekt er twee na elkaar, zonder de eerste terug te leggen. Wat is de kans op twee rode? En op één van elke kleur?\label{vb:h2-boom}}{%
+\uitleg{Na de eerste trekking zitten er nog 7 knikkers in de vaas, en de kansen bij de tweede trekking hangen af van de eerste. Die voorwaardelijke kansen zetten we op de takken.}
+\figuren{\begin{tikzpicture}[x=2.2cm,y=.62cm]
+  \node[blad] (s) at (0,0) {start};
+  \node[blad] (r) at (1,1.8) {$R$}; \node[blad] (w) at (1,-1.8) {$W$};
+  \draw[tak] (s) -- node[kanslabel,above left] {$\frac58$} (r); \draw[tak] (s) -- node[kanslabel,below left] {$\frac38$} (w);
+  \node[blad] (rr) at (2,2.7) {$R$}; \node[blad] (rw) at (2,.9) {$W$};
+  \node[blad] (wr) at (2,-.9) {$R$}; \node[blad] (ww) at (2,-2.7) {$W$};
+  \draw[tak] (r) -- node[kanslabel,above] {$\frac47$} (rr); \draw[tak] (r) -- node[kanslabel,below] {$\frac37$} (rw);
+  \draw[tak] (w) -- node[kanslabel,above] {$\frac57$} (wr); \draw[tak] (w) -- node[kanslabel,below] {$\frac27$} (ww);
+  \foreach \n/\t in {rr/{RR: \tfrac{20}{56}},rw/{RW: \tfrac{15}{56}},wr/{WR: \tfrac{15}{56}},ww/{WW: \tfrac{6}{56}}}{\node[anchor=west,font=\small] at ($(\n)+(.2,0)$) {$\t$};}
+\end{tikzpicture}}
+\begin{stappenbreed}
+P(RR) = \frac58 \cdot \frac47 = \frac{20}{56} = \frac{5}{14} & Het bovenste pad. \\[3ex]
+P(RW) + P(WR) = \frac58 \cdot \frac37 + \frac38 \cdot \frac57 = \frac{30}{56} = \frac{15}{28} & Twee paden: optellen.
+\end{stappenbreed}}
+
+De vier eindkansen zijn samen 1: $\frac{20 + 15 + 15 + 6}{56} = 1$. Dat is een goede controle.
+
+\begin{werkwijze}
+Teken een boomdiagram met op elke tak de kans, gegeven wat ervoor gebeurde. Vermenigvuldig langs een pad. Tel de paden op die bij de gevraagde gebeurtenis horen. Controleer dat alle eindkansen samen 1 zijn.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h2-boom}
+\end{oefeningen}
+
+\subsection{Onafhankelijke gebeurtenissen}
+
+Leg je de eerste knikker terug, dan verandert de tweede trekking niet door de eerste. Zulke gebeurtenissen heten onafhankelijk: de voorwaarde verandert niets aan de kans.
+
+\begin{theorie}
+Twee gebeurtenissen $A$ en $B$ zijn \textbf{\textcolor{accent}{onafhankelijk}} als \quad $\formule{P(A \cap B) = P(A) \cdot P(B)}$
+
+\vspace{1mm}
+Is $P(B) > 0$, dan is dat hetzelfde als $\formule{P(A \gegeven B) = P(A)}$.
+\end{theorie}
+
+Onafhankelijk is iets anders dan onverenigbaar. Onverenigbare gebeurtenissen met een positieve kans zijn juist sterk afhankelijk: gebeurt de ene, dan is de kans op de andere 0.
+
+\voorbeeld{}{Je gooit met twee dobbelstenen. Is \textit{de eerste dobbelsteen is even} ($A$) onafhankelijk van \textit{de som is 7} ($B$)? En de gebeurtenissen \textit{sporten} en \textit{met de fiets komen} uit de Verken?\label{vb:h2-onafhankelijk}}{%
+\uitleg{We vergelijken telkens de kans op beide met het product van de kansen.}
+\begin{stappenbreed}
+P(A \cap B) = \frac{3}{36} = \frac{1}{12} & $(2, 5)$, $(4, 3)$ en $(6, 1)$. \\[3ex]
+P(A) \cdot P(B) = \frac12 \cdot \frac16 = \frac{1}{12} & Gelijk: onafhankelijk. Welke eerste worp je ook hebt, de kans op som 7 blijft $\frac16$. \\[3ex]
+P(S \cap F) = 0{,}30, \quad P(S) \cdot P(F) = 0{,}45 \cdot 0{,}5 = 0{,}225 & Verschillend: afhankelijk. Fietsers sporten vaker dan gemiddeld.
+\end{stappenbreed}}
+
+Bij herhaalde, onafhankelijke experimenten (een munt, een dobbelsteen, trekken met teruglegging) vermenigvuldig je de kansen gewoon: de kans op drie keer zes is $\bigl(\frac16\bigr)^3$.
+
+\begin{oefeningen}
+\oef{h2-onafhankelijk}
+\end{oefeningen}
+
+%========================================================================================
+\section{Totale kans en de wet van Bayes}
+
+\subsection{Een medische test}
+
+Een sneltest voor een virus is positief bij 95~\% van de besmette personen. Bij niet-besmette personen geeft hij in 4~\% van de gevallen toch een positief resultaat: een \textit{vals positief}. In een stad is 2~\% van de inwoners besmet. Iemand test positief. Hoe groot is de kans dat die persoon besmet is? Veel mensen gokken 95~\%. Een tabel met aantallen toont dat het veel minder is.
+
+\voorbeeld{}{Bereken de kans dat iemand die positief test, besmet is. Denk aan 10\,000 inwoners.\label{vb:h2-bayes}}{%
+\uitleg{We zetten de percentages om in aantallen voor 10\,000 inwoners, eerst per rij (besmet of niet), dan per kolom (positief of negatief). Dan lezen we af hoeveel van de positieven echt besmet zijn.}
+\figuren{\renewcommand{\arraystretch}{1.25}\begin{tabular}{l|cc|c}
+ & positief & negatief & totaal \\ \hline
+besmet & 190 & 10 & 200 \\
+niet besmet & 392 & 9408 & 9800 \\ \hline
+totaal & 582 & 9418 & 10\,000
+\end{tabular}}
+\begin{stappenbreed}
+200 \text{ besmet, waarvan } 0{,}95 \cdot 200 = 190 \text{ positief} & 2~\% van 10\,000, en 95~\% daarvan. \\[1ex]
+9800 \text{ niet besmet, waarvan } 0{,}04 \cdot 9800 = 392 \text{ positief} & De valse positieven. \\[1ex]
+P(\text{besmet} \gegeven \text{positief}) = \frac{190}{582} \approx 0{,}33 & Maar een derde van de positieven is besmet.
+\end{stappenbreed}}
+
+Er zijn veel meer valse positieven dan echte, omdat er zoveel meer niet-besmette mensen zijn. Daarom laat een arts een positieve sneltest bevestigen met een betere test. Dezelfde berekening kun je met kansen doen, en dan krijg je twee formules.
+
+\begin{theorie}
+\begin{stelling}{Wet van de totale kans}
+Voor gebeurtenissen $A$ en $B$ is \quad $\formule{P(B) = P(A) \cdot P(B \gegeven A) + P(\compl{A}) \cdot P(B \gegeven \compl{A})}$
+\end{stelling}
+
+\begin{stelling}{Wet van Bayes}
+Als $P(B) > 0$, dan is \quad $\formule{P(A \gegeven B) = \dfrac{P(A) \cdot P(B \gegeven A)}{P(B)}}$
+\end{stelling}
+
+\begin{bewijs}
+$B$ valt uiteen in de onverenigbare delen $A \cap B$ en $\compl{A} \cap B$. Met de somregel en de productregel is $P(B) = P(A)P(B \gegeven A) + P(\compl{A})P(B \gegeven \compl{A})$. Voor Bayes: $P(A \gegeven B) = \frac{P(A \cap B)}{P(B)}$, en volgens de productregel is $P(A \cap B) = P(A)P(B \gegeven A)$.
+\end{bewijs}
+\end{theorie}
+
+De wet van Bayes keert een voorwaardelijke kans om: uit $P(\text{positief} \gegeven \text{besmet})$, wat een labo meet, berekent ze $P(\text{besmet} \gegeven \text{positief})$, wat de patiënt wil weten. In het voorbeeld: $P(\text{positief}) = 0{,}02 \cdot 0{,}95 + 0{,}98 \cdot 0{,}04 = 0{,}0582$, en $P(\text{besmet} \gegeven \text{positief}) = \frac{0{,}019}{0{,}0582} \approx 0{,}33$.
+
+\begin{werkwijze}
+Maak een tabel met aantallen voor een ronde groep (bv. 10\,000), of een boomdiagram met de gegeven kansen. Zoek de totale kans op wat je waarneemt (zoals \textit{positief}) door alle paden ernaar op te tellen. De gevraagde voorwaardelijke kans is het gunstige pad gedeeld door die totale kans.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h2-bayes}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h2-o1}
+
+\oef{h2-o2}
+
+\oef{h2-o3}
+
+\oef{h2-o4}
+
+\oef{h2-o5}
+
+\oef{h2-o6}
+
+\oef{h2-o7}
+
+\oef{h2-o8}
+
+\oef{h2-o9}
+
+\oef{h2-o10}
+
+\oef{h2-o11}
+
+\oef{h2-o12}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{De oefening gebruikt een overgangsmatrix uit Matrices (hoofdstuk Matrixmodellen).}
+
+\begin{oefeningen}
+
+\oef{h2-koppel-2}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h2-t1}
+
+\oef{h2-t2}
+
+\oef{h2-t3}
+
+\oef{h2-t4}
+
+\oef{h2-t5}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h2-t1}{vb:h2-kruistabel}{oef:h2-kruistabel}%
+  \fv{oef:h2-t2}{vb:h2-boom}{oef:h2-boom}%
+  \fv{oef:h2-t3}{vb:h2-onafhankelijk}{oef:h2-onafhankelijk}%
+  \fv{oef:h2-t4}{vb:h2-bayes}{oef:h2-bayes}%
+  \fv{oef:h2-t5}{vb:h2-boom}{oef:h2-onafhankelijk}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: wat een voorwaardelijke kans is en hoe je ze in een kruistabel afleest, het verschil tussen $P(A \gegeven B)$ en $P(B \gegeven A)$, de productregel en hoe je een boomdiagram gebruikt, wanneer gebeurtenissen onafhankelijk zijn (en het verschil met onverenigbaar), de wet van de totale kans en de wet van Bayes. Vergelijk daarna met de kaders.
+\fi
