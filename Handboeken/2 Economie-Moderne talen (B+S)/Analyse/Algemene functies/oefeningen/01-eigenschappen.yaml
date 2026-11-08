@@ -1,0 +1,543 @@
+# Oefeningen van hoofdstuk 1. Zie oefeningenbank.py voor de velden.
+
+- id: h1-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Bereken $f(-2)$ als $f(x) = 2x^2 - 3x$.
+      antwoord: |-
+        14
+      uitwerking: |-
+        $2 \cdot 4 + 6 = 14$.
+    - opgave: |-
+        Los op: $x^2 - 5x + 6 = 0$.
+      antwoord: |-
+        $x = 2$ of $x = 3$
+      uitwerking: |-
+        $(x - 2)(x - 3) = 0$.
+    - opgave: |-
+        Ontbind: $x^3 - 9x$.
+      antwoord: |-
+        $x(x - 3)(x + 3)$
+      uitwerking: |-
+        $x(x^2 - 9) = x(x - 3)(x + 3)$.
+    - opgave: |-
+        Los op: $4 - 2x \geqslant 0$.
+      antwoord: |-
+        $x \leqslant 2$
+      uitwerking: |-
+        $-2x \geqslant -4$, dus $x \leqslant 2$ (delen door een negatief getal keert het teken om).
+    - opgave: |-
+        Schrijf als interval: $-1 < x \leqslant 5$.
+      antwoord: |-
+        $\left]-1, 5\right]$
+      uitwerking: |-
+        $\left]-1, 5\right]$.
+    - opgave: |-
+        Bereken $f(a + 1)$ als $f(x) = x^2$.
+      antwoord: |-
+        $a^2 + 2a + 1$
+      uitwerking: |-
+        $(a + 1)^2 = a^2 + 2a + 1$.
+
+- id: h1-verken
+  soort: start
+  figuur:
+    opties: |-
+      6.4cm
+    code: |-
+      \begin{tikzpicture}[x=.24cm,y=.36cm,font=\scriptsize]
+        \draw[black!14,very thin,xstep=3,ystep=1] (0,-3) grid (24,7);
+        \draw[->,grijs] (0,0) -- (25.5,0) node[right,text=black] {$t$};
+        \draw[->,grijs] (0,-3) -- (0,7.6) node[above,text=black] {$T$};
+        \foreach \t in {3,6,...,24}{\node[below,inner sep=1.5pt] at (\t,0) {$\t$};}
+        \foreach \t in {-2,2,4,6}{\node[left,inner sep=1.5pt] at (0,\t) {$\t$};}
+        \kromme{0}{24}{-4*cos(15*(\x-3))+2}
+      \end{tikzpicture}
+  opgave: |-
+    \blokkop{Verken} De grafiek toont de temperatuur $T$ (in $^\circ$C) op een winterdag, $t$ uur na middernacht.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Wanneer was het het warmst, en hoe warm?
+      antwoord: |-
+        om 15 uur, $6\,^\circ$C
+      uitwerking: |-
+        De top van de grafiek: $t = 15$, $T = 6$.
+    - opgave: |-
+        Wanneer vroor het?
+      antwoord: |-
+        van 0 tot 7 uur en van 23 tot 24 uur
+      uitwerking: |-
+        Waar de grafiek onder de $t$-as ligt: tot 7 uur en na 23 uur.
+    - opgave: |-
+        Wanneer werd het warmer?
+      antwoord: |-
+        van 3 tot 15 uur
+      uitwerking: |-
+        Waar de grafiek stijgt: van het dal in $t = 3$ tot de top in $t = 15$.
+
+- id: h1-domein
+  soort: kort
+  opgave: |-
+    Bepaal het domein.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x) = \dfrac{x + 3}{x^2 - x}$
+      antwoord: |-
+        $\R \setminus \{0, 1\}$
+      uitwerking: |-
+        $x^2 - x = x(x - 1) \neq 0$, dus $x \neq 0$ en $x \neq 1$.
+    - opgave: |-
+        $g(x) = \dfrac{1}{\sqrt{4 - x}}$
+      antwoord: |-
+        $\left]-\infty, 4\right[$
+      uitwerking: |-
+        $4 - x > 0$: strikt, want de wortel staat in de noemer.
+
+- id: h1-teken
+  soort: kort
+  opgave: |-
+    Bepaal de nulwaarden en stel de tekentabel op.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x) = x^2(x - 3)$
+      antwoord: |-
+        \tekentabel{cccccc}{x & & 0 & & 3 & }{f(x) & - & 0 & - & 0 & +}
+      uitwerking: |-
+        Nulwaarden $0$ en $3$. De factor $x^2$ is nooit negatief, dus het teken is dat van $x - 3$: \tekentabel{cccccc}{x & & 0 & & 3 & }{f(x) & - & 0 & - & 0 & +}
+    - opgave: |-
+        $g(x) = \dfrac{2 - x}{x + 1}$
+      antwoord: |-
+        \tekentabel{cccccc}{x & & -1 & & 2 & }{g(x) & - & | & + & 0 & -}
+      uitwerking: |-
+        Nulwaarde $2$, $g$ bestaat niet in $-1$: \tekentabel{cccccc}{x & & -1 & & 2 & \\\hline 2 - x & + & + & + & 0 & - \\ x + 1 & - & 0 & + & + & +}{g(x) & - & | & + & 0 & -}
+
+- id: h1-verloop
+  soort: kort
+  figuur:
+    opties: |-
+      4.4cm
+    code: |-
+      \begin{tikzpicture}[x=.6cm,y=.42cm,font=\scriptsize]
+        \rooster{-3}{1}{3}{-4}{1}{2}
+        \kromme{-3}{3}{(\x)^4/4-2*(\x)^2}
+      \end{tikzpicture}
+  opgave: |-
+    De figuur toont de grafiek van $f(x) = \frac14x^4 - 2x^2$. Geef de intervallen waar $f$ stijgt en daalt, en de extrema. Welke zijn absoluut?
+  antwoord: |-
+    dalend op $\left]-\infty, -2\right]$ en $[0, 2]$, stijgend op $[-2, 0]$ en $\left[2, +\infty\right[$; min. $-4$ in $\pm 2$ (absoluut), max. $0$ in $0$
+  uitwerking: |-
+    Dalend op $\left]-\infty, -2\right]$ en op $[0, 2]$, stijgend op $[-2, 0]$ en op $\left[2, +\infty\right[$. Minimum $f(-2) = f(2) = -4$, absoluut. Maximum $f(0) = 0$, niet absoluut: voor grote $x$ wordt $f(x)$ positief.
+
+- id: h1-even
+  soort: kort
+  opgave: |-
+    Even, oneven of geen van beide? Toon aan.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $f(x) = x^4 - 3x^2$
+      antwoord: |-
+        even
+      uitwerking: |-
+        $f(-x) = x^4 - 3x^2 = f(x)$.
+    - opgave: |-
+        $g(x) = \dfrac{x}{x^2 + 1}$
+      antwoord: |-
+        oneven
+      uitwerking: |-
+        $g(-x) = \dfrac{-x}{x^2 + 1} = -g(x)$.
+    - opgave: |-
+        $h(x) = x^3 + 1$
+      antwoord: |-
+        geen van beide
+      uitwerking: |-
+        $h(1) = 2$ en $h(-1) = 0$: $h(-1) \neq h(1)$ en $h(-1) \neq -h(1)$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h1-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    domein
+  opgave: |-
+    Bepaal het domein.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x) = \sqrt{2x + 5}$
+      antwoord: |-
+        $\left[-\frac52, +\infty\right[$
+      uitwerking: |-
+        $2x + 5 \geqslant 0 \iff x \geqslant -\frac52$.
+    - opgave: |-
+        $f(x) = \dfrac{\sqrt{x}}{x - 9}$
+      antwoord: |-
+        $\left[0, 9\right[ \cup \left]9, +\infty\right[$
+      uitwerking: |-
+        $x \geqslant 0$ en $x \neq 9$.
+    - opgave: |-
+        $f(x) = \dfrac{3}{x^2 + 4}$
+      antwoord: |-
+        $\R$
+      uitwerking: |-
+        $x^2 + 4 \geqslant 4$ is nooit nul.
+    - opgave: |-
+        $f(x) = \sqrt{x^2 - 2x}$
+      antwoord: |-
+        $\left]-\infty, 0\right] \cup \left[2, +\infty\right[$
+      uitwerking: |-
+        $x(x - 2) \geqslant 0$: buiten de nulwaarden $0$ en $2$, en in de nulwaarden zelf.
+
+- id: h1-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    grafiek lezen
+  figuur:
+    opties: |-
+      5.6cm
+    code: |-
+      \begin{tikzpicture}[x=.55cm,y=.55cm,font=\scriptsize]
+        \rooster{-4}{1}{5}{-2}{1}{3}
+        \draw[accent,thick] (-4,-2) -- (-2,2) -- (1,-1) -- (3,3) -- (5,1);
+        \vol{(-4,-2)} \open{(5,1)}
+      \end{tikzpicture}
+  opgave: |-
+    De figuur toont de grafiek van $f$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef het domein en het bereik.
+      antwoord: |-
+        $\dom f = \left[-4, 5\right[$, $\ber f = [-2, 3]$
+      uitwerking: |-
+        $\dom f = \left[-4, 5\right[$ en $\ber f = [-2, 3]$.
+    - opgave: |-
+        Geef de nulwaarden en het tekenverloop.
+      antwoord: |-
+        $-3$, $0$, $\frac32$; \tekentabel{cccccccc}{x & & -3 & & 0 & & \frac32 & }{f(x) & - & 0 & + & 0 & - & 0 & +}
+      uitwerking: |-
+        Op elk lijnstuk een nulwaarde berekenen: $-3$, $0$ en $\frac32$. Tekentabel op $\left[-4, 5\right[$: \tekentabel{cccccccc}{x & & -3 & & 0 & & \frac32 & }{f(x) & - & 0 & + & 0 & - & 0 & +}
+    - opgave: |-
+        Waar stijgt $f$? Wat is de grootste en de kleinste functiewaarde?
+      antwoord: |-
+        stijgend op $[-4, -2]$ en $[1, 3]$; grootste $3$, kleinste $-2$
+      uitwerking: |-
+        Stijgend op $[-4, -2]$ en op $[1, 3]$. De grootste functiewaarde is $f(3) = 3$, de kleinste $f(-4) = -2$.
+
+- id: h1-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    even en oneven
+  opgave: |-
+    Even, oneven of geen van beide?
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $f(x) = x^5 + x$
+      antwoord: |-
+        oneven
+      uitwerking: |-
+        $f(-x) = -x^5 - x = -f(x)$.
+    - opgave: |-
+        $f(x) = |x| + x^2$
+      antwoord: |-
+        even
+      uitwerking: |-
+        $|{-x}| = |x|$, dus $f(-x) = f(x)$.
+    - opgave: |-
+        $f(x) = \sqrt{x}$
+      antwoord: |-
+        geen van beide
+      uitwerking: |-
+        $1 \in \dom f$ maar $-1 \notin \dom f$: het domein is niet symmetrisch.
+
+- id: h1-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    tekentabel
+  opgave: |-
+    Stel de tekentabel op.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x) = -x^3 + x^2 + 2x$
+      antwoord: |-
+        \tekentabel{cccccccc}{x & & -1 & & 0 & & 2 & }{f(x) & + & 0 & - & 0 & + & 0 & -}
+      uitwerking: |-
+        $f(x) = -x(x^2 - x - 2) = -x(x - 2)(x + 1)$. Nulwaarden $-1$, $0$, $2$; $f(-2) = 8$, $f(-\frac12) = -\frac58$, $f(1) = 2$, $f(3) = -12$: \tekentabel{cccccccc}{x & & -1 & & 0 & & 2 & }{f(x) & + & 0 & - & 0 & + & 0 & -}
+    - opgave: |-
+        $g(x) = \dfrac{x^2 - 4}{x}$
+      antwoord: |-
+        \tekentabel{cccccccc}{x & & -2 & & 0 & & 2 & }{g(x) & - & 0 & + & | & - & 0 & +}
+      uitwerking: |-
+        Nulwaarden $\pm 2$, $g$ bestaat niet in $0$. $g(-3) = -\frac53$, $g(-1) = 3$, $g(1) = -3$, $g(3) = \frac53$: \tekentabel{cccccccc}{x & & -2 & & 0 & & 2 & }{g(x) & - & 0 & + & | & - & 0 & +}
+
+- id: h1-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    bereik berekenen
+  opgave: |-
+    Bepaal het bereik. Tip: kwadraat afsplitsen.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $f(x) = x^2 - 6x + 10$
+      antwoord: |-
+        $\left[1, +\infty\right[$
+      uitwerking: |-
+        $f(x) = (x - 3)^2 + 1 \geqslant 1$, en elke waarde vanaf $1$ wordt bereikt.
+    - opgave: |-
+        $g(x) = -2x^2 + 4x$
+      antwoord: |-
+        $\left]-\infty, 2\right]$
+      uitwerking: |-
+        $g(x) = -2(x - 1)^2 + 2 \leqslant 2$.
+    - opgave: |-
+        $h(x) = \sqrt{9 - x^2}$
+      antwoord: |-
+        $[0, 3]$
+      uitwerking: |-
+        $9 - x^2$ neemt op $[-3, 3]$ alle waarden van $0$ tot $9$ aan, de wortel dus van $0$ tot $3$. De grafiek is een halve cirkel.
+
+- id: h1-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een grafiek ontwerpen
+  opgave: |-
+    Schets de grafiek van een functie met domein $[-3, 3]$, bereik $[-1, 4]$, nulwaarden $-2$ en $1$, en een maximum $4$ in $x = -1$. Is er maar één zo'n functie?
+  antwoord: |-
+    bijvoorbeeld de gebroken lijn door $(-3, -1)$, $(-2, 0)$, $(-1, 4)$, $(1, 0)$, $(3, -1)$; er zijn er oneindig veel
+  uitwerking: |-
+    Bijvoorbeeld de gebroken lijn door $(-3, -1)$, $(-2, 0)$, $(-1, 4)$, $(1, 0)$ en $(3, -1)$. Er zijn oneindig veel zulke functies: de gegevens leggen alleen enkele punten vast.
+
+- id: h1-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    som en product
+  opgave: |-
+    Neem twee functies $f$ en $g$ met domein $\R$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bewijs: als $f$ en $g$ oneven zijn, dan is $f + g$ oneven.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $(f + g)(-x) = f(-x) + g(-x) = -f(x) - g(x) = -(f + g)(x)$.
+    - opgave: |-
+        Bewijs: als $f$ en $g$ oneven zijn, dan is $f \cdot g$ even.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $(f g)(-x) = f(-x)\,g(-x) = (-f(x))(-g(x)) = f(x)\,g(x)$.
+    - opgave: |-
+        Wat is het product van een even en een oneven functie?
+      antwoord: |-
+        oneven
+      uitwerking: |-
+        $f(-x)\,g(-x) = f(x)\,(-g(x)) = -f(x)\,g(x)$: oneven.
+
+- id: h1-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een doos vouwen
+  figuur:
+    opties: |-
+      5.2cm
+    code: |-
+      \begin{tikzpicture}[x=.68cm,y=.0115cm,font=\scriptsize]
+        \draw[black!14,very thin,xstep=1,ystep=50] (0,0) grid (6,300);
+        \draw[->,grijs] (0,0) -- (6.5,0) node[right,text=black] {$x$};
+        \draw[->,grijs] (0,0) -- (0,330) node[above,text=black] {$V$};
+        \foreach \t in {1,...,6}{\node[below,inner sep=1.5pt] at (\t,0) {$\t$};}
+        \foreach \t in {100,200,300}{\node[left,inner sep=1.5pt] at (0,\t) {$\t$};}
+        \kromme{0}{6}{\x*(20-2*\x)*(12-2*\x)}
+      \end{tikzpicture}
+  opgave: |-
+    Uit een rechthoekig karton van $20$ cm op $12$ cm knip je in elke hoek een vierkant met zijde $x$ cm weg. Je plooit de randen omhoog tot een doos zonder deksel.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat de inhoud \mbox{$V(x) = x(20 - 2x)(12 - 2x)$} is, en bepaal het domein in deze context.
+      antwoord: |-
+        $\left]0, 6\right[$
+      uitwerking: |-
+        Het grondvlak meet $(20 - 2x)$ op $(12 - 2x)$, de hoogte is $x$. In de context moet $x > 0$ en $12 - 2x > 0$: $\dom V = \left]0, 6\right[$.
+    - opgave: |-
+        De functie \mbox{$x \mapsto x(20 - 2x)(12 - 2x)$} heeft als domein $\R$. Stel de tekentabel op.
+      antwoord: |-
+        \tekentabel{cccccccc}{x & & 0 & & 6 & & 10 & }{V(x) & - & 0 & + & 0 & - & 0 & +}
+      uitwerking: |-
+        Nulwaarden $0$, $6$ en $10$; de hoogstegraadsterm is $4x^3$: \tekentabel{cccccccc}{x & & 0 & & 6 & & 10 & }{V(x) & - & 0 & + & 0 & - & 0 & +}
+    - opgave: |-
+        Lees op de grafiek af voor welke $x$ de inhoud het grootst is, en hoe groot ze dan is.
+      antwoord: |-
+        $x \approx 2{,}4$ cm, $V \approx 263$ cm$^3$
+      uitwerking: |-
+        Ongeveer $x = 2{,}4$ cm, met $V(2{,}4) = 2{,}4 \cdot 15{,}2 \cdot 7{,}2 \approx 263$ cm$^3$. (Met afgeleiden vind je later $x \approx 2{,}43$.)
+
+- id: h1-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    even plus oneven
+  opgave: |-
+    Neem een functie $f$ met domein $\R$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $g(x) = \frac12\bigl(f(x) + f(-x)\bigr)$ even is en $h(x) = \frac12\bigl(f(x) - f(-x)\bigr)$ oneven, en dat $f = g + h$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $g(-x) = \frac12\bigl(f(-x) + f(x)\bigr) = g(x)$ en $h(-x) = \frac12\bigl(f(-x) - f(x)\bigr) = -h(x)$. Optellen: $g(x) + h(x) = f(x)$.
+    - opgave: |-
+        Schrijf $f(x) = x^3 + x^2 - 2x + 1$ als som van een even en een oneven functie.
+      antwoord: |-
+        $(x^2 + 1) + (x^3 - 2x)$
+      uitwerking: |-
+        $g(x) = x^2 + 1$ (de even machten), $h(x) = x^3 - 2x$ (de oneven machten).
+    - opgave: |-
+        Welke functie is zowel even als oneven?
+      antwoord: |-
+        de nulfunctie
+      uitwerking: |-
+        $f(x) = f(-x) = -f(x)$ geeft $2f(x) = 0$: alleen $f(x) = 0$ (op een symmetrisch domein).
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h1-koppel-1
+  soort: koppel
+  niveau: 1
+  koppel:
+    rubriek: data
+    onderwerp: Statistiek
+  thema: |-
+    symmetrie van de normale verdeling
+  opgave: |-
+    Toon aan dat de dichtheidsfunctie van de standaardnormale verdeling even is:
+    \[\varphi(z) = \frac{1}{\sqrt{2\pi}}\,\mathrm{e}^{-z^2/2}.\]
+    Leg uit waarom daaruit volgt dat $P(Z \leqslant -1) = P(Z \geqslant 1)$.
+  antwoord: |-
+    $\varphi(-z) = \varphi(z)$; de oppervlakten links van $-1$ en rechts van $1$ zijn elkaars spiegelbeeld
+  uitwerking: |-
+    $(-z)^2 = z^2$, dus $\varphi(-z) = \varphi(z)$. De grafiek is symmetrisch ten opzichte van de verticale as, dus de oppervlakte links van $-1$ is het spiegelbeeld van die rechts van $1$.
+
+- id: h1-koppel-3
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Integralen
+  thema: |-
+    integraal van een oneven functie
+  opgave: |-
+    Leg met een figuur uit waarom $\int_{-a}^{a} f(x)\,\mathrm{d}x = 0$ als $f$ oneven is. Bereken daarmee zonder rekenwerk $\int_{-2}^{2} (x^3 - 3x)\,\mathrm{d}x$.
+  antwoord: |-
+    $0$
+  uitwerking: |-
+    Door de puntsymmetrie ligt er links van de $y$-as evenveel oppervlakte onder de as als er rechts boven ligt (en omgekeerd): ze heffen elkaar op. $x^3 - 3x$ is oneven, dus de integraal is $0$.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h1-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    domein
+  opgave: |-
+    Bepaal het domein van $f(x) = \dfrac{\sqrt{x + 2}}{x - 3}$.
+  antwoord: |-
+    $\left[-2, 3\right[ \cup \left]3, +\infty\right[$
+  uitwerking: |-
+    $x + 2 \geqslant 0$ en $x \neq 3$: $\left[-2, 3\right[ \cup \left]3, +\infty\right[$.
+
+- id: h1-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    tekentabel
+  opgave: |-
+    Bepaal de nulwaarden en de tekentabel van $f(x) = x^3 - x^2 - 6x$.
+  antwoord: |-
+    \tekentabel{cccccccc}{x & & -2 & & 0 & & 3 & }{f(x) & - & 0 & + & 0 & - & 0 & +}
+  uitwerking: |-
+    $f(x) = x(x - 3)(x + 2)$, nulwaarden $-2$, $0$, $3$: \tekentabel{cccccccc}{x & & -2 & & 0 & & 3 & }{f(x) & - & 0 & + & 0 & - & 0 & +}
+
+- id: h1-t3
+  soort: test
+  niveau: 2
+  thema: |-
+    verloop aflezen
+  figuur:
+    opties: |-
+      4.6cm
+    code: |-
+      \begin{tikzpicture}[x=.55cm,y=.38cm,font=\scriptsize]
+        \rooster{-3}{1}{3}{-4}{1}{4}
+        \kromme{-3.4}{3.4}{-(\x)^3/4+3*\x}
+      \end{tikzpicture}
+  opgave: |-
+    De figuur toont de grafiek van $f(x) = -\frac14x^3 + 3x$. Geef waar $f$ stijgt en daalt, en de extrema.
+  antwoord: |-
+    dalend op $\left]-\infty, -2\right]$ en $\left[2, +\infty\right[$, stijgend op $[-2, 2]$; min. $-4$ in $-2$, max. $4$ in $2$
+  uitwerking: |-
+    Dalend op $\left]-\infty, -2\right]$, stijgend op $[-2, 2]$, dalend op $\left[2, +\infty\right[$. Minimum $f(-2) = -4$, maximum $f(2) = 4$, geen van beide absoluut.
+
+- id: h1-t4
+  soort: test
+  niveau: 1
+  thema: |-
+    even en oneven
+  opgave: |-
+    Even, oneven of geen van beide?
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $f(x) = \dfrac{x}{x^4 + 1}$
+      antwoord: |-
+        oneven
+      uitwerking: |-
+        $f(-x) = \dfrac{-x}{x^4 + 1} = -f(x)$.
+    - opgave: |-
+        $g(x) = x^2 - 2|x|$
+      antwoord: |-
+        even
+      uitwerking: |-
+        $g(-x) = x^2 - 2|x| = g(x)$.
+    - opgave: |-
+        $h(x) = x^2 - 2x$
+      antwoord: |-
+        geen van beide
+      uitwerking: |-
+        $h(1) = -1$, $h(-1) = 3$.

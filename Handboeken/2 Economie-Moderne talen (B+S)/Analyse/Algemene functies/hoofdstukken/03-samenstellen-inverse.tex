@@ -1,0 +1,174 @@
+%----------------------------------------------------------------------------------------
+% SAMENSTELLEN EN INVERSE FUNCTIES. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h3-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{3}{Samenstellen en inverse functies}
+
+\lkr{Leerplan B+S: LPD 5-6 (algemene functies), het deel over samengestelde en inverse functies. Beide begrippen zijn voorbereiding: de samenstelling voor de kettingregel (Afgeleiden), de inverse voor de logaritme en de cyclometrische functies. Leg de nadruk op het domein: daar gaan de meeste fouten.}
+
+Je kunt functies na elkaar uitvoeren: eerst verdubbelen, dan de wortel nemen. Of je kunt een functie terugdraaien: welke $x$ hoort bij een gegeven beeld? Zo ontstaan samengestelde en inverse functies.
+
+\begin{oefeningen}[Start]
+\oef{h3-start-1}
+
+\oef{h3-verken}
+\end{oefeningen}
+
+%========================================================================================
+\section{Samengestelde functies}
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{samenstelling}} $f \circ g$ (lees: $f$ na $g$) is de functie
+\[\formule{(f \circ g)(x) = f\bigl(g(x)\bigr)} \qquad \text{met} \qquad \formule{\dom(f \circ g) = \{x \in \dom g \mid g(x) \in \dom f\}}.\]
+\end{theorie}
+
+Eerst werkt $g$ op $x$, dan werkt $f$ op het resultaat. De volgorde telt: $f \circ g$ en $g \circ f$ zijn meestal verschillend.
+
+\voorbeeld{}{Neem $f(x) = \sqrt{x}$ en $g(x) = 3 - x$. Bepaal $f \circ g$ en $g \circ f$ met hun domein.\label{vb:h3-samenstellen}}{%
+\uitleg{Vul het voorschrift van de binnenste functie in de buitenste in. Voor het domein: $x$ moet in het domein van de binnenste liggen, en het resultaat in het domein van de buitenste.}
+\begin{stappenbreed}
+(f \circ g)(x) = f(3 - x) = \sqrt{3 - x} & Eerst $g$, dan $f$. \\
+\dom(f \circ g) = \left]-\infty, 3\right] & $g(x) = 3 - x \geqslant 0$. \\
+(g \circ f)(x) = g(\sqrt{x}) = 3 - \sqrt{x} & Eerst $f$, dan $g$. \\
+\dom(g \circ f) = \left[0, +\infty\right[ & $x$ moet in $\dom f$ liggen.
+\end{stappenbreed}}
+
+Omgekeerd kun je een ingewikkelde functie \textit{ontbinden} als samenstelling van eenvoudige. Dat heb je later nodig om afgeleiden te berekenen.
+
+\voorbeeld{}{Schrijf $h(x) = (2x + 1)^5$ als samenstelling $f \circ g$.\label{vb:h3-ontbinden}}{%
+\uitleg{Zoek wat je eerst uitrekent als je $h(x)$ voor een getal berekent: dat is de binnenste functie.}
+\begin{stappenbreed}
+g(x) = 2x + 1 & Eerst reken je $2x + 1$ uit. \\
+f(x) = x^5 & Dan neem je de vijfde macht. \\
+(f \circ g)(x) = (2x + 1)^5 = h(x) & Controle.
+\end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h3-samenstellen}
+\end{oefeningen}
+
+%========================================================================================
+\section{Inverse functies}
+
+\begin{theorie}
+Een functie $f$ is \textbf{\textcolor{accent}{injectief}} als verschillende getallen verschillende beelden hebben: $\formule{x_1 \neq x_2 \Rightarrow f(x_1) \neq f(x_2)}$.
+
+Dan heeft $f$ een \textbf{\textcolor{accent}{inverse functie}} $\inv{f}$, met
+\[\formule{\inv{f}(y) = x \iff f(x) = y}, \qquad \formule{\dom \inv{f} = \ber f}, \qquad \formule{\ber \inv{f} = \dom f}.\]
+De grafiek van $\inv{f}$ is het spiegelbeeld van die van $f$ om de rechte $\formule{y = x}$.
+\end{theorie}
+
+De inverse draait $f$ terug: $\inv{f}\bigl(f(x)\bigr) = x$. Op de grafiek zie je of $f$ injectief is: elke horizontale rechte snijdt ze hoogstens één keer. Een functie die overal stijgt of overal daalt, is dus injectief. De notatie $\inv{f}$ betekent hier niet $\frac{1}{f}$.
+
+\voorbeeld{}{Bepaal de inverse van $f(x) = 2x + 3$.\label{vb:h3-inverse}}{%
+\uitleg{Schrijf $y = f(x)$ en los op naar $x$. Zo vind je bij elk beeld $y$ de $x$ terug. Wissel daarna de letters, zodat de veranderlijke weer $x$ heet.}
+\begin{stappenbreed}
+y = 2x + 3 \iff x = \frac{y - 3}{2} & Oplossen naar $x$. \\
+\inv{f}(x) = \frac{x - 3}{2} & Letters wisselen. \\
+\inv{f}\bigl(f(1)\bigr) = \inv{f}(5) = 1 & Controle.
+\end{stappenbreed}}
+
+\begin{werkwijze}
+Ga na dat $f$ injectief is, en bepaal het bereik van $f$: dat wordt het domein van $\inv{f}$. Schrijf $y = f(x)$, los op naar $x$, en wissel $x$ en $y$. Controleer met één getal.
+\end{werkwijze}
+
+\voorbeeld{}{Bepaal de inverse van $f(x) = \sqrt{x - 1}$, met haar domein, en teken beide grafieken.\label{vb:h3-wortel}}{%
+\naast{%
+\uitleg{Het bereik van $f$ is $\left[0, +\infty\right[$: dat wordt het domein van de inverse. Zonder die voorwaarde zou je ook negatieve $x$ toelaten.}
+\begin{stappenvrij}{4.3cm}{3.4cm}
+y = \sqrt{x - 1},\ y \geqslant 0 & \\
+x = y^2 + 1 & Kwadrateren. \\
+\inv{f}(x) = x^2 + 1 & Letters wisselen. \\
+\dom \inv{f} = \left[0, +\infty\right[ & $= \ber f$.
+\end{stappenvrij}
+De grafiek van $\inv{f}$ is een halve parabool: het spiegelbeeld van die van $f$ om $y = x$.}{%
+\begin{tikzpicture}[x=.5cm,y=.5cm,font=\scriptsize]
+  \rooster{-1}{1}{5}{-1}{1}{5}
+  \draw[grijs,dashed] (-1,-1) -- (5.2,5.2) node[above right,text=black] {$y = x$};
+  \kromme{1}{5}{sqrt(\x-1)}
+  \kromme{0}{2}{(\x)^2+1}
+  \vol{(1,0)} \vol{(0,1)}
+  \node[below,text=accent] at (4.3,1.8) {$f$};
+  \node[left,text=accent] at (1.8,4.2) {$\inv{f}$};
+\end{tikzpicture}}}
+
+Is $f$ niet injectief, dan kun je het domein beperken tot een deel waarop $f$ wel injectief is.
+
+\voorbeeld{}{$f(x) = (x - 1)^2$ is niet injectief. Beperk het domein zodat $f$ een inverse heeft, en bepaal die.\label{vb:h3-beperken}}{%
+\uitleg{De parabool daalt tot de top in $x = 1$ en stijgt daarna. Neem het stijgende deel.}
+\begin{stappenbreed}
+f(0) = f(2) = 1 & Niet injectief. \\
+\dom f = \left[1, +\infty\right[,\ \ber f = \left[0, +\infty\right[ & Het stijgende deel. \\
+y = (x - 1)^2,\ x \geqslant 1 \iff x = 1 + \sqrt{y} & De positieve wortel, want $x - 1 \geqslant 0$. \\
+\inv{f}(x) = 1 + \sqrt{x},\ \dom \inv{f} = \left[0, +\infty\right[ &
+\end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h3-inverse}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h3-o1}
+
+\oef{h3-o2}
+
+\oef{h3-o3}
+
+\oef{h3-o4}
+
+\oef{h3-o5}
+
+\oef{h3-o6}
+
+\oef{h3-o7}
+
+\oef{h3-o8}
+
+\oef{h3-o9}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{Exponentiële en logaritmische functies en Goniometrische functies: kijk na wat al gezien is. Het pakket legt de volgorde niet vast.}
+
+\begin{oefeningen}
+\oef{h3-koppel-1}
+
+\oef{h3-koppel-2}
+
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h3-t1}
+
+\oef{h3-t2}
+
+\oef{h3-t3}
+
+\oef{h3-t4}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h3-t1}{vb:h3-samenstellen}{oef:h3-samenstellen}%
+  \fv{oef:h3-t2}{vb:h3-ontbinden}{oef:h3-samenstellen}%
+  \fv{oef:h3-t3}{vb:h3-inverse}{oef:h3-inverse}%
+  \fv{oef:h3-t4}{vb:h3-wortel}{oef:h3-inverse}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: de definitie van $f \circ g$ met haar domein, hoe je een functie ontbindt, wanneer een functie injectief is, hoe je een inverse bepaalt, het verband tussen domein en bereik van $f$ en $\inv{f}$, en hoe hun grafieken liggen. Vergelijk daarna met de kaders.
+\fi
