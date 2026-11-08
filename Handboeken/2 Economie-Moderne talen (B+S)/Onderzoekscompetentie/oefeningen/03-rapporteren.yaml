@@ -1,0 +1,244 @@
+# Oefeningen van hoofdstuk 3. Zie oefeningenbank.py voor de velden.
+
+- id: h3-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer} Rond af op een zinvolle nauwkeurigheid.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Een lengte, gemeten met een meetlat in mm: $12{,}3456$ cm.
+      antwoord: |-
+        $12{,}3$ cm
+      uitwerking: |-
+        Een meetlat met mm-verdeling geeft hoogstens $0{,}1$ cm nauwkeurig.
+    - opgave: |-
+        Het gemiddelde van $3$, $4$ en $4$ kinderen per gezin: $3{,}666\ldots$
+      antwoord: |-
+        $3{,}7$
+      uitwerking: |-
+        Eén decimaal volstaat; meer suggereert een precisie die er niet is.
+    - opgave: |-
+        Een kans berekend als $\frac{1}{6}$.
+      antwoord: |-
+        $\frac16$ of $0{,}167$
+      uitwerking: |-
+        Exact $\frac16$; als decimaal getal bijvoorbeeld $0{,}167$.
+    - opgave: |-
+        Een tijd van $2{,}0063$ s, gemeten met een chronometer in honderdsten.
+      antwoord: |-
+        $2{,}01$ s
+      uitwerking: |-
+        Op honderdsten: $2{,}01$ s.
+
+- id: h3-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken} Lees dit stukje uit een verslag: \textit{Ik heb alles gemeten en het klopte ongeveer. De formule is $x^2$. Dus het besluit is dat het werkt.}
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Welke informatie ontbreekt om te begrijpen wat er onderzocht is?
+      antwoord: |-
+        de vraag, wat gemeten werd, welke formule waarvoor
+      uitwerking: |-
+        Wat is de vraag? Wat werd gemeten, hoe en hoeveel keer? Wat stelt $x$ voor, en waarvoor is $x^2$ de formule? Wat betekent \textit{ongeveer} en \textit{het werkt}?
+    - opgave: |-
+        Herschrijf het in drie precieze zinnen, met een voorbeeld naar keuze.
+      antwoord: |-
+        open
+      uitwerking: |-
+        Bijvoorbeeld: \textit{We onderzochten hoe de remafstand $s$ (in m) van een fiets afhangt van de snelheid $v$ (in m/s). Bij tien metingen lagen de punten $(v^2, s)$ dicht bij een rechte door de oorsprong ($r = 0{,}97$). Dat ondersteunt het model $s = c\,v^2$, met $c \approx 0{,}08$ s$^2$/m.}
+
+- id: h3-schrijven
+  soort: kort
+  opgave: |-
+    Verbeter de zin.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        \textit{De oppervlakte is 50 en dat is het grootst bij 5.}
+      antwoord: |-
+        met symbolen, eenheden en de veranderlijke
+      uitwerking: |-
+        \textit{De oppervlakte $A(x)$ is maximaal voor $x = 5$ m, en is dan $50$ m$^2$.}
+    - opgave: |-
+        \textit{Uit de grafiek zie je dat het altijd stijgt, dus dat is bewezen.}
+      antwoord: |-
+        een grafiek is geen bewijs
+      uitwerking: |-
+        Een grafiek toont maar een deel van het domein en is geen bewijs. Beter: \textit{De grafiek suggereert dat $f$ stijgt. Inderdaad is $f'(x) = 3x^2 + 1 > 0$ voor alle $x$.}
+
+- id: h3-figuren
+  soort: kort
+  opgave: |-
+    Een leerling maakt een grafiek van de temperatuur van thee in de tijd. Op de assen staat niets, en de punten zijn verbonden met rechte lijnstukken. Geef drie verbeteringen.
+  antwoord: |-
+    assen met naam en eenheid, een model in plaats van lijnstukken, een bijschrift
+  uitwerking: |-
+    Benoem de assen met eenheid (tijd in minuten, temperatuur in $^\circ$C). Teken de meetpunten als punten en eventueel een passend model, geen lijnstukken ertussen (die suggereren metingen die er niet zijn). Voeg een bijschrift toe dat zegt wat de figuur toont.
+
+- id: h3-bronnen
+  soort: kort
+  opgave: |-
+    Moet je in deze gevallen een bron vermelden?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Je gebruikt de stelling van Pythagoras.
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: algemeen bekende leerstof hoef je niet te vermelden.
+    - opgave: |-
+        Je neemt de bevolkingscijfers van België over van een website.
+      antwoord: |-
+        ja
+      uitwerking: |-
+        Ja: organisatie, titel van de tabel, website en raadpleegdatum.
+    - opgave: |-
+        Een AI-hulpmiddel stelde de opbouw van je verslag voor.
+      antwoord: |-
+        ja, volgens de afspraken van de school
+      uitwerking: |-
+        Ja: vermeld welk hulpmiddel en waarvoor je het gebruikte, volgens de afspraken van de school.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h3-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    de juiste plaats
+  opgave: |-
+    In welk deel van het verslag hoort elk stuk tekst thuis?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        \textit{We maten de periode telkens over tien slingeringen, en deelden door tien.}
+      antwoord: |-
+        methode
+      uitwerking: |-
+        Methode.
+    - opgave: |-
+        \textit{Het model voorspelt goed tot een lengte van 1 m; voor langere slingers hebben we geen metingen.}
+      antwoord: |-
+        besluit
+      uitwerking: |-
+        Besluit (de grenzen van het antwoord).
+    - opgave: |-
+        \textit{De chronometer met de hand bedienen was de grootste bron van fouten; een sensor zou beter zijn.}
+      antwoord: |-
+        reflectie
+      uitwerking: |-
+        Reflectie.
+
+- id: h3-o2
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een redenering opschrijven
+  opgave: |-
+    Schrijf de redenering voor het aantal diagonalen van een $n$-hoek (hoofdstuk 1) uit zoals in een verslag: met een definitie van de symbolen, in volzinnen, en met de formule in een zin.
+  antwoord: |-
+    open
+  uitwerking: |-
+    Bijvoorbeeld: \textit{Noem $d(n)$ het aantal diagonalen van een veelhoek met $n$ hoekpunten. Uit elk hoekpunt vertrekken $n - 3$ diagonalen, want het is niet verbonden met zichzelf en met zijn twee buren. Zo tellen we $n(n - 3)$ diagonalen, maar elke diagonaal twee keer, eens vanuit elk eindpunt. Dus is $d(n) = \frac{n(n - 3)}{2}$.}
+
+- id: h3-o3
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    nalezen
+  opgave: |-
+    Maak met de theorie en de werkwijze van dit hoofdstuk een checklist van minstens acht punten om een verslag na te lezen. Gebruik ze om het verslag van een klasgenoot na te lezen, en geef twee tips.
+  antwoord: |-
+    open
+  uitwerking: |-
+    Bijvoorbeeld: Is de vraag precies? Staan er deelvragen? Kan iemand de methode herhalen? Hebben alle figuren assen met eenheden en een bijschrift? Zijn alle symbolen gedefinieerd? Staan formules in zinnen? Is de nauwkeurigheid zinvol? Beantwoordt het besluit de vraag, met grenzen? Is er een reflectie? Zijn alle bronnen vermeld?
+
+- id: h3-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een presentatie
+  opgave: |-
+    Je hebt vijf minuten om je onderzoek voor te stellen. Welke drie dingen moet het publiek zeker onthouden? Ontwerp drie dia's, met per dia één boodschap en een figuur.
+  antwoord: |-
+    open
+  uitwerking: |-
+    Bijvoorbeeld: dia 1, de vraag (met een foto of schets van de situatie); dia 2, het belangrijkste resultaat (één figuur met het model); dia 3, het antwoord en één beperking. Details staan in het verslag, niet op de dia's.
+
+- id: h3-o5
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    reflecteren
+  opgave: |-
+    Schrijf een reflectie van een halve pagina over een onderzoek dat je deed (of over een opdracht uit deze cursus). Beantwoord: wat liep anders dan gepland, wat zou je anders doen, en welke nieuwe vraag kwam er op?
+  antwoord: |-
+    open
+  uitwerking: |-
+    Een goede reflectie is concreet (\textit{we maten te weinig punten boven 1 m} in plaats van \textit{we hadden beter moeten meten}) en eindigt met een vraag die een volgend onderzoek kan zijn.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h3-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: data
+    onderwerp: Statistiek
+  thema: |-
+    een resultaat met onzekerheid
+  opgave: |-
+    Tien metingen van $g$ geven een gemiddelde van $9{,}78$ m/s$^2$ met standaardafwijking $0{,}12$ m/s$^2$. Hoe rapporteer je dat eerlijk? Tip: de standaardafwijking van het gemiddelde is $\frac{s}{\sqrt n}$.
+  antwoord: |-
+    $g \approx 9{,}78 \pm 0{,}04$ m/s$^2$
+  uitwerking: |-
+    $\frac{0{,}12}{\sqrt{10}} \approx 0{,}04$: \textit{$g = 9{,}78 \pm 0{,}04$ m/s$^2$ (gemiddelde van tien metingen, met de standaardafwijking van het gemiddelde)}. Een 95\,\%-betrouwbaarheidsinterval is ongeveer twee keer zo breed (zie Statistiek).
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h3-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    precies schrijven
+  opgave: |-
+    Verbeter: \textit{v = 13,888888 dus hij reed te snel.} (Gegeven: iemand reed 50 km in 1 uur; de toegelaten snelheid is 50 km/h.)
+  antwoord: |-
+    $v = 50$ km/h $\approx 13{,}9$ m/s, niet te snel
+  uitwerking: |-
+    \textit{De gemiddelde snelheid is $v = \frac{50 \text{ km}}{1 \text{ h}} = 50$ km/h $\approx 13{,}9$ m/s.} Dat is niet meer dan de toegelaten $50$ km/h. Het oorspronkelijke besluit klopte niet, het getal had geen eenheid, en te veel decimalen.
+
+- id: h3-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    een figuur
+  opgave: |-
+    Noem drie dingen die een goede figuur in een verslag zeker heeft.
+  antwoord: |-
+    assen met naam en eenheid, duidelijke schaal, bijschrift
+  uitwerking: |-
+    Assen met een naam en een eenheid, een duidelijke schaal, en een bijschrift dat zegt wat je moet zien.
+
+- id: h3-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    bronnen
+  opgave: |-
+    Wat vermeld je minstens bij een website als bron?
+  antwoord: |-
+    wie, wat, waar, wanneer
+  uitwerking: |-
+    De auteur of organisatie, de titel, het webadres, en de datum waarop je de pagina raadpleegde.
