@@ -111,10 +111,11 @@ Een percentage hoort bij een status: ⚪ **gepland** (0 %): nog niet begonnen, �
 | Rationale functies | Analyse | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Limieten en afgeleiden | Analyse | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | [Integralen](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Analyse/Integralen/README.md>) | Analyse | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
-| Matrices | Algebra | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
+| [Matrices](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Algebra/Matrices/README.md>) | Algebra | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | Complexe getallen | Algebra | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Groepen | Algebra | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Ruimtemeetkunde | Meetkunde | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
+| [Rijen](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Discrete wiskunde/Rijen/README.md>) | Discrete wiskunde | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | [Rijen](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Discrete wiskunde/Rijen/README.md>) | Discrete wiskunde | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | Telproblemen | Discrete wiskunde | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Logica en bewijzen | Discrete wiskunde | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
