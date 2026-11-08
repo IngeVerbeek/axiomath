@@ -1,0 +1,453 @@
+# Oefeningen van hoofdstuk 3. Zie oefeningenbank.py voor de velden.
+
+- id: h3-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Bereken $\log_2 8 + \log_2 \frac12$.
+      antwoord: |-
+        2
+      uitwerking: |-
+        $3 + (-1) = 2$.
+    - opgave: |-
+        Wat is de inverse van $f(x) = 2^x$?
+      antwoord: |-
+        $\log_2 x$
+      uitwerking: |-
+        $y = 2^x \iff x = \log_2 y$, dus $\inv{f}(x) = \log_2 x$.
+    - opgave: |-
+        Los op: $x^2 - 2x - 8 = 0$.
+      antwoord: |-
+        $x = 4$ of $x = -2$
+      uitwerking: |-
+        $(x - 4)(x + 2) = 0$.
+    - opgave: |-
+        Los op: $-2x < 6$.
+      antwoord: |-
+        $x > -3$
+      uitwerking: |-
+        Delen door $-2$ keert het teken om.
+    - opgave: |-
+        Schrijf $3$ als logaritme met grondtal 2.
+      antwoord: |-
+        $\log_2 8$
+      uitwerking: |-
+        $3 = \log_2 2^3 = \log_2 8$.
+    - opgave: |-
+        Is $\ln 0{,}8$ positief of negatief?
+      antwoord: |-
+        negatief
+      uitwerking: |-
+        $0{,}8 < 1$ en $\e^0 = 1$, dus $\ln 0{,}8 < 0$.
+
+- id: h3-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken} Neem $f(x) = 2^x$ en $g(x) = \log_2 x$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Maak een tabel van $g$ voor $x = \frac14, \frac12, 1, 2, 4, 8$.
+      antwoord: |-
+        $-2, -1, 0, 1, 2, 3$
+      uitwerking: |-
+        $-2$, $-1$, $0$, $1$, $2$, $3$.
+    - opgave: |-
+        Vergelijk met een tabel van $f$ voor $x = -2, -1, 0, 1, 2, 3$. Wat valt op?
+      antwoord: |-
+        de rijen zijn gewisseld
+      uitwerking: |-
+        $f$ geeft $\frac14, \frac12, 1, 2, 4, 8$: dezelfde getallen, met $x$ en $y$ gewisseld. $g$ is de inverse van $f$.
+    - opgave: |-
+        Bestaat $g(0)$ of $g(-1)$? Waarom niet?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: geen enkele macht van 2 is $0$ of negatief.
+
+- id: h3-grafiek
+  soort: kort
+  opgave: |-
+    Geef het domein, de asymptoot en de nulwaarde.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $f(x) = \log_3(x + 1)$
+      antwoord: |-
+        $\left]-1, +\infty\right[$; $x = -1$; $0$
+      uitwerking: |-
+        1 naar links: domein $\left]-1, +\infty\right[$, asymptoot $x = -1$, nulwaarde $x + 1 = 1$, dus $x = 0$.
+    - opgave: |-
+        $g(x) = -\log_2 x$
+      antwoord: |-
+        $\left]0, +\infty\right[$; $x = 0$; $1$
+      uitwerking: |-
+        Gespiegeld om de $x$-as, dalend. Domein $\left]0, +\infty\right[$, asymptoot $x = 0$, nulwaarde $1$.
+    - opgave: |-
+        $h(x) = \ln(-x)$
+      antwoord: |-
+        $\left]-\infty, 0\right[$; $x = 0$; $-1$
+      uitwerking: |-
+        Gespiegeld om de $y$-as. Domein $\left]-\infty, 0\right[$, asymptoot $x = 0$, nulwaarde $-1$.
+
+- id: h3-vergelijking
+  soort: kort
+  opgave: |-
+    Los op.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\log_5 x = 3$
+      antwoord: |-
+        $x = 125$
+      uitwerking: |-
+        $x = 5^3 = 125$.
+    - opgave: |-
+        $\ln(x - 2) = 1$
+      antwoord: |-
+        $x = 2 + \e$
+      uitwerking: |-
+        Voorwaarde $x > 2$; $x - 2 = \e$.
+    - opgave: |-
+        $\log(3x) = \log(x + 4)$
+      antwoord: |-
+        $x = 2$
+      uitwerking: |-
+        Voorwaarden $x > 0$ en $x > -4$; $3x = x + 4$ geeft $x = 2$.
+
+- id: h3-ongelijkheid
+  soort: kort
+  opgave: |-
+    Los op.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $2^x > 100$
+      antwoord: |-
+        $x > \log_2 100 \approx 6{,}644$
+      uitwerking: |-
+        $x > \log_2 100 = \frac{\ln 100}{\ln 2} \approx 6{,}644$.
+    - opgave: |-
+        $0{,}5^x \geqslant 0{,}01$
+      antwoord: |-
+        $x \leqslant 6{,}644$
+      uitwerking: |-
+        $x \ln 0{,}5 \geqslant \ln 0{,}01$, delen door $\ln 0{,}5 < 0$: $x \leqslant \frac{\ln 0{,}01}{\ln 0{,}5} \approx 6{,}644$.
+    - opgave: |-
+        $\log_{0{,}5} x > 2$
+      antwoord: |-
+        $0 < x < \frac14$
+      uitwerking: |-
+        Voorwaarde $x > 0$. Grondtal kleiner dan 1: $x < 0{,}5^2 = \frac14$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h3-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    domein
+  opgave: |-
+    Bepaal het domein.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x) = \log(x + 5)$
+      antwoord: |-
+        $\left]-5, +\infty\right[$
+      uitwerking: |-
+        $x + 5 > 0$.
+    - opgave: |-
+        $f(x) = \ln(x^2 - 9)$
+      antwoord: |-
+        $\left]-\infty, -3\right[ \cup \left]3, +\infty\right[$
+      uitwerking: |-
+        $x^2 > 9$: buiten de nulwaarden $\pm 3$.
+    - opgave: |-
+        $f(x) = \log_2(3 - x) + \log_2 x$
+      antwoord: |-
+        $\left]0, 3\right[$
+      uitwerking: |-
+        $3 - x > 0$ en $x > 0$.
+    - opgave: |-
+        $f(x) = \dfrac{1}{\ln x}$
+      antwoord: |-
+        $\left]0, 1\right[ \cup \left]1, +\infty\right[$
+      uitwerking: |-
+        $x > 0$ en $\ln x \neq 0$, dus $x \neq 1$.
+
+- id: h3-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    vergelijkingen
+  opgave: |-
+    Los op.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\log_4 x = \frac12$
+      antwoord: |-
+        $x = 2$
+      uitwerking: |-
+        $x = 4^{\frac12} = 2$.
+    - opgave: |-
+        $\log(x + 3) = 2$
+      antwoord: |-
+        $x = 97$
+      uitwerking: |-
+        $x + 3 = 100$.
+    - opgave: |-
+        $\ln(2x) = \ln(x + 5)$
+      antwoord: |-
+        $x = 5$
+      uitwerking: |-
+        Voorwaarde $x > 0$; $2x = x + 5$.
+
+- id: h3-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    grafieken
+  figuur:
+    opties: |-
+      4.6cm
+    code: |-
+      \begin{tikzpicture}[x=.5cm,y=.5cm,font=\scriptsize]
+        \rooster{-2}{1}{5}{-3}{1}{3}
+        \draw[grijs,dashed] (-1,-3) -- (-1,3.3);
+        \kromme{-.93}{5}{ln(\x+1)/ln(3)+1}
+        \vol{(0,1)} \vol{(2,2)}
+      \end{tikzpicture}
+  opgave: |-
+    De grafiek hiernaast ontstaat uit die van $\log_3 x$ door verschuiven. Ze gaat door $(0, 1)$ en $(2, 2)$, met asymptoot $x = -1$. Geef het voorschrift en de nulwaarde.
+  antwoord: |-
+    $\log_3(x + 1) + 1$; $-\frac23$
+  uitwerking: |-
+    Asymptoot $x = -1$: 1 naar links. Het punt $(1, 0)$ van $\log_3 x$ gaat naar $(0, 1)$: ook 1 naar boven. Dus $f(x) = \log_3(x + 1) + 1$. Controle: $f(2) = \log_3 3 + 1 = 2$. Nulwaarde: $\log_3(x + 1) = -1$, $x + 1 = \frac13$, $x = -\frac23$.
+
+- id: h3-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    vergelijking met twee logaritmen
+  opgave: |-
+    Los op: $\log_2 x + \log_2(x - 2) = 3$.
+  antwoord: |-
+    $x = 4$
+  uitwerking: |-
+    Voorwaarde $x > 2$. $\log_2\bigl(x(x - 2)\bigr) = 3$, dus $x^2 - 2x - 8 = 0$ en $x = 4$ of $x = -2$. Alleen $x = 4$ voldoet.
+
+- id: h3-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    substitutie
+  opgave: |-
+    Los op: $(\ln x)^2 - 3\ln x + 2 = 0$.
+  antwoord: |-
+    $x = \e$ of $x = \e^2$
+  uitwerking: |-
+    Stel $t = \ln x$: $t^2 - 3t + 2 = 0$, dus $t = 1$ of $t = 2$. Dan $x = \e$ of $x = \e^2$.
+
+- id: h3-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    ongelijkheden
+  opgave: |-
+    Los op.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $3 \cdot 1{,}2^x \geqslant 30$
+      antwoord: |-
+        $x \geqslant 12{,}63$
+      uitwerking: |-
+        $1{,}2^x \geqslant 10$, $x \geqslant \frac{\ln 10}{\ln 1{,}2} \approx 12{,}63$.
+    - opgave: |-
+        $\log_2(x + 1) \geqslant 3$
+      antwoord: |-
+        $x \geqslant 7$
+      uitwerking: |-
+        Voorwaarde $x > -1$; $x + 1 \geqslant 8$. Samen $x \geqslant 7$.
+    - opgave: |-
+        $\ln(2 - x) < 0$
+      antwoord: |-
+        $1 < x < 2$
+      uitwerking: |-
+        Voorwaarde $x < 2$; $2 - x < 1$, dus $x > 1$.
+
+- id: h3-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    aardbevingen
+  opgave: |-
+    De magnitude van een aardbeving is $M = \log \frac{A}{A_0}$, met $A$ de uitslag van de seismograaf en $A_0$ een vaste referentie. De vrijgekomen energie is evenredig met $10^{1{,}5M}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een beving heeft magnitude 7, een andere magnitude 5. Hoeveel keer groter is de uitslag?
+      antwoord: |-
+        100 keer
+      uitwerking: |-
+        $\log \frac{A_7}{A_5} = 7 - 5 = 2$, dus $100$ keer.
+    - opgave: |-
+        Hoeveel keer meer energie komt er vrij?
+      antwoord: |-
+        1000 keer
+      uitwerking: |-
+        $\frac{10^{1{,}5 \cdot 7}}{10^{1{,}5 \cdot 5}} = 10^3 = 1000$.
+
+- id: h3-o8
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    koolstofdatering
+  opgave: |-
+    Koolstof-14 heeft een halveringstijd van $5730$ jaar. In een bot is nog $30$\,\% van de oorspronkelijke hoeveelheid koolstof-14 over. Hoe oud is het bot?
+  antwoord: |-
+    ongeveer $10\,000$ jaar
+  uitwerking: |-
+    $0{,}5^{\frac{t}{5730}} = 0{,}3$, dus $t = 5730 \cdot \frac{\ln 0{,}3}{\ln 0{,}5} \approx 9953$ jaar: ongeveer $10\,000$ jaar.
+
+- id: h3-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een rechte maken
+  opgave: |-
+    Bij een proef meet men een hoeveelheid $N$ op tijdstip $t$ (in uur): $(0, 50)$, $(2, 72)$, $(4, 104)$, $(6, 150)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $\log N$ voor elke meting. Toon aan dat de punten $(t, \log N)$ ongeveer op een rechte liggen.
+      antwoord: |-
+        $1{,}699$; $1{,}857$; $2{,}017$; $2{,}176$: telkens $+0{,}16$
+      uitwerking: |-
+        $\log N \approx 1{,}699$, $1{,}857$, $2{,}017$, $2{,}176$. Elke 2 uur komt er ongeveer $0{,}159$ bij: de punten liggen op een rechte.
+    - opgave: |-
+        Toon aan: als $N = N_0 \cdot a^t$, dan is $\log N = \log N_0 + t \log a$. Bepaal zo $N_0$ en $a$.
+      antwoord: |-
+        $N_0 = 50$, $a \approx 1{,}2$
+      uitwerking: |-
+        Neem $\log$ van beide leden en gebruik de product- en machtregel. De rechte heeft beginwaarde $\log N_0 \approx 1{,}699$, dus $N_0 = 50$, en richtingscoëfficiënt $\log a \approx \frac{0{,}477}{6} \approx 0{,}0795$, dus $a \approx 10^{0{,}0795} \approx 1{,}20$.
+
+- id: h3-o10
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    gespiegelde grafieken
+  opgave: |-
+    Toon aan dat $\log_{1/a} x = -\log_a x$. Wat betekent dat voor de grafieken van $\log_2 x$ en $\log_{1/2} x$? En welk verband is er tussen de grafieken van $\log_2 x$ en $\log_4 x$?
+  antwoord: |-
+    spiegelbeeld om de $x$-as; $\log_4 x = \frac12 \log_2 x$
+  uitwerking: |-
+    $\log_{1/a} x = \frac{\ln x}{\ln (1/a)} = \frac{\ln x}{-\ln a} = -\log_a x$: de grafieken zijn elkaars spiegelbeeld om de $x$-as. $\log_4 x = \frac{\ln x}{2\ln 2} = \frac12 \log_2 x$: verticaal uitgerekt met factor $\frac12$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h3-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Algemene functies
+  thema: |-
+    inverse bepalen
+  opgave: |-
+    Bepaal de inverse van $f(x) = 2^{x - 1} + 3$, met haar domein.
+  antwoord: |-
+    $\inv{f}(x) = 1 + \log_2(x - 3)$, domein $\left]3, +\infty\right[$
+  uitwerking: |-
+    $\ber f = \left]3, +\infty\right[$. $y = 2^{x - 1} + 3 \iff x - 1 = \log_2(y - 3)$, dus $\inv{f}(x) = 1 + \log_2(x - 3)$ met domein $\left]3, +\infty\right[$.
+
+- id: h3-koppel-2
+  soort: koppel
+  niveau: 1
+  koppel:
+    rubriek: discreet
+    onderwerp: Rijen
+  thema: |-
+    de eerste grote term
+  opgave: |-
+    De meetkundige rij $u_n = 3 \cdot 2^n$. Vanaf welke $n$ is $u_n > 10^6$?
+  antwoord: |-
+    vanaf $n = 19$
+  uitwerking: |-
+    $2^n > \frac{10^6}{3}$, dus $n > \log_2 \frac{10^6}{3} \approx 18{,}35$: vanaf $n = 19$.
+
+- id: h3-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    grafiek
+  opgave: |-
+    Geef het domein, de asymptoot en de nulwaarde van $g(x) = \log_3(x + 2) - 1$.
+  antwoord: |-
+    $\left]-2, +\infty\right[$; $x = -2$; $1$
+  uitwerking: |-
+    2 naar links, 1 naar onder. Domein $\left]-2, +\infty\right[$, asymptoot $x = -2$. Nulwaarde: $\log_3(x + 2) = 1$, $x = 1$.
+
+- id: h3-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    domein
+  opgave: |-
+    Bepaal het domein van $f(x) = \ln(9 - x^2)$.
+  antwoord: |-
+    $\left]-3, 3\right[$
+  uitwerking: |-
+    $9 - x^2 > 0 \iff -3 < x < 3$.
+
+- id: h3-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    vergelijking
+  opgave: |-
+    Los op: $\log_2(3x + 1) = 4$.
+  antwoord: |-
+    $x = 5$
+  uitwerking: |-
+    Voorwaarde $x > -\frac13$. $3x + 1 = 16$, $x = 5$.
+
+- id: h3-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    vergelijking met twee logaritmen
+  opgave: |-
+    Los op: $\log_6 x + \log_6(x + 5) = 2$.
+  antwoord: |-
+    $x = 4$
+  uitwerking: |-
+    Voorwaarde $x > 0$. $x(x + 5) = 36$, dus $x^2 + 5x - 36 = 0$ en $x = 4$ of $x = -9$. Alleen $x = 4$ voldoet.
+
+- id: h3-t5
+  soort: test
+  niveau: 2
+  thema: |-
+    ongelijkheid
+  opgave: |-
+    Een hoeveelheid neemt elk jaar met $10$\,\% af. Na hoeveel jaar is er minder dan de helft over?
+  antwoord: |-
+    na 7 jaar ($t > 6{,}58$)
+  uitwerking: |-
+    $0{,}9^t < 0{,}5 \iff t > \frac{\ln 0{,}5}{\ln 0{,}9} \approx 6{,}58$ (delen door $\ln 0{,}9 < 0$). Na 7 jaar.

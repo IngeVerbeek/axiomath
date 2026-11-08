@@ -1,0 +1,475 @@
+# Oefeningen van hoofdstuk 1. Zie oefeningenbank.py voor de velden.
+
+- id: h1-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer} Bereken of vereenvoudig.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $2^3 \cdot 2^4$
+      antwoord: |-
+        $2^7 = 128$
+      uitwerking: |-
+        $2^{3 + 4} = 2^7 = 128$.
+    - opgave: |-
+        $(3^2)^3$
+      antwoord: |-
+        $3^6 = 729$
+      uitwerking: |-
+        $3^{2 \cdot 3} = 3^6 = 729$.
+    - opgave: |-
+        $5^0$
+      antwoord: |-
+        1
+      uitwerking: |-
+        $1$.
+    - opgave: |-
+        $2^{-3}$
+      antwoord: |-
+        $\frac18$
+      uitwerking: |-
+        $\frac{1}{2^3} = \frac18$.
+    - opgave: |-
+        $\bigl(\frac23\bigr)^{-2}$
+      antwoord: |-
+        $\frac94$
+      uitwerking: |-
+        $\bigl(\frac32\bigr)^2 = \frac94$.
+    - opgave: |-
+        $1{,}2 \cdot 1{,}2 \cdot 1{,}2$
+      antwoord: |-
+        $1{,}728$
+      uitwerking: |-
+        $1{,}2^3 = 1{,}728$.
+
+- id: h1-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken} Een blad papier is $0{,}1$ mm dik. Bij elke vouw verdubbelt de dikte.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoe dik is het pakje na 1, 2, 3 en 10 vouwen?
+      antwoord: |-
+        $0{,}2$; $0{,}4$; $0{,}8$; $102{,}4$ mm
+      uitwerking: |-
+        $0{,}2$ mm, $0{,}4$ mm, $0{,}8$ mm, en na 10 vouwen $0{,}1 \cdot 2^{10} = 102{,}4$ mm.
+    - opgave: |-
+        Geef een formule voor de dikte $d(n)$ na $n$ vouwen.
+      antwoord: |-
+        $d(n) = 0{,}1 \cdot 2^n$
+      uitwerking: |-
+        $d(n) = 0{,}1 \cdot 2^n$ (in mm).
+    - opgave: |-
+        Hoeveel keer zou je moeten vouwen om meer dan 1 km dik te zijn? Zoek met je rekentoestel.
+      antwoord: |-
+        24
+      uitwerking: |-
+        1 km is $10^7 \cdot 0{,}1$ mm, dus $2^n > 10^7$. $2^{23} \approx 8{,}4$ miljoen, $2^{24} \approx 16{,}8$ miljoen: 24 keer.
+
+- id: h1-machten
+  soort: kort
+  opgave: |-
+    Bereken zonder rekentoestel, of schrijf als één macht van $x$ (met $x > 0$).
+  lijst: reeks
+  kolommen: 4
+  delen:
+    - opgave: |-
+        $25^{\frac32}$
+      antwoord: |-
+        125
+      uitwerking: |-
+        $\bigl(\sqrt{25}\bigr)^3 = 5^3 = 125$.
+    - opgave: |-
+        $16^{-\frac14}$
+      antwoord: |-
+        $\frac12$
+      uitwerking: |-
+        $\frac{1}{\sqrt[4]{16}} = \frac12$.
+    - opgave: |-
+        $x^{\frac23} \cdot x^{\frac14}$
+      antwoord: |-
+        $x^{\frac{11}{12}}$
+      uitwerking: |-
+        $x^{\frac{8}{12} + \frac{3}{12}} = x^{\frac{11}{12}}$.
+    - opgave: |-
+        $\dfrac{x^2}{\sqrt{x}}$
+      antwoord: |-
+        $x^{\frac32}$
+      uitwerking: |-
+        $x^{2 - \frac12} = x^{\frac32}$.
+
+- id: h1-vergelijking
+  soort: kort
+  opgave: |-
+    Los op.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $3^{2x - 1} = 27$
+      antwoord: |-
+        $x = 2$
+      uitwerking: |-
+        $3^{2x - 1} = 3^3$, dus $2x - 1 = 3$.
+    - opgave: |-
+        $4^x = 8$
+      antwoord: |-
+        $x = \frac32$
+      uitwerking: |-
+        $2^{2x} = 2^3$, dus $2x = 3$.
+    - opgave: |-
+        $\bigl(\frac12\bigr)^x = 16$
+      antwoord: |-
+        $x = -4$
+      uitwerking: |-
+        $2^{-x} = 2^4$, dus $x = -4$.
+
+- id: h1-groei
+  soort: kort
+  opgave: |-
+    Een stad heeft $40\,000$ inwoners en groeit met $2$\,\% per jaar.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef het model en het aantal inwoners na 15 jaar.
+      antwoord: |-
+        $N(t) = 40\,000 \cdot 1{,}02^t$; ongeveer $53\,800$
+      uitwerking: |-
+        $N(t) = 40\,000 \cdot 1{,}02^t$ en $N(15) \approx 53\,835$.
+    - opgave: |-
+        Met hoeveel procent groeit de stad per 10 jaar?
+      antwoord: |-
+        ongeveer $21{,}9$\,\%
+      uitwerking: |-
+        $1{,}02^{10} \approx 1{,}219$: ongeveer $21{,}9$\,\% per 10 jaar, meer dan $10 \cdot 2$\,\%.
+
+- id: h1-e
+  soort: kort
+  opgave: |-
+    Een kapitaal van $5000$ euro groeit continu met $4$\,\% per jaar. Hoeveel is het na 12 jaar? Hoeveel scheelt dat met $4$\,\% per jaar, jaarlijks bijgeteld?
+  antwoord: |-
+    $\approx 8080{,}37$ euro; $\approx 75$ euro meer
+  uitwerking: |-
+    $5000\,\e^{0{,}04 \cdot 12} = 5000\,\e^{0{,}48} \approx 8080{,}37$ euro. Jaarlijks: $5000 \cdot 1{,}04^{12} \approx 8005{,}16$ euro, dus ongeveer $75$ euro minder.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h1-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    rationale exponenten
+  opgave: |-
+    Bereken zonder rekentoestel.
+  lijst: reeks
+  kolommen: 4
+  delen:
+    - opgave: |-
+        $16^{\frac34}$
+      antwoord: |-
+        8
+      uitwerking: |-
+        $\bigl(\sqrt[4]{16}\bigr)^3 = 2^3 = 8$.
+    - opgave: |-
+        $32^{-\frac25}$
+      antwoord: |-
+        $\frac14$
+      uitwerking: |-
+        $\frac{1}{(\sqrt[5]{32})^2} = \frac{1}{4}$.
+    - opgave: |-
+        $\bigl(\frac19\bigr)^{-\frac12}$
+      antwoord: |-
+        3
+      uitwerking: |-
+        $9^{\frac12} = 3$.
+    - opgave: |-
+        $1000^{\frac23}$
+      antwoord: |-
+        100
+      uitwerking: |-
+        $\bigl(\sqrt[3]{1000}\bigr)^2 = 10^2 = 100$.
+
+- id: h1-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    rekenregels
+  opgave: |-
+    Schrijf als één macht van $x$ (met $x > 0$).
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\sqrt[3]{x} \cdot \sqrt{x}$
+      antwoord: |-
+        $x^{\frac56}$
+      uitwerking: |-
+        $x^{\frac13 + \frac12} = x^{\frac56}$.
+    - opgave: |-
+        $\dfrac{1}{x\sqrt{x}}$
+      antwoord: |-
+        $x^{-\frac32}$
+      uitwerking: |-
+        $\frac{1}{x^{\frac32}} = x^{-\frac32}$.
+    - opgave: |-
+        $\sqrt{x \cdot \sqrt[3]{x}}$
+      antwoord: |-
+        $x^{\frac23}$
+      uitwerking: |-
+        $\bigl(x^{\frac43}\bigr)^{\frac12} = x^{\frac23}$.
+
+- id: h1-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    exponentiële vergelijkingen
+  opgave: |-
+    Los op.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $5^{x^2} = 625$
+      antwoord: |-
+        $x = \pm 2$
+      uitwerking: |-
+        $5^{x^2} = 5^4$, dus $x^2 = 4$.
+    - opgave: |-
+        $9^{x} = 3^{x + 3}$
+      antwoord: |-
+        $x = 3$
+      uitwerking: |-
+        $3^{2x} = 3^{x + 3}$, dus $2x = x + 3$.
+    - opgave: |-
+        $2^{x} \cdot 4 = \sqrt{2}$
+      antwoord: |-
+        $x = -\frac32$
+      uitwerking: |-
+        $2^{x + 2} = 2^{\frac12}$, dus $x + 2 = \frac12$.
+
+- id: h1-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    grafieken
+  opgave: |-
+    Beschrijf de transformatie vanuit $2^x$ of $3^x$. Geef het domein, het bereik en de asymptoot, en eventuele nulwaarden.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $f(x) = 4 - 2^x$
+      antwoord: |-
+        $\R$; $\left]-\infty, 4\right[$; $y = 4$; nulwaarde $2$
+      uitwerking: |-
+        Spiegelen om de $x$-as, 4 naar boven. $\dom f = \R$, $\ber f = \left]-\infty, 4\right[$, asymptoot $y = 4$. Nulwaarde: $2^x = 4$, $x = 2$.
+    - opgave: |-
+        $g(x) = 3^{-x}$
+      antwoord: |-
+        $\R$; $\left]0, +\infty\right[$; $y = 0$
+      uitwerking: |-
+        Spiegelen om de $y$-as: $g(x) = \bigl(\frac13\bigr)^x$, dalend. $\dom g = \R$, $\ber g = \left]0, +\infty\right[$, asymptoot $y = 0$.
+    - opgave: |-
+        $h(x) = 2^{x - 3} + 1$
+      antwoord: |-
+        $\R$; $\left]1, +\infty\right[$; $y = 1$
+      uitwerking: |-
+        3 naar rechts, 1 naar boven. $\dom h = \R$, $\ber h = \left]1, +\infty\right[$, asymptoot $y = 1$.
+
+- id: h1-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    model uit twee punten
+  figuur:
+    opties: |-
+      4.2cm
+    code: |-
+      \begin{tikzpicture}[x=.6cm,y=.26cm,font=\scriptsize]
+        \draw[black!14,very thin,xstep=1,ystep=2] (-2,0) grid (3,14);
+        \draw[->,grijs] (-2,0) -- (3.4,0) node[right,text=black] {$x$};
+        \draw[->,grijs] (0,0) -- (0,15) node[above,text=black] {$y$};
+        \foreach \t in {-2,-1,1,2,3}{\node[below,inner sep=1.5pt] at (\t,0) {$\t$};}
+        \foreach \t in {4,8,12}{\node[left,inner sep=1.5pt] at (0,\t) {$\t$};}
+        \kromme{-2}{2.2}{3*2^(\x)}
+        \vol{(0,3)} \vol{(2,12)}
+      \end{tikzpicture}
+  opgave: |-
+    De grafiek van $f(x) = b \cdot a^x$ gaat door $(0, 3)$ en $(2, 12)$. Bepaal $a$ en $b$, en bereken $f(-1)$.
+  antwoord: |-
+    $b = 3$, $a = 2$; $f(-1) = \frac32$
+  uitwerking: |-
+    $f(0) = b = 3$. $f(2) = 3a^2 = 12$, dus $a^2 = 4$ en $a = 2$ (want $a > 0$). $f(-1) = 3 \cdot 2^{-1} = \frac32$.
+
+- id: h1-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    wereldbevolking
+  opgave: |-
+    De wereldbevolking telt ongeveer $8{,}1$ miljard mensen en groeit met ongeveer $0{,}9$\,\% per jaar. Veronderstel dat dit zo blijft.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef een model en voorspel de bevolking over 25 jaar.
+      antwoord: |-
+        $B(t) = 8{,}1 \cdot 1{,}009^t$; ongeveer $10{,}1$ miljard
+      uitwerking: |-
+        $B(t) = 8{,}1 \cdot 1{,}009^t$ (in miljard), $B(25) \approx 10{,}1$ miljard.
+    - opgave: |-
+        Met hoeveel procent groeit de bevolking per decennium?
+      antwoord: |-
+        ongeveer $9{,}4$\,\%
+      uitwerking: |-
+        $1{,}009^{10} \approx 1{,}094$: ongeveer $9{,}4$\,\%.
+    - opgave: |-
+        Waarom is zo'n voorspelling onzeker?
+      antwoord: |-
+        het groeipercentage verandert
+      uitwerking: |-
+        Het groeipercentage blijft in werkelijkheid niet constant: het daalt al decennia. Het model is alleen voor korte termijn bruikbaar.
+
+- id: h1-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een medicijn
+  opgave: |-
+    Het lichaam breekt een medicijn af: om de 4 uur verdwijnt $30$\,\% van wat er nog is. Iemand krijgt $500$ mg.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Wat is de groeifactor per 4 uur, per uur en per dag?
+      antwoord: |-
+        $0{,}7$; $\approx 0{,}915$; $\approx 0{,}118$
+      uitwerking: |-
+        Per 4 uur $0{,}7$. Per uur $0{,}7^{\frac14} \approx 0{,}915$. Per dag (6 keer 4 uur) $0{,}7^6 \approx 0{,}118$.
+    - opgave: |-
+        Hoeveel is er na een dag nog over?
+      antwoord: |-
+        ongeveer $58{,}8$ mg
+      uitwerking: |-
+        $500 \cdot 0{,}7^6 \approx 58{,}8$ mg.
+
+- id: h1-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    intrest per maand
+  opgave: |-
+    Een bank biedt $6$\,\% intrest per jaar, een andere $0{,}5$\,\% per maand. Een derde rekent $6$\,\% per jaar, continu bijgeteld. Welke is het voordeligst? Geef voor elk het werkelijke rendement per jaar.
+  antwoord: |-
+    $6$\,\%; $\approx 6{,}17$\,\%; $\approx 6{,}18$\,\%: continu
+  uitwerking: |-
+    Per jaar: $1{,}06$. Per maand: $1{,}005^{12} \approx 1{,}0617$. Continu: $\e^{0{,}06} \approx 1{,}0618$. De continue groei is net het voordeligst, maar het verschil met maandelijks is klein.
+
+- id: h1-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    exponentieel wint
+  opgave: |-
+    Vergelijk $f(n) = 1{,}1^n$ en $g(n) = n^2$ voor $n = 10$, $50$, $100$ en $200$. Welke groeit uiteindelijk het snelst? Zoek met je rekentoestel vanaf welk natuurlijk getal $n$ de exponentiële functie voorgoed groter is.
+  antwoord: |-
+    $1{,}1^n$; vanaf $n = 96$
+  uitwerking: |-
+    $n = 10$: $2{,}6$ tegenover $100$; $n = 50$: $117$ tegenover $2500$; $n = 100$: $13\,781$ tegenover $10\,000$; $n = 200$: ongeveer $1{,}9 \cdot 10^8$ tegenover $40\,000$. Vanaf $n = 96$ is $1{,}1^n > n^2$ ($9412 > 9216$), en dan blijft dat zo: $f$ wordt telkens $10$\,\% groter, $g$ steeds minder.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h1-koppel-1
+  soort: koppel
+  niveau: 1
+  koppel:
+    rubriek: discreet
+    onderwerp: Rijen
+  thema: |-
+    meetkundige rij
+  opgave: |-
+    Een meetkundige rij heeft beginterm $u_0 = 5$ en reden $q = 3$. Toon aan dat \mbox{$u_n = f(n)$} voor een exponentiële functie $f$. Welke punten van de grafiek van $f$ horen bij de rij?
+  antwoord: |-
+    $f(x) = 5 \cdot 3^x$; de punten met $x \in \mathbb{N}$
+  uitwerking: |-
+    $u_n = 5 \cdot 3^n = f(n)$ met $f(x) = 5 \cdot 3^x$. De termen zijn de punten $(n, f(n))$ met $n$ natuurlijk: een meetkundige rij is een exponentiële functie op de natuurlijke getallen.
+
+- id: h1-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: data
+    onderwerp: Kansrekenen
+  thema: |-
+    nooit een zes
+  opgave: |-
+    Je gooit $n$ keer met een eerlijke dobbelsteen. Toon aan dat de kans op geen enkele zes $\bigl(\frac56\bigr)^n$ is. Vanaf hoeveel worpen is de kans op minstens één zes groter dan $\frac12$?
+  antwoord: |-
+    vanaf 4 worpen
+  uitwerking: |-
+    De worpen zijn onafhankelijk, elk met kans $\frac56$ op geen zes. $\bigl(\frac56\bigr)^3 \approx 0{,}579$ en $\bigl(\frac56\bigr)^4 \approx 0{,}482$: vanaf 4 worpen is de kans op minstens één zes groter dan $\frac12$.
+
+- id: h1-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    machten
+  opgave: |-
+    Bereken $27^{\frac23}$, en schrijf $\dfrac{x^{\frac34} \cdot x}{\sqrt[4]{x}}$ als één macht van $x$.
+  antwoord: |-
+    9; $x^{\frac32}$
+  uitwerking: |-
+    $\bigl(\sqrt[3]{27}\bigr)^2 = 9$. $x^{\frac34 + 1 - \frac14} = x^{\frac32}$.
+
+- id: h1-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    vergelijking
+  opgave: |-
+    Los op: $9^x = 27^{x - 1}$.
+  antwoord: |-
+    $x = 3$
+  uitwerking: |-
+    $3^{2x} = 3^{3x - 3}$, dus $2x = 3x - 3$ en $x = 3$.
+
+- id: h1-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    grafiek
+  opgave: |-
+    Geef het domein, het bereik en de asymptoot van $g(x) = 2^{x - 1} + 2$, en het beeld van $(0, 1)$ op de grafiek van $2^x$.
+  antwoord: |-
+    $\R$; $\left]2, +\infty\right[$; $y = 2$; $(1, 3)$
+  uitwerking: |-
+    1 naar rechts, 2 naar boven: $(0, 1) \mapsto (1, 3)$. $\dom g = \R$, $\ber g = \left]2, +\infty\right[$, asymptoot $y = 2$.
+
+- id: h1-t4
+  soort: test
+  niveau: 1
+  thema: |-
+    intrest
+  opgave: |-
+    Je zet $1500$ euro op een rekening met $2{,}5$\,\% samengestelde intrest per jaar. Hoeveel staat er na 8 jaar op?
+  antwoord: |-
+    $1827{,}60$ euro
+  uitwerking: |-
+    $1500 \cdot 1{,}025^8 \approx 1827{,}60$ euro.
+
+- id: h1-t5
+  soort: test
+  niveau: 2
+  thema: |-
+    halveringstijd
+  opgave: |-
+    Jodium-131 heeft een halveringstijd van 8 dagen. Welk percentage van een hoeveelheid is na 30 dagen over? Wat is de groeifactor per dag?
+  antwoord: |-
+    ongeveer $7{,}4$\,\%; $\approx 0{,}917$
+  uitwerking: |-
+    $\bigl(\frac12\bigr)^{\frac{30}{8}} \approx 0{,}074$: ongeveer $7{,}4$\,\%. Per dag: $0{,}5^{\frac18} \approx 0{,}917$.
