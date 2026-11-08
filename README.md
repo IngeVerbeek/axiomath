@@ -20,9 +20,9 @@ Een geïntegreerd ecosysteem, volledig open:
 Eerst maken we van elk handboek een eerste versie, daarna lezen leerkrachten ze na. Dit overzicht komt uit [voortgang.yaml](voortgang.yaml). Zie [Handboeken/README.md](Handboeken/README.md) voor de indeling per pakket en richting.
 
 <!-- voortgang:begin -->
-**Totaal** &nbsp; `█░░░░░░░░░░░░░░░░░░░` &nbsp; **2 %** van 47 handboeken
+**Totaal** &nbsp; `█░░░░░░░░░░░░░░░░░░░` &nbsp; **3 %** van 47 handboeken
 
-⚪ 45 gepland · 🟠 2 eerste versie · 🟡 0 nagelezen · 🟢 0 klaar
+⚪ 44 gepland · 🟠 3 eerste versie · 🟡 0 nagelezen · 🟢 0 klaar
 
 ### Per richting
 
@@ -34,7 +34,7 @@ Elke richting volgt één pakket, en de voortgang van de richting is het gemidde
 | Humane wetenschappen | 1 (Basis) | `█░░░░░░░░░░░░░░░░░░░` |   5 % |
 | Latijn-Moderne talen | 1 (Basis) | `█░░░░░░░░░░░░░░░░░░░` |   5 % |
 | Moderne talen | 1 (Basis) | `█░░░░░░░░░░░░░░░░░░░` |   5 % |
-| Economie-Moderne talen | 2 (B+S) | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
+| Economie-Moderne talen | 2 (B+S) | `█░░░░░░░░░░░░░░░░░░░` |   4 % |
 | Latijn-Wetenschappen | 3 (B+S') | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Moderne talen-Wetenschappen | 3 (B+S') | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Sportwetenschappen | 3 (B+S') | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
@@ -62,7 +62,7 @@ Een percentage hoort bij een status: ⚪ **gepland** (0 %): nog niet begonnen, �
 | Kansrekenen | Data en onzekerheid | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Statistiek | Data en onzekerheid | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 
-#### Pakket 2 · B+S &nbsp; `░░░░░░░░░░░░░░░░░░░░` 0 %
+#### Pakket 2 · B+S &nbsp; `█░░░░░░░░░░░░░░░░░░░` 4 %
 
 <sub>Economie-Moderne talen</sub>
 
@@ -74,7 +74,7 @@ Een percentage hoort bij een status: ⚪ **gepland** (0 %): nog niet begonnen, �
 | Rationale functies | Analyse | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Afgeleiden | Analyse | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Integralen | Analyse | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
-| Matrices | Algebra | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
+| [Matrices](<Handboeken/2 Economie-Moderne talen (B+S)/Algebra/Matrices/README.md>) | Algebra | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | Rijen | Discrete wiskunde | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Kansrekenen | Data en onzekerheid | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Statistiek | Data en onzekerheid | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
@@ -115,7 +115,7 @@ Een percentage hoort bij een status: ⚪ **gepland** (0 %): nog niet begonnen, �
 | Complexe getallen | Algebra | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Groepen | Algebra | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Ruimtemeetkunde | Meetkunde | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
-| Rijen | Discrete wiskunde | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
+| [Rijen](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Discrete wiskunde/Rijen/README.md>) | Discrete wiskunde | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Telproblemen | Discrete wiskunde | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Logica en bewijzen | Discrete wiskunde | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
 | Kansrekenen | Data en onzekerheid | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
