@@ -1,0 +1,346 @@
+# Oefeningen van hoofdstuk 2. Zie oefeningenbank.py voor de velden.
+
+- id: h2-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Werk uit: $(2k + 1)^2$.
+      antwoord: |-
+        $4k^2 + 4k + 1$
+      uitwerking: |-
+        Merkwaardig product: $4k^2 + 4k + 1$.
+    - opgave: |-
+        Zonder 2 af: $4k + 6m + 2$.
+      antwoord: |-
+        $2(2k + 3m + 1)$
+      uitwerking: |-
+        $2(2k + 3m + 1)$.
+    - opgave: |-
+        Ontbind: $n^3 - n$.
+      antwoord: |-
+        $(n - 1)n(n + 1)$
+      uitwerking: |-
+        $n(n^2 - 1) = (n - 1)n(n + 1)$.
+    - opgave: |-
+        Is $\frac{6}{4}$ volledig vereenvoudigd? Wat is de vereenvoudigde vorm?
+      antwoord: |-
+        nee; $\frac32$
+      uitwerking: |-
+        Nee, teller en noemer zijn deelbaar door 2: $\frac32$.
+    - opgave: |-
+        Wat is de contrapositie van \textit{als $n$ deelbaar is door 4, dan is $n$ even}?
+      antwoord: |-
+        als $n$ oneven is, dan is $n$ niet deelbaar door 4
+      uitwerking: |-
+        \textit{Als $n$ oneven is, dan is $n$ niet deelbaar door 4.}
+    - opgave: |-
+        Schrijf $7$, $-3$ en $0$ in de vorm $2k$ of $2k + 1$.
+      antwoord: |-
+        $2 \cdot 3 + 1$, $2 \cdot (-2) + 1$, $2 \cdot 0$
+      uitwerking: |-
+        $7 = 2 \cdot 3 + 1$, $-3 = 2 \cdot (-2) + 1$, $0 = 2 \cdot 0$.
+
+- id: h2-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken}
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $n^3 - n$ voor $n = 2, 3, 4, 5, 6$. Wat merk je op?
+      antwoord: |-
+        6, 24, 60, 120, 210: altijd deelbaar door 6
+      uitwerking: |-
+        6, 24, 60, 120, 210: allemaal deelbaar door 6.
+    - opgave: |-
+        Ben je nu zeker dat $n^3 - n$ altijd deelbaar is door 6? Waarom (niet)?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: vijf voorbeelden bewijzen niets over de oneindig vele andere getallen. Een uitspraak als \textit{$n^2 + n + 41$ is priem} klopt ook lang, en dan niet meer.
+    - opgave: |-
+        Schrijf $n^3 - n$ als product van drie opeenvolgende getallen. Waarom is zo'n product altijd even? En altijd deelbaar door 3?
+      antwoord: |-
+        $(n - 1)n(n + 1)$
+      uitwerking: |-
+        $n^3 - n = (n - 1)n(n + 1)$. Van twee opeenvolgende getallen is er één even; van drie opeenvolgende getallen is er één deelbaar door 3. Dus is het product deelbaar door 2 en door 3, en dus door 6. Dat is een bewijs.
+
+- id: h2-lezen
+  soort: kort
+  opgave: |-
+    Lees het bewijs en beantwoord de vier vragen van de werkwijze.\par
+    \textit{Stelling.} Het product van twee oneven getallen is oneven.\par
+    \textit{Bewijs.} Neem $m = 2a + 1$ en $n = 2b + 1$. Dan is $mn = 4ab + 2a + 2b + 1 = 2(2ab + a + b) + 1$, en dus is $mn$ oneven.
+  antwoord: |-
+    zie de uitgewerkte oplossingen
+  uitwerking: |-
+    1.~De definitie van oneven, en de distributiviteit. 2.~De eerste gelijkheid is het product uitwerken, de tweede 2 afzonderen uit de eerste drie termen. 3.~De veronderstelling (oneven) staat in $2a + 1$ en $2b + 1$. 4.~Het idee: in het product blijft er precies één \textit{plus één} over.
+
+- id: h2-rechtstreeks
+  soort: kort
+  opgave: |-
+    Bewijs rechtstreeks.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        De som van een even en een oneven getal is oneven.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $2a + (2b + 1) = 2(a + b) + 1$: oneven.
+    - opgave: |-
+        De som van drie opeenvolgende gehele getallen is deelbaar door 3.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $(n - 1) + n + (n + 1) = 3n$, en dat is deelbaar door 3.
+
+- id: h2-contrapositie
+  soort: kort
+  opgave: |-
+    Bewijs via de contrapositie: als $n^2$ oneven is, dan is $n$ oneven.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Contrapositie: als $n$ even is, dan is $n^2$ even. Met $n = 2k$ is $n^2 = 4k^2 = 2 \cdot 2k^2$: even.
+
+- id: h2-ongerijmde
+  soort: kort
+  opgave: |-
+    Bewijs uit het ongerijmde: er is geen grootste even getal.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Stel uit het ongerijmde dat $g$ het grootste even getal is. Dan is $g + 2$ ook even, en $g + 2 > g$. Tegenspraak: er is geen grootste even getal.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h2-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    rechtstreeks bewijs
+  opgave: |-
+    Bewijs.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Het kwadraat van een even getal is deelbaar door 4.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $(2k)^2 = 4k^2$: deelbaar door 4.
+    - opgave: |-
+        Als $a \deelt b$ en $b \deelt c$, dan $a \deelt c$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $b = ak$ en $c = bm$, dus $c = akm = a(km)$, met $km$ geheel.
+
+- id: h2-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    tegenvoorbeeld
+  opgave: |-
+    Weerleg met een tegenvoorbeeld.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Als $a \deelt bc$, dan $a \deelt b$ of $a \deelt c$.
+      antwoord: |-
+        $a = 6$, $b = 2$, $c = 3$
+      uitwerking: |-
+        $6 \deelt 2 \cdot 3$, maar $6$ deelt 2 noch 3.
+    - opgave: |-
+        De som van twee irrationale getallen is irrationaal.
+      antwoord: |-
+        $\sqrt2 + (-\sqrt2) = 0$
+      uitwerking: |-
+        $\sqrt2$ en $-\sqrt2$ zijn irrationaal, maar hun som 0 is rationaal.
+
+- id: h2-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    een bewijs verbeteren
+  opgave: |-
+    Een leerling bewijst \textit{de som van twee even getallen is even} zo: \textit{neem $m = 2k$ en $n = 2k$, dan is $m + n = 4k = 2 \cdot 2k$, dus even}. Wat is er fout? Verbeter.
+  antwoord: |-
+    dezelfde $k$
+  uitwerking: |-
+    Met dezelfde letter $k$ bewijs je het alleen voor $m = n$. Juist: $m = 2a$ en $n = 2b$, dan $m + n = 2(a + b)$.
+
+- id: h2-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    deelbaarheid door 6
+  opgave: |-
+    Bewijs dat $n^3 - n$ deelbaar is door 6 voor elk geheel getal $n$, zoals in de Verken. Schrijf het bewijs volledig, met de redenering voor de deelbaarheid door 3.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    $n^3 - n = (n - 1)n(n + 1)$. Van twee opeenvolgende getallen is er één even, dus 2 deelt het product. Deel $n$ door 3: de rest is 0, 1 of 2. Bij rest 0 is $3 \deelt n$, bij rest 1 is $3 \deelt n - 1$, bij rest 2 is $3 \deelt n + 1$. Dus 3 deelt het product. Omdat 2 en 3 het product delen en geen gemeenschappelijke deler hebben, deelt 6 het.
+
+- id: h2-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    contrapositie
+  opgave: |-
+    Bewijs: als $n^2$ deelbaar is door 3, dan is $n$ deelbaar door 3. Gebruik de contrapositie, en de twee gevallen $n = 3k + 1$ en $n = 3k + 2$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Contrapositie: als $3 \nmid n$, dan $3 \nmid n^2$. Bij $n = 3k + 1$: $n^2 = 9k^2 + 6k + 1 = 3(3k^2 + 2k) + 1$. Bij $n = 3k + 2$: $n^2 = 9k^2 + 12k + 4 = 3(3k^2 + 4k + 1) + 1$. In beide gevallen is de rest 1: niet deelbaar door 3.
+
+- id: h2-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    wortel 3 is irrationaal
+  opgave: |-
+    Bewijs uit het ongerijmde dat $\sqrt3$ irrationaal is. Gebruik opdracht \ref{oef:h2-o5}.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Stel $\sqrt3 = \frac{a}{b}$, vereenvoudigd. Dan is $a^2 = 3b^2$, dus $3 \deelt a^2$, en volgens opdracht \ref{oef:h2-o5} is $3 \deelt a$: $a = 3k$. Dan $9k^2 = 3b^2$, dus $b^2 = 3k^2$, en ook $3 \deelt b$. Tegenspraak met de vereenvoudigde breuk.
+
+- id: h2-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    gevallen onderscheiden
+  opgave: |-
+    Bewijs dat het kwadraat van elk geheel getal bij deling door 4 rest 0 of 1 geeft. Leid af dat $n^2 + 2$ nooit deelbaar is door 4.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    $n = 2k$: $n^2 = 4k^2$, rest 0. $n = 2k + 1$: $n^2 = 4(k^2 + k) + 1$, rest 1. Dan geeft $n^2 + 2$ rest 2 of 3, nooit 0.
+
+- id: h2-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    rationaal plus irrationaal
+  opgave: |-
+    Bewijs uit het ongerijmde: de som van een rationaal getal $r$ en een irrationaal getal $x$ is irrationaal.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Stel dat $r + x = s$ rationaal is. Dan is $x = s - r$ een verschil van twee rationale getallen, en dus rationaal: $\frac{a}{b} - \frac{c}{d} = \frac{ad - bc}{bd}$. Tegenspraak met $x$ irrationaal.
+
+- id: h2-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een bewijs zoeken
+  opgave: |-
+    Bewijs: als $n$ een oneven getal is, dan is $n^2 - 1$ deelbaar door 8.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    $n = 2k + 1$: $n^2 - 1 = 4k^2 + 4k = 4k(k + 1)$. Van $k$ en $k + 1$ is er één even, dus $k(k + 1) = 2m$, en $n^2 - 1 = 8m$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h2-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: algebra
+    onderwerp: Matrices
+  thema: |-
+    tegenvoorbeelden bij matrices
+  opgave: |-
+    Weerleg met $2 \times 2$-matrices.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Voor alle matrices is $AB = BA$.
+      antwoord: |-
+        bv. $A = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$, $B = \begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix}$
+      uitwerking: |-
+        $AB = \begin{bmatrix} 2 & 1 \\ 1 & 1 \end{bmatrix}$ en $BA = \begin{bmatrix} 1 & 1 \\ 1 & 2 \end{bmatrix}$.
+    - opgave: |-
+        Als $A^2 = O$, dan is $A = O$.
+      antwoord: |-
+        $A = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}$
+      uitwerking: |-
+        $\begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}^2 = O$, maar $A \neq O$.
+
+- id: h2-koppel-2
+  soort: koppel
+  niveau: 3
+  koppel:
+    rubriek: analyse
+    onderwerp: Logaritmen
+  thema: |-
+    log 3 met grondtal 2 is irrationaal
+  opgave: |-
+    Bewijs uit het ongerijmde dat $\log_2 3$ irrationaal is. Stel $\log_2 3 = \frac{a}{b}$ met $a, b$ positieve gehele getallen, en schrijf de gelijkheid zonder logaritme.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Dan is $2^{a/b} = 3$, dus $2^a = 3^b$. Links staat een even getal (want $a \geqslant 1$), rechts een oneven getal. Tegenspraak.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h2-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    rechtstreeks bewijs
+  opgave: |-
+    Bewijs: het product van een even getal en een willekeurig geheel getal is even.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    $2k \cdot m = 2(km)$, met $km$ geheel: even.
+
+- id: h2-t2
+  soort: test
+  niveau: 2
+  thema: |-
+    contrapositie
+  opgave: |-
+    Bewijs via de contrapositie: als $m + n$ oneven is, dan is $m$ of $n$ oneven.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Contrapositie: als $m$ en $n$ allebei even zijn, dan is $m + n$ even. Met $m = 2a$ en $n = 2b$ is $m + n = 2(a + b)$.
+
+- id: h2-t3
+  soort: test
+  niveau: 2
+  thema: |-
+    uit het ongerijmde
+  opgave: |-
+    Bewijs uit het ongerijmde: er is geen kleinste positief rationaal getal.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Stel dat $q$ het kleinste positieve rationale getal is. Dan is $\frac{q}{2}$ ook positief en rationaal, en kleiner dan $q$. Tegenspraak.
+
+- id: h2-t4
+  soort: test
+  niveau: 1
+  thema: |-
+    tegenvoorbeeld
+  opgave: |-
+    Weerleg: \textit{voor alle reële $a$ en $b$ geldt: als $a^2 > b^2$, dan is $a > b$}.
+  antwoord: |-
+    bv. $a = -3$, $b = 1$
+  uitwerking: |-
+    $a = -3$, $b = 1$: $9 > 1$, maar $-3 < 1$.

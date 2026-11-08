@@ -1,0 +1,219 @@
+%----------------------------------------------------------------------------------------
+% BEWIJSTECHNIEKEN. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h2-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{2}{Bewijstechnieken}
+
+\lkr{Leerplan B+S'': LPD 4 met de bewijstechnieken rechtstreeks bewijs, bewijs uit het ongerijmde en ontkrachting door tegenvoorbeeld (volledige inductie volgt in hoofdstuk 3), en de wenk dat de focus ligt op beargumenteren, niet op reproduceren. Sectie 1 is een korte training in het lezen van bewijzen met zelfuitleg: onderzoek bij studenten toont dat zo'n training het begrip van bewijzen sterk verbetert (zie \texttt{Ontwerp/ideale-cursus.md}). Gebruik de vragen uit die sectie ook later, bij elk bewijs in de andere cursussen.}
+
+Waarom is de som van twee oneven getallen altijd even? Je kunt het nagaan voor $3 + 5$ en $7 + 11$, maar niet voor alle getallen: dat zijn er oneindig veel. Een bewijs toont met een redenering dat iets \textit{altijd} klopt. In dit hoofdstuk leer je eerst bewijzen lezen, en daarna zelf bewijzen schrijven, met drie technieken: rechtstreeks, via de contrapositie, en uit het ongerijmde.
+
+\begin{oefeningen}[Start]
+\oef{h2-start-1}
+
+\oef{h2-verken}
+\end{oefeningen}
+
+%========================================================================================
+\section{Een bewijs lezen}
+
+Een bewijs lees je niet zoals een verhaal. Je stelt bij elke stap vragen, en beantwoordt ze voor jezelf. Dat heet \textbf{zelfuitleg}. Het kost tijd, maar zo begrijp je een bewijs echt, en leer je hoe je er zelf een maakt.
+
+\begin{werkwijze}
+Lees een bewijs regel per regel. Vraag je bij elke regel af: \textbf{1.}~Welke definitie, eigenschap of eerdere regel wordt hier gebruikt? \textbf{2.}~Hoe volgt deze regel uit wat ervoor staat? \textbf{3.}~Waar wordt de veronderstelling gebruikt? Vraag je op het einde af: \textbf{4.}~Wat is het idee van het bewijs, in één zin?
+\end{werkwijze}
+
+We spreken eerst af wat even en oneven betekent.
+
+\begin{theorie}
+Een geheel getal $n$ is \textbf{\textcolor{accent}{even}} als $\formule{n = 2k}$ voor een geheel getal $k$, en \textbf{\textcolor{accent}{oneven}} als $\formule{n = 2k + 1}$ voor een geheel getal $k$.
+
+\vspace{1mm}
+Een geheel getal $a$ \textbf{\textcolor{accent}{deelt}} $b$, kort $\formule{a \deelt b}$, als $\formule{b = a \cdot k}$ voor een geheel getal $k$.
+\end{theorie}
+
+\voorbeeld{}{Lees het bewijs van de stelling \textit{de som van twee oneven getallen is even}, en beantwoord de vragen van de werkwijze.\label{vb:h2-lezen}}{%
+\uitleg{Links staat het bewijs, rechts de zelfuitleg.}
+\begin{stappenbreed}
+\text{Neem twee oneven getallen } m \text{ en } n. & De veronderstelling: we bewijzen het voor willekeurige oneven getallen, niet voor een voorbeeld. \\[1ex]
+m = 2a + 1 \text{ en } n = 2b + 1 \text{ met } a, b \in \Z & De definitie van oneven. Twee verschillende letters, want $m$ en $n$ mogen verschillen. \\[1ex]
+m + n = 2a + 2b + 2 = 2(a + b + 1) & Optellen en 2 afzonderen. \\[1ex]
+\text{dus } m + n \text{ is even} & De definitie van even, met $k = a + b + 1$, een geheel getal.
+\end{stappenbreed}
+Het idee: twee \textit{plus één} samen geven een extra tweetal.}
+
+\naast{\begin{minipage}{10.2cm}
+Het idee kun je ook tekenen. Een even getal is een aantal stippen in paren, een oneven getal heeft er één over. Leg je twee oneven aantallen samen, dan vormen de twee losse stippen samen een nieuw paar. Zo'n figuur helpt om het idee te vinden, maar is zelf geen bewijs: het bewijs is de redenering met $2a + 1$ en $2b + 1$.
+\end{minipage}}{\begin{tikzpicture}[x=.38cm,y=.38cm]
+  \foreach \i in {0,1,2}{\fill[accent] (\i,1) circle (3pt); \fill[accent] (\i,0) circle (3pt);}
+  \fill[fel!80!black] (3,1) circle (3pt);
+  \foreach \i in {5,6}{\fill[accent] (\i,1) circle (3pt); \fill[accent] (\i,0) circle (3pt);}
+  \fill[fel!80!black] (7,0) circle (3pt);
+  \draw[fel!80!black,thick,dashed,rounded corners=3pt] (2.6,1.4) -- (3.4,1.4) -- (7.4,.4) -- (7.4,-.4) -- (6.6,-.4) -- (2.6,.6) -- cycle;
+  \node[below,font=\scriptsize] at (1.5,-.5) {$2a + 1$}; \node[below,font=\scriptsize] at (6,-.5) {$2b + 1$};
+\end{tikzpicture}}
+
+\begin{oefeningen}
+\oef{h2-lezen}
+\end{oefeningen}
+
+%========================================================================================
+\section{Het rechtstreekse bewijs}
+
+Bij een \textbf{rechtstreeks bewijs} van $p \dan q$ neem je aan dat $p$ waar is, en leid je in stappen af dat $q$ waar is. Dat deed het bewijs in sectie 1.
+
+\voorbeeld{}{Bewijs: voor elk geheel getal $n$ is $n^2 + n$ even.\label{vb:h2-rechtstreeks}}{%
+\uitleg{$n^2 + n = n(n + 1)$ is een product van twee opeenvolgende getallen. Eén ervan is even. We maken dat precies door twee gevallen te onderscheiden.}
+\begin{stappenbreed}
+n^2 + n = n(n + 1) & Ontbinden. \\[1ex]
+n = 2k\colon \ n(n + 1) = 2k(2k + 1) = 2 \cdot k(2k + 1) & Is $n$ even, dan is het product even. \\[1ex]
+n = 2k + 1\colon \ n(n + 1) = (2k + 1)(2k + 2) = 2(2k + 1)(k + 1) & Is $n$ oneven, dan is $n + 1$ even.
+\end{stappenbreed}
+In beide gevallen is $n^2 + n$ even. Elk geheel getal is even of oneven, dus het geldt voor alle $n$.}
+
+\begin{werkwijze}
+Schrijf de veronderstelling uit met de definities (bv. $n = 2k + 1$). Werk met algebra naar de vorm van het besluit (bv. $2 \cdot$ iets). Benoem het gehele getal dat je vindt. Valt het niet in één keer, onderscheid dan gevallen die samen alle mogelijkheden dekken.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h2-rechtstreeks}
+\end{oefeningen}
+
+%========================================================================================
+\section{Bewijs via de contrapositie}
+
+Soms is $p \dan q$ moeilijk rechtstreeks te bewijzen, maar de contrapositie $\niet q \dan \niet p$ gemakkelijk. Omdat ze gelijkwaardig zijn (hoofdstuk 1), volstaat het de contrapositie te bewijzen.
+
+\voorbeeld{}{Bewijs: als $n^2$ even is, dan is $n$ even.\label{vb:h2-contrapositie}}{%
+\uitleg{Rechtstreeks zou je uit $n^2 = 2k$ iets over $n$ moeten halen, met een wortel. De contrapositie \textit{als $n$ oneven is, dan is $n^2$ oneven} is eenvoudig.}
+\begin{stappenbreed}
+n = 2k + 1 & Veronderstelling van de contrapositie: $n$ is oneven. \\[1ex]
+n^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1 & Kwadrateren, en de vorm $2 \cdot$ iets $+ 1$ maken. \\[1ex]
+\text{dus } n^2 \text{ is oneven} & De contrapositie is bewezen, dus ook de stelling.
+\end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h2-contrapositie}
+\end{oefeningen}
+
+%========================================================================================
+\section{Bewijs uit het ongerijmde}
+
+\begin{theorie}
+Bij een \textbf{\textcolor{accent}{bewijs uit het ongerijmde}} van een uitspraak $q$ neem je aan dat $\niet q$ waar is, en leid je daaruit een \textbf{\textcolor{accent}{tegenspraak}} af: iets wat tegelijk waar en vals is. Dan kan $\niet q$ niet waar zijn, dus is $q$ waar.
+\end{theorie}
+
+Dit is vooral handig als $q$ iets zegt als \textit{er bestaat geen \ldots} of \textit{is niet \ldots}: dan geeft $\niet q$ je iets om mee te rekenen.
+
+\begin{theorie}
+\begin{stelling}{$\sqrt2$ is irrationaal}
+Er bestaan geen gehele getallen $a$ en $b$ met $b \neq 0$ zodat \quad $\formule{\sqrt2 = \dfrac{a}{b}}$
+\end{stelling}
+
+\begin{bewijs}
+Stel uit het ongerijmde dat $\sqrt2 = \frac{a}{b}$, met de breuk volledig vereenvoudigd: $a$ en $b$ hebben geen gemeenschappelijke deler groter dan 1. Kwadrateren geeft
+\bewijsregel{a^2 = 2b^2 ,}
+dus $a^2$ is even, en volgens voorbeeld \ref{vb:h2-contrapositie} is $a$ even: $a = 2k$. Dan is $4k^2 = 2b^2$, dus $b^2 = 2k^2$ is even, en ook $b$ is even. Dan zijn $a$ en $b$ allebei deelbaar door 2: tegenspraak met de vereenvoudigde breuk.
+\end{bewijs}
+\end{theorie}
+
+Het bewijs gebruikt een eerder bewezen resultaat: zo bouwt de wiskunde verder op wat al vaststaat. Een tweede klassiek bewijs uit het ongerijmde is ruim 2000 jaar oud, en staat bij Euclides.
+
+\begin{theorie}
+\begin{stelling}{Er zijn oneindig veel priemgetallen}
+Er is geen grootste priemgetal.
+\end{stelling}
+
+\begin{bewijs}
+Stel uit het ongerijmde dat er maar eindig veel priemgetallen zijn: $p_1, p_2, \ldots, p_m$. Bekijk
+\bewijsregel{N = p_1 \cdot p_2 \cdots p_m + 1 .}
+$N$ is groter dan 1, dus heeft het een priemdeler $p$. Die moet een van de $p_i$ zijn. Maar $p_i$ deelt $p_1 p_2 \cdots p_m$, en als het ook $N$ deelt, deelt het het verschil 1: onmogelijk. Tegenspraak.
+\end{bewijs}
+\end{theorie}
+
+\begin{werkwijze}
+Schrijf: \textit{Stel uit het ongerijmde dat \ldots} met de ontkenning van wat je wilt bewijzen. Reken en redeneer verder tot je een tegenspraak vindt met de veronderstelling of met iets wat vaststaat. Besluit dat de ontkenning onmogelijk is, en de uitspraak dus waar.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h2-ongerijmde}
+\end{oefeningen}
+
+%========================================================================================
+\section{Ontkrachten met een tegenvoorbeeld}
+
+Een uitspraak \textit{voor alle \ldots} weerleg je met één tegenvoorbeeld (hoofdstuk 1). Vaak is het leerzaam om na te gaan welke voorwaarde van een stelling je niet mag weglaten.
+
+\voorbeeld{}{De stelling zegt: \textit{als $a > 0$ en $b > 0$, en $a > b$, dan is $a^2 > b^2$}. Toon met een tegenvoorbeeld aan dat de voorwaarde \textit{$b > 0$} nodig is.\label{vb:h2-tegenvoorbeeld}}{%
+\uitleg{We zoeken getallen met $a > b$, maar met $b$ negatief, waarvoor $a^2 \leqslant b^2$.}
+\begin{stappen}
+a = 1, \ b = -3\colon \ a > b & Aan de andere voorwaarden is voldaan. \\[1ex]
+a^2 = 1 < 9 = b^2 & Het besluit klopt niet: de voorwaarde $b > 0$ is nodig.
+\end{stappen}}
+
+Voorbeelden kunnen een uitspraak nooit bewijzen, alleen weerleggen. Dat $n^2 + n + 41$ een priemgetal is voor $n = 0, 1, \ldots, 39$, bewijst niets voor $n = 40$ (opdracht \ref{oef:h1-o3} van hoofdstuk 1).
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h2-o1}
+
+\oef{h2-o2}
+
+\oef{h2-o3}
+
+\oef{h2-o4}
+
+\oef{h2-o5}
+
+\oef{h2-o6}
+
+\oef{h2-o7}
+
+\oef{h2-o8}
+
+\oef{h2-o9}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{De eerste oefening gebruikt het product van matrices (Matrices, 5de jaar), de tweede logaritmen (Exponentiële en logaritmische functies).}
+
+\begin{oefeningen}
+\oef{h2-koppel-1}
+
+\oef{h2-koppel-2}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h2-t1}
+
+\oef{h2-t2}
+
+\oef{h2-t3}
+
+\oef{h2-t4}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h2-t1}{vb:h2-rechtstreeks}{oef:h2-rechtstreeks}%
+  \fv{oef:h2-t2}{vb:h2-contrapositie}{oef:h2-contrapositie}%
+  \fzv{oef:h2-t3}{oef:h2-ongerijmde}%
+  \fv{oef:h2-t4}{vb:h2-tegenvoorbeeld}{oef:h2-rechtstreeks}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: de vier vragen om een bewijs te lezen, de definities van even, oneven en deelbaar, hoe een rechtstreeks bewijs, een bewijs via de contrapositie en een bewijs uit het ongerijmde werken, en waarom een voorbeeld een uitspraak wel kan weerleggen maar niet bewijzen. Schrijf ook het idee van de bewijzen voor $\sqrt2$ en voor de priemgetallen op, elk in één zin. Vergelijk daarna met de kaders.
+\fi

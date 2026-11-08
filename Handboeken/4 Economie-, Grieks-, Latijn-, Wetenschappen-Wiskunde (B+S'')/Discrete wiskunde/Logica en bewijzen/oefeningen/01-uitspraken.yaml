@@ -1,0 +1,425 @@
+# Oefeningen van hoofdstuk 1. Zie oefeningenbank.py voor de velden.
+
+- id: h1-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}\quad Waar of vals?
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        51 is een priemgetal.
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: $51 = 3 \cdot 17$.
+    - opgave: |-
+        0 is even.
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $0 = 2 \cdot 0$.
+    - opgave: |-
+        Elk vierkant is een rechthoek.
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: een vierkant heeft vier rechte hoeken.
+    - opgave: |-
+        Elke rechthoek is een vierkant.
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: een rechthoek van 2 bij 3 is geen vierkant.
+    - opgave: |-
+        Voor alle reële $x$ is $x^2 \geqslant 0$.
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: een kwadraat is nooit negatief.
+    - opgave: |-
+        Er is een reëel getal $x$ met $x^2 = -1$.
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals in $\R$ (wel in $\mathbb{C}$).
+
+- id: h1-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken}
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Is de uitspraak \textit{als een natuurlijk getal deelbaar is door 6, dan is het even} waar? Waarom?
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: is $n = 6k$, dan is $n = 2 \cdot 3k$.
+    - opgave: |-
+        Is \textit{als een natuurlijk getal even is, dan is het deelbaar door 6} waar?
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: 4 is even, maar niet deelbaar door 6.
+    - opgave: |-
+        Is \textit{als een natuurlijk getal oneven is, dan is het niet deelbaar door 6} waar? Vergelijk met a.
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: was een oneven getal deelbaar door 6, dan was het volgens a even. Het zegt hetzelfde als a.
+    - opgave: |-
+        Wat is het tegendeel van \textit{alle zwanen zijn wit}? Kies: \textit{geen enkele zwaan is wit}, of \textit{er is een zwaan die niet wit is}.
+      antwoord: |-
+        er is een zwaan die niet wit is
+      uitwerking: |-
+        \textit{Er is een zwaan die niet wit is.} Eén zwarte zwaan volstaat om \textit{alle zwanen zijn wit} te weerleggen.
+
+- id: h1-uitspraak
+  soort: kort
+  opgave: |-
+    Neem $p$: \textit{$x > 3$} en $q$: \textit{$x$ is even}, met $x$ een natuurlijk getal.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Voor welke $x$ van 0 tot 6 is $p \en q$ waar? En $p \of q$?
+      antwoord: |-
+        4, 6; \ 0, 2, 4, 5, 6
+      uitwerking: |-
+        $p \en q$: groter dan 3 en even: 4 en 6. $p \of q$: groter dan 3 of even (of beide): 0, 2, 4, 5, 6.
+    - opgave: |-
+        Ontken $p \en q$ en $p \of q$ in woorden, met De Morgan.
+      antwoord: |-
+        $x \leqslant 3$ of oneven; $x \leqslant 3$ en oneven
+      uitwerking: |-
+        $\niet(p \en q)$: \textit{$x \leqslant 3$ of $x$ is oneven}. $\niet(p \of q)$: \textit{$x \leqslant 3$ en $x$ is oneven}.
+
+- id: h1-implicatie
+  soort: kort
+  opgave: |-
+    Geef de omgekeerde en de contrapositie, en zeg van alle drie of ze waar zijn.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Als $x = 3$, dan is $x^2 = 9$.
+      antwoord: |-
+        waar; omgekeerde vals; contrapositie waar
+      uitwerking: |-
+        Waar. Omgekeerde: \textit{als $x^2 = 9$, dan is $x = 3$}: vals ($x = -3$). Contrapositie: \textit{als $x^2 \neq 9$, dan is $x \neq 3$}: waar.
+    - opgave: |-
+        Als een vierhoek een ruit is, dan staan zijn diagonalen loodrecht op elkaar.
+      antwoord: |-
+        waar; omgekeerde vals; contrapositie waar
+      uitwerking: |-
+        Waar. Omgekeerde: \textit{als de diagonalen loodrecht staan, is het een ruit}: vals (een vlieger). Contrapositie: \textit{als de diagonalen niet loodrecht staan, is het geen ruit}: waar.
+
+- id: h1-kwantoren
+  soort: kort
+  opgave: |-
+    Ontken de uitspraak, en zeg of de uitspraak of haar ontkenning waar is.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\forall n \in \N\colon n^2 \geqslant n$
+      antwoord: |-
+        $\exists n \in \N\colon n^2 < n$; de uitspraak is waar
+      uitwerking: |-
+        Ontkenning: $\exists n \in \N\colon n^2 < n$. Vals, want voor $n = 0$ en $n \geqslant 1$ is $n^2 \geqslant n$. De uitspraak is waar.
+    - opgave: |-
+        $\exists x \in \R\colon x^2 + 1 = 0$
+      antwoord: |-
+        $\forall x \in \R\colon x^2 + 1 \neq 0$; de ontkenning is waar
+      uitwerking: |-
+        Ontkenning: $\forall x \in \R\colon x^2 + 1 \neq 0$. Waar, want $x^2 + 1 \geqslant 1$.
+    - opgave: |-
+        Elke dag van het jaar is er een leerling jarig.
+      antwoord: |-
+        er is een dag waarop geen enkele leerling jarig is
+      uitwerking: |-
+        $\forall d\ \exists l$ wordt $\exists d\ \forall l$: \textit{er is een dag waarop geen enkele leerling jarig is}. Bij een klas van 25 is de ontkenning zeker waar.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h1-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    nodig en voldoende
+  opgave: |-
+    Vul aan met \textit{nodig}, \textit{voldoende} of \textit{nodig en voldoende}.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Deelbaar zijn door 10 is een \ldots{} voorwaarde om deelbaar te zijn door 5.
+      antwoord: |-
+        voldoende
+      uitwerking: |-
+        Voldoende: wie deelbaar is door 10, is deelbaar door 5. Niet nodig: 15.
+    - opgave: |-
+        Even zijn is een \ldots{} voorwaarde om deelbaar te zijn door 4.
+      antwoord: |-
+        nodig
+      uitwerking: |-
+        Nodig: wie deelbaar is door 4, is even. Niet voldoende: 6.
+    - opgave: |-
+        $x^2 = 0$ is een \ldots{} voorwaarde voor $x = 0$.
+      antwoord: |-
+        nodig en voldoende
+      uitwerking: |-
+        $x^2 = 0 \asa x = 0$.
+
+- id: h1-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    van woorden naar symbolen
+  opgave: |-
+    Schrijf met kwantoren. Gebruik $\R$ of $\N$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Elk reëel getal heeft een tegengestelde.
+      antwoord: |-
+        $\forall x \in \R\ \exists y \in \R\colon x + y = 0$
+      uitwerking: |-
+        $\forall x \in \R\ \exists y \in \R\colon x + y = 0$.
+    - opgave: |-
+        Er is een natuurlijk getal dat kleiner is dan of gelijk aan elk natuurlijk getal.
+      antwoord: |-
+        $\exists m \in \N\ \forall n \in \N\colon m \leqslant n$
+      uitwerking: |-
+        $\exists m \in \N\ \forall n \in \N\colon m \leqslant n$. Waar, met $m = 0$.
+
+- id: h1-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    tegenvoorbeeld
+  opgave: |-
+    Weerleg met een tegenvoorbeeld.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Voor alle reële $a$ en $b$ is $\sqrt{a^2 + b^2} = a + b$.
+      antwoord: |-
+        $a = 3$, $b = 4$
+      uitwerking: |-
+        $a = 3$, $b = 4$: $\sqrt{25} = 5 \neq 7$.
+    - opgave: |-
+        $n^2 + n + 41$ is een priemgetal voor elk natuurlijk getal $n$.
+      antwoord: |-
+        $n = 40$
+      uitwerking: |-
+        $n = 40$: $1600 + 40 + 41 = 1681 = 41^2$. (Voor $n$ van 0 tot 39 is het wel telkens een priemgetal.)
+
+- id: h1-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    de volgorde van kwantoren
+  opgave: |-
+    Zeg in woorden wat de uitspraken betekenen (met $x, y \in \R$), en of ze waar zijn.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\forall x\ \exists y\colon y > x^2$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Bij elk getal is er een getal groter dan zijn kwadraat: waar, neem $y = x^2 + 1$.
+    - opgave: |-
+        $\exists y\ \forall x\colon y > x^2$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Er is een getal groter dan alle kwadraten: vals, want $x^2$ wordt willekeurig groot.
+    - opgave: |-
+        $\exists y\ \forall x\colon y \leqslant x^2$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Er is een getal dat kleiner is dan of gelijk aan alle kwadraten: waar, bijvoorbeeld $y = 0$.
+
+- id: h1-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    implicaties in de wiskunde
+  opgave: |-
+    Waar of vals? Geef de omgekeerde, en zeg of die waar is. Is een equivalentie waar?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Als $f$ afleidbaar is in $a$, dan is $f$ continu in $a$.
+      antwoord: |-
+        waar; omgekeerde vals
+      uitwerking: |-
+        Waar. Omgekeerde: \textit{continu, dan afleidbaar}: vals, bijvoorbeeld $|x|$ in 0. Geen equivalentie.
+    - opgave: |-
+        Als $a^2 = b^2$, dan is $a = b$ (met $a, b \in \R$).
+      antwoord: |-
+        vals; omgekeerde waar
+      uitwerking: |-
+        Vals: $a = 2$, $b = -2$. De omgekeerde \textit{als $a = b$, dan $a^2 = b^2$} is waar. Juist is: $a^2 = b^2 \asa a = b \of a = -b$.
+
+- id: h1-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    de negatie van een implicatie
+  opgave: |-
+    Toon met een redenering (of een waarheidstabel) aan dat $\niet(p \dan q) \asa (p \en \niet q)$. Ontken daarmee: \textit{als het regent, neem ik een paraplu}.
+  antwoord: |-
+    het regent en ik neem geen paraplu
+  uitwerking: |-
+    $p \dan q$ is alleen vals als $p$ waar en $q$ vals is, dus $\niet(p \dan q)$ is waar precies als $p \en \niet q$. De ontkenning is: \textit{het regent en ik neem geen paraplu}. Niet: \textit{als het niet regent, neem ik geen paraplu}.
+
+- id: h1-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    redeneringen beoordelen
+  opgave: |-
+    Is de redenering juist? Verklaar.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Als een getal deelbaar is door 9, is de som van zijn cijfers deelbaar door 9. De som van de cijfers van 7254 is 18. Dus 7254 is deelbaar door 9.
+      antwoord: |-
+        fout (omgekeerde)
+      uitwerking: |-
+        De redenering gebruikt de omgekeerde, die niet gegeven is. (Het besluit klopt wel, want ook de omgekeerde is een stelling, maar dat staat er niet.)
+    - opgave: |-
+        Als een getal deelbaar is door 9, is de som van zijn cijfers deelbaar door 9. De som van de cijfers van 7255 is 19. Dus 7255 is niet deelbaar door 9.
+      antwoord: |-
+        juist (contrapositie)
+      uitwerking: |-
+        Juist: dat is de contrapositie van de gegeven implicatie.
+
+- id: h1-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    drie kwantoren
+  opgave: |-
+    Een functie $f\colon \R \to \R$ is \textit{begrensd} als $\exists M\ \forall x\colon |f(x)| \leqslant M$. Schrijf de ontkenning met kwantoren en in woorden. Toon aan dat $f(x) = x^2$ niet begrensd is en $g(x) = \sin x$ wel.
+  antwoord: |-
+    $\forall M\ \exists x\colon |f(x)| > M$
+  uitwerking: |-
+    Niet begrensd: $\forall M\ \exists x\colon |f(x)| > M$: hoe groot je $M$ ook kiest, er is een $x$ waar $|f(x)|$ groter is. Voor $f(x) = x^2$: neem $x = M + 1$ (met $M \geqslant 0$), dan is $x^2 > M$. Voor $\sin$: $M = 1$ werkt, want $|\sin x| \leqslant 1$ voor alle $x$.
+
+- id: h1-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een logisch raadsel
+  opgave: |-
+    Op een eiland zegt elke ridder altijd de waarheid en elke schurk altijd een leugen. Anna zegt: \textit{Bram en ik zijn allebei schurken}. Wat zijn Anna en Bram? Leg uit.
+  antwoord: |-
+    Anna schurk, Bram ridder
+  uitwerking: |-
+    Was Anna een ridder, dan was haar uitspraak waar, en was ze zelf een schurk: tegenspraak. Dus is Anna een schurk, en is haar uitspraak vals. \textit{Allebei schurken} is vals, terwijl Anna een schurk is: dan is Bram een ridder.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h1-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: data
+    onderwerp: Kansrekenen
+  thema: |-
+    De Morgan voor gebeurtenissen
+  opgave: |-
+    De wetten van De Morgan gelden ook voor gebeurtenissen: $\overline{A \cup B} = \overline{A} \cap \overline{B}$. Je gooit twee keer met een dobbelsteen. $A$: de eerste worp is een zes; $B$: de tweede worp is een zes. Bereken $P(A \cup B)$ via $\overline{A} \cap \overline{B}$.
+  antwoord: |-
+    $\tfrac{11}{36}$
+  uitwerking: |-
+    $\overline{A \cup B}$ is \textit{geen enkele zes} $= \overline{A} \cap \overline{B}$, met kans $\frac56 \cdot \frac56 = \frac{25}{36}$. Dus $P(A \cup B) = 1 - \frac{25}{36} = \frac{11}{36}$.
+
+- id: h1-koppel-2
+  soort: koppel
+  niveau: 3
+  koppel:
+    rubriek: discreet
+    onderwerp: Rijen
+  thema: |-
+    de definitie van een limiet lezen
+  opgave: |-
+    Een rij $(u_n)$ heeft limiet 0 als $\forall \varepsilon > 0\ \exists N\ \forall n > N\colon |u_n| < \varepsilon$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Zeg die definitie in je eigen woorden.
+      antwoord: |-
+        vanaf een zeker punt liggen alle termen zo dicht bij 0 als je wilt
+      uitwerking: |-
+        Hoe klein je de afstand $\varepsilon$ ook kiest, vanaf een bepaalde index $N$ liggen alle termen op een afstand kleiner dan $\varepsilon$ van 0.
+    - opgave: |-
+        Toon aan dat $u_n = \frac1n$ limiet 0 heeft: welke $N$ werkt bij een gegeven $\varepsilon$?
+      antwoord: |-
+        $N \geqslant \frac{1}{\varepsilon}$
+      uitwerking: |-
+        $\frac1n < \varepsilon \asa n > \frac{1}{\varepsilon}$. Kies dus een natuurlijk getal $N \geqslant \frac{1}{\varepsilon}$; dan is $\frac1n < \varepsilon$ voor alle $n > N$.
+    - opgave: |-
+        Schrijf de ontkenning: wat betekent \textit{$(u_n)$ heeft geen limiet 0}?
+      antwoord: |-
+        $\exists \varepsilon > 0\ \forall N\ \exists n > N\colon |u_n| \geqslant \varepsilon$
+      uitwerking: |-
+        $\exists \varepsilon > 0\ \forall N\ \exists n > N\colon |u_n| \geqslant \varepsilon$: er is een afstand waarvan oneindig vaak termen minstens zo ver van 0 liggen.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h1-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    De Morgan
+  opgave: |-
+    Ontken: \textit{de film is lang of saai}.
+  antwoord: |-
+    de film is niet lang en niet saai
+  uitwerking: |-
+    $\niet(p \of q) \asa \niet p \en \niet q$: \textit{de film is niet lang en niet saai}.
+
+- id: h1-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    omgekeerde en contrapositie
+  opgave: |-
+    Gegeven: \textit{als een getal deelbaar is door 6, dan is het deelbaar door 3}. Geef de omgekeerde en de contrapositie, en zeg of ze waar zijn.
+  antwoord: |-
+    omgekeerde vals (9); contrapositie waar
+  uitwerking: |-
+    Omgekeerde: \textit{als deelbaar door 3, dan door 6}: vals (9). Contrapositie: \textit{als niet deelbaar door 3, dan niet door 6}: waar.
+
+- id: h1-t3
+  soort: test
+  niveau: 2
+  thema: |-
+    kwantoren ontkennen
+  opgave: |-
+    Ontken met kwantoren en in woorden: $\forall n \in \N\ \exists p\colon p$ is een priemgetal en $p > n$.
+  antwoord: |-
+    $\exists n\ \forall p\colon p$ is geen priemgetal of $p \leqslant n$
+  uitwerking: |-
+    $\exists n \in \N\ \forall p\colon p$ is geen priemgetal of $p \leqslant n$: \textit{er is een getal waarboven geen priemgetallen meer liggen}. (De oorspronkelijke uitspraak is waar: er zijn oneindig veel priemgetallen; zie hoofdstuk 2.)
+
+- id: h1-t4
+  soort: test
+  niveau: 1
+  thema: |-
+    tegenvoorbeeld
+  opgave: |-
+    Weerleg: \textit{voor alle reële $x$ is $\frac{1}{x + 1} = \frac1x + 1$}.
+  antwoord: |-
+    bv. $x = 1$
+  uitwerking: |-
+    $x = 1$: $\frac12 \neq 2$.

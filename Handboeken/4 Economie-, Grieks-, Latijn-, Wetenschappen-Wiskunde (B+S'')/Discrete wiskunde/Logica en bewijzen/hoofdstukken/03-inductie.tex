@@ -1,0 +1,166 @@
+%----------------------------------------------------------------------------------------
+% VOLLEDIGE INDUCTIE. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h3-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{3}{Volledige inductie}
+
+\lkr{Leerplan B+S'': de bewijstechniek volledige inductie bij LPD 4. Toepassingen uit andere cursussen (de somformule van een meetkundige rij, De Moivre, het aantal deelverzamelingen) staan als Koppel. De beeldspraak van de dominostenen helpt, maar laat leerlingen de inductiestap telkens als een implicatie formuleren: \textit{als het klopt voor $k$, dan voor $k + 1$}.}
+
+Een uitspraak over alle natuurlijke getallen kun je niet nagaan door ze één voor één te controleren: dat zijn er oneindig veel. Volledige inductie is een bewijstechniek precies voor zulke uitspraken. Je bewijst twee dingen: dat de uitspraak klopt voor het eerste getal, en dat ze \textit{doorgegeven} wordt van elk getal naar het volgende. Dan klopt ze voor allemaal, zoals een rij dominostenen die allemaal omvalt.
+
+\begin{oefeningen}[Start]
+\oef{h3-start-1}
+
+\oef{h3-verken}
+\end{oefeningen}
+
+%========================================================================================
+\section{Het principe}
+
+\begin{theorie}
+\begin{stelling}{Volledige inductie}
+Zij $P(n)$ een uitspraak over natuurlijke getallen $n \geqslant n_0$. Als
+
+\vspace{1mm}
+\quad 1.\ \ \textbf{\textcolor{accent}{basisstap}}: $\formule{P(n_0)}$ waar is, en
+
+\quad 2.\ \ \textbf{\textcolor{accent}{inductiestap}}: voor elke $k \geqslant n_0$ geldt $\formule{P(k) \dan P(k + 1)}$,
+
+\vspace{1mm}
+dan is $P(n)$ waar voor alle $n \geqslant n_0$.
+\end{stelling}
+\end{theorie}
+
+In de inductiestap neem je aan dat $P(k)$ waar is: de \textbf{inductiehypothese}. Je bewijst dan $P(k + 1)$. Je neemt dus niet aan wat je wilt bewijzen: je bewijst een implicatie. Uit $P(n_0)$ volgt $P(n_0 + 1)$, daaruit $P(n_0 + 2)$, en zo verder, zonder einde.
+
+% hoeken zo berekend dat elke gevallen steen precies op de volgende rust
+\figuren{\begin{tikzpicture}[x=.7cm,y=.7cm,font=\small]
+  \foreach \i/\a in {0/64.5,1/57.4,2/44.1,3/23.6,4/0,5/0,6/0,7/0}{
+    \begin{scope}[shift={(\i*1.2,0)},rotate around={-\a:(.4,0)}]
+      \filldraw[draw=accent,fill=accent!\ifdim\a pt>0pt 55\else 20\fi] (0,0) rectangle (.4,2);
+    \end{scope}}
+  \draw[grijs] (-.4,0) -- (9.4,0);
+  \node[below] at (.2,0) {$n_0$};
+  \node[below] at (1.4,0) {$n_0 + 1$};
+  \node[below] at (3.8,0) {$k$};
+  \node[below] at (5,0) {$k + 1$};
+  \node at (10,1) {$\cdots$};
+\end{tikzpicture}}
+
+De eerste steen valt (basisstap), en elke steen die valt, duwt de volgende om (inductiestap): dan vallen ze allemaal. Zonder basisstap valt er niets om; zonder inductiestap kan de rij ergens stoppen.
+
+%========================================================================================
+\section{Somformules}
+
+\voorbeeld{}{Bewijs dat voor elk natuurlijk getal $n \geqslant 1$ geldt: $1 + 2 + 3 + \cdots + n = \dfrac{n(n + 1)}{2}$.\label{vb:h3-som}}{%
+\uitleg{$P(n)$ is de formule voor $n$. In de inductiestap schrijven we de som tot $k + 1$ als de som tot $k$ plus de laatste term, en gebruiken de inductiehypothese voor de som tot $k$.}
+\begin{stappenbreed}
+n = 1\colon \ 1 = \frac{1 \cdot 2}{2} & Basisstap: klopt. \\[3ex]
+\text{stel } 1 + 2 + \cdots + k = \frac{k(k + 1)}{2} & Inductiehypothese $P(k)$. \\[3ex]
+1 + 2 + \cdots + k + (k + 1) = \frac{k(k + 1)}{2} + (k + 1) & De som tot $k + 1$, met de hypothese. \\[3ex]
+= \frac{k(k + 1) + 2(k + 1)}{2} = \frac{(k + 1)(k + 2)}{2} & Dat is de formule met $n = k + 1$: $P(k + 1)$.
+\end{stappenbreed}
+Volgens het principe van volledige inductie geldt de formule voor alle $n \geqslant 1$.}
+
+\begin{werkwijze}
+\textbf{Basisstap}: controleer de uitspraak voor de kleinste $n$. \textbf{Inductiestap}: schrijf de hypothese $P(k)$ en het doel $P(k + 1)$ volledig uit. Herken in $P(k + 1)$ een stuk dat in $P(k)$ voorkomt, vervang het met de hypothese, en reken tot je het doel bereikt. \textbf{Besluit}: vermeld het principe van volledige inductie.
+\end{werkwijze}
+
+\nujij{Controleer de formule voor $n = 4$, en schrijf de inductiehypothese en het doel op voor de formule $1 + 3 + 5 + \cdots + (2n - 1) = n^2$.}{$1 + 2 + 3 + 4 = 10 = \frac{4 \cdot 5}{2}$. Hypothese: $1 + 3 + \cdots + (2k - 1) = k^2$. Doel: $1 + 3 + \cdots + (2k - 1) + (2k + 1) = (k + 1)^2$.}
+
+\begin{oefeningen}
+\oef{h3-som}
+\end{oefeningen}
+
+%========================================================================================
+\section{Deelbaarheid en ongelijkheden}
+
+Volledige inductie werkt niet alleen bij somformules. Bij deelbaarheid schrijf je het getal voor $k + 1$ als iets met het getal voor $k$.
+
+\voorbeeld{}{Bewijs dat $4^n - 1$ deelbaar is door 3 voor elk natuurlijk getal $n$.\label{vb:h3-deelbaar}}{%
+\uitleg{In de inductiestap schrijven we $4^{k + 1} = 4 \cdot 4^k$, en gebruiken we de hypothese $4^k - 1 = 3m$, dus $4^k = 3m + 1$.}
+\begin{stappenbreed}
+n = 0\colon \ 4^0 - 1 = 0 = 3 \cdot 0 & Basisstap. \\[1ex]
+\text{stel } 4^k - 1 = 3m \text{ met } m \in \Z & Inductiehypothese. \\[1ex]
+4^{k + 1} - 1 = 4 \cdot 4^k - 1 = 4(3m + 1) - 1 = 12m + 3 = 3(4m + 1) & Dus deelbaar door 3: $P(k + 1)$.
+\end{stappenbreed}}
+
+Bij een ongelijkheid moet je in de inductiestap vaak afschatten: een uitdrukking vervangen door iets kleiners of groters dat nog volstaat.
+
+\voorbeeld{}{Bewijs dat $2^n > n^2$ voor elk natuurlijk getal $n \geqslant 5$.\label{vb:h3-ongelijkheid}}{%
+\uitleg{De uitspraak geldt niet voor $n = 2, 3, 4$; de basisstap is dus $n = 5$. In de inductiestap verdubbelt $2^k$, en we tonen aan dat $2k^2 \geqslant (k + 1)^2$ als $k \geqslant 5$.}
+\begin{stappenbreed}
+n = 5\colon \ 32 > 25 & Basisstap. \\[1ex]
+\text{stel } 2^k > k^2 \text{ met } k \geqslant 5 & Inductiehypothese. \\[1ex]
+2^{k + 1} = 2 \cdot 2^k > 2k^2 & De hypothese. \\[1ex]
+2k^2 - (k + 1)^2 = k^2 - 2k - 1 = (k - 1)^2 - 2 > 0 & Want $k - 1 \geqslant 4$. \\[1ex]
+2^{k + 1} > 2k^2 > (k + 1)^2 & Dus $P(k + 1)$.
+\end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h3-deelbaar}
+
+\oef{h3-ongelijkheid}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h3-o1}
+
+\oef{h3-o2}
+
+\oef{h3-o3}
+
+\oef{h3-o4}
+
+\oef{h3-o5}
+
+\oef{h3-o6}
+
+\oef{h3-o7}
+
+\oef{h3-o8}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{Rijen (6de jaar), Complexe getallen (5de jaar) en Telproblemen (6de jaar): kijk na wat al gezien is. Het pakket legt de volgorde niet vast.}
+
+\begin{oefeningen}
+\oef{h3-koppel-1}
+
+\oef{h3-koppel-2}
+
+\oef{h3-koppel-3}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h3-t1}
+
+\oef{h3-t2}
+
+\oef{h3-t3}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h3-t1}{vb:h3-som}{oef:h3-som}%
+  \fv{oef:h3-t2}{vb:h3-deelbaar}{oef:h3-deelbaar}%
+  \fv{oef:h3-t3}{vb:h3-ongelijkheid}{oef:h3-ongelijkheid}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: het principe van volledige inductie met basisstap en inductiestap, wat de inductiehypothese is (en waarom je niet aanneemt wat je wilt bewijzen), en de werkwijze voor somformules, deelbaarheid en ongelijkheden. Vergelijk daarna met de kaders.
+\fi

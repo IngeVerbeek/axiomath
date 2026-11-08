@@ -1,0 +1,225 @@
+%----------------------------------------------------------------------------------------
+% UITSPRAKEN EN KWANTOREN. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h1-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{1}{Uitspraken en kwantoren}
+
+\lkr{Leerplan B+S'': LPD 4 (wiskundige redeneringen beargumenteren en uitspraken bewijzen), met de kwantoren en hun volgorde en negatie. Dit hoofdstuk legt de taal vast die de bewijstechnieken in hoofdstuk 2 en 3 nodig hebben. Formele waarheidstabellen zijn een hulpmiddel, geen doel: het gaat erom dat leerlingen een implicatie, haar omgekeerde en haar contrapositie niet verwarren, en een uitspraak met kwantoren correct ontkennen.}
+
+Wiskunde spreekt een precieze taal. In het dagelijkse leven betekent \textit{of} soms \textit{het ene of het andere, maar niet beide}, en \textit{als het regent, blijf ik thuis} soms ook \textit{als het niet regent, ga ik weg}. In de wiskunde ligt de betekenis van zulke woorden vast. Dat is nodig om te weten wat je moet bewijzen, en om te zien of een redenering klopt. In dit hoofdstuk leer je die taal: uitspraken, \textit{en}, \textit{of}, \textit{niet}, \textit{als \ldots{} dan}, en de kwantoren \textit{voor alle} en \textit{er bestaat}.
+
+\begin{oefeningen}[Start]
+\oef{h1-start-1}
+
+\oef{h1-verken}
+\end{oefeningen}
+
+\lkr{Laat oefening \ref{oef:h1-verken} maken vóór de uitleg. Het verschil tussen een implicatie en haar omgekeerde (vraag b) en de juiste ontkenning (vraag d) zijn de twee kernpunten van het hoofdstuk.}
+
+%========================================================================================
+\section{Uitspraken}
+
+\begin{theorie}
+Een \textbf{\textcolor{accent}{uitspraak}} is een bewering die waar of vals is. Uit uitspraken $p$ en $q$ maak je nieuwe:
+
+\vspace{1mm}
+{\centering\arrayrulecolor{accent}\renewcommand{\arraystretch}{1.45}%
+\begin{tabular}{|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{8.6cm}|}
+\hline
+\textbf{naam} & \textbf{notatie} & \textbf{waar als} \\ \hline
+negatie & $\formule{\niet p}$ & $p$ vals is \\ \hline
+conjunctie & $\formule{p \en q}$ & $p$ en $q$ allebei waar zijn \\ \hline
+disjunctie & $\formule{p \of q}$ & minstens één van beide waar is (eventueel beide) \\ \hline
+\end{tabular}\par}
+\end{theorie}
+
+Een zin als $x + 2 = 5$ is geen uitspraak: of ze waar is, hangt af van $x$. Zo'n zin heet een \textbf{open zin}. Vul je een waarde in, of zet je er een kwantor voor (sectie 3), dan wordt het een uitspraak.
+
+Je leest $\niet p$ als \textit{niet $p$}, $p \en q$ als \textit{$p$ en $q$}, en $p \of q$ als \textit{$p$ of $q$}. Het wiskundige \textit{of} sluit \textit{beide} niet uit.
+
+\begin{theorie}
+\begin{stelling}{Wetten van De Morgan}
+\qquad $\formule{\niet(p \en q) \asa (\niet p \of \niet q)} \qquad \formule{\niet(p \of q) \asa (\niet p \en \niet q)}$
+\end{stelling}
+
+\begin{bewijs}
+$p \en q$ is vals als minstens één van beide vals is, dus als $\niet p \of \niet q$ waar is. $p \of q$ is vals als geen van beide waar is, dus als $\niet p$ en $\niet q$ allebei waar zijn.
+\end{bewijs}
+\end{theorie}
+
+\voorbeeld{}{Ontken de uitspraak \textit{het getal is even en groter dan 10}.\label{vb:h1-demorgan}}{%
+\uitleg{De ontkenning van \textit{en} is een \textit{of} van de ontkenningen (De Morgan). Niet: \textit{het getal is oneven en kleiner dan 10}.}
+\begin{stappenbreed}
+\niet(p \en q) \asa \niet p \of \niet q & De eerste wet van De Morgan. \\[1ex]
+\text{het getal is oneven, of het is hoogstens 10} & De ontkenning van \textit{groter dan 10} is \textit{hoogstens 10}, niet \textit{kleiner dan 10}.
+\end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h1-uitspraak}
+\end{oefeningen}
+
+%========================================================================================
+\section{Implicatie en equivalentie}
+
+\subsection{Als \ldots{} dan}
+
+De meeste stellingen hebben de vorm \textit{als \ldots, dan \ldots}: \textit{als een driehoek rechthoekig is, dan geldt de stelling van Pythagoras}. Wanneer is zo'n uitspraak waar?
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{implicatie}} $\formule{p \dan q}$ (\textit{als $p$, dan $q$}) is alleen vals als $p$ waar is en $q$ vals.
+
+\vspace{1mm}
+Bij $p \dan q$ heet $p$ een \textbf{\textcolor{accent}{voldoende voorwaarde}} voor $q$, en $q$ een \textbf{\textcolor{accent}{nodige voorwaarde}} voor $p$.
+
+\vspace{1mm}
+De \textbf{\textcolor{accent}{omgekeerde}} van $p \dan q$ is $q \dan p$. De \textbf{\textcolor{accent}{contrapositie}} van $p \dan q$ is $\niet q \dan \niet p$.
+
+\begin{stelling}{Contrapositie}
+\qquad $\formule{(p \dan q) \asa (\niet q \dan \niet p)}$
+\end{stelling}
+
+\begin{bewijs}
+$p \dan q$ is alleen vals als $p$ waar en $q$ vals is. $\niet q \dan \niet p$ is alleen vals als $\niet q$ waar en $\niet p$ vals is, dus ook als $q$ vals en $p$ waar is. Ze zijn dus in precies dezelfde gevallen vals.
+\end{bewijs}
+\end{theorie}
+
+\naast{\begin{minipage}{9.6cm}
+Een implicatie $p \dan q$ zegt niets over het geval dat $p$ vals is: dan is ze altijd waar. \textit{Als het regent, neem ik een paraplu} is niet gelogen als je een paraplu neemt terwijl het droog is.
+
+Met verzamelingen: is elk element van $P$ ook een element van $Q$, dan geldt \textit{$x \in P \dan x \in Q$}. Wie buiten $Q$ valt, valt ook buiten $P$: dat is de contrapositie. Maar wie in $Q$ zit, zit niet noodzakelijk in $P$: de omgekeerde kan vals zijn.
+\end{minipage}}{\begin{tikzpicture}[font=\small]
+  \draw[verz] (0,0) ellipse (1.6 and 1.05);
+  \draw[verz,fill opacity=.22] (-.45,0) ellipse (.8 and .55);
+  \node at (-.45,0) {$P$};
+  \node[text=accent] at (.95,.55) {$Q$};
+  \node[below,align=center,font=\scriptsize] at (0,-1.1) {elk vierkant is een rechthoek:\\$P$: vierkanten, $Q$: rechthoeken};
+\end{tikzpicture}}
+
+\voorbeeld{}{Gegeven: \textit{als $n$ deelbaar is door 4, dan is $n$ even}. Is ze waar? Geef de omgekeerde en de contrapositie, en zeg of die waar zijn.\label{vb:h1-implicatie}}{%
+\uitleg{We onderzoeken elke uitspraak apart. Een implicatie die je wilt weerleggen, weerleg je met één geval waarin $p$ waar is en $q$ vals.}
+\begin{stappenbreed}
+4 \deelt n \dan 2 \deelt n: \ \text{waar} & Is $n = 4k$, dan is $n = 2 \cdot 2k$. \\[1ex]
+2 \deelt n \dan 4 \deelt n: \ \text{vals} & De omgekeerde. Tegenvoorbeeld: 6 is even, maar niet deelbaar door 4. \\[1ex]
+n \text{ oneven} \dan 4 \nmid n: \ \text{waar} & De contrapositie: even waar als de oorspronkelijke.
+\end{stappenbreed}}
+
+\subsection{Als en slechts als}
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{equivalentie}} $\formule{p \asa q}$ (\textit{$p$ als en slechts als $q$}) betekent: $p \dan q$ én $q \dan p$. Ze is waar als $p$ en $q$ allebei waar of allebei vals zijn.
+\end{theorie}
+
+Wie een equivalentie bewijst, bewijst twee implicaties: \textit{als} en \textit{slechts als}. Een definitie is altijd een equivalentie, ook als er alleen \textit{als} staat: \textit{een getal is even als het deelbaar is door 2}.
+
+\begin{werkwijze}
+Bij een implicatie $p \dan q$: vraag je af of $q$ altijd volgt als $p$ waar is. Verwar ze niet met de omgekeerde $q \dan p$, die vals kan zijn. De contrapositie $\niet q \dan \niet p$ is altijd even waar. Om een implicatie te weerleggen, zoek je één geval met $p$ waar en $q$ vals.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h1-implicatie}
+\end{oefeningen}
+
+%========================================================================================
+\section{Kwantoren}
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{universele kwantor}} $\formule{\forall}$ betekent \textit{voor alle}, de \textbf{\textcolor{accent}{existentiële kwantor}} $\formule{\exists}$ betekent \textit{er bestaat (minstens één)}.
+
+\begin{stelling}{Negatie van kwantoren}
+\qquad $\formule{\niet\bigl(\forall x\colon P(x)\bigr) \asa \exists x\colon \niet P(x)} \qquad \formule{\niet\bigl(\exists x\colon P(x)\bigr) \asa \forall x\colon \niet P(x)}$
+\end{stelling}
+\end{theorie}
+
+\textit{Niet alle zwanen zijn wit} betekent \textit{er is minstens één zwaan die niet wit is}, en niet \textit{geen enkele zwaan is wit}. Om een uitspraak met $\forall$ te weerleggen, volstaat dus één voorbeeld waarvoor ze niet klopt: een \textbf{tegenvoorbeeld}. Om een uitspraak met $\exists$ te bewijzen, volstaat ook één voorbeeld.
+
+De volgorde van kwantoren is belangrijk. Vergelijk, met natuurlijke getallen:
+
+\figuren{\renewcommand{\arraystretch}{1.5}\begin{tabular}{l|l|c}
+$\forall n\ \exists m\colon m > n$ & bij elk getal is er een groter getal & waar \\ \hline
+$\exists m\ \forall n\colon m > n$ & er is een getal dat groter is dan alle getallen & vals
+\end{tabular}}
+
+In de eerste uitspraak mag $m$ afhangen van $n$ (neem $m = n + 1$). In de tweede moet één vaste $m$ voor alle $n$ werken, en die bestaat niet.
+
+\voorbeeld{}{Schrijf de uitspraak \textit{elke leerling heeft een vriend in de klas} met kwantoren, ontken ze, en zeg de ontkenning in woorden.\label{vb:h1-kwantoren}}{%
+\uitleg{We schrijven \textit{elke} als $\forall$ en \textit{een} als $\exists$. Bij het ontkennen wisselen de kwantoren, en wordt het laatste deel ontkend.}
+\begin{stappenbreed}
+\forall l\ \exists v\colon v \text{ is een vriend van } l & $l$ en $v$ zijn leerlingen van de klas. \\[1ex]
+\exists l\ \forall v\colon v \text{ is geen vriend van } l & $\forall$ wordt $\exists$, $\exists$ wordt $\forall$, en de bewering wordt ontkend. \\[1ex]
+\text{er is een leerling zonder vriend in de klas} & In woorden.
+\end{stappenbreed}}
+
+\begin{werkwijze}
+Om een uitspraak met kwantoren te ontkennen: wissel elke $\forall$ in $\exists$ en omgekeerd, in dezelfde volgorde, en ontken de bewering op het einde. Een $\forall$-uitspraak weerleg je met één tegenvoorbeeld; een $\exists$-uitspraak bewijs je met één voorbeeld.
+\end{werkwijze}
+
+\nujij{Ontken: \textit{voor elk reëel getal $x$ is $x^2 \geqslant x$}. Is de oorspronkelijke uitspraak waar?}{\textit{Er is een reëel getal $x$ met $x^2 < x$.} Die ontkenning is waar: $x = \frac12$ geeft $\frac14 < \frac12$. De oorspronkelijke uitspraak is dus vals.}
+
+\begin{oefeningen}
+\oef{h1-kwantoren}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h1-o1}
+
+\oef{h1-o2}
+
+\oef{h1-o3}
+
+\oef{h1-o4}
+
+\oef{h1-o5}
+
+\oef{h1-o6}
+
+\oef{h1-o7}
+
+\oef{h1-o8}
+
+\oef{h1-o9}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{De eerste oefening gebruikt gebeurtenissen uit Kansrekenen, de tweede de definitie van de limiet van een rij (Rijen of Limieten en afgeleiden).}
+
+\begin{oefeningen}
+\oef{h1-koppel-1}
+
+\oef{h1-koppel-2}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h1-t1}
+
+\oef{h1-t2}
+
+\oef{h1-t3}
+
+\oef{h1-t4}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h1-t1}{vb:h1-demorgan}{oef:h1-uitspraak}%
+  \fv{oef:h1-t2}{vb:h1-implicatie}{oef:h1-implicatie}%
+  \fv{oef:h1-t3}{vb:h1-kwantoren}{oef:h1-kwantoren}%
+  \fzv{oef:h1-t4}{oef:h1-kwantoren}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: wat een uitspraak en een open zin zijn, de betekenis van $\niet$, $\en$ en $\of$, de wetten van De Morgan, wanneer een implicatie waar is, het verschil tussen de omgekeerde en de contrapositie, nodige en voldoende voorwaarde, de equivalentie, en hoe je kwantoren ontkent. Vergelijk daarna met de kaders.
+\fi
