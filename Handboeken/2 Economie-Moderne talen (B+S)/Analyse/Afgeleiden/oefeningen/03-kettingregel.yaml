@@ -1,0 +1,376 @@
+# Oefeningen van hoofdstuk 3. Zie oefeningenbank.py voor de velden.
+
+- id: h3-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Schrijf $h(x) = (x^2 + 1)^3$ als $f(g(x))$.
+      antwoord: |-
+        $f(u) = u^3$, $g(x) = x^2 + 1$
+      uitwerking: |-
+        Binnenste $g(x) = x^2 + 1$, buitenste $f(u) = u^3$.
+    - opgave: |-
+        Bereken $\e^{\ln 5}$ en $\ln \e^3$.
+      antwoord: |-
+        5; 3
+      uitwerking: |-
+        $\e^x$ en $\ln x$ zijn elkaars inverse.
+    - opgave: |-
+        Leid af: $x^{10}$ en $\sqrt x$.
+      antwoord: |-
+        $10x^9$; $\frac{1}{2\sqrt x}$
+      uitwerking: |-
+        Machtregel.
+    - opgave: |-
+        Vul aan: $2\sin x\cos x = \ldots$
+      antwoord: |-
+        $\sin 2x$
+      uitwerking: |-
+        Verdubbelingsformule.
+
+- id: h3-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken} Neem $h(x) = (2x + 1)^2$ en $k(x) = (2x + 1)^3$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Werk $h(x)$ uit en leid af. Schrijf het resultaat als een veelvoud van $2x + 1$.
+      antwoord: |-
+        $8x + 4 = 4(2x + 1)$
+      uitwerking: |-
+        $4x^2 + 4x + 1$ afleiden: $8x + 4 = 4(2x + 1)$.
+    - opgave: |-
+        Een leerling zegt: \textit{de afgeleide van $(2x + 1)^2$ is $2(2x + 1)$, zoals bij $u^2$.} Wat is fout?
+      antwoord: |-
+        er ontbreekt een factor 2
+      uitwerking: |-
+        Het juiste resultaat is twee keer zo groot: er ontbreekt een factor $2$, de afgeleide van $2x + 1$.
+    - opgave: |-
+        Doe hetzelfde met $k(x)$. Welke regel vermoed je?
+      antwoord: |-
+        $3(2x + 1)^2 \cdot 2$
+      uitwerking: |-
+        $k(x) = 8x^3 + 12x^2 + 6x + 1$, $k'(x) = 24x^2 + 24x + 6 = 6(2x + 1)^2 = 3(2x + 1)^2 \cdot 2$: de buitenste afgeleid, maal de afgeleide van de binnenste.
+
+- id: h3-ketting
+  soort: kort
+  opgave: |-
+    Leid af met de kettingregel.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $(3x - 2)^5$
+      antwoord: |-
+        $15(3x - 2)^4$
+      uitwerking: |-
+        $5(3x - 2)^4 \cdot 3$.
+    - opgave: |-
+        $\dfrac{1}{x^2 + 1}$
+      antwoord: |-
+        $-\frac{2x}{(x^2 + 1)^2}$
+      uitwerking: |-
+        $(u^{-1})' = -u^{-2}$, maal $2x$.
+    - opgave: |-
+        $\sqrt{4 - x}$
+      antwoord: |-
+        $-\frac{1}{2\sqrt{4 - x}}$
+      uitwerking: |-
+        $\frac{1}{2\sqrt{4 - x}} \cdot (-1)$.
+
+- id: h3-gonio
+  soort: kort
+  opgave: |-
+    Leid af.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\sin(2x + 1)$
+      antwoord: |-
+        $2\cos(2x + 1)$
+      uitwerking: |-
+        $\cos(2x + 1) \cdot 2$.
+    - opgave: |-
+        $x\sin x$
+      antwoord: |-
+        $\sin x + x\cos x$
+      uitwerking: |-
+        Productregel.
+    - opgave: |-
+        $\tan x^2$
+      antwoord: |-
+        $\frac{2x}{\cos^2 x^2}$
+      uitwerking: |-
+        $\frac{1}{\cos^2 x^2} \cdot 2x$.
+
+- id: h3-explog
+  soort: kort
+  opgave: |-
+    Leid af.
+  lijst: reeks
+  kolommen: 4
+  delen:
+    - opgave: |-
+        $\e^{3x}$
+      antwoord: |-
+        $3\e^{3x}$
+      uitwerking: |-
+        $\e^{3x} \cdot 3$.
+    - opgave: |-
+        $2^x$
+      antwoord: |-
+        $2^x \ln 2$
+      uitwerking: |-
+        $(a^x)' = a^x \ln a$.
+    - opgave: |-
+        $\ln 5x$
+      antwoord: |-
+        $\frac1x$
+      uitwerking: |-
+        $\frac{1}{5x} \cdot 5 = \frac1x$ (of: $\ln 5 + \ln x$).
+    - opgave: |-
+        $x\ln x$
+      antwoord: |-
+        $\ln x + 1$
+      uitwerking: |-
+        $1 \cdot \ln x + x \cdot \frac1x$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h3-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    gemengd afleiden
+  opgave: |-
+    Leid af.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $(x^2 - 3x)^4$
+      antwoord: |-
+        $4(x^2 - 3x)^3(2x - 3)$
+      uitwerking: |-
+        Kettingregel met binnenste $x^2 - 3x$.
+    - opgave: |-
+        $\sqrt{1 + \sin x}$
+      antwoord: |-
+        $\frac{\cos x}{2\sqrt{1 + \sin x}}$
+      uitwerking: |-
+        $\frac{1}{2\sqrt{1 + \sin x}} \cdot \cos x$.
+    - opgave: |-
+        $\e^{\sin x}$
+      antwoord: |-
+        $\cos x\,\e^{\sin x}$
+      uitwerking: |-
+        $\e^{\sin x} \cdot \cos x$.
+    - opgave: |-
+        $\ln(\cos x)$
+      antwoord: |-
+        $-\tan x$
+      uitwerking: |-
+        $\frac{1}{\cos x} \cdot (-\sin x) = -\tan x$.
+
+- id: h3-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    raaklijnen
+  opgave: |-
+    Geef de raaklijn aan de grafiek van $\e^x$ in $x = 0$, en die van $\ln x$ in $x = 1$. Hoe liggen die twee raaklijnen tegenover elkaar?
+  antwoord: |-
+    $y = x + 1$; $y = x - 1$; elkaars spiegelbeeld om $y = x$
+  uitwerking: |-
+    $\e^0 = 1$ en $(\e^x)' = 1$ in $0$: $y = x + 1$. $\ln 1 = 0$ en $(\ln x)' = 1$ in $1$: $y = x - 1$. Ze zijn elkaars spiegelbeeld om $y = x$, net als de grafieken.
+
+- id: h3-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    een constante functie
+  opgave: |-
+    Leid $\sin^2 x + \cos^2 x$ af met de kettingregel. Wat verwachtte je?
+  antwoord: |-
+    0
+  uitwerking: |-
+    $2\sin x\cos x + 2\cos x \cdot (-\sin x) = 0$: zoals verwacht, want de functie is constant $1$.
+
+- id: h3-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    horizontale raaklijn
+  opgave: |-
+    Waar heeft de grafiek van $f(x) = x\,\e^{-x}$ een horizontale raaklijn?
+  antwoord: |-
+    in $\bigl(1, \frac1\e\bigr)$
+  uitwerking: |-
+    $f'(x) = \e^{-x} - x\,\e^{-x} = (1 - x)\e^{-x}$. Omdat $\e^{-x} > 0$: $f'(x) = 0 \iff x = 1$. Het punt $\bigl(1, \frac1\e\bigr)$.
+
+- id: h3-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    afkoelen
+  opgave: |-
+    Een kop thee koelt af volgens $T(t) = 20 + 70\,\e^{-0{,}05t}$ (in $^\circ$C, $t$ in minuten).
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $T'(t)$. Hoe snel koelt de thee af bij het begin, en na 20 minuten?
+      antwoord: |-
+        $T'(t) = -3{,}5\,\e^{-0{,}05t}$; $3{,}5$ en $\approx 1{,}29$ $^\circ$C per minuut
+      uitwerking: |-
+        $T'(t) = 70 \cdot (-0{,}05)\e^{-0{,}05t} = -3{,}5\,\e^{-0{,}05t}$. $T'(0) = -3{,}5$ en $T'(20) = -3{,}5\,\e^{-1} \approx -1{,}29$ $^\circ$C per minuut.
+    - opgave: |-
+        Toon aan dat $T'(t) = -0{,}05\,\bigl(T(t) - 20\bigr)$. Wat betekent dat?
+      antwoord: |-
+        de afkoelsnelheid is evenredig met het temperatuurverschil
+      uitwerking: |-
+        $T(t) - 20 = 70\,\e^{-0{,}05t}$, dus $-0{,}05(T - 20) = -3{,}5\,\e^{-0{,}05t} = T'(t)$. De thee koelt sneller af naarmate ze warmer is dan de kamer (wet van Newton).
+
+- id: h3-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een slinger
+  opgave: |-
+    De uitwijking van een slinger is $x(t) = 5\cos 2t$ (in cm, $t$ in seconden). Geef de snelheid $v(t) = x'(t)$. Wanneer is de snelheid het grootst, en waar is de slinger dan?
+  antwoord: |-
+    $v(t) = -10\sin 2t$; $|v| = 10$ cm/s als $x = 0$
+  uitwerking: |-
+    $v(t) = -5\sin 2t \cdot 2 = -10\sin 2t$. $|v|$ is maximaal $10$ cm/s als $\sin 2t = \pm 1$, bijvoorbeeld $t = \frac{\pi}{4}$. Dan is $\cos 2t = 0$: de slinger gaat door het evenwichtspunt.
+
+- id: h3-o7
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    tangens afleiden
+  opgave: |-
+    Bewijs met de quotiëntregel dat $(\tan x)' = \frac{1}{\cos^2 x}$, en ook dat dat gelijk is aan $1 + \tan^2 x$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    $\Bigl(\frac{\sin x}{\cos x}\Bigr)' = \frac{\cos x\cos x - \sin x(-\sin x)}{\cos^2 x} = \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x}$, en dat is ook $\frac{\cos^2 x}{\cos^2 x} + \frac{\sin^2 x}{\cos^2 x} = 1 + \tan^2 x$.
+
+- id: h3-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    x tot de macht x
+  opgave: |-
+    De functie $f(x) = x^x$ (voor $x > 0$) is geen macht en geen exponentiële functie. Schrijf ze als $\e^{x\ln x}$ en bereken $f'(x)$. Waar heeft de grafiek een horizontale raaklijn?
+  antwoord: |-
+    $x^x(\ln x + 1)$; in $x = \frac1\e$
+  uitwerking: |-
+    $x^x = \e^{\ln x^x} = \e^{x\ln x}$. Kettingregel: $\e^{x\ln x}(\ln x + 1) = x^x(\ln x + 1)$. Nul als $\ln x = -1$, dus $x = \frac{1}{\e}$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h3-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Integralen
+  thema: |-
+    de kettingregel omgekeerd
+  opgave: |-
+    Leid $\e^{x^2}$ af. Bereken daarmee $\int_0^1 2x\,\e^{x^2}\,\mathrm{d}x$.
+  antwoord: |-
+    $2x\,\e^{x^2}$; $\e - 1$
+  uitwerking: |-
+    $(\e^{x^2})' = 2x\,\e^{x^2}$, dus $\e^{x^2}$ is een primitieve: $\e^1 - \e^0 = \e - 1$. Dat is de substitutieregel uit Integralen.
+
+- id: h3-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Exponentiële en logaritmische functies
+  thema: |-
+    groeisnelheid
+  opgave: |-
+    Een kweek groeit volgens $N(t) = 1000 \cdot 2^{t/3}$ ($t$ in uur). Bereken $N'(t)$ en $N'(0)$. Toon aan dat $N'(t) = k \cdot N(t)$ voor een vaste $k$.
+  antwoord: |-
+    $N'(0) \approx 231$ per uur; $k = \frac{\ln 2}{3}$
+  uitwerking: |-
+    $N'(t) = 1000 \cdot 2^{t/3} \cdot \ln 2 \cdot \frac13 = \frac{\ln 2}{3} N(t)$. $N'(0) = \frac{1000\ln 2}{3} \approx 231$ per uur. Exponentiële groei: de groeisnelheid is evenredig met de hoeveelheid.
+
+- id: h3-koppel-3
+  soort: koppel
+  niveau: 1
+  koppel:
+    rubriek: analyse
+    onderwerp: Goniometrische functies
+  thema: |-
+    radialen
+  opgave: |-
+    In graden is $\sin x^\circ = \sin\frac{\pi x}{180}$. Bereken de afgeleide naar $x$. Waarom werkt men in de analyse altijd met radialen?
+  antwoord: |-
+    $\frac{\pi}{180}\cos\frac{\pi x}{180}$
+  uitwerking: |-
+    Kettingregel: $\frac{\pi}{180}\cos\frac{\pi x}{180}$. In graden krijg je bij elke afgeleide een lastige factor $\frac{\pi}{180}$; met radialen is $(\sin x)' = \cos x$ zonder factor.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h3-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    kettingregel
+  opgave: |-
+    Leid af: $(x^3 + 2)^4$.
+  antwoord: |-
+    $12x^2(x^3 + 2)^3$
+  uitwerking: |-
+    $4(x^3 + 2)^3 \cdot 3x^2$.
+
+- id: h3-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    goniometrisch
+  opgave: |-
+    Leid af: $\cos x^2$ en $\sin x\cos x$.
+  antwoord: |-
+    $-2x\sin x^2$; $\cos 2x$
+  uitwerking: |-
+    $-\sin x^2 \cdot 2x$. Productregel: $\cos^2 x - \sin^2 x = \cos 2x$.
+
+- id: h3-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    exp en ln
+  opgave: |-
+    Leid af: $\e^{2x + 1}$ en $\ln(x^2 - 4)$.
+  antwoord: |-
+    $2\e^{2x + 1}$; $\frac{2x}{x^2 - 4}$
+  uitwerking: |-
+    $\e^{2x + 1} \cdot 2$ en $\frac{1}{x^2 - 4} \cdot 2x$.
+
+- id: h3-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    combinatie
+  opgave: |-
+    Leid af: $x\,\e^{2x}$.
+  antwoord: |-
+    $(1 + 2x)\e^{2x}$
+  uitwerking: |-
+    Productregel en kettingregel: $\e^{2x} + x \cdot 2\e^{2x}$.
