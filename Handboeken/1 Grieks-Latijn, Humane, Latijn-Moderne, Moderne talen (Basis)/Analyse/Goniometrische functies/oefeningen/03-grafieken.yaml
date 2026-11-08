@@ -1,0 +1,348 @@
+# Oefeningen van hoofdstuk 3. Zie oefeningenbank.py voor de velden.
+
+- id: h3-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Bereken $\sin\frac{\pi}{2}$, $\cos\pi$ en $\sin\frac{3\pi}{2}$.
+      antwoord: |-
+        $1$; $-1$; $-1$
+      uitwerking: |-
+        $1$, $-1$ en $-1$.
+    - opgave: |-
+        Welk getal ligt midden tussen $5$ en $-1$?
+      antwoord: |-
+        2
+      uitwerking: |-
+        $\frac{5 + (-1)}{2} = 2$.
+    - opgave: |-
+        Hoe ontstaat de grafiek van $2\sin x + 1$ uit die van $\sin x$?
+      antwoord: |-
+        verticaal $\times 2$, 1 naar boven
+      uitwerking: |-
+        Verticaal uitrekken met factor 2, dan 1 naar boven.
+    - opgave: |-
+        Vereenvoudig $\sin(x + 2\pi)$ en \mbox{$\cos\bigl(\frac{\pi}{2} - x\bigr)$}.
+      antwoord: |-
+        $\sin x$; $\sin x$
+      uitwerking: |-
+        Een volle toer verder: $\sin x$. Complementaire hoek: $\sin x$.
+
+- id: h3-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken} Een reuzenrad met straal $20$ m en de as op $25$ m hoogte maakt één toer per 4 minuten. Een gondel is op $t = 0$ op de hoogte van de as, en gaat omhoog.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef de hoogte na $0$, $1$, $2$, $3$ en $4$ minuten.
+      antwoord: |-
+        $25$; $45$; $25$; $5$; $25$ m
+      uitwerking: |-
+        $25$, $45$, $25$, $5$ en $25$ m: as, top, as, onderaan, as.
+    - opgave: |-
+        Wat gebeurt er na 4 minuten? Wat zijn de grootste en de kleinste hoogte?
+      antwoord: |-
+        alles herhaalt zich; $45$ m en $5$ m
+      uitwerking: |-
+        Alles begint opnieuw. Hoogstens $45$ m, minstens $5$ m.
+    - opgave: |-
+        Schets de hoogte als functie van de tijd over 8 minuten. Op welke grafiek lijkt ze?
+      antwoord: |-
+        een sinus
+      uitwerking: |-
+        Een golf die op de sinus lijkt: $h(t) = 20\sin\bigl(\frac{\pi}{2}t\bigr) + 25$.
+
+- id: h3-periode
+  soort: kort
+  opgave: |-
+    Geef de periode. Vul $x + p$ in om te controleren.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\sin 3x$
+      antwoord: |-
+        $\frac{2\pi}{3}$
+      uitwerking: |-
+        $\sin\bigl(3(x + \frac{2\pi}{3})\bigr) = \sin(3x + 2\pi) = \sin 3x$.
+    - opgave: |-
+        $\cos\frac{x}{2}$
+      antwoord: |-
+        $4\pi$
+      uitwerking: |-
+        $\cos\frac{x + 4\pi}{2} = \cos\bigl(\frac{x}{2} + 2\pi\bigr)$.
+    - opgave: |-
+        $\tan 2x$
+      antwoord: |-
+        $\frac{\pi}{2}$
+      uitwerking: |-
+        $\tan(2x + \pi) = \tan 2x$, dus periode $\frac{\pi}{2}$.
+
+- id: h3-sinusfunctie
+  soort: kort
+  opgave: |-
+    Sinusfuncties.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Neem $f(x) = 2\sin\bigl(\pi(x - 1)\bigr) - 3$. Geef amplitude, periode, evenwichtslijn, grootste en kleinste waarde.
+      antwoord: |-
+        $2$; $2$; $y = -3$; $-1$ en $-5$
+      uitwerking: |-
+        Amplitude 2, periode $\frac{2\pi}{\pi} = 2$, evenwichtslijn $y = -3$, grootste waarde $-1$, kleinste $-5$.
+    - opgave: |-
+        Een sinusgrafiek heeft een top in $(0, 7)$ en het eerstvolgende dal in $(5, 1)$. Geef een voorschrift.
+      antwoord: |-
+        $3\cos\frac{\pi x}{5} + 4$
+      uitwerking: |-
+        $d = 4$, $a = 3$, periode $10$, dus $b = \frac{\pi}{5}$. Top in $0$: $f(x) = 3\cos\frac{\pi x}{5} + 4$.
+
+- id: h3-model
+  soort: kort
+  opgave: |-
+    In een haven is het hoogwater $4{,}8$ m om 2 uur, en het volgende laagwater $0{,}4$ m om 8.15 uur. Stel een sinusmodel op voor de waterhoogte $h$ ($t$ in uur na middernacht), en bereken de hoogte om 12 uur.
+  antwoord: |-
+    $h(t) = 2{,}2\cos\bigl(\frac{2\pi}{12{,}5}(t - 2)\bigr) + 2{,}6$; $\approx 3{,}28$ m
+  uitwerking: |-
+    $d = 2{,}6$, $a = 2{,}2$, periode $2 \cdot 6{,}25 = 12{,}5$ uur. Met de top om 2 uur: $h(t) = 2{,}2\cos\bigl(\frac{2\pi}{12{,}5}(t - 2)\bigr) + 2{,}6$. $h(12) = 2{,}2\cos(1{,}6\pi) + 2{,}6 \approx 3{,}28$ m.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h3-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    kenmerken
+  opgave: |-
+    Geef amplitude, periode, evenwichtslijn en faseverschuiving.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $5\sin x - 2$
+      antwoord: |-
+        $5$; $2\pi$; $y = -2$; $0$
+      uitwerking: |-
+        Amplitude 5, periode $2\pi$, evenwichtslijn $y = -2$, geen faseverschuiving.
+    - opgave: |-
+        $\sin 4x + 1$
+      antwoord: |-
+        $1$; $\frac{\pi}{2}$; $y = 1$; $0$
+      uitwerking: |-
+        Amplitude 1, periode $\frac{2\pi}{4} = \frac{\pi}{2}$, evenwichtslijn $y = 1$.
+    - opgave: |-
+        $\frac12\sin\bigl(x - \frac{\pi}{3}\bigr)$
+      antwoord: |-
+        $\frac12$; $2\pi$; $y = 0$; $\frac{\pi}{3}$
+      uitwerking: |-
+        Amplitude $\frac12$, periode $2\pi$, evenwichtslijn $y = 0$, faseverschuiving $\frac{\pi}{3}$.
+
+- id: h3-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    grafiek lezen
+  figuur:
+    opties: |-
+      5.6cm
+    code: |-
+      \begin{tikzpicture}[x=.62cm,y=.45cm,font=\scriptsize]
+        \draw[black!14,very thin] (0,-1) grid[xstep=1.5708,ystep=1] (7.9,3);
+        \draw[->,grijs] (-.2,0) -- (8.2,0) node[right,text=black] {$x$};
+        \draw[->,grijs] (0,-1.4) -- (0,3.6) node[above,text=black] {$y$};
+        \foreach \t/\n in {1.5708/\frac{\pi}{2},3.1416/\pi,4.7124/\frac{3\pi}{2},6.2832/2\pi}{\node[below,inner sep=1.5pt] at (\t,0) {$\n$};}
+        \foreach \t in {-1,1,2,3}{\node[left,inner sep=1.5pt] at (0,\t) {$\t$};}
+        \draw[accent,thick] plot[domain=0:7.85,samples=100,smooth] (\x,{2*sin(\x r)+1});
+      \end{tikzpicture}
+  opgave: |-
+    De figuur toont een sinusgrafiek. Geef amplitude, periode en evenwichtslijn, en een voorschrift.
+  antwoord: |-
+    $2$; $2\pi$; $y = 1$; $f(x) = 2\sin x + 1$
+  uitwerking: |-
+    Top $3$ in $\frac{\pi}{2}$, dal $-1$ in $\frac{3\pi}{2}$: amplitude 2, evenwichtslijn $y = 1$, periode $2\pi$. In $x = 0$ snijdt de grafiek de evenwichtslijn stijgend: $f(x) = 2\sin x + 1$.
+
+- id: h3-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    schetsen
+  opgave: |-
+    Schets $f(x) = 2\sin\bigl(x - \frac{\pi}{3}\bigr)$ over één periode. Geef de vijf punten die je gebruikt.
+  antwoord: |-
+    $(\frac{\pi}{3}, 0)$, $(\frac{5\pi}{6}, 2)$, $(\frac{4\pi}{3}, 0)$, $(\frac{11\pi}{6}, -2)$, $(\frac{7\pi}{3}, 0)$
+  uitwerking: |-
+    Beginpunt $(\frac{\pi}{3}, 0)$, dan om de $\frac{\pi}{2}$: top $(\frac{5\pi}{6}, 2)$, $(\frac{4\pi}{3}, 0)$, dal $(\frac{11\pi}{6}, -2)$, einde $(\frac{7\pi}{3}, 0)$.
+
+- id: h3-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    tangens
+  opgave: |-
+    Geef de periode, de nulwaarden en de verticale asymptoten van $g(x) = \tan 2x$.
+  antwoord: |-
+    $\frac{\pi}{2}$; $k\frac{\pi}{2}$; $x = \frac{\pi}{4} + k\frac{\pi}{2}$
+  uitwerking: |-
+    Periode $\frac{\pi}{2}$. Nulwaarden: $2x = k\pi$, dus $x = k\frac{\pi}{2}$. Asymptoten: $2x = \frac{\pi}{2} + k\pi$, dus $x = \frac{\pi}{4} + k\frac{\pi}{2}$ ($k \in \Z$).
+
+- id: h3-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een veer
+  opgave: |-
+    Een massa aan een veer gaat op en neer tussen $10$ cm en $30$ cm boven de grond. Een volledige trilling duurt $1{,}6$ s. Op $t = 0$ is ze op het hoogste punt.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Stel een model op voor de hoogte $h(t)$.
+      antwoord: |-
+        $h(t) = 10\cos\bigl(\frac{5\pi}{4}t\bigr) + 20$
+      uitwerking: |-
+        $d = 20$, $a = 10$, $b = \frac{2\pi}{1{,}6} = \frac{5\pi}{4}$, top op $t = 0$: $h(t) = 10\cos\bigl(\frac{5\pi}{4}t\bigr) + 20$.
+    - opgave: |-
+        Hoe hoog is de massa na 1 s?
+      antwoord: |-
+        $\approx 12{,}9$ cm
+      uitwerking: |-
+        $10\cos\frac{5\pi}{4} + 20 = 20 - 5\sqrt2 \approx 12{,}9$ cm.
+
+- id: h3-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    wisselspanning
+  opgave: |-
+    De spanning op het stopcontact is $U(t) = 325\sin(100\pi t)$ volt, met $t$ in seconden.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef de amplitude, de periode en de frequentie (aantal trillingen per seconde).
+      antwoord: |-
+        $325$ V; $0{,}02$ s; $50$ Hz
+      uitwerking: |-
+        Amplitude $325$ V, periode $\frac{2\pi}{100\pi} = 0{,}02$ s, frequentie $\frac{1}{0{,}02} = 50$ per seconde.
+    - opgave: |-
+        Hoeveel keer per seconde is de spanning nul?
+      antwoord: |-
+        100 keer
+      uitwerking: |-
+        Twee keer per periode: $100$ keer per seconde.
+
+- id: h3-o7
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    nieuwe periodes
+  opgave: |-
+    Gebruik de formules uit hoofdstuk 2.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $\sin^2 x$ periode $\pi$ heeft. Schets de grafiek.
+      antwoord: |-
+        $\sin^2 x = \frac12 - \frac12\cos 2x$
+      uitwerking: |-
+        $\sin^2 x = \frac{1 - \cos 2x}{2} = -\frac12\cos 2x + \frac12$: een cosinus gespiegeld, met amplitude $\frac12$, periode $\pi$ en evenwichtslijn $y = \frac12$. Tussen $0$ en $1$.
+    - opgave: |-
+        Wat zijn amplitude en faseverschuiving van $\sin x + \cos x$?
+      antwoord: |-
+        $\sqrt2$; $-\frac{\pi}{4}$
+      uitwerking: |-
+        $\sin x + \cos x = \sqrt2\sin\bigl(x + \frac{\pi}{4}\bigr)$: amplitude $\sqrt2$, de grafiek is $\frac{\pi}{4}$ naar links geschoven (faseverschuiving $c = -\frac{\pi}{4}$).
+
+- id: h3-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    de London Eye
+  opgave: |-
+    Het reuzenrad London Eye heeft een diameter van $120$ m; het hoogste punt is $135$ m. Een toer duurt 30 minuten. Je stapt onderaan in op $t = 0$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat je hoogte $h(t) = -60\cos\frac{\pi t}{15} + 75$ is ($t$ in minuten).
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        De as staat op $135 - 60 = 75$ m, amplitude $60$, periode $30$, dus $b = \frac{2\pi}{30} = \frac{\pi}{15}$. Je begint in het dal: een gespiegelde cosinus.
+    - opgave: |-
+        Hoe hoog ben je na 10 minuten?
+      antwoord: |-
+        105 m
+      uitwerking: |-
+        $-60\cos\frac{2\pi}{3} + 75 = 30 + 75 = 105$ m.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h3-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Afgeleiden
+  thema: |-
+    de helling in 0
+  opgave: |-
+    Bereken $\frac{\sin h}{h}$ voor $h = 0{,}1$, $0{,}01$ en $0{,}001$ (in radialen). Welk getal benadert het? Wat zegt dat over de grafiek van de sinus in de oorsprong? Werkt het ook in graden?
+  antwoord: |-
+    1; de raaklijn is $y = x$; nee
+  uitwerking: |-
+    $0{,}99833$, $0{,}99998$, $0{,}9999998$: het nadert 1. Dicht bij $0$ is $\sin h \approx h$: de grafiek raakt de rechte $y = x$. In graden is $\sin h^\circ \approx \frac{\pi}{180}h$: dan is de helling geen 1. Daarom werkt men in radialen.
+
+- id: h3-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    aantal oplossingen
+  opgave: |-
+    Hoeveel oplossingen heeft $\cos x = -0{,}3$ in $[0, 2\pi]$? En $\tan x = -1$ in $[0, 2\pi]$?
+  antwoord: |-
+    2; 2
+  uitwerking: |-
+    De cosinus neemt elke waarde van $]-1, 1[$ twee keer aan per periode. De tangens één keer per periode $\pi$: twee keer in $[0, 2\pi]$ (in $\frac{3\pi}{4}$ en $\frac{7\pi}{4}$).
+
+- id: h3-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    schetsen
+  opgave: |-
+    Geef amplitude, periode, evenwichtslijn, beginpunt, grootste en kleinste waarde van $f(x) = 2\sin\bigl(\frac12(x + \pi)\bigr) - 1$.
+  antwoord: |-
+    $2$; $4\pi$; $y = -1$; $(-\pi, -1)$; $1$ en $-3$
+  uitwerking: |-
+    Amplitude 2, periode $\frac{2\pi}{1/2} = 4\pi$, evenwichtslijn $y = -1$, beginpunt $(-\pi, -1)$. Grootste waarde $1$, kleinste $-3$.
+
+- id: h3-t3
+  soort: test
+  niveau: 2
+  thema: |-
+    voorschrift
+  opgave: |-
+    Een sinusgrafiek heeft een top in $(2, 10)$ en het eerstvolgende dal in $(5, 4)$. Geef een voorschrift.
+  antwoord: |-
+    $3\cos\bigl(\frac{\pi}{3}(x - 2)\bigr) + 7$
+  uitwerking: |-
+    $d = 7$, $a = 3$, periode $6$, $b = \frac{\pi}{3}$; top in $x = 2$: $f(x) = 3\cos\bigl(\frac{\pi}{3}(x - 2)\bigr) + 7$.
+
+- id: h3-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    model
+  opgave: |-
+    De watertemperatuur van een meer is het hoogst op dag 210 van het jaar ($22\,^\circ$C) en het laagst een half jaar later ($4\,^\circ$C). Stel een model op en schat de temperatuur op dag 100.
+  antwoord: |-
+    $T(t) = 9\cos\bigl(\frac{2\pi}{365}(t - 210)\bigr) + 13$; $\approx 10{,}1\,^\circ$C
+  uitwerking: |-
+    $d = 13$, $a = 9$, periode 365: $T(t) = 9\cos\bigl(\frac{2\pi}{365}(t - 210)\bigr) + 13$. $T(100) \approx 9 \cdot (-0{,}318) + 13 \approx 10{,}1\,^\circ$C.

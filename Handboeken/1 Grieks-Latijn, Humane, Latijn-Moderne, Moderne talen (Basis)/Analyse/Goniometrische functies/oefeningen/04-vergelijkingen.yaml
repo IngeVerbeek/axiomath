@@ -1,0 +1,387 @@
+# Oefeningen van hoofdstuk 4. Zie oefeningenbank.py voor de velden.
+
+- id: h4-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Geef twee hoeken in $[0, 2\pi[$ met sinus $\frac{\sqrt3}{2}$.
+      antwoord: |-
+        $\frac{\pi}{3}$ en $\frac{2\pi}{3}$
+      uitwerking: |-
+        $\frac{\pi}{3}$ en $\pi - \frac{\pi}{3} = \frac{2\pi}{3}$.
+    - opgave: |-
+        Los op: $2t^2 + t - 1 = 0$.
+      antwoord: |-
+        $t = \frac12$ of $t = -1$
+      uitwerking: |-
+        $(2t - 1)(t + 1) = 0$.
+    - opgave: |-
+        Schrijf $\sin 2x$ en $\cos 2x$ met $\sin x$ en $\cos x$.
+      antwoord: |-
+        $2\sin x\cos x$; $\cos^2 x - \sin^2 x$
+      uitwerking: |-
+        Verdubbelingsformules.
+    - opgave: |-
+        Welke getallen $\frac{\pi}{3} + k\pi$ (met $k \in \Z$) liggen in $[0, 2\pi[$?
+      antwoord: |-
+        $\frac{\pi}{3}$ en $\frac{4\pi}{3}$
+      uitwerking: |-
+        $k = 0$ en $k = 1$.
+
+- id: h4-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken} Je rekentoestel staat in radialen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $\sin^{-1}(0{,}6)$ met je rekentoestel. Controleer dat de sinus van het resultaat $0{,}6$ is.
+      antwoord: |-
+        $\approx 0{,}6435$
+      uitwerking: |-
+        $\sin^{-1}(0{,}6) \approx 0{,}6435$ en $\sin 0{,}6435 \approx 0{,}6$.
+    - opgave: |-
+        Bereken $\sin(\pi - 0{,}6435)$. Wat valt op?
+      antwoord: |-
+        ook $0{,}6$
+      uitwerking: |-
+        Ook $0{,}6$: de supplementaire hoek heeft dezelfde sinus.
+    - opgave: |-
+        Hoeveel oplossingen heeft $\sin x = 0{,}6$ in $[0, 4\pi]$? Geef ze.
+      antwoord: |-
+        4
+      uitwerking: |-
+        $0{,}6435$; $2{,}4981$; $0{,}6435 + 2\pi \approx 6{,}9267$; $2{,}4981 + 2\pi \approx 8{,}7813$.
+
+- id: h4-bg
+  soort: kort
+  opgave: |-
+    Bepaal exact.
+  lijst: reeks
+  kolommen: 4
+  delen:
+    - opgave: |-
+        $\bgsin\frac{\sqrt3}{2}$
+      antwoord: |-
+        $\frac{\pi}{3}$
+      uitwerking: |-
+        $\frac{\pi}{3}$.
+    - opgave: |-
+        $\bgcos 0$
+      antwoord: |-
+        $\frac{\pi}{2}$
+      uitwerking: |-
+        $\frac{\pi}{2}$.
+    - opgave: |-
+        $\bgtan(-1)$
+      antwoord: |-
+        $-\frac{\pi}{4}$
+      uitwerking: |-
+        $-\frac{\pi}{4}$, in $\bigl]-\frac{\pi}{2}, \frac{\pi}{2}\bigr[$.
+    - opgave: |-
+        $\bgcos\bigl(-\frac{\sqrt3}{2}\bigr)$
+      antwoord: |-
+        $\frac{5\pi}{6}$
+      uitwerking: |-
+        $\pi - \frac{\pi}{6} = \frac{5\pi}{6}$, in $[0, \pi]$.
+
+- id: h4-elementair
+  soort: kort
+  opgave: |-
+    Los op in $[0, 2\pi[$.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\cos x = \frac{\sqrt2}{2}$
+      antwoord: |-
+        $\frac{\pi}{4}$, $\frac{7\pi}{4}$
+      uitwerking: |-
+        $x = \pm\frac{\pi}{4} + k \cdot 2\pi$: $\frac{\pi}{4}$ en $\frac{7\pi}{4}$.
+    - opgave: |-
+        $\tan x = \sqrt3$
+      antwoord: |-
+        $\frac{\pi}{3}$, $\frac{4\pi}{3}$
+      uitwerking: |-
+        $x = \frac{\pi}{3} + k\pi$: $\frac{\pi}{3}$ en $\frac{4\pi}{3}$.
+    - opgave: |-
+        $\sin 2x = 0$
+      antwoord: |-
+        $0$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$
+      uitwerking: |-
+        $2x = k\pi$, dus $x = k\frac{\pi}{2}$: $0$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$.
+
+- id: h4-herleidbaar
+  soort: kort
+  opgave: |-
+    Los op (algemene oplossing).
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $2\cos^2 x + 3\cos x + 1 = 0$
+      antwoord: |-
+        $\pm\frac{2\pi}{3} + k \cdot 2\pi$ of $\pi + k \cdot 2\pi$
+      uitwerking: |-
+        $t = \cos x$: $2t^2 + 3t + 1 = 0$, $t = -\frac12$ of $t = -1$. Dus $x = \pm\frac{2\pi}{3} + k \cdot 2\pi$ of $x = \pi + k \cdot 2\pi$.
+    - opgave: |-
+        $\sin x = \cos x$
+      antwoord: |-
+        $\frac{\pi}{4} + k\pi$
+      uitwerking: |-
+        $\cos x = 0$ is geen oplossing (dan is $\sin x = \pm 1$). Delen door $\cos x$: $\tan x = 1$, dus $x = \frac{\pi}{4} + k\pi$.
+
+- id: h4-context
+  soort: kort
+  opgave: |-
+    De hoogte van een gondel is $h(t) = 3\sin\frac{\pi t}{6} + 10$ (in m, $t$ in minuten). Wanneer is de gondel in de eerste 12 minuten hoger dan $11{,}5$ m?
+  antwoord: |-
+    tussen 1 en 5 minuten
+  uitwerking: |-
+    $\sin\frac{\pi t}{6} > \frac12$. Gelijkheid: $\frac{\pi t}{6} = \frac{\pi}{6}$ of $\frac{5\pi}{6}$, dus $t = 1$ of $t = 5$. Daartussen ligt de top: hoger dan $11{,}5$ m voor $1 < t < 5$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h4-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    algemene oplossing
+  opgave: |-
+    Geef de algemene oplossing.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\sin 3x = 0$
+      antwoord: |-
+        $x = k\frac{\pi}{3}$
+      uitwerking: |-
+        $3x = k\pi$.
+    - opgave: |-
+        $\cos\bigl(x - \frac{\pi}{4}\bigr) = 1$
+      antwoord: |-
+        $x = \frac{\pi}{4} + k \cdot 2\pi$
+      uitwerking: |-
+        $x - \frac{\pi}{4} = k \cdot 2\pi$.
+    - opgave: |-
+        $\tan 2x = 1$
+      antwoord: |-
+        $x = \frac{\pi}{8} + k\frac{\pi}{2}$
+      uitwerking: |-
+        $2x = \frac{\pi}{4} + k\pi$.
+
+- id: h4-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    met het rekentoestel
+  opgave: |-
+    Los op in $[0, 2\pi[$, op vier decimalen.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\sin x = 0{,}3$
+      antwoord: |-
+        $0{,}3047$; $2{,}8369$
+      uitwerking: |-
+        $\bgsin 0{,}3 \approx 0{,}3047$ en $\pi - 0{,}3047 \approx 2{,}8369$.
+    - opgave: |-
+        $\cos x = -0{,}7$
+      antwoord: |-
+        $2{,}3462$; $3{,}9370$
+      uitwerking: |-
+        $\bgcos(-0{,}7) \approx 2{,}3462$ en $2\pi - 2{,}3462 \approx 3{,}9370$.
+    - opgave: |-
+        $\tan x = 3$
+      antwoord: |-
+        $1{,}2490$; $4{,}3906$
+      uitwerking: |-
+        $\bgtan 3 \approx 1{,}2490$ en $1{,}2490 + \pi \approx 4{,}3906$.
+
+- id: h4-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    geen oplossing
+  opgave: |-
+    Welke vergelijkingen hebben geen oplossing? Waarom?
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $3\sin x = 2$
+      antwoord: |-
+        heeft oplossingen
+      uitwerking: |-
+        $\sin x = \frac23$: kan, want $\frac23 \in [-1, 1]$.
+    - opgave: |-
+        $\cos x + 2 = 0$
+      antwoord: |-
+        geen oplossing
+      uitwerking: |-
+        $\cos x = -2 < -1$: geen oplossing.
+    - opgave: |-
+        $\tan x = 100$
+      antwoord: |-
+        heeft oplossingen
+      uitwerking: |-
+        De tangens neemt elke waarde aan.
+
+- id: h4-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    met een verdubbelingsformule
+  opgave: |-
+    Los op in $[0, 2\pi[$: $\cos 2x = \sin x$.
+  antwoord: |-
+    $\frac{\pi}{6}$, $\frac{5\pi}{6}$, $\frac{3\pi}{2}$
+  uitwerking: |-
+    $1 - 2\sin^2 x = \sin x$, dus $2\sin^2 x + \sin x - 1 = 0$ en $\sin x = \frac12$ of $\sin x = -1$. In $[0, 2\pi[$: $\frac{\pi}{6}$, $\frac{5\pi}{6}$ en $\frac{3\pi}{2}$.
+
+- id: h4-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    ontbinden
+  opgave: |-
+    Los op in $[0, 2\pi]$: $\sin 2x = \sin x$.
+  antwoord: |-
+    $0$, $\frac{\pi}{3}$, $\pi$, $\frac{5\pi}{3}$, $2\pi$
+  uitwerking: |-
+    $2\sin x\cos x - \sin x = \sin x\,(2\cos x - 1) = 0$. $\sin x = 0$: $0$, $\pi$, $2\pi$. $\cos x = \frac12$: $\frac{\pi}{3}$, $\frac{5\pi}{3}$.
+
+- id: h4-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    ongelijkheid
+  opgave: |-
+    Voor welke $x$ in $[0, 2\pi]$ is $\cos x \leqslant -\frac12$? Gebruik de eenheidscirkel of de grafiek.
+  antwoord: |-
+    $\bigl[\frac{2\pi}{3}, \frac{4\pi}{3}\bigr]$
+  uitwerking: |-
+    Gelijkheid in $\frac{2\pi}{3}$ en $\frac{4\pi}{3}$. Daartussen ligt $\pi$, waar $\cos x = -1$: daar is de ongelijkheid voldaan. Oplossing $\bigl[\frac{2\pi}{3}, \frac{4\pi}{3}\bigr]$.
+
+- id: h4-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    de London Eye
+  opgave: |-
+    Op de London Eye is je hoogte $h(t) = -60\cos\frac{\pi t}{15} + 75$ (in m, $t$ in minuten, één toer duurt 30 minuten). Hoe lang ben je tijdens een toer hoger dan $100$ m?
+  antwoord: |-
+    ongeveer $10{,}9$ minuten
+  uitwerking: |-
+    $\cos\frac{\pi t}{15} < -\frac{5}{12}$. Gelijkheid: $\frac{\pi t}{15} = \bgcos\bigl(-\frac{5}{12}\bigr) \approx 2{,}0006$ of $2\pi - 2{,}0006$, dus $t \approx 9{,}55$ of $t \approx 20{,}45$. Daartussen ben je boven: ongeveer $10{,}9$ minuten.
+
+- id: h4-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    samenvoegen
+  opgave: |-
+    Los op: $\sqrt3\sin x - \cos x = \sqrt2$.
+  antwoord: |-
+    $\frac{5\pi}{12} + k \cdot 2\pi$ of $\frac{11\pi}{12} + k \cdot 2\pi$
+  uitwerking: |-
+    $\sqrt3\sin x - \cos x = 2\sin\bigl(x - \frac{\pi}{6}\bigr)$, dus $\sin\bigl(x - \frac{\pi}{6}\bigr) = \frac{\sqrt2}{2}$. Dan $x - \frac{\pi}{6} = \frac{\pi}{4} + k \cdot 2\pi$ of $\frac{3\pi}{4} + k \cdot 2\pi$, dus $x = \frac{5\pi}{12} + k \cdot 2\pi$ of $x = \frac{11\pi}{12} + k \cdot 2\pi$.
+
+- id: h4-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    gelijke sinussen
+  opgave: |-
+    Uit $\sin A = \sin B$ volgt $A = B + k \cdot 2\pi$ of $A = \pi - B + k \cdot 2\pi$. Los zo op: $\sin 3x = \sin x$, en geef de oplossingen in $[0, \pi]$.
+  antwoord: |-
+    $0$, $\frac{\pi}{4}$, $\frac{3\pi}{4}$, $\pi$
+  uitwerking: |-
+    $3x = x + k \cdot 2\pi$ geeft $x = k\pi$. $3x = \pi - x + k \cdot 2\pi$ geeft $x = \frac{\pi}{4} + k\frac{\pi}{2}$. In $[0, \pi]$: $0$, $\frac{\pi}{4}$, $\frac{3\pi}{4}$, $\pi$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h4-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Algemene functies
+  thema: |-
+    een inverse terugdraaien
+  opgave: |-
+    Voor elke $x \in [-1, 1]$ is $\sin(\bgsin x) = x$. Is ook $\bgsin(\sin x) = x$ voor elke $x$? Bereken $\bgsin(\sin 2)$ en leg uit.
+  antwoord: |-
+    nee; $\pi - 2 \approx 1{,}14$
+  uitwerking: |-
+    Nee: $\bgsin$ geeft altijd een hoek in $\bigl[-\frac{\pi}{2}, \frac{\pi}{2}\bigr]$, en $2 > \frac{\pi}{2}$. De hoek in dat interval met dezelfde sinus als $2$ is $\pi - 2 \approx 1{,}14$.
+
+- id: h4-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    cyclometrische functies
+  opgave: |-
+    Bepaal exact $\bgsin\bigl(-\frac{\sqrt2}{2}\bigr)$ en $\bgtan\sqrt3$.
+  antwoord: |-
+    $-\frac{\pi}{4}$; $\frac{\pi}{3}$
+  uitwerking: |-
+    $-\frac{\pi}{4}$ en $\frac{\pi}{3}$.
+
+- id: h4-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    elementaire vergelijking
+  opgave: |-
+    Los op in $[0, 2\pi[$: $\cos x = -\frac12$.
+  antwoord: |-
+    $\frac{2\pi}{3}$, $\frac{4\pi}{3}$
+  uitwerking: |-
+    $x = \pm\frac{2\pi}{3} + k \cdot 2\pi$: $\frac{2\pi}{3}$ en $\frac{4\pi}{3}$.
+
+- id: h4-t3
+  soort: test
+  niveau: 2
+  thema: |-
+    veelvoud van x
+  opgave: |-
+    Los op: $\sin 2x = \frac{\sqrt3}{2}$. Geef de algemene oplossing en de oplossingen in $[0, 2\pi[$.
+  antwoord: |-
+    $\frac{\pi}{6} + k\pi$ of $\frac{\pi}{3} + k\pi$; $\frac{\pi}{6}, \frac{\pi}{3}, \frac{7\pi}{6}, \frac{4\pi}{3}$
+  uitwerking: |-
+    $2x = \frac{\pi}{3} + k \cdot 2\pi$ of $2x = \frac{2\pi}{3} + k \cdot 2\pi$, dus $x = \frac{\pi}{6} + k\pi$ of $x = \frac{\pi}{3} + k\pi$. In $[0, 2\pi[$: $\frac{\pi}{6}$, $\frac{\pi}{3}$, $\frac{7\pi}{6}$, $\frac{4\pi}{3}$.
+
+- id: h4-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    ontbinden
+  opgave: |-
+    Los op: $2\sin^2 x + \sin x = 0$.
+  antwoord: |-
+    $k\pi$; $-\frac{\pi}{6} + k \cdot 2\pi$; $\frac{7\pi}{6} + k \cdot 2\pi$
+  uitwerking: |-
+    $\sin x\,(2\sin x + 1) = 0$. $\sin x = 0$: $x = k\pi$. $\sin x = -\frac12$: $x = -\frac{\pi}{6} + k \cdot 2\pi$ of $x = \frac{7\pi}{6} + k \cdot 2\pi$.
+
+- id: h4-t5
+  soort: test
+  niveau: 2
+  thema: |-
+    context
+  opgave: |-
+    De temperatuur in een serre is $T(t) = 4\sin\frac{\pi(t - 9)}{12} + 20$ (in $^\circ$C, $t$ in uur). Wanneer is het warmer dan $22\,^\circ$C?
+  antwoord: |-
+    tussen 11 en 19 uur
+  uitwerking: |-
+    $\sin\frac{\pi(t - 9)}{12} > \frac12$. Gelijkheid: $\frac{\pi(t - 9)}{12} = \frac{\pi}{6}$ of $\frac{5\pi}{6}$, dus $t = 11$ of $t = 19$. Daartussen ligt de top (om 15 uur): warmer dan $22\,^\circ$C tussen 11 en 19 uur.
