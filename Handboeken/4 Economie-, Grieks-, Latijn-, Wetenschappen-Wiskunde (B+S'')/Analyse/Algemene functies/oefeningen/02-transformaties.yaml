@@ -1,0 +1,478 @@
+# Oefeningen van hoofdstuk 2. Zie oefeningenbank.py voor de velden.
+
+- id: h2-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Werk uit: $-2(x + 1)^2 + 3$.
+      antwoord: |-
+        $-2x^2 - 4x + 1$
+      uitwerking: |-
+        $-2(x^2 + 2x + 1) + 3 = -2x^2 - 4x + 1$.
+    - opgave: |-
+        Schrijf als $(x - c)^2 + d$: $x^2 - 4x + 7$.
+      antwoord: |-
+        $(x - 2)^2 + 3$
+      uitwerking: |-
+        $x^2 - 4x + 4 + 3 = (x - 2)^2 + 3$.
+    - opgave: |-
+        Los op: $\sqrt{x + 3} = 2$.
+      antwoord: |-
+        $x = 1$
+      uitwerking: |-
+        $x + 3 = 4$.
+    - opgave: |-
+        Zet 2 buiten haakjes: $2x - 6$.
+      antwoord: |-
+        $2(x - 3)$
+      uitwerking: |-
+        $2(x - 3)$.
+    - opgave: |-
+        Waar ligt de top van $y = x^2 + 4$?
+      antwoord: |-
+        $(0, 4)$
+      uitwerking: |-
+        $(0, 4)$.
+    - opgave: |-
+        Bereken $|-3| - |2|$.
+      antwoord: |-
+        1
+      uitwerking: |-
+        $3 - 2 = 1$.
+
+- id: h2-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken} Neem $f(x) = x^2$ en $g(x) = (x - 1)^2$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $f(x)$ en $g(x)$ voor $x = -1, 0, 1, 2, 3$.
+      antwoord: |-
+        $f$: 1, 0, 1, 4, 9; $g$: 4, 1, 0, 1, 4
+      uitwerking: |-
+        $f$: $1, 0, 1, 4, 9$. $g$: $4, 1, 0, 1, 4$.
+    - opgave: |-
+        Voor welke $x$ is $g(x) = f(0)$? En $g(x) = f(1)$ met $x > 1$?
+      antwoord: |-
+        $x = 1$; $x = 2$
+      uitwerking: |-
+        $g(1) = 0 = f(0)$ en $g(2) = 1 = f(1)$: wat $f$ in $x$ doet, doet $g$ in $x + 1$.
+    - opgave: |-
+        Ligt de grafiek van $g$ links of rechts van die van $f$? Hoe ver?
+      antwoord: |-
+        1 naar rechts
+      uitwerking: |-
+        Elke waarde komt één plaats later: de grafiek schuift 1 naar rechts, ook al staat er een min.
+
+- id: h2-verschuiven
+  soort: kort
+  opgave: |-
+    Beschrijf de verschuiving ten opzichte van de basisfunctie, en geef het domein en het bereik.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $g(x) = (x - 4)^2 - 2$
+      antwoord: |-
+        4 rechts, 2 onder; $\R$; $\left[-2, +\infty\right[$
+      uitwerking: |-
+        $x^2$ over 4 naar rechts en 2 naar onder. $\dom g = \R$, $\ber g = \left[-2, +\infty\right[$.
+    - opgave: |-
+        $g(x) = \dfrac{1}{x + 2} + 1$
+      antwoord: |-
+        2 links, 1 boven; $\R \setminus \{-2\}$; $\R \setminus \{1\}$
+      uitwerking: |-
+        $\frac1x$ over 2 naar links en 1 naar boven. $\dom g = \R \setminus \{-2\}$, $\ber g = \R \setminus \{1\}$.
+    - opgave: |-
+        $g(x) = \sqrt{x - 1} + 5$
+      antwoord: |-
+        1 rechts, 5 boven; $\left[1, +\infty\right[$; $\left[5, +\infty\right[$
+      uitwerking: |-
+        $\sqrt{x}$ over 1 naar rechts en 5 naar boven. $\dom g = \left[1, +\infty\right[$, $\ber g = \left[5, +\infty\right[$.
+
+- id: h2-rekken
+  soort: kort
+  opgave: |-
+    De grafiek van $f$ is de gebroken lijn uit voorbeeld~\ref{vb:h2-rekken}, door $(-2, 0)$, $(0, 2)$, $(2, 0)$ en $(4, -2)$. Geef de hoekpunten van de grafiek van:
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $-f(x)$
+      antwoord: |-
+        $(-2, 0)$, $(0, -2)$, $(2, 0)$, $(4, 2)$
+      uitwerking: |-
+        $(x, y) \mapsto (x, -y)$: $(-2, 0)$, $(0, -2)$, $(2, 0)$, $(4, 2)$.
+    - opgave: |-
+        $f(-x)$
+      antwoord: |-
+        $(2, 0)$, $(0, 2)$, $(-2, 0)$, $(-4, -2)$
+      uitwerking: |-
+        $(x, y) \mapsto (-x, y)$: $(2, 0)$, $(0, 2)$, $(-2, 0)$, $(-4, -2)$.
+    - opgave: |-
+        $f\bigl(\frac{x}{2}\bigr)$
+      antwoord: |-
+        $(-4, 0)$, $(0, 2)$, $(4, 0)$, $(8, -2)$
+      uitwerking: |-
+        $b = \frac12$, dus horizontaal $\times 2$: $(-4, 0)$, $(0, 2)$, $(4, 0)$, $(8, -2)$.
+
+- id: h2-combineren
+  soort: kort
+  opgave: |-
+    Beschrijf de transformaties vanuit een basisfunctie, en geef het domein en het bereik.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $g(x) = 2|x - 3| - 1$
+      antwoord: |-
+        $\R$; $\left[-1, +\infty\right[$
+      uitwerking: |-
+        $|x|$: 3 naar rechts, verticaal $\times 2$, 1 naar onder. Knik in $(3, -1)$. $\dom g = \R$, $\ber g = \left[-1, +\infty\right[$.
+    - opgave: |-
+        $h(x) = \sqrt{4 - 2x}$
+      antwoord: |-
+        $\left]-\infty, 2\right]$; $\left[0, +\infty\right[$
+      uitwerking: |-
+        $\sqrt{-2(x - 2)}$: $\sqrt{x}$ horizontaal $\times \frac12$ en gespiegeld om de $y$-as, dan 2 naar rechts. Beginpunt $(2, 0)$. $\dom h = \left]-\infty, 2\right]$, $\ber h = \left[0, +\infty\right[$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h2-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    transformatie herkennen
+  opgave: |-
+    Uit welke basisfunctie ontstaat de grafiek van $g$, en hoe?
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $g(x) = (x + 4)^3$
+      antwoord: |-
+        $x^3$, 4 naar links
+      uitwerking: |-
+        $x^3$, over 4 naar links.
+    - opgave: |-
+        $g(x) = \dfrac1x + 2$
+      antwoord: |-
+        $\frac1x$, 2 naar boven
+      uitwerking: |-
+        $\frac1x$, over 2 naar boven.
+    - opgave: |-
+        $g(x) = |x - 1| - 3$
+      antwoord: |-
+        $|x|$, 1 naar rechts, 3 naar onder
+      uitwerking: |-
+        $|x|$, over 1 naar rechts en 3 naar onder.
+    - opgave: |-
+        $g(x) = -x^2 + 5$
+      antwoord: |-
+        $x^2$, spiegelen om de $x$-as, 5 naar boven
+      uitwerking: |-
+        $x^2$, gespiegeld om de $x$-as en 5 naar boven.
+
+- id: h2-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    voorschrift opstellen
+  opgave: |-
+    Geef het voorschrift van de functie waarvan de grafiek ontstaat door:
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        de grafiek van $\sqrt{x}$ 2 naar links en 3 naar boven te schuiven;
+      antwoord: |-
+        $\sqrt{x + 2} + 3$
+      uitwerking: |-
+        $\sqrt{x + 2} + 3$.
+    - opgave: |-
+        de grafiek van $\frac1x$ te spiegelen om de $x$-as en 1 naar rechts te schuiven;
+      antwoord: |-
+        $-\dfrac{1}{x - 1}$
+      uitwerking: |-
+        $-\dfrac{1}{x - 1}$.
+    - opgave: |-
+        de grafiek van $x^2$ verticaal uit te rekken met factor 3 en 4 naar onder te schuiven.
+      antwoord: |-
+        $3x^2 - 4$
+      uitwerking: |-
+        $3x^2 - 4$.
+
+- id: h2-o3
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    punten transformeren
+  figuur:
+    opties: |-
+      4.8cm
+    code: |-
+      \begin{tikzpicture}[x=.55cm,y=.55cm,font=\scriptsize]
+        \rooster{-3}{1}{3}{-1}{1}{2}
+        \draw[accent,thick] (-3,-1) -- (-1,2) -- (2,2) -- (3,0);
+        \vol{(-3,-1)} \vol{(3,0)}
+      \end{tikzpicture}
+  opgave: |-
+    De grafiek van $f$ is de gebroken lijn hiernaast, van $(-3, -1)$ over $(-1, 2)$ en $(2, 2)$ tot $(3, 0)$. Geef de hoekpunten, het domein en het bereik van:
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x - 1) + 2$
+      antwoord: |-
+        $(-2, 1)$, $(0, 4)$, $(3, 4)$, $(4, 2)$; $[-2, 4]$; $[1, 4]$
+      uitwerking: |-
+        $(x, y) \mapsto (x + 1, y + 2)$: $(-2, 1)$, $(0, 4)$, $(3, 4)$, $(4, 2)$. Domein $[-2, 4]$, bereik $[1, 4]$.
+    - opgave: |-
+        $-f(x)$
+      antwoord: |-
+        $(-3, 1)$, $(-1, -2)$, $(2, -2)$, $(3, 0)$; $[-3, 3]$; $[-2, 1]$
+      uitwerking: |-
+        $(-3, 1)$, $(-1, -2)$, $(2, -2)$, $(3, 0)$. Domein $[-3, 3]$, bereik $[-2, 1]$.
+    - opgave: |-
+        $f(-x)$
+      antwoord: |-
+        $(3, -1)$, $(1, 2)$, $(-2, 2)$, $(-3, 0)$; $[-3, 3]$; $[-1, 2]$
+      uitwerking: |-
+        $(3, -1)$, $(1, 2)$, $(-2, 2)$, $(-3, 0)$. Domein $[-3, 3]$, bereik $[-1, 2]$.
+    - opgave: |-
+        $\frac12 f(x)$
+      antwoord: |-
+        $(-3, -\frac12)$, $(-1, 1)$, $(2, 1)$, $(3, 0)$; $[-3, 3]$; $[-\frac12, 1]$
+      uitwerking: |-
+        $(-3, -\frac12)$, $(-1, 1)$, $(2, 1)$, $(3, 0)$. Domein $[-3, 3]$, bereik $[-\frac12, 1]$.
+
+- id: h2-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    voorschrift uit een grafiek
+  figuur:
+    opties: |-
+      4.6cm
+    code: |-
+      \begin{tikzpicture}[x=.5cm,y=.5cm,font=\scriptsize]
+        \rooster{-4}{1}{3}{-1}{1}{5}
+        \draw[grijs,dashed] (-1,-1) -- (-1,5.3) (-4,2) -- (3.3,2);
+        \kromme{-4}{-1.34}{1/(\x+1)+2} \kromme{-.67}{3}{1/(\x+1)+2}
+        \vol{(0,3)}
+      \end{tikzpicture}
+  opgave: |-
+    Geef het voorschrift.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een parabool met top $(2, -1)$ gaat door $(0, 3)$.
+      antwoord: |-
+        $y = (x - 2)^2 - 1$
+      uitwerking: |-
+        $y = a(x - 2)^2 - 1$ en $3 = 4a - 1$, dus $a = 1$.
+    - opgave: |-
+        De grafiek hiernaast ontstaat uit die van $\frac1x$ door verschuiven. De streepjeslijnen zijn de asymptoten.
+      antwoord: |-
+        $y = \dfrac{1}{x + 1} + 2$
+      uitwerking: |-
+        Het centrum $(0, 0)$ van $\frac1x$ schuift naar $(-1, 2)$: $y = \dfrac{1}{x + 1} + 2$. Controle: in $x = 0$ is $y = 3$.
+
+- id: h2-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    domein en bereik voorspellen
+  opgave: |-
+    Beschrijf de transformaties die van $\sqrt{x}$ naar $g(x) = -3\sqrt{2 - x} + 1$ leiden. Geef het domein en het bereik zonder een tabel te maken.
+  antwoord: |-
+    $\left]-\infty, 2\right]$; $\left]-\infty, 1\right]$
+  uitwerking: |-
+    $\sqrt{2 - x} = \sqrt{-(x - 2)}$: spiegelen om de $y$-as, 2 naar rechts; dan verticaal $\times 3$, spiegelen om de $x$-as en 1 naar boven. Beginpunt $(2, 1)$, de grafiek loopt naar links en naar onder. $\dom g = \left]-\infty, 2\right]$, $\ber g = \left]-\infty, 1\right]$.
+
+- id: h2-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    fout zoeken
+  opgave: |-
+    Een leerling schetst $y = \sqrt{2x - 6}$ zo: \textit{eerst $\sqrt{x}$ horizontaal $\times \frac12$, dan 6 naar rechts.} Wat is fout? Geef het juiste domein.
+  antwoord: |-
+    3 naar rechts, niet 6; $\left[3, +\infty\right[$
+  uitwerking: |-
+    $\sqrt{2x - 6} = \sqrt{2(x - 3)}$: na het uitrekken schuift de grafiek 3 naar rechts. Controle: de wortel begint waar $2x - 6 = 0$, in $x = 3$. Domein $\left[3, +\infty\right[$.
+
+- id: h2-o7
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    de volgorde telt
+  opgave: |-
+    Transformaties zijn niet altijd verwisselbaar.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Iemand rekt de grafiek van $f$ verticaal uit met factor 2 en schuift ze daarna 3 naar boven. Iemand anders doet het omgekeerd. Geef beide voorschriften. Zijn ze gelijk?
+      antwoord: |-
+        $2f(x) + 3$ en $2f(x) + 6$; nee
+      uitwerking: |-
+        Eerst uitrekken: $2f(x) + 3$. Eerst schuiven: $2\bigl(f(x) + 3\bigr) = 2f(x) + 6$. Niet gelijk.
+    - opgave: |-
+        Dezelfde vraag voor: 1 naar rechts schuiven en spiegelen om de $y$-as. Controleer met $f(x) = \sqrt{x}$ en het domein.
+      antwoord: |-
+        $f(-x - 1)$ en $f(1 - x)$; domeinen $\left]-\infty, -1\right]$ en $\left]-\infty, 1\right]$
+      uitwerking: |-
+        Eerst schuiven geeft $f(x - 1)$, dan spiegelen: $x$ vervangen door $-x$: $f(-x - 1)$. Eerst spiegelen geeft $f(-x)$, dan schuiven: $f\bigl(-(x - 1)\bigr) = f(1 - x)$. Met $\sqrt{x}$: $\sqrt{-x - 1}$ heeft domein $\left]-\infty, -1\right]$, $\sqrt{1 - x}$ heeft $\left]-\infty, 1\right]$.
+
+- id: h2-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een worp
+  opgave: |-
+    De hoogte (in m) van een bal is $h(t) = -5(t - 1{,}2)^2 + 9{,}2$, met $t$ de tijd in seconden na de worp.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Uit welke basisfunctie ontstaat de grafiek, en hoe?
+      antwoord: |-
+        $t^2$: verticaal $\times 5$, spiegelen, $1{,}2$ rechts, $9{,}2$ boven
+      uitwerking: |-
+        $t^2$: $1{,}2$ naar rechts, verticaal $\times 5$, gespiegeld om de horizontale as, $9{,}2$ naar boven.
+    - opgave: |-
+        Hoe hoog komt de bal, en wanneer?
+      antwoord: |-
+        $9{,}2$ m na $1{,}2$ s
+      uitwerking: |-
+        De top: $9{,}2$ m na $1{,}2$ s.
+    - opgave: |-
+        Van welke hoogte werd de bal gegooid?
+      antwoord: |-
+        2 m
+      uitwerking: |-
+        $h(0) = -5 \cdot 1{,}44 + 9{,}2 = 2$ m.
+    - opgave: |-
+        Wanneer valt de bal op de grond?
+      antwoord: |-
+        na ongeveer $2{,}56$ s
+      uitwerking: |-
+        $(t - 1{,}2)^2 = 1{,}84$, dus $t = 1{,}2 + \sqrt{1{,}84} \approx 2{,}56$ s (de andere oplossing is negatief).
+
+- id: h2-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    symmetrie na verschuiven
+  opgave: |-
+    Neem een even functie $f$ met domein $\R$, en $g(x) = f(x - 2)$. Toon aan dat $g(2 + h) = g(2 - h)$ voor elke $h$. Wat betekent dat voor de grafiek van $g$? Geef een voorbeeld.
+  antwoord: |-
+    symmetrisch om de rechte $x = 2$; bv. $(x - 2)^2$
+  uitwerking: |-
+    $g(2 + h) = f(h)$ en $g(2 - h) = f(-h) = f(h)$. De grafiek van $g$ is symmetrisch ten opzichte van de verticale rechte $x = 2$, bijvoorbeeld de parabool $y = (x - 2)^2$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h2-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Goniometrische functies
+  thema: |-
+    een sinusfunctie
+  opgave: |-
+    Beschrijf hoe de grafiek van $g(x) = 3\sin\bigl(2(x - \frac{\pi}{4})\bigr) + 1$ ontstaat uit die van $\sin x$. Wat zijn de grootste en de kleinste functiewaarde, en wat is de periode?
+  antwoord: |-
+    max. 4, min. $-2$, periode $\pi$
+  uitwerking: |-
+    Horizontaal $\times \frac12$, $\frac{\pi}{4}$ naar rechts, verticaal $\times 3$, 1 naar boven. De sinus ligt tussen $-1$ en $1$, dus $g$ tussen $-3 + 1 = -2$ en $3 + 1 = 4$. De periode $2\pi$ wordt $\pi$.
+
+- id: h2-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Exponentiële en logaritmische functies
+  thema: |-
+    schuiven is rekken
+  opgave: |-
+    Toon aan dat $2^{x - 3} = \frac18 \cdot 2^x$. Welke twee transformaties van de grafiek van $2^x$ geven dus hetzelfde resultaat?
+  antwoord: |-
+    3 naar rechts schuiven = verticaal $\times \frac18$
+  uitwerking: |-
+    $2^{x - 3} = 2^x \cdot 2^{-3} = \frac18 \cdot 2^x$. De grafiek 3 naar rechts schuiven geeft hetzelfde als ze verticaal uitrekken met factor $\frac18$.
+
+- id: h2-koppel-3
+  soort: koppel
+  niveau: 3
+  koppel:
+    rubriek: data
+    onderwerp: Statistiek
+  thema: |-
+    de normale dichtheid
+  opgave: |-
+    De dichtheidsfunctie van $N(\mu, \sigma)$ is $f(x) = \frac{1}{\sigma}\,\varphi\bigl(\frac{x - \mu}{\sigma}\bigr)$, met $\varphi$ de standaardnormale dichtheid. Beschrijf de transformaties vanuit $\varphi$. Waarom is de factor $\frac1\sigma$ vooraan nodig?
+  antwoord: |-
+    horizontaal $\times \sigma$, $\mu$ naar rechts, verticaal $\times \frac1\sigma$; anders is de totale oppervlakte niet 1
+  uitwerking: |-
+    $\varphi\bigl(\frac1\sigma(x - \mu)\bigr)$: horizontaal $\times \sigma$, dan $\mu$ naar rechts; daarna verticaal $\times \frac1\sigma$. Horizontaal uitrekken met $\sigma$ maakt de oppervlakte onder de grafiek $\sigma$ keer groter; de factor $\frac1\sigma$ brengt ze terug op 1.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h2-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    verschuiven
+  opgave: |-
+    Beschrijf hoe de grafiek van $g(x) = \sqrt{x - 2} + 4$ ontstaat uit die van $\sqrt{x}$, en geef het domein en het bereik.
+  antwoord: |-
+    2 rechts, 4 boven; $\left[2, +\infty\right[$; $\left[4, +\infty\right[$
+  uitwerking: |-
+    Over 2 naar rechts en 4 naar boven. $\dom g = \left[2, +\infty\right[$, $\ber g = \left[4, +\infty\right[$.
+
+- id: h2-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    uitrekken en spiegelen
+  opgave: |-
+    De grafiek van $f$ is de gebroken lijn door $(-2, 0)$, $(0, 2)$, $(2, 0)$ en $(4, -2)$. Geef de hoekpunten van de grafiek van $g(x) = -f(2x)$.
+  antwoord: |-
+    $(-1, 0)$, $(0, -2)$, $(1, 0)$, $(2, 2)$
+  uitwerking: |-
+    $(x, y) \mapsto (\frac{x}{2}, -y)$: $(-1, 0)$, $(0, -2)$, $(1, 0)$, $(2, 2)$.
+
+- id: h2-t3
+  soort: test
+  niveau: 2
+  thema: |-
+    combineren
+  opgave: |-
+    Schets $g(x) = 3 - 2|x + 1|$ vanuit $|x|$. Geef de transformaties, het domein en het bereik.
+  antwoord: |-
+    knik in $(-1, 3)$; $\R$; $\left]-\infty, 3\right]$
+  uitwerking: |-
+    $g(x) = -2|x + 1| + 3$: 1 naar links, verticaal $\times 2$, spiegelen om de $x$-as, 3 naar boven. Knik in $(-1, 3)$. $\dom g = \R$, $\ber g = \left]-\infty, 3\right]$.
+
+- id: h2-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    voorschrift uit een grafiek
+  opgave: |-
+    Een parabool heeft top $(-3, 4)$ en gaat door $(-1, 0)$. Geef het voorschrift.
+  antwoord: |-
+    $y = -(x + 3)^2 + 4$
+  uitwerking: |-
+    $y = a(x + 3)^2 + 4$ en $0 = 4a + 4$, dus $a = -1$.
