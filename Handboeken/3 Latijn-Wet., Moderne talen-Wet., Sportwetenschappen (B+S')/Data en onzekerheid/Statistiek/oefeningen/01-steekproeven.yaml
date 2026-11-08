@@ -1,0 +1,364 @@
+# Oefeningen van hoofdstuk 1. Zie oefeningenbank.py voor de velden.
+
+- id: h1-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Bereken het gemiddelde en de mediaan van 4, 7, 7, 9, 13.
+      antwoord: |-
+        8 en 7
+      uitwerking: |-
+        Gemiddelde $\frac{40}{5} = 8$. Mediaan: het middelste getal, 7.
+    - opgave: |-
+        Welk getal verandert het meest als je 13 vervangt door 53: het gemiddelde of de mediaan?
+      antwoord: |-
+        het gemiddelde
+      uitwerking: |-
+        Het gemiddelde wordt 16, de mediaan blijft 7.
+    - opgave: |-
+        Wat betekent een correlatiecoëfficiënt $r = -0{,}9$?
+      antwoord: |-
+        sterke dalende lineaire samenhang
+      uitwerking: |-
+        De punten liggen dicht bij een dalende rechte: als de ene variabele stijgt, daalt de andere meestal.
+    - opgave: |-
+        Hoeveel is 15~\% van 600?
+      antwoord: |-
+        90
+      uitwerking: |-
+        $0{,}15 \cdot 600 = 90$.
+    - opgave: |-
+        Met welke toets op je rekentoestel kies je een willekeurig geheel getal van 1 tot 20?
+      antwoord: |-
+        \texttt{randInt(1,20)}
+      uitwerking: |-
+        Op de TI-84: \texttt{randInt(1,20)} in het menu MATH, PROB.
+    - opgave: |-
+        Je gooit een munt 10 keer. Krijg je altijd 5 keer kop?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: het aantal schommelt door het toeval. 5 is wel de verwachtingswaarde.
+
+- id: h1-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken}\quad De 20 leerlingen van een klas zijn genummerd van 1 tot 20. Hun lengtes in cm zijn:
+    \figuren{\small\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{4pt}\begin{tabular}{c|cccccccccc} nr & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline cm & 168 & 175 & 162 & 181 & 170 & 158 & 177 & 166 & 173 & 185 \\[1ex] nr & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 \\ \hline cm & 160 & 171 & 179 & 164 & 169 & 183 & 157 & 174 & 167 & 176 \end{tabular}}
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Kies met je rekentoestel 5 verschillende nummers, en bereken het gemiddelde van die 5 lengtes.
+      antwoord: |-
+        verschilt per leerling
+      uitwerking: |-
+        Bijvoorbeeld de nummers 8, 19, 18, 5, 12: $\frac{166 + 167 + 174 + 170 + 171}{5} = 169{,}6$ cm.
+    - opgave: |-
+        Doe het nog twee keer. Krijg je telkens hetzelfde gemiddelde?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee. Twee andere steekproeven gaven bijvoorbeeld 171,2 en 174,6 cm.
+    - opgave: |-
+        Het gemiddelde van de hele klas is 170,75 cm. Liggen jouw gemiddelden er dicht bij? Wat verwacht je als je 10 in plaats van 5 leerlingen kiest?
+      antwoord: |-
+        meestal binnen enkele cm; dichter bij met 10
+      uitwerking: |-
+        De gemiddelden liggen meestal enkele centimeter naast 170,75. Met 10 leerlingen schommelen ze minder: één uitzonderlijk grote of kleine leerling weegt minder door.
+
+- id: h1-begrippen
+  soort: kort
+  opgave: |-
+    Een onderzoeksbureau belt 1000 willekeurig gekozen Belgen van 18 jaar of ouder, en vraagt of ze een elektrische auto overwegen. 23~\% zegt ja. Geef de populatie, de steekproef, de parameter en de steekproefgrootheid.
+  antwoord: |-
+    alle Belgen van 18+; de 1000 ondervraagden; het aandeel $p$ van alle Belgen; $\hat{p} = 0{,}23$
+  uitwerking: |-
+    Populatie: alle Belgen van 18 jaar of ouder. Steekproef: de 1000 ondervraagden. Parameter: het onbekende aandeel $p$ van alle volwassen Belgen dat een elektrische auto overweegt. Steekproefgrootheid: $\hat{p} = 0{,}23$, een schatting van $p$.
+
+- id: h1-bias
+  soort: kort
+  opgave: |-
+    Welke bias zit er in de steekproef? Hoe doe je het beter?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een krant vraagt haar lezers online te stemmen over een nieuwe snelheidsbeperking. 12\,000 lezers stemmen, 70~\% is tegen.
+      antwoord: |-
+        vrijwilligers
+      uitwerking: |-
+        Vrijwilligers: wie sterk tegen is, stemt eerder; en de lezers van één krant zijn niet representatief voor alle inwoners. De grootte (12\,000) lost dat niet op. Beter: een aselecte steekproef uit de bevolking.
+    - opgave: |-
+        Om te weten hoe tevreden leerlingen zijn over de refter, ondervraagt een leerling de eerste 30 leerlingen die om 12 uur binnenkomen.
+      antwoord: |-
+        selectiebias
+      uitwerking: |-
+        Selectiebias: wie in de refter eet, is waarschijnlijk tevredener dan wie niet komt. Beter: aselect leerlingen kiezen uit de leerlingenlijst.
+
+- id: h1-causaliteit
+  soort: kort
+  opgave: |-
+    Geef telkens een mogelijke verklaring voor de samenhang zonder dat het ene het andere veroorzaakt.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Gemeenten met meer brandweerlieden hebben meer branden.
+      antwoord: |-
+        verborgen variabele: de grootte van de gemeente
+      uitwerking: |-
+        Grote gemeenten hebben meer inwoners en gebouwen, dus meer branden en meer brandweerlieden.
+    - opgave: |-
+        Kinderen met grotere voeten lezen beter.
+      antwoord: |-
+        verborgen variabele: de leeftijd
+      uitwerking: |-
+        Oudere kinderen hebben grotere voeten en lezen beter.
+    - opgave: |-
+        Leerlingen die vaak bijles krijgen, halen lagere punten.
+      antwoord: |-
+        omgekeerde causaliteit
+      uitwerking: |-
+        Wie lage punten haalt, krijgt vaker bijles: de lage punten zijn de oorzaak van de bijles.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h1-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    begrippen
+  opgave: |-
+    Een fabriek test 50 willekeurig gekozen batterijen uit een productie van 20\,000, en meet hoe lang ze meegaan. Gemiddeld 31 uur. Geef de populatie, de steekproef, de parameter en de steekproefgrootheid. Waarom test men niet alle batterijen?
+  antwoord: |-
+    20\,000 batterijen; 50 geteste; $\mu$; $\xbar = 31$ uur; de test maakt ze leeg
+  uitwerking: |-
+    Populatie: de 20\,000 batterijen. Steekproef: de 50 geteste. Parameter: de gemiddelde levensduur $\mu$ van alle batterijen. Steekproefgrootheid: $\xbar = 31$ uur. Alle batterijen testen kan niet: na de test zijn ze leeg.
+
+- id: h1-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    gestratificeerde steekproef
+  opgave: |-
+    Een bedrijf heeft 120 werknemers in de productie, 45 in de administratie en 35 in de verkoop. Het wil een gestratificeerde steekproef van 40 werknemers. Hoeveel uit elke afdeling? Waarom is dat beter dan 40 werknemers volledig aselect kiezen?
+  antwoord: |-
+    24, 9 en 7
+  uitwerking: |-
+    Er zijn 200 werknemers; 40 is een vijfde. Dus $\frac{120}{5} = 24$, $\frac{45}{5} = 9$ en $\frac{35}{5} = 7$. Zo is elke afdeling zeker in de juiste verhouding vertegenwoordigd; bij een volledig aselecte steekproef kan een kleine afdeling toevallig bijna ontbreken.
+
+- id: h1-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    sturende vraag
+  opgave: |-
+    Herschrijf de vraag neutraal: \textit{Ben je het eens dat de school terecht de gsm verbiedt, zodat leerlingen beter kunnen opletten?}
+  antwoord: |-
+    bv. \textit{Ben je voor of tegen een gsm-verbod op school?}
+  uitwerking: |-
+    De vraag geeft al een reden voor het verbod, en \textit{terecht} stuurt het antwoord. Neutraal: \textit{Ben je voor of tegen een gsm-verbod op school?}, eventueel met de antwoorden \textit{voor}, \textit{tegen} en \textit{geen mening}.
+
+- id: h1-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    grote maar vertekende steekproef
+  opgave: |-
+    Bij een tv-programma kunnen kijkers per sms stemmen over de vraag of er te veel reclame is. 40\,000 kijkers stemmen, 90~\% vindt dat er te veel is. Een onderzoeksbureau ondervraagt 1200 aselect gekozen kijkers: 61~\% vindt dat. Welk resultaat vertrouw je het meest? Waarom?
+  antwoord: |-
+    het onderzoeksbureau
+  uitwerking: |-
+    Het onderzoeksbureau: de steekproef is aselect. Bij de sms-stemming kiezen de kijkers zelf of ze stemmen, en wie zich ergert aan reclame stemt eerder (vrijwilligers). Een grote steekproef met bias geeft een groot, maar fout resultaat.
+
+- id: h1-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    causaliteit beoordelen
+  opgave: |-
+    Een studie bij 5000 volwassenen vindt dat wie elke dag ontbijt, gemiddeld een lager gewicht heeft. Een krant kopt: \textit{Ontbijten doet vermageren}. Bespreek die kop. Geef minstens twee andere verklaringen, en zeg welk soort onderzoek nodig is om een oorzaak aan te tonen.
+  antwoord: |-
+    observationeel; verborgen variabelen, omgekeerd; experiment nodig
+  uitwerking: |-
+    Het is observationeel onderzoek: het toont samenhang, geen oorzaak. Verborgen variabelen: wie ontbijt, heeft misschien een regelmatiger leven, beweegt meer of eet gezonder. Omgekeerd: wie wil vermageren, slaat soms het ontbijt over. Om een oorzaak aan te tonen, heb je een experiment nodig: deelnemers aselect verdelen in een groep die ontbijt en een groep die dat niet doet, en de rest gelijk houden.
+
+- id: h1-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een experiment ontwerpen
+  opgave: |-
+    Een producent beweert dat een nieuwe meststof tomatenplanten meer tomaten doet geven. Je hebt 40 jonge planten. Beschrijf een experiment om dat te onderzoeken. Waarom moet je de planten aselect verdelen?
+  antwoord: |-
+    20 met, 20 zonder meststof, aselect verdeeld
+  uitwerking: |-
+    Verdeel de 40 planten door loting in twee groepen van 20. Geef één groep de meststof, de andere niet, en behandel ze verder gelijk (zelfde serre, water, licht). Tel na het seizoen de tomaten per plant en vergelijk de gemiddelden. Aselect verdelen zorgt dat sterkere of zwakkere planten niet allemaal in één groep zitten: anders kun je een verschil niet aan de meststof toeschrijven.
+
+- id: h1-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    toeval als verklaring
+  opgave: |-
+    Iemand onderzoekt bij 30 leerlingen het verband tussen 50 verschillende gewoonten (sport, muziek, ontbijt, \ldots) en hun punten voor wiskunde. Bij één gewoonte vindt hij een duidelijke samenhang. Waarom moet je daar voorzichtig mee zijn?
+  antwoord: |-
+    bij veel vergelijkingen vind je door toeval een samenhang
+  uitwerking: |-
+    Wie veel variabelen vergelijkt in een kleine groep, vindt bijna zeker ergens een samenhang door toeval. Dan moet je het verband opnieuw onderzoeken in een nieuwe, grotere steekproef voor je iets besluit.
+
+- id: h1-o8
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    non-respons
+  opgave: |-
+    Een gemeente stuurt een enquête over de dienstverlening naar 2000 aselect gekozen inwoners. 450 sturen ze terug, en 80~\% daarvan is tevreden. Is de schatting van 80~\% betrouwbaar? Wat kan de gemeente doen?
+  antwoord: |-
+    non-respons kan vertekenen
+  uitwerking: |-
+    De steekproef was aselect, maar maar 22,5~\% antwoordde. Wie niet antwoordt, kan anders zijn: misschien minder tevreden, of minder betrokken. De 80~\% kan dus vertekend zijn. De gemeente kan de niet-antwoorders herinneren of opbellen, of een kleinere groep intensief opvolgen.
+
+- id: h1-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    paradox van Simpson
+  opgave: |-
+    Twee ziekenhuizen behandelen patiënten met een lichte en een zware vorm van een ziekte. In ziekenhuis A genezen 18 van de 20 lichte en 72 van de 180 zware gevallen. In ziekenhuis B genezen 150 van de 180 lichte en 6 van de 20 zware gevallen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken het genezingspercentage per ziekenhuis, voor alle patiënten samen.
+      antwoord: |-
+        A 45~\%, B 78~\%
+      uitwerking: |-
+        A: $\frac{18 + 72}{200} = 45$~\%. B: $\frac{150 + 6}{200} = 78$~\%.
+    - opgave: |-
+        Bereken het percentage per ziekenhuis apart voor lichte en voor zware gevallen. Welk ziekenhuis is beter? Verklaar de schijnbare tegenspraak.
+      antwoord: |-
+        A is beter in beide groepen
+      uitwerking: |-
+        Licht: A 90~\%, B 83,3~\%. Zwaar: A 40~\%, B 30~\%. In beide groepen geneest A meer patiënten. Toch lijkt B samen veel beter, omdat A vooral zware gevallen behandelt en B vooral lichte. De zwaarte van de ziekte is een verborgen variabele: wie de totalen vergelijkt, vergelijkt eigenlijk de mix van patiënten.
+
+- id: h1-o10
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    steekproefgrootte
+  opgave: |-
+    Een student schrijft: \textit{mijn steekproef is 10~\% van de populatie, dus ze is representatief}. Een ander: \textit{een aselecte steekproef van 1000 personen geeft voor België even goede schattingen als voor een stad van 50\,000 inwoners}. Bespreek beide uitspraken.
+  antwoord: |-
+    de eerste fout, de tweede (bijna) juist
+  uitwerking: |-
+    De eerste is fout: representativiteit hangt af van hoe je kiest (aselect of niet), niet van het percentage. Ook 10~\% kan vertekend zijn. De tweede is bijna juist: de schommeling van een aselecte steekproef hangt vooral af van de grootte van de steekproef, nauwelijks van die van de populatie, zolang de populatie veel groter is dan de steekproef.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h1-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: data
+    onderwerp: Kansrekenen
+  thema: |-
+    spreiding van een steekproefproportie
+  opgave: |-
+    Het aantal personen met een eigenschap in een aselecte steekproef van $n$ personen is (bij een grote populatie) bij benadering binomiaal verdeeld met parameters $n$ en $p$. Het aandeel is $\hat{p} = \frac{X}{n}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $\E(\hat{p}) = p$ en dat de standaardafwijking van $\hat{p}$ gelijk is aan $\sqrt{\frac{p(1 - p)}{n}}$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $\E(X) = np$ en $\sigma(X) = \sqrt{np(1 - p)}$. Delen door $n$: $\E(\hat{p}) = p$ en $\sigma(\hat{p}) = \frac{\sqrt{np(1 - p)}}{n} = \sqrt{\frac{p(1 - p)}{n}}$.
+    - opgave: |-
+        Bereken die standaardafwijking voor $p = 0{,}4$ en $n = 20$, en voor $n = 200$. Vergelijk met de simulatie in de leerstof.
+      antwoord: |-
+        $\approx 0{,}11$ en $\approx 0{,}035$
+      uitwerking: |-
+        $\sqrt{\frac{0{,}24}{20}} \approx 0{,}11$ en $\sqrt{\frac{0{,}24}{200}} \approx 0{,}035$: tien keer zoveel personen geeft een $\sqrt{10} \approx 3{,}2$ keer kleinere spreiding. In de simulatie liggen de stippen inderdaad veel dichter bij 0,4 bij $n = 200$.
+
+- id: h1-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: data
+    onderwerp: Regressie
+  thema: |-
+    regressierechte en voorspelling
+  opgave: |-
+    Zeven leerlingen noteerden hoeveel uur ze studeerden ($x$) en hun score op 100 ($y$): $(2, 52)$, $(4, 55)$, $(5, 61)$, $(7, 60)$, $(8, 68)$, $(10, 71)$, $(12, 77)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bepaal met je rekentoestel de correlatiecoëfficiënt en de regressierechte. Voorspel de score na 6 uur studeren.
+      antwoord: |-
+        $r \approx 0{,}97$; $y \approx 2{,}50x + 46{,}3$; $\approx 61$
+      uitwerking: |-
+        $r \approx 0{,}97$, en de regressierechte is $y \approx 2{,}50x + 46{,}3$. Na 6 uur: $2{,}50 \cdot 6 + 46{,}3 \approx 61$.
+    - opgave: |-
+        Mag je besluiten dat elk extra uur studeren de score met 2,5 punten verhoogt?
+      antwoord: |-
+        niet zonder meer
+      uitwerking: |-
+        Niet zonder meer: het is observationeel, met maar 7 leerlingen. Wie meer studeert, kan ook in andere opzichten verschillen (motivatie, voorkennis). Waarschijnlijk helpt studeren wel, maar de 2,5 punten per uur is geen bewezen oorzakelijk effect.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h1-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    begrippen
+  opgave: |-
+    Om te weten hoeveel tijd jongeren van 12 tot 18 jaar in Vlaanderen per dag online zijn, ondervraagt een onderzoeker 800 aselect gekozen jongeren. Gemiddeld 3,1 uur. Geef de populatie, de steekproef, de parameter en de steekproefgrootheid.
+  antwoord: |-
+    alle Vlaamse jongeren van 12 tot 18; de 800; $\mu$; $\xbar = 3{,}1$ uur
+  uitwerking: |-
+    Populatie: alle jongeren van 12 tot 18 jaar in Vlaanderen. Steekproef: de 800 ondervraagden. Parameter: het gemiddelde $\mu$ van alle jongeren. Steekproefgrootheid: $\xbar = 3{,}1$ uur.
+
+- id: h1-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    bias
+  opgave: |-
+    Om de populariteit van een nieuwe sportschool te meten, ondervraagt men de bezoekers van die sportschool. Welke bias is er, en hoe doe je het beter?
+  antwoord: |-
+    selectiebias
+  uitwerking: |-
+    Selectiebias: wie de sportschool bezoekt, vindt ze waarschijnlijk goed. Beter: een aselecte steekproef uit alle inwoners van de buurt.
+
+- id: h1-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    gestratificeerde steekproef
+  opgave: |-
+    Een school heeft 300 leerlingen in de eerste graad, 250 in de tweede en 250 in de derde. Hoeveel leerlingen kies je uit elke graad voor een gestratificeerde steekproef van 64?
+  antwoord: |-
+    24, 20, 20
+  uitwerking: |-
+    64 van 800 is 8~\%: $0{,}08 \cdot 300 = 24$ en $0{,}08 \cdot 250 = 20$ (twee keer).
+
+- id: h1-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    samenhang en causaliteit
+  opgave: |-
+    In landen waar meer chocolade gegeten wordt, wonen meer Nobelprijswinnaars per miljoen inwoners. Maakt chocolade slimmer? Geef een verklaring.
+  antwoord: |-
+    nee: verborgen variabele (welvaart)
+  uitwerking: |-
+    Nee. Rijkere landen eten meer chocolade en investeren meer in onderwijs en onderzoek. De welvaart is een verborgen variabele. Het gaat bovendien om een observationele vergelijking tussen landen.

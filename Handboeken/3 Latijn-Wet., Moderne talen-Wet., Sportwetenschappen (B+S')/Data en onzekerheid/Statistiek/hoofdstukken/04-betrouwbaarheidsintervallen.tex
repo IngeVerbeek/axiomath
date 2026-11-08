@@ -1,0 +1,170 @@
+%----------------------------------------------------------------------------------------
+% BETROUWBAARHEIDSINTERVALLEN. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h4-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{4}{Betrouwbaarheidsintervallen}
+
+\lkr{Leerplan B+S': keuzedoel K1 van pakket 4 (de betekenis van betrouwbaarheidsniveau, betrouwbaarheidsinterval en foutenmarge uitleggen in betekenisvolle situaties; of dit in pakket 3 aan bod komt, is na te kijken), met de wenken: het effect van niveau, steekproefgrootte en standaardafwijking op de foutenmarge, intervallen voor proporties en gemiddelden, en ICT. Dit hoofdstuk is facultatief. Op de TI-84: \texttt{1-PropZInt} en \texttt{ZInterval} in het menu STAT, TESTS.}
+
+Een krant meldt: \textit{23~\% van de Belgen overweegt een elektrische auto, met een foutenmarge van 2,6~procentpunt}. Wat betekent die foutenmarge? Een steekproef geeft nooit precies de parameter, maar je kunt wel zeggen in welk interval die waarschijnlijk ligt. In dit hoofdstuk leer je zo'n interval berekenen, en vooral: het juist interpreteren.
+
+\begin{oefeningen}[Start]
+\oef{h4-start-1}
+
+\oef{h4-verken}
+\end{oefeningen}
+
+%========================================================================================
+\section{Een interval voor een proportie}
+
+Bij een aselecte steekproef van grootte $n$ ligt $\hat{p}$ in 95~\% van de gevallen binnen 1,96 standaardafwijkingen van $p$: dat is de normale verdeling met $\sigma(\hat{p}) = \sqrt{\frac{p(1 - p)}{n}}$. Omgekeerd ligt $p$ dan binnen die afstand van $\hat{p}$. Omdat je $p$ niet kent, vervang je het in de formule door $\hat{p}$.
+
+\begin{theorie}
+Een \textbf{\textcolor{accent}{95~\%-betrouwbaarheidsinterval}} voor een populatieproportie $p$, op basis van een aselecte steekproef met aandeel $\hat{p}$, is
+
+\vspace{1mm}
+\qquad $\formule{\Bigl[\hat{p} - E,\ \hat{p} + E\Bigr]}$ \quad met \textbf{\textcolor{accent}{foutenmarge}} \quad $\formule{E = 1{,}96 \sqrt{\dfrac{\hat{p}(1 - \hat{p})}{n}}}$
+
+\vspace{1mm}
+Het getal 95~\% is het \textbf{\textcolor{accent}{betrouwbaarheidsniveau}}. Voor 90~\% vervang je 1,96 door 1,645, voor 99~\% door 2,576.
+\end{theorie}
+
+\voorbeeld{}{In een aselecte steekproef van 1000 Belgen overweegt 230 een elektrische auto. Bereken een 95~\%-betrouwbaarheidsinterval voor het aandeel van alle Belgen.\label{vb:h4-proportie}}{%
+\uitleg{We berekenen $\hat{p}$ en de foutenmarge, en controleren met het rekentoestel.}
+\begin{stappenbreed}
+\hat{p} = \frac{230}{1000} = 0{,}23 & Het aandeel in de steekproef. \\[3ex]
+E = 1{,}96\sqrt{\frac{0{,}23 \cdot 0{,}77}{1000}} \approx 0{,}026 & De foutenmarge: 2,6 procentpunt. \\[3ex]
+[0{,}204;\ 0{,}256] & Met \texttt{1-PropZInt}: hetzelfde interval.
+\end{stappenbreed}
+Met 95~\% betrouwbaarheid overweegt tussen 20,4~\% en 25,6~\% van alle Belgen een elektrische auto.}
+
+\subsection{Wat betekent 95~\%?}
+
+\naast{\begin{minipage}{7.6cm}
+Het interval hangt af van de steekproef: een andere steekproef geeft een ander interval. De figuur toont een simulatie: 20 aselecte steekproeven van 200 personen uit een populatie met $p = 0{,}4$, met telkens het 95~\%-interval. Negentien intervallen bevatten 0,4, één niet.
+
+\textit{95~\% betrouwbaar} betekent: van alle intervallen die je met deze methode maakt, bevat ongeveer 95~\% de echte $p$. Voor één bepaald interval weet je niet of het bij de gelukkige 95~\% hoort.
+\end{minipage}}{\begin{tikzpicture}[x=16cm,y=.24cm,font=\scriptsize]
+  \draw[grijs] (.27,0) -- (.59,0);
+  \foreach \t/\l in {.3/{0,3},.4/{0,4},.5/{0,5}}{\draw[grijs] (\t,0) -- (\t,-.4) node[below,text=black] {\l};}
+  \draw[fel!80!black,dashed] (.4,0) -- (.4,21) node[above,text=black] {$p$};
+  \foreach \a/\b/\i in {.289/.421/1,.352/.488/2,.322/.458/4,.366/.504/5,.327/.463/6,.342/.478/7,.371/.509/8,.303/.437/9,.298/.432/10,.337/.473/11,.318/.452/12,.293/.427/13,.366/.504/14,.337/.473/15,.303/.437/16,.361/.499/17,.293/.427/18,.313/.447/19,.298/.432/20}{\draw[accent,thick] (\a,\i) -- (\b,\i); \fill[accent] ({(\a+\b)/2},\i) circle (1pt);}
+  \draw[fel!80!black,very thick] (.426,3) -- (.564,3); \fill[fel!80!black] (.495,3) circle (1.2pt);
+\end{tikzpicture}}
+
+Fout is dus: \textit{de kans dat $p$ in $[0{,}204;\ 0{,}256]$ ligt, is 95~\%}. De parameter $p$ ligt vast, het interval is wat van het toeval afhangt. Een tweede fout: denken dat 95~\% van de \textit{personen} binnen het interval valt. Het interval gaat over een parameter, niet over individuen.
+
+\begin{oefeningen}
+\oef{h4-proportie}
+\end{oefeningen}
+
+%========================================================================================
+\section{Een interval voor een gemiddelde}
+
+Voor een gemiddelde gebruik je de steekproevenverdeling van $\overline{X}$, met standaardafwijking $\frac{\sigma}{\sqrt n}$. Ook hier kennen we in deze cursus $\sigma$.
+
+\begin{theorie}
+Een \textbf{\textcolor{accent}{95~\%-betrouwbaarheidsinterval}} voor een populatiegemiddelde $\mu$, met $\sigma$ gekend, op basis van een aselecte steekproef met gemiddelde $\xbar$, is
+
+\vspace{1mm}
+\qquad $\formule{\Bigl[\xbar - E,\ \xbar + E\Bigr]}$ \quad met \quad $\formule{E = 1{,}96 \dfrac{\sigma}{\sqrt{n}}}$
+\end{theorie}
+
+\voorbeeld{}{Een fabriek test 50 batterijen. Ze gaan gemiddeld 31 uur mee. Uit ervaring is $\sigma = 4$ uur. Bereken een 95~\%-betrouwbaarheidsinterval voor de gemiddelde levensduur van alle batterijen.\label{vb:h4-gemiddelde}}{%
+\uitleg{De foutenmarge is 1,96 standaardafwijkingen van het steekproefgemiddelde.}
+\begin{stappenbreed}
+E = 1{,}96 \cdot \frac{4}{\sqrt{50}} \approx 1{,}11 & De foutenmarge in uur. \\[3ex]
+[29{,}9;\ 32{,}1] & Met \texttt{ZInterval}: hetzelfde.
+\end{stappenbreed}
+De gemiddelde levensduur van alle batterijen ligt met 95~\% betrouwbaarheid tussen 29,9 en 32,1 uur.}
+
+\begin{oefeningen}
+\oef{h4-gemiddelde}
+\end{oefeningen}
+
+%========================================================================================
+\section{De foutenmarge beïnvloeden}
+
+De foutenmarge $E = z \cdot \frac{\sigma}{\sqrt n}$ (of met $\sqrt{\hat{p}(1 - \hat{p})}$ in de plaats van $\sigma$) hangt af van drie dingen.
+
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabular}{@{}>{\RaggedRight\arraybackslash\bfseries}p{4.2cm}>{\RaggedRight\arraybackslash}p{11.4cm}@{}}
+hoger betrouwbaarheidsniveau & groter $z$, dus een bredere marge: bij 23~\% en $n = 1000$ is de marge 2,2 procentpunt bij 90~\% en 3,4 bij 99~\%. \\
+grotere steekproef & kleinere marge, maar trager dan je denkt: vier keer zoveel waarnemingen halveert ze. \\
+grotere spreiding & bredere marge: een populatie met veel variatie is moeilijker te schatten.
+\end{tabular}\par}
+
+Wil je een gegeven foutenmarge halen, dan kun je de nodige steekproefgrootte berekenen. Bij een proportie neem je het ongunstigste geval $\hat{p} = 0{,}5$, waarvoor $\hat{p}(1 - \hat{p}) = 0{,}25$ het grootst is.
+
+\voorbeeld{}{Een peilingbureau wil een aandeel schatten met een foutenmarge van hoogstens 3 procentpunt, bij 95~\% betrouwbaarheid. Hoeveel personen moet het minstens ondervragen?\label{vb:h4-steekproefgrootte}}{%
+\uitleg{We lossen $1{,}96\sqrt{\frac{0{,}25}{n}} \leqslant 0{,}03$ op naar $n$, in het ongunstigste geval.}
+\begin{stappen}
+\sqrt{n} \geqslant \frac{1{,}96 \cdot 0{,}5}{0{,}03} \approx 32{,}7 & Want $\sqrt{0{,}25} = 0{,}5$. \\[3ex]
+n \geqslant 1068 & Daarom ondervragen peilingen vaak ongeveer 1000 personen.
+\end{stappen}}
+
+\begin{werkwijze}
+Bepaal $\hat{p}$ of $\xbar$, en de standaardafwijking ($\sqrt{\hat{p}(1 - \hat{p})}$ of $\sigma$). Foutenmarge: $z$ maal die standaardafwijking gedeeld door $\sqrt n$, met $z = 1{,}96$ voor 95~\%. Het interval is de schatting plus en min de foutenmarge. Formuleer het besluit over de parameter, met het betrouwbaarheidsniveau.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h4-marge}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h4-o1}
+
+\oef{h4-o2}
+
+\oef{h4-o3}
+
+\oef{h4-o4}
+
+\oef{h4-o5}
+
+\oef{h4-o6}
+
+\oef{h4-o7}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{De eerste oefening gebruikt het verloop van een tweedegraadsfunctie (2de graad), de tweede de binomiale verdeling.}
+
+\begin{oefeningen}
+\oef{h4-koppel-1}
+
+\oef{h4-koppel-2}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h4-t1}
+
+\oef{h4-t2}
+
+\oef{h4-t3}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h4-t1}{vb:h4-proportie}{oef:h4-proportie}%
+  \fv{oef:h4-t2}{vb:h4-gemiddelde}{oef:h4-gemiddelde}%
+  \fv{oef:h4-t3}{vb:h4-steekproefgrootte}{oef:h4-marge}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: hoe je een 95~\%-betrouwbaarheidsinterval voor een proportie en voor een gemiddelde berekent, wat de foutenmarge en het betrouwbaarheidsniveau betekenen, de juiste interpretatie van \textit{95~\% betrouwbaar} (en twee foute), en hoe niveau, steekproefgrootte en spreiding de foutenmarge beïnvloeden. Vergelijk daarna met de kaders.
+\fi
