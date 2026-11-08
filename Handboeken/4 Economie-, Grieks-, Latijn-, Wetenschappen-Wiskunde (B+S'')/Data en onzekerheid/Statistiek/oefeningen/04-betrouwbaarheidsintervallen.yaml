@@ -60,7 +60,7 @@
 - id: h4-proportie
   soort: kort
   opgave: |-
-    In een aselecte steekproef van 600 leerlingen eet 312 elke dag ontbijt. Bereken een 95~\%-betrouwbaarheidsinterval voor het aandeel van alle leerlingen, en formuleer je besluit.
+    In een aselecte steekproef van 600 leerlingen eet 312 elke dag ontbijt. Bereken een 95~\%-\hspace{0pt}betrouwbaarheidsinterval voor het aandeel van alle leerlingen, en formuleer je besluit.
   antwoord: |-
     $[0{,}48;\ 0{,}56]$
   uitwerking: |-
@@ -69,7 +69,7 @@
 - id: h4-gemiddelde
   soort: kort
   opgave: |-
-    Een aselecte groep van 36 leerlingen haalt gemiddeld 72,4 op een toets met $\sigma = 8$. Bereken een 95~\%-betrouwbaarheidsinterval voor het gemiddelde van alle leerlingen.
+    Een aselecte groep van 36 leerlingen haalt gemiddeld 72,4 op een toets met $\sigma = 8$. Bereken een 95~\%-\hspace{0pt}betrouwbaarheidsinterval voor het gemiddelde van alle leerlingen.
   antwoord: |-
     $[69{,}8;\ 75{,}0]$
   uitwerking: |-
@@ -110,7 +110,7 @@
   thema: |-
     interval voor een proportie
   opgave: |-
-    Van 120 aselect gekozen bezoekers van een festival komt 54 met de trein. Bereken een 95~\%-betrouwbaarheidsinterval voor het aandeel treinreizigers. Doe hetzelfde als er 540 van de 1200 met de trein kwamen. Vergelijk.
+    Van 120 aselect gekozen bezoekers van een festival komt 54 met de trein. Bereken een 95~\%-\hspace{0pt}betrouwbaarheidsinterval voor het aandeel treinreizigers. Doe hetzelfde als er 540 van de 1200 met de trein kwamen. Vergelijk.
   antwoord: |-
     $[0{,}361;\ 0{,}539]$; \ $[0{,}422;\ 0{,}478]$
   uitwerking: |-
@@ -122,7 +122,7 @@
   thema: |-
     interval voor een gemiddelde
   opgave: |-
-    40 aselect gekozen appels wegen gemiddeld 182~g. De standaardafwijking van alle appels is 11~g. Bereken een 95~\%-betrouwbaarheidsinterval voor het gemiddelde gewicht.
+    40 aselect gekozen appels wegen gemiddeld 182~g. De standaardafwijking van alle appels is 11~g. Bereken een 95~\%-\hspace{0pt}betrouwbaarheidsinterval voor het gemiddelde gewicht.
   antwoord: |-
     $[178{,}6;\ 185{,}4]$
   uitwerking: |-
@@ -134,7 +134,7 @@
   thema: |-
     interpretatie
   opgave: |-
-    Een 95~\%-betrouwbaarheidsinterval voor de gemiddelde slaapduur van jongeren is $[7{,}08;\ 7{,}52]$ uur. Welke uitspraken zijn juist? Verbeter de foute.
+    Een 95~\%-\hspace{0pt}betrouwbaarheidsinterval voor de gemiddelde slaapduur van jongeren is $[7{,}08;\ 7{,}52]$ uur. Welke uitspraken zijn juist? Verbeter de foute.
   lijst: enumerate
   delen:
     - opgave: |-
@@ -186,7 +186,7 @@
   thema: |-
     interval en toets
   opgave: |-
-    Een 95~\%-betrouwbaarheidsinterval voor een proportie is $[0{,}48;\ 0{,}56]$. Zou een tweezijdige toets van $H_0\colon p = 0{,}5$ bij $\alpha = 0{,}05$ de nulhypothese verwerpen? En van $H_0\colon p = 0{,}45$? Verklaar met het interval.
+    Een 95~\%-\hspace{0pt}betrouwbaarheidsinterval voor een proportie is $[0{,}48;\ 0{,}56]$. Zou een tweezijdige toets van $H_0\colon p = 0{,}5$ bij $\alpha = 0{,}05$ de nulhypothese verwerpen? En van $H_0\colon p = 0{,}45$? Verklaar met het interval.
   antwoord: |-
     0,5 niet verwerpen; 0,45 wel
   uitwerking: |-
@@ -198,7 +198,7 @@
   thema: |-
     simulatie interpreteren
   opgave: |-
-    Een leerkracht laat 30 leerlingen elk een eigen aselecte steekproef trekken uit dezelfde populatie, en een 95~\%-betrouwbaarheidsinterval voor $p$ berekenen. Hoeveel intervallen verwacht je die $p$ niet bevatten? Wat is de kans dat alle 30 intervallen $p$ bevatten?
+    Een leerkracht laat 30 leerlingen elk een eigen aselecte steekproef trekken uit dezelfde populatie, en een 95~\%-\hspace{0pt}betrouwbaarheidsinterval voor $p$ berekenen. Hoeveel intervallen verwacht je die $p$ niet bevatten? Wat is de kans dat alle 30 intervallen $p$ bevatten?
   antwoord: |-
     $1{,}5$; \ $\approx 0{,}21$
   uitwerking: |-
@@ -248,7 +248,7 @@
   thema: |-
     interval voor een proportie
   opgave: |-
-    Van 500 aselect gekozen inwoners fietst 130 naar het werk. Bereken een 95~\%-betrouwbaarheidsinterval voor het aandeel van alle inwoners.
+    Van 500 aselect gekozen inwoners fietst 130 naar het werk. Bereken een 95~\%-\hspace{0pt}betrouwbaarheidsinterval voor het aandeel van alle inwoners.
   antwoord: |-
     $[0{,}222;\ 0{,}298]$
   uitwerking: |-
@@ -260,7 +260,7 @@
   thema: |-
     interval voor een gemiddelde
   opgave: |-
-    64 aselect gekozen jongeren slapen gemiddeld 7,3 uur, met $\sigma = 0{,}9$ uur. Bereken een 95~\%-betrouwbaarheidsinterval voor de gemiddelde slaapduur.
+    64 aselect gekozen jongeren slapen gemiddeld 7,3 uur, met $\sigma = 0{,}9$ uur. Bereken een 95~\%-\hspace{0pt}betrouwbaarheidsinterval voor de gemiddelde slaapduur.
   antwoord: |-
     $[7{,}08;\ 7{,}52]$
   uitwerking: |-
