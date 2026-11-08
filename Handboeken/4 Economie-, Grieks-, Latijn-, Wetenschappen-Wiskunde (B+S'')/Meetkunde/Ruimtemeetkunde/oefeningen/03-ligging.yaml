@@ -1,0 +1,326 @@
+# Oefeningen van hoofdstuk 3. Zie oefeningenbank.py voor de velden.
+
+- id: h3-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Zijn $\vcr{2}{-1}{1}$ en $\vcr{-4}{2}{-2}$ collineair?
+      antwoord: |-
+        ja, factor $-2$
+      uitwerking: |-
+        De tweede is $-2$ keer de eerste.
+    - opgave: |-
+        Los op: $1 + r = s$ en $r = 3 - s$.
+      antwoord: |-
+        $r = 1$, $s = 2$
+      uitwerking: |-
+        $1 + r = 3 - r$, dus $r = 1$.
+    - opgave: |-
+        Ligt $(1, 2, 3)$ in het vlak $x + y + z = 6$?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $1 + 2 + 3 = 6$.
+    - opgave: |-
+        Hoeveel snijpunten kunnen twee rechten in het vlak hebben?
+      antwoord: |-
+        0, 1 of oneindig veel
+      uitwerking: |-
+        Evenwijdig (0), snijdend (1) of samenvallend.
+
+- id: h3-verken
+  soort: start
+  figuur:
+    opties: |-
+      3.4cm
+    code: |-
+      \begin{tikzpicture}[ruimte,scale=.7,font=\scriptsize]
+        \draw[grijs] (2,0,0) -- (2,2,0) -- (0,2,0) (2,0,0) -- (2,0,2) -- (0,0,2) -- (0,2,2) -- (2,2,2) -- (2,0,2) (2,2,0) -- (2,2,2) (0,2,0) -- (0,2,2);
+        \draw[grijs,dashed] (0,0,0) -- (2,0,0) (0,0,0) -- (0,2,0) (0,0,0) -- (0,0,2);
+        \node[below left] at (0,0,0) {$A$}; \node[below] at (2,0,0) {$B$}; \node[below] at (2,2,0) {$C$}; \node[right] at (0,2,0) {$D$};
+        \node[left] at (0,0,2) {$E$}; \node[left] at (2,0,2) {$F$}; \node[right] at (2,2,2) {$G$}; \node[above] at (0,2,2) {$H$};
+      \end{tikzpicture}
+  opgave: |-
+    \blokkop{Verken} Bekijk de kubus $ABCD.EFGH$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Noem een ribbe die evenwijdig is met $AB$, en een die $AB$ snijdt.
+      antwoord: |-
+        bv. $HG$; bv. $BF$
+      uitwerking: |-
+        Evenwijdig: $DC$, $EF$, $HG$. Snijdend: $AD$, $AE$, $BC$, $BF$.
+    - opgave: |-
+        Noem een ribbe die $AB$ niet snijdt en er ook niet evenwijdig mee is.
+      antwoord: |-
+        bv. $CG$
+      uitwerking: |-
+        $CG$, $DH$, $EH$ of $FG$: ze kruisen $AB$.
+    - opgave: |-
+        Kan zo'n paar rechten in één vlak liggen?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: twee rechten in één vlak snijden elkaar of zijn evenwijdig.
+
+- id: h3-rechten
+  soort: kort
+  opgave: |-
+    Onderzoek de onderlinge ligging. Geef het snijpunt als er een is.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $l\colon (1, 2, 3) + r\vcr{2}{-1}{1}$ en $m\colon (3, 1, 0) + s\vcr{-4}{2}{-2}$
+      antwoord: |-
+        strikt evenwijdig
+      uitwerking: |-
+        Richtingen collineair. $(3, 1, 0)$ op $l$? $x = 3$ geeft $r = 1$, maar dan $z = 4 \neq 0$. Strikt evenwijdig.
+    - opgave: |-
+        $l\colon (1, 1, 0) + r\vcr{1}{0}{1}$ en $m\colon (2, 0, 1) + s\vcr{0}{1}{1}$
+      antwoord: |-
+        kruisend
+      uitwerking: |-
+        Niet collineair. $1 + r = 2$, $1 = s$, $r = 1 + s$: $r = 1$, $s = 1$, maar dan $1 = 2$. Geen snijpunt: kruisend.
+
+- id: h3-rechtevlak
+  soort: kort
+  opgave: |-
+    Onderzoek de ligging van de rechte $l$ en het vlak $\alpha$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $l\colon (2, 1, 0) + r\vcr{1}{0}{1}$ en $\alpha\colon x + y + z = 7$
+      antwoord: |-
+        snijpunt $(4, 1, 2)$
+      uitwerking: |-
+        $2 + r + 1 + r = 7$, $r = 2$: snijpunt $(4, 1, 2)$.
+    - opgave: |-
+        $l\colon (1, 0, 0) + r\vcr{1}{1}{1}$ en $\alpha\colon x + 2y - 3z = 4$
+      antwoord: |-
+        strikt evenwijdig
+      uitwerking: |-
+        $1 + r + 2r - 3r = 4$ geeft $1 = 4$: geen oplossing. De rechte is evenwijdig met het vlak.
+
+- id: h3-vlakken
+  soort: kort
+  opgave: |-
+    Vlakken.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Zijn $2x - y + 3z = 1$ en $-4x + 2y - 6z = 5$ evenwijdig? En $x + y = 1$ en $y + z = 1$?
+      antwoord: |-
+        ja; nee, ze snijden
+      uitwerking: |-
+        $(-4, 2, -6) = -2(2, -1, 3)$, en $5 \neq -2$: strikt evenwijdig. $(1, 1, 0)$ en $(0, 1, 1)$ zijn niet evenredig: snijlijn.
+    - opgave: |-
+        Bereken het gemeenschappelijke punt van $x + y = 3$, $y + z = 5$ en $x + z = 4$.
+      antwoord: |-
+        $(1, 2, 3)$
+      uitwerking: |-
+        Optellen: $2(x + y + z) = 12$, dus $x + y + z = 6$. Dan $z = 3$, $x = 1$, $y = 2$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h3-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    samenvallend
+  opgave: |-
+    Toon aan dat $l\colon (0, 0, 0) + r\vcr{1}{2}{3}$ en $m\colon (1, 2, 3) + s\vcr{2}{4}{6}$ samenvallen.
+  antwoord: |-
+    zelfde richting, gemeenschappelijk punt
+  uitwerking: |-
+    $\vcr{2}{4}{6} = 2\vcr{1}{2}{3}$, en $(1, 2, 3)$ ligt op $l$ ($r = 1$).
+
+- id: h3-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    snijpunt met een vlak
+  opgave: |-
+    Bereken het snijpunt van de rechte door $A(1, 2, 3)$ en $B(3, 3, 1)$ met het $xy$-vlak.
+  antwoord: |-
+    $\bigl(4, \frac72, 0\bigr)$
+  uitwerking: |-
+    $(1 + 2r, 2 + r, 3 - 2r)$ en $z = 0$ geeft $r = \frac32$: $\bigl(4, \frac72, 0\bigr)$.
+
+- id: h3-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    ribben van een kubus
+  opgave: |-
+    In de kubus $ABCD.EFGH$ uit de Verken: geef de ligging van de paren $AB$ en $HG$, $AB$ en $CG$, $AE$ en $FG$, en de diagonalen $AG$ en $BH$.
+  antwoord: |-
+    evenwijdig; kruisend; kruisend; snijdend
+  uitwerking: |-
+    $AB \parallel HG$. $AB$ en $CG$: kruisend. $AE$ en $FG$: kruisend. $AG$ en $BH$ snijden elkaar in het middelpunt van de kubus.
+
+- id: h3-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een parameter
+  opgave: |-
+    Voor welke $k$ is de rechte $(1, 0, 0) + r\vcr{1}{k}{1}$ evenwijdig met het vlak $x + 2y - 3z = 4$? Ligt ze dan in het vlak?
+  antwoord: |-
+    $k = 1$; nee
+  uitwerking: |-
+    Invullen geeft $1 + r + 2kr - 3r = 4$, of $(2k - 2)r = 3$. Geen oplossing als $2k - 2 = 0$: $k = 1$. Dan staat er $0 = 3$: strikt evenwijdig, niet in het vlak.
+
+- id: h3-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    snijlijn en snijpunt
+  opgave: |-
+    Bepaal de snijlijn van de vlakken $x + y + z = 1$ en $x - y + z = 3$, en het snijpunt van die snijlijn met het vlak $z = 2$.
+  antwoord: |-
+    $(2, -1, 0) + r\vcr{-1}{0}{1}$; $(0, -1, 2)$
+  uitwerking: |-
+    Aftrekken: $2y = -2$, $y = -1$; dan $x + z = 2$. Met $z = r$: $(2 - r, -1, r) = (2, -1, 0) + r\vcr{-1}{0}{1}$. Met $z = 2$: $(0, -1, 2)$.
+
+- id: h3-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    drie vlakken
+  opgave: |-
+    Bereken het gemeenschappelijke punt van $2x + y - z = 3$, $x - y + z = 0$ en $x + 2y + z = 6$.
+  antwoord: |-
+    $(1, 2, 1)$
+  uitwerking: |-
+    Eerste plus tweede: $3x = 3$, $x = 1$. Dan $y - z = 1$ en $2y + z = 5$; optellen: $3y = 6$, $y = 2$, $z = 1$. Controle in de tweede: $1 - 2 + 1 = 0$.
+
+- id: h3-o7
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    drie vlakken door een rechte
+  opgave: |-
+    Toon aan dat de vlakken $x + y + z = 3$, $x - y = 1$ en $3x + y + 2z = 7$ geen enkel gemeenschappelijk punt hebben, maar een hele rechte. Tip: vergelijk de derde vergelijking met de eerste twee.
+  antwoord: |-
+    de derde is twee keer de eerste plus de tweede
+  uitwerking: |-
+    $2(x + y + z) + (x - y) = 3x + y + 2z$ en $2 \cdot 3 + 1 = 7$: elk punt van de eerste twee ligt ook in het derde. De gemeenschappelijke punten zijn de snijlijn $(1 + r, r, 2 - 2r)$ uit hoofdstuk 2.
+
+- id: h3-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een snijdende rechte vinden
+  opgave: |-
+    Gegeven de kruisende rechten $l\colon$ de $x$-as en $m\colon (0, 0, 2) + s\vcr{0}{1}{0}$. Geef de rechte door $P(1, 1, 1)$ die $l$ en $m$ allebei snijdt. Tip: neem een punt $(a, 0, 0)$ op $l$ en $(0, b, 2)$ op $m$, en eis dat ze met $P$ op één rechte liggen.
+  antwoord: |-
+    door $(2, 0, 0)$, $P$ en $(0, 2, 2)$
+  uitwerking: |-
+    $\overrightarrow{PA} = \vcr{a - 1}{-1}{-1}$ en $\overrightarrow{PB} = \vcr{-1}{b - 1}{1}$ moeten collineair zijn met factor $-1$ (de laatste coördinaat): $a - 1 = 1$ en $-1 = -(b - 1)$, dus $a = 2$ en $b = 2$. De rechte gaat door $(2, 0, 0)$, $(1, 1, 1)$ en $(0, 2, 2)$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h3-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: algebra
+    onderwerp: Matrices
+  thema: |-
+    stelsel en meetkunde
+  opgave: |-
+    Een stelsel van drie vergelijkingen met drie onbekenden kan één oplossing hebben, oneindig veel, of geen. Wat betekent elk geval voor de drie vlakken? Geef bij elk geval een voorbeeld uit dit hoofdstuk.
+  antwoord: |-
+    één punt; een rechte (of vlak); geen gemeenschappelijk punt
+  uitwerking: |-
+    Eén oplossing: de vlakken snijden in één punt (voorbeeld~\ref{vb:h3-drievlakken}). Oneindig veel: ze hebben een rechte gemeen (opdracht~\ref{oef:h3-o7}) of vallen samen. Geen: bijvoorbeeld twee evenwijdige vlakken, of drie vlakken die twee aan twee snijden zoals de zijvlakken van een prisma.
+
+- id: h3-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: discreet
+    onderwerp: Telproblemen
+  thema: |-
+    kruisende ribben tellen
+  opgave: |-
+    Een kubus heeft 12 ribben. Hoeveel paren ribben zijn evenwijdig, hoeveel snijdend, en hoeveel kruisend?
+  antwoord: |-
+    18; 24; 24
+  uitwerking: |-
+    Er zijn $\binom{12}{2} = 66$ paren. Per ribbe: 3 evenwijdige, 4 snijdende (twee in elk eindpunt), 4 kruisende. Dus $\frac{12 \cdot 3}{2} = 18$ evenwijdig, $\frac{12 \cdot 4}{2} = 24$ snijdend en $24$ kruisend; samen $66$.
+
+- id: h3-koppel-3
+  soort: koppel
+  niveau: 1
+  koppel:
+    rubriek: discreet
+    onderwerp: Logica en bewijzen
+  thema: |-
+    een tegenvoorbeeld
+  opgave: |-
+    Weerleg met een tegenvoorbeeld: \textit{twee rechten zonder gemeenschappelijk punt zijn evenwijdig}. In welke situatie is de uitspraak wel waar?
+  antwoord: |-
+    twee kruisende rechten; in een vlak
+  uitwerking: |-
+    De $x$-as en de rechte $(0, 0, 2) + s\vcr{0}{1}{0}$ hebben geen gemeenschappelijk punt en zijn niet evenwijdig. Voor twee rechten in één vlak is de uitspraak wel waar.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h3-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    twee rechten
+  opgave: |-
+    Onderzoek de ligging van $l\colon (0, 1, 1) + r\vcr{1}{1}{0}$ en $m\colon (0, 4, 1) + s\vcr{1}{-2}{0}$.
+  antwoord: |-
+    snijdend in $(1, 2, 1)$
+  uitwerking: |-
+    $r = s$, $1 + r = 4 - 2s$, $1 = 1$: $r = s = 1$. Snijpunt $(1, 2, 1)$.
+
+- id: h3-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    rechte en vlak
+  opgave: |-
+    Bereken het snijpunt van $l\colon (1, 1, 1) + r\vcr{2}{0}{-1}$ met het vlak $2x + y + z = 10$.
+  antwoord: |-
+    $(5, 1, -1)$
+  uitwerking: |-
+    $2(1 + 2r) + 1 + 1 - r = 10$, dus $3r = 6$ en $r = 2$.
+
+- id: h3-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    twee vlakken
+  opgave: |-
+    Wat is de onderlinge ligging van $x - 2y + z = 3$ en $-2x + 4y - 2z = -6$?
+  antwoord: |-
+    samenvallend
+  uitwerking: |-
+    De tweede vergelijking is $-2$ keer de eerste, ook het rechterlid: hetzelfde vlak.
+
+- id: h3-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    drie vlakken
+  opgave: |-
+    Bereken het gemeenschappelijke punt van $x + y + z = 2$, $x - y = 0$ en $y - z = 1$.
+  antwoord: |-
+    $(1, 1, 0)$
+  uitwerking: |-
+    $x = y$ en $z = y - 1$: $y + y + y - 1 = 2$, dus $y = 1$. Het punt $(1, 1, 0)$.

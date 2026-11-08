@@ -1,0 +1,337 @@
+# Oefeningen van hoofdstuk 1. Zie oefeningenbank.py voor de velden.
+
+- id: h1-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer} In het vlak.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Bereken de afstand tussen $(1, 2)$ en $(4, 6)$.
+      antwoord: |-
+        5
+      uitwerking: |-
+        $\sqrt{9 + 16} = 5$.
+    - opgave: |-
+        Geef het midden van $(-2, 4)$ en $(6, 0)$.
+      antwoord: |-
+        $(2, 2)$
+      uitwerking: |-
+        $\bigl(\frac{-2 + 6}{2}, \frac{4 + 0}{2}\bigr)$.
+    - opgave: |-
+        Geef de vector van $(1, 3)$ naar $(4, -1)$.
+      antwoord: |-
+        $(3, -4)$
+      uitwerking: |-
+        $(4 - 1, -1 - 3)$.
+    - opgave: |-
+        Is $(2, -6)$ een veelvoud van $(-1, 3)$?
+      antwoord: |-
+        ja, $k = -2$
+      uitwerking: |-
+        $-2 \cdot (-1, 3) = (2, -6)$.
+
+- id: h1-verken
+  soort: start
+  figuur:
+    opties: |-
+      3.6cm
+    code: |-
+      \begin{tikzpicture}[ruimte,scale=.8,font=\scriptsize]
+        \assendrie{3.2}
+        \draw[accent] (2,0,0) -- (2,2,0) -- (0,2,0) (2,0,0) -- (2,0,2) -- (0,0,2) -- (0,2,2) -- (2,2,2) -- (2,0,2) (2,2,0) -- (2,2,2) (0,2,0) -- (0,2,2);
+        \draw[accent,dashed] (0,0,0) -- (2,2,2);
+      \end{tikzpicture}
+  opgave: |-
+    \blokkop{Verken} Een kubus met ribbe 2 heeft een hoekpunt in de oorsprong, en ribben langs de drie assen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef de coördinaten van de acht hoekpunten.
+      antwoord: |-
+        alle combinaties van $0$ en $2$
+      uitwerking: |-
+        $(0, 0, 0)$, $(2, 0, 0)$, $(0, 2, 0)$, $(0, 0, 2)$, $(2, 2, 0)$, $(2, 0, 2)$, $(0, 2, 2)$, $(2, 2, 2)$.
+    - opgave: |-
+        Bereken de lengte van de diagonaal van het grondvlak, en daarna van de lichaamsdiagonaal van $(0, 0, 0)$ naar $(2, 2, 2)$.
+      antwoord: |-
+        $2\sqrt2$; $2\sqrt3$
+      uitwerking: |-
+        Grondvlak: $\sqrt{4 + 4} = 2\sqrt2$. De lichaamsdiagonaal is de schuine zijde van een rechthoekige driehoek met zijden $2\sqrt2$ en $2$: $\sqrt{8 + 4} = 2\sqrt3$.
+    - opgave: |-
+        Wat is het middelpunt van de kubus?
+      antwoord: |-
+        $(1, 1, 1)$
+      uitwerking: |-
+        Het midden van de lichaamsdiagonaal: $(1, 1, 1)$.
+
+- id: h1-afstand
+  soort: kort
+  opgave: |-
+    Afstanden en midden.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken de afstand van $O$ tot $P(2, 3, 6)$.
+      antwoord: |-
+        7
+      uitwerking: |-
+        $\sqrt{4 + 9 + 36} = 7$.
+    - opgave: |-
+        Bereken $|AB|$ en het midden van $[AB]$ voor $A(-1, 4, 2)$ en $B(3, 0, 4)$.
+      antwoord: |-
+        $6$; $(1, 2, 3)$
+      uitwerking: |-
+        $\sqrt{16 + 16 + 4} = 6$; midden $(1, 2, 3)$.
+    - opgave: |-
+        Is de driehoek met hoekpunten $(1, 0, 0)$, $(0, 1, 0)$ en $(0, 0, 1)$ gelijkzijdig?
+      antwoord: |-
+        ja, zijden $\sqrt2$
+      uitwerking: |-
+        Elke zijde is $\sqrt{1 + 1 + 0} = \sqrt2$.
+
+- id: h1-vectoren
+  soort: kort
+  opgave: |-
+    Neem $\vec v = \vcr{1}{-2}{2}$ en $\vec w = \vcr{3}{0}{-4}$. Bereken $\vec v + \vec w$, $2\vec v - \vec w$, $\norm{\vec v}$ en $\norm{\vec w}$.
+  antwoord: |-
+    $\vcr{4}{-2}{-2}$; $\vcr{-1}{-4}{8}$; $3$; $5$
+  uitwerking: |-
+    $\vec v + \vec w = \vcr{4}{-2}{-2}$, $2\vec v - \vec w = \vcr{2 - 3}{-4 - 0}{4 + 4} = \vcr{-1}{-4}{8}$, $\norm{\vec v} = \sqrt{1 + 4 + 4} = 3$, $\norm{\vec w} = \sqrt{9 + 16} = 5$.
+
+- id: h1-coplanair
+  soort: kort
+  opgave: |-
+    Collineair en coplanair.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Liggen $A(2, 1, 0)$, $B(4, 2, 3)$ en $C(8, 4, 9)$ op één rechte?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $\overrightarrow{AB} = \vcr{2}{1}{3}$ en $\overrightarrow{AC} = \vcr{6}{3}{9} = 3\overrightarrow{AB}$.
+    - opgave: |-
+        Voor welke $k$ zijn $\vcr{2}{k}{6}$ en $\vcr{1}{3}{3}$ collineair?
+      antwoord: |-
+        $k = 6$
+      uitwerking: |-
+        De eerste is $2$ keer de tweede als $k = 6$.
+    - opgave: |-
+        Zijn $\vec u = \vcr{1}{2}{3}$, $\vec v = \vcr{1}{0}{1}$ en $\vec w = \vcr{0}{1}{1}$ coplanair?
+      antwoord: |-
+        ja: $\vec u = \vec v + 2\vec w$
+      uitwerking: |-
+        $r\vec v + s\vec w = \vcr{r}{s}{r + s}$: $r = 1$, $s = 2$, en $r + s = 3$ klopt.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h1-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    een kubus
+  opgave: |-
+    De kubus $ABCD.EFGH$ heeft ribbe 4, met $A(0, 0, 0)$, $B(4, 0, 0)$, $D(0, 4, 0)$ en $E(0, 0, 4)$; $EFGH$ ligt boven $ABCD$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef de coördinaten van $C$, $F$, $G$ en $H$.
+      antwoord: |-
+        $C(4, 4, 0)$, $F(4, 0, 4)$, $G(4, 4, 4)$, $H(0, 4, 4)$
+      uitwerking: |-
+        $C(4, 4, 0)$, $F(4, 0, 4)$, $G(4, 4, 4)$, $H(0, 4, 4)$.
+    - opgave: |-
+        Geef het midden van $[EG]$ en de lengte van $[AG]$.
+      antwoord: |-
+        $(2, 2, 4)$; $4\sqrt3$
+      uitwerking: |-
+        Midden $(2, 2, 4)$, het midden van het bovenvlak. $|AG| = \sqrt{16 + 16 + 16} = 4\sqrt3$.
+
+- id: h1-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    een driehoek
+  opgave: |-
+    Bereken de omtrek van de driehoek met hoekpunten $A(2, 0, 0)$, $B(0, 3, 0)$ en $C(0, 0, 6)$. Is hij rechthoekig?
+  antwoord: |-
+    $\sqrt{13} + 3\sqrt5 + 2\sqrt{10} \approx 16{,}64$; nee
+  uitwerking: |-
+    $|AB| = \sqrt{13}$, $|BC| = \sqrt{45} = 3\sqrt5$, $|AC| = \sqrt{40} = 2\sqrt{10}$. Omtrek $\approx 16{,}64$. Rechthoekig zou betekenen dat de som van twee kwadraten het derde is: $13 + 40 = 53$, $13 + 45 = 58$, $40 + 45 = 85$: nee.
+
+- id: h1-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    rekenen met vectoren
+  opgave: |-
+    Gegeven $A(1, -1, 2)$ en $B(4, 1, 0)$. Bereken $\overrightarrow{AB}$, $\norm{\overrightarrow{AB}}$, en het punt $C$ met $\overrightarrow{AC} = 2\overrightarrow{AB}$.
+  antwoord: |-
+    $\vcr{3}{2}{-2}$; $\sqrt{17}$; $C(7, 3, -2)$
+  uitwerking: |-
+    $\overrightarrow{AB} = \vcr{3}{2}{-2}$, $\norm{\overrightarrow{AB}} = \sqrt{9 + 4 + 4} = \sqrt{17}$. $C = A + 2\overrightarrow{AB} = (7, 3, -2)$.
+
+- id: h1-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    even ver
+  opgave: |-
+    Zoek het punt $P$ op de $x$-as dat even ver ligt van $A(1, 2, 3)$ als van $B(3, -1, 1)$.
+  antwoord: |-
+    $P\bigl(-\frac34, 0, 0\bigr)$
+  uitwerking: |-
+    $P(x, 0, 0)$: $(x - 1)^2 + 4 + 9 = (x - 3)^2 + 1 + 1$, dus $-2x + 14 = -6x + 11$ en $x = -\frac34$.
+
+- id: h1-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    zwaartepunt
+  opgave: |-
+    Het zwaartepunt van een driehoek $ABC$ is $Z = \frac13(A + B + C)$ (coördinaat per coördinaat). Bereken $Z$ voor $A(1, 0, 2)$, $B(4, 3, -1)$ en $C(1, 6, 5)$, en toon aan dat $\overrightarrow{AZ} = \frac23\overrightarrow{AM}$, met $M$ het midden van $[BC]$.
+  antwoord: |-
+    $Z(2, 3, 2)$
+  uitwerking: |-
+    $Z = \bigl(\frac63, \frac93, \frac63\bigr) = (2, 3, 2)$. $M(2{,}5;\ 4{,}5;\ 2)$, $\overrightarrow{AM} = \vcr{1{,}5}{4{,}5}{0}$ en $\overrightarrow{AZ} = \vcr{1}{3}{0} = \frac23\overrightarrow{AM}$: $Z$ ligt op de zwaartelijn, op twee derde vanaf $A$.
+
+- id: h1-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    op één rechte
+  opgave: |-
+    Bepaal $a$ en $b$ zodat $A(1, 2, 3)$, $B(2, a, 5)$ en $C(4, 8, b)$ op één rechte liggen.
+  antwoord: |-
+    $a = 4$, $b = 9$
+  uitwerking: |-
+    $\overrightarrow{AB} = \vcr{1}{a - 2}{2}$ en $\overrightarrow{AC} = \vcr{3}{6}{b - 3}$. Collineair met factor $3$ (eerste coördinaat): $6 = 3(a - 2)$ en $b - 3 = 6$, dus $a = 4$ en $b = 9$.
+
+- id: h1-o7
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    in één vlak
+  opgave: |-
+    Voor welke $k$ liggen $O$, $B(1, 1, 0)$, $C(0, 1, 1)$ en $D(1, k, 1)$ in één vlak?
+  antwoord: |-
+    $k = 2$
+  uitwerking: |-
+    $r\overrightarrow{OB} + s\overrightarrow{OC} = \vcr{r}{r + s}{s} = \vcr{1}{k}{1}$: $r = s = 1$ en dan $k = 2$.
+
+- id: h1-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een drone
+  opgave: |-
+    Een drone vertrekt in $O$ en vliegt $40$ m naar het noorden, $30$ m naar het oosten en stijgt $120$ m. Hoe ver is hij van zijn vertrekpunt? Onder welke hoek met de grond ziet een waarnemer in $O$ de drone?
+  antwoord: |-
+    $130$ m; $\approx 67{,}4^\circ$
+  uitwerking: |-
+    $\sqrt{40^2 + 30^2 + 120^2} = \sqrt{16\,900} = 130$ m. Horizontaal is hij $\sqrt{40^2 + 30^2} = 50$ m ver, dus $\tan\alpha = \frac{120}{50}$ en $\alpha \approx 67{,}4^\circ$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h1-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: algebra
+    onderwerp: Matrices
+  thema: |-
+    coplanair met een determinant
+  opgave: |-
+    Drie vectoren zijn coplanair als de determinant van de matrix met die vectoren als kolommen nul is. Controleer zo dat $\vcr{1}{2}{3}$, $\vcr{1}{0}{1}$ en $\vcr{0}{1}{1}$ coplanair zijn.
+  antwoord: |-
+    de determinant is 0
+  uitwerking: |-
+    $\det\begin{pmatrix} 1 & 1 & 0 \\ 2 & 0 & 1 \\ 3 & 1 & 1 \end{pmatrix} = 1(0 - 1) - 1(2 - 3) + 0 = -1 + 1 = 0$.
+
+- id: h1-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: discreet
+    onderwerp: Telproblemen
+  thema: |-
+    roosterwegen in de ruimte
+  opgave: |-
+    Je gaat van $(0, 0, 0)$ naar $(2, 2, 2)$ in stappen van $1$ in de zin van de $x$-, $y$- of $z$-as. Hoeveel verschillende wegen zijn er?
+  antwoord: |-
+    90
+  uitwerking: |-
+    Zes stappen, waarvan twee $x$, twee $y$ en twee $z$: een permutatie met herhaling, $\frac{6!}{2!\,2!\,2!} = 90$.
+
+- id: h1-koppel-3
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: discreet
+    onderwerp: Logica en bewijzen
+  thema: |-
+    een bewijs met vectoren
+  opgave: |-
+    Bewijs met vectoren: de diagonalen van een parallellogram $ABCD$ delen elkaar middendoor. Tip: druk het midden van $[AC]$ en van $[BD]$ uit met $A$, $\overrightarrow{AB}$ en $\overrightarrow{AD}$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    $C = A + \overrightarrow{AB} + \overrightarrow{AD}$. Het midden van $[AC]$ is $A + \frac12(\overrightarrow{AB} + \overrightarrow{AD})$. Het midden van $[BD]$ is $\frac12(B + D) = \frac12\bigl(A + \overrightarrow{AB} + A + \overrightarrow{AD}\bigr) = A + \frac12(\overrightarrow{AB} + \overrightarrow{AD})$. Hetzelfde punt.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h1-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    afstand en midden
+  opgave: |-
+    Bereken $|AB|$ en het midden van $[AB]$ voor $A(2, -1, 3)$ en $B(4, 1, 4)$.
+  antwoord: |-
+    3; $(3;\ 0;\ 3{,}5)$
+  uitwerking: |-
+    $\sqrt{4 + 4 + 1} = 3$; midden $\bigl(3, 0, \frac72\bigr)$.
+
+- id: h1-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    parallellogram
+  opgave: |-
+    Gegeven $A(0, 1, 2)$, $B(2, 3, 1)$ en $C(1, 0, 0)$. Bereken $\norm{\overrightarrow{AB}}$ en het punt $D$ waarvoor $ABDC$ een parallellogram is.
+  antwoord: |-
+    3; $D(3, 2, -1)$
+  uitwerking: |-
+    $\overrightarrow{AB} = \vcr{2}{2}{-1}$, norm $3$. $D = C + \overrightarrow{AB} = (3, 2, -1)$.
+
+- id: h1-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    collineair
+  opgave: |-
+    Liggen $A(1, 1, 1)$, $B(3, 2, 0)$ en $C(7, 4, -2)$ op één rechte?
+  antwoord: |-
+    ja
+  uitwerking: |-
+    $\overrightarrow{AB} = \vcr{2}{1}{-1}$, $\overrightarrow{AC} = \vcr{6}{3}{-3} = 3\overrightarrow{AB}$.
+
+- id: h1-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    coplanair
+  opgave: |-
+    Zijn $\vcr{1}{0}{2}$, $\vcr{0}{1}{1}$ en $\vcr{2}{3}{7}$ coplanair?
+  antwoord: |-
+    ja: de derde is $2$ keer de eerste plus $3$ keer de tweede
+  uitwerking: |-
+    $r\vcr{1}{0}{2} + s\vcr{0}{1}{1} = \vcr{r}{s}{2r + s}$: $r = 2$, $s = 3$, en $2 \cdot 2 + 3 = 7$ klopt.
