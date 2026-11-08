@@ -1,0 +1,540 @@
+# Oefeningen van hoofdstuk 2. Zie oefeningenbank.py voor de velden.
+
+- id: h2-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer} Welke exponent hoort op de plaats van het vraagteken?
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $10^{?} = 1000$
+      antwoord: |-
+        3
+      uitwerking: |-
+        $10^3 = 1000$.
+    - opgave: |-
+        $2^{?} = 64$
+      antwoord: |-
+        6
+      uitwerking: |-
+        $2^6 = 64$.
+    - opgave: |-
+        $10^{?} = 0{,}01$
+      antwoord: |-
+        $-2$
+      uitwerking: |-
+        $10^{-2} = 0{,}01$.
+    - opgave: |-
+        $3^{?} = \frac19$
+      antwoord: |-
+        $-2$
+      uitwerking: |-
+        $3^{-2} = \frac19$.
+    - opgave: |-
+        $10^{?} = \sqrt{10}$
+      antwoord: |-
+        $\frac12$
+      uitwerking: |-
+        $10^{\frac12} = \sqrt{10}$.
+    - opgave: |-
+        $\e^{?} = 1$
+      antwoord: |-
+        0
+      uitwerking: |-
+        $\e^0 = 1$.
+
+- id: h2-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken} Een kapitaal groeit met $3$\,\% per jaar: na $t$ jaar is het met $1{,}03^t$ vermenigvuldigd.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $1{,}03^t$ voor $t = 10$, $20$ en $25$. Tussen welke twee is het kapitaal verdubbeld?
+      antwoord: |-
+        $1{,}344$; $1{,}806$; $2{,}094$; tussen 20 en 25 jaar
+      uitwerking: |-
+        $1{,}344$, $1{,}806$ en $2{,}094$: tussen 20 en 25 jaar.
+    - opgave: |-
+        Zoek door te proberen het jaar waarin het kapitaal voor het eerst verdubbeld is.
+      antwoord: |-
+        na 24 jaar
+      uitwerking: |-
+        $1{,}03^{23} \approx 1{,}974$ en $1{,}03^{24} \approx 2{,}033$: na 24 jaar.
+    - opgave: |-
+        Waarom lukt het niet om $1{,}03^t = 2$ op te lossen zoals $2^{x + 1} = \frac18$?
+      antwoord: |-
+        2 is geen macht van $1{,}03$ met een mooie exponent
+      uitwerking: |-
+        Je kunt 2 niet schrijven als een macht van $1{,}03$ met een exponent die je kent. Je hebt een nieuw begrip nodig: de logaritme.
+
+- id: h2-definitie
+  soort: kort
+  opgave: |-
+    Bereken zonder rekentoestel.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\log_3 81$
+      antwoord: |-
+        4
+      uitwerking: |-
+        $3^4 = 81$.
+    - opgave: |-
+        $\log_5 \frac{1}{25}$
+      antwoord: |-
+        $-2$
+      uitwerking: |-
+        $5^{-2} = \frac{1}{25}$.
+    - opgave: |-
+        $\log_9 3$
+      antwoord: |-
+        $\frac12$
+      uitwerking: |-
+        $9^{\frac12} = 3$.
+    - opgave: |-
+        $\ln \sqrt{\e}$
+      antwoord: |-
+        $\frac12$
+      uitwerking: |-
+        $\ln \e^{\frac12} = \frac12$.
+    - opgave: |-
+        $\log_2 \sqrt{8}$
+      antwoord: |-
+        $\frac32$
+      uitwerking: |-
+        $\sqrt8 = 2^{\frac32}$.
+    - opgave: |-
+        $\log 1$
+      antwoord: |-
+        0
+      uitwerking: |-
+        $10^0 = 1$.
+
+- id: h2-rekenregels
+  soort: kort
+  opgave: |-
+    Bereken met de rekenregels; het laatste met je rekentoestel.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\log_6 4 + \log_6 9$
+      antwoord: |-
+        2
+      uitwerking: |-
+        $\log_6 36 = 2$.
+    - opgave: |-
+        $\log_2 48 - \log_2 3$
+      antwoord: |-
+        4
+      uitwerking: |-
+        $\log_2 16 = 4$.
+    - opgave: |-
+        $3\ln 2 - \ln 4$
+      antwoord: |-
+        $\ln 2$
+      uitwerking: |-
+        $\ln 8 - \ln 4 = \ln 2$.
+    - opgave: |-
+        $\log_5 12$
+      antwoord: |-
+        $\approx 1{,}544$
+      uitwerking: |-
+        $\frac{\ln 12}{\ln 5} \approx 1{,}544$.
+
+- id: h2-vergelijking
+  soort: kort
+  opgave: |-
+    Los op, op drie decimalen.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $5^x = 40$
+      antwoord: |-
+        $\approx 2{,}292$
+      uitwerking: |-
+        $x = \log_5 40 = \frac{\ln 40}{\ln 5} \approx 2{,}292$.
+    - opgave: |-
+        $200 \cdot 0{,}85^x = 50$
+      antwoord: |-
+        $\approx 8{,}530$
+      uitwerking: |-
+        $0{,}85^x = 0{,}25$, dus $x = \frac{\ln 0{,}25}{\ln 0{,}85} \approx 8{,}530$.
+    - opgave: |-
+        $3^x = 5^{x - 1}$
+      antwoord: |-
+        $\approx 3{,}151$
+      uitwerking: |-
+        $x \ln 3 = (x - 1)\ln 5$, dus $x(\ln 5 - \ln 3) = \ln 5$ en $x = \frac{\ln 5}{\ln \frac53} \approx 3{,}151$.
+
+- id: h2-schaal
+  soort: kort
+  opgave: |-
+    Sirius, de helderste ster aan de nachthemel, heeft magnitude $-1{,}46$, de Poolster $1{,}98$. Hoeveel keer helderder is Sirius?
+  antwoord: |-
+    ongeveer 24 keer
+  uitwerking: |-
+    $1{,}98 - (-1{,}46) = 3{,}44 = 2{,}5 \log \frac{I_S}{I_P}$, dus $\frac{I_S}{I_P} = 10^{\frac{3{,}44}{2{,}5}} \approx 23{,}8$.
+
+#----------------------------------------------------------------------------------------
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+#----------------------------------------------------------------------------------------
+
+- id: h2-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    definitie
+  opgave: |-
+    Bereken zonder rekentoestel.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\log_2 \frac{1}{16}$
+      antwoord: |-
+        $-4$
+      uitwerking: |-
+        $2^{-4} = \frac{1}{16}$.
+    - opgave: |-
+        $\log_{\frac13} 9$
+      antwoord: |-
+        $-2$
+      uitwerking: |-
+        $\bigl(\frac13\bigr)^{-2} = 9$.
+    - opgave: |-
+        $\log 0{,}01$
+      antwoord: |-
+        $-2$
+      uitwerking: |-
+        $10^{-2} = 0{,}01$.
+    - opgave: |-
+        $\ln \frac{1}{\e}$
+      antwoord: |-
+        $-1$
+      uitwerking: |-
+        $\e^{-1} = \frac1\e$.
+    - opgave: |-
+        $\log_8 2$
+      antwoord: |-
+        $\frac13$
+      uitwerking: |-
+        $8^{\frac13} = 2$.
+    - opgave: |-
+        $\log_{\sqrt2} 4$
+      antwoord: |-
+        4
+      uitwerking: |-
+        $(\sqrt2)^4 = 4$.
+
+- id: h2-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    rekenregels
+  opgave: |-
+    Schrijf als één logaritme en bereken als het kan.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\log_3 54 - \log_3 2$
+      antwoord: |-
+        3
+      uitwerking: |-
+        $\log_3 27 = 3$.
+    - opgave: |-
+        $\frac12 \log 16 + \log 25$
+      antwoord: |-
+        2
+      uitwerking: |-
+        $\log 4 + \log 25 = \log 100 = 2$.
+    - opgave: |-
+        $\ln 12 - 2\ln 2$
+      antwoord: |-
+        $\ln 3$
+      uitwerking: |-
+        $\ln 12 - \ln 4 = \ln 3$.
+
+- id: h2-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    vergelijkingen
+  opgave: |-
+    Los op, op drie decimalen.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\e^{2x} = 7$
+      antwoord: |-
+        $\approx 0{,}973$
+      uitwerking: |-
+        $2x = \ln 7$, dus $x = \frac{\ln 7}{2} \approx 0{,}973$.
+    - opgave: |-
+        $0{,}8^x = 0{,}3$
+      antwoord: |-
+        $\approx 5{,}396$
+      uitwerking: |-
+        $x = \frac{\ln 0{,}3}{\ln 0{,}8} \approx 5{,}396$.
+    - opgave: |-
+        $10^{x + 1} = 0{,}5$
+      antwoord: |-
+        $\approx -1{,}301$
+      uitwerking: |-
+        $x + 1 = \log 0{,}5$, dus $x \approx -1{,}301$.
+
+- id: h2-o4
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    uitsplitsen
+  opgave: |-
+    Schrijf met $\log a$ en $\log b$ (met $a, b > 0$).
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\log (a^2 b^3)$
+      antwoord: |-
+        $2\log a + 3\log b$
+      uitwerking: |-
+        $\log a^2 + \log b^3 = 2\log a + 3\log b$.
+    - opgave: |-
+        $\log \dfrac{\sqrt{a}}{b}$
+      antwoord: |-
+        $\frac12 \log a - \log b$
+      uitwerking: |-
+        $\log a^{\frac12} - \log b = \frac12 \log a - \log b$.
+    - opgave: |-
+        $\log (100a)$
+      antwoord: |-
+        $2 + \log a$
+      uitwerking: |-
+        $\log 100 + \log a = 2 + \log a$.
+
+- id: h2-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    bacteriën
+  opgave: |-
+    Een kweek begint met $500$ bacteriën. Hun aantal verdubbelt om de $20$ minuten. Na hoeveel tijd zijn er een miljoen?
+  antwoord: |-
+    na ongeveer 219 minuten (3 u 39 min)
+  uitwerking: |-
+    $500 \cdot 2^{\frac{t}{20}} = 10^6$, dus $2^{\frac{t}{20}} = 2000$ en $t = 20 \log_2 2000 = 20 \cdot \frac{\ln 2000}{\ln 2} \approx 219{,}3$ minuten, ongeveer 3 uur en 39 minuten.
+
+- id: h2-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    halveringstijd uit een meting
+  opgave: |-
+    Van een radioactieve stof is na 3 jaar nog $65$ g over van $80$ g. Bepaal de groeifactor per jaar en de halveringstijd.
+  antwoord: |-
+    $\approx 0{,}9331$; ongeveer 10 jaar
+  uitwerking: |-
+    $a^3 = \frac{65}{80} = 0{,}8125$, dus $a = 0{,}8125^{\frac13} \approx 0{,}9331$. Halveringstijd: $a^T = \frac12$, dus $T = \frac{\ln 0{,}5}{\ln a} = \frac{3\ln 0{,}5}{\ln 0{,}8125} \approx 10{,}0$ jaar.
+
+- id: h2-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    decibel
+  opgave: |-
+    Het geluidsniveau is $L = 10 \log \frac{I}{I_0}$ (in dB).
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een concert is $110$ dB, een gesprek $60$ dB. Hoeveel keer intenser is het concert?
+      antwoord: |-
+        $10^5$ keer
+      uitwerking: |-
+        $10 \log \frac{I_c}{I_g} = 50$, dus $\frac{I_c}{I_g} = 10^5$.
+    - opgave: |-
+        Een luidspreker geeft $80$ dB. Hoeveel dB geven twee zulke luidsprekers samen (dubbele intensiteit)?
+      antwoord: |-
+        ongeveer 83 dB
+      uitwerking: |-
+        $10 \log \frac{2I}{I_0} = 10\log 2 + 10 \log \frac{I}{I_0} \approx 3{,}0 + 80 = 83$ dB. Niet $160$ dB.
+
+- id: h2-o8
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    substitutie
+  opgave: |-
+    Los op: $4^x - 3 \cdot 2^x - 4 = 0$. Tip: stel $t = 2^x$ en merk op dat $4^x = t^2$.
+  antwoord: |-
+    $x = 2$
+  uitwerking: |-
+    $t^2 - 3t - 4 = 0$, dus $(t - 4)(t + 1) = 0$. $t = -1$ kan niet, want $2^x > 0$. $2^x = 4$ geeft $x = 2$.
+
+- id: h2-o9
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    de regel van 70
+  opgave: |-
+    Economen schatten de verdubbelingstijd bij een groei van $p$\,\% per jaar met $T \approx \frac{70}{p}$ jaar.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat de exacte verdubbelingstijd $T = \dfrac{\ln 2}{\ln\bigl(1 + \frac{p}{100}\bigr)}$ is.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $\bigl(1 + \frac{p}{100}\bigr)^T = 2$; neem $\ln$ van beide leden.
+    - opgave: |-
+        Vergelijk de exacte waarde en de schatting voor $p = 1$, $3$, $7$ en $10$.
+      antwoord: |-
+        $69{,}7$; $23{,}4$; $10{,}2$; $7{,}3$ tegenover $70$; $23{,}3$; $10$; $7$
+      uitwerking: |-
+        Exact: $69{,}7$, $23{,}4$, $10{,}2$ en $7{,}3$ jaar. Schatting: $70$, $23{,}3$, $10$ en $7$ jaar.
+    - opgave: |-
+        Bereken $\ln 1{,}01$, $\ln 1{,}03$ en $\ln 2$. Verklaar de regel.
+      antwoord: |-
+        $\ln(1 + x) \approx x$ voor kleine $x$, en $\ln 2 \approx 0{,}69$
+      uitwerking: |-
+        $\ln 1{,}01 \approx 0{,}00995$ en $\ln 1{,}03 \approx 0{,}0296$: voor kleine $x$ is $\ln(1 + x) \approx x$. Dus $T \approx \frac{0{,}693}{p/100} = \frac{69{,}3}{p}$. Men neemt $70$ omdat het makkelijker deelt.
+
+- id: h2-o10
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    bewijzen
+  opgave: |-
+    Bewijs met de verandering van grondtal (voor geschikte $a$, $b$ en $x$):
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\log_a b \cdot \log_b a = 1$
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $\log_a b \cdot \log_b a = \frac{\ln b}{\ln a} \cdot \frac{\ln a}{\ln b} = 1$.
+    - opgave: |-
+        $\log_{a^2} x = \frac12 \log_a x$
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $\log_{a^2} x = \frac{\ln x}{\ln a^2} = \frac{\ln x}{2\ln a} = \frac12 \log_a x$.
+
+#----------------------------------------------------------------------------------------
+# KOPPEL
+#----------------------------------------------------------------------------------------
+
+- id: h2-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: discreet
+    onderwerp: Telproblemen
+  thema: |-
+    cijfers tellen
+  opgave: |-
+    Een getal $N \geqslant 1$ heeft $k$ cijfers als $10^{k - 1} \leqslant N < 10^k$. Hoeveel cijfers heeft $2^{100}$? Hoeveel cijfers heeft een miljoen in het tweetallig stelsel?
+  antwoord: |-
+    31; 20
+  uitwerking: |-
+    $\log 2^{100} = 100 \log 2 \approx 30{,}1$, dus $10^{30} \leqslant 2^{100} < 10^{31}$: 31 cijfers. $\log_2 10^6 \approx 19{,}93$, dus $2^{19} \leqslant 10^6 < 2^{20}$: 20 cijfers.
+
+- id: h2-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: data
+    onderwerp: Kansrekenen
+  thema: |-
+    bijna zeker een zes
+  opgave: |-
+    Hoeveel keer moet je minstens met een dobbelsteen gooien om met kans $0{,}99$ minstens één zes te hebben?
+  antwoord: |-
+    26
+  uitwerking: |-
+    $1 - \bigl(\frac56\bigr)^n \geqslant 0{,}99 \iff \bigl(\frac56\bigr)^n \leqslant 0{,}01 \iff n \geqslant \frac{\ln 0{,}01}{\ln \frac56} \approx 25{,}3$. Het teken keert om, want $\ln \frac56 < 0$. Dus 26 worpen.
+
+- id: h2-koppel-3
+  soort: koppel
+  niveau: 1
+  koppel:
+    rubriek: analyse
+    onderwerp: Integralen
+  thema: |-
+    ln als oppervlakte
+  opgave: |-
+    Een primitieve van $\frac1x$ (voor $x > 0$) is $\ln x$. Bereken $\int_1^{\e} \frac1x\,\mathrm{d}x$ en $\int_1^{2} \frac1x\,\mathrm{d}x$.
+  antwoord: |-
+    1; $\ln 2 \approx 0{,}693$
+  uitwerking: |-
+    $\ln \e - \ln 1 = 1$ en $\ln 2 - \ln 1 = \ln 2 \approx 0{,}693$.
+
+#----------------------------------------------------------------------------------------
+# TEST JEZELF
+#----------------------------------------------------------------------------------------
+
+- id: h2-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    definitie
+  opgave: |-
+    Bereken zonder rekentoestel: $\log_2 64$, $\log_{25} 5$ en $\log 0{,}0001$.
+  antwoord: |-
+    6; $\frac12$; $-4$
+  uitwerking: |-
+    $2^6 = 64$, $25^{\frac12} = 5$, $10^{-4} = 0{,}0001$.
+
+- id: h2-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    rekenregels
+  opgave: |-
+    Bereken: $\log_2 40 - \log_2 5$ en $\log 2 + \log 50$.
+  antwoord: |-
+    3; 2
+  uitwerking: |-
+    $\log_2 8 = 3$ en $\log 100 = 2$.
+
+- id: h2-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    rekentoestel
+  opgave: |-
+    Bereken $\log_3 20$ op drie decimalen en controleer.
+  antwoord: |-
+    $\approx 2{,}727$
+  uitwerking: |-
+    $\frac{\ln 20}{\ln 3} \approx 2{,}727$. Controle: $3^{2{,}727} \approx 20{,}0$.
+
+- id: h2-t4
+  soort: test
+  niveau: 1
+  thema: |-
+    vergelijking
+  opgave: |-
+    Los op: $4 \cdot 1{,}5^x = 30$.
+  antwoord: |-
+    $\approx 4{,}969$
+  uitwerking: |-
+    $1{,}5^x = 7{,}5$, dus $x = \frac{\ln 7{,}5}{\ln 1{,}5} \approx 4{,}969$.
+
+- id: h2-t5
+  soort: test
+  niveau: 2
+  thema: |-
+    verdubbelingstijd
+  opgave: |-
+    Na hoeveel jaar is een kapitaal verdubbeld bij $4{,}5$\,\% samengestelde intrest per jaar?
+  antwoord: |-
+    na 16 jaar ($t \approx 15{,}75$)
+  uitwerking: |-
+    $1{,}045^t = 2$, dus $t = \frac{\ln 2}{\ln 1{,}045} \approx 15{,}75$. Na 16 jaar is het kapitaal verdubbeld.
