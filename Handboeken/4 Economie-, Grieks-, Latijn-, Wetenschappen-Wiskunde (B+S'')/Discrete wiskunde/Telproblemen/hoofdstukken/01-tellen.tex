@@ -56,6 +56,10 @@ Het boomdiagram toont het begin: elk voorgerecht splitst in 5 takken, en elk hoo
   \foreach \y in {3,2,1}{\node[grijs] at (2.5,\y) {$\cdots$};}
 \end{tikzpicture}}}
 
+\begin{oefeningen}
+\oef{h1-boom}
+\end{oefeningen}
+
 \subsection{De somregel}
 
 Soms moet je eerst splitsen in gevallen die elkaar uitsluiten, zoals \textit{een code van 2 letters} of \textit{een code van 3 letters}. Dan tel je elk geval apart, en tel je op.
@@ -91,6 +95,10 @@ Met $\#A$ bedoelen we het aantal elementen van $A$. Het venndiagram toont waarom
   \node[above,text=accent] at (-.4,.95) {$A$}; \node[above,text=accent] at (1.5,.7) {$B$};
 \end{tikzpicture}}}
 
+\begin{oefeningen}
+\oef{h1-overlap}
+\end{oefeningen}
+
 Vaak is het gemakkelijker om te tellen wat je \textit{niet} wilt, en dat af te trekken van het totaal. Dat is de somregel met $A$ en het complement van $A$.
 
 \voorbeeld{}{Hoeveel codes van 4 letters (uit 26) bevatten minstens één A?\label{vb:h1-complement}}{%
@@ -111,6 +119,8 @@ Splits de keuze in stappen en vermenigvuldig (productregel). Splits in gevallen 
 \oef{h1-product}
 
 \oef{h1-venn}
+
+\oef{h1-tegendeel}
 \end{oefeningen}
 
 %========================================================================================
@@ -157,6 +167,10 @@ Een \textbf{\textcolor{accent}{variatie}} van $p$ elementen uit $n$ (met $p \leq
 \Var{22}{3} = 22 \cdot 21 \cdot 20 = 9\,240 & 22 keuzes voor de voorzitter, dan 21 voor de secretaris, dan 20 voor de penningmeester.
 \end{stappen}}
 
+\begin{oefeningen}
+\oef{h1-variatie}
+\end{oefeningen}
+
 \subsection{Permutaties}
 
 Kies je alle $n$ elementen, dan rangschik je ze gewoon. Het product $n(n - 1) \cdots 2 \cdot 1$ komt zo vaak voor dat het een eigen naam heeft.
@@ -193,39 +207,73 @@ Vraag je af: telt de volgorde, en mag een element terugkomen? Volgorde en herhal
 
 \begin{oefeningen}
 \oef{h1-var}
+
+\oef{h1-blok}
+
+\oef{h1-faculteit}
 \end{oefeningen}
 
 %========================================================================================
 \opdrachtenkop
 
 \begin{oefeningen}
+\needspace{12\baselineskip}
 \oef{h1-o1}
 
 \oef{h1-o2}
-
-\oef{h1-o3}
 
 \oef{h1-o4}
 
 \oef{h1-o5}
 
-\oef{h1-o6}
+\oef{h1-o19}
+
+\oef{h1-o15}
+
+\oef{h1-o3}
+
+\oef{h1-o16}
+
+\oef{h1-o17}
+
+\oef{h1-o18}
+
+\needspace{14\baselineskip}
+\oef{h1-o20}
 
 \oef{h1-o7}
 
-\oef{h1-o8}
-
 \oef{h1-o9}
 
+\oef{h1-o21}
+
+\oef{h1-o6}
+
+\oef{h1-o25}
+
+\oef{h1-o22}
+
 \oef{h1-o10}
+
+\oef{h1-o8}
+
+\oef{h1-o23}
+
+\oef{h1-o24}
 
 \oef{h1-o11}
 
 \oef{h1-o12}
 
+\oef{h1-o26}
+
 \oef{h1-o13}
 
+\oef{h1-o27}
+
 \oef{h1-o14}
+
+\oef{h1-o28}
 \end{oefeningen}
 
 %----------------------------------------------------------------------------------------
@@ -254,18 +302,24 @@ Vraag je af: telt de volgorde, en mag een element terugkomen? Volgorde en herhal
 
 \oef{h1-t4}
 
+\oef{h1-t8}
+
 \oef{h1-t5}
 
 \oef{h1-t6}
+
+\oef{h1-t7}
 \end{oefeningen}
 
 \herhaalschema{%
-  \fv{oef:h1-t1}{vb:h1-product}{oef:h1-product}%
-  \fv{oef:h1-t2}{vb:h1-venn}{oef:h1-venn}%
+  \fv{oef:h1-t1}{vb:h1-product}{oef:h1-boom}%
+  \fv{oef:h1-t2}{vb:h1-venn}{oef:h1-overlap}%
   \fv{oef:h1-t3}{vb:h1-hervar}{oef:h1-hervar}%
-  \fv{oef:h1-t4}{vb:h1-var}{oef:h1-var}%
-  \fv{oef:h1-t5}{vb:h1-perm}{oef:h1-var}%
-  \fv{oef:h1-t6}{vb:h1-complement}{oef:h1-venn}}
+  \fv{oef:h1-t4}{vb:h1-var}{oef:h1-variatie}%
+  \fv{oef:h1-t8}{vb:h1-perm}{oef:h1-faculteit}%
+  \fv{oef:h1-t5}{vb:h1-perm}{oef:h1-blok}%
+  \fv{oef:h1-t6}{vb:h1-complement}{oef:h1-tegendeel}%
+  \fv{oef:h1-t7}{vb:h1-var}{oef:h1-o3}}
 
 \ifzelfstudie
 \section*{Maak je eigen samenvatting}

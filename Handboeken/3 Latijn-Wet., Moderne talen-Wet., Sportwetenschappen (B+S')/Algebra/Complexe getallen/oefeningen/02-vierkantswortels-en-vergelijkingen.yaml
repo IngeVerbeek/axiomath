@@ -222,6 +222,77 @@
       uitwerking: |-
         $x^2 - y^2 = 0$, $x^2 + y^2 = 2$, $xy = 1$: $x^2 = y^2 = 1$, zelfde teken. Dus $\pm(1 + i)$.
 
+- id: h2-vkv2
+  soort: kort
+  opgave: |-
+    Breng eerst alles naar één lid, en los op in $\C$.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $z^2 = 2z - 5$
+      antwoord: |-
+        $1 \pm 2i$
+      uitwerking: |-
+        $z^2 - 2z + 5 = 0$. $D = 4 - 20 = -16$, dus $z = \frac{2 \pm 4i}{2} = 1 \pm 2i$.
+    - opgave: |-
+        $z(z + 4) = -8$
+      antwoord: |-
+        $-2 \pm 2i$
+      uitwerking: |-
+        $z^2 + 4z + 8 = 0$. $D = 16 - 32 = -16$, dus $z = \frac{-4 \pm 4i}{2} = -2 \pm 2i$.
+    - opgave: |-
+        $(z - 3)^2 + 16 = 0$
+      antwoord: |-
+        $3 \pm 4i$
+      uitwerking: |-
+        Uitwerken hoeft niet: $(z - 3)^2 = -16$, dus $z - 3 = \pm 4i$ en $z = 3 \pm 4i$.
+
+- id: h2-somproduct
+  soort: kort
+  opgave: |-
+    Bepaal de som en het product van de oplossingen, zonder de vergelijking op te lossen. Controleer bij a door op te lossen.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $z^2 - 6z + 13 = 0$
+      antwoord: |-
+        som $6$, product $13$
+      uitwerking: |-
+        Som $-\frac{-6}{1} = 6$, product $\frac{13}{1} = 13$. Controle: $D = 36 - 52 = -16$, dus $z = 3 \pm 2i$, met som $6$ en product $3^2 + 2^2 = 13$.
+    - opgave: |-
+        $2z^2 + 3z + 5 = 0$
+      antwoord: |-
+        som $-\tfrac32$, product $\tfrac52$
+      uitwerking: |-
+        Som $-\frac{b}{a} = -\frac32$, product $\frac{c}{a} = \frac52$.
+    - opgave: |-
+        $4z^2 + 9 = 0$
+      antwoord: |-
+        som $0$, product $\tfrac94$
+      uitwerking: |-
+        $b = 0$: som $0$, product $\frac94$. (De oplossingen zijn $\pm\frac32 i$.)
+
+- id: h2-hoger2
+  soort: kort
+  opgave: |-
+    Ga na dat $r$ een oplossing is. Deel door $z - r$, bijvoorbeeld met de regel van Horner, en los op in $\C$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $z^3 - z^2 + 2 = 0$, \ $r = -1$
+      antwoord: |-
+        $-1$, $1 \pm i$
+      uitwerking: |-
+        $(-1)^3 - (-1)^2 + 2 = -1 - 1 + 2 = 0$. Delen geeft $z^3 - z^2 + 2 = (z + 1)(z^2 - 2z + 2)$. De tweede factor heeft $D = 4 - 8 = -4$, dus $z = -1$ of $z = \frac{2 \pm 2i}{2} = 1 \pm i$.
+    - opgave: |-
+        $z^3 - 6z^2 + 13z - 10 = 0$, \ $r = 2$
+      antwoord: |-
+        $2$, $2 \pm i$
+      uitwerking: |-
+        $8 - 24 + 26 - 10 = 0$. Delen geeft $z^3 - 6z^2 + 13z - 10 = (z - 2)(z^2 - 4z + 5)$. De tweede factor heeft $D = 16 - 20 = -4$, dus $z = 2$ of $z = \frac{4 \pm 2i}{2} = 2 \pm i$.
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
@@ -365,6 +436,18 @@
         $(2z - i)(2z + i)$
       uitwerking: |-
         Oplossingen $\pm \frac12 i$, dus $4z^2 + 1 = 4\bigl(z - \frac12 i\bigr)\bigl(z + \frac12 i\bigr) = (2z - i)(2z + i)$.
+    - opgave: |-
+        $z^2 + 4z + 13$
+      antwoord: |-
+        $(z + 2 - 3i)(z + 2 + 3i)$
+      uitwerking: |-
+        $D = 16 - 52 = -36$, oplossingen $-2 \pm 3i$, dus $\bigl(z - (-2 + 3i)\bigr)\bigl(z - (-2 - 3i)\bigr) = (z + 2 - 3i)(z + 2 + 3i)$.
+    - opgave: |-
+        $z^3 + 25z$
+      antwoord: |-
+        $z(z - 5i)(z + 5i)$
+      uitwerking: |-
+        Zonder $z$ af: $z(z^2 + 25)$, en $z^2 + 25 = 0$ geeft $z = \pm 5i$. Dus $z^3 + 25z = z(z - 5i)(z + 5i)$.
 
 - id: h2-o5
   soort: opdracht
@@ -386,7 +469,7 @@
   opgave: |-
     Bepaal de vierkantswortels.
   lijst: reeks
-  kolommen: 3
+  kolommen: 4
   delen:
     - opgave: |-
         $8 + 6i$
@@ -406,6 +489,36 @@
         $\pm(1 - i)$
       uitwerking: |-
         $x^2 - y^2 = 0$, $x^2 + y^2 = 2$, $xy = -1$: $x^2 = y^2 = 1$, verschillend teken: $\pm(1 - i)$.
+    - opgave: |-
+        $-15 + 8i$
+      antwoord: |-
+        $\pm(1 + 4i)$
+      uitwerking: |-
+        $x^2 - y^2 = -15$, $x^2 + y^2 = 17$, $xy = 4$: $x^2 = 1$, $y^2 = 16$, zelfde teken: $\pm(1 + 4i)$.
+    - opgave: |-
+        $7 - 24i$
+      antwoord: |-
+        $\pm(4 - 3i)$
+      uitwerking: |-
+        $x^2 - y^2 = 7$, $x^2 + y^2 = 25$, $xy = -12$: $x^2 = 16$, $y^2 = 9$, verschillend teken: $\pm(4 - 3i)$.
+    - opgave: |-
+        $8i$
+      antwoord: |-
+        $\pm(2 + 2i)$
+      uitwerking: |-
+        $x^2 - y^2 = 0$, $x^2 + y^2 = 8$, $xy = 4$: $x^2 = y^2 = 4$, zelfde teken: $\pm(2 + 2i)$.
+    - opgave: |-
+        $-21 - 20i$
+      antwoord: |-
+        $\pm(2 - 5i)$
+      uitwerking: |-
+        $x^2 - y^2 = -21$, $x^2 + y^2 = 29$, $xy = -10$: $x^2 = 4$, $y^2 = 25$, verschillend teken: $\pm(2 - 5i)$.
+    - opgave: |-
+        $-24 - 10i$
+      antwoord: |-
+        $\pm(1 - 5i)$
+      uitwerking: |-
+        $x^2 - y^2 = -24$, $x^2 + y^2 = 26$, $xy = -5$: $x^2 = 1$, $y^2 = 25$, verschillend teken: $\pm(1 - 5i)$.
 
 - id: h2-o7
   soort: opdracht
@@ -663,6 +776,298 @@
       \foreach \x/\y in {.707/.707,-.707/.707,-.707/-.707,.707/-.707}{\fill[accent] (\x,\y) circle (2.2pt);}
     \end{tikzpicture}}
 
+- id: h2-o19
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    drill: tweedegraadsvergelijkingen
+  opgave: |-
+    Los op in $\C$.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $z^2 + 81 = 0$
+      antwoord: |-
+        $\pm 9i$
+      uitwerking: |-
+        $z^2 = -81$, dus $z = \pm 9i$.
+    - opgave: |-
+        $z^2 - 4z + 20 = 0$
+      antwoord: |-
+        $2 \pm 4i$
+      uitwerking: |-
+        $D = 16 - 80 = -64$, dus $z = \frac{4 \pm 8i}{2} = 2 \pm 4i$.
+    - opgave: |-
+        $z^2 + 2z - 8 = 0$
+      antwoord: |-
+        $2$ of $-4$
+      uitwerking: |-
+        $D = 4 + 32 = 36 > 0$: twee reële oplossingen, $z = \frac{-2 \pm 6}{2}$, dus $z = 2$ of $z = -4$.
+    - opgave: |-
+        $9z^2 + 4 = 0$
+      antwoord: |-
+        $\pm \tfrac23 i$
+      uitwerking: |-
+        $z^2 = -\frac49$, dus $z = \pm \frac23 i$.
+    - opgave: |-
+        $z^2 + 6z + 9 = 0$
+      antwoord: |-
+        $-3$
+      uitwerking: |-
+        $D = 36 - 36 = 0$, of $(z + 3)^2 = 0$: één oplossing, $z = -3$.
+    - opgave: |-
+        $z^2 - z + 1 = 0$
+      antwoord: |-
+        $\tfrac12 \pm \tfrac{\sqrt3}{2} i$
+      uitwerking: |-
+        $D = 1 - 4 = -3$, dus $z = \frac{1 \pm i\sqrt3}{2}$.
+    - opgave: |-
+        $5z^2 - 2z + 1 = 0$
+      antwoord: |-
+        $\tfrac15 \pm \tfrac25 i$
+      uitwerking: |-
+        $D = 4 - 20 = -16$, dus $z = \frac{2 \pm 4i}{10} = \frac15 \pm \frac25 i$.
+    - opgave: |-
+        $z^2 + 3z = 0$
+      antwoord: |-
+        $0$ of $-3$
+      uitwerking: |-
+        Zonder $z$ af: $z(z + 3) = 0$, dus $z = 0$ of $z = -3$.
+    - opgave: |-
+        $-z^2 + 2z - 10 = 0$
+      antwoord: |-
+        $1 \pm 3i$
+      uitwerking: |-
+        Vermenigvuldig met $-1$: $z^2 - 2z + 10 = 0$. $D = 4 - 40 = -36$, dus $z = \frac{2 \pm 6i}{2} = 1 \pm 3i$.
+    - opgave: |-
+        $z^2 + 2\sqrt2\,z + 3 = 0$
+      antwoord: |-
+        $-\sqrt2 \pm i$
+      uitwerking: |-
+        $D = 8 - 12 = -4$, dus $z = \frac{-2\sqrt2 \pm 2i}{2} = -\sqrt2 \pm i$.
+    - opgave: |-
+        $2z^2 + 8 = 0$
+      antwoord: |-
+        $\pm 2i$
+      uitwerking: |-
+        $z^2 = -4$, dus $z = \pm 2i$.
+    - opgave: |-
+        $z^2 - 10z + 41 = 0$
+      antwoord: |-
+        $5 \pm 4i$
+      uitwerking: |-
+        $D = 100 - 164 = -64$, dus $z = \frac{10 \pm 8i}{2} = 5 \pm 4i$.
+
+- id: h2-o20
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    parabolen en het soort oplossingen
+  figuur:
+    code: |-
+      \begin{tikzpicture}[x=.5cm,y=.26cm,font=\scriptsize]
+        \draw[black!14,very thin,xstep=1,ystep=2] (-2,-4) grid (4,8);
+        \draw[->,grijs] (-2,0) -- (4.5,0) node[right,text=black] {$x$};
+        \draw[->,grijs] (0,-4) -- (0,8.7) node[above,text=black] {$y$};
+        \foreach \t in {-1,1,2,3}{\node[below,inner sep=1.5pt] at (\t,0) {$\t$};}
+        \foreach \t in {-4,-2,2,4,6,8}{\node[left,inner sep=1.5pt] at (0,\t) {$\t$};}
+        \draw[accent,thick] plot[domain=-1.8:3.8,samples=50,smooth] (\x,{(\x)^2-2*(\x)-3});
+        \draw[fel!80!black,thick] plot[domain=-1.6:3.6,samples=50,smooth] (\x,{(\x)^2-2*(\x)+1});
+        \draw[grijs,thick] plot[domain=-.6:2.6,samples=50,smooth] (\x,{(\x)^2-2*(\x)+5});
+        \node[above] at (2.6,6.56) {$h$};
+        \node[right] at (3.6,6.76) {$g$};
+        \node[right] at (3.8,3.84) {$f$};
+      \end{tikzpicture}
+  opgave: |-
+    De figuur toont de grafieken van $f(x) = x^2 - 2x - 3$, $g(x) = x^2 - 2x + 1$ en $h(x) = x^2 - 2x + 5$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Welke van de vergelijkingen $f(x) = 0$, $g(x) = 0$ en $h(x) = 0$ heeft twee niet-reële oplossingen? Leg uit met de grafiek.
+      antwoord: |-
+        $h(x) = 0$: de grafiek van $h$ snijdt de $x$-as niet
+      uitwerking: |-
+        De reële oplossingen zijn de snijpunten met de $x$-as. De grafiek van $f$ snijdt de $x$-as twee keer, die van $g$ raakt ze, en die van $h$ ligt er volledig boven. Dus $h(x) = 0$ heeft geen reële oplossingen, en in $\C$ twee toegevoegde.
+    - opgave: |-
+        Los de drie vergelijkingen op in $\C$. Wat hebben alle oplossingen met de symmetrieas van de parabolen te maken?
+      antwoord: |-
+        $f$: $-1$, $3$; \ $g$: $1$; \ $h$: $1 \pm 2i$; reëel deel (of gemiddelde) 1
+      uitwerking: |-
+        $f(x) = 0$: $D = 4 + 12 = 16$, dus $x = \frac{2 \pm 4}{2}$: $x = -1$ of $x = 3$.\par
+        $g(x) = 0$: $(x - 1)^2 = 0$, dus $x = 1$.\par
+        $h(x) = 0$: $D = 4 - 20 = -16$, dus $x = \frac{2 \pm 4i}{2} = 1 \pm 2i$.\par
+        De symmetrieas is telkens $x = 1$. De reële oplossingen liggen symmetrisch rond 1, en de niet-reële hebben reëel deel 1: de som van de oplossingen is altijd $-\frac{b}{a} = 2$.
+
+- id: h2-o21
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    klassieke fouten in de formule
+  opgave: |-
+    Waar zit de fout? Geef de juiste oplossingen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Iemand lost $z^2 + 4z + 13 = 0$ op: `$D = 16 - 52 = -36$, dus $z = \dfrac{4 \pm 6i}{2} = 2 \pm 3i$.'
+      antwoord: |-
+        in de teller hoort $-b = -4$: $z = -2 \pm 3i$
+      uitwerking: |-
+        In de formule staat $-b$, en $b = 4$. Juist is $z = \frac{-4 \pm 6i}{2} = -2 \pm 3i$. Controle met de som: $-b = -4$, en $(-2 + 3i) + (-2 - 3i) = -4$.
+    - opgave: |-
+        Iemand lost $2z^2 - 2z + 5 = 0$ op: `$D = 4 - 40 = -36$, dus $z = \dfrac{2 \pm 6i}{2} = 1 \pm 3i$.'
+      antwoord: |-
+        de noemer is $2a = 4$: $z = \tfrac12 \pm \tfrac32 i$
+      uitwerking: |-
+        De noemer is $2a = 4$, niet 2. Juist is $z = \frac{2 \pm 6i}{4} = \frac12 \pm \frac32 i$. Controle met het product: $\frac{c}{a} = \frac52$, en $\bigl(\frac12\bigr)^2 + \bigl(\frac32\bigr)^2 = \frac{10}{4} = \frac52$.
+
+- id: h2-o22
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: een rechthoek die niet bestaat
+  opgave: |-
+    Bestaat er een rechthoekig terrein met omtrek 20 m en oppervlakte 30 m\textsuperscript{2}? Noem de lengte en de breedte $x$ en $y$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $x$ en $y$ de oplossingen zijn van $z^2 - 10z + 30 = 0$.
+      antwoord: |-
+        som 10, product 30
+      uitwerking: |-
+        De omtrek is $2(x + y) = 20$, dus $x + y = 10$, en de oppervlakte is $xy = 30$. Twee getallen met som 10 en product 30 zijn de oplossingen van $z^2 - 10z + 30 = 0$, want daar is $-\frac{b}{a} = 10$ en $\frac{c}{a} = 30$.
+    - opgave: |-
+        Los de vergelijking op in $\C$. Bestaat zo'n terrein?
+      antwoord: |-
+        $5 \pm i\sqrt5$: nee
+      uitwerking: |-
+        $D = 100 - 120 = -20$, dus $z = \frac{10 \pm 2i\sqrt5}{2} = 5 \pm i\sqrt5$. Een lengte is een reëel getal, dus zo'n terrein bestaat niet. Toch voldoen de twee complexe getallen aan de voorwaarden: hun som is 10 en hun product $25 + 5 = 30$.
+    - opgave: |-
+        Voor welke oppervlakten $A$ bestaat er wel een rechthoek met omtrek 20 m? Welke rechthoek heeft de grootste oppervlakte?
+      antwoord: |-
+        $0 < A \leqslant 25$; het vierkant met zijde 5 m
+      uitwerking: |-
+        Nu zijn $x$ en $y$ de oplossingen van $z^2 - 10z + A = 0$. Ze zijn reëel als $D = 100 - 4A \geqslant 0$, dus $A \leqslant 25$ (en positief, want $x, y > 0$). Voor $A = 25$ is $D = 0$ en $x = y = 5$: het vierkant met zijde 5 m heeft de grootste oppervlakte.
+
+- id: h2-o23
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    vergelijkingen van hogere graad
+  opgave: |-
+    Los op in $\C$.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $z^3 - 2z^2 + 4z - 8 = 0$
+      antwoord: |-
+        $2$, $\pm 2i$
+      uitwerking: |-
+        Groeperen: $z^2(z - 2) + 4(z - 2) = (z - 2)(z^2 + 4) = 0$. Dus $z = 2$ of $z^2 = -4$, en $z = \pm 2i$.
+    - opgave: |-
+        $z^3 = 4z^2 - 5z$
+      antwoord: |-
+        $0$, $2 \pm i$
+      uitwerking: |-
+        Alles naar één lid: $z^3 - 4z^2 + 5z = z(z^2 - 4z + 5) = 0$. De tweede factor heeft $D = 16 - 20 = -4$, dus $z = 0$ of $z = 2 \pm i$.
+    - opgave: |-
+        $z^4 - 2z^3 + 2z^2 = 0$
+      antwoord: |-
+        $0$, $1 \pm i$
+      uitwerking: |-
+        $z^2(z^2 - 2z + 2) = 0$. Dus $z = 0$ (een dubbele oplossing) of $z^2 - 2z + 2 = 0$, met $D = -4$ en $z = 1 \pm i$.
+    - opgave: |-
+        $z^4 + 6z^2 + 25 = 0$
+      antwoord: |-
+        $\pm(1 + 2i)$, $\pm(1 - 2i)$
+      uitwerking: |-
+        Stel $t = z^2$: $t^2 + 6t + 25 = 0$, met $D = 36 - 100 = -64$, dus $t = -3 \pm 4i$.\par
+        $z^2 = -3 + 4i$: $x^2 - y^2 = -3$, $x^2 + y^2 = 5$, $xy = 2$, dus $x^2 = 1$, $y^2 = 4$ met hetzelfde teken: $z = \pm(1 + 2i)$.\par
+        $z^2 = -3 - 4i$: nu is $xy = -2$, dus $z = \pm(1 - 2i)$.
+
+- id: h2-o24
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    klassieke fout: het product van toegevoegden
+  opgave: |-
+    Iemand stelt een vergelijking op met oplossing $3 - 2i$: `De andere oplossing is $3 + 2i$. De som is 6 en het product $3^2 - 2^2 = 5$, dus $z^2 - 6z + 5 = 0$.'
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Wat is er fout? Geef de juiste vergelijking.
+      antwoord: |-
+        het product is $3^2 + 2^2 = 13$: $z^2 - 6z + 13 = 0$
+      uitwerking: |-
+        $(3 - 2i)(3 + 2i) = 9 - 4i^2 = 9 + 4 = 13$: bij toegevoegden tel je de kwadraten op. De juiste vergelijking is $z^2 - 6z + 13 = 0$.
+    - opgave: |-
+        Hoe zie je zonder op te lossen dat $z^2 - 6z + 5 = 0$ niet kan kloppen?
+      antwoord: |-
+        $D = 16 > 0$: de oplossingen zijn reëel
+      uitwerking: |-
+        De discriminant is $36 - 20 = 16 > 0$: die vergelijking heeft twee reële oplossingen (1 en 5), en dus geen oplossing $3 - 2i$.
+
+- id: h2-o25
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    toegevoegde oplossingen in het vlak herkennen
+  opgave: |-
+    Elke figuur toont een verzameling van complexe getallen. Welke kan de verzameling van alle oplossingen zijn van een veeltermvergelijking met reële coëfficiënten en een zo laag mogelijke graad? Geef bij die figuren zo'n vergelijking.\par
+    \figuren{\begin{tikzpicture}[x=.36cm,y=.36cm]
+      \gaussleeg{-2}{2}{-2}{2}
+      \cpunt[right]{1}{2}{}\cpunt[right]{1}{-2}{}
+      \node[below,font=\small] at (0,-2.4) {(1)};
+    \end{tikzpicture}\qquad
+    \begin{tikzpicture}[x=.36cm,y=.36cm]
+      \gaussleeg{-2}{2}{-2}{2}
+      \cpunt[right]{-1}{1}{}\cpunt[right]{1}{1}{}
+      \node[below,font=\small] at (0,-2.4) {(2)};
+    \end{tikzpicture}\qquad
+    \begin{tikzpicture}[x=.36cm,y=.36cm]
+      \gaussleeg{-2}{2}{-2}{2}
+      \cpunt[right]{2}{0}{}\cpunt[right]{-1}{1}{}\cpunt[right]{-1}{-1}{}
+      \node[below,font=\small] at (0,-2.4) {(3)};
+    \end{tikzpicture}\qquad
+    \begin{tikzpicture}[x=.36cm,y=.36cm]
+      \gaussleeg{-2}{2}{-2}{2}
+      \cpunt[right]{0}{2}{}\cpunt[right]{0}{-2}{}\cpunt[right]{1}{1}{}
+      \node[below,font=\small] at (0,-2.4) {(4)};
+    \end{tikzpicture}}
+    {\footnotesize Op de assen staan de roosterlijnen telkens 1 uit elkaar.}
+  antwoord: |-
+    (1): $z^2 - 2z + 5 = 0$; \ (3): $z^3 - 2z - 4 = 0$; \ (2) en (4) niet
+  uitwerking: |-
+    Bij reële coëfficiënten is met elke oplossing ook haar toegevoegde een oplossing: de figuur moet symmetrisch zijn ten opzichte van de reële as.\par
+    (1) $1 \pm 2i$ is een toegevoegd paar: som 2, product $1 + 4 = 5$, dus $z^2 - 2z + 5 = 0$.\par
+    (2) Bij $1 + i$ ontbreekt $1 - i$ (de figuur is symmetrisch om de imaginaire as, maar dat telt niet): niet mogelijk.\par
+    (3) $2$ en het paar $-1 \pm i$, met $z^2 + 2z + 2$: $(z - 2)(z^2 + 2z + 2) = z^3 - 2z - 4 = 0$.\par
+    (4) $\pm 2i$ is een paar, maar bij $1 + i$ ontbreekt $1 - i$: niet mogelijk.
+
+- id: h2-o26
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    hoeveel reële oplossingen
+  opgave: |-
+    Een veeltermvergelijking van graad $n \geqslant 1$ heeft in $\C$ precies $n$ oplossingen, als je een oplossing die $k$ keer als factor voorkomt ook $k$ keer telt. Dat is de hoofdstelling van de algebra; Gauss gaf er in 1799 een bewijs van. Neem in deze opdracht aan dat de coëfficiënten reëel zijn.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Leg uit waarom een vergelijking van graad 5 minstens één reële oplossing heeft. Deel daarvoor door $(z - w)(z - \conj{w})$ als $w$ een niet-reële oplossing is.
+      antwoord: |-
+        de niet-reële oplossingen vallen weg in paren; er blijft een eerstegraadsfactor over
+      uitwerking: |-
+        Is $w = p + qi$ ($q \neq 0$) een oplossing, dan ook $\conj{w}$, en $(z - w)(z - \conj{w}) = z^2 - 2pz + p^2 + q^2$ heeft reële coëfficiënten. Deel je de veelterm daardoor, dan heeft het quotiënt ook reële coëfficiënten en een graad die 2 lager is. Zo haal je de niet-reële oplossingen per twee weg: van graad 5 naar 3 naar 1. Een veelterm van graad 1 met reële coëfficiënten, $az + b$, heeft de reële oplossing $-\frac{b}{a}$. Er blijft dus altijd minstens één reële oplossing over.
+    - opgave: |-
+        Kan een vergelijking van graad 4 precies één reële oplossing hebben? Let op het verschil tussen \textit{één oplossing} en \textit{één keer geteld}.
+      antwoord: |-
+        één keer geteld: nee; wel één reële oplossing die twee keer telt, zoals $(z - 1)^2(z^2 + 1) = 0$
+      uitwerking: |-
+        Op dezelfde manier vallen de niet-reële oplossingen per twee weg, dus geteld met hun aantal is het aantal reële oplossingen $4$, $2$ of $0$: altijd even. Een enkelvoudige reële oplossing die als enige overblijft, kan dus niet.\par
+        Wel kan er maar één reëel getal oplossing zijn, als het twee keer telt: $(z - 1)^2(z^2 + 1) = 0$ heeft als oplossingen $1$ (twee keer) en $\pm i$.
+
 #----------------------------------------------------------------------------------------
 # KOPPEL
 #----------------------------------------------------------------------------------------
@@ -816,3 +1221,15 @@
     $\pm(4 - i)$
   uitwerking: |-
     $x^2 - y^2 = 15$, $x^2 + y^2 = 17$, $xy = -4$: $x^2 = 16$, $y^2 = 1$, verschillend teken. Dus $\pm(4 - i)$. Controle: $(4 - i)^2 = 16 - 8i - 1 = 15 - 8i$.
+
+- id: h2-t8
+  soort: test
+  niveau: 2
+  thema: |-
+    toegevoegde oplossingen
+  opgave: |-
+    Het getal $1 - 2i$ is een oplossing van $z^3 - z^2 + 3z + 5 = 0$. Bepaal alle oplossingen.
+  antwoord: |-
+    $1 - 2i$, $1 + 2i$, $-1$
+  uitwerking: |-
+    De coëfficiënten zijn reëel, dus ook $1 + 2i$ is een oplossing. Bij dat paar hoort de factor $z^2 - 2z + 5$ (som 2, product $1 + 4 = 5$). Dan is $z^3 - z^2 + 3z + 5 = (z^2 - 2z + 5)(z + p)$, en de constante term geeft $5p = 5$, dus $p = 1$. Controle: $(z^2 - 2z + 5)(z + 1) = z^3 - z^2 + 3z + 5$. De oplossingen zijn $1 \pm 2i$ en $-1$.
