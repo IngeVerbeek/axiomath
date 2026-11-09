@@ -122,7 +122,92 @@
       antwoord: |-
         $(1, 2, 3)$
       uitwerking: |-
-        Optellen: $2(x + y + z) = 12$, dus $x + y + z = 6$. Dan $z = 3$, $x = 1$, $y = 2$.
+        Optellen: $2(x + y + z) = 12$, dus $x + y + z = 6$. Trek daar telkens één vergelijking van af: $z = 6 - 3 = 3$, $x = 6 - 5 = 1$ en $y = 6 - 4 = 2$. Het punt $(1, 2, 3)$.
+
+- id: h3-snijdend
+  soort: kort
+  opgave: |-
+    Snijdende rechten.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken het snijpunt van $l\colon (2, 1, 0) + r\vcr{1}{0}{1}$ en $m\colon (1, 3, 3) + s\vcr{1}{-1}{-1}$.
+      antwoord: |-
+        $(3, 1, 1)$
+      uitwerking: |-
+        Stel de coördinaten gelijk: $2 + r = 1 + s$, $1 = 3 - s$ en $r = 3 - s$. De tweede geeft $s = 2$, de derde dan $r = 1$. Controle in de eerste: $3 = 3$. Het snijpunt is $(3, 1, 1)$.
+    - opgave: |-
+        Voor welke $k$ snijden $l\colon (1, 0, 0) + r\vcr{0}{1}{1}$ en $m\colon (0, 0, k) + s\vcr{1}{1}{0}$ elkaar? Geef dan het snijpunt.
+      antwoord: |-
+        $k = 1$; $(1, 1, 1)$
+      uitwerking: |-
+        $1 = s$, $r = s$ en $r = k$. Dus $s = 1$, $r = 1$, en de derde vergelijking vraagt $k = 1$. Het snijpunt is $(1, 1, 1)$. Voor elke andere $k$ kruisen de rechten.
+
+- id: h3-kruisend
+  soort: kort
+  opgave: |-
+    Kruisende rechten.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $l\colon (1, 0, 0) + r\vcr{0}{1}{0}$ en $m\colon (0, 0, 1) + s\vcr{1}{1}{0}$ kruisend zijn.
+      antwoord: |-
+        niet collineair en geen gemeenschappelijk punt
+      uitwerking: |-
+        $\vcr{0}{1}{0}$ en $\vcr{1}{1}{0}$ zijn niet collineair. Gelijkstellen: $1 = s$, $r = s$ en $0 = 1$. De laatste kan niet: geen gemeenschappelijk punt. Dus kruisend.
+    - opgave: |-
+        Geef zelf een rechte door $(0, 0, 3)$ die de $x$-as kruist.
+      antwoord: |-
+        bijvoorbeeld $(0, 0, 3) + s\vcr{0}{1}{0}$
+      uitwerking: |-
+        Neem een richting die niet collineair is met $\vcr{1}{0}{0}$ en die de hoogte niet verandert, bijvoorbeeld $\vcr{0}{1}{0}$. Alle punten $(0, s, 3)$ liggen op hoogte $3$ en nooit op de $x$-as: de rechten kruisen.
+
+- id: h3-rechtevlak-ligt
+  soort: kort
+  opgave: |-
+    Een rechte in een vlak.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Onderzoek de ligging van $l\colon (1, 2, 0) + r\vcr{1}{1}{2}$ en $\alpha\colon 2x - 4y + z = -6$.
+      antwoord: |-
+        $l$ ligt in $\alpha$
+      uitwerking: |-
+        Invullen: $2(1 + r) - 4(2 + r) + 2r = 2 + 2r - 8 - 4r + 2r = -6$. Dat klopt voor elke $r$: alle punten van $l$ liggen in $\alpha$.
+    - opgave: |-
+        Voor welke $a$ ligt de rechte $(0, 1, a) + r\vcr{1}{0}{-1}$ in het vlak $x + y + z = 3$?
+      antwoord: |-
+        $a = 2$
+      uitwerking: |-
+        Invullen: $r + 1 + a - r = 1 + a$. Dat moet $3$ zijn voor elke $r$: $a = 2$. Voor andere $a$ is de rechte strikt evenwijdig met het vlak.
+
+- id: h3-evenwijdig
+  soort: kort
+  opgave: |-
+    Evenwijdige vlakken.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef een vergelijking van het vlak door $P(1, -1, 2)$ dat evenwijdig is met $3x - y + 2z = 7$.
+      antwoord: |-
+        $3x - y + 2z = 8$
+      uitwerking: |-
+        Evenwijdig: hetzelfde linkerlid $3x - y + 2z$. $P$ invullen geeft het rechterlid: $3 + 1 + 4 = 8$.
+    - opgave: |-
+        Wat is de ligging van $x - 2y + 3z = 4$ en $-2x + 4y - 6z = -8$?
+      antwoord: |-
+        samenvallend
+      uitwerking: |-
+        De tweede vergelijking is $-2$ keer de eerste, ook het rechterlid: $-2 \cdot 4 = -8$. Het is hetzelfde vlak.
+
+- id: h3-drievlakken
+  soort: kort
+  opgave: |-
+    Bereken het gemeenschappelijke punt van de vlakken $x + 2y - z = 3$, $2x - y + z = 2$ en $x + y + 2z = 7$.
+  antwoord: |-
+    $(1, 2, 2)$
+  uitwerking: |-
+    Eerste plus tweede: $3x + y = 5$. Twee keer de eerste plus de derde: $3x + 5y = 13$. Aftrekken: $4y = 8$, dus $y = 2$ en $x = 1$. Uit de eerste: $z = x + 2y - 3 = 2$. Controle in de derde: $1 + 2 + 4 = 7$.
 
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
@@ -138,7 +223,7 @@
   antwoord: |-
     zelfde richting, gemeenschappelijk punt
   uitwerking: |-
-    $\vcr{2}{4}{6} = 2\vcr{1}{2}{3}$, en $(1, 2, 3)$ ligt op $l$ ($r = 1$).
+    De richtingsvectoren zijn collineair: $\vcr{2}{4}{6} = 2\vcr{1}{2}{3}$. Het punt $(1, 2, 3)$ van $m$ ligt op $l$: $r = 1$ geeft $(1, 2, 3)$. Evenwijdig met een gemeenschappelijk punt: samenvallend.
 
 - id: h3-o2
   soort: opdracht
@@ -224,6 +309,565 @@
   uitwerking: |-
     $\overrightarrow{PA} = \vcr{a - 1}{-1}{-1}$ en $\overrightarrow{PB} = \vcr{-1}{b - 1}{1}$ moeten collineair zijn met factor $-1$ (de laatste coördinaat): $a - 1 = 1$ en $-1 = -(b - 1)$, dus $a = 2$ en $b = 2$. De rechte gaat door $(2, 0, 0)$, $(1, 1, 1)$ en $(0, 2, 2)$.
 
+- id: h3-o9
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    ligging van twee rechten (drill)
+  opgave: |-
+    Zijn de rechten $l$ en $m$ samenvallend, strikt evenwijdig, snijdend of kruisend? Geef het snijpunt als er een is.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $l\colon (1, 0, 2) + r\vcr{2}{1}{-1}$ en $m\colon (5, 2, 0) + s\vcr{-4}{-2}{2}$
+      antwoord: |-
+        samenvallend
+      uitwerking: |-
+        $\vcr{-4}{-2}{2} = -2\vcr{2}{1}{-1}$: evenwijdig. $(5, 2, 0)$ op $l$? $1 + 2r = 5$ geeft $r = 2$, en dan $y = 2$ en $z = 0$: ja. Samenvallend.
+    - opgave: |-
+        $l\colon (0, 1, 1) + r\vcr{1}{2}{0}$ en $m\colon (2, 0, 0) + s\vcr{-2}{-4}{0}$
+      antwoord: |-
+        strikt evenwijdig
+      uitwerking: |-
+        $\vcr{-2}{-4}{0} = -2\vcr{1}{2}{0}$: evenwijdig. $(2, 0, 0)$ op $l$? $z = 1 \neq 0$ voor elk punt van $l$: nee. Strikt evenwijdig.
+    - opgave: |-
+        $l\colon (1, 1, 0) + r\vcr{1}{0}{2}$ en $m\colon (0, 3, 1) + s\vcr{1}{-1}{1}$
+      antwoord: |-
+        kruisend
+      uitwerking: |-
+        Niet collineair. $1 + r = s$, $1 = 3 - s$ en $2r = 1 + s$. De tweede geeft $s = 2$, de eerste $r = 1$. In de derde: $2 \neq 3$. Geen snijpunt: kruisend.
+    - opgave: |-
+        $l\colon (2, 0, 1) + r\vcr{0}{1}{1}$ en $m\colon (0, 1, 0) + s\vcr{1}{0}{1}$
+      antwoord: |-
+        snijdend in $(2, 1, 2)$
+      uitwerking: |-
+        Niet collineair. $2 = s$, $r = 1$ en $1 + r = s$: met $r = 1$ en $s = 2$ klopt de derde. Snijpunt $(2, 1, 2)$.
+    - opgave: |-
+        $l\colon r\vcr{1}{1}{1}$ en $m\colon (1, 0, 0) + s\vcr{0}{1}{1}$
+      antwoord: |-
+        snijdend in $(1, 1, 1)$
+      uitwerking: |-
+        Niet collineair. $r = 1$, $r = s$ en $r = s$: $r = s = 1$. Snijpunt $(1, 1, 1)$.
+    - opgave: |-
+        $l\colon (3, 0, 0) + r\vcr{1}{2}{0}$ en $m\colon (0, 0, 1) + s\vcr{2}{1}{0}$
+      antwoord: |-
+        kruisend
+      uitwerking: |-
+        Niet collineair. De punten van $l$ liggen op hoogte $0$, die van $m$ op hoogte $1$: geen gemeenschappelijk punt. Kruisend.
+
+- id: h3-o10
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    rechte en vlak (drill)
+  opgave: |-
+    Bereken het snijpunt van de rechte en het vlak, of zeg dat de rechte strikt evenwijdig is met het vlak of erin ligt.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $(1, 2, 3) + r\vcr{1}{0}{-1}$ en $x + y + z = 4$
+      antwoord: |-
+        strikt evenwijdig
+      uitwerking: |-
+        $(1 + r) + 2 + (3 - r) = 6$, en $6 = 4$ kan niet: geen gemeenschappelijk punt.
+    - opgave: |-
+        $(0, 0, 1) + r\vcr{2}{1}{1}$ en $x - y + 2z = 8$
+      antwoord: |-
+        $(4, 2, 3)$
+      uitwerking: |-
+        $2r - r + 2 + 2r = 3r + 2 = 8$, dus $r = 2$: het punt $(4, 2, 3)$.
+    - opgave: |-
+        $(1, -1, 0) + r\vcr{1}{1}{1}$ en $x - y = 2$
+      antwoord: |-
+        de rechte ligt in het vlak
+      uitwerking: |-
+        $(1 + r) - (-1 + r) = 2$ voor elke $r$: elk punt van de rechte ligt in het vlak.
+    - opgave: |-
+        $(2, 1, 0) + r\vcr{0}{0}{1}$ en $z = 5$
+      antwoord: |-
+        $(2, 1, 5)$
+      uitwerking: |-
+        Een verticale rechte en een horizontaal vlak: $r = 5$, het punt $(2, 1, 5)$.
+    - opgave: |-
+        $(1, 0, 1) + r\vcr{3}{-1}{2}$ en $2x + y - z = 7$
+      antwoord: |-
+        $(7, -2, 5)$
+      uitwerking: |-
+        $2 + 6r - r - 1 - 2r = 1 + 3r = 7$, dus $r = 2$: het punt $(7, -2, 5)$.
+    - opgave: |-
+        de $x$-as en $3x - 2y + z = 6$
+      antwoord: |-
+        $(2, 0, 0)$
+      uitwerking: |-
+        Op de $x$-as is $y = z = 0$: $3x = 6$, het punt $(2, 0, 0)$.
+
+- id: h3-o11
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    ligging van twee vlakken
+  opgave: |-
+    Zijn de vlakken samenvallend, strikt evenwijdig of snijdend?
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $x + 2y - z = 3$ en $2x + 4y - 2z = 6$
+      antwoord: |-
+        samenvallend
+      uitwerking: |-
+        De tweede is $2$ keer de eerste, ook het rechterlid.
+    - opgave: |-
+        $x + 2y - z = 3$ en $-x - 2y + z = 3$
+      antwoord: |-
+        strikt evenwijdig
+      uitwerking: |-
+        Linkerlid maal $-1$, maar $-1 \cdot 3 \neq 3$.
+    - opgave: |-
+        $x + y = 1$ en $x + z = 1$
+      antwoord: |-
+        snijdend
+      uitwerking: |-
+        $(1, 1, 0)$ en $(1, 0, 1)$ zijn niet evenredig.
+    - opgave: |-
+        $3x - 6y + 9z = 1$ en $x - 2y + 3z = 3$
+      antwoord: |-
+        strikt evenwijdig
+      uitwerking: |-
+        $(3, -6, 9) = 3(1, -2, 3)$, maar $1 \neq 3 \cdot 3$.
+    - opgave: |-
+        $z = 2$ en $z = -1$
+      antwoord: |-
+        strikt evenwijdig
+      uitwerking: |-
+        Twee horizontale vlakken op een andere hoogte.
+    - opgave: |-
+        $2x - y = 0$ en $4x - 2y + z = 0$
+      antwoord: |-
+        snijdend
+      uitwerking: |-
+        $(4, -2, 1)$ is geen veelvoud van $(2, -1, 0)$, door de $z$.
+
+- id: h3-o12
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    ligging in een piramide
+  figuur:
+    opties: |-
+      3.4cm
+    code: |-
+      \begin{tikzpicture}[ruimte,scale=.75,font=\scriptsize]
+        \draw[grijs,dashed] (0,0,0) -- (3,0,0) (0,0,0) -- (0,3,0) (0,0,0) -- (1.5,1.5,3.5);
+        \draw[accent] (3,0,0) -- (3,3,0) -- (0,3,0) (3,0,0) -- (1.5,1.5,3.5) (3,3,0) -- (1.5,1.5,3.5) (0,3,0) -- (1.5,1.5,3.5);
+        \node[left] at (3,0,0) {$A$}; \node[below] at (3,3,0) {$B$}; \node[right] at (0,3,0) {$C$}; \node[above left] at (0,0,0) {$D$};
+        \node[above] at (1.5,1.5,3.5) {$T$};
+      \end{tikzpicture}
+  opgave: |-
+    De piramide $T.ABCD$ heeft een vierkant grondvlak $ABCD$. Geef de onderlinge ligging. Leg uit zonder te rekenen.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $TA$ en $BC$
+      antwoord: |-
+        kruisend
+      uitwerking: |-
+        Niet evenwijdig, en $TA$ raakt het grondvlak alleen in $A$, dat niet op $BC$ ligt.
+    - opgave: |-
+        $TA$ en $TC$
+      antwoord: |-
+        snijdend in $T$
+      uitwerking: |-
+        Twee verschillende rechten door $T$.
+    - opgave: |-
+        $AB$ en het vlak $TCD$
+      antwoord: |-
+        strikt evenwijdig
+      uitwerking: |-
+        $AB \parallel DC$, en $DC$ ligt in $TCD$. $AB$ zelf ligt er niet in.
+    - opgave: |-
+        $TA$ en het vlak $ABC$
+      antwoord: |-
+        snijdend in $A$
+      uitwerking: |-
+        $TA$ heeft $A$ gemeen met het grondvlak, en $T$ ligt er niet in.
+    - opgave: |-
+        het vlak $TAB$ en het vlak $ABC$
+      antwoord: |-
+        snijdend volgens $AB$
+      uitwerking: |-
+        Beide vlakken bevatten $A$ en $B$, en ze zijn niet gelijk.
+    - opgave: |-
+        $BD$ en het vlak $ABC$
+      antwoord: |-
+        $BD$ ligt in het vlak
+      uitwerking: |-
+        $B$ en $D$ liggen allebei in het grondvlak.
+
+- id: h3-o13
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    fouten: onderlinge ligging
+  opgave: |-
+    Waar zit de fout? Geef het juiste besluit.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Voor $l\colon (1, 0, 0) + r\vcr{1}{1}{0}$ en $m\colon (0, 3, -2) + r\vcr{1}{-1}{1}$ schrijft Tim: $1 + r = r$ kan niet, dus de rechten kruisen.
+      antwoord: |-
+        twee parameters nodig; snijpunt $(2, 1, 0)$
+      uitwerking: |-
+        Tim gebruikte dezelfde parameter $r$ voor beide rechten. Een snijpunt hoeft niet bij dezelfde waarde van de parameter te horen. Met $s$ voor $m$: $1 + r = s$, $r = 3 - s$ en $0 = -2 + s$. Dus $s = 2$, $r = 1$, en de eerste klopt: $2 = 2$. Ze snijden in $(2, 1, 0)$.
+    - opgave: |-
+        Lore schrijft: $2x - y + z = 3$ en $4x - 2y + 2z = 6$ zijn evenwijdig, dus ze hebben geen gemeenschappelijk punt.
+      antwoord: |-
+        samenvallend
+      uitwerking: |-
+        Ook het rechterlid is verdubbeld: het is twee keer dezelfde vergelijking. De vlakken vallen samen en hebben alle punten gemeen.
+    - opgave: |-
+        Mo schrijft: twee rechten met richtingsvectoren die niet collineair zijn, snijden elkaar.
+      antwoord: |-
+        ze kunnen ook kruisen
+      uitwerking: |-
+        Dat geldt in het vlak, niet in de ruimte. Daar kunnen ze ook kruisend zijn, zoals de $x$-as en $(0, 0, 2) + s\vcr{0}{1}{0}$. Je moet nagaan of het stelsel een oplossing heeft.
+    - opgave: |-
+        Voor $l\colon (1, 1, 1) + r\vcr{2}{0}{-1}$ en $\alpha\colon x + 2z = 3$ schrijft Fien: $1 + 2r + 2 - 2r = 3$ geeft $3 = 3$, en daar zit geen $r$ in, dus er is geen snijpunt.
+      antwoord: |-
+        de rechte ligt in het vlak
+      uitwerking: |-
+        $3 = 3$ is waar voor elke $r$: elk punt van $l$ ligt in $\alpha$. Geen snijpunt hoort bij een valse uitspraak zoals $3 = 5$.
+
+- id: h3-o14
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    drie vlakken: eenvoudige stelsels
+  opgave: |-
+    Bereken het gemeenschappelijke punt van de drie vlakken.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $x = 2$, $y = -1$ en $x + y + z = 4$
+      antwoord: |-
+        $(2, -1, 3)$
+      uitwerking: |-
+        Vul $x$ en $y$ in de derde in: $2 - 1 + z = 4$, dus $z = 3$.
+    - opgave: |-
+        $x + y = 5$, $y = 2$ en $x - y + z = 0$
+      antwoord: |-
+        $(3, 2, -1)$
+      uitwerking: |-
+        $y = 2$ geeft $x = 3$, en dan $3 - 2 + z = 0$, dus $z = -1$.
+    - opgave: |-
+        $x + y + z = 6$, $y + z = 5$ en $z = 3$
+      antwoord: |-
+        $(1, 2, 3)$
+      uitwerking: |-
+        Van onder naar boven: $z = 3$, dan $y = 2$, dan $x = 1$.
+
+- id: h3-o15
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    evenwijdige rechten met parameters
+  opgave: |-
+    Gegeven $l\colon (1, 2, a) + r\vcr{2}{-1}{1}$ en $m\colon (3, b, 0) + s\vcr{-4}{2}{-2}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bepaal $a$ en $b$ zodat de rechten samenvallen.
+      antwoord: |-
+        $a = -1$, $b = 1$
+      uitwerking: |-
+        De richtingsvectoren zijn collineair: $\vcr{-4}{2}{-2} = -2\vcr{2}{-1}{1}$. De rechten vallen samen als $(3, b, 0)$ op $l$ ligt. $1 + 2r = 3$ geeft $r = 1$, en dan is het punt van $l$ gelijk aan $(3, 1, a + 1)$. Dus $b = 1$ en $a + 1 = 0$: $a = -1$.
+    - opgave: |-
+        Kunnen $l$ en $m$ voor sommige $a$ en $b$ snijdend of kruisend zijn?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: de richtingsvectoren zijn altijd collineair. Voor alle andere waarden van $a$ en $b$ zijn de rechten strikt evenwijdig.
+
+- id: h3-o16
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: een boring
+  opgave: |-
+    Vanuit $A(0, 0, 0)$ aan het oppervlak wordt een rechte put geboord in de richting $\vcr{4}{3}{-2}$, in meter. Een waterhoudende laag begint bij het schuine vlak $x + y + 5z = -60$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Waar bereikt de boring de laag? Hoe diep is dat?
+      antwoord: |-
+        $(80, 60, -40)$; $40$ m diep
+      uitwerking: |-
+        De boring is $(4r, 3r, -2r)$ met $r \geqslant 0$. Invullen: $4r + 3r - 10r = -3r = -60$, dus $r = 20$: het punt $(80, 60, -40)$, op $40$ m diepte.
+    - opgave: |-
+        Hoe lang is de put? Rond af op $0{,}1$ m.
+      antwoord: |-
+        $\approx 107{,}7$ m
+      uitwerking: |-
+        $20 \cdot \norm{\vcr{4}{3}{-2}} = 20\sqrt{29} \approx 107{,}7$ m.
+    - opgave: |-
+        Een tweede boring vanuit $A$ gaat in de richting $\vcr{5}{0}{-1}$, ook schuin naar beneden. Bereikt ze de laag?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Invullen: $5r + 0 - 5r = 0 = -60$ kan niet. De richting is evenwijdig met de laag ($5 + 0 - 5 = 0$): de boring gaat dieper, maar de laag ook, en ze bereikt ze nooit.
+
+- id: h3-o17
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    rechten in een kubus met coördinaten
+  opgave: |-
+    Neem de kubus $ABCD.EFGH$ uit de Verken met ribbe $2$, $A$ in de oorsprong, $B(2, 0, 0)$, $D(0, 2, 0)$ en $E(0, 0, 2)$. Onderzoek met vergelijkingen de ligging van de rechten.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $AG$ en $BF$
+      antwoord: |-
+        kruisend
+      uitwerking: |-
+        $AG\colon (2r, 2r, 2r)$ en $BF\colon (2, 0, 2s)$. $2r = 2$ en $2r = 0$ kan niet. Niet collineair: kruisend.
+    - opgave: |-
+        $AC$ en $FH$
+      antwoord: |-
+        kruisend
+      uitwerking: |-
+        $AC\colon (2r, 2r, 0)$ en $FH\colon (2 - 2s, 2s, 2)$: de hoogtes $0$ en $2$ zijn nooit gelijk. Richtingen $\vcr{1}{1}{0}$ en $\vcr{-1}{1}{0}$ niet collineair: kruisend.
+    - opgave: |-
+        $AF$ en $DG$
+      antwoord: |-
+        strikt evenwijdig
+      uitwerking: |-
+        Beide hebben richting $\vcr{2}{0}{2}$. Op $AF\colon (2r, 0, 2r)$ is $y = 0$, en $D$ heeft $y = 2$: strikt evenwijdig.
+    - opgave: |-
+        $BH$ en $DF$
+      antwoord: |-
+        snijdend in $(1, 1, 1)$
+      uitwerking: |-
+        $BH\colon (2 - 2r, 2r, 2r)$ en $DF\colon (2s, 2 - 2s, 2s)$. $2r = 2s$ (derde), dan $2 - 2r = 2r$, dus $r = s = \frac12$. Snijpunt $(1, 1, 1)$, het middelpunt van de kubus.
+
+- id: h3-o18
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    vlak evenwijdig met twee rechten
+  opgave: |-
+    Gegeven $l\colon r\vcr{1}{1}{0}$ en $m\colon (3, 1, 1) + s\vcr{0}{1}{-1}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef een vergelijking van het vlak $\alpha$ door $P(2, 0, 1)$ dat evenwijdig is met $l$ en met $m$.
+      antwoord: |-
+        $x - y - z = 1$
+      uitwerking: |-
+        De richtingsvectoren van $l$ en $m$ zijn richtingsvectoren van $\alpha$: $x = 2 + r$, $y = r + s$, $z = 1 - s$. Dan $r = x - 2$ en $s = 1 - z$, dus $y = x - 2 + 1 - z$, of $x - y - z = 1$.
+    - opgave: |-
+        Ligt $l$ in $\alpha$? En $m$?
+      antwoord: |-
+        $l$ niet, $m$ wel
+      uitwerking: |-
+        Beide rechten zijn evenwijdig met $\alpha$, dus het volstaat om één punt te controleren. $O$ op $l$: $0 \neq 1$, dus $l$ is strikt evenwijdig met $\alpha$. $(3, 1, 1)$ op $m$: $3 - 1 - 1 = 1$, dus $m$ ligt in $\alpha$.
+
+- id: h3-o19
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    rechte door een vlak
+  opgave: |-
+    Gegeven de punten $A(2, -1, 0)$, $B(0, 1, 4)$, $C(1, 1, 1)$, $D(2, 0, 1)$ en $E(0, 0, 3)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef een vergelijking van het vlak $CDE$.
+      antwoord: |-
+        $x + y + z = 3$
+      uitwerking: |-
+        Richtingsvectoren $\overrightarrow{CD} = \vcr{1}{-1}{0}$ en $\overrightarrow{CE} = \vcr{-1}{-1}{2}$. Parametervergelijkingen $x = 1 + r - s$, $y = 1 - r - s$, $z = 1 + 2s$. Optellen: $x + y + z = 3 + 0r + 0s = 3$. Controle: $C$, $D$ en $E$ geven alle drie $3$.
+    - opgave: |-
+        Bereken het snijpunt van de rechte $AB$ met het vlak $CDE$. Welk punt van $[AB]$ is dat?
+      antwoord: |-
+        $(1, 0, 2)$, het midden van $[AB]$
+      uitwerking: |-
+        $AB\colon (2 - 2r, -1 + 2r, 4r)$. Invullen: $2 - 2r - 1 + 2r + 4r = 1 + 4r = 3$, dus $r = \frac12$: het punt $(1, 0, 2)$. Met $r = \frac12$ is dat het midden van $[AB]$.
+
+- id: h3-o20
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    drie vlakken met parameters
+  opgave: |-
+    Gegeven de vlakken $x + y + z = 1$, $x - y + z = 3$ en $x + az = b$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken het gemeenschappelijke punt voor $a = 3$ en $b = 2$.
+      antwoord: |-
+        $(2, -1, 0)$
+      uitwerking: |-
+        Eerste min tweede: $2y = -2$, dus $y = -1$. Dan geeft de eerste $x + z = 2$, en de derde is $x + 3z = 2$. Aftrekken: $2z = 0$, dus $z = 0$ en $x = 2$.
+    - opgave: |-
+        Voor welke $a$ en $b$ hebben de drie vlakken een rechte gemeen? Geef die rechte.
+      antwoord: |-
+        $a = 1$, $b = 2$; $(2, -1, 0) + r\vcr{-1}{0}{1}$
+      uitwerking: |-
+        De eerste twee vlakken snijden volgens de rechte $y = -1$, $x + z = 2$. Het derde vlak bevat die rechte als het hetzelfde zegt als $x + z = 2$: $a = 1$ en $b = 2$. Met $z = r$: $(2 - r, -1, r) = (2, -1, 0) + r\vcr{-1}{0}{1}$.
+    - opgave: |-
+        Voor welke $a$ en $b$ hebben ze geen enkel punt gemeen?
+      antwoord: |-
+        $a = 1$ en $b \neq 2$
+      uitwerking: |-
+        Voor $a \neq 1$ is er altijd één punt: uit $x + z = 2$ en $x + az = b$ volgt $(a - 1)z = b - 2$, met één oplossing. Voor $a = 1$ en $b \neq 2$ staat er $x + z = 2$ en $x + z = b$: strijdig. Het derde vlak is dan evenwijdig met de snijlijn van de eerste twee.
+
+- id: h3-o21
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: vliegroutes
+  opgave: |-
+    Drie vliegtuigen vliegen in rechte lijn, in kilometer, met $t$ in minuten vanaf hetzelfde ogenblik:
+    \[A\colon (0, 0, 8) + t\vcr{4}{3}{0},\qquad B\colon (24, -5, 8) + t\vcr{-1}{5}{0},\qquad C\colon (0, 20, 9) + t\vcr{5}{-1}{0}.\]
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Snijden de routes van $A$ en $B$ elkaar? Waar?
+      antwoord: |-
+        ja, in $(20, 15, 8)$
+      uitwerking: |-
+        Gebruik twee parameters: $4t = 24 - s$, $3t = -5 + 5s$ en $8 = 8$. Uit de eerste: $s = 24 - 4t$. Invullen: $3t = -5 + 120 - 20t$, dus $23t = 115$ en $t = 5$, $s = 4$. Het snijpunt is $(20, 15, 8)$.
+    - opgave: |-
+        Botsen $A$ en $B$?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        $A$ is in het snijpunt na $5$ minuten, $B$ al na $4$ minuten. Ze zijn er niet tegelijk: de routes snijden, maar de vliegtuigen botsen niet.
+    - opgave: |-
+        Wat is de ligging van de routes van $A$ en $C$?
+      antwoord: |-
+        kruisend
+      uitwerking: |-
+        $A$ vliegt op $8$ km hoogte, $C$ op $9$ km: geen gemeenschappelijk punt. De richtingen $\vcr{4}{3}{0}$ en $\vcr{5}{-1}{0}$ zijn niet collineair. De routes kruisen: van boven gezien lijken ze te snijden, maar $C$ vliegt daar $1$ km hoger.
+
+- id: h3-o22
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    kruisende rechten in evenwijdige vlakken
+  opgave: |-
+    Gegeven $l\colon (1, 0, 0) + r\vcr{1}{1}{0}$ en $m\colon (0, 0, 3) + s\vcr{0}{1}{1}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $l$ en $m$ kruisend zijn.
+      antwoord: |-
+        niet collineair, geen gemeenschappelijk punt
+      uitwerking: |-
+        $\vcr{1}{1}{0}$ en $\vcr{0}{1}{1}$ zijn niet collineair. Gelijkstellen: $1 + r = 0$, $r = s$ en $0 = 3 + s$. De eerste twee geven $r = s = -1$, maar de derde vraagt $s = -3$. Geen gemeenschappelijk punt.
+    - opgave: |-
+        Geef een vergelijking van het vlak $\alpha$ door $l$ dat evenwijdig is met $m$, en van het vlak $\beta$ door $m$ dat evenwijdig is met $l$.
+      antwoord: |-
+        $\alpha\colon x - y + z = 1$; $\beta\colon x - y + z = 3$
+      uitwerking: |-
+        Beide vlakken hebben de richtingsvectoren $\vcr{1}{1}{0}$ en $\vcr{0}{1}{1}$. Door $(1, 0, 0)$: $x = 1 + r$, $y = r + s$, $z = s$, dus $y = x - 1 + z$, of $x - y + z = 1$. Door $(0, 0, 3)$ krijg je op dezelfde manier $x - y + z = 3$.
+    - opgave: |-
+        Wat is de ligging van $\alpha$ en $\beta$? Geldt dat voor elk paar kruisende rechten?
+      antwoord: |-
+        strikt evenwijdig; ja
+      uitwerking: |-
+        Zelfde linkerlid, ander rechterlid: strikt evenwijdig. Dat geldt altijd: beide vlakken hebben de twee richtingen van $l$ en $m$ als richtingsvectoren, dus ze zijn evenwijdig. Ze vallen niet samen, want dan zouden $l$ en $m$ in één vlak liggen en elkaar snijden of evenwijdig zijn. Twee kruisende rechten liggen dus altijd in twee evenwijdige vlakken.
+
+- id: h3-o23
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een lichtstraal door een paneel
+  opgave: |-
+    Een driehoekig glazen paneel heeft hoekpunten $(2, 0, 0)$, $(0, 2, 0)$ en $(0, 0, 2)$. Een lichtstraal vertrekt in $O$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef een vergelijking van het vlak van het paneel. Welke punten van dat vlak horen bij het paneel?
+      antwoord: |-
+        $x + y + z = 2$; de punten met $x, y, z \geqslant 0$
+      uitwerking: |-
+        Asafsneden $2$, $2$ en $2$: $x + y + z = 2$. Het paneel is het stuk van het vlak in het eerste octant: de punten met $x \geqslant 0$, $y \geqslant 0$ en $z \geqslant 0$.
+    - opgave: |-
+        De straal heeft de richting $\vcr{2}{3}{2}$. Gaat ze door het paneel? Waar?
+      antwoord: |-
+        ja, in $\bigl(\frac47, \frac67, \frac47\bigr)$
+      uitwerking: |-
+        De straal is $(2t, 3t, 2t)$ met $t \geqslant 0$. $7t = 2$ geeft $t = \frac27$: het punt $\bigl(\frac47, \frac67, \frac47\bigr)$. Alle coördinaten zijn positief: het ligt op het paneel.
+    - opgave: |-
+        En als de straal de richting $\vcr{-1}{2}{3}$ heeft?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        $(-t, 2t, 3t)$: $4t = 2$ geeft $t = \frac12$, het punt $\bigl(-\frac12, 1, \frac32\bigr)$. Het ligt in het vlak, maar $x < 0$: naast het paneel.
+
+- id: h3-o24
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    drie vlakken als een prisma
+  opgave: |-
+    Gegeven de vlakken $\alpha\colon x + y = 1$, $\beta\colon y + z = 1$ en $\gamma\colon x - z = 2$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat geen twee van de vlakken evenwijdig zijn, maar dat de drie vlakken geen enkel punt gemeen hebben.
+      antwoord: |-
+        $\alpha - \beta$ geeft $x - z = 0$, strijdig met $\gamma$
+      uitwerking: |-
+        De drietallen $(1, 1, 0)$, $(0, 1, 1)$ en $(1, 0, -1)$ zijn twee aan twee niet evenredig: geen twee vlakken zijn evenwijdig. Trek $\beta$ af van $\alpha$: $x - z = 0$. Samen met $\gamma\colon x - z = 2$ is dat strijdig. Er is geen gemeenschappelijk punt.
+    - opgave: |-
+        Bereken de drie snijlijnen van twee van de vlakken. Wat stel je vast?
+      antwoord: |-
+        ze zijn evenwijdig, met richting $\vcr{1}{-1}{1}$
+      uitwerking: |-
+        $\alpha \cap \beta$: met $y = r$ is $x = 1 - r$ en $z = 1 - r$, dus $(1, 0, 1) + r\vcr{-1}{1}{-1}$.\par
+        $\alpha \cap \gamma$: met $x = s$ is $y = 1 - s$ en $z = s - 2$, dus $(0, 1, -2) + s\vcr{1}{-1}{1}$.\par
+        $\beta \cap \gamma$: met $z = t$ is $y = 1 - t$ en $x = 2 + t$, dus $(2, 1, 0) + t\vcr{1}{-1}{1}$.\par
+        De drie richtingen zijn collineair: de snijlijnen zijn evenwijdig, zoals de drie opstaande ribben van een driezijdig prisma.
+
+- id: h3-o25
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een scheve vierhoek
+  opgave: |-
+    Gegeven $A(0, 0, 0)$, $B(2, 0, 0)$, $C(2, 2, k)$ en $D(0, 2, 1)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Voor welke $k$ snijden de diagonalen $AC$ en $BD$ elkaar? Geef dan het snijpunt.
+      antwoord: |-
+        $k = 1$; $\bigl(1, 1, \frac12\bigr)$
+      uitwerking: |-
+        $AC\colon (2r, 2r, kr)$ en $BD\colon (2 - 2s, 2s, s)$. Uit $2r = 2 - 2s$ en $2r = 2s$ volgt $r = s = \frac12$. De derde vergelijking vraagt $\frac{k}{2} = \frac12$, dus $k = 1$. Snijpunt $\bigl(1, 1, \frac12\bigr)$.
+    - opgave: |-
+        Leg uit: voor $k \neq 1$ liggen $A$, $B$, $C$ en $D$ niet in één vlak.
+      antwoord: |-
+        anders zouden de diagonalen snijden of evenwijdig zijn
+      uitwerking: |-
+        Stel dat de vier punten in één vlak liggen. Dan liggen $AC$ en $BD$ in dat vlak, en twee rechten in één vlak snijden elkaar of zijn evenwijdig. Evenwijdig zijn ze niet, want $\vcr{2}{2}{k}$ en $\vcr{-2}{2}{1}$ zijn nooit collineair. Ze zouden dus snijden, en dat gebeurt alleen voor $k = 1$. Voor $k \neq 1$ kruisen de diagonalen, en is $ABCD$ een scheve vierhoek.
+
+- id: h3-o26
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een rechte met twee voorwaarden
+  opgave: |-
+    Geef de rechte door $P(1, 1, 1)$ die de $x$-as snijdt en evenwijdig is met het vlak $\alpha\colon x + y + z = 0$. Tip: noem het snijpunt met de $x$-as $(a, 0, 0)$.
+  antwoord: |-
+    $(1, 1, 1) + t\vcr{2}{-1}{-1}$, door $(3, 0, 0)$
+  uitwerking: |-
+    De richting is $\vcr{a - 1}{-1}{-1}$, van $P$ naar $(a, 0, 0)$. Vul de rechte $(1 + t(a - 1),\ 1 - t,\ 1 - t)$ in $\alpha$ in: $3 + t(a - 3) = 0$. De rechte is evenwijdig met $\alpha$ als die vergelijking geen oplossing heeft: $a - 3 = 0$, dus $a = 3$ (dan staat er $3 = 0$). De rechte is $(1, 1, 1) + t\vcr{2}{-1}{-1}$. Ze ligt niet in $\alpha$, want $P$ geeft $3 \neq 0$.
+
 #----------------------------------------------------------------------------------------
 # KOPPEL
 #----------------------------------------------------------------------------------------
@@ -241,7 +885,7 @@
   antwoord: |-
     één punt; een rechte (of vlak); geen gemeenschappelijk punt
   uitwerking: |-
-    Eén oplossing: de vlakken snijden in één punt (voorbeeld~\ref{vb:h3-drievlakken}). Oneindig veel: ze hebben een rechte gemeen (opdracht~\ref{oef:h3-o7}) of vallen samen. Geen: bijvoorbeeld twee evenwijdige vlakken, of drie vlakken die twee aan twee snijden zoals de zijvlakken van een prisma.
+    Eén oplossing: de vlakken snijden in één punt, zoals $x + y + z = 6$, $x - y + 2z = 5$ en $2x + y - z = 1$ in het punt $(1, 2, 3)$ (het laatste voorbeeld van de leerstof). Oneindig veel: ze hebben een rechte gemeen, zoals $x + y + z = 3$, $x - y = 1$ en $3x + y + 2z = 7$, of ze vallen samen. Geen: bijvoorbeeld twee evenwijdige vlakken, of drie vlakken die twee aan twee snijden zoals de zijvlakken van een prisma ($x + y = 1$, $y + z = 1$ en $x - z = 2$).
 
 - id: h3-koppel-2
   soort: koppel
@@ -324,3 +968,39 @@
     $(1, 1, 0)$
   uitwerking: |-
     $x = y$ en $z = y - 1$: $y + y + y - 1 = 2$, dus $y = 1$. Het punt $(1, 1, 0)$.
+
+- id: h3-t5
+  soort: test
+  niveau: 1
+  thema: |-
+    kruisend
+  opgave: |-
+    Onderzoek de ligging van $l\colon (1, 0, 0) + r\vcr{0}{1}{1}$ en $m\colon (0, 1, 2) + s\vcr{1}{0}{1}$.
+  antwoord: |-
+    kruisend
+  uitwerking: |-
+    $\vcr{0}{1}{1}$ en $\vcr{1}{0}{1}$ zijn niet collineair. Gelijkstellen: $1 = s$, $r = 1$ en $r = 2 + s$. Met $r = s = 1$ staat er in de derde $1 = 3$: geen gemeenschappelijk punt. Kruisend.
+
+- id: h3-t6
+  soort: test
+  niveau: 2
+  thema: |-
+    rechte in een vlak
+  opgave: |-
+    Voor welke $a$ ligt de rechte $l\colon (1, a, 2) + r\vcr{1}{2}{1}$ in het vlak $3x - y - z = 0$? Wat is de ligging voor de andere waarden van $a$?
+  antwoord: |-
+    $a = 1$; anders strikt evenwijdig
+  uitwerking: |-
+    Invullen: $3(1 + r) - (a + 2r) - (2 + r) = 1 - a + 0r$. Dat is $0$ voor elke $r$ als $a = 1$: dan ligt $l$ in het vlak. Voor $a \neq 1$ staat er $1 - a = 0$, onwaar: strikt evenwijdig.
+
+- id: h3-t7
+  soort: test
+  niveau: 1
+  thema: |-
+    evenwijdig vlak
+  opgave: |-
+    Geef een vergelijking van het vlak door $P(2, -1, 3)$ dat evenwijdig is met $x - 4y + 2z = 1$.
+  antwoord: |-
+    $x - 4y + 2z = 12$
+  uitwerking: |-
+    Hetzelfde linkerlid; $P$ invullen geeft $2 + 4 + 6 = 12$.

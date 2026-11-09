@@ -108,6 +108,110 @@
       uitwerking: |-
         Neem een punt van het tweede vlak, bijvoorbeeld $(3, 0, 0)$: $\frac{|3 - 9|}{3} = 2$.
 
+- id: h4-hoek
+  soort: kort
+  opgave: |-
+    Scalair product en hoek.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken de hoek tussen $\vcr{2}{-1}{2}$ en $\vcr{1}{2}{-2}$.
+      antwoord: |-
+        $\approx 116{,}4^\circ$
+      uitwerking: |-
+        Scalair product $2 - 2 - 4 = -4$, beide normen $3$. $\cos\theta = -\frac49$, dus $\theta \approx 116{,}4^\circ$. Een negatief scalair product geeft een stompe hoek.
+    - opgave: |-
+        Neem $\vec u = \vcr{1}{2}{2}$ en $\vec v = \vcr{0}{3}{4}$. Bereken $(\vec u + \vec v) \cdot (\vec u - \vec v)$ en vergelijk met $\norm{\vec u}^2 - \norm{\vec v}^2$.
+      antwoord: |-
+        $-16$, gelijk
+      uitwerking: |-
+        $\vec u + \vec v = \vcr{1}{5}{6}$ en $\vec u - \vec v = \vcr{1}{-1}{-2}$: $1 - 5 - 12 = -16$. En $\norm{\vec u}^2 - \norm{\vec v}^2 = 9 - 25 = -16$: hetzelfde, zoals bij $(a + b)(a - b) = a^2 - b^2$.
+
+- id: h4-kubushoek
+  soort: kort
+  opgave: |-
+    Neem een kubus met ribbe $1$, met een hoekpunt in $O$ en ribben langs de assen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken de hoek tussen een lichaamsdiagonaal en een diagonaal van een zijvlak vanuit hetzelfde hoekpunt.
+      antwoord: |-
+        $\approx 35{,}3^\circ$
+      uitwerking: |-
+        Neem $\vcr{1}{1}{1}$ en $\vcr{1}{1}{0}$: $\cos\theta = \frac{2}{\sqrt3 \cdot \sqrt2} = \frac{2}{\sqrt6}$, dus $\theta \approx 35{,}3^\circ$. Samen met de $54{,}7^\circ$ uit het voorbeeld is dat $90^\circ$.
+    - opgave: |-
+        Bereken de scherpe hoek tussen twee lichaamsdiagonalen.
+      antwoord: |-
+        $\approx 70{,}5^\circ$
+      uitwerking: |-
+        Neem $\vcr{1}{1}{1}$ van $O$ naar $(1, 1, 1)$ en $\vcr{-1}{1}{1}$ van $(1, 0, 0)$ naar $(0, 1, 1)$: $\cos\theta = \frac{-1 + 1 + 1}{3} = \frac13$, dus $\theta \approx 70{,}5^\circ$.
+
+- id: h4-loodvlak
+  soort: kort
+  opgave: |-
+    Gegeven $A(2, 0, -1)$ en $B(4, 3, 1)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef een vergelijking van het vlak door $A$ dat loodrecht staat op $AB$.
+      antwoord: |-
+        $2x + 3y + 2z = 2$
+      uitwerking: |-
+        $\overrightarrow{AB} = \vcr{2}{3}{2}$ is een normaalvector: $2(x - 2) + 3y + 2(z + 1) = 0$, of $2x + 3y + 2z = 2$.
+    - opgave: |-
+        Geef een vergelijking van het middelloodvlak van $[AB]$: het vlak door het midden, loodrecht op $AB$.
+      antwoord: |-
+        $4x + 6y + 4z = 21$
+      uitwerking: |-
+        Midden $M\bigl(3, \frac32, 0\bigr)$ en dezelfde normaalvector: $2x + 3y + 2z = 6 + \frac92 + 0 = \frac{21}{2}$. Maal $2$: $4x + 6y + 4z = 21$.
+
+- id: h4-hoekvlakken
+  soort: kort
+  opgave: |-
+    Hoeken tussen vlakken.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken de hoek tussen de vlakken $x + y + z = 1$ en $z = 0$.
+      antwoord: |-
+        $\approx 54{,}7^\circ$
+      uitwerking: |-
+        Normaalvectoren $\vcr{1}{1}{1}$ en $\vcr{0}{0}{1}$: $\cos\theta = \frac{1}{\sqrt3}$, dus $\theta \approx 54{,}7^\circ$.
+    - opgave: |-
+        Voor welke $k$ staan $x + ky - z = 0$ en $2x - y + 3z = 5$ loodrecht op elkaar?
+      antwoord: |-
+        $k = -1$
+      uitwerking: |-
+        $\vcr{1}{k}{-1} \cdot \vcr{2}{-1}{3} = 2 - k - 3 = 0$, dus $k = -1$.
+
+- id: h4-afstandvlak
+  soort: kort
+  opgave: |-
+    Afstand tot een vlak.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken de afstand van $P(3, -1, 2)$ tot het vlak $6x + 2y - 3z = 4$.
+      antwoord: |-
+        $\frac67$
+      uitwerking: |-
+        $\frac{|18 - 2 - 6 - 4|}{\sqrt{36 + 4 + 9}} = \frac{6}{7}$.
+    - opgave: |-
+        Welke punten van de $z$-as liggen op afstand $2$ van het vlak $x + 2y + 2z = 0$?
+      antwoord: |-
+        $(0, 0, 3)$ en $(0, 0, -3)$
+      uitwerking: |-
+        Voor $(0, 0, z)$ is de afstand $\frac{|2z|}{3} = 2$, dus $|z| = 3$: aan elke kant van het vlak een punt.
+
+- id: h4-afstandrechte
+  soort: kort
+  opgave: |-
+    Bereken de afstand van $P(4, 2, 2)$ tot de rechte $l\colon (1, 1, 0) + r\vcr{1}{2}{2}$, en het voetpunt van de loodlijn.
+  antwoord: |-
+    $\sqrt5$; $V(2, 3, 2)$
+  uitwerking: |-
+    Loodvlak door $P$ met normaalvector $\vcr{1}{2}{2}$: $x + 2y + 2z = 4 + 4 + 4 = 12$. Snijden met $l$: $(1 + r) + 2(1 + 2r) + 2 \cdot 2r = 3 + 9r = 12$, dus $r = 1$ en $V(2, 3, 2)$. $|PV| = \sqrt{4 + 1 + 0} = \sqrt5$.
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
@@ -219,6 +323,552 @@
   uitwerking: |-
     Invullen: $a(x_0 + ra) + b(y_0 + rb) + c(z_0 + rc) = d$, dus $r = \frac{d - (ax_0 + by_0 + cz_0)}{a^2 + b^2 + c^2}$. De afstand is $|r|\,\norm{\vec n} = \frac{|ax_0 + by_0 + cz_0 - d|}{a^2 + b^2 + c^2} \cdot \sqrt{a^2 + b^2 + c^2} = \frac{|ax_0 + by_0 + cz_0 - d|}{\sqrt{a^2 + b^2 + c^2}}$.
 
+- id: h4-o9
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    scalair product en hoek (drill)
+  opgave: |-
+    Bereken het scalair product en de hoek tussen de vectoren, op $0{,}1^\circ$ nauwkeurig.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\vcr{1}{0}{0}$ en $\vcr{1}{1}{0}$
+      antwoord: |-
+        $1$; $45^\circ$
+      uitwerking: |-
+        $\cos\theta = \frac{1}{1 \cdot \sqrt2}$, dus $45^\circ$.
+    - opgave: |-
+        $\vcr{1}{2}{2}$ en $\vcr{2}{1}{-2}$
+      antwoord: |-
+        $0$; $90^\circ$
+      uitwerking: |-
+        $2 + 2 - 4 = 0$: loodrecht.
+    - opgave: |-
+        $\vcr{3}{4}{0}$ en $\vcr{4}{3}{0}$
+      antwoord: |-
+        $24$; $\approx 16{,}3^\circ$
+      uitwerking: |-
+        $12 + 12 = 24$, normen $5$ en $5$: $\cos\theta = \frac{24}{25}$, $\theta \approx 16{,}3^\circ$.
+    - opgave: |-
+        $\vcr{1}{-1}{1}$ en $\vcr{-1}{1}{-1}$
+      antwoord: |-
+        $-3$; $180^\circ$
+      uitwerking: |-
+        $-1 - 1 - 1 = -3$, normen $\sqrt3$: $\cos\theta = -1$. Tegengestelde vectoren.
+    - opgave: |-
+        $\vcr{2}{1}{2}$ en $\vcr{1}{0}{0}$
+      antwoord: |-
+        $2$; $\approx 48{,}2^\circ$
+      uitwerking: |-
+        $\cos\theta = \frac{2}{3 \cdot 1}$, $\theta \approx 48{,}2^\circ$.
+    - opgave: |-
+        $\vcr{1}{1}{1}$ en $\vcr{1}{-1}{0}$
+      antwoord: |-
+        $0$; $90^\circ$
+      uitwerking: |-
+        $1 - 1 + 0 = 0$: loodrecht.
+    - opgave: |-
+        $\vcr{1}{2}{3}$ en $\vcr{-2}{0}{1}$
+      antwoord: |-
+        $1$; $\approx 83{,}1^\circ$
+      uitwerking: |-
+        $-2 + 0 + 3 = 1$, normen $\sqrt{14}$ en $\sqrt5$: $\cos\theta = \frac{1}{\sqrt{70}}$, $\theta \approx 83{,}1^\circ$.
+    - opgave: |-
+        $\vcr{0}{3}{4}$ en $\vcr{0}{-3}{4}$
+      antwoord: |-
+        $7$; $\approx 73{,}7^\circ$
+      uitwerking: |-
+        $-9 + 16 = 7$, normen $5$ en $5$: $\cos\theta = \frac{7}{25}$, $\theta \approx 73{,}7^\circ$.
+
+- id: h4-o10
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    loodrecht met een parameter (drill)
+  opgave: |-
+    Bepaal $k$ zodat de vectoren loodrecht op elkaar staan.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\vcr{1}{k}{2}$ en $\vcr{3}{1}{-2}$
+      antwoord: |-
+        $k = 1$
+      uitwerking: |-
+        $3 + k - 4 = 0$, dus $k = 1$.
+    - opgave: |-
+        $\vcr{k}{2}{-1}$ en $\vcr{k}{-1}{2}$
+      antwoord: |-
+        $k = 2$ of $k = -2$
+      uitwerking: |-
+        $k^2 - 2 - 2 = 0$, dus $k^2 = 4$.
+    - opgave: |-
+        $\vcr{2}{k}{k}$ en $\vcr{1}{3}{-1}$
+      antwoord: |-
+        $k = -1$
+      uitwerking: |-
+        $2 + 3k - k = 0$, dus $k = -1$.
+    - opgave: |-
+        $\vcr{k}{1}{0}$ en $\vcr{1}{k}{1}$
+      antwoord: |-
+        $k = 0$
+      uitwerking: |-
+        $k + k + 0 = 0$, dus $k = 0$.
+    - opgave: |-
+        $\vcr{1}{1}{k}$ en $\vcr{k}{1}{1}$
+      antwoord: |-
+        $k = -\frac12$
+      uitwerking: |-
+        $k + 1 + k = 0$, dus $k = -\frac12$.
+    - opgave: |-
+        $\vcr{k}{-1}{3}$ en $\vcr{k}{k}{-2}$
+      antwoord: |-
+        $k = 3$ of $k = -2$
+      uitwerking: |-
+        $k^2 - k - 6 = 0$, of $(k - 3)(k + 2) = 0$.
+
+- id: h4-o11
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    vlak met een normaalvector
+  opgave: |-
+    Geef een vergelijking van het vlak.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Door $(1, 2, 3)$ met normaalvector $\vcr{2}{-1}{4}$.
+      antwoord: |-
+        $2x - y + 4z = 12$
+      uitwerking: |-
+        $2x - y + 4z = d$ met $d = 2 - 2 + 12 = 12$.
+    - opgave: |-
+        Door $O$, loodrecht op de $z$-as.
+      antwoord: |-
+        $z = 0$
+      uitwerking: |-
+        Normaalvector $\vcr{0}{0}{1}$ en $d = 0$: $z = 0$, het $xy$-vlak.
+    - opgave: |-
+        Door $(3, 0, -1)$, loodrecht op de rechte $(1, 1, 1) + r\vcr{1}{-2}{0}$.
+      antwoord: |-
+        $x - 2y = 3$
+      uitwerking: |-
+        De richtingsvector is een normaalvector: $x - 2y + 0z = 3 - 0 = 3$. Een vlak evenwijdig met de $z$-as.
+    - opgave: |-
+        Door $(2, 1, 1)$, evenwijdig met $3x + y - z = 0$.
+      antwoord: |-
+        $3x + y - z = 6$
+      uitwerking: |-
+        Dezelfde normaalvector $\vcr{3}{1}{-1}$: $d = 6 + 1 - 1 = 6$.
+    - opgave: |-
+        Door $A(1, 0, 1)$, loodrecht op $AB$ met $B(3, 1, -1)$.
+      antwoord: |-
+        $2x + y - 2z = 0$
+      uitwerking: |-
+        $\overrightarrow{AB} = \vcr{2}{1}{-2}$ en $d = 2 + 0 - 2 = 0$: het vlak gaat door $O$.
+
+- id: h4-o12
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    fouten: scalair product, hoek en afstand
+  opgave: |-
+    Waar zit de fout? Verbeter.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Tuur schrijft: $\vcr{1}{2}{2} \cdot \vcr{2}{0}{1} = \vcr{2}{0}{2}$.
+      antwoord: |-
+        het scalair product is het getal $4$
+      uitwerking: |-
+        Het scalair product is een getal, geen vector: tel de producten op. $2 + 0 + 2 = 4$.
+    - opgave: |-
+        Jana schrijft: het vlak $z = 2x + 3$ heeft normaalvector $\vcr{2}{0}{1}$.
+      antwoord: |-
+        $\vcr{2}{0}{-1}$
+      uitwerking: |-
+        Breng eerst alles naar één kant: $2x - z = -3$. De normaalvector is $\vcr{2}{0}{-1}$. Controle: $\vcr{1}{0}{2}$ ligt in het vlak (van $(0, 0, 3)$ naar $(1, 0, 5)$), en $\vcr{2}{0}{-1} \cdot \vcr{1}{0}{2} = 0$.
+    - opgave: |-
+        Voor de hoek tussen $\vcr{1}{1}{0}$ en $\vcr{-1}{0}{1}$ schrijft Wout: $\cos\theta = \frac12$, dus $\theta = 60^\circ$.
+      antwoord: |-
+        $\theta = 120^\circ$
+      uitwerking: |-
+        Het scalair product is $-1 + 0 + 0 = -1$, dus $\cos\theta = -\frac12$ en $\theta = 120^\circ$. De scherpe hoek $60^\circ$ is alleen juist voor de hoek tussen twee rechten of twee vlakken.
+    - opgave: |-
+        Voor de afstand van $P(1, 1, 1)$ tot $x + 2y + 2z = 2$ schrijft Elif: $\frac{|1 + 2 + 2 - 2|}{1 + 4 + 4} = \frac13$.
+      antwoord: |-
+        $1$
+      uitwerking: |-
+        In de noemer staat de norm van $\vec n$, met een vierkantswortel: $\frac{3}{\sqrt9} = 1$.
+
+- id: h4-o13
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    hoeken in een balk
+  figuur:
+    opties: |-
+      3.6cm
+    code: |-
+      \begin{tikzpicture}[ruimte,scale=.6,font=\scriptsize]
+        \draw[grijs,dashed] (0,0,0) -- (4,0,0) (0,0,0) -- (0,3,0) (0,0,0) -- (0,0,2);
+        \draw[grijs] (4,0,0) -- (4,3,0) -- (0,3,0) (4,0,0) -- (4,0,2) -- (0,0,2) -- (0,3,2) -- (4,3,2) -- (4,0,2) (4,3,0) -- (4,3,2) (0,3,0) -- (0,3,2);
+        \draw[accent,thick] (0,0,0) -- (4,3,2) (4,0,0) -- (0,3,2);
+        \draw[accent,dashed] (0,0,0) -- (4,3,0);
+        \node[left] at (0,0,0) {$O$}; \node[left] at (4,0,0) {$A$}; \node[below] at (4,3,0) {$B$};
+        \node[right] at (4,3,2) {$F$}; \node[above right] at (0,3,2) {$G$};
+      \end{tikzpicture}
+  opgave: |-
+    De balk heeft een hoekpunt in $O$ en ribben $4$, $3$ en $2$ langs de $x$-, de $y$- en de $z$-as. Bereken op $0{,}1^\circ$ nauwkeurig de hoek tussen
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        de lichaamsdiagonaal $[OF]$ en de ribbe $[OA]$;
+      antwoord: |-
+        $\approx 42{,}0^\circ$
+      uitwerking: |-
+        $\overrightarrow{OF} = \vcr{4}{3}{2}$ en $\overrightarrow{OA} = \vcr{4}{0}{0}$: $\cos\theta = \frac{16}{\sqrt{29} \cdot 4} = \frac{4}{\sqrt{29}}$, $\theta \approx 42{,}0^\circ$.
+    - opgave: |-
+        $[OF]$ en de diagonaal $[OB]$ van het grondvlak (dat is de hoek van $OF$ met het grondvlak);
+      antwoord: |-
+        $\approx 21{,}8^\circ$
+      uitwerking: |-
+        $\overrightarrow{OB} = \vcr{4}{3}{0}$: $\cos\theta = \frac{25}{\sqrt{29} \cdot 5} = \frac{5}{\sqrt{29}}$, $\theta \approx 21{,}8^\circ$. Controle: $\tan\theta = \frac{2}{5}$ in de rechthoekige driehoek $OBF$.
+    - opgave: |-
+        de lichaamsdiagonalen $OF$ en $AG$ (de scherpe hoek).
+      antwoord: |-
+        $\approx 84{,}1^\circ$
+      uitwerking: |-
+        $\overrightarrow{AG} = \vcr{-4}{3}{2}$: $\overrightarrow{OF} \cdot \overrightarrow{AG} = -16 + 9 + 4 = -3$, en beide normen zijn $\sqrt{29}$. $\cos\theta = -\frac{3}{29}$ geeft $95{,}9^\circ$; de scherpe hoek tussen de rechten is $180^\circ - 95{,}9^\circ \approx 84{,}1^\circ$.
+
+- id: h4-o14
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    loodrecht of evenwijdig met een vlak
+  opgave: |-
+    Staat de rechte met richtingsvector $\vec u$ loodrecht op het vlak $\alpha$, is ze evenwijdig met $\alpha$ (of ligt ze erin), of geen van beide?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\vec u = \vcr{2}{-4}{6}$ en $\alpha\colon x - 2y + 3z = 1$
+      antwoord: |-
+        loodrecht
+      uitwerking: |-
+        $\vec u = 2\vcr{1}{-2}{3}$ is collineair met $\vec n$: loodrecht.
+    - opgave: |-
+        $\vec u = \vcr{1}{1}{1}$ en $\alpha\colon x - 2y + z = 0$
+      antwoord: |-
+        evenwijdig (of erin)
+      uitwerking: |-
+        $\vec u \cdot \vec n = 1 - 2 + 1 = 0$: $\vec u$ staat loodrecht op de normaalvector, dus de rechte is evenwijdig met $\alpha$ of ligt erin. Let op: loodrecht op $\vec n$ is evenwijdig met het vlak.
+    - opgave: |-
+        $\vec u = \vcr{1}{2}{0}$ en $\alpha\colon 2x + y + z = 3$
+      antwoord: |-
+        geen van beide
+      uitwerking: |-
+        Niet collineair met $\vcr{2}{1}{1}$, en $\vec u \cdot \vec n = 4 \neq 0$: de rechte snijdt het vlak schuin.
+    - opgave: |-
+        $\vec u = \vcr{0}{0}{5}$ en $\alpha\colon z = 7$
+      antwoord: |-
+        loodrecht
+      uitwerking: |-
+        $\vec n = \vcr{0}{0}{1}$ en $\vec u = 5\vec n$: een verticale rechte op een horizontaal vlak.
+
+- id: h4-o15
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    voetpunt en afstand
+  opgave: |-
+    Gegeven $P(5, -1, 3)$ en het vlak $\alpha\colon 2x - y + 2z = -1$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken het voetpunt $V$ van de loodlijn uit $P$ op $\alpha$.
+      antwoord: |-
+        $V(1, 1, -1)$
+      uitwerking: |-
+        De loodlijn is $(5 + 2r, -1 - r, 3 + 2r)$. Invullen: $10 + 4r + 1 + r + 6 + 4r = 17 + 9r = -1$, dus $r = -2$ en $V(1, 1, -1)$.
+    - opgave: |-
+        Bereken de afstand van $P$ tot $\alpha$ op twee manieren.
+      antwoord: |-
+        $6$
+      uitwerking: |-
+        Met het voetpunt: $|PV| = \sqrt{16 + 4 + 16} = 6$. Met de formule: $\frac{|10 + 1 + 6 + 1|}{\sqrt{4 + 1 + 4}} = \frac{18}{3} = 6$.
+
+- id: h4-o16
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    evenwijdige vlakken op een afstand
+  opgave: |-
+    Gegeven het vlak $\alpha\colon 2x + y - 2z = 4$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef de vlakken die evenwijdig zijn met $\alpha$ en op afstand $3$ ervan liggen.
+      antwoord: |-
+        $2x + y - 2z = 13$ en $2x + y - 2z = -5$
+      uitwerking: |-
+        Een evenwijdig vlak is $2x + y - 2z = d$. Neem het punt $(2, 0, 0)$ van $\alpha$: de afstand tot het vlak is $\frac{|4 - d|}{3} = 3$, dus $|4 - d| = 9$: $d = 13$ of $d = -5$.
+    - opgave: |-
+        Bereken de afstand tussen $\alpha$ en het vlak $4x + 2y - 4z = -1$.
+      antwoord: |-
+        $\frac32$
+      uitwerking: |-
+        Schrijf het tweede vlak met dezelfde coëfficiënten: $2x + y - 2z = -\frac12$. Het punt $(2, 0, 0)$ van $\alpha$ ligt op afstand $\frac{|4 + \frac12|}{3} = \frac32$. Je mag de rechterleden $4$ en $-1$ niet zomaar vergelijken.
+
+- id: h4-o17
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: een zonnepaneel
+  opgave: |-
+    Een zonnepaneel ligt op een dak in het vlak $x + 2z = 4$. De $z$-as wijst verticaal omhoog.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken de hoek tussen het paneel en het horizontale vlak.
+      antwoord: |-
+        $\approx 26{,}6^\circ$
+      uitwerking: |-
+        Normaalvectoren $\vcr{1}{0}{2}$ en $\vcr{0}{0}{1}$: $\cos\theta = \frac{2}{\sqrt5}$, dus $\theta \approx 26{,}6^\circ$.
+    - opgave: |-
+        De zonnestralen hebben de richting $\vcr{1}{2}{-4}$. Bereken de scherpe hoek tussen de stralen en de normaal van het paneel.
+      antwoord: |-
+        $\approx 46{,}9^\circ$
+      uitwerking: |-
+        $\vcr{1}{2}{-4} \cdot \vcr{1}{0}{2} = 1 - 8 = -7$, normen $\sqrt{21}$ en $\sqrt5$. $\cos\theta = \frac{-7}{\sqrt{105}}$ geeft $133{,}1^\circ$; de scherpe hoek is $46{,}9^\circ$.
+    - opgave: |-
+        Het paneel krijgt het meeste licht als de stralen langs de normaal invallen. Geef zo'n richting van de stralen.
+      antwoord: |-
+        $\vcr{-1}{0}{-2}$
+      uitwerking: |-
+        De stralen komen van boven, dus de $z$-coördinaat is negatief: een veelvoud van $\vcr{-1}{0}{-2}$.
+
+- id: h4-o18
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een rechthoekige driehoek
+  opgave: |-
+    Gegeven $A(1, 1, 1)$, $B(3, 2, -1)$ en $C(2, 3, 3)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat driehoek $ABC$ rechthoekig is in $A$.
+      antwoord: |-
+        $\overrightarrow{AB} \cdot \overrightarrow{AC} = 0$
+      uitwerking: |-
+        $\overrightarrow{AB} = \vcr{2}{1}{-2}$ en $\overrightarrow{AC} = \vcr{1}{2}{2}$: $2 + 2 - 4 = 0$.
+    - opgave: |-
+        Bereken de oppervlakte en de hoek in $B$.
+      antwoord: |-
+        $\frac92$; $45^\circ$
+      uitwerking: |-
+        $|AB| = |AC| = 3$, dus de oppervlakte is $\frac{3 \cdot 3}{2} = \frac92$. De driehoek is gelijkbenig en rechthoekig: de hoek in $B$ is $45^\circ$. Controle: $\overrightarrow{BA} \cdot \overrightarrow{BC} = \vcr{-2}{-1}{2} \cdot \vcr{-1}{1}{4} = 2 - 1 + 8 = 9$, en $\cos\theta = \frac{9}{3 \cdot 3\sqrt2} = \frac{1}{\sqrt2}$.
+
+- id: h4-o19
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    hoek tussen twee rechten
+  opgave: |-
+    De hoek tussen twee rechten is de scherpe hoek tussen hun richtingsvectoren, ook als de rechten kruisen. Bereken hem.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $l\colon (1, 0, 0) + r\vcr{1}{1}{0}$ en $m\colon (0, 0, 3) + s\vcr{0}{1}{1}$
+      antwoord: |-
+        $60^\circ$
+      uitwerking: |-
+        $\cos\theta = \frac{1}{\sqrt2 \cdot \sqrt2} = \frac12$: $60^\circ$. Deze rechten kruisen (hoofdstuk 3), maar ze hebben toch een hoek.
+    - opgave: |-
+        $l\colon r\vcr{1}{2}{-1}$ en $m\colon (1, 1, 1) + s\vcr{2}{-1}{3}$
+      antwoord: |-
+        $\approx 70{,}9^\circ$
+      uitwerking: |-
+        Scalair product $2 - 2 - 3 = -3$, normen $\sqrt6$ en $\sqrt{14}$. $\cos\theta = \frac{-3}{\sqrt{84}}$ geeft $109{,}1^\circ$, dus de hoek tussen de rechten is $180^\circ - 109{,}1^\circ = 70{,}9^\circ$.
+
+- id: h4-o20
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: een drone boven een helling
+  opgave: |-
+    Een helling ligt in het vlak $x + 2y + 2z = 12$, in meter. Een drone hangt in $D(6, 2, 10)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoe ver is de drone van de helling?
+      antwoord: |-
+        $6$ m
+      uitwerking: |-
+        $\frac{|6 + 4 + 20 - 12|}{\sqrt{1 + 4 + 4}} = \frac{18}{3} = 6$ m.
+    - opgave: |-
+        Welk punt van de helling ligt het dichtst bij de drone?
+      antwoord: |-
+        $(4, -2, 6)$
+      uitwerking: |-
+        Het voetpunt van de loodlijn $(6 + r, 2 + 2r, 10 + 2r)$: $30 + 9r = 12$, dus $r = -2$ en het punt $(4, -2, 6)$. Controle: $|r| \cdot 3 = 6$.
+
+- id: h4-o21
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    hoek tussen een rechte en een vlak
+  opgave: |-
+    De hoek tussen een rechte en een vlak is $90^\circ$ min de scherpe hoek tussen de rechte en de normaal. Bereken hem op $0{,}1^\circ$ nauwkeurig.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        de rechte $r\vcr{1}{1}{1}$ en het $xy$-vlak
+      antwoord: |-
+        $\approx 35{,}3^\circ$
+      uitwerking: |-
+        Met de normaal $\vcr{0}{0}{1}$: $\cos\varphi = \frac{1}{\sqrt3}$, $\varphi \approx 54{,}7^\circ$. De hoek met het vlak is $90^\circ - 54{,}7^\circ = 35{,}3^\circ$.
+    - opgave: |-
+        de rechte $(1, 0, 0) + r\vcr{2}{-1}{2}$ en het vlak $2x + y - 2z = 0$
+      antwoord: |-
+        $\approx 6{,}4^\circ$
+      uitwerking: |-
+        $\vcr{2}{-1}{2} \cdot \vcr{2}{1}{-2} = -1$, normen $3$ en $3$: $\cos\varphi = -\frac19$, $\varphi \approx 96{,}4^\circ$, scherp $83{,}6^\circ$. De hoek met het vlak is $90^\circ - 83{,}6^\circ = 6{,}4^\circ$: de rechte loopt bijna evenwijdig met het vlak.
+
+- id: h4-o22
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    middelloodvlak
+  opgave: |-
+    Gegeven $A(1, 2, 3)$ en $B(3, 0, -1)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef een vergelijking van het middelloodvlak van $[AB]$.
+      antwoord: |-
+        $x - y - 2z = -1$
+      uitwerking: |-
+        Midden $M(2, 1, 1)$, normaalvector $\overrightarrow{AB} = \vcr{2}{-2}{-4}$, of eenvoudiger $\vcr{1}{-1}{-2}$. $d = 2 - 1 - 2 = -1$.
+    - opgave: |-
+        Toon aan dat je dezelfde vergelijking krijgt uit $|PA|^2 = |PB|^2$ voor $P(x, y, z)$.
+      antwoord: |-
+        uitwerken geeft $x - y - 2z = -1$
+      uitwerking: |-
+        $(x - 1)^2 + (y - 2)^2 + (z - 3)^2 = (x - 3)^2 + y^2 + (z + 1)^2$. De kwadraten $x^2$, $y^2$, $z^2$ vallen weg: $-2x - 4y - 6z + 14 = -6x + 2z + 10$, dus $4x - 4y - 8z = -4$, of $x - y - 2z = -1$. Het middelloodvlak bestaat uit de punten die even ver van $A$ als van $B$ liggen.
+
+- id: h4-o23
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    normaalvector zoeken
+  opgave: |-
+    Gegeven $A(1, 0, 0)$, $B(0, 2, 0)$ en $C(0, 0, 3)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Zoek een normaalvector $\vec n = \vcr{a}{b}{c}$ van het vlak $ABC$ met $\vec n \cdot \overrightarrow{AB} = 0$ en $\vec n \cdot \overrightarrow{AC} = 0$, en geef een vergelijking van het vlak.
+      antwoord: |-
+        $\vec n = \vcr{6}{3}{2}$; $6x + 3y + 2z = 6$
+      uitwerking: |-
+        $\overrightarrow{AB} = \vcr{-1}{2}{0}$ en $\overrightarrow{AC} = \vcr{-1}{0}{3}$. Dus $-a + 2b = 0$ en $-a + 3c = 0$. Kies $a = 6$: $b = 3$ en $c = 2$. Vlak: $6x + 3y + 2z = 6$, met $A$. Dat is ook de asafsnedenvergelijking $\frac{x}{1} + \frac{y}{2} + \frac{z}{3} = 1$, maal $6$.
+    - opgave: |-
+        Bereken de afstand van $O$ tot het vlak $ABC$.
+      antwoord: |-
+        $\frac67$
+      uitwerking: |-
+        $\frac{|0 - 6|}{\sqrt{36 + 9 + 4}} = \frac67$.
+
+- id: h4-o24
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    afstand tussen kruisende rechten
+  opgave: |-
+    De kruisende rechten $l\colon (1, 0, 0) + r\vcr{1}{1}{0}$ en $m\colon (0, 0, 3) + s\vcr{0}{1}{1}$ liggen in de evenwijdige vlakken $\alpha\colon x - y + z = 1$ en $\beta\colon x - y + z = 3$ (hoofdstuk 3).
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken de afstand tussen $\alpha$ en $\beta$.
+      antwoord: |-
+        $\frac{2}{\sqrt3} = \frac{2\sqrt3}{3} \approx 1{,}15$
+      uitwerking: |-
+        Neem $(1, 0, 0)$ in $\alpha$: $\frac{|1 - 3|}{\sqrt3} = \frac{2}{\sqrt3} = \frac{2\sqrt3}{3} \approx 1{,}15$.
+    - opgave: |-
+        Leg uit waarom dat de kortste afstand is tussen een punt van $l$ en een punt van $m$.
+      antwoord: |-
+        elk verbindingslijnstuk loopt van $\alpha$ naar $\beta$
+      uitwerking: |-
+        Een punt van $l$ ligt in $\alpha$ en een punt van $m$ in $\beta$. Het lijnstuk ertussen is minstens zo lang als de afstand tussen de evenwijdige vlakken. Die waarde wordt ook bereikt: de loodlijn op beide vlakken die $l$ en $m$ allebei snijdt, bestaat (projecteer $m$ loodrecht op $\alpha$; dat beeld snijdt $l$). Dit heet de afstand tussen de kruisende rechten.
+
+- id: h4-o25
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    hoeken in een regelmatig viervlak
+  opgave: |-
+    Het viervlak met hoekpunten $A(0, 0, 0)$, $C(2, 2, 0)$, $F(2, 0, 2)$ en $H(0, 2, 2)$ is regelmatig (zie hoofdstuk 1).
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken de hoek tussen de ribben $AC$ en $AF$. Verklaar de uitkomst.
+      antwoord: |-
+        $60^\circ$
+      uitwerking: |-
+        $\vcr{2}{2}{0} \cdot \vcr{2}{0}{2} = 4$ en beide normen zijn $2\sqrt2$: $\cos\theta = \frac{4}{8} = \frac12$. De zijvlakken zijn gelijkzijdige driehoeken.
+    - opgave: |-
+        Geef vergelijkingen van de zijvlakken $ACF$ en $ACH$, en bereken de hoek tussen die twee vlakken.
+      antwoord: |-
+        $x - y - z = 0$ en $x - y + z = 0$; $\approx 70{,}5^\circ$
+      uitwerking: |-
+        Beide gaan door $O = A$. Een normaalvector van $ACF$ staat loodrecht op $\vcr{1}{1}{0}$ en $\vcr{1}{0}{1}$: $\vcr{1}{-1}{-1}$, dus $x - y - z = 0$. Voor $ACH$, loodrecht op $\vcr{1}{1}{0}$ en $\vcr{0}{1}{1}$: $\vcr{1}{-1}{1}$, dus $x - y + z = 0$. $\cos\theta = \frac{|1 + 1 - 1|}{\sqrt3 \cdot \sqrt3} = \frac13$, dus $\theta \approx 70{,}5^\circ$.
+
+- id: h4-o26
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    bewijzen met het scalair product
+  opgave: |-
+    Een parallellogram wordt opgespannen door $\vec a$ en $\vec b$; de diagonalen zijn $\vec a + \vec b$ en $\vec a - \vec b$. Gebruik dat het scalair product distributief is, zoals een gewoon product.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bewijs: in een ruit staan de diagonalen loodrecht op elkaar.
+      antwoord: |-
+        $(\vec a + \vec b) \cdot (\vec a - \vec b) = \norm{\vec a}^2 - \norm{\vec b}^2 = 0$
+      uitwerking: |-
+        Uitwerken: $(\vec a + \vec b) \cdot (\vec a - \vec b) = \vec a \cdot \vec a - \vec a \cdot \vec b + \vec b \cdot \vec a - \vec b \cdot \vec b = \norm{\vec a}^2 - \norm{\vec b}^2$. In een ruit is $\norm{\vec a} = \norm{\vec b}$, dus dat is $0$: de diagonalen staan loodrecht op elkaar.
+    - opgave: |-
+        Bewijs: een parallellogram met even lange diagonalen is een rechthoek.
+      antwoord: |-
+        $\norm{\vec a + \vec b}^2 - \norm{\vec a - \vec b}^2 = 4\,\vec a \cdot \vec b$
+      uitwerking: |-
+        $\norm{\vec a + \vec b}^2 = \norm{\vec a}^2 + 2\,\vec a \cdot \vec b + \norm{\vec b}^2$ en $\norm{\vec a - \vec b}^2 = \norm{\vec a}^2 - 2\,\vec a \cdot \vec b + \norm{\vec b}^2$. Zijn de diagonalen even lang, dan is het verschil $4\,\vec a \cdot \vec b = 0$: $\vec a \perp \vec b$, en het parallellogram heeft een rechte hoek.
+
+- id: h4-o27
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    dichtste punt op twee manieren
+  opgave: |-
+    Welk punt $X$ van de rechte $l\colon (1, 0, 0) + r\vcr{1}{1}{1}$ ligt het dichtst bij $P(3, 2, -2)$?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Los op met een loodvlak.
+      antwoord: |-
+        $X\bigl(\frac53, \frac23, \frac23\bigr)$
+      uitwerking: |-
+        Loodvlak door $P$: $x + y + z = 3$. Snijden met $l$: $1 + 3r = 3$, dus $r = \frac23$ en $X\bigl(\frac53, \frac23, \frac23\bigr)$.
+    - opgave: |-
+        Los op zonder loodvlak: schrijf $|PX|^2$ als functie van $r$ en zoek het minimum. Bereken de kleinste afstand.
+      antwoord: |-
+        $r = \frac23$; $\frac{4\sqrt6}{3} \approx 3{,}27$
+      uitwerking: |-
+        $\overrightarrow{PX} = \vcr{r - 2}{r - 2}{r + 2}$, dus $|PX|^2 = 2(r - 2)^2 + (r + 2)^2 = 3r^2 - 4r + 12$. Een dalparabool met top bij $r = \frac{4}{6} = \frac23$: hetzelfde punt. De kleinste waarde is $3 \cdot \frac49 - \frac83 + 12 = \frac{32}{3}$, dus de afstand is $\sqrt{\frac{32}{3}} = \frac{4\sqrt6}{3} \approx 3{,}27$. In het minimum staat $\overrightarrow{PX}$ loodrecht op $l$: daarom werkt het loodvlak.
+
 #----------------------------------------------------------------------------------------
 # KOPPEL
 #----------------------------------------------------------------------------------------
@@ -282,7 +932,7 @@
   antwoord: |-
     $90^\circ$
   uitwerking: |-
-    $2 + 0 - 2 = 0$: loodrecht.
+    Het scalair product is $2 + 0 - 2 = 0$: de vectoren staan loodrecht op elkaar, de hoek is $90^\circ$.
 
 - id: h4-t2
   soort: test
@@ -319,3 +969,39 @@
     $\frac{3\sqrt2}{2} \approx 2{,}12$
   uitwerking: |-
     Loodvlak $x + y = 3$; snijpunt $2r = 3$, $V\bigl(\frac32, \frac32, 0\bigr)$. $|PV| = \sqrt{\frac94 + \frac94} = \frac{3\sqrt2}{2}$.
+
+- id: h4-t5
+  soort: test
+  niveau: 1
+  thema: |-
+    hoek tussen vlakken
+  opgave: |-
+    Staan de vlakken $x - 2y + z = 3$ en $2x + y + 5z = 0$ loodrecht op elkaar? Bereken anders de hoek ertussen.
+  antwoord: |-
+    nee; $\approx 68{,}1^\circ$
+  uitwerking: |-
+    $\vcr{1}{-2}{1} \cdot \vcr{2}{1}{5} = 2 - 2 + 5 = 5 \neq 0$: niet loodrecht. Normen $\sqrt6$ en $\sqrt{30}$: $\cos\theta = \frac{5}{\sqrt{180}}$, dus $\theta \approx 68{,}1^\circ$.
+
+- id: h4-t6
+  soort: test
+  niveau: 1
+  thema: |-
+    loodrecht met een parameter
+  opgave: |-
+    Voor welke $k$ staan $\vcr{k}{2}{-1}$ en $\vcr{3}{k}{4}$ loodrecht op elkaar?
+  antwoord: |-
+    $k = \frac45$
+  uitwerking: |-
+    $3k + 2k - 4 = 0$, dus $k = \frac45$.
+
+- id: h4-t7
+  soort: test
+  niveau: 2
+  thema: |-
+    voetpunt op een vlak
+  opgave: |-
+    Bereken het voetpunt van de loodlijn uit $P(3, 3, 0)$ op het vlak $x + y - z = 0$, en de afstand van $P$ tot het vlak.
+  antwoord: |-
+    $(1, 1, 2)$; $2\sqrt3$
+  uitwerking: |-
+    Loodlijn $(3 + r, 3 + r, -r)$. Invullen: $6 + 3r = 0$, dus $r = -2$ en het voetpunt is $(1, 1, 2)$. Afstand: $\sqrt{4 + 4 + 4} = 2\sqrt3$. Controle met de formule: $\frac{|6|}{\sqrt3} = 2\sqrt3$.
