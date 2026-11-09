@@ -157,6 +157,38 @@
       uitwerking: |-
         $x^2 + 4x + 5 = (x + 2)^2 + 1 \geqslant 1 > 0$ voor elke $x$ (de discriminant $16 - 20$ is negatief). Dus $\dom f = \R$.
 
+- id: h3-k-teken
+  soort: kort
+  opgave: |-
+    Is de logaritme positief of negatief? Antwoord zonder rekentoestel.
+  lijst: reeks
+  kolommen: 4
+  delen:
+    - opgave: |-
+        $\log_5 0{,}7$
+      antwoord: |-
+        negatief
+      uitwerking: |-
+        Grondtal $5 > 1$, dus stijgend. Omdat $0{,}7 < 1$, is $\log_5 0{,}7 < \log_5 1 = 0$.
+    - opgave: |-
+        $\log_{0{,}3} 0{,}1$
+      antwoord: |-
+        positief
+      uitwerking: |-
+        Grondtal tussen 0 en 1, dus dalend. Omdat $0{,}1 < 1$, is $\log_{0{,}3} 0{,}1 > \log_{0{,}3} 1 = 0$.
+    - opgave: |-
+        $\ln 1{,}01$
+      antwoord: |-
+        positief
+      uitwerking: |-
+        Grondtal $\e > 1$, dus stijgend. Omdat $1{,}01 > 1$, is $\ln 1{,}01 > \ln 1 = 0$ (al is het maar net: ongeveer $0{,}00995$).
+    - opgave: |-
+        $\log_{\frac12} 8$
+      antwoord: |-
+        negatief
+      uitwerking: |-
+        Grondtal tussen 0 en 1, dus dalend. Omdat $8 > 1$, is $\log_{\frac12} 8 < 0$. Exact: $\bigl(\frac12\bigr)^{-3} = 8$, dus $\log_{\frac12} 8 = -3$.
+
 - id: h3-k-def
   soort: kort
   opgave: |-
@@ -209,6 +241,32 @@
       uitwerking: |-
         Voorwaarden: $3x > 0$ en $x + 4 > 0$, samen $x > 0$. Gelijke logaritmen, dus gelijke argumenten: $3x = x + 4$, zodat $x = 2$. Dat voldoet.
 
+- id: h3-k-gelijk
+  soort: kort
+  opgave: |-
+    Los op.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\log_3(2x - 1) = \log_3(x + 4)$
+      antwoord: |-
+        $x = 5$
+      uitwerking: |-
+        Voorwaarden: $2x - 1 > 0$ en $x + 4 > 0$, samen $x > \frac12$. Gelijke logaritmen: $2x - 1 = x + 4$, dus $x = 5$. Dat voldoet.
+    - opgave: |-
+        $\ln\bigl(x^2\bigr) = \ln(5x - 6)$
+      antwoord: |-
+        $x = 2$ of $x = 3$
+      uitwerking: |-
+        Voorwaarden: $x^2 > 0$ (dus $x \neq 0$) en $5x - 6 > 0$, samen $x > \frac65$. Gelijke logaritmen: $x^2 = 5x - 6$, dus $x^2 - 5x + 6 = (x - 2)(x - 3) = 0$. Beide oplossingen voldoen: $x = 2$ of $x = 3$.
+    - opgave: |-
+        $\log_5\bigl(x^2 - 4\bigr) = \log_5(3x)$
+      antwoord: |-
+        $x = 4$
+      uitwerking: |-
+        Voorwaarden: $x^2 - 4 > 0$ en $3x > 0$, samen $x > 2$. Gelijke logaritmen: $x^2 - 4 = 3x$, dus $x^2 - 3x - 4 = (x - 4)(x + 1) = 0$, zodat $x = 4$ of $x = -1$. Alleen $x = 4$ voldoet; voor $x = -1$ bestaat $\log_5(3x)$ niet.
+
 - id: h3-k-twee
   soort: kort
   opgave: |-
@@ -228,6 +286,32 @@
         $x = 2$
       uitwerking: |-
         Voorwaarden: $x > -2$ en $x > 1$, samen $x > 1$. Quotiëntregel: $\log_2 \frac{x + 2}{x - 1} = 2$, dus $\frac{x + 2}{x - 1} = 4$. Dan $x + 2 = 4x - 4$, zodat $x = 2$. Dat voldoet aan $x > 1$.
+
+- id: h3-k-machtong
+  soort: kort
+  opgave: |-
+    Los op zonder rekentoestel.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $2^{x - 1} < 16$
+      antwoord: |-
+        $x < 5$
+      uitwerking: |-
+        $16 = 2^4$, en het grondtal $2 > 1$, dus het teken blijft: $x - 1 < 4$, zodat $x < 5$.
+    - opgave: |-
+        $0{,}5^x \geqslant \frac18$
+      antwoord: |-
+        $x \leqslant 3$
+      uitwerking: |-
+        $\frac18 = 0{,}5^3$, en het grondtal ligt tussen 0 en 1, dus het teken keert om: $x \leqslant 3$.
+    - opgave: |-
+        $\bigl(\frac25\bigr)^{2x} > 1$
+      antwoord: |-
+        $x < 0$
+      uitwerking: |-
+        $1 = \bigl(\frac25\bigr)^0$, en het grondtal ligt tussen 0 en 1, dus het teken keert om: $2x < 0$, zodat $x < 0$.
 
 - id: h3-k-expong
   soort: kort
