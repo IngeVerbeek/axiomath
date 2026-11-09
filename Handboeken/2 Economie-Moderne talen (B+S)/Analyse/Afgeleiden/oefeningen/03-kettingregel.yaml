@@ -312,6 +312,132 @@
       uitwerking: |-
         Productregel: $\dfrac{1}{2\sqrt{x}}\ln x + \sqrt{x} \cdot \dfrac1x = \dfrac{\ln x}{2\sqrt{x}} + \dfrac{2}{2\sqrt{x}} = \dfrac{\ln x + 2}{2\sqrt{x}}$.
 
+- id: h3-sinlim
+  soort: kort
+  opgave: |-
+    Limieten met de sinus. Werk in radialen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $\displaystyle\lim_{h \to 0} \dfrac{\sin 5h}{h}$ en $\displaystyle\lim_{h \to 0} \dfrac{\sin h}{4h}$.
+      antwoord: |-
+        $5$; $\frac14$
+      uitwerking: |-
+        $\dfrac{\sin 5h}{h} = 5 \cdot \dfrac{\sin 5h}{5h} \to 5 \cdot 1 = 5$, want met $u = 5h$ gaat ook $u$ naar $0$. En $\dfrac{\sin h}{4h} = \dfrac14 \cdot \dfrac{\sin h}{h} \to \dfrac14$.
+    - opgave: |-
+        Bereken $\displaystyle\lim_{h \to 0} \dfrac{\tan h}{h}$.
+      antwoord: |-
+        $1$
+      uitwerking: |-
+        $\dfrac{\tan h}{h} = \dfrac{\sin h}{h} \cdot \dfrac{1}{\cos h} \to 1 \cdot \dfrac11 = 1$.
+    - opgave: |-
+        Bereken $\frac{\sin 0{,}01}{0{,}01}$ met je rekentoestel, eerst in radialen en dan in graden. Verklaar het verschil.
+      antwoord: |-
+        $\approx 0{,}99998$; $\approx 0{,}01745$
+      uitwerking: |-
+        In radialen is het quotiënt ongeveer $0{,}99998$, dicht bij $1$. In graden is $0{,}01^\circ = 0{,}01 \cdot \frac{\pi}{180}$ radialen, dus $\sin 0{,}01^\circ \approx 0{,}01 \cdot \frac{\pi}{180}$ en het quotiënt is ongeveer $\frac{\pi}{180} \approx 0{,}01745$. De limiet is alleen $1$ in radialen: daar is de hoek de lengte van de boog.
+
+- id: h3-sin
+  soort: kort
+  opgave: |-
+    De sinus afleiden.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef de raaklijn aan de grafiek van $f(x) = \sin x$ in het punt met $x = \pi$.
+      antwoord: |-
+        $y = -x + \pi$
+      uitwerking: |-
+        $f(\pi) = 0$ en $f'(\pi) = \cos\pi = -1$. Raaklijn: $y = 0 - 1 \cdot (x - \pi) = -x + \pi$.
+    - opgave: |-
+        Leid af: $\sin 7x$, \ $4\sin\frac{x}{3}$ \ en \ $x^2\sin x$.
+      antwoord: |-
+        $7\cos 7x$; $\frac43\cos\frac{x}{3}$; $2x\sin x + x^2\cos x$
+      uitwerking: |-
+        Kettingregel: $\cos 7x \cdot 7$. Veelvoud- en kettingregel: $4\cos\frac{x}{3} \cdot \frac13 = \frac43\cos\frac{x}{3}$. Productregel: $2x\sin x + x^2\cos x$.
+
+- id: h3-exp
+  soort: kort
+  opgave: |-
+    De functie $\e^x$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Leid af: $\e^{4x}$, \ $\e^{x^2 + 1}$ \ en \ $5\e^{-x/2}$.
+      antwoord: |-
+        $4\e^{4x}$; $2x\,\e^{x^2 + 1}$; $-\frac52\e^{-x/2}$
+      uitwerking: |-
+        Telkens blijft $\e^u$ staan, maal $u'$: $\e^{4x} \cdot 4$, \ $\e^{x^2 + 1} \cdot 2x$ \ en \ $5\e^{-x/2} \cdot \bigl(-\frac12\bigr) = -\frac52\e^{-x/2}$.
+    - opgave: |-
+        Geef de raaklijn aan de grafiek van $\e^x$ in het punt $(0, 1)$.
+      antwoord: |-
+        $y = x + 1$
+      uitwerking: |-
+        De afgeleide in $0$ is $\e^0 = 1$: $y = 1 + 1 \cdot (x - 0) = x + 1$.
+    - opgave: |-
+        In welk punt van de grafiek van $\e^x$ heeft de raaklijn richtingscoëfficiënt $2$?
+      antwoord: |-
+        $(\ln 2, 2)$
+      uitwerking: |-
+        $(\e^x)' = \e^x = 2 \iff x = \ln 2$. Het punt is $(\ln 2, \e^{\ln 2}) = (\ln 2, 2)$: daar is de helling gelijk aan de hoogte.
+
+- id: h3-ax
+  soort: kort
+  opgave: |-
+    Leid af.
+  lijst: reeks
+  kolommen: 4
+  delen:
+    - opgave: |-
+        $5^x$
+      antwoord: |-
+        $5^x \ln 5$
+      uitwerking: |-
+        $(a^x)' = a^x \ln a$ met $a = 5$.
+    - opgave: |-
+        $2^{-x}$
+      antwoord: |-
+        $-2^{-x} \ln 2$
+      uitwerking: |-
+        Kettingregel: $2^{-x} \ln 2 \cdot (-1)$.
+    - opgave: |-
+        $4^{3x}$
+      antwoord: |-
+        $3 \cdot 4^{3x} \ln 4$
+      uitwerking: |-
+        $4^{3x} \ln 4 \cdot 3$.
+    - opgave: |-
+        $10^{x^2}$
+      antwoord: |-
+        $2x \cdot 10^{x^2} \ln 10$
+      uitwerking: |-
+        $10^{x^2} \ln 10 \cdot 2x$.
+
+- id: h3-ln
+  soort: kort
+  opgave: |-
+    De natuurlijke logaritme.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Leid af: $\ln(x^2 + 3x)$ \ en \ $\ln x^3$.
+      antwoord: |-
+        $\frac{2x + 3}{x^2 + 3x}$; $\frac{3}{x}$
+      uitwerking: |-
+        $\dfrac{u'}{u}$ met $u = x^2 + 3x$: $\dfrac{2x + 3}{x^2 + 3x}$. En $\ln x^3 = 3\ln x$, met afgeleide $\dfrac{3}{x}$ (of met de kettingregel: $\dfrac{1}{x^3} \cdot 3x^2 = \dfrac{3}{x}$).
+    - opgave: |-
+        Toon op twee manieren aan dat $\ln 7x$ dezelfde afgeleide heeft als $\ln x$.
+      antwoord: |-
+        beide $\frac1x$
+      uitwerking: |-
+        Met de kettingregel: $\dfrac{1}{7x} \cdot 7 = \dfrac1x$. Met een rekenregel voor logaritmen: $\ln 7x = \ln 7 + \ln x$, en de constante $\ln 7$ heeft afgeleide $0$. De grafieken zijn verticaal verschoven, met overal dezelfde helling.
+    - opgave: |-
+        Geef de raaklijn aan de grafiek van $\ln x$ in het punt $(1, 0)$.
+      antwoord: |-
+        $y = x - 1$
+      uitwerking: |-
+        De afgeleide in $1$ is $\frac11 = 1$: $y = 0 + 1 \cdot (x - 1) = x - 1$. Dat is het spiegelbeeld van de raaklijn $y = x + 1$ aan $\e^x$ in $(0, 1)$.
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
