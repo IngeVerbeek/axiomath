@@ -83,7 +83,7 @@
 - id: h1-radialen
   soort: kort
   opgave: |-
-    Zet om, en bereken.
+    Zet om.
   lijst: reeks
   kolommen: 3
   delen:
@@ -112,11 +112,11 @@
       uitwerking: |-
         $\frac{180^\circ}{\pi} \approx 57{,}3^\circ$.
     - opgave: |-
-        de booglengte bij $\frac{3\pi}{4}$ op een cirkel met straal 4
+        $3$ rad naar graden
       antwoord: |-
-        $3\pi \approx 9{,}42$
+        $\approx 171{,}9^\circ$
       uitwerking: |-
-        $4 \cdot \frac{3\pi}{4} = 3\pi \approx 9{,}42$.
+        $3 \cdot \frac{180^\circ}{\pi} \approx 171{,}9^\circ$: iets minder dan $180^\circ$, want $3$ is iets minder dan $\pi$.
 
 - id: h1-sector
   soort: kort
@@ -300,6 +300,208 @@
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3. De volgorde in het boek staat
 # in het hoofdstuk; hieronder dezelfde volgorde.
 #----------------------------------------------------------------------------------------
+
+- id: h1-boog-k
+  soort: kort
+  opgave: |-
+    Bereken.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        De lengte van de boog die een middelpuntshoek van $2{,}5$ rad afsnijdt op een cirkel met straal $4$ cm.
+      antwoord: |-
+        $10$ cm
+      uitwerking: |-
+        $s = r\theta = 4 \cdot 2{,}5 = 10$ cm.
+    - opgave: |-
+        De lengte van de boog bij een middelpuntshoek van $\frac{3\pi}{4}$ op een cirkel met straal $4$ cm.
+      antwoord: |-
+        $3\pi \approx 9{,}42$ cm
+      uitwerking: |-
+        $s = 4 \cdot \frac{3\pi}{4} = 3\pi \approx 9{,}42$ cm.
+    - opgave: |-
+        De middelpuntshoek die op een cirkel met straal $6$ cm een boog van $15$ cm afsnijdt, in radialen en in graden.
+      antwoord: |-
+        $2{,}5$ rad $\approx 143{,}2^\circ$
+      uitwerking: |-
+        Uit $s = r\theta$ volgt $\theta = \frac{s}{r} = \frac{15}{6} = 2{,}5$ rad, en $2{,}5 \cdot \frac{180^\circ}{\pi} \approx 143{,}2^\circ$.
+
+- id: h1-toer-k
+  soort: kort
+  opgave: |-
+    Georiënteerde hoeken.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        In welk kwadrant ligt het punt bij $\frac{5\pi}{3}$? En bij $-\frac{3\pi}{4}$?
+      antwoord: |-
+        het vierde; het derde
+      uitwerking: |-
+        $\frac{5\pi}{3}$ ligt tussen $\frac{3\pi}{2}$ en $2\pi$: het vierde kwadrant. $-\frac{3\pi}{4}$ is een draaiing in wijzerzin over meer dan een kwart en minder dan een halve toer: het derde kwadrant.
+    - opgave: |-
+        Geef een positieve en een negatieve hoek die bij hetzelfde punt horen als $\frac{3\pi}{4}$.
+      antwoord: |-
+        bijvoorbeeld $\frac{11\pi}{4}$ en $-\frac{5\pi}{4}$
+      uitwerking: |-
+        Tel een volle toer op of trek er een af: $\frac{3\pi}{4} + 2\pi = \frac{11\pi}{4}$ en $\frac{3\pi}{4} - 2\pi = -\frac{5\pi}{4}$. Ook elke andere hoek $\frac{3\pi}{4} + k \cdot 2\pi$ is goed.
+    - opgave: |-
+        Welke hoek in $[0, 2\pi[$ hoort bij hetzelfde punt als $\frac{17\pi}{6}$? En als $-\frac{9\pi}{4}$?
+      antwoord: |-
+        $\frac{5\pi}{6}$; $\frac{7\pi}{4}$
+      uitwerking: |-
+        $\frac{17\pi}{6} - 2\pi = \frac{17\pi}{6} - \frac{12\pi}{6} = \frac{5\pi}{6}$. En $-\frac{9\pi}{4} + 2 \cdot 2\pi = -\frac{9\pi}{4} + \frac{16\pi}{4} = \frac{7\pi}{4}$.
+
+- id: h1-assen-k
+  soort: kort
+  opgave: |-
+    Bepaal zonder rekentoestel. Teken het punt op de eenheidscirkel.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\cos\pi$ en $\sin\pi$
+      antwoord: |-
+        $-1$; $0$
+      uitwerking: |-
+        Na een halve toer is $P(-1, 0)$, dus $\cos\pi = -1$ en $\sin\pi = 0$.
+    - opgave: |-
+        $\sin\bigl(-\frac{\pi}{2}\bigr)$
+      antwoord: |-
+        $-1$
+      uitwerking: |-
+        Een kwart toer in wijzerzin: $P(0, -1)$, dus $\sin\bigl(-\frac{\pi}{2}\bigr) = -1$.
+    - opgave: |-
+        $\tan 3\pi$
+      antwoord: |-
+        $0$
+      uitwerking: |-
+        $3\pi = \pi + 2\pi$, dus $P(-1, 0)$ en $\tan 3\pi = \frac{0}{-1} = 0$.
+    - opgave: |-
+        $\cos\frac{5\pi}{2}$ en $\tan\frac{5\pi}{2}$
+      antwoord: |-
+        $0$; bestaat niet
+      uitwerking: |-
+        $\frac{5\pi}{2} = \frac{\pi}{2} + 2\pi$, dus $P(0, 1)$: $\cos\frac{5\pi}{2} = 0$, en de tangens bestaat niet omdat de noemer $0$ is.
+    - opgave: |-
+        het teken van $\sin 6$ en van $\cos 6$
+      antwoord: |-
+        $\sin 6 < 0$, $\cos 6 > 0$
+      uitwerking: |-
+        $\frac{3\pi}{2} \approx 4{,}71 < 6 < 2\pi \approx 6{,}28$: het punt ligt in het vierde kwadrant, dus $\sin 6 < 0$ en $\cos 6 > 0$.
+
+- id: h1-ident-k
+  soort: kort
+  opgave: |-
+    Bewijs (voor alle $x$ waarvoor beide leden bestaan).
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $(1 - \cos x)(1 + \cos x) = \sin^2 x$
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Werk het product uit: $(1 - \cos x)(1 + \cos x) = 1 - \cos^2 x = \sin^2 x$, met de grondformule.
+    - opgave: |-
+        $\sin^2 x - \cos^2 x = 1 - 2\cos^2 x$
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Vervang $\sin^2 x$ door $1 - \cos^2 x$: $\sin^2 x - \cos^2 x = 1 - \cos^2 x - \cos^2 x = 1 - 2\cos^2 x$.
+    - opgave: |-
+        $\dfrac{\sin^2 x}{1 + \cos x} = 1 - \cos x$
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Het linkerlid bestaat als $\cos x \neq -1$. Dan is $\dfrac{\sin^2 x}{1 + \cos x} = \dfrac{1 - \cos^2 x}{1 + \cos x} = \dfrac{(1 - \cos x)(1 + \cos x)}{1 + \cos x} = 1 - \cos x$.
+
+- id: h1-tabel-k
+  soort: kort
+  opgave: |-
+    Bereken exact.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\cos^2\frac{\pi}{6} - \sin^2\frac{\pi}{6}$
+      antwoord: |-
+        $\frac12$
+      uitwerking: |-
+        $\bigl(\frac{\sqrt3}{2}\bigr)^2 - \bigl(\frac12\bigr)^2 = \frac34 - \frac14 = \frac12$.
+    - opgave: |-
+        $\dfrac{\sin\frac{\pi}{3}}{1 + \cos\frac{\pi}{3}}$
+      antwoord: |-
+        $\frac{\sqrt3}{3}$
+      uitwerking: |-
+        $\dfrac{\sqrt3/2}{1 + 1/2} = \dfrac{\sqrt3/2}{3/2} = \dfrac{\sqrt3}{3}$.
+    - opgave: |-
+        $\cos 0 + 2\sin\frac{\pi}{2}\tan\frac{\pi}{4}$
+      antwoord: |-
+        $3$
+      uitwerking: |-
+        $1 + 2 \cdot 1 \cdot 1 = 3$.
+    - opgave: |-
+        $\sqrt2\cos\frac{\pi}{4} - \tan^2\frac{\pi}{3}$
+      antwoord: |-
+        $-2$
+      uitwerking: |-
+        $\sqrt2 \cdot \frac{\sqrt2}{2} - (\sqrt3)^2 = 1 - 3 = -2$.
+
+- id: h1-tegen-k
+  soort: kort
+  opgave: |-
+    Bepaal exact, of vereenvoudig.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\cos\bigl(-\frac{\pi}{4}\bigr)$
+      antwoord: |-
+        $\frac{\sqrt2}{2}$
+      uitwerking: |-
+        $\cos\bigl(-\frac{\pi}{4}\bigr) = \cos\frac{\pi}{4} = \frac{\sqrt2}{2}$.
+    - opgave: |-
+        $\sin\bigl(-\frac{\pi}{6}\bigr)$
+      antwoord: |-
+        $-\frac12$
+      uitwerking: |-
+        $\sin\bigl(-\frac{\pi}{6}\bigr) = -\sin\frac{\pi}{6} = -\frac12$.
+    - opgave: |-
+        $\tan\bigl(-\frac{\pi}{6}\bigr)$
+      antwoord: |-
+        $-\frac{\sqrt3}{3}$
+      uitwerking: |-
+        $\tan\bigl(-\frac{\pi}{6}\bigr) = -\tan\frac{\pi}{6} = -\frac{\sqrt3}{3}$.
+    - opgave: |-
+        $\cos(-x)\sin x + \sin(-x)\cos x$
+      antwoord: |-
+        $0$
+      uitwerking: |-
+        $\cos x \sin x + (-\sin x)\cos x = 0$.
+
+- id: h1-compl-k
+  soort: kort
+  opgave: |-
+    Complementaire hoeken.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Schrijf $\cos\frac{2\pi}{5}$ als de sinus van een hoek tussen $0$ en $\frac{\pi}{2}$.
+      antwoord: |-
+        $\sin\frac{\pi}{10}$
+      uitwerking: |-
+        $\cos\frac{2\pi}{5} = \sin\bigl(\frac{\pi}{2} - \frac{2\pi}{5}\bigr) = \sin\bigl(\frac{5\pi}{10} - \frac{4\pi}{10}\bigr) = \sin\frac{\pi}{10}$.
+    - opgave: |-
+        Vereenvoudig $\dfrac{\cos\bigl(\frac{\pi}{2} - x\bigr)}{\sin\bigl(\frac{\pi}{2} - x\bigr)}$.
+      antwoord: |-
+        $\tan x$
+      uitwerking: |-
+        Teller en noemer zijn $\sin x$ en $\cos x$, dus het quotiënt is $\dfrac{\sin x}{\cos x} = \tan x$.
+    - opgave: |-
+        Bereken exact $\sin^2\frac{\pi}{10} + \sin^2\frac{2\pi}{5}$.
+      antwoord: |-
+        $1$
+      uitwerking: |-
+        De hoeken zijn complementair: $\frac{\pi}{2} - \frac{2\pi}{5} = \frac{\pi}{10}$, dus $\sin\frac{2\pi}{5} = \cos\frac{\pi}{10}$. De som is $\sin^2\frac{\pi}{10} + \cos^2\frac{\pi}{10} = 1$, door de grondformule.
 
 - id: h1-o1
   soort: opdracht
