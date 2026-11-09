@@ -359,6 +359,181 @@
       uitwerking: |-
         $2z - (1 - i)z = -i$, dus $(1 + i)z = -i$ en $z = \dfrac{-i}{1 + i} = \dfrac{-i(1 - i)}{2} = \dfrac{-i + i^2}{2} = -\tfrac12 - \tfrac12 i$.
 
+- id: h1-vectoren
+  soort: kort
+  opgave: |-
+    Gegeven: $z = 1 + 2i$ en $w = 3 - i$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $z + w$, \ $w - z$, \ $-w$, \ $-2z$ \ en \ $z + \tfrac12 w$.
+      antwoord: |-
+        $4 + i$; \ $2 - 3i$; \ $-3 + i$; \ $-2 - 4i$; \ $\tfrac52 + \tfrac32 i$
+      uitwerking: |-
+        $z + w = (1 + 3) + (2 - 1)i = 4 + i$. \ $w - z = (3 - 1) + (-1 - 2)i = 2 - 3i$. \ $-w = -3 + i$. \ $-2z = -2 - 4i$. \ $z + \tfrac12 w = 1 + 2i + \tfrac32 - \tfrac12 i = \tfrac52 + \tfrac32 i$.
+    - opgave: |-
+        Stel $z$, $w$ en de vijf uitkomsten voor in het vlak van Gauss. Waar zie je in de figuur een parallellogram?
+      antwoord: |-
+        zie de uitgewerkte oplossingen
+      uitwerking: |-
+        $z + w$ is de vierde hoek van het parallellogram met hoekpunten $0$, $z$ en $w$. De pijl van $z$ naar $w$ is even lang en even gericht als die van $0$ naar $w - z$. $-w$ is het spiegelbeeld van $w$ om de oorsprong, en $-2z$ ligt op de rechte door $0$ en $z$, aan de andere kant, twee keer zo ver.\par
+        \begin{tikzpicture}[x=.5cm,y=.5cm]
+          \gaussstap{2}{-3}{4}{-4}{3}
+          \draw[hulplijn] (1,2) -- (4,1) -- (3,-1);
+          \cpunt[above left]{1}{2}{$z$}
+          \cpunt[below right]{3}{-1}{$w$}
+          \cpunt[right]{4}{1}{$z + w$}
+          \cpunt[right]{2}{-3}{$w - z$}
+          \cpunt[above]{-3}{1}{$-w$}
+          \cpunt[left]{-2}{-4}{$-2z$}
+          \cpunt[above right]{2.5}{1.5}{$z + \tfrac12 w$}
+        \end{tikzpicture}
+
+- id: h1-maali
+  soort: kort
+  opgave: |-
+    Vermenigvuldig met $i$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $iz$ voor $z = 4$, \ $z = -1 + 3i$ \ en \ $z = 2 - 5i$.
+      antwoord: |-
+        $4i$; \ $-3 - i$; \ $5 + 2i$
+      uitwerking: |-
+        $i \cdot 4 = 4i$. \ $i(-1 + 3i) = -i + 3i^2 = -3 - i$. \ $i(2 - 5i) = 2i - 5i^2 = 5 + 2i$.
+    - opgave: |-
+        Stel de drie getallen en hun product met $i$ voor in het vlak van Gauss. Draait elk punt een kwartslag om de oorsprong?
+      antwoord: |-
+        ja, telkens een kwartslag tegen de wijzers van de klok in
+      uitwerking: |-
+        Elk punt draait een kwartslag tegen de wijzers van de klok in, en blijft even ver van de oorsprong.\par
+        \begin{tikzpicture}[x=.45cm,y=.45cm]
+          \gaussleeg{-3}{5}{-5}{4}
+          \draw[hulplijn] (4,0) -- (0,0) -- (0,4);
+          \draw[hulplijn] (-1,3) -- (0,0) -- (-3,-1);
+          \draw[hulplijn] (2,-5) -- (0,0) -- (5,2);
+          \cpunt[below]{4}{0}{$4$}
+          \cpunt[right]{0}{4}{$4i$}
+          \cpunt[left]{-1}{3}{$-1 + 3i$}
+          \cpunt[left]{-3}{-1}{$-3 - i$}
+          \cpunt[right]{2}{-5}{$2 - 5i$}
+          \cpunt[above]{5}{2}{$5 + 2i$}
+        \end{tikzpicture}
+    - opgave: |-
+        Welk getal $z$ geeft na vermenigvuldiging met $i$ het getal $6 + i$?
+      antwoord: |-
+        $1 - 6i$
+      uitwerking: |-
+        Draai terug: $iz = 6 + i$, dus $z = \dfrac{6 + i}{i}$. Zonder delen: zoek $z = a + bi$ met $i(a + bi) = -b + ai = 6 + i$, dus $b = -6$ en $a = 1$. Controle: $i(1 - 6i) = i - 6i^2 = 6 + i$.
+
+- id: h1-conj
+  soort: kort
+  opgave: |-
+    Bepaal de toegevoegde.
+  lijst: reeks
+  kolommen: 4
+  delen:
+    - opgave: |-
+        $-1 + 4i$
+      antwoord: |-
+        $-1 - 4i$
+      uitwerking: |-
+        Het imaginair deel verandert van teken: $-1 - 4i$.
+    - opgave: |-
+        $5i$
+      antwoord: |-
+        $-5i$
+      uitwerking: |-
+        $5i = 0 + 5i$, dus $\conj{5i} = -5i$.
+    - opgave: |-
+        $-3$
+      antwoord: |-
+        $-3$
+      uitwerking: |-
+        Een reëel getal is zijn eigen toegevoegde: imaginair deel 0.
+    - opgave: |-
+        $z$, als $\conj{z} = 2 - 7i$
+      antwoord: |-
+        $z = 2 + 7i$
+      uitwerking: |-
+        Neem nog eens de toegevoegde: $z = \conj{\conj{z}} = 2 + 7i$.
+
+- id: h1-modulus
+  soort: kort
+  opgave: |-
+    Bereken de modulus.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $5 - 12i$
+      antwoord: |-
+        $13$
+      uitwerking: |-
+        $\sqrt{25 + 144} = \sqrt{169} = 13$.
+    - opgave: |-
+        $-7$
+      antwoord: |-
+        $7$
+      uitwerking: |-
+        $\sqrt{(-7)^2 + 0^2} = 7$: de absolute waarde.
+    - opgave: |-
+        $3i$
+      antwoord: |-
+        $3$
+      uitwerking: |-
+        $\sqrt{0^2 + 3^2} = 3$.
+    - opgave: |-
+        $1 + i$
+      antwoord: |-
+        $\sqrt2$
+      uitwerking: |-
+        $\sqrt{1 + 1} = \sqrt2$.
+    - opgave: |-
+        $-2 - 6i$
+      antwoord: |-
+        $2\sqrt{10}$
+      uitwerking: |-
+        $\sqrt{4 + 36} = \sqrt{40} = 2\sqrt{10}$.
+    - opgave: |-
+        $\tfrac12 - \tfrac{\sqrt3}{2} i$
+      antwoord: |-
+        $1$
+      uitwerking: |-
+        $\sqrt{\tfrac14 + \tfrac34} = \sqrt1 = 1$: het getal ligt op de cirkel met straal 1.
+
+- id: h1-omgekeerde
+  soort: kort
+  opgave: |-
+    Bereken het omgekeerde, en controleer.
+  lijst: reeks
+  kolommen: 4
+  delen:
+    - opgave: |-
+        $1 - i$
+      antwoord: |-
+        $\tfrac12 + \tfrac12 i$
+      uitwerking: |-
+        $\dfrac{1 + i}{1 + 1} = \tfrac12 + \tfrac12 i$. Controle: $(1 - i)(1 + i) = 2$, en $\tfrac22 = 1$.
+    - opgave: |-
+        $2 + 3i$
+      antwoord: |-
+        $\tfrac{2}{13} - \tfrac{3}{13} i$
+      uitwerking: |-
+        $\dfrac{2 - 3i}{4 + 9} = \tfrac{2}{13} - \tfrac{3}{13} i$. Controle: $(2 + 3i)(2 - 3i) = 13$, en $\tfrac{13}{13} = 1$.
+    - opgave: |-
+        $-4i$
+      antwoord: |-
+        $\tfrac14 i$
+      uitwerking: |-
+        $\dfrac{\conj{-4i}}{16} = \dfrac{4i}{16} = \tfrac14 i$. Controle: $-4i \cdot \tfrac14 i = -i^2 = 1$.
+    - opgave: |-
+        $\sqrt3 + i$
+      antwoord: |-
+        $\tfrac{\sqrt3}{4} - \tfrac14 i$
+      uitwerking: |-
+        $\dfrac{\sqrt3 - i}{3 + 1} = \tfrac{\sqrt3}{4} - \tfrac14 i$. Controle: $(\sqrt3 + i)(\sqrt3 - i) = 4$, en $\tfrac44 = 1$.
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------

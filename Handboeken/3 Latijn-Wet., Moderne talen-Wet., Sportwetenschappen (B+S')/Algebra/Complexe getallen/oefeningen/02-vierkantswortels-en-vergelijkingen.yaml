@@ -293,6 +293,76 @@
       uitwerking: |-
         $8 - 24 + 26 - 10 = 0$. Delen geeft $z^3 - 6z^2 + 13z - 10 = (z - 2)(z^2 - 4z + 5)$. De tweede factor heeft $D = 16 - 20 = -4$, dus $z = 2$ of $z = \frac{4 \pm 2i}{2} = 2 \pm i$.
 
+- id: h2-product0
+  soort: kort
+  opgave: |-
+    Los op in $\C$.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $(z - 2i)(z + 1 + i) = 0$
+      antwoord: |-
+        $2i$, $-1 - i$
+      uitwerking: |-
+        $z - 2i = 0$ of $z + 1 + i = 0$, dus $z = 2i$ of $z = -1 - i$.
+    - opgave: |-
+        $z(3z + 6i) = 0$
+      antwoord: |-
+        $0$, $-2i$
+      uitwerking: |-
+        $z = 0$ of $3z = -6i$, dus $z = 0$ of $z = -2i$.
+    - opgave: |-
+        $(iz - 1)(2z + 4 - i) = 0$
+      antwoord: |-
+        $-i$, $-2 + \tfrac12 i$
+      uitwerking: |-
+        $iz = 1$ geeft $z = \dfrac{1}{i} = -i$. En $2z = -4 + i$ geeft $z = -2 + \tfrac12 i$.
+
+- id: h2-conj
+  soort: kort
+  opgave: |-
+    Gebruik de rekenregels voor de toegevoegde.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Gegeven: $(3 + 2i)(1 - 4i) = 11 - 10i$. Bereken $(3 - 2i)(1 + 4i)$ zonder de haakjes uit te werken.
+      antwoord: |-
+        $11 + 10i$
+      uitwerking: |-
+        $3 - 2i$ en $1 + 4i$ zijn de toegevoegden van $3 + 2i$ en $1 - 4i$. Het product van de toegevoegden is de toegevoegde van het product: $\conj{11 - 10i} = 11 + 10i$.
+    - opgave: |-
+        Gegeven: $(1 + 2i)^3 = -11 - 2i$. Bereken $(1 - 2i)^3$.
+      antwoord: |-
+        $-11 + 2i$
+      uitwerking: |-
+        $(1 - 2i)^3 = \bigl(\conj{1 + 2i}\bigr)^3 = \conj{(1 + 2i)^3} = \conj{-11 - 2i} = -11 + 2i$.
+    - opgave: |-
+        Toon aan: $\conj{z - w} = \conj{z} - \conj{w}$.
+      antwoord: |-
+        zie de uitgewerkte oplossingen
+      uitwerking: |-
+        Neem $z = a + bi$ en $w = c + di$. Dan is $z - w = (a - c) + (b - d)i$, dus $\conj{z - w} = (a - c) - (b - d)i = (a - bi) - (c - di) = \conj{z} - \conj{w}$.
+
+- id: h2-hoger3
+  soort: kort
+  opgave: |-
+    Los op in $\C$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $z^4 + 3z^2 - 4 = 0$
+      antwoord: |-
+        $\pm 1$, $\pm 2i$
+      uitwerking: |-
+        Stel $t = z^2$: $t^2 + 3t - 4 = 0$, met $D = 9 + 16 = 25$, dus $t = \frac{-3 \pm 5}{2}$: $t = 1$ of $t = -4$. Dan is $z^2 = 1$ of $z^2 = -4$, dus $z = \pm 1$ of $z = \pm 2i$.
+    - opgave: |-
+        $z^3 + z^2 + 3z - 5 = 0$, als je weet dat $-1 + 2i$ een oplossing is
+      antwoord: |-
+        $-1 + 2i$, $-1 - 2i$, $1$
+      uitwerking: |-
+        De coëfficiënten zijn reëel, dus ook $-1 - 2i$ is een oplossing. Samen geven ze de factor $(z + 1 - 2i)(z + 1 + 2i) = (z + 1)^2 - (2i)^2 = z^2 + 2z + 5$. Dan is $z^3 + z^2 + 3z - 5 = (z^2 + 2z + 5)(z + c)$, en de constante termen geven $5c = -5$, dus $c = -1$. De oplossingen zijn $-1 + 2i$, $-1 - 2i$ en $1$. Controle: $(z^2 + 2z + 5)(z - 1) = z^3 + z^2 + 3z - 5$.
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------

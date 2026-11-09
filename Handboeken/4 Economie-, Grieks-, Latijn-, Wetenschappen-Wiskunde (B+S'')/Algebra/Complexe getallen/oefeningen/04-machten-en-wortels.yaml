@@ -274,6 +274,25 @@
       uitwerking: |-
         Modulus 1 en argument $\frac{\pi}{6} = \frac{2\pi}{12}$: $n = 12$.
 
+- id: h4-veelhoek
+  soort: kort
+  opgave: |-
+    Regelmatige veelhoeken en machtswortels.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een vierkant heeft middelpunt 0 en een hoekpunt in $-2 + i$. Bepaal de andere hoekpunten, en de vergelijking $z^4 = w$ waarvan de hoekpunten de oplossingen zijn.
+      antwoord: |-
+        $-1 - 2i$, $2 - i$, $1 + 2i$; \ $z^4 = -7 - 24i$
+      uitwerking: |-
+        Draai telkens een kwartslag, dus vermenigvuldig met $i$: $(-2 + i)i = -1 - 2i$, \ $(-1 - 2i)i = 2 - i$ \ en \ $(2 - i)i = 1 + 2i$. Verder is $(-2 + i)^2 = 4 - 4i + i^2 = 3 - 4i$ en $(3 - 4i)^2 = 9 - 24i - 16 = -7 - 24i$, dus $z^4 = -7 - 24i$.
+    - opgave: |-
+        De oplossingen van $z^5 = 1 + i$ vormen een regelmatige veelhoek. Hoeveel hoekpunten heeft die veelhoek, en wat is de straal van de omgeschreven cirkel, op drie decimalen?
+      antwoord: |-
+        5 hoekpunten; straal $\sqrt[10]{2} \approx 1{,}072$
+      uitwerking: |-
+        Er zijn vijf vijfdemachtswortels: een regelmatige vijfhoek. Ze hebben modulus $\sqrt[5]{|1 + i|} = \sqrt[5]{\sqrt2} = \sqrt[10]{2} \approx 1{,}072$: dat is de straal.
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
