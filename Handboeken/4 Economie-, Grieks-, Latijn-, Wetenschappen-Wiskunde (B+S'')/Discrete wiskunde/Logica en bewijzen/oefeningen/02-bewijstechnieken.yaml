@@ -69,6 +69,50 @@
       uitwerking: |-
         $n^3 - n = (n - 1)n(n + 1)$. Van twee opeenvolgende getallen is er één even; van drie opeenvolgende getallen is er één deelbaar door 3. Dus is het product deelbaar door 2 en door 3, en dus door 6. Dat is een bewijs.
 
+- id: h2-definities
+  soort: kort
+  opgave: |-
+    Waar of vals? Verklaar met de definitie ($k \in \Z$).
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $7 \deelt 91$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $91 = 7 \cdot 13$.
+    - opgave: |-
+        $6 \deelt 74$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: $6 \cdot 12 = 72$ en $6 \cdot 13 = 78$, dus er is geen geheel $k$ met $74 = 6k$.
+    - opgave: |-
+        $-3 \deelt 27$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $27 = (-3) \cdot (-9)$, en $-9$ is geheel.
+    - opgave: |-
+        $5 \deelt 0$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $0 = 5 \cdot 0$.
+    - opgave: |-
+        $0 \deelt 5$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: $0 \cdot k = 0 \neq 5$ voor elke $k$.
+    - opgave: |-
+        $2k + 7$ is oneven
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $2k + 7 = 2(k + 3) + 1$, met $k + 3$ geheel.
+
 - id: h2-lezen
   soort: kort
   opgave: |-
@@ -91,13 +135,29 @@
       antwoord: |-
         bewijs
       uitwerking: |-
-        $2a + (2b + 1) = 2(a + b) + 1$: oneven.
+        Neem een even getal $m = 2a$ en een oneven getal $n = 2b + 1$, met $a, b \in \Z$. Dan is\\
+        $m + n = 2a + 2b + 1 = 2(a + b) + 1$,\\
+        met $a + b$ geheel. Dus $m + n$ is oneven.
     - opgave: |-
         De som van drie opeenvolgende gehele getallen is deelbaar door 3.
       antwoord: |-
         bewijs
       uitwerking: |-
-        $(n - 1) + n + (n + 1) = 3n$, en dat is deelbaar door 3.
+        Noem het middelste getal $n$. De drie getallen zijn $n - 1$, $n$ en $n + 1$, en hun som is\\
+        $(n - 1) + n + (n + 1) = 3n$,\\
+        met $n$ geheel. Dus $3$ deelt de som.
+
+- id: h2-gevallen
+  soort: kort
+  opgave: |-
+    Bewijs met twee gevallen: voor elk geheel getal $n$ is $n^2 + 3n + 1$ oneven.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    $n^2 + 3n + 1 = n(n + 3) + 1$. We tonen aan dat $n(n + 3)$ even is.\\
+    \textit{$n$ even}, $n = 2k$: $n(n + 3) = 2k(2k + 3) = 2 \cdot k(2k + 3)$ is even.\\
+    \textit{$n$ oneven}, $n = 2k + 1$: dan is $n + 3 = 2k + 4 = 2(k + 2)$ even, en $n(n + 3) = 2(2k + 1)(k + 2)$ is even.\\
+    In beide gevallen is $n(n + 3) = 2m$ met $m$ geheel, dus $n^2 + 3n + 1 = 2m + 1$ is oneven. Elk geheel getal is even of oneven, dus het geldt voor alle $n$.
 
 - id: h2-contrapositie
   soort: kort
@@ -106,7 +166,30 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Contrapositie: als $n$ even is, dan is $n^2$ even. Met $n = 2k$ is $n^2 = 4k^2 = 2 \cdot 2k^2$: even.
+    Contrapositie: als $n$ even is, dan is $n^2$ even.\\
+    Stel $n = 2k$ met $k \in \Z$. Dan is $n^2 = 4k^2 = 2 \cdot 2k^2$, met $2k^2$ geheel: even.\\
+    De contrapositie is bewezen, dus ook de oorspronkelijke uitspraak.
+
+- id: h2-contra-formuleer
+  soort: kort
+  opgave: |-
+    Formuleer de contrapositie, en bewijs ze.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Als $3n + 1$ even is, dan is $n$ oneven.
+      antwoord: |-
+        als $n$ even is, dan is $3n + 1$ oneven
+      uitwerking: |-
+        Contrapositie: \textit{als $n$ even is, dan is $3n + 1$ oneven}.\\
+        Stel $n = 2k$. Dan is $3n + 1 = 6k + 1 = 2 \cdot 3k + 1$: oneven.
+    - opgave: |-
+        Als $n^3$ even is, dan is $n$ even.
+      antwoord: |-
+        als $n$ oneven is, dan is $n^3$ oneven
+      uitwerking: |-
+        Contrapositie: \textit{als $n$ oneven is, dan is $n^3$ oneven}.\\
+        Stel $n = 2k + 1$. Dan is $n^3 = 8k^3 + 12k^2 + 6k + 1 = 2(4k^3 + 6k^2 + 3k) + 1$: oneven.
 
 - id: h2-ongerijmde
   soort: kort
@@ -115,7 +198,68 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Stel uit het ongerijmde dat $g$ het grootste even getal is. Dan is $g + 2$ ook even, en $g + 2 > g$. Tegenspraak: er is geen grootste even getal.
+    Stel uit het ongerijmde dat $g$ het grootste even getal is. Dan is $g = 2k$, dus $g + 2 = 2(k + 1)$ is ook even, en $g + 2 > g$. Dat is in strijd met \textit{$g$ is het grootste}. Er is dus geen grootste even getal.
+
+- id: h2-ongerijmde-2
+  soort: kort
+  opgave: |-
+    Bewijs uit het ongerijmde: er bestaan geen gehele getallen $a$ en $b$ met $4a + 6b = 1$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Stel uit het ongerijmde dat er gehele $a$ en $b$ zijn met $4a + 6b = 1$. Dan is\\
+    $1 = 2(2a + 3b)$,\\
+    dus 1 is even. Tegenspraak: $1 = 2 \cdot 0 + 1$ is oneven. Zulke $a$ en $b$ bestaan dus niet.
+
+- id: h2-euclides
+  soort: kort
+  opgave: |-
+    Lees het bewijs dat er oneindig veel priemgetallen zijn nog eens.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $N$ als de lijst $2, 3, 5$ is, en als de lijst $2, 3, 5, 7, 11, 13$ is.
+      antwoord: |-
+        31; 30\,031
+      uitwerking: |-
+        $2 \cdot 3 \cdot 5 + 1 = 31$ en $2 \cdot 3 \cdot 5 \cdot 7 \cdot 11 \cdot 13 + 1 = 30\,031$.
+    - opgave: |-
+        Is $N$ altijd een priemgetal? Tip: $30\,031 = 59 \cdot 509$.
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: 31 is priem, maar $30\,031 = 59 \cdot 509$ niet.
+    - opgave: |-
+        Waar gebruikt het bewijs dan wel dat $N$ een priemdeler heeft, en waarom kan die niet in de lijst staan?
+      antwoord: |-
+        $N$ heeft een priemdeler die niet in de lijst staat
+      uitwerking: |-
+        Het bewijs zegt niet dat $N$ priem is, alleen dat $N$ een priemdeler heeft. Elke $p_i$ uit de lijst geeft bij deling van $N$ rest 1, dus die priemdeler is nieuw. Bij $30\,031$ zijn dat 59 en 509: geen van beide staat in de lijst.
+
+- id: h2-tegen
+  soort: kort
+  opgave: |-
+    Toon met een tegenvoorbeeld aan dat je de onderstreepte voorwaarde niet mag weglaten.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Als $a > b$ en \underline{$c > 0$}, dan is $ac > bc$.
+      antwoord: |-
+        bv. $a = 2$, $b = 1$, $c = -1$
+      uitwerking: |-
+        $a = 2$, $b = 1$, $c = -1$: $a > b$, maar $ac = -2 < -1 = bc$.
+    - opgave: |-
+        Als $n$ een priemgetal is en \underline{$n > 2$}, dan is $n$ oneven.
+      antwoord: |-
+        $n = 2$
+      uitwerking: |-
+        $n = 2$ is een priemgetal, maar niet oneven.
+    - opgave: |-
+        Als \underline{$x \geqslant 0$}, dan is $\sqrt{x^2} = x$.
+      antwoord: |-
+        bv. $x = -1$
+      uitwerking: |-
+        $x = -1$: $\sqrt{(-1)^2} = \sqrt1 = 1 \neq -1$.
 
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
@@ -127,7 +271,7 @@
   thema: |-
     rechtstreeks bewijs
   opgave: |-
-    Bewijs.
+    Bewijs rechtstreeks ($a, b, c$ zijn gehele getallen).
   lijst: enumerate
   delen:
     - opgave: |-
@@ -135,13 +279,189 @@
       antwoord: |-
         bewijs
       uitwerking: |-
-        $(2k)^2 = 4k^2$: deelbaar door 4.
+        Neem een even getal $n = 2k$, met $k \in \Z$. Dan is $n^2 = 4k^2$, met $k^2$ geheel. Dus $4 \deelt n^2$.
     - opgave: |-
         Als $a \deelt b$ en $b \deelt c$, dan $a \deelt c$.
       antwoord: |-
         bewijs
       uitwerking: |-
-        $b = ak$ en $c = bm$, dus $c = akm = a(km)$, met $km$ geheel.
+        Stel $a \deelt b$ en $b \deelt c$: $b = ak$ en $c = bm$ met $k, m \in \Z$ (twee letters, want het zijn verschillende getallen). Dan is\\
+        $c = bm = akm = a \cdot (km)$,\\
+        met $km$ geheel. Dus $a \deelt c$.
+    - opgave: |-
+        De som van twee veelvouden van 3 is een veelvoud van 3.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Neem $m = 3a$ en $n = 3b$, met $a, b \in \Z$. Dan is $m + n = 3a + 3b = 3(a + b)$, met $a + b$ geheel. Dus $m + n$ is een veelvoud van 3.
+    - opgave: |-
+        Als $a \deelt b$, dan $a \deelt bc$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Stel $b = ak$ met $k \in \Z$. Dan is $bc = akc = a \cdot (kc)$, met $kc$ geheel. Dus $a \deelt bc$.
+    - opgave: |-
+        Als $a \deelt b$ en $a \deelt c$, dan $a \deelt b + c$ en $a \deelt b - c$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Stel $b = ak$ en $c = am$ met $k, m \in \Z$. Dan is\\
+        $b + c = a(k + m)$ en $b - c = a(k - m)$,\\
+        met $k + m$ en $k - m$ geheel. Dus $a$ deelt beide.
+
+- id: h2-o10
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    deelbaarheid met de definitie
+  opgave: |-
+    Waar of vals? Verklaar met de definitie ($n \in \Z$). Is het waar voor sommige $n$ en vals voor andere, geef dan van elk een voorbeeld.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $13 \deelt 221$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $221 = 13 \cdot 17$.
+    - opgave: |-
+        $8 \deelt 100$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: $8 \cdot 12 = 96$ en $8 \cdot 13 = 104$.
+    - opgave: |-
+        $-4 \deelt 36$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $36 = (-4) \cdot (-9)$.
+    - opgave: |-
+        $9 \deelt 171$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $171 = 9 \cdot 19$.
+    - opgave: |-
+        $12 \deelt 90$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: $90 = 12 \cdot 7 + 6$.
+    - opgave: |-
+        $1 \deelt 37$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $37 = 1 \cdot 37$. 1 deelt elk geheel getal.
+    - opgave: |-
+        $37 \deelt 1$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: $37k = 1$ heeft geen gehele oplossing.
+    - opgave: |-
+        $7 \deelt 0$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $0 = 7 \cdot 0$.
+    - opgave: |-
+        $3 \deelt 6n + 9$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $6n + 9 = 3(2n + 3)$, met $2n + 3$ geheel.
+    - opgave: |-
+        $2 \deelt 4n + 1$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: $4n + 1 = 2 \cdot 2n + 1$ is oneven.
+    - opgave: |-
+        $n \deelt 5n$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $5n = n \cdot 5$, ook als $n = 0$.
+    - opgave: |-
+        $4 \deelt 2n$
+      antwoord: |-
+        soms
+      uitwerking: |-
+        Soms: waar voor $n = 2$ ($4 = 4 \cdot 1$), vals voor $n = 1$ ($2$ is niet deelbaar door 4). Het is waar als en slechts als $n$ even is.
+
+- id: h2-o11
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    even en oneven herkennen
+  opgave: |-
+    Met $m, n \in \Z$. Is het getal even of oneven? Schrijf het in de vorm $2k$ of $2k + 1$, met $k$ geheel.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $4n + 6$
+      antwoord: |-
+        even
+      uitwerking: |-
+        $2(2n + 3)$: even.
+    - opgave: |-
+        $2n + 9$
+      antwoord: |-
+        oneven
+      uitwerking: |-
+        $2(n + 4) + 1$: oneven.
+    - opgave: |-
+        $6m - 1$
+      antwoord: |-
+        oneven
+      uitwerking: |-
+        $6m - 2 + 1 = 2(3m - 1) + 1$: oneven.
+    - opgave: |-
+        $8n^2 + 2n + 5$
+      antwoord: |-
+        oneven
+      uitwerking: |-
+        $2(4n^2 + n + 2) + 1$: oneven.
+    - opgave: |-
+        $(2n + 1)^2$
+      antwoord: |-
+        oneven
+      uitwerking: |-
+        $4n^2 + 4n + 1 = 2(2n^2 + 2n) + 1$: oneven.
+    - opgave: |-
+        $2n(n + 1) + 3$
+      antwoord: |-
+        oneven
+      uitwerking: |-
+        $2n(n + 1) + 2 + 1 = 2\bigl(n(n + 1) + 1\bigr) + 1$: oneven.
+    - opgave: |-
+        $3(2n + 1) + 1$
+      antwoord: |-
+        even
+      uitwerking: |-
+        $6n + 4 = 2(3n + 2)$: even.
+    - opgave: |-
+        $2m(2n + 1)$
+      antwoord: |-
+        even
+      uitwerking: |-
+        $2 \cdot m(2n + 1)$: even.
+    - opgave: |-
+        $-2n - 3$
+      antwoord: |-
+        oneven
+      uitwerking: |-
+        $-2n - 4 + 1 = 2(-n - 2) + 1$: oneven. Ook negatieve getallen hebben die vorm.
+    - opgave: |-
+        $10n + 3m$
+      antwoord: |-
+        hangt af van $m$
+      uitwerking: |-
+        Hangt af van $m$. Is $m = 2a$, dan is het $2(5n + 3a)$: even. Is $m = 2a + 1$, dan is het $2(5n + 3a + 1) + 1$: oneven.
 
 - id: h2-o2
   soort: opdracht
@@ -157,13 +477,151 @@
       antwoord: |-
         $a = 6$, $b = 2$, $c = 3$
       uitwerking: |-
-        $6 \deelt 2 \cdot 3$, maar $6$ deelt 2 noch 3.
+        $a = 6$, $b = 2$, $c = 3$: $6 \deelt 2 \cdot 3$, maar 6 deelt 2 noch 3.
     - opgave: |-
         De som van twee irrationale getallen is irrationaal.
       antwoord: |-
         $\sqrt2 + (-\sqrt2) = 0$
       uitwerking: |-
         $\sqrt2$ en $-\sqrt2$ zijn irrationaal, maar hun som 0 is rationaal.
+    - opgave: |-
+        $n^2 - n + 11$ is een priemgetal voor elk natuurlijk getal $n$.
+      antwoord: |-
+        $n = 11$
+      uitwerking: |-
+        $n = 11$: $121 - 11 + 11 = 121 = 11^2$. Voor $n = 0$ tot $10$ krijg je wel telkens een priemgetal: tien voorbeelden bewijzen niets.
+    - opgave: |-
+        $2^n + 1$ is een priemgetal voor elk natuurlijk getal $n \geqslant 1$.
+      antwoord: |-
+        $n = 3$
+      uitwerking: |-
+        $n = 3$: $2^3 + 1 = 9 = 3 \cdot 3$.
+    - opgave: |-
+        Het product van twee irrationale getallen is irrationaal.
+      antwoord: |-
+        $\sqrt2 \cdot \sqrt2 = 2$
+      uitwerking: |-
+        $\sqrt2 \cdot \sqrt2 = 2$ is rationaal.
+
+- id: h2-o12
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    de contrapositie formuleren
+  opgave: |-
+    Formuleer de contrapositie. Je hoeft ze niet te bewijzen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Als $n^2$ oneven is, dan is $n$ oneven.
+      antwoord: |-
+        als $n$ even is, dan is $n^2$ even
+      uitwerking: |-
+        De ontkenning van \textit{oneven} is \textit{even}: \textit{als $n$ even is, dan is $n^2$ even}.
+    - opgave: |-
+        Als $5n + 3$ even is, dan is $n$ oneven.
+      antwoord: |-
+        als $n$ even is, dan is $5n + 3$ oneven
+      uitwerking: |-
+        \textit{Als $n$ even is, dan is $5n + 3$ oneven.}
+    - opgave: |-
+        Als $mn$ oneven is, dan zijn $m$ en $n$ allebei oneven.
+      antwoord: |-
+        als $m$ of $n$ even is, dan is $mn$ even
+      uitwerking: |-
+        De ontkenning van \textit{$m$ en $n$ oneven} is \textit{$m$ even of $n$ even} (De Morgan): \textit{als $m$ even is of $n$ even is, dan is $mn$ even}.
+    - opgave: |-
+        Als $x^3 < 0$, dan is $x < 0$ ($x \in \R$).
+      antwoord: |-
+        als $x \geqslant 0$, dan is $x^3 \geqslant 0$
+      uitwerking: |-
+        \textit{Als $x \geqslant 0$, dan is $x^3 \geqslant 0$.} Let op het gelijkheidsteken.
+    - opgave: |-
+        Als $n$ deelbaar is door 4 en door 9, dan is $n$ deelbaar door 36.
+      antwoord: |-
+        als $36 \nmid n$, dan $4 \nmid n$ of $9 \nmid n$
+      uitwerking: |-
+        \textit{Als $n$ niet deelbaar is door 36, dan is $n$ niet deelbaar door 4 of niet deelbaar door 9.}
+    - opgave: |-
+        Als een getal niet deelbaar is door 2, dan is het niet deelbaar door 6.
+      antwoord: |-
+        als een getal deelbaar is door 6, dan is het deelbaar door 2
+      uitwerking: |-
+        Twee keer \textit{niet} valt weg: \textit{als een getal deelbaar is door 6, dan is het deelbaar door 2}.
+
+- id: h2-o24
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    context: een goocheltruc bewijzen
+  opgave: |-
+    Een goochelaar zegt: \textit{denk aan een geheel getal, verdubbel het, tel er 10 bij, deel door 2, en trek je getal er weer af. Je krijgt 5.}
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Probeer de truc met 7 en met $-3$.
+      antwoord: |-
+        5 en 5
+      uitwerking: |-
+        $7$: $14$, $24$, $12$, $5$. \quad $-3$: $-6$, $4$, $2$, $5$.
+    - opgave: |-
+        Bewijs dat je altijd 5 krijgt.
+      antwoord: |-
+        $\frac{2x + 10}{2} - x = 5$
+      uitwerking: |-
+        Noem het getal $x$. De stappen geven $2x$, dan $2x + 10$, dan $\frac{2x + 10}{2} = x + 5$, en tot slot $x + 5 - x = 5$. Dat hangt niet af van $x$, dus de uitkomst is altijd 5.
+    - opgave: |-
+        Pas de truc aan zodat je altijd 8 krijgt.
+      antwoord: |-
+        tel er 16 bij
+      uitwerking: |-
+        Tel er 16 bij in plaats van 10: $\frac{2x + 16}{2} - x = 8$.
+
+- id: h2-o13
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    de eerste zin van een bewijs uit het ongerijmde
+  opgave: |-
+    Je wilt de uitspraak bewijzen uit het ongerijmde. Schrijf de eerste zin: \textit{Stel uit het ongerijmde dat \ldots}
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\sqrt5$ is irrationaal.
+      antwoord: |-
+        $\sqrt5$ is rationaal
+      uitwerking: |-
+        Stel uit het ongerijmde dat $\sqrt5$ rationaal is: $\sqrt5 = \frac{a}{b}$, met $a, b$ gehele getallen, $b \neq 0$, en de breuk vereenvoudigd.
+    - opgave: |-
+        Er is geen kleinste positief reëel getal.
+      antwoord: |-
+        er is een kleinste positief reëel getal $x$
+      uitwerking: |-
+        Stel uit het ongerijmde dat er een kleinste positief reëel getal is; noem het $x$. (Dan geeft $\frac{x}{2}$ de tegenspraak.)
+    - opgave: |-
+        Er zijn oneindig veel priemgetallen.
+      antwoord: |-
+        er zijn maar eindig veel priemgetallen
+      uitwerking: |-
+        Stel uit het ongerijmde dat er maar eindig veel priemgetallen zijn: $p_1, p_2, \ldots, p_m$. (Niet: \textit{er zijn geen priemgetallen}.)
+    - opgave: |-
+        Er bestaat geen rationaal getal $q$ met $q^2 = 3$.
+      antwoord: |-
+        er is een rationaal getal $q$ met $q^2 = 3$
+      uitwerking: |-
+        Stel uit het ongerijmde dat er een rationaal getal $q$ is met $q^2 = 3$.
+    - opgave: |-
+        Voor elk geheel getal $n$ is $n^2 + 1$ niet deelbaar door 3.
+      antwoord: |-
+        er is een $n$ met $3 \deelt n^2 + 1$
+      uitwerking: |-
+        Stel uit het ongerijmde dat er een geheel getal $n$ is met $3 \deelt n^2 + 1$. ($\forall$ wordt $\exists$.)
+    - opgave: |-
+        Als $n^2$ even is, dan is $n$ even.
+      antwoord: |-
+        $n^2$ is even en $n$ is oneven
+      uitwerking: |-
+        Stel uit het ongerijmde dat $n^2$ even is en $n$ oneven. De ontkenning van $p \dan q$ is $p \en \niet q$.
 
 - id: h2-o3
   soort: opdracht
@@ -175,7 +633,65 @@
   antwoord: |-
     dezelfde $k$
   uitwerking: |-
-    Met dezelfde letter $k$ bewijs je het alleen voor $m = n$. Juist: $m = 2a$ en $n = 2b$, dan $m + n = 2(a + b)$.
+    Met dezelfde letter $k$ bewijs je het alleen voor $m = n$. Juist: neem $m = 2a$ en $n = 2b$ met $a, b \in \Z$. Dan is $m + n = 2a + 2b = 2(a + b)$, met $a + b$ geheel, dus even.
+
+- id: h2-o16
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    een bewijs lezen
+  opgave: |-
+    Lees het bewijs en beantwoord de vragen.\par
+    \textit{Stelling.} De som van vijf opeenvolgende gehele getallen is deelbaar door 5.\par
+    \textit{Bewijs.} Noem het middelste getal $n$. De som is $(n - 2) + (n - 1) + n + (n + 1) + (n + 2) = 5n$, en dus deelbaar door 5.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Welke definitie wordt gebruikt?
+      antwoord: |-
+        de definitie van \textit{deelt}
+      uitwerking: |-
+        De definitie van \textit{deelt}: $5 \deelt 5n$, want $5n = 5 \cdot n$ met $n$ geheel.
+    - opgave: |-
+        Hoe volgt $5n$ uit de som?
+      antwoord: |-
+        de getallen $-2$, $-1$, $1$ en $2$ vallen weg
+      uitwerking: |-
+        Er staan vijf keer $n$, en $-2 - 1 + 1 + 2 = 0$.
+    - opgave: |-
+        Waar wordt gebruikt dat de getallen opeenvolgend zijn?
+      antwoord: |-
+        in $n - 2, \ldots, n + 2$
+      uitwerking: |-
+        In de schrijfwijze $n - 2$, $n - 1$, $n$, $n + 1$, $n + 2$: telkens 1 meer.
+    - opgave: |-
+        Wat is het idee in één zin? Waarom is het handig om het middelste getal $n$ te noemen?
+      antwoord: |-
+        de afwijkingen van het midden heffen elkaar op
+      uitwerking: |-
+        De getallen liggen symmetrisch rond het middelste, dus hun afwijkingen heffen elkaar op. Noem je het kleinste getal $n$, dan krijg je $5n + 10 = 5(n + 2)$: ook juist, maar met een stap meer.
+
+- id: h2-o15
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    waar zit de fout: voorbeelden en een omgekeerde redenering
+  opgave: |-
+    Waar zit de fout in het \textit{bewijs}?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Stelling: $n^2 + n$ is even. \textit{Bewijs}: voor $n = 1, 2, 3, 4$ krijg je $2, 6, 12, 20$, allemaal even.
+      antwoord: |-
+        voorbeelden bewijzen niets
+      uitwerking: |-
+        Vier voorbeelden bewijzen niets over de oneindig vele andere getallen. Een bewijs werkt met een willekeurige $n$, zoals in het voorbeeld met $n^2 + n$.
+    - opgave: |-
+        Stelling: als $a \deelt b$ en $a \deelt c$, dan $a \deelt b + c$. \textit{Bewijs}: stel $a \deelt b + c$, dus $b + c = ak$. Ook is $b = am$, dus $c = ak - am = a(k - m)$, zodat $a \deelt c$. Dat klopt met het gegeven.
+      antwoord: |-
+        het besluit wordt verondersteld
+      uitwerking: |-
+        Het bewijs neemt aan wat bewezen moet worden ($a \deelt b + c$), en komt uit bij iets wat gegeven was. Zo bewijs je een andere implicatie. Juist: vertrek van $b = am$ en $c = an$, dan is $b + c = a(m + n)$.
 
 - id: h2-o4
   soort: opdracht
@@ -187,7 +703,103 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    $n^3 - n = (n - 1)n(n + 1)$. Van twee opeenvolgende getallen is er één even, dus 2 deelt het product. Deel $n$ door 3: de rest is 0, 1 of 2. Bij rest 0 is $3 \deelt n$, bij rest 1 is $3 \deelt n - 1$, bij rest 2 is $3 \deelt n + 1$. Dus 3 deelt het product. Omdat 2 en 3 het product delen en geen gemeenschappelijke deler hebben, deelt 6 het.
+    $n^3 - n = (n - 1)n(n + 1)$, een product van drie opeenvolgende gehele getallen.\\
+    \textit{Deelbaar door 2.} Van twee opeenvolgende getallen is er één even, dus 2 deelt het product.\\
+    \textit{Deelbaar door 3.} Deel $n$ door 3: de rest is 0, 1 of 2. Bij rest 0 is $3 \deelt n$. Bij rest 1 is $n = 3k + 1$, dus $n - 1 = 3k$. Bij rest 2 is $n = 3k + 2$, dus $n + 1 = 3(k + 1)$. In elk geval deelt 3 een factor, en dus het product.\\
+    \textit{Besluit.} Het product is deelbaar door 3: $n^3 - n = 3j$. Het is ook even. Was $j$ oneven, dan was $3j$ een product van oneven getallen, en dus oneven (het product van twee oneven getallen is oneven). Dus is $j = 2i$ even, en $n^3 - n = 6i$.
+
+- id: h2-o23
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: vierkanten op een kalender
+  figuur:
+    opties: |-
+      4.2cm
+    code: |-
+      \begin{tikzpicture}[x=.56cm,y=.5cm,font=\scriptsize]
+        \foreach \d [count=\i from 0] in {ma,di,wo,do,vr,za,zo} \node[text=grijs] at (\i,0) {\d};
+        \foreach \n in {1,...,30}{
+          \pgfmathtruncatemacro\p{\n+1}
+          \pgfmathtruncatemacro\c{mod(\p,7)}
+          \pgfmathtruncatemacro\r{div(\p,7)}
+          \node at (\c,-\r-1) {\n};}
+        \draw[accent,thick,rounded corners=2pt] (2.5,-1.5) rectangle (4.5,-3.5);
+      \end{tikzpicture}
+  opgave: |-
+    Op een maandkalender kies je een vierkant van 2 bij 2 dagen, zoals 9, 10, 16 en 17.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Noem het getal linksboven $a$. Schrijf de andere drie getallen met $a$.
+      antwoord: |-
+        $a + 1$, $a + 7$, $a + 8$
+      uitwerking: |-
+        Rechts ernaast staat $a + 1$. Een week later, dus een rij lager, staan $a + 7$ en $a + 8$.
+    - opgave: |-
+        Bewijs dat de twee diagonalen dezelfde som hebben.
+      antwoord: |-
+        beide $2a + 8$
+      uitwerking: |-
+        $a + (a + 8) = 2a + 8$ en $(a + 1) + (a + 7) = 2a + 8$. Dat geldt voor elke $a$, dus voor elk vierkant.
+    - opgave: |-
+        Bewijs dat de som van de vier getallen deelbaar is door 4.
+      antwoord: |-
+        $4(a + 4)$
+      uitwerking: |-
+        $a + (a + 1) + (a + 7) + (a + 8) = 4a + 16 = 4(a + 4)$, met $a + 4$ geheel.
+    - opgave: |-
+        Bewijs dat in een vierkant van 3 bij 3 dagen de som van de negen getallen 9 keer het middelste getal is.
+      antwoord: |-
+        som $= 9m$
+      uitwerking: |-
+        Noem het middelste getal $m$. De getallen zijn $m - 8$, $m - 7$, $m - 6$, $m - 1$, $m$, $m + 1$, $m + 6$, $m + 7$, $m + 8$. De afwijkingen heffen elkaar paarsgewijs op, dus de som is $9m$.
+
+- id: h2-o14
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    de techniek kiezen
+  opgave: |-
+    Welke techniek ligt het meest voor de hand: rechtstreeks, via de contrapositie, uit het ongerijmde of met een tegenvoorbeeld? Verklaar kort. Je hoeft niet te bewijzen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Als $n$ oneven is, dan is $n^2 + 4$ oneven.
+      antwoord: |-
+        rechtstreeks
+      uitwerking: |-
+        Rechtstreeks: vul $n = 2k + 1$ in, dan is $n^2 + 4 = 2(2k^2 + 2k + 2) + 1$.
+    - opgave: |-
+        Als $n^2 + 4$ oneven is, dan is $n$ oneven.
+      antwoord: |-
+        contrapositie
+      uitwerking: |-
+        Via de contrapositie: \textit{als $n$ even is, dan is $n^2 + 4$ even} is eenvoudig. Rechtstreeks moet je iets over $n$ halen uit $n^2 + 4$.
+    - opgave: |-
+        $\sqrt7$ is irrationaal.
+      antwoord: |-
+        uit het ongerijmde
+      uitwerking: |-
+        Uit het ongerijmde: \textit{irrationaal} betekent \textit{niet te schrijven als breuk}. De ontkenning $\sqrt7 = \frac{a}{b}$ geeft iets om mee te rekenen.
+    - opgave: |-
+        Voor elk natuurlijk getal $n \geqslant 1$ is $n^2 + n + 1$ een priemgetal.
+      antwoord: |-
+        tegenvoorbeeld
+      uitwerking: |-
+        Tegenvoorbeeld: $n = 4$ geeft $21 = 3 \cdot 7$. (Voor $n = 1, 2, 3$ krijg je 3, 7, 13.)
+    - opgave: |-
+        Het product van twee opeenvolgende gehele getallen is even.
+      antwoord: |-
+        rechtstreeks
+      uitwerking: |-
+        Rechtstreeks, met de gevallen $n$ even en $n$ oneven, zoals bij $n^2 + n = n(n + 1)$.
+    - opgave: |-
+        Als $ab$ irrationaal is, dan is $a$ of $b$ irrationaal.
+      antwoord: |-
+        contrapositie
+      uitwerking: |-
+        Via de contrapositie: \textit{als $a$ en $b$ rationaal zijn, dan is $ab$ rationaal}. Dat is eenvoudig: $\frac{p}{q} \cdot \frac{r}{s} = \frac{pr}{qs}$.
 
 - id: h2-o5
   soort: opdracht
@@ -199,7 +811,144 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Contrapositie: als $3 \nmid n$, dan $3 \nmid n^2$. Bij $n = 3k + 1$: $n^2 = 9k^2 + 6k + 1 = 3(3k^2 + 2k) + 1$. Bij $n = 3k + 2$: $n^2 = 9k^2 + 12k + 4 = 3(3k^2 + 4k + 1) + 1$. In beide gevallen is de rest 1: niet deelbaar door 3.
+    Contrapositie: als $3 \nmid n$, dan $3 \nmid n^2$. Is $n$ niet deelbaar door 3, dan is de rest bij deling door 3 gelijk aan 1 of 2.\\
+    $n = 3k + 1$: $n^2 = 9k^2 + 6k + 1 = 3(3k^2 + 2k) + 1$.\\
+    $n = 3k + 2$: $n^2 = 9k^2 + 12k + 4 = 3(3k^2 + 4k + 1) + 1$.\\
+    In beide gevallen geeft $n^2$ rest 1 bij deling door 3: niet deelbaar door 3. De contrapositie is bewezen, dus ook de uitspraak.
+
+- id: h2-o25
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    driehoeksgetallen
+  figuur:
+    opties: |-
+      3cm
+    code: |-
+      \begin{tikzpicture}[x=.5cm,y=.5cm]
+        \foreach \i in {0,...,3} \foreach \j in {0,...,3}{
+          \pgfmathtruncatemacro\s{\i+\j}
+          \ifnum\s<4 \fill[accent] (\i,\j) circle (3.3pt); \else \fill[fel!80!black] (\i,\j) circle (3.3pt); \fi}
+        \draw[grijs,dashed] (-.3,3.8) -- (3.8,-.3);
+        \node[font=\scriptsize,text=accent] at (.6,-1) {$T_4$};
+        \node[font=\scriptsize,text=fel!80!black] at (3.4,4) {$T_3$};
+      \end{tikzpicture}
+  opgave: |-
+    Het $n$-de driehoeksgetal $T_n = \dfrac{n(n + 1)}{2}$ is het aantal stippen in een driehoek met $n$ rijen: 1, 3, 6, 10, \ldots
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $T_3 + T_4$ en $T_5 + T_6$. Wat merk je?
+      antwoord: |-
+        16 en 36: kwadraten
+      uitwerking: |-
+        $T_3 + T_4 = 6 + 10 = 16 = 4^2$ en $T_5 + T_6 = 15 + 21 = 36 = 6^2$.
+    - opgave: |-
+        Bewijs dat $T_n + T_{n + 1} = (n + 1)^2$ voor elk natuurlijk getal $n$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $T_n + T_{n + 1} = \dfrac{n(n + 1)}{2} + \dfrac{(n + 1)(n + 2)}{2} = \dfrac{(n + 1)(n + n + 2)}{2} = \dfrac{(n + 1) \cdot 2(n + 1)}{2} = (n + 1)^2$.
+    - opgave: |-
+        Leg met de figuur uit waarom het klopt.
+      antwoord: |-
+        twee driehoeken vormen een vierkant
+      uitwerking: |-
+        Een driehoek met $n + 1$ rijen en een driehoek met $n$ rijen passen samen in een vierkant van $n + 1$ bij $n + 1$ stippen. De figuur toont $T_4 + T_3 = 4^2$. De figuur geeft het idee, de algebra in b is het bewijs.
+    - opgave: |-
+        Bewijs dat $8T_n + 1$ altijd een kwadraat is.
+      antwoord: |-
+        $(2n + 1)^2$
+      uitwerking: |-
+        $8T_n + 1 = 4n(n + 1) + 1 = 4n^2 + 4n + 1 = (2n + 1)^2$.
+
+- id: h2-o20
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    waar zit de fout: verkeerde richting, ontkenning, delen door nul
+  opgave: |-
+    Waar zit de fout? Verklaar.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Stelling: als $n^2$ oneven is, dan is $n$ oneven. \textit{Bewijs}: neem $n = 2k + 1$, dan is $n^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1$, dus oneven.
+      antwoord: |-
+        de omgekeerde is bewezen
+      uitwerking: |-
+        Het bewijs vertrekt van $n$ oneven en besluit dat $n^2$ oneven is. Dat is de omgekeerde implicatie. Juist is via de contrapositie: als $n = 2k$, dan is $n^2 = 2 \cdot 2k^2$ even (zie de korte oefening bij de contrapositie).
+    - opgave: |-
+        Stelling: er zijn oneindig veel even getallen. \textit{Bewijs}: stel uit het ongerijmde dat er geen even getallen zijn. Maar 2 is even: tegenspraak.
+      antwoord: |-
+        verkeerde ontkenning
+      uitwerking: |-
+        De ontkenning van \textit{oneindig veel} is \textit{eindig veel}, niet \textit{geen}. Juist: stel dat er maar eindig veel even getallen zijn, en neem het grootste, $g$. Dan is $g + 2$ ook even en groter: tegenspraak.
+    - opgave: |-
+        \textit{Bewijs} dat $6 = 3$: stel $x = 3$. Dan is $x^2 = 3x$, dus $x^2 - 9 = 3x - 9$, of $(x - 3)(x + 3) = 3(x - 3)$. Deel door $x - 3$: $x + 3 = 3$, dus $6 = 3$.
+      antwoord: |-
+        delen door $x - 3 = 0$
+      uitwerking: |-
+        Omdat $x = 3$, is $x - 3 = 0$, en delen door 0 mag niet. Uit $(x - 3)(x + 3) = 3(x - 3)$ volgt alleen $(x - 3)(x + 3 - 3) = 0$, dus $x = 3$ of $x = 0$.
+
+- id: h2-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    gevallen onderscheiden
+  opgave: |-
+    Gevallen onderscheiden bij deling door 4.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bewijs dat het kwadraat van elk geheel getal bij deling door 4 rest 0 of 1 geeft.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        \textit{$n$ even}, $n = 2k$: $n^2 = 4k^2$, rest 0.\\
+        \textit{$n$ oneven}, $n = 2k + 1$: $n^2 = 4k^2 + 4k + 1 = 4(k^2 + k) + 1$, rest 1.\\
+        Elk geheel getal is even of oneven, dus de rest is altijd 0 of 1.
+    - opgave: |-
+        Leid af dat $n^2 + 2$ nooit deelbaar is door 4.
+      antwoord: |-
+        rest 2 of 3
+      uitwerking: |-
+        Volgens a is $n^2 = 4q$ of $n^2 = 4q + 1$, dus $n^2 + 2 = 4q + 2$ of $4q + 3$: rest 2 of 3, nooit 0.
+    - opgave: |-
+        Kan de som van twee kwadraten van gehele getallen gelijk zijn aan 2027? Verklaar.
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Volgens a geeft elk kwadraat rest 0 of 1, dus een som van twee kwadraten geeft rest 0, 1 of 2. Maar $2027 = 4 \cdot 506 + 3$ geeft rest 3. Het kan dus niet.
+
+- id: h2-o18
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    rechtstreeks bewijzen met deelbaarheid
+  opgave: |-
+    Bewijs voor alle gehele getallen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Het product van twee opeenvolgende even getallen is deelbaar door 8.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Twee opeenvolgende even getallen zijn $2k$ en $2k + 2$. Hun product is\\
+        $2k(2k + 2) = 4k(k + 1)$.\\
+        Van $k$ en $k + 1$ is er één even, dus $k(k + 1) = 2m$ met $m$ geheel. Het product is $8m$, deelbaar door 8.
+    - opgave: |-
+        $n^2 + n + 1$ is oneven.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $n^2 + n = n(n + 1)$ is even (een product van twee opeenvolgende getallen), dus $n^2 + n = 2m$. Dan is $n^2 + n + 1 = 2m + 1$ oneven.
+    - opgave: |-
+        De som van vier opeenvolgende gehele getallen is nooit deelbaar door 4.
+      antwoord: |-
+        rest 2
+      uitwerking: |-
+        $n + (n + 1) + (n + 2) + (n + 3) = 4n + 6 = 4(n + 1) + 2$. Bij deling door 4 is de rest dus altijd 2, nooit 0.
 
 - id: h2-o6
   soort: opdracht
@@ -211,19 +960,123 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Stel $\sqrt3 = \frac{a}{b}$, vereenvoudigd. Dan is $a^2 = 3b^2$, dus $3 \deelt a^2$, en volgens opdracht \ref{oef:h2-o5} is $3 \deelt a$: $a = 3k$. Dan $9k^2 = 3b^2$, dus $b^2 = 3k^2$, en ook $3 \deelt b$. Tegenspraak met de vereenvoudigde breuk.
+    Stel uit het ongerijmde dat $\sqrt3 = \frac{a}{b}$, met $a, b$ geheel, $b \neq 0$ en de breuk vereenvoudigd. Kwadrateren geeft $a^2 = 3b^2$, dus $3 \deelt a^2$, en volgens de vorige stelling ($3 \deelt n^2 \dan 3 \deelt n$) is $3 \deelt a$: $a = 3k$.\\
+    Dan is $9k^2 = 3b^2$, dus $b^2 = 3k^2$, en om dezelfde reden is $3 \deelt b$.\\
+    Dan delen $a$ en $b$ allebei door 3: tegenspraak met de vereenvoudigde breuk. Dus is $\sqrt3$ irrationaal.
 
-- id: h2-o7
+- id: h2-o19
   soort: opdracht
   niveau: 2
   thema: |-
-    gevallen onderscheiden
+    bewijzen via de contrapositie
   opgave: |-
-    Bewijs dat het kwadraat van elk geheel getal bij deling door 4 rest 0 of 1 geeft. Leid af dat $n^2 + 2$ nooit deelbaar is door 4.
-  antwoord: |-
-    bewijs
-  uitwerking: |-
-    $n = 2k$: $n^2 = 4k^2$, rest 0. $n = 2k + 1$: $n^2 = 4(k^2 + k) + 1$, rest 1. Dan geeft $n^2 + 2$ rest 2 of 3, nooit 0.
+    Bewijs via de contrapositie.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Als $n^2 + 4n + 1$ even is, dan is $n$ oneven.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Contrapositie: als $n$ even is, dan is $n^2 + 4n + 1$ oneven.\\
+        Stel $n = 2k$. Dan is $n^2 + 4n + 1 = 4k^2 + 8k + 1 = 2(2k^2 + 4k) + 1$: oneven.
+    - opgave: |-
+        Als $m^2 + n^2$ oneven is, dan is $m$ even of $n$ even.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Contrapositie (met De Morgan): als $m$ en $n$ allebei oneven zijn, dan is $m^2 + n^2$ even.\\
+        Stel $m = 2a + 1$ en $n = 2b + 1$. Dan is\\
+        $m^2 + n^2 = 4a^2 + 4a + 1 + 4b^2 + 4b + 1 = 2(2a^2 + 2a + 2b^2 + 2b + 1)$: even.
+    - opgave: |-
+        Als $a + b \geqslant 20$, dan is $a \geqslant 10$ of $b \geqslant 10$ ($a, b \in \R$).
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Contrapositie: als $a < 10$ en $b < 10$, dan is $a + b < 20$.\\
+        Tel de twee ongelijkheden op: $a + b < 10 + 10 = 20$.
+
+- id: h2-o21
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    is de voorwaarde nodig?
+  opgave: |-
+    Toon met een tegenvoorbeeld aan dat je de onderstreepte voorwaarde niet mag weglaten.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Voor \underline{$a, b \geqslant 0$} is $\sqrt{ab} \leqslant \dfrac{a + b}{2}$.
+      antwoord: |-
+        bv. $a = b = -1$
+      uitwerking: |-
+        $a = b = -1$: $\sqrt{ab} = \sqrt1 = 1$, maar $\frac{a + b}{2} = -1$, en $1 \leqslant -1$ is vals.
+    - opgave: |-
+        Als \underline{$0 < a$} en $a < b$, dan is $\dfrac1a > \dfrac1b$.
+      antwoord: |-
+        bv. $a = -1$, $b = 1$
+      uitwerking: |-
+        $a = -1 < 1 = b$, maar $\frac1a = -1$ is niet groter dan $\frac1b = 1$.
+    - opgave: |-
+        Als \underline{$x > 1$}, dan is $x^3 > x^2$. Volstaat ook $x > 0$?
+      antwoord: |-
+        nee: $x = \frac12$
+      uitwerking: |-
+        $x = \frac12 > 0$: $x^3 = \frac18 < \frac14 = x^2$. Dus $x > 0$ volstaat niet. (Voor $x > 1$ klopt het: $x^3 = x \cdot x^2 > 1 \cdot x^2$.)
+
+- id: h2-o22
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    bewijzen uit het ongerijmde
+  opgave: |-
+    Bewijs uit het ongerijmde.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Er bestaan geen gehele getallen $m$ en $n$ met $6m + 9n = 100$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Stel uit het ongerijmde dat $6m + 9n = 100$ met $m, n$ geheel. Dan is $100 = 3(2m + 3n)$, dus $3 \deelt 100$. Maar $100 = 3 \cdot 33 + 1$: tegenspraak.
+    - opgave: |-
+        Geen geheel getal is tegelijk even en oneven.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Stel uit het ongerijmde dat $n = 2a$ en $n = 2b + 1$ met $a, b$ geheel. Dan is $2a - 2b = 1$, dus $a - b = \frac12$. Maar $a - b$ is geheel: tegenspraak.
+    - opgave: |-
+        Er is geen grootste veelvoud van 7.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Stel uit het ongerijmde dat $g = 7k$ het grootste veelvoud van 7 is. Dan is $g + 7 = 7(k + 1)$ ook een veelvoud van 7, en $g + 7 > g$: tegenspraak.
+
+- id: h2-o26
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    wortel 6 en wortel 2 plus wortel 3
+  opgave: |-
+    Twee bewijzen uit het ongerijmde die op elkaar steunen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bewijs dat $\sqrt6$ irrationaal is.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Stel uit het ongerijmde dat $\sqrt6 = \frac{a}{b}$, vereenvoudigd. Dan is $a^2 = 6b^2 = 2 \cdot 3b^2$, dus $a^2$ is even, en omdat $n^2$ even $\dan$ $n$ even (zie de leerstof), is $a$ even: $a = 2k$.\\
+        Dan is $4k^2 = 6b^2$, dus $2k^2 = 3b^2$. Dus $3b^2$ is even. Was $b$ oneven, dan was $3b^2$ een product van oneven getallen, en oneven (het product van twee oneven getallen is oneven). Dus is $b$ even.\\
+        Dan delen $a$ en $b$ allebei door 2: tegenspraak met de vereenvoudigde breuk.
+    - opgave: |-
+        Bewijs dat $\sqrt2 + \sqrt3$ irrationaal is. Tip: kwadrateer.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Stel uit het ongerijmde dat $r = \sqrt2 + \sqrt3$ rationaal is. Dan is $r^2 = 2 + 2\sqrt6 + 3 = 5 + 2\sqrt6$, dus\\
+        $\sqrt6 = \dfrac{r^2 - 5}{2}$.\\
+        Rechts staat een rationaal getal, want sommen, verschillen, producten en quotiënten van rationale getallen zijn rationaal. Dan is $\sqrt6$ rationaal: tegenspraak met a.
 
 - id: h2-o8
   soort: opdracht
@@ -235,7 +1088,32 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Stel dat $r + x = s$ rationaal is. Dan is $x = s - r$ een verschil van twee rationale getallen, en dus rationaal: $\frac{a}{b} - \frac{c}{d} = \frac{ad - bc}{bd}$. Tegenspraak met $x$ irrationaal.
+    Stel uit het ongerijmde dat $r + x = s$ rationaal is. Dan is $x = s - r$ een verschil van twee rationale getallen. Met $s = \frac{a}{b}$ en $r = \frac{c}{d}$ is\\
+    $x = \dfrac{a}{b} - \dfrac{c}{d} = \dfrac{ad - bc}{bd}$,\\
+    een breuk van gehele getallen met $bd \neq 0$. Dus $x$ is rationaal: tegenspraak met $x$ irrationaal.
+
+- id: h2-o27
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    zes getallen uit tien
+  opgave: |-
+    Je kiest zes verschillende getallen uit $1, 2, 3, \ldots, 10$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bewijs uit het ongerijmde dat er altijd twee bij zijn met som 11. Tip: verdeel de tien getallen in vijf paren.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Verdeel de getallen in de vijf paren $\{1, 10\}$, $\{2, 9\}$, $\{3, 8\}$, $\{4, 7\}$, $\{5, 6\}$: elk paar heeft som 11.\\
+        Stel uit het ongerijmde dat er geen twee gekozen getallen zijn met som 11. Dan komt uit elk paar hoogstens één getal, dus zijn er hoogstens 5 gekozen. Tegenspraak, want het zijn er 6.
+    - opgave: |-
+        Geldt hetzelfde als je maar vijf getallen kiest?
+      antwoord: |-
+        nee: 1, 2, 3, 4, 5
+      uitwerking: |-
+        Nee: kies $1, 2, 3, 4, 5$. De grootste som van twee ervan is $4 + 5 = 9$.
 
 - id: h2-o9
   soort: opdracht
@@ -247,7 +1125,80 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    $n = 2k + 1$: $n^2 - 1 = 4k^2 + 4k = 4k(k + 1)$. Van $k$ en $k + 1$ is er één even, dus $k(k + 1) = 2m$, en $n^2 - 1 = 8m$.
+    Stel $n = 2k + 1$. Dan is\\
+    $n^2 - 1 = 4k^2 + 4k = 4k(k + 1)$.\\
+    Van de opeenvolgende getallen $k$ en $k + 1$ is er één even, dus $k(k + 1) = 2m$ met $m$ geheel, en $n^2 - 1 = 8m$.
+
+- id: h2-o28
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    kwadraten van priemgetallen
+  opgave: |-
+    Neem een priemgetal $p > 3$. Je bewijst dat $p^2 - 1$ deelbaar is door 24.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Controleer het voor $p = 5$, $7$, $11$ en $13$.
+      antwoord: |-
+        24, 48, 120, 168
+      uitwerking: |-
+        $p^2 - 1$ is $24 = 24 \cdot 1$, $48 = 24 \cdot 2$, $120 = 24 \cdot 5$ en $168 = 24 \cdot 7$.
+    - opgave: |-
+        Toon aan dat $3 \deelt p^2 - 1$. Tip: $p^2 - 1 = (p - 1)(p + 1)$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Van de drie opeenvolgende getallen $p - 1$, $p$, $p + 1$ is er één deelbaar door 3 (rest 0, 1 of 2 bij deling door 3). Dat is niet $p$, want $p$ is een priemgetal groter dan 3. Dus deelt 3 het getal $p - 1$ of $p + 1$, en daarmee het product $(p - 1)(p + 1) = p^2 - 1$.
+    - opgave: |-
+        Besluit met opdracht \ref{oef:h2-o9} dat $24 \deelt p^2 - 1$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $p$ is oneven (het enige even priemgetal is 2), dus is $p^2 - 1 = 8m$ (het kwadraat van een oneven getal min 1 is deelbaar door 8). Volgens b deelt 3 het getal $8m$. Deel $m$ door 3. Bij rest 1 is $8m = 8(3i + 1) = 3(8i + 2) + 2$, bij rest 2 is $8m = 3(8i + 5) + 1$: dan is $8m$ niet deelbaar door 3. Dus is de rest 0: $m = 3j$, en $p^2 - 1 = 24j$.
+    - opgave: |-
+        Is de voorwaarde $p > 3$ nodig?
+      antwoord: |-
+        ja: $p = 3$ en $p = 2$
+      uitwerking: |-
+        Ja: voor $p = 3$ is $p^2 - 1 = 8$ en voor $p = 2$ is het 3, en die zijn niet deelbaar door 24.
+
+- id: h2-o29
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    verschil van twee kwadraten
+  opgave: |-
+    Welke gehele getallen kun je schrijven als $x^2 - y^2$, met $x, y \in \Z$?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Schrijf 15, 16 en 17 als een verschil van twee kwadraten.
+      antwoord: |-
+        $4^2 - 1^2$, $5^2 - 3^2$, $9^2 - 8^2$
+      uitwerking: |-
+        $15 = 16 - 1 = 4^2 - 1^2$, \ $16 = 25 - 9 = 5^2 - 3^2$, \ $17 = 81 - 64 = 9^2 - 8^2$.
+    - opgave: |-
+        Bewijs dat elk oneven getal een verschil van twee kwadraten is.
+      antwoord: |-
+        $2k + 1 = (k + 1)^2 - k^2$
+      uitwerking: |-
+        Een oneven getal is $2k + 1$, en $(k + 1)^2 - k^2 = k^2 + 2k + 1 - k^2 = 2k + 1$.
+    - opgave: |-
+        Toon aan dat $x - y$ en $x + y$ allebei even of allebei oneven zijn.
+      antwoord: |-
+        hun som $2x$ is even
+      uitwerking: |-
+        $(x + y) + (x - y) = 2x$ is even. Was één van beide even en de andere oneven, dan was hun som oneven (even plus oneven is oneven). Dus zijn ze allebei even of allebei oneven.
+    - opgave: |-
+        Bewijs uit het ongerijmde dat 2026 geen verschil van twee kwadraten is.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Stel uit het ongerijmde dat $x^2 - y^2 = (x - y)(x + y) = 2026$. Volgens c zijn er twee gevallen.\\
+        \textit{Beide oneven}: dan is het product oneven, maar 2026 is even.\\
+        \textit{Beide even}: $x - y = 2a$ en $x + y = 2b$, dan is het product $4ab$, deelbaar door 4. Maar $2026 = 4 \cdot 506 + 2$.\\
+        In beide gevallen een tegenspraak. (Zo is geen enkel getal van de vorm $4k + 2$ een verschil van twee kwadraten.)
 
 #----------------------------------------------------------------------------------------
 # KOPPEL
@@ -307,7 +1258,7 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    $2k \cdot m = 2(km)$, met $km$ geheel: even.
+    Neem een even getal $2k$ en een geheel getal $m$, met $k, m \in \Z$. Hun product is $2k \cdot m = 2(km)$, met $km$ geheel. Dus het product is even.
 
 - id: h2-t2
   soort: test
@@ -319,7 +1270,8 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Contrapositie: als $m$ en $n$ allebei even zijn, dan is $m + n$ even. Met $m = 2a$ en $n = 2b$ is $m + n = 2(a + b)$.
+    Contrapositie (met De Morgan): als $m$ en $n$ allebei even zijn, dan is $m + n$ even.\\
+    Stel $m = 2a$ en $n = 2b$. Dan is $m + n = 2(a + b)$, met $a + b$ geheel: even. De contrapositie is bewezen, dus ook de uitspraak.
 
 - id: h2-t3
   soort: test
@@ -331,7 +1283,7 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Stel dat $q$ het kleinste positieve rationale getal is. Dan is $\frac{q}{2}$ ook positief en rationaal, en kleiner dan $q$. Tegenspraak.
+    Stel uit het ongerijmde dat $q = \frac{a}{b}$ het kleinste positieve rationale getal is. Dan is $\frac{q}{2} = \frac{a}{2b}$ ook positief en rationaal, en $\frac{q}{2} < q$. Tegenspraak: er is geen kleinste positief rationaal getal.
 
 - id: h2-t4
   soort: test
@@ -343,4 +1295,62 @@
   antwoord: |-
     bv. $a = -3$, $b = 1$
   uitwerking: |-
-    $a = -3$, $b = 1$: $9 > 1$, maar $-3 < 1$.
+    Eén tegenvoorbeeld volstaat: $a = -3$, $b = 1$. Dan is $a^2 = 9 > 1 = b^2$, maar $-3 < 1$.
+
+- id: h2-t5
+  soort: test
+  niveau: 1
+  thema: |-
+    een bewijs lezen
+  opgave: |-
+    Lees het bewijs en beantwoord de vragen.\par
+    \textit{Stelling.} Als $a \deelt b$, dan $a \deelt b^2$.\par
+    \textit{Bewijs.} Stel $b = ak$. Dan is $b^2 = a^2k^2 = a \cdot ak^2$, dus $a \deelt b^2$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Welke definitie wordt twee keer gebruikt?
+      antwoord: |-
+        de definitie van \textit{deelt}
+      uitwerking: |-
+        De definitie van $a \deelt b$: $b = ak$ met $k$ geheel. Eerst om de veronderstelling uit te schrijven, dan om het besluit te herkennen.
+    - opgave: |-
+        Welk geheel getal toont aan dat $a \deelt b^2$?
+      antwoord: |-
+        $ak^2$
+      uitwerking: |-
+        $ak^2$: een product van gehele getallen, dus geheel.
+    - opgave: |-
+        Wat is het idee van het bewijs, in één zin?
+      antwoord: |-
+        kwadrateer de gelijkheid $b = ak$
+      uitwerking: |-
+        Kwadrateer $b = ak$ en zonder één factor $a$ af.
+
+- id: h2-t6
+  soort: test
+  niveau: 2
+  thema: |-
+    gevallen onderscheiden
+  opgave: |-
+    Bewijs: voor elk geheel getal $n$ is $n^2 + 5n$ even.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    $n^2 + 5n = n(n + 5)$.\\
+    \textit{$n$ even}, $n = 2k$: $n(n + 5) = 2 \cdot k(2k + 5)$ is even.\\
+    \textit{$n$ oneven}, $n = 2k + 1$: $n + 5 = 2(k + 3)$ is even, en $n(n + 5) = 2(2k + 1)(k + 3)$ is even.\\
+    Elk geheel getal is even of oneven, dus $n^2 + 5n$ is altijd even.
+
+- id: h2-t7
+  soort: test
+  niveau: 2
+  thema: |-
+    waar zit de fout
+  opgave: |-
+    Een leerling wil bewijzen: \textit{als $n^2 + 1$ even is, dan is $n$ oneven}. Hij schrijft: \textit{neem $n = 2k + 1$, dan is $n^2 + 1 = 4k^2 + 4k + 2 = 2(2k^2 + 2k + 1)$, dus even}. Wat is er fout? Geef een juist bewijs.
+  antwoord: |-
+    hij bewijst de omgekeerde; juist via de contrapositie
+  uitwerking: |-
+    Hij vertrekt van $n$ oneven en besluit dat $n^2 + 1$ even is: dat is de omgekeerde implicatie.\\
+    Juist, via de contrapositie: \textit{als $n$ even is, dan is $n^2 + 1$ oneven}. Stel $n = 2k$, dan is $n^2 + 1 = 4k^2 + 1 = 2 \cdot 2k^2 + 1$: oneven.

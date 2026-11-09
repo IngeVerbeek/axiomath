@@ -755,7 +755,7 @@
       antwoord: |-
         nee, twee keer
       uitwerking: |-
-        Nee. De som is voor elke kleinste-kwadratenrechte $0$, ook als het model slecht past (zoals bij de parabool in opdracht~\ref{oef:h2-o6}): positieve en negatieve residuen heffen elkaar op. En kleine residuen binnen de metingen zeggen niets over extrapolatie. Kijk naar het patroon van de residuen, en naar de grenzen van het model.
+        Nee. De som is voor elke kleinste-kwadratenrechte $0$, ook als het model slecht past (zoals bij de parabool in de opdracht over een gebogen verband): positieve en negatieve residuen heffen elkaar op. En kleine residuen binnen de metingen zeggen niets over extrapolatie. Kijk naar het patroon van de residuen, en naar de grenzen van het model.
 
 #----------------------------------------------------------------------------------------
 # KOPPEL

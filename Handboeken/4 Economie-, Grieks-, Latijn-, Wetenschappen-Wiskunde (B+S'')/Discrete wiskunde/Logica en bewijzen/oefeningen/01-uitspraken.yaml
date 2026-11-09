@@ -138,6 +138,193 @@
       uitwerking: |-
         $\forall d\ \exists l$ wordt $\exists d\ \forall l$: \textit{er is een dag waarop geen enkele leerling jarig is}. Bij een klas van 25 is de ontkenning zeker waar.
 
+- id: h1-open
+  soort: kort
+  opgave: |-
+    Is het een uitspraak of een open zin? Zeg van elke uitspraak of ze waar is.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $7 > 2 \en 7 < 5$
+      antwoord: |-
+        uitspraak, vals
+      uitwerking: |-
+        Uitspraak. $7 < 5$ is vals, en een conjunctie is alleen waar als beide delen waar zijn: vals.
+    - opgave: |-
+        $x^2 = 4$
+      antwoord: |-
+        open zin
+      uitwerking: |-
+        Open zin: waar voor $x = 2$ en $x = -2$, vals voor andere $x$.
+    - opgave: |-
+        12 is deelbaar door 3 of door 5.
+      antwoord: |-
+        uitspraak, waar
+      uitwerking: |-
+        Uitspraak. 12 is deelbaar door 3, dus de disjunctie is waar (ook al is 12 niet deelbaar door 5).
+    - opgave: |-
+        $n + 1 > n$
+      antwoord: |-
+        open zin
+      uitwerking: |-
+        Open zin: er staat een letter in. Ze is wel waar voor elke $n$, dus $\forall n\colon n + 1 > n$ is een ware uitspraak.
+    - opgave: |-
+        $\niet(3^2 = 9)$
+      antwoord: |-
+        uitspraak, vals
+      uitwerking: |-
+        Uitspraak. $3^2 = 9$ is waar, dus de negatie is vals.
+    - opgave: |-
+        $2^{10} > 1000 \of 2^{10} < 1000$
+      antwoord: |-
+        uitspraak, waar
+      uitwerking: |-
+        Uitspraak. $2^{10} = 1024 > 1000$, dus het eerste deel is waar en de disjunctie ook.
+
+- id: h1-demorgan
+  soort: kort
+  opgave: |-
+    Ontken met de wetten van De Morgan.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Ik neem de trein en de bus.
+      antwoord: |-
+        ik neem de trein niet of ik neem de bus niet
+      uitwerking: |-
+        $\niet(p \en q) \asa \niet p \of \niet q$: \textit{ik neem de trein niet of ik neem de bus niet}. Het is dus genoeg dat één van beide niet gebeurt.
+    - opgave: |-
+        $x \leqslant -2$ of $x > 5$
+      antwoord: |-
+        $x > -2$ en $x \leqslant 5$, kort $-2 < x \leqslant 5$
+      uitwerking: |-
+        $\niet(p \of q) \asa \niet p \en \niet q$. De ontkenning van $x \leqslant -2$ is $x > -2$, die van $x > 5$ is $x \leqslant 5$. Samen: $-2 < x \leqslant 5$.
+    - opgave: |-
+        Het getal is positief en deelbaar door 3.
+      antwoord: |-
+        het getal is niet positief of niet deelbaar door 3
+      uitwerking: |-
+        \textit{Het getal is niet positief of niet deelbaar door 3.} Niet positief betekent kleiner dan of gelijk aan 0, en niet \textit{negatief}: ook 0 is niet positief.
+
+- id: h1-voorwaarde
+  soort: kort
+  opgave: |-
+    Welke voorwaarde is voldoende en welke is nodig? Schrijf twee zinnen met \textit{voldoende} en \textit{nodig}.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Als een getal deelbaar is door 9, dan is het deelbaar door 3.
+      antwoord: |-
+        deelbaar door 9 is voldoende; deelbaar door 3 is nodig
+      uitwerking: |-
+        Deelbaar zijn door 9 is voldoende om deelbaar te zijn door 3. Deelbaar zijn door 3 is nodig om deelbaar te zijn door 9.
+    - opgave: |-
+        Als een vierhoek een vierkant is, dan heeft hij vier gelijke zijden.
+      antwoord: |-
+        vierkant is voldoende; vier gelijke zijden is nodig
+      uitwerking: |-
+        Een vierkant zijn is voldoende om vier gelijke zijden te hebben. Vier gelijke zijden hebben is nodig om een vierkant te zijn (maar niet voldoende: een ruit).
+    - opgave: |-
+        Als $x > 5$, dan is $x^2 > 25$. Is $x > 5$ ook nodig voor $x^2 > 25$?
+      antwoord: |-
+        $x > 5$ is voldoende, $x^2 > 25$ is nodig; $x > 5$ is niet nodig
+      uitwerking: |-
+        $x > 5$ is voldoende voor $x^2 > 25$, en $x^2 > 25$ is nodig voor $x > 5$. Maar $x > 5$ is niet nodig voor $x^2 > 25$: $x = -6$ geeft $x^2 = 36 > 25$.
+
+- id: h1-equivalentie
+  soort: kort
+  opgave: |-
+    Schrijf de equivalentie als twee implicaties. Zeg van elke implicatie of ze waar is. Is de equivalentie waar?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $x^3 = 8 \asa x = 2$, met $x \in \R$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        $x = 2 \dan x^3 = 8$: waar, $2^3 = 8$.\\
+        $x^3 = 8 \dan x = 2$: waar, want een reëel getal heeft maar één derdemachtswortel.\\
+        Beide implicaties zijn waar, dus de equivalentie is waar.
+    - opgave: |-
+        Een getal is deelbaar door 4 als en slechts als het even is.
+      antwoord: |-
+        vals
+      uitwerking: |-
+        \textit{Deelbaar door 4, dan even}: waar, want $4k = 2 \cdot 2k$.\\
+        \textit{Even, dan deelbaar door 4}: vals, want 6 is even en niet deelbaar door 4.\\
+        Eén implicatie is vals, dus de equivalentie is vals.
+    - opgave: |-
+        Een driehoek is gelijkzijdig als en slechts als zijn drie hoeken $60^\circ$ zijn.
+      antwoord: |-
+        waar
+      uitwerking: |-
+        \textit{Gelijkzijdig, dan drie hoeken van $60^\circ$}: waar, de hoeken zijn gelijk en hun som is $180^\circ$.\\
+        \textit{Drie hoeken van $60^\circ$, dan gelijkzijdig}: waar, tegenover gelijke hoeken liggen gelijke zijden.\\
+        De equivalentie is waar.
+
+- id: h1-volgorde
+  soort: kort
+  opgave: |-
+    Met $x, y \in \R$. Zeg in woorden wat er staat, en of het waar is.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\forall x\ \exists y\colon x + y = 0$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Bij elk getal $x$ is er een getal $y$ met som 0. Waar: neem $y = -x$. Hier hangt $y$ af van $x$.
+    - opgave: |-
+        $\exists y\ \forall x\colon x + y = 0$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Er is één getal $y$ dat met elk getal $x$ som 0 geeft. Vals: uit $x = 0$ volgt $y = 0$, en uit $x = 1$ volgt $y = -1$. Eén vaste $y$ kan niet beide.
+    - opgave: |-
+        $\forall x\ \exists y\colon xy = 1$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Elk getal heeft een getal waarmee het product 1 is. Vals: voor $x = 0$ is $xy = 0$ voor elke $y$.
+    - opgave: |-
+        $\exists x\ \forall y\colon xy = 0$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Er is een getal dat met elk getal product 0 geeft. Waar: $x = 0$.
+
+- id: h1-formaliseer
+  soort: kort
+  opgave: |-
+    Schrijf met kwantoren, ontken, en zeg de ontkenning in woorden.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Elk natuurlijk getal is kleiner dan zijn kwadraat plus één.
+      antwoord: |-
+        $\exists n \in \N\colon n \geqslant n^2 + 1$
+      uitwerking: |-
+        $\forall n \in \N\colon n < n^2 + 1$.\\
+        Ontkenning: $\exists n \in \N\colon n \geqslant n^2 + 1$.\\
+        In woorden: \textit{er is een natuurlijk getal dat groter is dan of gelijk aan zijn kwadraat plus één}.
+    - opgave: |-
+        Er is een leerling die elke vraag juist heeft.
+      antwoord: |-
+        $\forall l\ \exists v\colon l$ heeft $v$ fout
+      uitwerking: |-
+        $\exists l\ \forall v\colon l$ heeft $v$ juist ($l$ een leerling, $v$ een vraag).\\
+        Ontkenning: $\forall l\ \exists v\colon l$ heeft $v$ niet juist.\\
+        In woorden: \textit{elke leerling heeft minstens één vraag fout}.
+    - opgave: |-
+        Bij elk reëel getal is er een geheel getal dat groter is.
+      antwoord: |-
+        $\exists x \in \R\ \forall n \in \Z\colon n \leqslant x$
+      uitwerking: |-
+        $\forall x \in \R\ \exists n \in \Z\colon n > x$.\\
+        Ontkenning: $\exists x \in \R\ \forall n \in \Z\colon n \leqslant x$.\\
+        In woorden: \textit{er is een reëel getal dat groter is dan of gelijk aan elk geheel getal}.
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
@@ -156,41 +343,185 @@
       antwoord: |-
         voldoende
       uitwerking: |-
-        Voldoende: wie deelbaar is door 10, is deelbaar door 5. Niet nodig: 15.
+        Voldoende: wie deelbaar is door 10, is deelbaar door 5. Niet nodig: 15 is deelbaar door 5, maar niet door 10.
     - opgave: |-
         Even zijn is een \ldots{} voorwaarde om deelbaar te zijn door 4.
       antwoord: |-
         nodig
       uitwerking: |-
-        Nodig: wie deelbaar is door 4, is even. Niet voldoende: 6.
+        Nodig: wie deelbaar is door 4, is even. Niet voldoende: 6 is even, maar niet deelbaar door 4.
     - opgave: |-
         $x^2 = 0$ is een \ldots{} voorwaarde voor $x = 0$.
       antwoord: |-
         nodig en voldoende
       uitwerking: |-
-        $x^2 = 0 \asa x = 0$.
+        Als $x = 0$, dan is $x^2 = 0$: nodig. Als $x^2 = 0$, dan is $x = 0$, want een product van reële getallen is alleen 0 als een factor 0 is: voldoende. Dus $x^2 = 0 \asa x = 0$.
+    - opgave: |-
+        $x > 0$ is een \ldots{} voorwaarde voor $x^2 > 0$, met $x \in \R$.
+      antwoord: |-
+        voldoende
+      uitwerking: |-
+        Voldoende: als $x > 0$, dan is $x^2 = x \cdot x > 0$. Niet nodig: $x = -1$ geeft $x^2 = 1 > 0$.
+    - opgave: |-
+        Een rechthoek zijn is een \ldots{} voorwaarde om een vierkant te zijn.
+      antwoord: |-
+        nodig
+      uitwerking: |-
+        Nodig: elk vierkant is een rechthoek. Niet voldoende: een rechthoek van 2 bij 3 is geen vierkant.
 
-- id: h1-o2
+- id: h1-o10
   soort: opdracht
   niveau: 1
   thema: |-
-    van woorden naar symbolen
+    waarheidswaarde van samengestelde uitspraken
   opgave: |-
-    Schrijf met kwantoren. Gebruik $\R$ of $\N$.
-  lijst: enumerate
+    Neem $p$ waar, $q$ vals en $r$ waar. Is de uitspraak waar of vals?
+  lijst: reeks
+  kolommen: 3
   delen:
     - opgave: |-
-        Elk reëel getal heeft een tegengestelde.
+        $\niet p \of q$
       antwoord: |-
-        $\forall x \in \R\ \exists y \in \R\colon x + y = 0$
+        vals
       uitwerking: |-
-        $\forall x \in \R\ \exists y \in \R\colon x + y = 0$.
+        $\niet p$ is vals en $q$ is vals: de disjunctie is vals.
     - opgave: |-
-        Er is een natuurlijk getal dat kleiner is dan of gelijk aan elk natuurlijk getal.
+        $p \en \niet q$
       antwoord: |-
-        $\exists m \in \N\ \forall n \in \N\colon m \leqslant n$
+        waar
       uitwerking: |-
-        $\exists m \in \N\ \forall n \in \N\colon m \leqslant n$. Waar, met $m = 0$.
+        $p$ is waar en $\niet q$ is waar: waar.
+    - opgave: |-
+        $p \dan q$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        $p$ waar en $q$ vals: het enige geval waarin een implicatie vals is.
+    - opgave: |-
+        $q \dan p$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        $q$ is vals, dus de implicatie is waar.
+    - opgave: |-
+        $\niet(p \en q)$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        $p \en q$ is vals, want $q$ is vals. De negatie is waar.
+    - opgave: |-
+        $p \asa r$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        $p$ en $r$ zijn allebei waar.
+    - opgave: |-
+        $(p \of q) \dan r$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        $p \of q$ is waar en $r$ is waar: de implicatie is waar.
+    - opgave: |-
+        $p \en (q \of r)$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        $q \of r$ is waar, want $r$ is waar. Met $p$ waar is het geheel waar.
+    - opgave: |-
+        $\niet p \dan (q \en r)$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        $\niet p$ is vals, dus de implicatie is waar, wat er ook rechts staat.
+    - opgave: |-
+        $(p \dan q) \of \niet r$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        $p \dan q$ is vals (zie c) en $\niet r$ is vals: vals.
+    - opgave: |-
+        $\niet(q \asa r)$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        $q$ is vals en $r$ is waar, dus $q \asa r$ is vals, en de negatie is waar.
+    - opgave: |-
+        $(q \dan p) \en (r \dan q)$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        $q \dan p$ is waar, maar $r \dan q$ is vals ($r$ waar, $q$ vals). De conjunctie is vals.
+
+- id: h1-o11
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    ontkennen: De Morgan en kwantoren
+  opgave: |-
+    Ontken. Zet het woord \textit{niet} niet gewoon vooraan, maar schrijf de ontkenning zo eenvoudig mogelijk.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $x > 3$
+      antwoord: |-
+        $x \leqslant 3$
+      uitwerking: |-
+        $x \leqslant 3$: de gelijkheid hoort bij de ontkenning.
+    - opgave: |-
+        $a = 0$ en $b = 0$
+      antwoord: |-
+        $a \neq 0$ of $b \neq 0$
+      uitwerking: |-
+        De Morgan: \textit{en} wordt \textit{of}. $a \neq 0$ of $b \neq 0$.
+    - opgave: |-
+        $a = 0$ of $b = 0$
+      antwoord: |-
+        $a \neq 0$ en $b \neq 0$
+      uitwerking: |-
+        De Morgan: \textit{of} wordt \textit{en}. $a \neq 0$ en $b \neq 0$.
+    - opgave: |-
+        $-1 < x \leqslant 4$
+      antwoord: |-
+        $x \leqslant -1$ of $x > 4$
+      uitwerking: |-
+        Er staat $x > -1$ en $x \leqslant 4$. De ontkenning is $x \leqslant -1$ of $x > 4$.
+    - opgave: |-
+        Alle kaartjes zijn verkocht.
+      antwoord: |-
+        er is een kaartje dat niet verkocht is
+      uitwerking: |-
+        $\forall$ wordt $\exists$: \textit{er is (minstens) een kaartje dat niet verkocht is}.
+    - opgave: |-
+        Er is een bus die te laat is.
+      antwoord: |-
+        alle bussen zijn op tijd
+      uitwerking: |-
+        $\exists$ wordt $\forall$: \textit{elke bus is op tijd}, of \textit{geen enkele bus is te laat}.
+    - opgave: |-
+        Niemand heeft de opgave opgelost.
+      antwoord: |-
+        iemand heeft de opgave opgelost
+      uitwerking: |-
+        Er staat: \textit{voor elke persoon geldt: die heeft de opgave niet opgelost}. Ontkenning: \textit{er is iemand die de opgave opgelost heeft}.
+    - opgave: |-
+        $\forall x \in \R\colon x^2 + x > 0$
+      antwoord: |-
+        $\exists x \in \R\colon x^2 + x \leqslant 0$
+      uitwerking: |-
+        $\exists x \in \R\colon x^2 + x \leqslant 0$. (Die ontkenning is waar: $x = 0$.)
+    - opgave: |-
+        $\exists n \in \N\colon n^2 = 50$
+      antwoord: |-
+        $\forall n \in \N\colon n^2 \neq 50$
+      uitwerking: |-
+        $\forall n \in \N\colon n^2 \neq 50$. (Die ontkenning is waar: $7^2 = 49$ en $8^2 = 64$.)
+    - opgave: |-
+        Het is zaterdag en het regent niet.
+      antwoord: |-
+        het is geen zaterdag of het regent
+      uitwerking: |-
+        De Morgan, en de ontkenning van \textit{het regent niet} is \textit{het regent}: \textit{het is geen zaterdag of het regent}.
 
 - id: h1-o3
   soort: opdracht
@@ -213,6 +544,248 @@
         $n = 40$
       uitwerking: |-
         $n = 40$: $1600 + 40 + 41 = 1681 = 41^2$. (Voor $n$ van 0 tot 39 is het wel telkens een priemgetal.)
+    - opgave: |-
+        Voor alle reële $x$ is $\sqrt{x^2} = x$.
+      antwoord: |-
+        bv. $x = -2$
+      uitwerking: |-
+        $x = -2$: $\sqrt{(-2)^2} = \sqrt4 = 2 \neq -2$. Juist is $\sqrt{x^2} = |x|$.
+    - opgave: |-
+        Elk getal dat deelbaar is door 2 en door 4, is deelbaar door 8.
+      antwoord: |-
+        bv. 4
+      uitwerking: |-
+        4 is deelbaar door 2 en door 4, maar niet door 8. (Bij 2 en 3 werkt het wel: deelbaar door 2 en door 3 is deelbaar door 6.)
+
+- id: h1-o13
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    waarheidstabellen
+  opgave: |-
+    Maak de waarheidstabel. Neem voor $(p, q)$ de vier rijen in de volgorde WW, WV, VW, VV (W is waar, V is vals).
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\niet p \of q$
+      antwoord: |-
+        W, V, W, W
+      uitwerking: |-
+        \begin{tabular}{cc|c|c} $p$ & $q$ & $\niet p$ & $\niet p \of q$ \\ \hline W & W & V & W \\ W & V & V & V \\ V & W & W & W \\ V & V & W & W \end{tabular}
+    - opgave: |-
+        $p \en \niet q$
+      antwoord: |-
+        V, W, V, V
+      uitwerking: |-
+        \begin{tabular}{cc|c|c} $p$ & $q$ & $\niet q$ & $p \en \niet q$ \\ \hline W & W & V & V \\ W & V & W & W \\ V & W & V & V \\ V & V & W & V \end{tabular}
+    - opgave: |-
+        $(p \of q) \en \niet(p \en q)$
+      antwoord: |-
+        V, W, W, V
+      uitwerking: |-
+        \begin{tabular}{cc|c|c|c} $p$ & $q$ & $p \of q$ & $\niet(p \en q)$ & samen \\ \hline W & W & W & V & V \\ W & V & W & W & W \\ V & W & W & W & W \\ V & V & V & W & V \end{tabular}\\
+        Dit is het \textit{of} van de omgangstaal: het ene of het andere, maar niet beide.
+    - opgave: |-
+        $(p \dan q) \en (q \dan p)$
+      antwoord: |-
+        W, V, V, W
+      uitwerking: |-
+        \begin{tabular}{cc|c|c|c} $p$ & $q$ & $p \dan q$ & $q \dan p$ & samen \\ \hline W & W & W & W & W \\ W & V & V & W & V \\ V & W & W & V & V \\ V & V & W & W & W \end{tabular}
+    - opgave: |-
+        Welke van de tabellen is dezelfde als die van $p \dan q$? En als die van $p \asa q$?
+      antwoord: |-
+        a; d
+      uitwerking: |-
+        $p \dan q$ heeft W, V, W, W: dat is tabel a, dus $(p \dan q) \asa (\niet p \of q)$. $p \asa q$ heeft W, V, V, W: dat is tabel d, zoals de definitie van de equivalentie zegt. Tabel b is juist de negatie van a, en c de negatie van d.
+
+- id: h1-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    van woorden naar symbolen
+  opgave: |-
+    Schrijf met kwantoren. Gebruik $\R$ of $\N$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Elk reëel getal heeft een tegengestelde.
+      antwoord: |-
+        $\forall x \in \R\ \exists y \in \R\colon x + y = 0$
+      uitwerking: |-
+        \textit{Elk} wordt $\forall$, \textit{heeft een} wordt $\exists$, en \textit{tegengestelde} betekent dat de som 0 is: $\forall x \in \R\ \exists y \in \R\colon x + y = 0$. De volgorde is belangrijk: $y$ hangt af van $x$.
+    - opgave: |-
+        Er is een natuurlijk getal dat kleiner is dan of gelijk aan elk natuurlijk getal.
+      antwoord: |-
+        $\exists m \in \N\ \forall n \in \N\colon m \leqslant n$
+      uitwerking: |-
+        Eerst \textit{er is}, dan \textit{elk}: $\exists m \in \N\ \forall n \in \N\colon m \leqslant n$. Waar, met $m = 0$.
+    - opgave: |-
+        Elk natuurlijk getal is even of oneven.
+      antwoord: |-
+        $\forall n \in \N\ \exists k \in \N\colon n = 2k \of n = 2k + 1$
+      uitwerking: |-
+        Even betekent $n = 2k$, oneven $n = 2k + 1$, voor een natuurlijk getal $k$: $\forall n \in \N\ \exists k \in \N\colon n = 2k \of n = 2k + 1$.
+    - opgave: |-
+        Geen enkel reëel getal heeft een negatief kwadraat.
+      antwoord: |-
+        $\forall x \in \R\colon x^2 \geqslant 0$
+      uitwerking: |-
+        \textit{Geen enkel} is \textit{er is geen}: $\niet\bigl(\exists x \in \R\colon x^2 < 0\bigr)$. Zonder negatie vooraan: $\forall x \in \R\colon x^2 \geqslant 0$.
+    - opgave: |-
+        Tussen twee verschillende reële getallen ligt nog een reëel getal.
+      antwoord: |-
+        $\forall a, b \in \R\colon a < b \dan \exists c \in \R\colon a < c < b$
+      uitwerking: |-
+        Noem het kleinste $a$ en het grootste $b$: $\forall a, b \in \R\colon a < b \dan \exists c \in \R\colon a < c < b$. (Waar: neem $c = \frac{a + b}{2}$.)
+
+- id: h1-o14
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    omgekeerde en contrapositie in woorden
+  opgave: |-
+    Geef de omgekeerde en de contrapositie in woorden. Welke van de twee zegt hetzelfde als de gegeven zin?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Als het vriest, dan ligt er ijs op de vijver.
+      antwoord: |-
+        omgekeerde: als er ijs ligt, dan vriest het; contrapositie: als er geen ijs ligt, dan vriest het niet
+      uitwerking: |-
+        Omgekeerde: \textit{als er ijs op de vijver ligt, dan vriest het}.\\
+        Contrapositie: \textit{als er geen ijs op de vijver ligt, dan vriest het niet}.\\
+        De contrapositie zegt hetzelfde. De omgekeerde niet: het ijs kan van gisteren zijn.
+    - opgave: |-
+        Als je de code kent, kun je de kluis openen.
+      antwoord: |-
+        omgekeerde: als je de kluis kunt openen, ken je de code; contrapositie: als je de kluis niet kunt openen, ken je de code niet
+      uitwerking: |-
+        Omgekeerde: \textit{als je de kluis kunt openen, ken je de code}.\\
+        Contrapositie: \textit{als je de kluis niet kunt openen, ken je de code niet}.\\
+        De contrapositie zegt hetzelfde. De omgekeerde niet: misschien heb je een sleutel.
+    - opgave: |-
+        Als een getal eindigt op 0, dan is het deelbaar door 5.
+      antwoord: |-
+        omgekeerde: deelbaar door 5, dan eindigt op 0; contrapositie: niet deelbaar door 5, dan eindigt niet op 0
+      uitwerking: |-
+        Omgekeerde: \textit{als een getal deelbaar is door 5, dan eindigt het op 0}. Die is vals: 15.\\
+        Contrapositie: \textit{als een getal niet deelbaar is door 5, dan eindigt het niet op 0}. Die zegt hetzelfde.
+    - opgave: |-
+        Als $x = -2$, dan is $x^2 = 4$.
+      antwoord: |-
+        omgekeerde: als $x^2 = 4$, dan $x = -2$; contrapositie: als $x^2 \neq 4$, dan $x \neq -2$
+      uitwerking: |-
+        Omgekeerde: \textit{als $x^2 = 4$, dan is $x = -2$}. Die is vals: $x = 2$.\\
+        Contrapositie: \textit{als $x^2 \neq 4$, dan is $x \neq -2$}. Die zegt hetzelfde.
+
+- id: h1-o12
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    open zin, connectieven en kwantoren
+  opgave: |-
+    Gegeven is de open zin $P(n)$: $n^2 < 3n$, met $n \in \N$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Voor welke $n$ is $P(n)$ waar?
+      antwoord: |-
+        $n = 1$ en $n = 2$
+      uitwerking: |-
+        $n^2 < 3n \asa n^2 - 3n < 0 \asa n(n - 3) < 0$. Het product is negatief als $0 < n < 3$: dus $n = 1$ en $n = 2$. Controle: $1 < 3$ en $4 < 6$, maar $9 < 9$ is vals.
+    - opgave: |-
+        Is $\forall n \in \N\colon P(n)$ waar?
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: een tegenvoorbeeld is $n = 3$, want $9 < 9$ is vals.
+    - opgave: |-
+        Is $\exists n \in \N\colon P(n)$ waar?
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $n = 1$ geeft $1 < 3$. Eén voorbeeld volstaat.
+    - opgave: |-
+        Is $P(1) \en P(2)$ waar? En $P(0) \of P(3)$?
+      antwoord: |-
+        waar; vals
+      uitwerking: |-
+        $P(1)$ en $P(2)$ zijn allebei waar, dus de conjunctie is waar. $P(0)$ zegt $0 < 0$ en $P(3)$ zegt $9 < 9$: allebei vals, dus de disjunctie is vals.
+
+- id: h1-o16
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    waar zit de fout: ontkennen en omkeren
+  opgave: |-
+    Waar zit de fout? Verbeter.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Iemand ontkent \textit{alle leerlingen zijn geslaagd} als \textit{geen enkele leerling is geslaagd}.
+      antwoord: |-
+        juist: er is een leerling die niet geslaagd is
+      uitwerking: |-
+        \textit{Geen enkele leerling is geslaagd} is te sterk. Als er één leerling niet geslaagd is, is \textit{alle leerlingen zijn geslaagd} al vals. Juist: \textit{er is (minstens) een leerling die niet geslaagd is}.
+    - opgave: |-
+        Iemand ontkent \textit{$x > 2$ en $x < 5$} als \textit{$x < 2$ en $x > 5$}.
+      antwoord: |-
+        juist: $x \leqslant 2$ of $x \geqslant 5$
+      uitwerking: |-
+        Twee fouten. \textit{En} moet \textit{of} worden (De Morgan), en de ontkenning van $x > 2$ is $x \leqslant 2$, niet $x < 2$. Juist: $x \leqslant 2$ of $x \geqslant 5$. (De foute versie is zelfs nooit waar.)
+    - opgave: |-
+        Iemand redeneert: \textit{als het regent, is de straat nat. De straat is nat, dus het heeft geregend.}
+      antwoord: |-
+        dat is de omgekeerde
+      uitwerking: |-
+        Gegeven is $p \dan q$, en uit $q$ besluit hij $p$. Dat gebruikt de omgekeerde $q \dan p$, die niet gegeven is. De straat kan nat zijn door een sproeier. Uit \textit{de straat is niet nat} mag je wel besluiten dat het niet geregend heeft (contrapositie).
+
+- id: h1-o15
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    van symbolen naar woorden
+  opgave: |-
+    Zeg in woorden wat er staat, en of het waar is.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\forall x \in \R\colon x^2 + 1 > 0$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Voor elk reëel getal is het kwadraat plus 1 positief. Waar: $x^2 + 1 \geqslant 1$.
+    - opgave: |-
+        $\exists n \in \N\colon n^2 = n$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Er is een natuurlijk getal dat gelijk is aan zijn kwadraat. Waar: $n = 0$ of $n = 1$.
+    - opgave: |-
+        $\forall x \in \R\colon |x| = x$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Elk reëel getal is gelijk aan zijn absolute waarde. Vals: $|-1| = 1 \neq -1$.
+    - opgave: |-
+        $\exists x \in \R\colon x^2 < 0$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Er is een reëel getal met een negatief kwadraat. Vals: $x^2 \geqslant 0$ voor alle $x$.
+    - opgave: |-
+        $\forall n \in \N\colon n^2 \geqslant 2n$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Elk natuurlijk getal heeft een kwadraat dat minstens het dubbel is. Vals: $n = 1$ geeft $1 < 2$.
+    - opgave: |-
+        $\exists x \in \R\colon x^3 = -8$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Er is een reëel getal met derdemacht $-8$. Waar: $x = -2$.
 
 - id: h1-o4
   soort: opdracht
@@ -234,13 +807,165 @@
       antwoord: |-
         vals
       uitwerking: |-
-        Er is een getal groter dan alle kwadraten: vals, want $x^2$ wordt willekeurig groot.
+        Er is een getal groter dan alle kwadraten: vals. Welke $y$ je ook kiest, $x = |y| + 1$ geeft $x^2 \geqslant x > |y| \geqslant y$.
     - opgave: |-
         $\exists y\ \forall x\colon y \leqslant x^2$
       antwoord: |-
         waar
       uitwerking: |-
         Er is een getal dat kleiner is dan of gelijk aan alle kwadraten: waar, bijvoorbeeld $y = 0$.
+
+- id: h1-o20
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: voorwaarden voor korting
+  opgave: |-
+    Een museum geeft korting aan wie jonger is dan 26 of een museumpas heeft.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Krijgen deze bezoekers korting: Amir (30 jaar, met museumpas), Lien (19 jaar, zonder pas), Ward (40 jaar, zonder pas), Noor (22 jaar, met pas)?
+      antwoord: |-
+        Amir ja, Lien ja, Ward nee, Noor ja
+      uitwerking: |-
+        De voorwaarde is een disjunctie: één deel volstaat. Amir heeft een pas: ja. Lien is jonger dan 26: ja. Ward voldoet aan geen van beide: nee. Noor voldoet aan beide: ja, want het wiskundige \textit{of} sluit \textit{beide} niet uit.
+    - opgave: |-
+        Wie krijgt geen korting? Schrijf de voorwaarde met De Morgan.
+      antwoord: |-
+        wie 26 of ouder is en geen museumpas heeft
+      uitwerking: |-
+        $\niet(p \of q) \asa \niet p \en \niet q$: geen korting krijgt \textit{wie 26 jaar of ouder is en geen museumpas heeft}.
+    - opgave: |-
+        Is \textit{jonger zijn dan 26} een nodige of een voldoende voorwaarde om korting te krijgen?
+      antwoord: |-
+        voldoende, niet nodig
+      uitwerking: |-
+        Voldoende: wie jonger is dan 26, krijgt korting. Niet nodig: Amir is 30 en krijgt toch korting.
+
+- id: h1-o17
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    gelijkwaardige uitspraken
+  opgave: |-
+    Zijn de twee uitspraken gelijkwaardig (equivalent)? Gebruik een waarheidstabel of een redenering. Geef anders een geval waarin ze verschillen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $p \dan q$ \quad en \quad $\niet p \of q$
+      antwoord: |-
+        ja
+      uitwerking: |-
+        \begin{tabular}{cc|c|c} $p$ & $q$ & $p \dan q$ & $\niet p \of q$ \\ \hline W & W & W & W \\ W & V & V & V \\ V & W & W & W \\ V & V & W & W \end{tabular}\\
+        De kolommen zijn gelijk. In woorden: $\niet p \of q$ is alleen vals als $p$ waar is en $q$ vals, net zoals $p \dan q$.
+    - opgave: |-
+        $p \dan q$ \quad en \quad $q \dan p$
+      antwoord: |-
+        nee, bv. $p$ waar en $q$ vals
+      uitwerking: |-
+        Nee. Met $p$ waar en $q$ vals is $p \dan q$ vals en $q \dan p$ waar. Een implicatie en haar omgekeerde zijn niet gelijkwaardig.
+    - opgave: |-
+        $\niet(p \asa q)$ \quad en \quad $p \asa \niet q$
+      antwoord: |-
+        ja
+      uitwerking: |-
+        \begin{tabular}{cc|c|c} $p$ & $q$ & $\niet(p \asa q)$ & $p \asa \niet q$ \\ \hline W & W & V & V \\ W & V & W & W \\ V & W & W & W \\ V & V & V & V \end{tabular}\\
+        Beide zijn waar precies als $p$ en $q$ verschillen.
+    - opgave: |-
+        $p \of (q \en r)$ \quad en \quad $(p \of q) \en r$
+      antwoord: |-
+        nee, bv. $p$ waar, $r$ vals
+      uitwerking: |-
+        Nee. Neem $p$ waar, $q$ waar en $r$ vals. Links: $p$ is waar, dus de disjunctie is waar. Rechts: $r$ is vals, dus de conjunctie is vals. Haakjes verplaatsen mag dus niet zomaar.
+
+- id: h1-o23
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    implicaties met kwantoren ontkennen
+  opgave: |-
+    Ontken met kwantoren, met $x \in \R$ en $n \in \N$. Zeg of de uitspraak of haar ontkenning waar is.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\forall x\colon x > 2 \dan x^2 > 4$
+      antwoord: |-
+        $\exists x\colon x > 2 \en x^2 \leqslant 4$; de uitspraak is waar
+      uitwerking: |-
+        De ontkenning van $p \dan q$ is $p \en \niet q$ (de negatie van een implicatie). Dus: $\exists x\colon x > 2 \en x^2 \leqslant 4$. De uitspraak is waar: uit $x > 2 > 0$ volgt $x^2 > 2x > 4$.
+    - opgave: |-
+        $\forall x\colon x^2 > 4 \dan x > 2$
+      antwoord: |-
+        $\exists x\colon x^2 > 4 \en x \leqslant 2$; de ontkenning is waar
+      uitwerking: |-
+        Ontkenning: $\exists x\colon x^2 > 4 \en x \leqslant 2$. Die is waar: $x = -3$ geeft $9 > 4$ en $-3 \leqslant 2$.
+    - opgave: |-
+        $\forall n\colon n \text{ is priem} \dan n \text{ is oneven}$
+      antwoord: |-
+        $\exists n\colon n$ is priem en even; de ontkenning is waar
+      uitwerking: |-
+        Ontkenning: $\exists n\colon n$ is priem $\en$ $n$ is even. Die is waar: $n = 2$.
+    - opgave: |-
+        $\exists n\colon n > 10 \en n^2 < 100$
+      antwoord: |-
+        $\forall n\colon n \leqslant 10 \of n^2 \geqslant 100$; de ontkenning is waar
+      uitwerking: |-
+        $\exists$ wordt $\forall$, en De Morgan: $\forall n\colon n \leqslant 10 \of n^2 \geqslant 100$. Die is waar: is $n > 10$, dan is $n^2 > 100$.
+
+- id: h1-o19
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    implicaties in een eulerdiagram
+  figuur:
+    opties: |-
+      4.4cm
+    code: |-
+      \begin{tikzpicture}[font=\scriptsize]
+        \draw[grijs] (-2.1,-1.3) rectangle (2.1,1.3);
+        \node[below right,text=grijs] at (-2.1,1.3) {dieren};
+        \draw[verz] (-.55,-.1) ellipse (1.25 and .9);
+        \draw[verz,fill opacity=.22] (-.85,-.25) ellipse (.5 and .38);
+        \node at (-.85,-.25) {$K$};
+        \node[text=accent] at (.2,.45) {$Z$};
+        \draw[verz] (1.45,.15) circle (.42);
+        \node[text=accent] at (1.45,.15) {$V$};
+      \end{tikzpicture}
+  opgave: |-
+    Het eulerdiagram toont de verzameling $K$ van de katten, $Z$ van de zoogdieren en $V$ van de vogels, binnen alle dieren. Is de implicatie waar voor elk dier $x$? Verklaar met het diagram.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $x \in K \dan x \in Z$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $K$ ligt helemaal binnen $Z$.
+    - opgave: |-
+        $x \in Z \dan x \in K$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: een hond ligt in $Z$, buiten $K$. Dat is de omgekeerde van a.
+    - opgave: |-
+        $x \notin Z \dan x \notin K$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: wie buiten $Z$ ligt, ligt ook buiten $K$. Het is de contrapositie van a.
+    - opgave: |-
+        $x \in V \dan x \notin K$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $V$ en $K$ overlappen niet.
+    - opgave: |-
+        $x \notin Z \dan x \in V$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: een vis ligt buiten $Z$ en buiten $V$, in het gebied dat bij geen enkele verzameling hoort.
 
 - id: h1-o5
   soort: opdracht
@@ -263,6 +988,72 @@
         vals; omgekeerde waar
       uitwerking: |-
         Vals: $a = 2$, $b = -2$. De omgekeerde \textit{als $a = b$, dan $a^2 = b^2$} is waar. Juist is: $a^2 = b^2 \asa a = b \of a = -b$.
+    - opgave: |-
+        Als $x$ rationaal is, dan is $x^2$ rationaal.
+      antwoord: |-
+        waar; omgekeerde vals
+      uitwerking: |-
+        Waar: is $x = \frac{a}{b}$, dan is $x^2 = \frac{a^2}{b^2}$, ook een breuk van gehele getallen. Omgekeerde: \textit{als $x^2$ rationaal is, dan is $x$ rationaal}: vals, want $(\sqrt2)^2 = 2$ is rationaal en $\sqrt2$ niet. Geen equivalentie.
+
+- id: h1-o18
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    kwantoren bij een grafiek
+  figuur:
+    opties: |-
+      4.6cm
+    code: |-
+      \begin{tikzpicture}[x=.6cm,y=.6cm,font=\scriptsize]
+        \draw[black!14,very thin] (-2.5,-1.5) grid (4.5,3.5);
+        \draw[->,grijs] (-2.5,0) -- (4.8,0) node[right,text=black] {$x$};
+        \draw[->,grijs] (0,-1.5) -- (0,3.8) node[above,text=black] {$y$};
+        \foreach \t in {-2,2,4} \node[below] at (\t,0) {$\t$};
+        \foreach \t in {-1,1,2,3} \node[left] at (0,\t) {$\t$};
+        \draw[accent,thick] (-2,3) -- (0,-1) -- (2,1) -- (4,-1);
+        \fill[accent] (-2,3) circle (1.6pt) (4,-1) circle (1.6pt);
+        \node[text=accent,above] at (2,1) {$f$};
+      \end{tikzpicture}
+  opgave: |-
+    De grafiek van $f$ op $[-2, 4]$ is een gebroken lijn. Waar of vals? Verklaar met de grafiek. De letters $x$ en $M$ zijn reële getallen, met $x$ in $[-2, 4]$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\forall x\colon f(x) \geqslant -1$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: het laagste punt van de grafiek ligt op hoogte $-1$.
+    - opgave: |-
+        $\exists x\colon f(x) = 2$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: op het eerste lijnstuk daalt $f$ van 3 naar $-1$, en komt dus langs 2 (bij $x = -1{,}5$).
+    - opgave: |-
+        $\forall x \in [0, 4]\colon f(x) \leqslant 1$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: op $[0, 4]$ is het hoogste punt $(2, 1)$.
+    - opgave: |-
+        $\exists M\ \forall x\colon f(x) \leqslant M$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Waar: $M = 3$ werkt, want de grafiek komt nergens boven 3. (Elke $M \geqslant 3$ werkt.)
+    - opgave: |-
+        $\forall M\ \exists x\colon f(x) > M$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: dat is de ontkenning van d. Voor $M = 3$ is er geen $x$ met $f(x) > 3$.
+    - opgave: |-
+        Ontken c met kwantoren. Waarom is die ontkenning vals?
+      antwoord: |-
+        $\exists x \in [0, 4]\colon f(x) > 1$
+      uitwerking: |-
+        $\exists x \in [0, 4]\colon f(x) > 1$. Die is vals omdat c waar is: rechts van de $y$-as komt de grafiek nergens boven 1. (De punten met $f(x) > 1$ liggen links van $x = -1$, buiten $[0, 4]$.)
 
 - id: h1-o6
   soort: opdracht
@@ -270,11 +1061,129 @@
   thema: |-
     de negatie van een implicatie
   opgave: |-
-    Toon met een redenering (of een waarheidstabel) aan dat $\niet(p \dan q) \asa (p \en \niet q)$. Ontken daarmee: \textit{als het regent, neem ik een paraplu}.
-  antwoord: |-
-    het regent en ik neem geen paraplu
-  uitwerking: |-
-    $p \dan q$ is alleen vals als $p$ waar en $q$ vals is, dus $\niet(p \dan q)$ is waar precies als $p \en \niet q$. De ontkenning is: \textit{het regent en ik neem geen paraplu}. Niet: \textit{als het niet regent, neem ik geen paraplu}.
+    Een implicatie ontkennen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon met een redenering of een waarheidstabel aan dat $\niet(p \dan q) \asa (p \en \niet q)$.
+      antwoord: |-
+        zie de uitgewerkte oplossingen
+      uitwerking: |-
+        $p \dan q$ is alleen vals als $p$ waar en $q$ vals is, dus $\niet(p \dan q)$ is alleen waar als $p$ waar en $q$ vals is: precies wanneer $p \en \niet q$ waar is.\\
+        \begin{tabular}{cc|c|c} $p$ & $q$ & $\niet(p \dan q)$ & $p \en \niet q$ \\ \hline W & W & V & V \\ W & V & W & W \\ V & W & V & V \\ V & V & V & V \end{tabular}
+    - opgave: |-
+        Ontken: \textit{als het regent, neem ik een paraplu}.
+      antwoord: |-
+        het regent en ik neem geen paraplu
+      uitwerking: |-
+        Met a: \textit{het regent en ik neem geen paraplu}. Niet: \textit{als het niet regent, neem ik geen paraplu}. De ontkenning van een implicatie is geen implicatie.
+    - opgave: |-
+        Ontken: \textit{als $n$ een priemgetal is, dan is $n$ oneven}. Welke van de twee is waar?
+      antwoord: |-
+        $n$ is een priemgetal en even; de ontkenning is waar
+      uitwerking: |-
+        Ontkenning: \textit{$n$ is een priemgetal en $n$ is even} (voor een of andere $n$). Die is waar: $n = 2$. De implicatie is dus vals.
+
+- id: h1-o24
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: de volgorde van kwantoren
+  opgave: |-
+    In een sportclub betekent $T(s, d)$: \textit{speler $s$ traint op dag $d$}.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Schrijf met kwantoren: \textit{elke speler traint op minstens één dag}.
+      antwoord: |-
+        $\forall s\ \exists d\colon T(s, d)$
+      uitwerking: |-
+        $\forall s\ \exists d\colon T(s, d)$. De dag mag per speler verschillen.
+    - opgave: |-
+        Schrijf met kwantoren: \textit{er is een dag waarop alle spelers trainen}.
+      antwoord: |-
+        $\exists d\ \forall s\colon T(s, d)$
+      uitwerking: |-
+        $\exists d\ \forall s\colon T(s, d)$. Hier is het één vaste dag voor iedereen.
+    - opgave: |-
+        Ontken a en b, met kwantoren en in woorden.
+      antwoord: |-
+        $\exists s\ \forall d\colon \niet T(s, d)$; $\forall d\ \exists s\colon \niet T(s, d)$
+      uitwerking: |-
+        a: $\exists s\ \forall d\colon \niet T(s, d)$: \textit{er is een speler die op geen enkele dag traint}.\\
+        b: $\forall d\ \exists s\colon \niet T(s, d)$: \textit{op elke dag is er een speler die niet traint}.
+    - opgave: |-
+        Volgt a uit b? Volgt b uit a? Verklaar.
+      antwoord: |-
+        a volgt uit b; b volgt niet uit a
+      uitwerking: |-
+        Is b waar, dan traint elke speler op die ene dag $d$, dus elke speler traint op minstens één dag: a volgt uit b.\\
+        Omgekeerd niet: Lars traint alleen op maandag en Mira alleen op donderdag. Dan is a waar en b vals.
+
+- id: h1-o22
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    equivalentie of alleen implicatie
+  opgave: |-
+    Is de equivalentie waar ($x, y \in \R$)? Zo niet, welke van de twee implicaties is wel waar?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $x^2 = 9 \asa x = 3$
+      antwoord: |-
+        vals; alleen $\Leftarrow$ is waar
+      uitwerking: |-
+        $x = 3 \dan x^2 = 9$: waar. $x^2 = 9 \dan x = 3$: vals, $x = -3$. De equivalentie is vals.
+    - opgave: |-
+        $xy = 0 \asa x = 0 \of y = 0$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        $\Leftarrow$: is een factor 0, dan is het product 0. $\dan$: is $x \neq 0$, deel dan door $x$: $y = 0$. Dus is $x = 0$ of $y = 0$. Waar.
+    - opgave: |-
+        $x > 1 \asa x^2 > 1$
+      antwoord: |-
+        vals; alleen $\dan$ is waar
+      uitwerking: |-
+        $x > 1 \dan x^2 > 1$: waar, want dan is $x^2 = x \cdot x > 1 \cdot 1$. $x^2 > 1 \dan x > 1$: vals, $x = -2$. De equivalentie is vals.
+    - opgave: |-
+        $x^2 + y^2 = 0 \asa x = 0 \en y = 0$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        $\Leftarrow$: $0 + 0 = 0$. $\dan$: $x^2 \geqslant 0$ en $y^2 \geqslant 0$, dus de som is alleen 0 als beide kwadraten 0 zijn: $x = 0$ en $y = 0$. Waar.
+
+- id: h1-o21
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: een regel controleren
+  opgave: |-
+    Op school geldt de regel \textit{wie op uitstap gaat, heeft een ingevuld toestemmingsformulier}. Van vier leerlingen weet de leerkracht één ding: Bo gaat op uitstap, Cas gaat niet op uitstap, Dirk heeft een formulier, en Eva heeft geen formulier.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Schrijf de regel als een implicatie $p \dan q$. Wat zijn $p$ en $q$?
+      antwoord: |-
+        $p$: gaat op uitstap, $q$: heeft een formulier
+      uitwerking: |-
+        $p$: \textit{de leerling gaat op uitstap}, $q$: \textit{de leerling heeft een formulier}. De regel is $p \dan q$.
+    - opgave: |-
+        Bij welke leerlingen moet de leerkracht nog iets nagaan om zeker te zijn dat de regel niet overtreden is? Wat gaat hij na?
+      antwoord: |-
+        Bo (formulier?) en Eva (uitstap?)
+      uitwerking: |-
+        De regel is alleen overtreden als $p$ waar is en $q$ vals.\\
+        Bo: $p$ is waar, dus nagaan of ze een formulier heeft.\\
+        Eva: $q$ is vals, dus nagaan of ze op uitstap gaat.\\
+        Cas ($p$ vals) en Dirk ($q$ waar) kunnen de regel niet overtreden, wat het andere ook is.
+    - opgave: |-
+        De leerkracht ziet dat Dirk niet op uitstap gaat. Overtreedt Dirk de regel?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee. $p$ is vals, en dan is $p \dan q$ waar. Een formulier hebben zonder op uitstap te gaan, is geen overtreding.
 
 - id: h1-o7
   soort: opdracht
@@ -297,6 +1206,48 @@
         juist (contrapositie)
       uitwerking: |-
         Juist: dat is de contrapositie van de gegeven implicatie.
+    - opgave: |-
+        Als $x > 3$, dan is $x^2 > 9$. Gegeven is dat $x \leqslant 3$. Dus is $x^2 \leqslant 9$.
+      antwoord: |-
+        fout
+      uitwerking: |-
+        Fout: uit $p \dan q$ en $\niet p$ volgt niets over $q$. Een implicatie zegt niets als $p$ vals is. Tegenvoorbeeld: $x = -4 \leqslant 3$, maar $x^2 = 16 > 9$.
+    - opgave: |-
+        Als $n$ deelbaar is door 6, dan is $n$ deelbaar door 3. Het getal 2026 is niet deelbaar door 3. Dus 2026 is niet deelbaar door 6.
+      antwoord: |-
+        juist (contrapositie)
+      uitwerking: |-
+        Juist: uit $p \dan q$ en $\niet q$ volgt $\niet p$, de contrapositie. (De som van de cijfers van 2026 is 10, dus 2026 is inderdaad niet deelbaar door 3.)
+
+- id: h1-o26
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    alles met niet en en
+  opgave: |-
+    Met alleen $\niet$ en $\en$ kun je elk ander connectief schrijven.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $p \of q \asa \niet(\niet p \en \niet q)$.
+      antwoord: |-
+        De Morgan
+      uitwerking: |-
+        Volgens De Morgan is $\niet(\niet p \en \niet q) \asa \niet\niet p \of \niet\niet q$, en een dubbele negatie valt weg: $p \of q$.
+    - opgave: |-
+        Schrijf $p \dan q$ met alleen $\niet$ en $\en$.
+      antwoord: |-
+        $\niet(p \en \niet q)$
+      uitwerking: |-
+        $p \dan q$ is alleen vals als $p$ waar is en $q$ vals, dus als $p \en \niet q$ waar is. Daarom is $p \dan q \asa \niet(p \en \niet q)$.
+    - opgave: |-
+        Schrijf $p \asa q$ met alleen $\niet$ en $\en$. Controleer met een waarheidstabel.
+      antwoord: |-
+        $\niet(p \en \niet q) \en \niet(q \en \niet p)$
+      uitwerking: |-
+        $p \asa q$ betekent $(p \dan q) \en (q \dan p)$. Met b: $\niet(p \en \niet q) \en \niet(q \en \niet p)$.\\
+        \begin{tabular}{cc|c|c|c} $p$ & $q$ & $\niet(p \en \niet q)$ & $\niet(q \en \niet p)$ & samen \\ \hline W & W & W & W & W \\ W & V & V & W & V \\ V & W & W & V & V \\ V & V & W & W & W \end{tabular}\\
+        Dat is de kolom W, V, V, W van $p \asa q$.
 
 - id: h1-o8
   soort: opdracht
@@ -304,11 +1255,29 @@
   thema: |-
     drie kwantoren
   opgave: |-
-    Een functie $f\colon \R \to \R$ is \textit{begrensd} als $\exists M\ \forall x\colon |f(x)| \leqslant M$. Schrijf de ontkenning met kwantoren en in woorden. Toon aan dat $f(x) = x^2$ niet begrensd is en $g(x) = \sin x$ wel.
-  antwoord: |-
-    $\forall M\ \exists x\colon |f(x)| > M$
-  uitwerking: |-
-    Niet begrensd: $\forall M\ \exists x\colon |f(x)| > M$: hoe groot je $M$ ook kiest, er is een $x$ waar $|f(x)|$ groter is. Voor $f(x) = x^2$: neem $x = M + 1$ (met $M \geqslant 0$), dan is $x^2 > M$. Voor $\sin$: $M = 1$ werkt, want $|\sin x| \leqslant 1$ voor alle $x$.
+    Een functie $f\colon \R \to \R$ is \textit{begrensd} als $\exists M\ \forall x\colon |f(x)| \leqslant M$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Schrijf de ontkenning met kwantoren en in woorden.
+      antwoord: |-
+        $\forall M\ \exists x\colon |f(x)| > M$
+      uitwerking: |-
+        Niet begrensd: $\forall M\ \exists x\colon |f(x)| > M$. Hoe groot je $M$ ook kiest, er is een $x$ waar $|f(x)|$ groter is.
+    - opgave: |-
+        Toon aan dat $f(x) = x^2$ niet begrensd is.
+      antwoord: |-
+        neem $x = |M| + 1$
+      uitwerking: |-
+        We tonen de ontkenning uit a. Neem een willekeurige $M$, en kies $x = |M| + 1$. Dan is $x \geqslant 1$, dus\\
+        $|f(x)| = x^2 \geqslant x = |M| + 1 > M$.\\
+        Bij elke $M$ is er zo'n $x$, dus $f$ is niet begrensd.
+    - opgave: |-
+        Toon aan dat $g(x) = \sin x$ wel begrensd is.
+      antwoord: |-
+        $M = 1$
+      uitwerking: |-
+        Er moet één $M$ bestaan: neem $M = 1$. Voor elke $x$ is $|\sin x| \leqslant 1$, want $\sin x$ is de tweede coördinaat van een punt op de eenheidscirkel.
 
 - id: h1-o9
   soort: opdracht
@@ -321,6 +1290,78 @@
     Anna schurk, Bram ridder
   uitwerking: |-
     Was Anna een ridder, dan was haar uitspraak waar, en was ze zelf een schurk: tegenspraak. Dus is Anna een schurk, en is haar uitspraak vals. \textit{Allebei schurken} is vals, terwijl Anna een schurk is: dan is Bram een ridder.
+
+- id: h1-o27
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    waarheidstabellen tellen
+  opgave: |-
+    Hoe groot worden waarheidstabellen?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel rijen heeft een waarheidstabel met drie letters $p$, $q$ en $r$? En met $n$ letters?
+      antwoord: |-
+        8; $2^n$
+      uitwerking: |-
+        Elke letter is W of V, onafhankelijk van de andere: $2 \cdot 2 \cdot 2 = 8$ rijen. Met $n$ letters: $2^n$ rijen.
+    - opgave: |-
+        Een kolom in een tabel met $p$ en $q$ is een rijtje van vier keer W of V. Hoeveel verschillende kolommen bestaan er?
+      antwoord: |-
+        16
+      uitwerking: |-
+        Elk van de vier vakjes is W of V: $2^4 = 16$ kolommen. Er zijn dus 16 verschillende uitspraken met $p$ en $q$, als je gelijkwaardige uitspraken als dezelfde telt.
+    - opgave: |-
+        Geef een uitspraak met $p$ en $q$ die alleen waar is als $p$ vals en $q$ waar is. Geef ook een uitspraak die altijd waar is, en een die altijd vals is.
+      antwoord: |-
+        bv. $\niet p \en q$; $p \of \niet p$; $p \en \niet p$
+      uitwerking: |-
+        $\niet p \en q$ is alleen waar in de rij VW. $p \of \niet p$ is altijd waar, want een van beide is waar. $p \en \niet p$ is altijd vals. Zo kun je elke kolom maken: neem voor elke rij met W zo'n conjunctie, en zet ze samen met $\of$.
+
+- id: h1-o28
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    de definitie van strikt stijgend ontkennen
+  opgave: |-
+    Een functie $f$ is \textit{strikt stijgend} op $\R$ als $\forall x_1, x_2 \in \R\colon x_1 < x_2 \dan f(x_1) < f(x_2)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Ontken met kwantoren en in woorden.
+      antwoord: |-
+        $\exists x_1, x_2\colon x_1 < x_2 \en f(x_1) \geqslant f(x_2)$
+      uitwerking: |-
+        $\forall$ wordt $\exists$, en $\niet(p \dan q) \asa p \en \niet q$:\\
+        $\exists x_1, x_2 \in \R\colon x_1 < x_2 \en f(x_1) \geqslant f(x_2)$.\\
+        In woorden: \textit{er zijn twee getallen waarvan het kleinste een functiewaarde heeft die minstens zo groot is}.
+    - opgave: |-
+        Toon aan dat $f(x) = x^2$ niet strikt stijgend is op $\R$.
+      antwoord: |-
+        bv. $x_1 = -2$, $x_2 = 1$
+      uitwerking: |-
+        Volgens a volstaat één paar: $x_1 = -2 < 1 = x_2$, en $f(-2) = 4 \geqslant 1 = f(1)$.
+    - opgave: |-
+        Bewijs dat $g(x) = 3x - 1$ strikt stijgend is.
+      antwoord: |-
+        zie de uitgewerkte oplossingen
+      uitwerking: |-
+        Neem willekeurige $x_1 < x_2$. Vermenigvuldigen met $3 > 0$ behoudt de ongelijkheid: $3x_1 < 3x_2$. Er 1 aftrekken ook: $3x_1 - 1 < 3x_2 - 1$, dus $g(x_1) < g(x_2)$. Omdat $x_1$ en $x_2$ willekeurig waren, geldt het voor alle $x_1 < x_2$.
+
+- id: h1-o25
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een logisch raadsel met drie personen
+  opgave: |-
+    Ines, Jonas en Kato spreken elk de waarheid of liegen. Ines zegt: \textit{Jonas liegt}. Jonas zegt: \textit{Kato liegt}. Kato zegt: \textit{Ines en Jonas liegen allebei}. Wie spreekt de waarheid? Toon aan dat er maar één mogelijkheid is.
+  antwoord: |-
+    alleen Jonas spreekt de waarheid
+  uitwerking: |-
+    \textit{Stel dat Ines de waarheid spreekt.} Dan liegt Jonas, dus spreekt Kato de waarheid. Maar dan liegen Ines en Jonas allebei, en dat is in strijd met wat we stelden. Dat kan dus niet.\\
+    \textit{Dus liegt Ines.} Dan is \textit{Jonas liegt} vals: Jonas spreekt de waarheid. Dan liegt Kato. Controle: Kato zegt dat Ines en Jonas allebei liegen; dat is vals, want Jonas spreekt de waarheid. Dat klopt met een liegende Kato.\\
+    Alleen Jonas spreekt de waarheid, en dat is de enige mogelijkheid.
 
 #----------------------------------------------------------------------------------------
 # KOPPEL
@@ -423,3 +1464,94 @@
     bv. $x = 1$
   uitwerking: |-
     $x = 1$: $\frac12 \neq 2$.
+
+- id: h1-t5
+  soort: test
+  niveau: 1
+  thema: |-
+    nodig, voldoende en equivalentie
+  opgave: |-
+    Gegeven: \textit{als een vierhoek een rechthoek is, dan zijn zijn diagonalen even lang}.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Vul aan: een rechthoek zijn is een \ldots{} voorwaarde om even lange diagonalen te hebben, en even lange diagonalen hebben is een \ldots{} voorwaarde om een rechthoek te zijn.
+      antwoord: |-
+        voldoende; nodig
+      uitwerking: |-
+        Bij $p \dan q$ is $p$ voldoende voor $q$ en $q$ nodig voor $p$: een rechthoek zijn is voldoende, even lange diagonalen hebben is nodig.
+    - opgave: |-
+        Is de equivalentie \textit{een vierhoek is een rechthoek als en slechts als zijn diagonalen even lang zijn} waar? Verklaar.
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Vals: de omgekeerde implicatie is vals. Een gelijkbenig trapezium dat geen rechthoek is, heeft ook even lange diagonalen.
+
+- id: h1-t6
+  soort: test
+  niveau: 2
+  thema: |-
+    de volgorde van kwantoren
+  opgave: |-
+    Met $x, y \in \R$. Zeg in woorden wat er staat, en of het waar is.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\forall x\ \exists y\colon y < x$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        Bij elk getal is er een kleiner getal. Waar: neem $y = x - 1$.
+    - opgave: |-
+        $\exists y\ \forall x\colon y < x$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        Er is een getal dat kleiner is dan alle getallen. Vals: voor $x = y$ is $y < x$ vals, welke $y$ je ook kiest.
+
+- id: h1-t7
+  soort: test
+  niveau: 1
+  thema: |-
+    waarheidswaarde van connectieven
+  opgave: |-
+    Neem $p$: \textit{7 is een priemgetal} en $q$: \textit{7 is even}. Is de uitspraak waar of vals?
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $p \en q$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        $p$ is waar, $q$ is vals: de conjunctie is vals.
+    - opgave: |-
+        $p \of q$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        $p$ is waar: de disjunctie is waar.
+    - opgave: |-
+        $\niet p \of q$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        $\niet p$ en $q$ zijn allebei vals.
+    - opgave: |-
+        $q \dan p$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        $q$ is vals, dus de implicatie is waar.
+    - opgave: |-
+        $p \dan q$
+      antwoord: |-
+        vals
+      uitwerking: |-
+        $p$ waar en $q$ vals: de implicatie is vals.
+    - opgave: |-
+        $p \asa \niet q$
+      antwoord: |-
+        waar
+      uitwerking: |-
+        $p$ en $\niet q$ zijn allebei waar.

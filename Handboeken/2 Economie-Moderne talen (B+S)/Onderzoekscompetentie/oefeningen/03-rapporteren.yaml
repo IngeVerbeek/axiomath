@@ -475,7 +475,7 @@
       antwoord: |-
         nee: antwoord op een andere vraag
       uitwerking: |-
-        Nee: dat is het antwoord op een andere vraag. Beter: \textit{De periode $T$ (in s) is evenredig met de vierkantswortel van de lengte $L$ (in m): $T \approx 2{,}01\sqrt{L}$, voor lengtes van $0{,}2$ tot $1{,}0$ m.} Dat volgt uit $T^2 \approx 4{,}025\,L$ in voorbeeld~\ref{vb:h2-slinger} van hoofdstuk~2. Het resultaat over de massa kan een extra vaststelling zijn.
+        Nee: dat is het antwoord op een andere vraag. Beter: \textit{De periode $T$ (in s) is evenredig met de vierkantswortel van de lengte $L$ (in m): $T \approx 2{,}01\sqrt{L}$, voor lengtes van $0{,}2$ tot $1{,}0$ m.} Dat volgt uit $T^2 \approx 4{,}025\,L$ in het voorbeeld met de slinger in hoofdstuk~2. Het resultaat over de massa kan een extra vaststelling zijn.
 
 - id: h3-o12
   soort: opdracht

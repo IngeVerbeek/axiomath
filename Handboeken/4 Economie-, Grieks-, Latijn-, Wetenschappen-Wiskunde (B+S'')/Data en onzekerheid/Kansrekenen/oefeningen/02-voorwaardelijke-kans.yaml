@@ -165,6 +165,100 @@
       uitwerking: |-
         Bayes: $\frac{0{,}012}{0{,}032} = 0{,}375$. Machine $A$ maakt meer lampen, maar minder dan de helft van de defecte.
 
+- id: h2-formule
+  soort: kort
+  opgave: |-
+    Gebruik de definitie van de voorwaardelijke kans.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $P(A) = 0{,}5$, $P(B) = 0{,}4$ en $P(A \cap B) = 0{,}1$. Bereken $P(A \gegeven B)$ en $P(B \gegeven A)$.
+      antwoord: |-
+        $0{,}25$; \ $0{,}2$
+      uitwerking: |-
+        $P(A \gegeven B) = \frac{P(A \cap B)}{P(B)} = \frac{0{,}1}{0{,}4} = 0{,}25$ en $P(B \gegeven A) = \frac{P(A \cap B)}{P(A)} = \frac{0{,}1}{0{,}5} = 0{,}2$. Dezelfde teller, een andere noemer.
+    - opgave: |-
+        $P(B) = 0{,}6$ en $P(A \gegeven B) = 0{,}3$. Bereken $P(A \cap B)$.
+      antwoord: |-
+        $0{,}18$
+      uitwerking: |-
+        Vermenigvuldig de definitie met $P(B)$: $P(A \cap B) = P(B) \cdot P(A \gegeven B) = 0{,}6 \cdot 0{,}3 = 0{,}18$.
+    - opgave: |-
+        Je gooit met een dobbelsteen. Wat is de kans op een zes, als je weet dat het getal even is?
+      antwoord: |-
+        $\tfrac13$
+      uitwerking: |-
+        De voorwaarde beperkt $\Omega$ tot $\{2, 4, 6\}$, en daarvan is er één gunstig: $\frac13$. Met de formule: $\frac{P(\text{zes})}{P(\text{even})} = \frac{1/6}{1/2} = \frac13$.
+
+- id: h2-boom-2
+  soort: kort
+  opgave: |-
+    Lien neemt elke dag de trein en dan de bus. De trein heeft vertraging met kans 0,15. Bij vertraging mist ze haar bus met kans 0,6, anders met kans 0,05.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Teken een boomdiagram met de kansen op alle takken.
+      antwoord: |-
+        takken $0{,}15$ en $0{,}85$, dan $0{,}6$; $0{,}4$ en $0{,}05$; $0{,}95$
+      uitwerking: |-
+        Eerst vertraging ($0{,}15$) of op tijd ($0{,}85$). Na vertraging: bus gemist $0{,}6$, gehaald $0{,}4$. Na op tijd: gemist $0{,}05$, gehaald $0{,}95$.
+    - opgave: |-
+        Wat is de kans dat de trein op tijd is en Lien haar bus toch mist?
+      antwoord: |-
+        $0{,}0425$
+      uitwerking: |-
+        Het pad op tijd, gemist: $0{,}85 \cdot 0{,}05 = 0{,}0425$.
+    - opgave: |-
+        Wat is de kans dat ze haar bus mist?
+      antwoord: |-
+        $0{,}1325$
+      uitwerking: |-
+        Twee paden: $0{,}15 \cdot 0{,}6 + 0{,}85 \cdot 0{,}05 = 0{,}09 + 0{,}0425 = 0{,}1325$.
+
+- id: h2-onafhankelijk-2
+  soort: kort
+  opgave: |-
+    Je gooit met twee dobbelstenen. Noem $A$ \textit{de eerste dobbelsteen toont 1 of 2}, $B$ \textit{de som is 7} en $C$ \textit{de som is 4}.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Zijn $A$ en $B$ onafhankelijk?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $P(A) = \frac{12}{36} = \frac13$ en $P(B) = \frac16$. $A \cap B = \{(1, 6), (2, 5)\}$, dus $P(A \cap B) = \frac{2}{36} = \frac{1}{18} = \frac13 \cdot \frac16$: onafhankelijk.
+    - opgave: |-
+        Zijn $A$ en $C$ onafhankelijk?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        $P(C) = \frac{3}{36} = \frac{1}{12}$. $A \cap C = \{(1, 3), (2, 2)\}$, dus $P(A \cap C) = \frac{1}{18}$, maar $P(A) \cdot P(C) = \frac{1}{36}$: afhankelijk. Met een kleine eerste worp is som 4 waarschijnlijker.
+    - opgave: |-
+        Een verkeerslicht staat 40~\% van de tijd op rood. Je passeert drie zulke lichten, die onafhankelijk van elkaar werken. Wat is de kans dat je drie keer moet stoppen?
+      antwoord: |-
+        $0{,}064$
+      uitwerking: |-
+        Onafhankelijk, dus vermenigvuldigen: $0{,}4^3 = 0{,}064$.
+
+- id: h2-bayes-tabel
+  soort: kort
+  opgave: |-
+    Een bewakingscamera geeft alarm bij 98~\% van de inbraken, maar ook in 1~\% van de nachten zonder inbraak. In 0,5~\% van de nachten is er een inbraak.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Maak een kruistabel voor 100\,000 nachten.
+      antwoord: |-
+        inbraak: 490 alarm, 10 geen; geen inbraak: 995 alarm, 98\,505 geen
+      uitwerking: |-
+        Inbraak: $0{,}005 \cdot 100\,000 = 500$ nachten, waarvan $0{,}98 \cdot 500 = 490$ met alarm en 10 zonder. Geen inbraak: $99\,500$ nachten, waarvan $0{,}01 \cdot 99\,500 = 995$ met alarm en $98\,505$ zonder. Alarm in totaal: $490 + 995 = 1485$ nachten.
+    - opgave: |-
+        Het alarm gaat af. Wat is de kans dat er echt een inbraak is?
+      antwoord: |-
+        $\approx 0{,}33$
+      uitwerking: |-
+        Alleen de kolom alarm telt: $\frac{490}{1485} \approx 0{,}33$. Twee op de drie alarmen zijn vals, omdat er zoveel meer nachten zonder inbraak zijn.
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
@@ -349,6 +443,531 @@
   uitwerking: |-
     $P(A \cap \compl{B}) = P(A) - P(A \cap B) = P(A) - P(A)P(B) = P(A)\bigl(1 - P(B)\bigr) = P(A)P(\compl{B})$.
 
+- id: h2-o13
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    drill: kansen uit een kruistabel
+  opgave: |-
+    Een school vroeg aan 500 leerlingen hoe ze naar school komen: met de fiets ($F$), de bus ($B$) of te voet ($V$). $G_1$, $G_2$ en $G_3$ staan voor de eerste, tweede en derde graad.
+    \figuren{\small\renewcommand{\arraystretch}{1.2}\begin{tabular}{l|ccc|c} & $F$ & $B$ & $V$ & totaal \\ \hline $G_1$ & 80 & 60 & 20 & 160 \\ $G_2$ & 90 & 50 & 30 & 170 \\ $G_3$ & 100 & 30 & 40 & 170 \\ \hline totaal & 270 & 140 & 90 & 500 \end{tabular}}
+    Je kiest een willekeurige leerling. Bereken
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $P(B)$
+      antwoord: |-
+        $0{,}28$
+      uitwerking: |-
+        Het totaal van de kolom $B$: $\frac{140}{500} = 0{,}28$.
+    - opgave: |-
+        $P(G_1 \cap V)$
+      antwoord: |-
+        $0{,}04$
+      uitwerking: |-
+        Eén vakje, gedeeld door het totaal: $\frac{20}{500} = 0{,}04$.
+    - opgave: |-
+        $P(F \gegeven G_3)$
+      antwoord: |-
+        $\tfrac{10}{17}$
+      uitwerking: |-
+        Alleen de rij $G_3$ telt: $\frac{100}{170} = \frac{10}{17} \approx 0{,}59$.
+    - opgave: |-
+        $P(G_3 \gegeven F)$
+      antwoord: |-
+        $\tfrac{10}{27}$
+      uitwerking: |-
+        Alleen de kolom $F$ telt: $\frac{100}{270} = \frac{10}{27} \approx 0{,}37$.
+    - opgave: |-
+        $P(V \gegeven G_1)$
+      antwoord: |-
+        $\tfrac18$
+      uitwerking: |-
+        $\frac{20}{160} = \frac18$.
+    - opgave: |-
+        $P(G_1 \gegeven V)$
+      antwoord: |-
+        $\tfrac29$
+      uitwerking: |-
+        $\frac{20}{90} = \frac29 \approx 0{,}22$.
+    - opgave: |-
+        $P(\compl{F} \gegeven G_2)$
+      antwoord: |-
+        $\tfrac{8}{17}$
+      uitwerking: |-
+        In de rij $G_2$ komen $50 + 30 = 80$ leerlingen niet met de fiets: $\frac{80}{170} = \frac{8}{17}$.
+    - opgave: |-
+        $P(G_2 \cup B)$
+      antwoord: |-
+        $0{,}52$
+      uitwerking: |-
+        Somregel: $\frac{170 + 140 - 50}{500} = \frac{260}{500} = 0{,}52$.
+    - opgave: |-
+        $P(B \gegeven \compl{G_3})$
+      antwoord: |-
+        $\tfrac13$
+      uitwerking: |-
+        Niet in de derde graad: $160 + 170 = 330$ leerlingen, van wie $60 + 50 = 110$ met de bus. $\frac{110}{330} = \frac13$.
+    - opgave: |-
+        $P(G_3 \gegeven \compl{B})$
+      antwoord: |-
+        $\tfrac{7}{18}$
+      uitwerking: |-
+        Niet met de bus: $500 - 140 = 360$ leerlingen, van wie $100 + 40 = 140$ in de derde graad. $\frac{140}{360} = \frac{7}{18}$.
+
+- id: h2-o14
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    drill: boomdiagram zonder teruglegging
+  opgave: |-
+    In een vaas zitten 5 rode, 3 witte en 2 blauwe knikkers. Je trekt er twee na elkaar, zonder teruglegging. Teken een boomdiagram en bereken de kans op
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        twee rode;
+      antwoord: |-
+        $\tfrac29$
+      uitwerking: |-
+        Het boomdiagram heeft na de eerste trekking telkens 9 knikkers over. $P(RR) = \frac{5}{10} \cdot \frac49 = \frac{20}{90} = \frac29$.
+    - opgave: |-
+        eerst rood, dan wit;
+      antwoord: |-
+        $\tfrac16$
+      uitwerking: |-
+        $P(RW) = \frac{5}{10} \cdot \frac39 = \frac{15}{90} = \frac16$.
+    - opgave: |-
+        een rode en een witte;
+      antwoord: |-
+        $\tfrac13$
+      uitwerking: |-
+        Twee paden: $P(RW) + P(WR) = \frac{15}{90} + \frac{3}{10} \cdot \frac59 = \frac{30}{90} = \frac13$.
+    - opgave: |-
+        twee van dezelfde kleur;
+      antwoord: |-
+        $\tfrac{14}{45}$
+      uitwerking: |-
+        $P(RR) + P(WW) + P(BB) = \frac{20 + 6 + 2}{90} = \frac{28}{90} = \frac{14}{45}$.
+    - opgave: |-
+        twee verschillende kleuren;
+      antwoord: |-
+        $\tfrac{31}{45}$
+      uitwerking: |-
+        Het complement van d: $1 - \frac{14}{45} = \frac{31}{45}$.
+    - opgave: |-
+        geen enkele blauwe;
+      antwoord: |-
+        $\tfrac{28}{45}$
+      uitwerking: |-
+        Twee keer niet blauw: $\frac{8}{10} \cdot \frac79 = \frac{56}{90} = \frac{28}{45}$.
+    - opgave: |-
+        minstens één blauwe;
+      antwoord: |-
+        $\tfrac{17}{45}$
+      uitwerking: |-
+        Het complement van f: $1 - \frac{28}{45} = \frac{17}{45}$.
+    - opgave: |-
+        een rode bij de tweede trekking.
+      antwoord: |-
+        $\tfrac12$
+      uitwerking: |-
+        Twee paden: $P(RR) + P(\compl{R}R) = \frac{5}{10} \cdot \frac49 + \frac{5}{10} \cdot \frac59 = \frac{45}{90} = \frac12$. Even groot als bij de eerste trekking: zonder iets te weten over de eerste knikker, is elke knikker even waarschijnlijk de tweede.
+
+- id: h2-o15
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    formules voor voorwaardelijke kansen
+  opgave: |-
+    Bereken de gevraagde kans.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $P(A) = 0{,}6$ en $P(B \gegeven A) = 0{,}5$. Bereken $P(A \cap B)$.
+      antwoord: |-
+        $0{,}3$
+      uitwerking: |-
+        Productregel: $P(A \cap B) = P(A) \cdot P(B \gegeven A) = 0{,}6 \cdot 0{,}5 = 0{,}3$.
+    - opgave: |-
+        $P(A \cap B) = 0{,}12$ en $P(B) = 0{,}4$. Bereken $P(A \gegeven B)$.
+      antwoord: |-
+        $0{,}3$
+      uitwerking: |-
+        Definitie: $P(A \gegeven B) = \frac{0{,}12}{0{,}4} = 0{,}3$.
+    - opgave: |-
+        $P(A \cap B) = 0{,}05$ en $P(A \gegeven B) = 0{,}25$. Bereken $P(B)$.
+      antwoord: |-
+        $0{,}2$
+      uitwerking: |-
+        Uit $0{,}25 = \frac{0{,}05}{P(B)}$ volgt $P(B) = \frac{0{,}05}{0{,}25} = 0{,}2$.
+    - opgave: |-
+        $P(A) = 0{,}5$, $P(B) = 0{,}4$ en $P(A \cup B) = 0{,}7$. Bereken $P(A \gegeven B)$.
+      antwoord: |-
+        $0{,}5$
+      uitwerking: |-
+        Eerst de somregel: $P(A \cap B) = 0{,}5 + 0{,}4 - 0{,}7 = 0{,}2$. Dan $P(A \gegeven B) = \frac{0{,}2}{0{,}4} = 0{,}5$.
+    - opgave: |-
+        $P(B) = 0{,}5$, $P(A \gegeven B) = 0{,}6$ en $P(A \gegeven \compl{B}) = 0{,}2$. Bereken $P(A)$.
+      antwoord: |-
+        $0{,}4$
+      uitwerking: |-
+        Wet van de totale kans: $P(A) = 0{,}5 \cdot 0{,}6 + 0{,}5 \cdot 0{,}2 = 0{,}3 + 0{,}1 = 0{,}4$.
+
+- id: h2-o16
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    onafhankelijke herhaling
+  opgave: |-
+    Lars doet mee aan een quiz met drie vragen. Hij kent het antwoord op elke vraag met kans 0,7, onafhankelijk van de andere vragen. Wat is de kans dat hij
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        alle drie de vragen juist beantwoordt?
+      antwoord: |-
+        $0{,}343$
+      uitwerking: |-
+        Onafhankelijk, dus vermenigvuldigen: $0{,}7^3 = 0{,}343$.
+    - opgave: |-
+        geen enkele vraag juist beantwoordt?
+      antwoord: |-
+        $0{,}027$
+      uitwerking: |-
+        Drie keer fout: $0{,}3^3 = 0{,}027$.
+    - opgave: |-
+        minstens één vraag juist beantwoordt?
+      antwoord: |-
+        $0{,}973$
+      uitwerking: |-
+        Het complement van b: $1 - 0{,}027 = 0{,}973$.
+    - opgave: |-
+        alleen de laatste vraag juist beantwoordt?
+      antwoord: |-
+        $0{,}063$
+      uitwerking: |-
+        Fout, fout, juist: $0{,}3 \cdot 0{,}3 \cdot 0{,}7 = 0{,}063$.
+
+- id: h2-o17
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    boomdiagram aanvullen en aflezen
+  figuur:
+    code: |-
+      \begin{tikzpicture}[x=1.6cm,y=.52cm]
+        \fill[accent] (0,0) circle (1.5pt); \coordinate (s) at (0,0);
+        \node[blad] (a) at (1,1.6) {$A$}; \node[blad] (na) at (1,-1.6) {$\compl{A}$};
+        \draw[tak] (s) -- node[kanslabel,above left] {$0{,}3$} (a); \draw[tak] (s) -- node[kanslabel,below left] {$\ldots$} (na);
+        \node[blad] (ab) at (2,2.5) {$B$}; \node[blad] (anb) at (2,.7) {$\compl{B}$};
+        \node[blad] (nab) at (2,-.7) {$B$}; \node[blad] (nanb) at (2,-2.5) {$\compl{B}$};
+        \draw[tak] (a) -- node[kanslabel,above] {$0{,}6$} (ab); \draw[tak] (a) -- node[kanslabel,below] {$\ldots$} (anb);
+        \draw[tak] (na) -- node[kanslabel,above] {$\ldots$} (nab); \draw[tak] (na) -- node[kanslabel,below] {$0{,}9$} (nanb);
+      \end{tikzpicture}
+  opgave: |-
+    In het boomdiagram ontbreken drie kansen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Vul de ontbrekende kansen in.
+      antwoord: |-
+        $0{,}7$; \ $0{,}4$; \ $0{,}1$
+      uitwerking: |-
+        De kansen op de takken uit één punt zijn samen 1: $P(\compl{A}) = 1 - 0{,}3 = 0{,}7$, $P(\compl{B} \gegeven A) = 1 - 0{,}6 = 0{,}4$ en $P(B \gegeven \compl{A}) = 1 - 0{,}9 = 0{,}1$.
+    - opgave: |-
+        Bereken $P(A \cap B)$.
+      antwoord: |-
+        $0{,}18$
+      uitwerking: |-
+        Het bovenste pad: $0{,}3 \cdot 0{,}6 = 0{,}18$.
+    - opgave: |-
+        Bereken $P(B)$.
+      antwoord: |-
+        $0{,}25$
+      uitwerking: |-
+        Twee paden eindigen in $B$: $0{,}3 \cdot 0{,}6 + 0{,}7 \cdot 0{,}1 = 0{,}18 + 0{,}07 = 0{,}25$.
+    - opgave: |-
+        Bereken $P(\compl{A} \cap \compl{B})$, en controleer dat de vier eindkansen samen 1 zijn.
+      antwoord: |-
+        $0{,}63$
+      uitwerking: |-
+        Het onderste pad: $0{,}7 \cdot 0{,}9 = 0{,}63$. De andere eindkansen zijn $0{,}18$, $0{,}3 \cdot 0{,}4 = 0{,}12$ en $0{,}07$, en $0{,}18 + 0{,}12 + 0{,}07 + 0{,}63 = 1$.
+
+- id: h2-o18
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    Waar zit de fout?
+  opgave: |-
+    Elke redenering bevat een fout. Zoek de fout en geef, waar het kan, het juiste antwoord.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        \textit{$A$ en $B$ zijn onverenigbaar, met $P(A) = 0{,}5$ en $P(B) = 0{,}4$. Dan zijn ze onafhankelijk, dus $P(A \cap B) = 0{,}5 \cdot 0{,}4 = 0{,}2$.}
+      antwoord: |-
+        $P(A \cap B) = 0$
+      uitwerking: |-
+        Onverenigbaar betekent $A \cap B = \emptyset$, dus $P(A \cap B) = 0$. Ze zijn dan juist afhankelijk: als $A$ gebeurt, is de kans op $B$ nul in plaats van $0{,}4$.
+    - opgave: |-
+        \textit{In een vaas zitten 3 rode en 2 blauwe knikkers. Je trekt er twee zonder teruglegging. De kans op twee rode is $\frac35 \cdot \frac35 = \frac{9}{25}$.}
+      antwoord: |-
+        $\tfrac{3}{10}$
+      uitwerking: |-
+        Na een rode zitten er nog 2 rode van de 4 in de vaas: de tweede kans is $P(R_2 \gegeven R_1) = \frac24$. Juist: $\frac35 \cdot \frac24 = \frac{3}{10}$.
+    - opgave: |-
+        \textit{Van de bestuurders die een ongeval hebben, droeg 70~\% een gordel. Dus wie een gordel draagt, heeft 70~\% kans op een ongeval.}
+      antwoord: |-
+        $P(G \gegeven O)$ is niet $P(O \gegeven G)$
+      uitwerking: |-
+        De gegeven kans is $P(\text{gordel} \gegeven \text{ongeval})$, de besluitende kans is $P(\text{ongeval} \gegeven \text{gordel})$. Dat zijn verschillende kansen: de tweede is heel klein, omdat bijna alle bestuurders met een gordel nooit een ongeval hebben. Dat 70~\% van de ongevallen bestuurders met een gordel treft, komt omdat de meeste bestuurders een gordel dragen.
+    - opgave: |-
+        \textit{Een test is positief bij 99~\% van de zieken. Wie positief test, is dus met 99~\% zekerheid ziek.}
+      antwoord: |-
+        hangt af van hoeveel mensen ziek zijn en van de valse positieven
+      uitwerking: |-
+        $P(\text{positief} \gegeven \text{ziek}) = 0{,}99$ zegt niets over $P(\text{ziek} \gegeven \text{positief})$. Daarvoor moet je weten hoeveel mensen ziek zijn en hoe vaak de test bij gezonden positief is, zoals bij de sneltest in de leerstof. Bij een zeldzame ziekte kan die kans heel klein zijn.
+
+- id: h2-o19
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: kruistabel uit percentages
+  opgave: |-
+    In een bedrijf werkt 40~\% van de werknemers in ploegen. Van de ploegwerkers heeft 25~\% slaapproblemen, van de anderen 10~\%.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Maak een kruistabel voor 1000 werknemers.
+      antwoord: |-
+        ploeg: 100 met, 300 zonder; geen ploeg: 60 met, 540 zonder
+      uitwerking: |-
+        Ploegwerkers: 400, waarvan $0{,}25 \cdot 400 = 100$ met slaapproblemen en 300 zonder. Anderen: 600, waarvan $0{,}10 \cdot 600 = 60$ met slaapproblemen en 540 zonder. Met slaapproblemen: $100 + 60 = 160$.
+    - opgave: |-
+        Wat is de kans dat een willekeurige werknemer slaapproblemen heeft?
+      antwoord: |-
+        $0{,}16$
+      uitwerking: |-
+        $\frac{160}{1000} = 0{,}16$. Met de totale kans: $0{,}4 \cdot 0{,}25 + 0{,}6 \cdot 0{,}10 = 0{,}16$.
+    - opgave: |-
+        Een werknemer heeft slaapproblemen. Wat is de kans dat die in ploegen werkt?
+      antwoord: |-
+        $0{,}625$
+      uitwerking: |-
+        Alleen de 160 werknemers met slaapproblemen tellen: $\frac{100}{160} = 0{,}625$.
+    - opgave: |-
+        Zijn ploegwerk en slaapproblemen onafhankelijk? Verklaar met de kansen.
+      antwoord: |-
+        nee
+      uitwerking: |-
+        $P(\text{slaap} \gegeven \text{ploeg}) = 0{,}25$, maar $P(\text{slaap}) = 0{,}16$: de voorwaarde verandert de kans, dus afhankelijk.
+
+- id: h2-o20
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    kansen in een eenheidsvierkant
+  figuur:
+    code: |-
+      \begin{tikzpicture}[x=4cm,y=3cm,font=\scriptsize]
+        \fill[accent!35] (0,0) rectangle (.3,.8); \fill[accent!8] (0,.8) rectangle (.3,1);
+        \fill[fel!40] (.3,0) rectangle (1,.4); \fill[fel!10] (.3,.4) rectangle (1,1);
+        \draw[black!14,very thin,step=.1] (0,0) grid (1,1);
+        \draw[accent,thick] (0,0) rectangle (1,1) (.3,0) -- (.3,1) (0,.8) -- (.3,.8) (.3,.4) -- (1,.4);
+        \node at (.15,.4) {$A \cap B$}; \node at (.65,.2) {$\compl{A} \cap B$};
+        \node at (.65,.7) {$\compl{A} \cap \compl{B}$};
+        \node[below] at (.15,0) {$A$}; \node[below] at (.65,0) {$\compl{A}$};
+        \foreach \t/\l in {0/0,.4/{0,4},.8/{0,8},1/1}{\node[left] at (0,\t) {\l};}
+        \node[above] at (.3,1) {$0{,}3$};
+      \end{tikzpicture}
+  opgave: |-
+    In dit eenheidsvierkant is de oppervlakte van elk stuk de kans op die combinatie. De breedte van een kolom is de kans op $A$ of $\compl{A}$. Het gekleurde stuk onderaan in een kolom is $B$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Lees $P(A)$, $P(B \gegeven A)$ en $P(B \gegeven \compl{A})$ af.
+      antwoord: |-
+        $0{,}3$; \ $0{,}8$; \ $0{,}4$
+      uitwerking: |-
+        De kolom $A$ is $0{,}3$ breed. Binnen die kolom reikt $B$ tot $0{,}8$, binnen de kolom $\compl{A}$ tot $0{,}4$. De hoogte binnen een kolom is dus een voorwaardelijke kans.
+    - opgave: |-
+        Bereken $P(A \cap B)$ en $P(B)$ als oppervlakten.
+      antwoord: |-
+        $0{,}24$; \ $0{,}52$
+      uitwerking: |-
+        $P(A \cap B) = 0{,}3 \cdot 0{,}8 = 0{,}24$: breedte maal hoogte, net als de productregel. $P(B) = 0{,}24 + 0{,}7 \cdot 0{,}4 = 0{,}24 + 0{,}28 = 0{,}52$: de twee gekleurde stukken onderaan samen.
+    - opgave: |-
+        Bereken $P(A \gegeven B)$.
+      antwoord: |-
+        $\tfrac{6}{13} \approx 0{,}46$
+      uitwerking: |-
+        Het deel van $B$ dat in de kolom $A$ ligt: $\frac{0{,}24}{0{,}52} = \frac{6}{13} \approx 0{,}46$.
+    - opgave: |-
+        Hoe zou de figuur eruitzien als $A$ en $B$ onafhankelijk waren?
+      antwoord: |-
+        $B$ in beide kolommen even hoog
+      uitwerking: |-
+        Dan is $P(B \gegeven A) = P(B \gegeven \compl{A}) = P(B)$: in beide kolommen reikt $B$ even hoog, en de grens is één horizontale lijn door het hele vierkant.
+
+- id: h2-o21
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: herhaalde controles
+  opgave: |-
+    Een fout in een product wordt bij elke controle ontdekt met kans 0,7, onafhankelijk van de andere controles.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Het product doorloopt drie controles. Wat is de kans dat een fout niet ontdekt wordt?
+      antwoord: |-
+        $0{,}027$
+      uitwerking: |-
+        Drie keer niet ontdekt: $0{,}3^3 = 0{,}027$.
+    - opgave: |-
+        Wat is de kans dat een fout pas bij de derde controle ontdekt wordt?
+      antwoord: |-
+        $0{,}063$
+      uitwerking: |-
+        Twee keer gemist, dan ontdekt: $0{,}3 \cdot 0{,}3 \cdot 0{,}7 = 0{,}063$.
+    - opgave: |-
+        Hoeveel controles zijn nodig opdat minder dan 1~\% van de fouten onontdekt blijft?
+      antwoord: |-
+        4
+      uitwerking: |-
+        Na $n$ controles blijft een fout onontdekt met kans $0{,}3^n$. $0{,}3^3 = 0{,}027$ is nog te groot, $0{,}3^4 = 0{,}0081 < 0{,}01$. Dus 4 controles.
+
+- id: h2-o22
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    totale kans en Bayes met drie mogelijkheden
+  opgave: |-
+    Een webwinkel gebruikt drie koeriers. Koerier $A$ levert 50~\% van de pakjes, $B$ 30~\% en $C$ 20~\%. Ze leveren te laat in respectievelijk 4~\%, 6~\% en 10~\% van de gevallen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Wat is de kans dat een pakje te laat komt?
+      antwoord: |-
+        $0{,}058$
+      uitwerking: |-
+        Een boomdiagram met drie takken, en telkens te laat of op tijd. Tel de drie paden naar \textit{te laat} op: $0{,}5 \cdot 0{,}04 + 0{,}3 \cdot 0{,}06 + 0{,}2 \cdot 0{,}10 = 0{,}020 + 0{,}018 + 0{,}020 = 0{,}058$.
+    - opgave: |-
+        Een pakje komt te laat. Wat is de kans dat koerier $C$ het bracht?
+      antwoord: |-
+        $\approx 0{,}345$
+      uitwerking: |-
+        $P(C \gegeven \text{te laat}) = \frac{0{,}020}{0{,}058} \approx 0{,}345$. Koerier $C$ brengt maar 20~\% van de pakjes, maar een derde van de late.
+    - opgave: |-
+        Een pakje komt op tijd. Wat is de kans dat koerier $A$ het bracht?
+      antwoord: |-
+        $\approx 0{,}510$
+      uitwerking: |-
+        $P(\text{op tijd}) = 1 - 0{,}058 = 0{,}942$ en $P(A \cap \text{op tijd}) = 0{,}5 \cdot 0{,}96 = 0{,}48$. Dus $\frac{0{,}48}{0{,}942} \approx 0{,}510$.
+
+- id: h2-o23
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een kruistabel voor onafhankelijke gebeurtenissen
+  opgave: |-
+    Van 300 personen drinkt 200 vooral koffie en 100 vooral thee. 120 personen zijn ochtendmensen, de andere 180 avondmensen.
+    \figuren{\small\renewcommand{\arraystretch}{1.2}\begin{tabular}{l|cc|c} & koffie & thee & totaal \\ \hline ochtendmens & $\ldots$ & $\ldots$ & 120 \\ avondmens & $\ldots$ & $\ldots$ & 180 \\ \hline totaal & 200 & 100 & 300 \end{tabular}}
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Vul de kruistabel zo aan dat \textit{ochtendmens} en \textit{koffie} onafhankelijk zijn.
+      antwoord: |-
+        80, 40; 120, 60
+      uitwerking: |-
+        Onafhankelijk: $P(O \cap K) = P(O) \cdot P(K) = \frac{120}{300} \cdot \frac{200}{300} = \frac{4}{15}$, dus $\frac{4}{15} \cdot 300 = 80$ personen. De rest volgt uit de totalen: $120 - 80 = 40$, $200 - 80 = 120$ en $180 - 120 = 60$.
+    - opgave: |-
+        Controleer dat $P(\text{koffie} \gegeven \text{ochtendmens}) = P(\text{koffie} \gegeven \text{avondmens})$. Wat betekent dat?
+      antwoord: |-
+        beide $\tfrac23$
+      uitwerking: |-
+        $\frac{80}{120} = \frac23$ en $\frac{120}{180} = \frac23$, net als $P(\text{koffie}) = \frac{200}{300}$. Of je een ochtend- of avondmens bent, verandert niets aan de kans dat je koffie drinkt.
+
+- id: h2-o24
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    de tweede trekking
+  opgave: |-
+    Je trekt twee kaarten na elkaar uit een spel van 52, zonder teruglegging.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Wat is de kans dat de tweede kaart een aas is? Gebruik een boomdiagram.
+      antwoord: |-
+        $\tfrac{1}{13}$
+      uitwerking: |-
+        Twee paden: eerst een aas en dan nog een aas, of eerst geen aas en dan een aas. $\frac{4}{52} \cdot \frac{3}{51} + \frac{48}{52} \cdot \frac{4}{51} = \frac{12 + 192}{2652} = \frac{204}{2652} = \frac{1}{13}$. Even groot als voor de eerste kaart.
+    - opgave: |-
+        De tweede kaart is een aas. Wat is de kans dat de eerste ook een aas was?
+      antwoord: |-
+        $\tfrac{1}{17}$
+      uitwerking: |-
+        $P(A_1 \gegeven A_2) = \frac{P(A_1 \cap A_2)}{P(A_2)} = \frac{12/2652}{204/2652} = \frac{12}{204} = \frac{1}{17}$. Dat is $\frac{3}{51}$: alsof je de tweede kaart eerst bekijkt.
+    - opgave: |-
+        Wat is de kans dat beide kaarten rood zijn?
+      antwoord: |-
+        $\tfrac{25}{102} \approx 0{,}245$
+      uitwerking: |-
+        Na een rode kaart zijn er nog 25 rode van de 51: $\frac{26}{52} \cdot \frac{25}{51} = \frac12 \cdot \frac{25}{51} = \frac{25}{102} \approx 0{,}245$. Iets minder dan $\frac14$, wat je met teruglegging zou krijgen.
+
+- id: h2-o25
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    onverenigbaar en onafhankelijk
+  opgave: |-
+    Neem twee gebeurtenissen $A$ en $B$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan: als $A$ en $B$ onverenigbaar én onafhankelijk zijn, dan is $P(A) = 0$ of $P(B) = 0$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Onverenigbaar geeft $P(A \cap B) = 0$, onafhankelijk geeft $P(A \cap B) = P(A) \cdot P(B)$. Dus $P(A) \cdot P(B) = 0$, en een product is alleen 0 als een van de factoren 0 is.
+    - opgave: |-
+        Neem $0 < P(B) < 1$. Toon aan: als $P(A \gegeven B) = P(A \gegeven \compl{B})$, dan zijn $A$ en $B$ onafhankelijk.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Noem $q = P(A \gegeven B) = P(A \gegeven \compl{B})$. Met de wet van de totale kans is
+        \[ P(A) = P(B) \cdot q + P(\compl{B}) \cdot q = \bigl(P(B) + P(\compl{B})\bigr) q = q . \]
+        Dus $P(A \gegeven B) = q = P(A)$, en $A$ en $B$ zijn onafhankelijk. Zo zie je het ook in een eenheidsvierkant: $A$ is in beide kolommen even hoog.
+
+- id: h2-o26
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een valse munt herkennen
+  opgave: |-
+    In een zakje zitten drie munten: twee eerlijke en één met aan beide kanten kop. Je neemt blindelings een munt en gooit er drie keer mee.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Wat is de kans op drie keer kop?
+      antwoord: |-
+        $\tfrac{5}{12}$
+      uitwerking: |-
+        Totale kans: de valse munt (kans $\frac13$) geeft altijd kop, een eerlijke (kans $\frac23$) drie keer kop met kans $\bigl(\frac12\bigr)^3 = \frac18$. $P(KKK) = \frac13 \cdot 1 + \frac23 \cdot \frac18 = \frac{4}{12} + \frac{1}{12} = \frac{5}{12}$.
+    - opgave: |-
+        Je gooide drie keer kop. Wat is de kans dat je de valse munt hebt?
+      antwoord: |-
+        $\tfrac45$
+      uitwerking: |-
+        Bayes: $P(\text{vals} \gegeven KKK) = \frac{1/3}{5/12} = \frac{4}{12} \cdot \frac{12}{5} = \frac45$.
+    - opgave: |-
+        Wat is na die drie keer kop de kans dat ook de vierde worp kop is?
+      antwoord: |-
+        $\tfrac{9}{10}$
+      uitwerking: |-
+        Gebruik de nieuwe kansen: valse munt $\frac45$ (altijd kop), eerlijke munt $\frac15$ (kop met kans $\frac12$). $\frac45 \cdot 1 + \frac15 \cdot \frac12 = \frac{9}{10}$. Vóór het gooien was de kans op kop maar $\frac13 + \frac23 \cdot \frac12 = \frac23$: de worpen zijn niet onafhankelijk, omdat ze iets verraden over de munt.
+
 #----------------------------------------------------------------------------------------
 # KOPPEL
 #----------------------------------------------------------------------------------------
@@ -456,3 +1075,27 @@
     $\tfrac{1}{216}$; \ $\tfrac{125}{216}$
   uitwerking: |-
     De worpen zijn onafhankelijk: $\bigl(\frac16\bigr)^3 = \frac{1}{216}$ en $\bigl(\frac56\bigr)^3 = \frac{125}{216}$.
+
+- id: h2-t6
+  soort: test
+  niveau: 2
+  thema: |-
+    totale kans en Bayes met een boomdiagram
+  opgave: |-
+    Je gooit een munt. Bij kop trek je een knikker uit vaas 1 (2 rode en 3 witte), bij munt uit vaas 2 (4 rode en 1 witte). Wat is de kans op een rode knikker? Je trok een rode knikker: wat is de kans dat hij uit vaas 2 kwam?
+  antwoord: |-
+    $0{,}6$; \ $\tfrac23$
+  uitwerking: |-
+    Totale kans: $P(R) = \frac12 \cdot \frac25 + \frac12 \cdot \frac45 = \frac15 + \frac25 = \frac35 = 0{,}6$. Bayes: $P(\text{vaas 2} \gegeven R) = \frac{2/5}{3/5} = \frac23$.
+
+- id: h2-t7
+  soort: test
+  niveau: 2
+  thema: |-
+    onafhankelijk en onverenigbaar
+  opgave: |-
+    Gegeven: $P(A) = 0{,}3$, $P(B) = 0{,}5$ en $P(A \gegeven B) = 0{,}3$. Zijn $A$ en $B$ onafhankelijk? Zijn ze onverenigbaar? Bereken $P(A \cup B)$.
+  antwoord: |-
+    ja; nee; $0{,}65$
+  uitwerking: |-
+    $P(A \gegeven B) = 0{,}3 = P(A)$: onafhankelijk. $P(A \cap B) = P(B) \cdot P(A \gegeven B) = 0{,}5 \cdot 0{,}3 = 0{,}15 \neq 0$: niet onverenigbaar. $P(A \cup B) = 0{,}3 + 0{,}5 - 0{,}15 = 0{,}65$.
