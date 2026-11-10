@@ -31,6 +31,10 @@ Een som met veel termen die volgens een regel gemaakt zijn, schrijf je kort met 
 
 De letter $k$ is een teller: je vult achtereenvolgens elke gehele waarde in, en telt de uitkomsten op. Welke letter je kiest, maakt niet uit.
 
+\begin{oefeningen}
+\oef{h3-sigma}
+\end{oefeningen}
+
 \subsection{De formule}
 
 In de Verken werkte je $(a + b)^4$ uit als een product van vier factoren $(a + b)$. Elke term ontstaat door uit elke factor $a$ of $b$ te kiezen. Kies je uit $k$ factoren $b$, en uit de andere $n - k$ factoren $a$, dan krijg je $a^{n - k}b^k$. Hoe vaak? Even vaak als je $k$ factoren kunt kiezen uit $n$.
@@ -68,6 +72,10 @@ De coëfficiënten $\binom{n}{k}$ heten daarom ook \textbf{binomiaalcoëfficiën
 = x^4 + 8x^3 + 24x^2 + 32x + 16 & Vereenvoudigen.
 \end{stappenbreed}}
 
+\begin{oefeningen}
+\oef{h3-plus}
+\end{oefeningen}
+
 \voorbeeld{}{Werk uit: $(2x - 1)^5$.\label{vb:h3-binomium2}}{%
 \uitleg{Nu is $a = 2x$ en $b = -1$. Een min-teken in $b$ geeft afwisselende tekens, want $(-1)^k$ is $+1$ als $k$ even is en $-1$ als $k$ oneven is.}
 \begin{stappenbreed}
@@ -101,6 +109,10 @@ De \textbf{\textcolor{accent}{algemene term}} van $(a + b)^n$ is \quad $\formule
 k = 3: \ \binom{7}{3} \cdot 2^3 = 35 \cdot 8 = 280 & De coëfficiënt van $x^3$ is 280.
 \end{stappen}}
 
+\begin{oefeningen}
+\oef{h3-coef}
+\end{oefeningen}
+
 \voorbeeld{}{Bepaal de term zonder $x$ in $\Bigl(x^2 + \dfrac1x\Bigr)^6$.\label{vb:h3-term2}}{%
 \uitleg{Hier komt $x$ in $a$ en in $b$ voor. We schrijven de macht van $x$ in de algemene term als één exponent, en zoeken de $k$ waarvoor die 0 is.}
 \begin{stappenbreed}
@@ -115,6 +127,8 @@ Schrijf de algemene term en breng alle machten van $x$ samen tot één macht $x^
 
 \begin{oefeningen}
 \oef{h3-term}
+
+\oef{h3-geenterm}
 \end{oefeningen}
 
 %========================================================================================
@@ -134,6 +148,10 @@ Neem $a = b = 1$ in het binomium: $(1 + 1)^n = \sum_{k=0}^{n} \binom{n}{k} 1^{n 
 
 De eerste formule ken je al uit opdracht \ref{oef:h1-o14} van hoofdstuk 1: een verzameling met $n$ elementen heeft $2^n$ deelverzamelingen. De som $\sum \binom{n}{k}$ telt ze ook, gerangschikt per aantal elementen $k$. De tweede formule zegt dat er evenveel deelverzamelingen met een even aantal elementen zijn als met een oneven aantal.
 
+\begin{oefeningen}
+\oef{h3-somrij}
+\end{oefeningen}
+
 Het binomium is ook handig om te benaderen. Is $b$ klein, dan worden de hogere machten van $b$ snel verwaarloosbaar.
 
 \voorbeeld{}{Een spaarrekening geeft 2~\% intrest per jaar. Benader met de eerste drie termen van het binomium met welke factor het kapitaal in 10 jaar groeit.\label{vb:h3-benadering}}{%
@@ -146,6 +164,8 @@ Het binomium is ook handig om te benaderen. Is $b$ klein, dan worden de hogere m
 Wie alleen de eerste twee termen gebruikt, vindt $1{,}2$: dat is de groei zonder samengestelde intrest. De derde term is de \textit{intrest op intrest}.
 
 \begin{oefeningen}
+\oef{h3-benader}
+
 \oef{h3-som}
 \end{oefeningen}
 
@@ -153,27 +173,59 @@ Wie alleen de eerste twee termen gebruikt, vindt $1{,}2$: dat is de groei zonder
 \opdrachtenkop
 
 \begin{oefeningen}
+\needspace{14\baselineskip}
 \oef{h3-o1}
 
+\oef{h3-o4}
+
+\needspace{10\baselineskip}
+\oef{h3-o13}
+
+\needspace{14\baselineskip}
 \oef{h3-o2}
 
-\oef{h3-o3}
+\oef{h3-o15}
 
-\oef{h3-o4}
+\oef{h3-o16}
+
+\needspace{16\baselineskip}
+\oef{h3-o14}
+
+\oef{h3-o3}
 
 \oef{h3-o5}
 
 \oef{h3-o6}
 
-\oef{h3-o7}
-
-\oef{h3-o8}
+\oef{h3-o17}
 
 \oef{h3-o9}
 
+\oef{h3-o18}
+
+\oef{h3-o7}
+
+\oef{h3-o20}
+
+\oef{h3-o21}
+
 \oef{h3-o10}
 
+\oef{h3-o19}
+
+\oef{h3-o8}
+
+\oef{h3-o22}
+
+\oef{h3-o23}
+
 \oef{h3-o11}
+
+\oef{h3-o25}
+
+\oef{h3-o24}
+
+\oef{h3-o26}
 
 \oef{h3-o12}
 \end{oefeningen}
@@ -196,11 +248,15 @@ Wie alleen de eerste twee termen gebruikt, vindt $1{,}2$: dat is de groei zonder
 \opdrachtsectie{Test jezelf}
 
 \begin{oefeningen}
+\oef{h3-t6}
+
 \oef{h3-t1}
 
 \oef{h3-t2}
 
 \oef{h3-t3}
+
+\oef{h3-t7}
 
 \oef{h3-t4}
 
@@ -208,11 +264,13 @@ Wie alleen de eerste twee termen gebruikt, vindt $1{,}2$: dat is de groei zonder
 \end{oefeningen}
 
 \herhaalschema{%
+  \fzv{oef:h3-t6}{oef:h3-sigma}%
   \fv{oef:h3-t1}{vb:h3-binomium2}{oef:h3-binomium}%
-  \fv{oef:h3-t2}{vb:h3-term}{oef:h3-term}%
+  \fv{oef:h3-t2}{vb:h3-term}{oef:h3-coef}%
   \fv{oef:h3-t3}{vb:h3-term2}{oef:h3-term}%
-  \fv{oef:h3-t4}{vb:h3-benadering}{oef:h3-som}%
-  \fzv{oef:h3-t5}{oef:h3-som}}
+  \fv{oef:h3-t7}{vb:h3-term}{oef:h3-o17}%
+  \fv{oef:h3-t4}{vb:h3-benadering}{oef:h3-benader}%
+  \fzv{oef:h3-t5}{oef:h3-somrij}}
 
 \ifzelfstudie
 \section*{Maak je eigen samenvatting}

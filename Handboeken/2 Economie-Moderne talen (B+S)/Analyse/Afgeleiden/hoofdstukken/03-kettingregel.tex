@@ -36,11 +36,19 @@ In woorden: leid de buitenste functie af en vul de binnenste in, en vermenigvuld
 h'(x) = 10(2x + 1)^9 \cdot 2 = 20(2x + 1)^9 & Buitenste afgeleid, maal $(2x + 1)' = 2$.
 \end{stappenbreed}}
 
+\begin{oefeningen}
+\oef{h3-kmacht}
+\end{oefeningen}
+
 \voorbeeld{}{Bereken de afgeleide van $h(x) = \sqrt{x^2 + 1}$.\label{vb:h3-wortel}}{%
 \uitleg{Buitenste functie $\sqrt u$ met afgeleide $\frac{1}{2\sqrt u}$, binnenste $u = x^2 + 1$.}
 \begin{stappenbreed}
 h'(x) = \frac{1}{2\sqrt{x^2 + 1}} \cdot 2x = \frac{x}{\sqrt{x^2 + 1}} &
 \end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h3-kwortel}
+\end{oefeningen}
 
 \begin{werkwijze}
 Zoek de buitenste en de binnenste functie: wat reken je als laatste uit? Leid de buitenste af en laat de binnenste ongewijzigd staan. Vermenigvuldig met de afgeleide van de binnenste. Bij meer lagen herhaal je dat.
@@ -48,6 +56,8 @@ Zoek de buitenste en de binnenste functie: wat reken je als laatste uit? Leid de
 
 \begin{oefeningen}
 \oef{h3-ketting}
+
+\oef{h3-lagen}
 \end{oefeningen}
 
 %========================================================================================
@@ -83,6 +93,10 @@ g'(x) = -\sin 3x \cdot 3 = -3\sin 3x &
 
 \begin{oefeningen}
 \oef{h3-gonio}
+
+\oef{h3-gonio2}
+
+\oef{h3-cosbewijs}
 \end{oefeningen}
 
 %========================================================================================
@@ -103,6 +117,10 @@ f'(x) = \e^{-x^2} \cdot (-2x) = -2x\,\e^{-x^2} & \\
 g'(x) = \frac{1}{x^2 + 1} \cdot 2x = \frac{2x}{x^2 + 1} &
 \end{stappenbreed}}
 
+\begin{oefeningen}
+\oef{h3-explog2}
+\end{oefeningen}
+
 \voorbeeld{}{Bereken de afgeleide van $f(x) = x^2\e^x$ en van $g(x) = \dfrac{\ln x}{x}$.\label{vb:h3-combinatie}}{%
 \uitleg{Product- en quotiëntregel met de nieuwe afgeleiden.}
 \begin{stappenbreed}
@@ -112,27 +130,78 @@ g'(x) = \frac{\frac1x \cdot x - \ln x \cdot 1}{x^2} = \frac{1 - \ln x}{x^2} & Qu
 
 \begin{oefeningen}
 \oef{h3-explog}
+
+\oef{h3-combi}
 \end{oefeningen}
 
 %========================================================================================
 \opdrachtenkop
 
 \begin{oefeningen}
-\oef{h3-o1}
+\needspace{12\baselineskip}
+\oef{h3-o9}
 
 \oef{h3-o2}
 
+\needspace{12\baselineskip}
+\oef{h3-o10}
+
+\needspace{8\baselineskip}
+\oef{h3-o12}
+
+\oef{h3-o1}
+
+\oef{h3-o13}
+
+\needspace{12\baselineskip}
+\oef{h3-o11}
+
+\needspace{14\baselineskip}
+\oef{h3-o14}
+
 \oef{h3-o3}
 
-\oef{h3-o4}
+\needspace{6\baselineskip}
+\oef{h3-o15}
+
+\needspace{14\baselineskip}
+\oef{h3-o16}
 
 \oef{h3-o5}
 
+\oef{h3-o18}
+
+\oef{h3-o4}
+
+\oef{h3-o21}
+
+\needspace{10\baselineskip}
+\oef{h3-o17}
+
+\oef{h3-o22}
+
+\oef{h3-o24}
+
+\needspace{10\baselineskip}
+\oef{h3-o19}
+
+\oef{h3-o20}
+
 \oef{h3-o6}
+
+\oef{h3-o23}
 
 \oef{h3-o7}
 
+\oef{h3-o25}
+
 \oef{h3-o8}
+
+\oef{h3-o27}
+
+\oef{h3-o26}
+
+\oef{h3-o28}
 \end{oefeningen}
 
 %----------------------------------------------------------------------------------------
@@ -161,14 +230,26 @@ g'(x) = \frac{\frac1x \cdot x - \ln x \cdot 1}{x^2} = \frac{1 - \ln x}{x^2} & Qu
 
 \oef{h3-t3}
 
+\oef{h3-t7}
+
 \oef{h3-t4}
+
+\oef{h3-t5}
+
+\oef{h3-t8}
+
+\oef{h3-t6}
 \end{oefeningen}
 
 \herhaalschema{%
-  \fv{oef:h3-t1}{vb:h3-ketting}{oef:h3-ketting}%
+  \fv{oef:h3-t1}{vb:h3-ketting}{oef:h3-kmacht}%
   \fv{oef:h3-t2}{vb:h3-gonio}{oef:h3-gonio}%
-  \fv{oef:h3-t3}{vb:h3-explog}{oef:h3-explog}%
-  \fv{oef:h3-t4}{vb:h3-combinatie}{oef:h3-explog}}
+  \fv{oef:h3-t3}{vb:h3-explog}{oef:h3-o11}%
+  \fv{oef:h3-t7}{vb:h3-explog}{oef:h3-explog2}%
+  \fv{oef:h3-t4}{vb:h3-combinatie}{oef:h3-combi}%
+  \fv{oef:h3-t5}{vb:h3-wortel}{oef:h3-o15}%
+  \fzv{oef:h3-t8}{oef:h3-o17}%
+  \fzv{oef:h3-t6}{oef:h3-o5}}
 
 \ifzelfstudie
 \section*{Maak je eigen samenvatting}

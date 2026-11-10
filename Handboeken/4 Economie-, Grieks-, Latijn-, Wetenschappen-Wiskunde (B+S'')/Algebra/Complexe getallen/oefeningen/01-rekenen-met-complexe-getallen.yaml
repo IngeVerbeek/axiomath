@@ -857,7 +857,9 @@
     bewijs; $|zw| = |7 + i| = \sqrt{50} = 5\sqrt2$
   uitwerking: |-
     $zw = (ac - bd) + (ad + bc)i$, dus
-    \[ |zw|^2 = (ac - bd)^2 + (ad + bc)^2 = a^2c^2 - 2abcd + b^2d^2 + a^2d^2 + 2abcd + b^2c^2 = (a^2 + b^2)(c^2 + d^2) = |z|^2 |w|^2 . \]
+    \[ |zw|^2 = (ac - bd)^2 + (ad + bc)^2 = a^2c^2 - 2abcd + b^2d^2 + a^2d^2 + 2abcd + b^2c^2 , \]
+    en na het wegvallen van $\pm 2abcd$ is dat
+    \[ a^2c^2 + a^2d^2 + b^2c^2 + b^2d^2 = (a^2 + b^2)(c^2 + d^2) = |z|^2 |w|^2 . \]
     Een modulus is nooit negatief, dus $|zw| = |z| \cdot |w|$.\par
     Controle: $(3 + 4i)(1 - i) = 3 - 3i + 4i - 4i^2 = 7 + i$, met $|7 + i| = \sqrt{50} = 5\sqrt2$, en $|3 + 4i| \cdot |1 - i| = 5 \cdot \sqrt2$.
 
@@ -885,6 +887,404 @@
   uitwerking: |-
     $(3 + 2i)(2 + i) = 6 + 3i + 4i + 2i^2 = 4 + 7i$, dus $65 = 13 \cdot 5 = |4 + 7i|^2 = 4^2 + 7^2$.\par
     $(3 + 2i)(2 - i) = 6 - 3i + 4i - 2i^2 = 8 + i$, dus $65 = |8 + i|^2 = 8^2 + 1^2$.
+
+- id: h1-o21
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    drill: vermenigvuldigen
+  opgave: |-
+    Bereken.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $(1 + 3i)(2 - i)$
+      antwoord: |-
+        $5 + 5i$
+      uitwerking: |-
+        $2 - i + 6i - 3i^2 = 2 + 5i + 3 = 5 + 5i$.
+    - opgave: |-
+        $(4 + i)(4 - i)$
+      antwoord: |-
+        $17$
+      uitwerking: |-
+        Een getal maal zijn toegevoegde: $4^2 - i^2 = 16 + 1 = 17$.
+    - opgave: |-
+        $-2i(5 - 3i)$
+      antwoord: |-
+        $-6 - 10i$
+      uitwerking: |-
+        $-10i + 6i^2 = -6 - 10i$.
+    - opgave: |-
+        $(3 + 2i)^2$
+      antwoord: |-
+        $5 + 12i$
+      uitwerking: |-
+        $9 + 12i + 4i^2 = 9 + 12i - 4 = 5 + 12i$.
+    - opgave: |-
+        $(1 - i)^2$
+      antwoord: |-
+        $-2i$
+      uitwerking: |-
+        $1 - 2i + i^2 = -2i$.
+    - opgave: |-
+        $(5 - 2i)(-1 + 4i)$
+      antwoord: |-
+        $3 + 22i$
+      uitwerking: |-
+        $-5 + 20i + 2i - 8i^2 = -5 + 22i + 8 = 3 + 22i$.
+    - opgave: |-
+        $(\sqrt2 + i)(\sqrt2 - i)$
+      antwoord: |-
+        $3$
+      uitwerking: |-
+        Merkwaardig product: $\bigl(\sqrt2\bigr)^2 - i^2 = 2 + 1 = 3$.
+    - opgave: |-
+        $(1 + i)^3$
+      antwoord: |-
+        $-2 + 2i$
+      uitwerking: |-
+        $(1 + i)^2 = 1 + 2i + i^2 = 2i$, dus $(1 + i)^3 = 2i(1 + i) = 2i + 2i^2 = -2 + 2i$.
+    - opgave: |-
+        $(2 - 3i)^2$
+      antwoord: |-
+        $-5 - 12i$
+      uitwerking: |-
+        $4 - 12i + 9i^2 = 4 - 12i - 9 = -5 - 12i$.
+    - opgave: |-
+        $(1 + 2i)^2(1 - 2i)^2$
+      antwoord: |-
+        $25$
+      uitwerking: |-
+        Neem eerst het product van de grondtallen: $(1 + 2i)^2(1 - 2i)^2 = \bigl((1 + 2i)(1 - 2i)\bigr)^2 = (1 + 4)^2 = 25$.
+    - opgave: |-
+        $\bigl(\tfrac12 + \tfrac12 i\bigr)^2$
+      antwoord: |-
+        $\tfrac12 i$
+      uitwerking: |-
+        $\tfrac14 + 2 \cdot \tfrac12 \cdot \tfrac12 i + \tfrac14 i^2 = \tfrac14 + \tfrac12 i - \tfrac14 = \tfrac12 i$.
+    - opgave: |-
+        $(3 - i)^2 + (3 + i)^2$
+      antwoord: |-
+        $16$
+      uitwerking: |-
+        $(3 - i)^2 = 9 - 6i + i^2 = 8 - 6i$ en $(3 + i)^2 = 8 + 6i$. Samen $16$: de imaginaire delen vallen weg.
+
+- id: h1-o22
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    drill: delen en gemengde bewerkingen
+  opgave: |-
+    Schrijf in de vorm $a + bi$.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\dfrac{1}{1 + i}$
+      antwoord: |-
+        $\tfrac12 - \tfrac12 i$
+      uitwerking: |-
+        Teller en noemer maal $1 - i$: $\dfrac{1 - i}{1 + 1} = \tfrac12 - \tfrac12 i$.
+    - opgave: |-
+        $\dfrac{2 + 3i}{1 - i}$
+      antwoord: |-
+        $-\tfrac12 + \tfrac52 i$
+      uitwerking: |-
+        $\dfrac{(2 + 3i)(1 + i)}{1 + 1} = \dfrac{2 + 2i + 3i + 3i^2}{2} = \dfrac{-1 + 5i}{2} = -\tfrac12 + \tfrac52 i$.
+    - opgave: |-
+        $\dfrac{13}{2 - 3i}$
+      antwoord: |-
+        $2 + 3i$
+      uitwerking: |-
+        $\dfrac{13(2 + 3i)}{4 + 9} = 2 + 3i$.
+    - opgave: |-
+        $\dfrac{3i}{1 + 2i}$
+      antwoord: |-
+        $\tfrac65 + \tfrac35 i$
+      uitwerking: |-
+        $\dfrac{3i(1 - 2i)}{1 + 4} = \dfrac{3i - 6i^2}{5} = \dfrac{6 + 3i}{5} = \tfrac65 + \tfrac35 i$.
+    - opgave: |-
+        $\dfrac{i^7}{2 + i}$
+      antwoord: |-
+        $-\tfrac15 - \tfrac25 i$
+      uitwerking: |-
+        $i^7 = i^3 = -i$, dus $\dfrac{-i}{2 + i} = \dfrac{-i(2 - i)}{4 + 1} = \dfrac{-2i + i^2}{5} = \dfrac{-1 - 2i}{5} = -\tfrac15 - \tfrac25 i$.
+    - opgave: |-
+        $\dfrac{(1 + i)^2}{1 - i}$
+      antwoord: |-
+        $-1 + i$
+      uitwerking: |-
+        $(1 + i)^2 = 2i$, dus $\dfrac{2i}{1 - i} = \dfrac{2i(1 + i)}{1 + 1} = i + i^2 = -1 + i$.
+    - opgave: |-
+        $\dfrac{4 - 2i}{1 + i} + i$
+      antwoord: |-
+        $1 - 2i$
+      uitwerking: |-
+        $\dfrac{(4 - 2i)(1 - i)}{2} = \dfrac{4 - 4i - 2i + 2i^2}{2} = \dfrac{2 - 6i}{2} = 1 - 3i$, en $1 - 3i + i = 1 - 2i$.
+    - opgave: |-
+        $\dfrac{1}{i^3}$
+      antwoord: |-
+        $i$
+      uitwerking: |-
+        $i^3 = -i$, dus $\dfrac{1}{-i} = \dfrac{1 \cdot i}{-i \cdot i} = \dfrac{i}{1} = i$.
+    - opgave: |-
+        $\dfrac{3 + i}{3 - i} - \dfrac{3 - i}{3 + i}$
+      antwoord: |-
+        $\tfrac65 i$
+      uitwerking: |-
+        Op gelijke noemer $(3 - i)(3 + i) = 10$: $\dfrac{(3 + i)^2 - (3 - i)^2}{10} = \dfrac{(8 + 6i) - (8 - 6i)}{10} = \dfrac{12i}{10} = \tfrac65 i$.
+
+- id: h1-o23
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    bewerkingen in het vlak herkennen
+  figuur:
+    code: |-
+      \begin{tikzpicture}[x=.55cm,y=.55cm]
+        \gaussstap{2}{-3}{4}{-3}{4}
+        \draw[vector] (0,0) -- (2,1);
+        \draw[vector] (0,0) -- (-1,3);
+        \node[below right,inner sep=1.5pt,font=\small] at (2,1) {$z$};
+        \node[above left,inner sep=1.5pt,font=\small] at (-1,3) {$w$};
+        \cpunt[left]{-3}{2}{$A$}
+        \cpunt[right]{1}{4}{$B$}
+        \cpunt[left]{-1}{2}{$C$}
+        \cpunt[above]{4}{2}{$D$}
+        \cpunt[left]{-1}{-3}{$E$}
+        \cpunt[right]{3}{-2}{$F$}
+        \cpunt[below left]{-2}{1}{$G$}
+      \end{tikzpicture}
+  opgave: |-
+    In de figuur zie je de complexe getallen $z$ en $w$, en de punten $A$ tot $G$. Welk punt hoort bij elk getal? Eén punt blijft over: schrijf het als een uitdrukking in $z$.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $z + w$
+      antwoord: |-
+        $B$
+      uitwerking: |-
+        $z = 2 + i$ en $w = -1 + 3i$, dus $z + w = 1 + 4i$: punt $B$.
+    - opgave: |-
+        $z - w$
+      antwoord: |-
+        $F$
+      uitwerking: |-
+        $z - w = (2 + 1) + (1 - 3)i = 3 - 2i$: punt $F$.
+    - opgave: |-
+        $w - z$
+      antwoord: |-
+        $A$
+      uitwerking: |-
+        $w - z = -(z - w) = -3 + 2i$: punt $A$, het spiegelbeeld van $F$ om de oorsprong.
+    - opgave: |-
+        $\conj{w}$
+      antwoord: |-
+        $E$
+      uitwerking: |-
+        $\conj{w} = -1 - 3i$: punt $E$, het spiegelbeeld van $w$ om de reële as.
+    - opgave: |-
+        $iz$
+      antwoord: |-
+        $C$
+      uitwerking: |-
+        $iz = 2i + i^2 = -1 + 2i$: punt $C$, een kwartslag gedraaid.
+    - opgave: |-
+        $2z$
+      antwoord: |-
+        $D$
+      uitwerking: |-
+        $2z = 4 + 2i$: punt $D$, in dezelfde richting als $z$ en twee keer zo ver.
+    - opgave: |-
+        het punt dat overblijft
+      antwoord: |-
+        $G = -\conj{z}$
+      uitwerking: |-
+        $G = -2 + i$. Dat is het spiegelbeeld van $z = 2 + i$ om de imaginaire as: $G = -\conj{z}$.
+
+- id: h1-o24
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    klassieke fouten: product, modulus, toegevoegde
+  opgave: |-
+    Waar zit de fout? Geef telkens de juiste uitkomst.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Iemand schrijft: `$(3 + 2i)(3 - 2i) = 9 - 4 = 5$.'
+      antwoord: |-
+        $(2i)^2 = -4$: de uitkomst is $13$
+      uitwerking: |-
+        Het merkwaardig product geeft $3^2 - (2i)^2$, en $(2i)^2 = 4i^2 = -4$. Dus $(3 + 2i)(3 - 2i) = 9 - (-4) = 13$. Je kunt ook de formule $z \cdot \conj{z} = a^2 + b^2 = 9 + 4$ gebruiken.
+    - opgave: |-
+        Iemand schrijft: `$|{-4} + 3i| = \sqrt{-4^2 + 3^2} = \sqrt{-7}$, dus de modulus bestaat niet.'
+      antwoord: |-
+        $(-4)^2 = 16$: de modulus is $5$
+      uitwerking: |-
+        In de formule staat het kwadraat van het reëel deel: $(-4)^2 = 16$, en niet $-4^2 = -16$. Dus $|{-4} + 3i| = \sqrt{16 + 9} = 5$. Een modulus bestaat altijd en is nooit negatief.
+    - opgave: |-
+        Iemand schrijft: `De toegevoegde van $-2 + 5i$ is $2 - 5i$.'
+      antwoord: |-
+        alleen het imaginair deel verandert van teken: $-2 - 5i$
+      uitwerking: |-
+        Bij de toegevoegde verandert alleen het teken van het imaginair deel: $\conj{-2 + 5i} = -2 - 5i$. Het getal $2 - 5i$ is het tegengestelde $-(-2 + 5i)$.
+
+- id: h1-o25
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: een figuurtje in een spel
+  opgave: |-
+    In een eenvoudig computerspel staat een figuurtje in het vlak van Gauss, in een punt $z$. Drie knoppen verplaatsen het: knop $D$ vervangt $z$ door $iz$, knop $S$ door $\conj{z}$, en knop $V$ door $z + 2 - i$. Het figuurtje start in $1 + 2i$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Welke meetkundige transformatie hoort bij elke knop?
+      antwoord: |-
+        $D$: kwartdraai om 0 tegen de wijzers van de klok in; $S$: spiegeling om de reële as; $V$: verschuiving over $(2, -1)$
+      uitwerking: |-
+        Vermenigvuldigen met $i$ is een kwartslag om de oorsprong, tegen de wijzers van de klok in (hoofdstuk 1, machten van $i$). De toegevoegde is het spiegelbeeld om de reële as. Optellen met $2 - i$ verschuift elk punt over de vector $(2, -1)$.
+    - opgave: |-
+        Waar staat het figuurtje als je eerst $D$ en dan $V$ indrukt? En als je eerst $V$ en dan $D$ indrukt? Maakt de volgorde uit?
+      antwoord: |-
+        $0$ en $-1 + 3i$: ja
+      uitwerking: |-
+        Eerst $D$: $i(1 + 2i) = -2 + i$, dan $V$: $-2 + i + 2 - i = 0$.\par
+        Eerst $V$: $1 + 2i + 2 - i = 3 + i$, dan $D$: $i(3 + i) = -1 + 3i$.\par
+        \naast{\begin{minipage}{8cm}De eindpunten verschillen, dus de volgorde maakt uit.\end{minipage}}{\begin{tikzpicture}[x=.45cm,y=.45cm]
+          \gauss{-2}{3}{-1}{3}
+          \draw[hulplijn,->] (1,2) -- (-2,1);
+          \draw[hulplijn,->] (-2,1) -- (0,0);
+          \draw[hulplijn,->] (1,2) -- (3,1);
+          \draw[hulplijn,->] (3,1) -- (-1,3);
+          \cpunt[above right]{1}{2}{start}
+          \cpunt[below left]{0}{0}{$DV$}
+          \cpunt[above left]{-1}{3}{$VD$}
+        \end{tikzpicture}}
+    - opgave: |-
+        Het figuurtje staat in een willekeurig punt $z = a + bi$. Toon aan: eerst $D$ en dan $S$ geeft het tegengestelde van eerst $S$ en dan $D$.
+      antwoord: |-
+        $-b - ai$ en $b + ai$
+      uitwerking: |-
+        Eerst $D$: $i(a + bi) = -b + ai$, dan $S$: $-b - ai$.\par
+        Eerst $S$: $a - bi$, dan $D$: $i(a - bi) = ai - bi^2 = b + ai$.\par
+        En inderdaad is $-b - ai = -(b + ai)$.
+
+- id: h1-o26
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    klassieke fout: reëel en imaginair deel apart delen
+  opgave: |-
+    Iemand berekent $\dfrac{6 + 4i}{2 + 2i}$ door het reëel deel en het imaginair deel apart te delen. Hij vindt $\dfrac{6}{2} + \dfrac{4}{2}i$, dus $3 + 2i$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon met een controle aan dat dat fout is, en bereken het juiste quotiënt.
+      antwoord: |-
+        $(3 + 2i)(2 + 2i) = 2 + 10i$; juist is $\tfrac52 - \tfrac12 i$
+      uitwerking: |-
+        Controle: $(3 + 2i)(2 + 2i) = 6 + 6i + 4i + 4i^2 = 2 + 10i$, en dat is niet $6 + 4i$.\par
+        Juist: $\dfrac{(6 + 4i)(2 - 2i)}{4 + 4} = \dfrac{12 - 12i + 8i - 8i^2}{8} = \dfrac{20 - 4i}{8} = \tfrac52 - \tfrac12 i$.\par
+        Controle: $\bigl(\tfrac52 - \tfrac12 i\bigr)(2 + 2i) = 5 + 5i - i - i^2 = 6 + 4i$.
+    - opgave: |-
+        Wanneer mag je wel het reëel en het imaginair deel apart delen?
+      antwoord: |-
+        als de noemer reëel is
+      uitwerking: |-
+        Als de noemer een reëel getal $c$ is: $\dfrac{a + bi}{c} = \dfrac{a}{c} + \dfrac{b}{c}i$. Daarom maak je de noemer eerst reëel met de toegevoegde.
+
+- id: h1-o27
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    verzamelingen van punten tekenen
+  opgave: |-
+    Teken in het vlak van Gauss alle complexe getallen $z$ waarvoor
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\Re z = 2$
+      antwoord: |-
+        de rechte $x = 2$
+      uitwerking: |-
+        Alle getallen $2 + bi$: de verticale rechte door $2$.\par
+        \begin{tikzpicture}[x=.32cm,y=.32cm]
+          \gaussstap{2}{-3}{3}{-3}{3}
+          \draw[accent,thick] (2,-3.3) -- (2,3.3);
+        \end{tikzpicture}
+    - opgave: |-
+        $\Im z = -1$
+      antwoord: |-
+        de rechte $y = -1$
+      uitwerking: |-
+        Alle getallen $a - i$: de horizontale rechte door $-i$.\par
+        \begin{tikzpicture}[x=.32cm,y=.32cm]
+          \gaussstap{2}{-3}{3}{-3}{3}
+          \draw[accent,thick] (-3.3,-1) -- (3.3,-1);
+        \end{tikzpicture}
+    - opgave: |-
+        $|z| = 3$
+      antwoord: |-
+        de cirkel met middelpunt 0 en straal 3
+      uitwerking: |-
+        De punten op afstand 3 van de oorsprong: een cirkel.\par
+        \begin{tikzpicture}[x=.32cm,y=.32cm]
+          \gaussstap{2}{-3}{3}{-3}{3}
+          \draw[accent,thick] (0,0) circle (3);
+        \end{tikzpicture}
+    - opgave: |-
+        $\Re z = \Im z$
+      antwoord: |-
+        de rechte $y = x$
+      uitwerking: |-
+        Alle getallen $a + ai$: de rechte door de oorsprong die de hoek tussen de assen halveert.\par
+        \begin{tikzpicture}[x=.32cm,y=.32cm]
+          \gaussstap{2}{-3}{3}{-3}{3}
+          \draw[accent,thick] (-3.2,-3.2) -- (3.2,3.2);
+        \end{tikzpicture}
+    - opgave: |-
+        $|z| \leqslant 2$ \ en \ $\Im z \geqslant 0$
+      antwoord: |-
+        de bovenste helft van de schijf met straal 2
+      uitwerking: |-
+        De punten op afstand hoogstens 2 van de oorsprong, op of boven de reële as: een halve schijf, met de rand erbij.\par
+        \begin{tikzpicture}[x=.32cm,y=.32cm]
+          \gaussstap{2}{-3}{3}{-3}{3}
+          \fill[accent!25,fill opacity=.5] (2,0) arc[start angle=0,end angle=180,radius=2] -- cycle;
+          \draw[accent,thick] (2,0) arc[start angle=0,end angle=180,radius=2] -- cycle;
+        \end{tikzpicture}
+
+- id: h1-o28
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een quotiënt dat zuiver imaginair is
+  opgave: |-
+    Neem een complex getal $z \neq 1$ met $|z| = 1$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $\dfrac{1 + z}{1 - z}$ voor $z = i$ en voor $z = \tfrac35 + \tfrac45 i$. Wat valt je op?
+      antwoord: |-
+        $i$ en $2i$: zuiver imaginair
+      uitwerking: |-
+        Voor $z = i$: $\dfrac{1 + i}{1 - i} = \dfrac{(1 + i)^2}{2} = \dfrac{2i}{2} = i$.\par
+        Voor $z = \tfrac35 + \tfrac45 i$ (en inderdaad $|z|^2 = \tfrac{9}{25} + \tfrac{16}{25} = 1$): $\dfrac{\tfrac85 + \tfrac45 i}{\tfrac25 - \tfrac45 i} = \dfrac{8 + 4i}{2 - 4i} = \dfrac{(8 + 4i)(2 + 4i)}{4 + 16} = \dfrac{16 + 32i + 8i + 16i^2}{20} = \dfrac{40i}{20} = 2i$.\par
+        Beide keren is het quotiënt zuiver imaginair.
+    - opgave: |-
+        Toon aan dat $\dfrac{1 + z}{1 - z}$ altijd zuiver imaginair is of 0. Wanneer is het 0?
+      antwoord: |-
+        bewijs; 0 als $z = -1$
+      uitwerking: |-
+        Stel $z = a + bi$ met $a^2 + b^2 = 1$. Vermenigvuldig teller en noemer met de toegevoegde van de noemer, $\conj{1 - z} = (1 - a) + bi$. De noemer wordt het reële getal $|1 - z|^2 = (1 - a)^2 + b^2$, dat niet 0 is omdat $z \neq 1$. De teller is
+        \[ (1 + a + bi)(1 - a + bi) = (1 + a)(1 - a) + (1 + a)bi + (1 - a)bi + b^2 i^2 = 1 - a^2 - b^2 + 2bi = 2bi , \]
+        want $a^2 + b^2 = 1$. Dus $\dfrac{1 + z}{1 - z} = \dfrac{2b}{(1 - a)^2 + b^2}\, i$: zuiver imaginair, of 0 als $b = 0$. Met $|z| = 1$ en $z \neq 1$ is dat alleen voor $z = -1$.
 
 #----------------------------------------------------------------------------------------
 # KOPPEL

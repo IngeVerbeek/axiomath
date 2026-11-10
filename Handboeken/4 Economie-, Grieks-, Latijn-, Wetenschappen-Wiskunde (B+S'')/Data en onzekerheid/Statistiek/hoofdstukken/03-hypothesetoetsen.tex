@@ -41,7 +41,7 @@ Voor aselecte steekproeven van grootte $n$ uit een grote populatie is
 
 De formule voor $\hat{p}$ volgt uit de binomiale verdeling: $\hat{p} = \frac{X}{n}$ met $X \sim B(n, p)$ (zie de Koppel van hoofdstuk 1). De formules voor $\overline{X}$ en de centrale limietstelling bewijzen we niet. Vier keer zoveel waarnemingen halveert de spreiding van het gemiddelde: daarom geven grote steekproeven nauwkeurigere schattingen.
 
-\naast{\begin{minipage}{8cm}
+\naast{\begin{minipage}{\linewidth}
 De figuur toont de steekproevenverdeling van $\overline{X}$ voor een populatie met $\mu = 70$ en $\sigma = 8$, voor steekproeven van 4, 16 en 64. De standaardafwijking is $\frac{8}{\sqrt n}$: 4, 2 en 1. Hoe groter de steekproef, hoe dichter de gemiddelden bij 70 liggen.
 \end{minipage}}{\begin{tikzpicture}[x=.36cm,y=7cm,font=\scriptsize]
   \draw[->,grijs] (56,0) -- (84.5,0);
@@ -64,6 +64,8 @@ Een steekproef met 40~\% vrijwilligers is dus zeldzaam als $p = 0{,}3$. Vind je 
 
 \begin{oefeningen}
 \oef{h3-steekproef}
+
+\oef{h3-phat}
 \end{oefeningen}
 
 %========================================================================================
@@ -83,6 +85,10 @@ Het \textbf{\textcolor{accent}{significantieniveau}} $\formule{\alpha}$ kies je 
 
 Een toets is een bewijs uit het ongerijmde met kansen. Je neemt aan dat $H_0$ klopt. Leidt dat tot een resultaat dat bijna nooit gebeurt, dan verwerp je die aanname. Belangrijk: als je $H_0$ niet verwerpt, heb je niet bewezen dat ze waar is. Je hebt alleen te weinig aanwijzingen tegen haar gevonden.
 
+\begin{oefeningen}
+\oef{h3-begrippen}
+\end{oefeningen}
+
 \subsection{Een toets voor een proportie}
 
 \voorbeeld{}{Een speler vermoedt dat een dobbelsteen te vaak zes gooit. Bij 120 worpen valt 30 keer zes. Toets bij $\alpha = 0{,}05$.\label{vb:h3-proportie}}{%
@@ -97,6 +103,10 @@ H_0\colon p = \tfrac16 \qquad H_1\colon p > \tfrac16 & De speler vermoedt te vee
 \begin{werkwijze}
 \textbf{1.}~Formuleer $H_0$ (met $=$) en $H_1$ ($>$, $<$ of $\neq$), en kies $\alpha$. \ \textbf{2.}~Bepaal de verdeling van de toetsingsgrootheid als $H_0$ waar is. \ \textbf{3.}~Bereken de p-waarde: de kans op het waargenomen resultaat of iets extremer, in de richting van $H_1$. \ \textbf{4.}~Vergelijk met $\alpha$. \ \textbf{5.}~Formuleer het besluit in de context, voorzichtig.
 \end{werkwijze}
+
+\begin{oefeningen}
+\oef{h3-proportie}
+\end{oefeningen}
 
 \subsection{Een toets voor een gemiddelde}
 
@@ -134,6 +144,8 @@ Merk op: had je vooraf vermoed dat de munt te vaak kop geeft, dan was de p-waard
 
 \begin{oefeningen}
 \oef{h3-tweezijdig}
+
+\oef{h3-tweezijdig-2}
 \end{oefeningen}
 
 %========================================================================================
@@ -166,29 +178,82 @@ Met maar 20 worpen ontdek je een munt die 70~\% kop geeft dus maar in 42~\% van 
 
 \begin{oefeningen}
 \oef{h3-fouten}
+
+\oef{h3-fouten-2}
 \end{oefeningen}
 
 %========================================================================================
 \opdrachtenkop
 
 \begin{oefeningen}
+\needspace{18\baselineskip}
+\oef{h3-o3}
+
+\needspace{12\baselineskip}
+\oef{h3-d2}
+
 \oef{h3-o1}
+
+\needspace{16\baselineskip}
+\oef{h3-o12}
+
+\needspace{8\baselineskip}
+\oef{h3-d3}
 
 \oef{h3-o2}
 
-\oef{h3-o3}
+\needspace{12\baselineskip}
+\oef{h3-o11}
+
+\needspace{10\baselineskip}
+\oef{h3-o10}
+
+\oef{h3-o13}
 
 \oef{h3-o4}
 
-\oef{h3-o5}
+\needspace{16\baselineskip}
+\oef{h3-o14}
 
+\needspace{12\baselineskip}
+\oef{h3-o18}
+
+\needspace{12\baselineskip}
+\oef{h3-o16}
+
+\needspace{10\baselineskip}
 \oef{h3-o6}
+
+\needspace{12\baselineskip}
+\oef{h3-o15}
+
+\needspace{12\baselineskip}
+\oef{h3-o19}
 
 \oef{h3-o7}
 
-\oef{h3-o8}
+\needspace{12\baselineskip}
+\oef{h3-o20}
+
+\oef{h3-o21}
+
+\needspace{12\baselineskip}
+\oef{h3-o17}
+
+\oef{h3-o5}
 
 \oef{h3-o9}
+
+\needspace{12\baselineskip}
+\oef{h3-o23}
+
+\oef{h3-o8}
+
+\needspace{14\baselineskip}
+\oef{h3-o22}
+
+\needspace{12\baselineskip}
+\oef{h3-o24}
 \end{oefeningen}
 
 %----------------------------------------------------------------------------------------
@@ -216,13 +281,22 @@ Met maar 20 worpen ontdek je een munt die 70~\% kop geeft dus maar in 42~\% van 
 \oef{h3-t3}
 
 \oef{h3-t4}
+
+\oef{h3-t5}
+
+\oef{h3-t6}
+
+\oef{h3-t7}
 \end{oefeningen}
 
 \herhaalschema{%
-  \fv{oef:h3-t1}{vb:h3-proportie}{oef:h3-toets}%
+  \fv{oef:h3-t1}{vb:h3-proportie}{oef:h3-proportie}%
   \fv{oef:h3-t2}{vb:h3-gemiddelde}{oef:h3-toets}%
-  \fv{oef:h3-t3}{vb:h3-tweezijdig}{oef:h3-tweezijdig}%
-  \fzv{oef:h3-t4}{oef:h3-fouten}}
+  \fv{oef:h3-t3}{vb:h3-tweezijdig}{oef:h3-tweezijdig-2}%
+  \fzv{oef:h3-t4}{oef:h3-fouten}%
+  \fv{oef:h3-t5}{vb:h3-steekproef}{oef:h3-steekproef}%
+  \fzv{oef:h3-t6}{oef:h3-begrippen}%
+  \fv{oef:h3-t7}{vb:h3-fouten}{oef:h3-fouten-2}}
 
 \ifzelfstudie
 \section*{Maak je eigen samenvatting}

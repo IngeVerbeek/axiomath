@@ -47,12 +47,20 @@ s = 2,\ r = 1,\ \text{controle } 1 + 1 = 2 & De eerste klopt ook. \\
 \text{snijpunt } (2, 1, 2) & $r = 1$ invullen in $l$.
 \end{stappenbreed}}
 
+\begin{oefeningen}
+\oef{h3-snijdend}
+\end{oefeningen}
+
 \voorbeeld{}{In de kubus hierboven ligt $l$ op de $x$-as en $m\colon (0, 0, 2) + s\vcr{0}{1}{0}$. Toon aan dat ze kruisend zijn.\label{vb:h3-kruisend}}{%
 \uitleg{De richtingsvectoren $\vcr{1}{0}{0}$ en $\vcr{0}{1}{0}$ zijn niet collineair. Zoek een gemeenschappelijk punt.}
 \begin{stappenbreed}
 r = 0,\quad 0 = s,\quad 0 = 2 & De derde vergelijking kan niet. \\
 \text{geen gemeenschappelijk punt} & Niet evenwijdig en niet snijdend: kruisend.
 \end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h3-kruisend}
+\end{oefeningen}
 
 \begin{werkwijze}
 Vergelijk de richtingsvectoren. Collineair: evenwijdig; ligt een punt van de ene op de andere, dan samenvallend. Niet collineair: stel de parametervergelijkingen gelijk (gebruik twee verschillende parameters!) en los op. Een oplossing geeft het snijpunt; geen oplossing betekent kruisend.
@@ -77,6 +85,8 @@ Was er een vergelijking zonder oplossing gekomen (zoals $3 = 7$), dan was de rec
 
 \begin{oefeningen}
 \oef{h3-rechtevlak}
+
+\oef{h3-rechtevlak-ligt}
 \end{oefeningen}
 
 %========================================================================================
@@ -93,6 +103,10 @@ De vlakken $a_1x + b_1y + c_1z = d_1$ en $a_2x + b_2y + c_2z = d_2$ zijn \textbf
 5 \neq 2 \cdot 3 & Niet samenvallend.
 \end{stappenbreed}}
 
+\begin{oefeningen}
+\oef{h3-evenwijdig}
+\end{oefeningen}
+
 Drie vlakken snijden elkaar meestal in één punt: de oplossing van een stelsel van drie vergelijkingen met drie onbekenden (zie Matrices). Het kan ook dat ze een rechte gemeen hebben, of geen enkel punt.
 
 \voorbeeld{}{Bereken het gemeenschappelijke punt van de vlakken $x + y + z = 6$, $x - y + 2z = 5$ en $2x + y - z = 1$.\label{vb:h3-drievlakken}}{%
@@ -106,27 +120,74 @@ z = 3,\quad x = 6 - 2 - 3 = 1 & Het punt $(1, 2, 3)$.
 
 \begin{oefeningen}
 \oef{h3-vlakken}
+
+\oef{h3-drievlakken}
 \end{oefeningen}
 
 %========================================================================================
 \opdrachtenkop
 
 \begin{oefeningen}
-\oef{h3-o1}
+\needspace{16\baselineskip}
+\oef{h3-o9}
+
+\needspace{14\baselineskip}
+\oef{h3-o12}
 
 \oef{h3-o2}
 
+\oef{h3-o14}
+
+\needspace{14\baselineskip}
+\oef{h3-o13}
+
+\oef{h3-o11}
+
+\oef{h3-o1}
+
+\needspace{14\baselineskip}
+\oef{h3-o10}
+
 \oef{h3-o3}
 
-\oef{h3-o4}
+\oef{h3-o16}
 
-\oef{h3-o5}
+\oef{h3-o15}
+
+\oef{h3-o19}
+
+\needspace{10\baselineskip}
+\oef{h3-o17}
 
 \oef{h3-o6}
 
+\needspace{16\baselineskip}
+\oef{h3-o21}
+
+\oef{h3-o18}
+
+\oef{h3-o4}
+
+\oef{h3-o23}
+
+\needspace{14\baselineskip}
+\oef{h3-o20}
+
+\oef{h3-o5}
+
+\needspace{16\baselineskip}
+\oef{h3-o22}
+
+\needspace{16\baselineskip}
+\oef{h3-o24}
+
 \oef{h3-o7}
 
+\oef{h3-o25}
+
 \oef{h3-o8}
+
+\oef{h3-o26}
 \end{oefeningen}
 
 %----------------------------------------------------------------------------------------
@@ -151,18 +212,27 @@ z = 3,\quad x = 6 - 2 - 3 = 1 & Het punt $(1, 2, 3)$.
 \begin{oefeningen}
 \oef{h3-t1}
 
+\oef{h3-t5}
+
 \oef{h3-t2}
 
+\oef{h3-t6}
+
 \oef{h3-t3}
+
+\oef{h3-t7}
 
 \oef{h3-t4}
 \end{oefeningen}
 
 \herhaalschema{%
-  \fv{oef:h3-t1}{vb:h3-snijdend}{oef:h3-rechten}%
+  \fv{oef:h3-t1}{vb:h3-snijdend}{oef:h3-snijdend}%
+  \fv{oef:h3-t5}{vb:h3-kruisend}{oef:h3-kruisend}%
   \fv{oef:h3-t2}{vb:h3-rechtevlak}{oef:h3-rechtevlak}%
+  \fv{oef:h3-t6}{vb:h3-rechtevlak}{oef:h3-rechtevlak-ligt}%
   \fv{oef:h3-t3}{vb:h3-vlakken}{oef:h3-vlakken}%
-  \fv{oef:h3-t4}{vb:h3-drievlakken}{oef:h3-vlakken}}
+  \fv{oef:h3-t7}{vb:h3-vlakken}{oef:h3-evenwijdig}%
+  \fv{oef:h3-t4}{vb:h3-drievlakken}{oef:h3-drievlakken}}
 
 \ifzelfstudie
 \section*{Maak je eigen samenvatting}

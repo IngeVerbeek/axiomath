@@ -125,6 +125,129 @@
       uitwerking: |-
         $r\vec v + s\vec w = \vcr{r}{s}{r + s}$: $r = 1$, $s = 2$, en $r + s = 3$ klopt.
 
+- id: h1-coordinaten
+  soort: kort
+  figuur:
+    opties: |-
+      3.8cm
+    code: |-
+      \begin{tikzpicture}[ruimte,scale=.62,font=\scriptsize]
+        \assendrie{4.8}
+        \draw[accent] (3,0,0) -- (3,4,0) -- (0,4,0) (3,0,0) -- (3,0,2) -- (0,0,2) -- (0,4,2) -- (3,4,2) -- (3,0,2) (3,4,0) -- (3,4,2) (0,4,0) -- (0,4,2);
+        \node[left] at (3,0,0) {$A$}; \node[below right] at (3,4,0) {$B$}; \node[below right] at (0,4,0) {$C$};
+        \node[left] at (0,0,2) {$D$}; \node[left] at (3,0,2) {$E$}; \node[right] at (3,4,2) {$F$}; \node[above right] at (0,4,2) {$G$};
+      \end{tikzpicture}
+  opgave: |-
+    De balk heeft een hoekpunt in $O$ en ribben $3$, $4$ en $2$ langs de $x$-, de $y$- en de $z$-as.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef de coördinaten van $A$, $B$, $F$ en $G$.
+      antwoord: |-
+        $A(3, 0, 0)$, $B(3, 4, 0)$, $F(3, 4, 2)$, $G(0, 4, 2)$
+      uitwerking: |-
+        $A$ ligt $3$ ver op de $x$-as: $A(3, 0, 0)$. Vanuit $A$ ga je $4$ in de zin van de $y$-as naar $B(3, 4, 0)$, en vanuit $B$ $2$ omhoog naar $F(3, 4, 2)$. $G$ ligt boven $C(0, 4, 0)$: $G(0, 4, 2)$.
+    - opgave: |-
+        Bereken $|OF|$.
+      antwoord: |-
+        $\sqrt{29}$
+      uitwerking: |-
+        $|OF| = \sqrt{3^2 + 4^2 + 2^2} = \sqrt{29} \approx 5{,}39$.
+    - opgave: |-
+        Welke coördinaat hebben alle punten van het bovenvlak $DEFG$ gemeen?
+      antwoord: |-
+        $z = 2$
+      uitwerking: |-
+        Ze liggen allemaal op hoogte $2$: hun $z$-coördinaat is $2$.
+
+- id: h1-midden
+  soort: kort
+  opgave: |-
+    Het punt $M(1, -2, 4)$ is het midden van $[AB]$, met $A(3, 0, 1)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken de coördinaten van $B$.
+      antwoord: |-
+        $B(-1, -4, 7)$
+      uitwerking: |-
+        Per coördinaat is $\frac{3 + x_B}{2} = 1$, dus $x_B = 2 \cdot 1 - 3 = -1$. Zo ook $y_B = 2 \cdot (-2) - 0 = -4$ en $z_B = 2 \cdot 4 - 1 = 7$: $B(-1, -4, 7)$.
+    - opgave: |-
+        Bereken $|AM|$ en $|AB|$.
+      antwoord: |-
+        $\sqrt{17}$; $2\sqrt{17}$
+      uitwerking: |-
+        $|AM| = \sqrt{(-2)^2 + (-2)^2 + 3^2} = \sqrt{17}$. $M$ is het midden, dus $|AB| = 2\sqrt{17}$. Controle: $|AB| = \sqrt{16 + 16 + 36} = \sqrt{68} = 2\sqrt{17}$.
+
+- id: h1-parallellogram
+  soort: kort
+  opgave: |-
+    Gegeven $A(2, -1, 0)$, $B(4, 1, 3)$ en $C(1, 5, 2)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken het punt $D$ waarvoor $ABCD$ een parallellogram is. Let op de volgorde van de letters.
+      antwoord: |-
+        $D(-1, 3, -1)$
+      uitwerking: |-
+        In $ABCD$ is $\overrightarrow{AD} = \overrightarrow{BC} = \vcr{-3}{4}{-1}$. Dus $D = A + \overrightarrow{BC} = (2 - 3, -1 + 4, 0 - 1) = (-1, 3, -1)$.
+    - opgave: |-
+        Controleer dat de diagonalen $[AC]$ en $[BD]$ hetzelfde midden hebben.
+      antwoord: |-
+        beide $\bigl(\frac32, 2, 1\bigr)$
+      uitwerking: |-
+        Midden van $[AC]$: $\bigl(\frac{2 + 1}{2}, \frac{-1 + 5}{2}, \frac{0 + 2}{2}\bigr) = \bigl(\frac32, 2, 1\bigr)$. Midden van $[BD]$: $\bigl(\frac{4 - 1}{2}, \frac{1 + 3}{2}, \frac{3 - 1}{2}\bigr) = \bigl(\frac32, 2, 1\bigr)$. Hetzelfde punt, zoals in elk parallellogram.
+
+- id: h1-norm
+  soort: kort
+  opgave: |-
+    Neem $\vec v = \vcr{2}{-1}{2}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $\norm{3\vec v}$ en $\norm{-\vec v}$.
+      antwoord: |-
+        $9$; $3$
+      uitwerking: |-
+        $\norm{\vec v} = \sqrt{4 + 1 + 4} = 3$. $3\vec v = \vcr{6}{-3}{6}$ heeft norm $\sqrt{36 + 9 + 36} = 9$, drie keer zo lang. $-\vec v = \vcr{-2}{1}{-2}$ heeft norm $3$: alleen de zin verandert.
+    - opgave: |-
+        Geef een vector met dezelfde richting en zin als $\vec v$, en met norm $1$.
+      antwoord: |-
+        $\vcr{\tfrac23}{-\tfrac13}{\tfrac23}$
+      uitwerking: |-
+        Deel door de norm: $\frac13\vec v = \vcr{\tfrac23}{-\tfrac13}{\tfrac23}$. Controle: $\sqrt{\frac49 + \frac19 + \frac49} = 1$.
+    - opgave: |-
+        Geef een vector met dezelfde richting als $\vec v$, met tegengestelde zin en met norm $12$.
+      antwoord: |-
+        $\vcr{-8}{4}{-8}$
+      uitwerking: |-
+        Norm $12$ is vier keer de norm van $\vec v$, en de zin keert om: $-4\vec v = \vcr{-8}{4}{-8}$.
+
+- id: h1-collineair
+  soort: kort
+  opgave: |-
+    Collineair of niet?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Liggen $A(0, 1, -2)$, $B(1, 3, 1)$ en $C(3, 7, 8)$ op één rechte?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        $\overrightarrow{AB} = \vcr{1}{2}{3}$ en $\overrightarrow{AC} = \vcr{3}{6}{10}$. De eerste twee coördinaten geven factor $3$, maar $3 \cdot 3 = 9 \neq 10$. Niet collineair, dus niet op één rechte.
+    - opgave: |-
+        Zijn $\vcr{4}{0}{-6}$ en $\vcr{-2}{0}{3}$ collineair?
+      antwoord: |-
+        ja, factor $-2$
+      uitwerking: |-
+        $-2 \cdot \vcr{-2}{0}{3} = \vcr{4}{0}{-6}$. De nul staat bij beide op dezelfde plaats, dus dat klopt.
+    - opgave: |-
+        Voor welke $t$ zijn $\vcr{t}{6}{-3}$ en $\vcr{2}{-4}{2}$ collineair?
+      antwoord: |-
+        $t = -3$
+      uitwerking: |-
+        De tweede en de derde coördinaat geven dezelfde factor: $\frac{6}{-4} = \frac{-3}{2} = -\frac32$. Dan moet ook $t = -\frac32 \cdot 2 = -3$.
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
@@ -143,13 +266,13 @@
       antwoord: |-
         $C(4, 4, 0)$, $F(4, 0, 4)$, $G(4, 4, 4)$, $H(0, 4, 4)$
       uitwerking: |-
-        $C(4, 4, 0)$, $F(4, 0, 4)$, $G(4, 4, 4)$, $H(0, 4, 4)$.
+        $C$ ligt in het grondvlak, $4$ ver langs $x$ en langs $y$: $C(4, 4, 0)$. De punten van het bovenvlak liggen $4$ hoger dan die van het grondvlak: $F(4, 0, 4)$ boven $B$, $G(4, 4, 4)$ boven $C$ en $H(0, 4, 4)$ boven $D$.
     - opgave: |-
         Geef het midden van $[EG]$ en de lengte van $[AG]$.
       antwoord: |-
         $(2, 2, 4)$; $4\sqrt3$
       uitwerking: |-
-        Midden $(2, 2, 4)$, het midden van het bovenvlak. $|AG| = \sqrt{16 + 16 + 16} = 4\sqrt3$.
+        Midden: $\bigl(\frac{0 + 4}{2}, \frac{0 + 4}{2}, \frac{4 + 4}{2}\bigr) = (2, 2, 4)$, het middelpunt van het bovenvlak. $|AG| = \sqrt{4^2 + 4^2 + 4^2} = \sqrt{48} = 4\sqrt3$.
 
 - id: h1-o2
   soort: opdracht
@@ -221,7 +344,7 @@
   antwoord: |-
     $k = 2$
   uitwerking: |-
-    $r\overrightarrow{OB} + s\overrightarrow{OC} = \vcr{r}{r + s}{s} = \vcr{1}{k}{1}$: $r = s = 1$ en dan $k = 2$.
+    De punten liggen in één vlak als $\overrightarrow{OD}$ een lineaire combinatie is van $\overrightarrow{OB} = \vcr{1}{1}{0}$ en $\overrightarrow{OC} = \vcr{0}{1}{1}$ (die zelf niet collineair zijn). $r\overrightarrow{OB} + s\overrightarrow{OC} = \vcr{r}{r + s}{s} = \vcr{1}{k}{1}$. De eerste en de derde coördinaat geven $r = 1$ en $s = 1$; de tweede moet dan kloppen: $k = r + s = 2$. Voor elke andere $k$ heeft het stelsel geen oplossing.
 
 - id: h1-o8
   soort: opdracht
@@ -234,6 +357,723 @@
     $130$ m; $\approx 67{,}4^\circ$
   uitwerking: |-
     $\sqrt{40^2 + 30^2 + 120^2} = \sqrt{16\,900} = 130$ m. Horizontaal is hij $\sqrt{40^2 + 30^2} = 50$ m ver, dus $\tan\alpha = \frac{120}{50}$ en $\alpha \approx 67{,}4^\circ$.
+
+- id: h1-o9
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    afstand en midden (drill)
+  opgave: |-
+    Bereken $|AB|$ en het midden van $[AB]$.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $A(0, 0, 0)$, $B(2, -1, 2)$
+      antwoord: |-
+        $3$; $\bigl(1, -\frac12, 1\bigr)$
+      uitwerking: |-
+        Verschillen $2$, $-1$, $2$: $|AB| = \sqrt{4 + 1 + 4} = 3$. Midden $\bigl(1, -\frac12, 1\bigr)$.
+    - opgave: |-
+        $A(1, 2, 3)$, $B(3, 5, 9)$
+      antwoord: |-
+        $7$; $\bigl(2, \frac72, 6\bigr)$
+      uitwerking: |-
+        Verschillen $2$, $3$, $6$: $|AB| = \sqrt{4 + 9 + 36} = 7$. Midden $\bigl(\frac{4}{2}, \frac{7}{2}, \frac{12}{2}\bigr) = \bigl(2, \frac72, 6\bigr)$.
+    - opgave: |-
+        $A(-1, 0, 4)$, $B(3, -4, 6)$
+      antwoord: |-
+        $6$; $(1, -2, 5)$
+      uitwerking: |-
+        Verschillen $4$, $-4$, $2$: $|AB| = \sqrt{16 + 16 + 4} = 6$. Midden $(1, -2, 5)$.
+    - opgave: |-
+        $A(2, -3, 1)$, $B(2, 1, -2)$
+      antwoord: |-
+        $5$; $\bigl(2, -1, -\frac12\bigr)$
+      uitwerking: |-
+        Verschillen $0$, $4$, $-3$: $|AB| = \sqrt{0 + 16 + 9} = 5$. Midden $\bigl(2, -1, -\frac12\bigr)$.
+    - opgave: |-
+        $A(5, 1, -1)$, $B(-1, 3, 2)$
+      antwoord: |-
+        $7$; $\bigl(2, 2, \frac12\bigr)$
+      uitwerking: |-
+        Verschillen $-6$, $2$, $3$: $|AB| = \sqrt{36 + 4 + 9} = 7$. Midden $\bigl(2, 2, \frac12\bigr)$.
+    - opgave: |-
+        $A(0, -2, 5)$, $B(8, 2, -3)$
+      antwoord: |-
+        $12$; $(4, 0, 1)$
+      uitwerking: |-
+        Verschillen $8$, $4$, $-8$: $|AB| = \sqrt{64 + 16 + 64} = \sqrt{144} = 12$. Midden $(4, 0, 1)$.
+    - opgave: |-
+        $A(1, 1, 1)$, $B(2, 3, 4)$
+      antwoord: |-
+        $\sqrt{14}$; $\bigl(\frac32, 2, \frac52\bigr)$
+      uitwerking: |-
+        Verschillen $1$, $2$, $3$: $|AB| = \sqrt{1 + 4 + 9} = \sqrt{14}$. Midden $\bigl(\frac32, 2, \frac52\bigr)$.
+    - opgave: |-
+        $A(-3, 2, 0)$, $B(1, 0, -5)$
+      antwoord: |-
+        $3\sqrt5$; $\bigl(-1, 1, -\frac52\bigr)$
+      uitwerking: |-
+        Verschillen $4$, $-2$, $-5$: $|AB| = \sqrt{16 + 4 + 25} = \sqrt{45} = 3\sqrt5$. Midden $\bigl(-1, 1, -\frac52\bigr)$.
+
+- id: h1-o10
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    rekenen met vectoren (drill)
+  opgave: |-
+    Neem $\vec u = \vcr{2}{-1}{3}$, $\vec v = \vcr{1}{2}{-2}$ en $\vec w = \vcr{0}{4}{-1}$. Bereken.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\vec u + \vec v$
+      antwoord: |-
+        $\vcr{3}{1}{1}$
+      uitwerking: |-
+        $\vcr{2 + 1}{-1 + 2}{3 - 2} = \vcr{3}{1}{1}$.
+    - opgave: |-
+        $\vec u - \vec v$
+      antwoord: |-
+        $\vcr{1}{-3}{5}$
+      uitwerking: |-
+        $\vcr{2 - 1}{-1 - 2}{3 + 2} = \vcr{1}{-3}{5}$.
+    - opgave: |-
+        $3\vec w$
+      antwoord: |-
+        $\vcr{0}{12}{-3}$
+      uitwerking: |-
+        Elke coördinaat maal $3$: $\vcr{0}{12}{-3}$.
+    - opgave: |-
+        $2\vec u - \vec v$
+      antwoord: |-
+        $\vcr{3}{-4}{8}$
+      uitwerking: |-
+        $\vcr{4}{-2}{6} - \vcr{1}{2}{-2} = \vcr{3}{-4}{8}$.
+    - opgave: |-
+        $\vec u + \vec v + \vec w$
+      antwoord: |-
+        $\vcr{3}{5}{0}$
+      uitwerking: |-
+        $\vcr{3}{1}{1} + \vcr{0}{4}{-1} = \vcr{3}{5}{0}$.
+    - opgave: |-
+        $\vec v - 2\vec w$
+      antwoord: |-
+        $\vcr{1}{-6}{0}$
+      uitwerking: |-
+        $\vcr{1}{2}{-2} - \vcr{0}{8}{-2} = \vcr{1}{-6}{0}$.
+    - opgave: |-
+        $\norm{\vec v}$
+      antwoord: |-
+        $3$
+      uitwerking: |-
+        $\sqrt{1 + 4 + 4} = 3$.
+    - opgave: |-
+        $\norm{\vec u}$
+      antwoord: |-
+        $\sqrt{14}$
+      uitwerking: |-
+        $\sqrt{4 + 1 + 9} = \sqrt{14}$.
+    - opgave: |-
+        $\norm{\vec w}$
+      antwoord: |-
+        $\sqrt{17}$
+      uitwerking: |-
+        $\sqrt{0 + 16 + 1} = \sqrt{17}$.
+    - opgave: |-
+        $\norm{\vec u + \vec v}$
+      antwoord: |-
+        $\sqrt{11}$
+      uitwerking: |-
+        $\vec u + \vec v = \vcr{3}{1}{1}$, dus $\sqrt{9 + 1 + 1} = \sqrt{11}$. Dat is niet $\norm{\vec u} + \norm{\vec v}$.
+    - opgave: |-
+        $\norm{2\vec v}$
+      antwoord: |-
+        $6$
+      uitwerking: |-
+        $2\norm{\vec v} = 6$, of $\sqrt{4 + 16 + 16} = 6$.
+    - opgave: |-
+        $\vec x$ met $\vec u + \vec x = \vec w$
+      antwoord: |-
+        $\vcr{-2}{5}{-4}$
+      uitwerking: |-
+        $\vec x = \vec w - \vec u = \vcr{0 - 2}{4 + 1}{-1 - 3} = \vcr{-2}{5}{-4}$.
+
+- id: h1-o11
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    een piramide
+  figuur:
+    opties: |-
+      3.6cm
+    code: |-
+      \begin{tikzpicture}[ruimte,scale=.55,font=\scriptsize]
+        \assendrie{6}
+        \draw[accent] (4,0,0) -- (4,4,0) -- (0,4,0);
+        \draw[accent,thick] (0,0,0) -- (2,2,5) (4,0,0) -- (2,2,5) (4,4,0) -- (2,2,5) (0,4,0) -- (2,2,5);
+        \draw[lijngrijs,dashed] (2,2,0) -- (2,2,5);
+        \fill[accent] (2,2,0) circle (.06);
+        \node[below left] at (0,0,0) {$O$}; \node[left] at (4,0,0) {$A$}; \node[below] at (4,4,0) {$B$};
+        \node[below right] at (0,4,0) {$C$}; \node[above right] at (2,2,5) {$T$};
+      \end{tikzpicture}
+  opgave: |-
+    Het grondvlak $OABC$ van de piramide is een vierkant met zijde $4$ in het $xy$-vlak, met $A$ op de $x$-as en $C$ op de $y$-as. De top $T$ ligt $5$ boven het midden van het grondvlak.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef de coördinaten van $A$, $B$, $C$ en $T$.
+      antwoord: |-
+        $A(4, 0, 0)$, $B(4, 4, 0)$, $C(0, 4, 0)$, $T(2, 2, 5)$
+      uitwerking: |-
+        $A(4, 0, 0)$, $B(4, 4, 0)$ en $C(0, 4, 0)$. Het midden van het grondvlak is het midden van $[OB]$, $(2, 2, 0)$, dus $T(2, 2, 5)$.
+    - opgave: |-
+        Bereken de lengte van een opstaande ribbe.
+      antwoord: |-
+        $\sqrt{33} \approx 5{,}74$
+      uitwerking: |-
+        $|OT| = \sqrt{2^2 + 2^2 + 5^2} = \sqrt{33} \approx 5{,}74$. Door de symmetrie zijn de vier opstaande ribben even lang: controleer bijvoorbeeld $|AT| = \sqrt{4 + 4 + 25}$.
+    - opgave: |-
+        Bereken de afstand van $A$ tot het midden $M$ van de ribbe $[BT]$.
+      antwoord: |-
+        $\frac{\sqrt{65}}{2} \approx 4{,}03$
+      uitwerking: |-
+        $M = \bigl(\frac{4 + 2}{2}, \frac{4 + 2}{2}, \frac{0 + 5}{2}\bigr) = \bigl(3, 3, \frac52\bigr)$. $|AM| = \sqrt{(-1)^2 + 3^2 + \bigl(\frac52\bigr)^2} = \sqrt{1 + 9 + \frac{25}{4}} = \sqrt{\frac{65}{4}} = \frac{\sqrt{65}}{2} \approx 4{,}03$.
+
+- id: h1-o12
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    fouten: vectoren, afstand en midden
+  opgave: |-
+    Waar zit de fout? Geef telkens het juiste antwoord.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Voor $A(1, 4, -2)$ en $B(3, 1, 5)$ schrijft Lien $\overrightarrow{AB} = \vcr{-2}{3}{-7}$.
+      antwoord: |-
+        $\overrightarrow{AB} = \vcr{2}{-3}{7}$
+      uitwerking: |-
+        Lien rekende $A - B$. De vector van $A$ naar $B$ is eindpunt min beginpunt: $\overrightarrow{AB} = \vcr{3 - 1}{1 - 4}{5 + 2} = \vcr{2}{-3}{7}$. Haar vector is $\overrightarrow{BA}$, met de tegengestelde zin.
+    - opgave: |-
+        Voor $A(-1, 2, 0)$ en $B(3, -1, 0)$ schrijft Bram $|AB| = \sqrt{(3 - 1)^2 + (-1 - 2)^2} = \sqrt{13}$.
+      antwoord: |-
+        $|AB| = 5$
+      uitwerking: |-
+        Bram vergat het minteken van $-1$: $3 - (-1) = 4$. Dus $|AB| = \sqrt{4^2 + (-3)^2 + 0^2} = 5$.
+    - opgave: |-
+        Voor $A(2, 6, -4)$ en $B(8, 0, 2)$ schrijft Ama als midden $\bigl(\frac{8 - 2}{2}, \frac{0 - 6}{2}, \frac{2 + 4}{2}\bigr) = (3, -3, 3)$.
+      antwoord: |-
+        $(5, 3, -1)$
+      uitwerking: |-
+        Ama nam de helft van het verschil: dat is $\frac12\overrightarrow{AB}$, een vector en geen punt. Het midden is het gemiddelde: $\bigl(\frac{2 + 8}{2}, \frac{6 + 0}{2}, \frac{-4 + 2}{2}\bigr) = (5, 3, -1)$. Controle: $A + \frac12\overrightarrow{AB} = (2 + 3, 6 - 3, -4 + 3) = (5, 3, -1)$.
+    - opgave: |-
+        Jonas schrijft $\norm{\vcr{2}{-2}{1}} = \sqrt{4 - 4 + 1} = 1$.
+      antwoord: |-
+        $3$
+      uitwerking: |-
+        $(-2)^2 = 4$ en niet $-4$: een kwadraat is nooit negatief. $\norm{\vcr{2}{-2}{1}} = \sqrt{4 + 4 + 1} = 3$.
+
+- id: h1-o13
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    punten tekenen
+  opgave: |-
+    Teken een assenstelsel in schuine projectie, met de $x$-as schuin naar voren.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Teken de punten $P(2, 3, 0)$, $Q(0, 2, 3)$ en $R(3, 0, 2)$. Teken de hulplijnen die tonen hoe je er komt.
+      antwoord: |-
+        figuur
+      uitwerking: |-
+        $P$ ligt in het $xy$-vlak: $2$ langs $x$, dan $3$ evenwijdig met $y$. $Q$ ligt in het $yz$-vlak en $R$ in het $xz$-vlak: daar is telkens één coördinaat nul.
+        \figuren{\begin{tikzpicture}[ruimte,scale=.6,font=\scriptsize]
+          \assendrie{4.5}
+          \draw[lijngrijs,dashed] (2,0,0) -- (2,3,0) -- (0,3,0) (0,2,0) -- (0,2,3) -- (0,0,3) (3,0,0) -- (3,0,2) -- (0,0,2);
+          \fill[accent] (2,3,0) circle (.07) node[below right,text=black] {$P$};
+          \fill[accent] (0,2,3) circle (.07) node[above right,text=black] {$Q$};
+          \fill[accent] (3,0,2) circle (.07) node[left,text=black] {$R$};
+        \end{tikzpicture}}
+    - opgave: |-
+        Teken in een nieuw assenstelsel de balk met ribben langs de assen en met $O$ en $S(2, 4, 3)$ als overstaande hoekpunten.
+      antwoord: |-
+        figuur
+      uitwerking: |-
+        De ribben zijn $2$, $4$ en $3$ lang. Teken eerst het grondvlak met hoekpunten $O$, $(2, 0, 0)$, $(2, 4, 0)$ en $(0, 4, 0)$, en daarna alles $3$ hoger.
+        \figuren{\begin{tikzpicture}[ruimte,scale=.6,font=\scriptsize]
+          \assendrie{5}
+          \draw[accent] (2,0,0) -- (2,4,0) -- (0,4,0) (2,0,0) -- (2,0,3) -- (0,0,3) -- (0,4,3) -- (2,4,3) -- (2,0,3) (2,4,0) -- (2,4,3) (0,4,0) -- (0,4,3);
+          \fill[accent] (2,4,3) circle (.07) node[right,text=black] {$S(2, 4, 3)$};
+        \end{tikzpicture}}
+
+- id: h1-o14
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    collineair of niet
+  opgave: |-
+    Zijn de vectoren collineair? Geef dan het getal $k$ waarmee je de eerste vermenigvuldigt om de tweede te krijgen.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\vcr{1}{-2}{3}$ en $\vcr{-3}{6}{-9}$
+      antwoord: |-
+        ja, $k = -3$
+      uitwerking: |-
+        $-3 \cdot \vcr{1}{-2}{3} = \vcr{-3}{6}{-9}$.
+    - opgave: |-
+        $\vcr{2}{4}{0}$ en $\vcr{1}{2}{1}$
+      antwoord: |-
+        nee
+      uitwerking: |-
+        De eerste twee coördinaten geven $k = \frac12$, maar $\frac12 \cdot 0 = 0 \neq 1$.
+    - opgave: |-
+        $\vcr{0}{5}{-10}$ en $\vcr{0}{-1}{2}$
+      antwoord: |-
+        ja, $k = -\frac15$
+      uitwerking: |-
+        $-\frac15 \cdot \vcr{0}{5}{-10} = \vcr{0}{-1}{2}$. De nullen staan op dezelfde plaats.
+    - opgave: |-
+        $\vcr{6}{-3}{9}$ en $\vcr{4}{-2}{6}$
+      antwoord: |-
+        ja, $k = \frac23$
+      uitwerking: |-
+        $\frac46 = \frac{-2}{-3} = \frac69 = \frac23$.
+    - opgave: |-
+        $\vcr{3}{0}{-1}$ en $\vcr{-6}{0}{3}$
+      antwoord: |-
+        nee
+      uitwerking: |-
+        De eerste coördinaat geeft $k = -2$, de derde $k = -3$. Dat de nullen op dezelfde plaats staan, volstaat niet.
+    - opgave: |-
+        $\vcr{\tfrac12}{1}{-1}$ en $\vcr{2}{4}{-4}$
+      antwoord: |-
+        ja, $k = 4$
+      uitwerking: |-
+        $4 \cdot \vcr{\tfrac12}{1}{-1} = \vcr{2}{4}{-4}$.
+
+- id: h1-o15
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    projecties en spiegelbeelden
+  opgave: |-
+    Gegeven het punt $P(3, -2, 5)$. Maak eerst een schets.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef het punt recht onder of boven $P$ in het $xy$-vlak, en het punt op de $z$-as op dezelfde hoogte als $P$.
+      antwoord: |-
+        $(3, -2, 0)$; $(0, 0, 5)$
+      uitwerking: |-
+        Recht onder $P$ verandert alleen de hoogte: $(3, -2, 0)$. Op de $z$-as zijn $x$ en $y$ nul: $(0, 0, 5)$.
+    - opgave: |-
+        Geef het spiegelbeeld van $P$ ten opzichte van het $xy$-vlak, en ten opzichte van de oorsprong.
+      antwoord: |-
+        $(3, -2, -5)$; $(-3, 2, -5)$
+      uitwerking: |-
+        Spiegelen in het $xy$-vlak keert alleen de hoogte om: $(3, -2, -5)$. Spiegelen in $O$ keert alle coördinaten om: $(-3, 2, -5)$, want $O$ is het midden van $P$ en zijn beeld.
+    - opgave: |-
+        Bereken de afstand van $P$ tot het $xy$-vlak en tot de $z$-as.
+      antwoord: |-
+        $5$; $\sqrt{13}$
+      uitwerking: |-
+        Tot het $xy$-vlak: de hoogte, $5$. Tot de $z$-as: de afstand van $P$ tot $(0, 0, 5)$, dus $\sqrt{3^2 + (-2)^2 + 0^2} = \sqrt{13}$.
+
+- id: h1-o16
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een lijnstuk verdelen
+  opgave: |-
+    Gegeven $A(-1, 2, 5)$ en $B(5, 8, -1)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken de twee punten die $[AB]$ in drie gelijke stukken verdelen.
+      antwoord: |-
+        $(1, 4, 3)$ en $(3, 6, 1)$
+      uitwerking: |-
+        $\overrightarrow{AB} = \vcr{6}{6}{-6}$, en een derde daarvan is $\vcr{2}{2}{-2}$. De punten zijn $A + \frac13\overrightarrow{AB} = (1, 4, 3)$ en $A + \frac23\overrightarrow{AB} = (3, 6, 1)$.
+    - opgave: |-
+        Hoe lang is elk stuk?
+      antwoord: |-
+        $2\sqrt3$
+      uitwerking: |-
+        $\norm{\vcr{2}{2}{-2}} = \sqrt{12} = 2\sqrt3$. Controle: $|AB| = \sqrt{108} = 6\sqrt3$, drie keer zo lang.
+    - opgave: |-
+        Bereken het punt $C$ waarvoor $B$ het midden is van $[AC]$.
+      antwoord: |-
+        $C(11, 14, -7)$
+      uitwerking: |-
+        $C = B + \overrightarrow{AB} = (5 + 6, 8 + 6, -1 - 6) = (11, 14, -7)$. Controle: het midden van $A$ en $C$ is $\bigl(\frac{10}{2}, \frac{16}{2}, \frac{-2}{2}\bigr) = (5, 8, -1) = B$.
+
+- id: h1-o17
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: een kamer
+  figuur:
+    opties: |-
+      4.2cm
+    code: |-
+      \begin{tikzpicture}[ruimte,scale=.6,font=\scriptsize]
+        \draw[lijngrijs,dashed] (0,0,0) -- (4,0,0) (0,0,0) -- (0,5,0) (0,0,0) -- (0,0,3);
+        \draw[accent] (4,0,0) -- (4,5,0) -- (0,5,0) (4,0,0) -- (4,0,3) -- (0,0,3) -- (0,5,3) -- (4,5,3) -- (4,0,3) (4,5,0) -- (4,5,3) (0,5,0) -- (0,5,3);
+        \draw[grijs,dashed] (2,2.5,3) -- (4,5,0);
+        \fill[accent] (2,2.5,3) circle (.08) node[above,text=black] {$L$};
+        \fill[accent] (4,5,0) circle (.08) node[below right,text=black] {$S$};
+        \node[left] at (0,0,0) {$O$};
+        \node[below left] at (2,0,0) {$4$}; \node[below] at (4,2.5,0) {$5$}; \node[right] at (4,5,1.5) {$3$};
+      \end{tikzpicture}
+  opgave: |-
+    Een kamer is $4$ m diep, $5$ m breed en $3$ m hoog. Neem een hoek van de vloer als oorsprong $O$, met de assen langs de randen van de vloer en omhoog, zoals in de figuur.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een lamp $L$ hangt tegen het plafond, in het midden. Geef haar coördinaten.
+      antwoord: |-
+        $L\bigl(2, \frac52, 3\bigr)$
+      uitwerking: |-
+        Het midden van het plafond ligt halverwege in de diepte en de breedte, op hoogte $3$: $L\bigl(2, \frac52, 3\bigr)$.
+    - opgave: |-
+        Een spin $S$ zit op de vloer, in de hoek tegenover $O$. Hoe ver is ze van de lamp? Rond af op een centimeter.
+      antwoord: |-
+        $\approx 4{,}39$ m
+      uitwerking: |-
+        $S(4, 5, 0)$ en $\overrightarrow{SL} = \vcr{-2}{-\tfrac52}{3}$, dus $|SL| = \sqrt{4 + \frac{25}{4} + 9} = \sqrt{19{,}25} \approx 4{,}39$ m.
+    - opgave: |-
+        Past een rechte stok van $7$ m in de kamer?
+      antwoord: |-
+        ja, nipt
+      uitwerking: |-
+        De langste rechte in de kamer is een lichaamsdiagonaal, van $O$ naar $(4, 5, 3)$: $\sqrt{16 + 25 + 9} = \sqrt{50} \approx 7{,}07$ m. Dat is net meer dan $7$ m: hij past, maar alleen schuin van hoek tot hoek.
+
+- id: h1-o18
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een onbekende uit een afstand
+  opgave: |-
+    Bepaal de onbekende. Er kunnen meerdere oplossingen zijn.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $k$ zodat $|AB| = 7$, met $A(1, 2, k)$ en $B(3, -1, 4)$.
+      antwoord: |-
+        $k = -2$ of $k = 10$
+      uitwerking: |-
+        $|AB|^2 = 2^2 + (-3)^2 + (4 - k)^2 = 49$, dus $(4 - k)^2 = 36$ en $4 - k = \pm 6$: $k = -2$ of $k = 10$.
+    - opgave: |-
+        De punten op de $z$-as op afstand $3$ van $P(2, 1, 0)$.
+      antwoord: |-
+        $(0, 0, 2)$ en $(0, 0, -2)$
+      uitwerking: |-
+        Een punt op de $z$-as is $(0, 0, z)$. $4 + 1 + z^2 = 9$ geeft $z^2 = 4$, dus $z = 2$ of $z = -2$.
+    - opgave: |-
+        $t$ zodat $\norm{\vcr{t}{2t}{2t}} = 6$.
+      antwoord: |-
+        $t = 2$ of $t = -2$
+      uitwerking: |-
+        $\sqrt{t^2 + 4t^2 + 4t^2} = \sqrt{9t^2} = 3|t| = 6$, dus $|t| = 2$.
+
+- id: h1-o19
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    parallellogram of ruit
+  opgave: |-
+    Gegeven $A(1, 0, 1)$, $B(3, 2, 2)$, $C(4, 4, 0)$ en $D(2, 2, -1)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $ABCD$ een parallellogram is.
+      antwoord: |-
+        $\overrightarrow{AB} = \overrightarrow{DC}$
+      uitwerking: |-
+        $\overrightarrow{AB} = \vcr{2}{2}{1}$ en $\overrightarrow{DC} = \vcr{4 - 2}{4 - 2}{0 + 1} = \vcr{2}{2}{1}$. Twee overstaande zijden zijn gelijk en evenwijdig met dezelfde zin: $ABCD$ is een parallellogram.
+    - opgave: |-
+        Is $ABCD$ een ruit?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $|AB| = \sqrt{4 + 4 + 1} = 3$ en $\overrightarrow{AD} = \vcr{1}{2}{-2}$, dus $|AD| = \sqrt{1 + 4 + 4} = 3$. Twee aanliggende zijden van het parallellogram zijn even lang: een ruit.
+    - opgave: |-
+        Een parallellogram met even lange diagonalen is een rechthoek. Is $ABCD$ een vierkant?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        $\overrightarrow{AC} = \vcr{3}{4}{-1}$, dus $|AC| = \sqrt{26}$, en $\overrightarrow{BD} = \vcr{-1}{0}{-3}$, dus $|BD| = \sqrt{10}$. De diagonalen zijn niet even lang: geen rechthoek, dus geen vierkant.
+
+- id: h1-o20
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    drie parallellogrammen
+  opgave: |-
+    Gegeven $A(1, 0, 2)$, $B(3, 1, 0)$ en $C(2, 4, 1)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Er zijn drie punten $D$ waarvoor $A$, $B$, $C$ en $D$ de hoekpunten van een parallellogram zijn. Bereken ze. Tip: welke van de drie punten ligt tegenover $D$?
+      antwoord: |-
+        $(0, 3, 3)$, $(4, 5, -1)$ en $(2, -3, 1)$
+      uitwerking: |-
+        Ligt $D$ tegenover $B$ (parallellogram $ABCD$), dan is $D = A + \overrightarrow{BC} = (1 - 1, 0 + 3, 2 + 1) = (0, 3, 3)$.\par
+        Ligt $D$ tegenover $A$ ($ABDC$), dan is $D = C + \overrightarrow{AB} = (2 + 2, 4 + 1, 1 - 2) = (4, 5, -1)$.\par
+        Ligt $D$ tegenover $C$ ($ADBC$), dan is $D = A + \overrightarrow{CB} = (1 + 1, 0 - 3, 2 - 1) = (2, -3, 1)$.
+    - opgave: |-
+        Toon aan dat de driehoek met de drie punten $D$ hetzelfde zwaartepunt heeft als driehoek $ABC$. Gebruik $Z = \frac13(A + B + C)$.
+      antwoord: |-
+        beide $\bigl(2, \frac53, 1\bigr)$
+      uitwerking: |-
+        Zwaartepunt van $ABC$: $\frac13(6, 5, 3) = \bigl(2, \frac53, 1\bigr)$. De drie punten $D$ hebben als som $(0 + 4 + 2, 3 + 5 - 3, 3 - 1 + 1) = (6, 5, 3)$, dus hetzelfde zwaartepunt.
+
+- id: h1-o21
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    vier punten in één vlak
+  opgave: |-
+    Liggen de vier punten in één vlak?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $A(1, 1, 0)$, $B(2, 3, 1)$, $C(0, 2, 2)$ en $D(2, 6, 4)$
+      antwoord: |-
+        ja: $\overrightarrow{AD} = 2\overrightarrow{AB} + \overrightarrow{AC}$
+      uitwerking: |-
+        $\overrightarrow{AB} = \vcr{1}{2}{1}$, $\overrightarrow{AC} = \vcr{-1}{1}{2}$ en $\overrightarrow{AD} = \vcr{1}{5}{4}$. Stel $r\overrightarrow{AB} + s\overrightarrow{AC} = \overrightarrow{AD}$: $r - s = 1$ en $2r + s = 5$ geven samen $3r = 6$, dus $r = 2$ en $s = 1$. Controle met de derde coördinaat: $r + 2s = 4$ klopt. De vier punten liggen in één vlak.
+    - opgave: |-
+        $A(0, 1, 1)$, $B(1, 1, 2)$, $C(2, 0, 1)$ en $D(1, 2, 3)$
+      antwoord: |-
+        nee
+      uitwerking: |-
+        $\overrightarrow{AB} = \vcr{1}{0}{1}$, $\overrightarrow{AC} = \vcr{2}{-1}{0}$ en $\overrightarrow{AD} = \vcr{1}{1}{2}$. Uit $r + 2s = 1$ en $-s = 1$ volgt $s = -1$ en $r = 3$. De derde coördinaat geeft $r = 2$, en dat is niet $3$: geen oplossing, dus niet in één vlak.
+
+- id: h1-o22
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    vectoren in een kubus
+  figuur:
+    opties: |-
+      3.4cm
+    code: |-
+      \begin{tikzpicture}[ruimte,scale=1.2,font=\scriptsize]
+        \draw[grijs] (2,0,0) -- (2,2,0) -- (0,2,0) (2,0,0) -- (2,0,2) -- (0,0,2) -- (0,2,2) -- (2,2,2) -- (2,0,2) (2,2,0) -- (2,2,2) (0,2,0) -- (0,2,2);
+        \draw[->,accent,very thick] (0,0,0) -- (2,0,0) node[midway,above left,text=black] {$\vec a$};
+        \draw[->,accent,very thick] (0,0,0) -- (0,2,0) node[midway,above,text=black] {$\vec b$};
+        \draw[->,accent,very thick] (0,0,0) -- (0,0,2) node[midway,left,text=black] {$\vec c$};
+        \node[below left] at (0,0,0) {$A$}; \node[below] at (2,0,0) {$B$}; \node[below] at (2,2,0) {$C$}; \node[right] at (0,2,0) {$D$};
+        \node[left] at (0,0,2) {$E$}; \node[left] at (2,0,2) {$F$}; \node[right] at (2,2,2) {$G$}; \node[above] at (0,2,2) {$H$};
+      \end{tikzpicture}
+  opgave: |-
+    In de kubus $ABCD.EFGH$ is $\vec a = \overrightarrow{AB}$, $\vec b = \overrightarrow{AD}$ en $\vec c = \overrightarrow{AE}$. Schrijf als combinatie van $\vec a$, $\vec b$ en $\vec c$.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\overrightarrow{AG}$
+      antwoord: |-
+        $\vec a + \vec b + \vec c$
+      uitwerking: |-
+        Van $A$ naar $B$, dan naar $C$ en omhoog naar $G$: $\vec a + \vec b + \vec c$.
+    - opgave: |-
+        $\overrightarrow{BH}$
+      antwoord: |-
+        $-\vec a + \vec b + \vec c$
+      uitwerking: |-
+        Van $B$ terug naar $A$, dan naar $D$ en omhoog: $-\vec a + \vec b + \vec c$.
+    - opgave: |-
+        $\overrightarrow{EC}$
+      antwoord: |-
+        $\vec a + \vec b - \vec c$
+      uitwerking: |-
+        Van $E$ omlaag naar $A$, dan $\vec a$ en $\vec b$: $\vec a + \vec b - \vec c$.
+    - opgave: |-
+        $\overrightarrow{DF}$
+      antwoord: |-
+        $\vec a - \vec b + \vec c$
+      uitwerking: |-
+        $\overrightarrow{DF} = \overrightarrow{DA} + \overrightarrow{AB} + \overrightarrow{BF} = -\vec b + \vec a + \vec c$.
+    - opgave: |-
+        $\overrightarrow{HB}$
+      antwoord: |-
+        $\vec a - \vec b - \vec c$
+      uitwerking: |-
+        Het tegengestelde van $\overrightarrow{BH}$: $\vec a - \vec b - \vec c$.
+    - opgave: |-
+        $\overrightarrow{AM}$, met $M$ het midden van $[FG]$
+      antwoord: |-
+        $\vec a + \frac12\vec b + \vec c$
+      uitwerking: |-
+        $\overrightarrow{AF} = \vec a + \vec c$, en $\overrightarrow{FM} = \frac12\overrightarrow{FG} = \frac12\vec b$. Samen $\vec a + \frac12\vec b + \vec c$.
+
+- id: h1-o23
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: een bergtocht
+  opgave: |-
+    Een gps registreert een bergtocht in drie rechte etappes. De verplaatsingen zijn in meter, met $x$ naar het oosten, $y$ naar het noorden en $z$ de hoogte:
+    \[\vec v_1 = \vc{2000}{1000}{300},\qquad \vec v_2 = \vc{-1000}{3000}{500},\qquad \vec v_3 = \vc{500}{1000}{-200}.\]
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken de totale verplaatsing. Hoeveel meter ligt het eindpunt hoger dan het vertrekpunt?
+      antwoord: |-
+        $\vcr{1500}{5000}{600}$; $600$ m
+      uitwerking: |-
+        $\vec v_1 + \vec v_2 + \vec v_3 = \vcr{2000 - 1000 + 500}{1000 + 3000 + 1000}{300 + 500 - 200} = \vcr{1500}{5000}{600}$. De derde coördinaat zegt dat het eindpunt $600$ m hoger ligt.
+    - opgave: |-
+        Hoe ver ligt het eindpunt in vogelvlucht van het vertrekpunt? Rond af op $10$ m.
+      antwoord: |-
+        $\approx 5250$ m
+      uitwerking: |-
+        $\sqrt{1500^2 + 5000^2 + 600^2} = \sqrt{27\,610\,000} \approx 5254{,}5$ m, of ongeveer $5250$ m.
+    - opgave: |-
+        Hoeveel meter is de tocht zelf? Rond af op $10$ m.
+      antwoord: |-
+        $\approx 6590$ m
+      uitwerking: |-
+        Tel de lengtes van de etappes op: $\norm{\vec v_1} = \sqrt{5\,090\,000} \approx 2256{,}1$, $\norm{\vec v_2} = \sqrt{10\,250\,000} \approx 3201{,}6$ en $\norm{\vec v_3} = \sqrt{1\,290\,000} \approx 1135{,}8$. Samen ongeveer $6593$ m, of $6590$ m.
+    - opgave: |-
+        Waarom is de uitkomst van c groter dan die van b? Wanneer zouden ze gelijk zijn?
+      antwoord: |-
+        omwegen; als alle etappes dezelfde richting en zin hebben
+      uitwerking: |-
+        De rechte weg is de kortste: elke knik maakt de weg langer. Dus $\norm{\vec v_1 + \vec v_2 + \vec v_3} \leqslant \norm{\vec v_1} + \norm{\vec v_2} + \norm{\vec v_3}$. Gelijkheid krijg je alleen als de drie etappes in dezelfde richting en zin liggen, zodat de tocht één rechte lijn is.
+
+- id: h1-o24
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    middens van een scheve vierhoek
+  opgave: |-
+    $A$, $B$, $C$ en $D$ zijn vier punten in de ruimte die niet in één vlak hoeven te liggen. $P$, $Q$, $R$ en $S$ zijn de middens van $[AB]$, $[BC]$, $[CD]$ en $[DA]$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $\overrightarrow{PQ} = \frac12\overrightarrow{AC}$ en $\overrightarrow{SR} = \frac12\overrightarrow{AC}$. Wat besluit je over $PQRS$?
+      antwoord: |-
+        $PQRS$ is altijd een parallellogram
+      uitwerking: |-
+        Met punten als coördinaten: $\overrightarrow{PQ} = Q - P = \frac12(B + C) - \frac12(A + B) = \frac12(C - A) = \frac12\overrightarrow{AC}$. Net zo is $\overrightarrow{SR} = \frac12(C + D) - \frac12(D + A) = \frac12(C - A) = \frac12\overrightarrow{AC}$.\par
+        Dus $\overrightarrow{PQ} = \overrightarrow{SR}$: de zijden $[PQ]$ en $[SR]$ zijn even lang en evenwijdig, met dezelfde zin. $PQRS$ is een parallellogram, ook als $ABCD$ geen vlakke vierhoek is. Dan liggen $P$, $Q$, $R$ en $S$ dus toch in één vlak.
+    - opgave: |-
+        Controleer met $A(0, 0, 0)$, $B(4, 0, 0)$, $C(4, 4, 4)$ en $D(0, 2, 6)$. Liggen $A$, $B$, $C$ en $D$ in één vlak?
+      antwoord: |-
+        $\overrightarrow{PQ} = \overrightarrow{SR} = \vcr{2}{2}{2}$; nee
+      uitwerking: |-
+        $P(2, 0, 0)$, $Q(4, 2, 2)$, $R(2, 3, 5)$ en $S(0, 1, 3)$. $\overrightarrow{PQ} = \vcr{2}{2}{2}$ en $\overrightarrow{SR} = \vcr{2}{2}{2}$: gelijk.\par
+        $\overrightarrow{AD} = r\overrightarrow{AB} + s\overrightarrow{AC}$ geeft $\vcr{0}{2}{6} = \vcr{4r + 4s}{4s}{4s}$: $4s = 2$ en $4s = 6$ kan niet. $ABCD$ ligt niet in één vlak.
+
+- id: h1-o25
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een regelmatig viervlak in een kubus
+  figuur:
+    opties: |-
+      3.4cm
+    code: |-
+      \begin{tikzpicture}[ruimte,scale=.95,font=\scriptsize]
+        \draw[lijngrijs] (2,0,0) -- (2,2,0) -- (0,2,0) (2,0,0) -- (2,0,2) -- (0,0,2) -- (0,2,2) -- (2,2,2) -- (2,0,2) (2,2,0) -- (2,2,2) (0,2,0) -- (0,2,2);
+        \draw[lijngrijs,dashed] (0,0,0) -- (2,0,0) (0,0,0) -- (0,2,0) (0,0,0) -- (0,0,2);
+        \fill[accent!15] (2,2,0) -- (2,0,2) -- (0,2,2) -- cycle;
+        \draw[accent,thick] (2,2,0) -- (2,0,2) -- (0,2,2) -- cycle;
+        \draw[accent,thick,dashed] (0,0,0) -- (2,2,0) (0,0,0) -- (2,0,2) (0,0,0) -- (0,2,2);
+        \node[below left] at (0,0,0) {$A$}; \node[below] at (2,2,0) {$C$}; \node[left] at (2,0,2) {$F$}; \node[above] at (0,2,2) {$H$};
+      \end{tikzpicture}
+  opgave: |-
+    Een kubus met ribbe $2$ heeft hoekpunten $(0, 0, 0)$ en $(2, 2, 2)$ en ribben langs de assen. Het viervlak heeft als hoekpunten $A(0, 0, 0)$, $C(2, 2, 0)$, $F(2, 0, 2)$ en $H(0, 2, 2)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat de zes ribben van het viervlak even lang zijn.
+      antwoord: |-
+        alle ribben zijn $2\sqrt2$
+      uitwerking: |-
+        Elk paar van de vier punten verschilt in precies twee coördinaten, telkens met $2$. Bijvoorbeeld $\overrightarrow{AC} = \vcr{2}{2}{0}$, $\overrightarrow{CF} = \vcr{0}{-2}{2}$ en $\overrightarrow{FH} = \vcr{-2}{2}{0}$. Elke ribbe is dus $\sqrt{4 + 4} = 2\sqrt2$: het zijn diagonalen van zijvlakken van de kubus.
+    - opgave: |-
+        Het middelpunt van het viervlak is het gemiddelde van de vier hoekpunten. Bereken het, en de afstand tot elk hoekpunt.
+      antwoord: |-
+        $(1, 1, 1)$; $\sqrt3$
+      uitwerking: |-
+        $\frac14(4, 4, 4) = (1, 1, 1)$, het middelpunt van de kubus. De afstand tot $A$ is $\sqrt{1 + 1 + 1} = \sqrt3$, en tot de andere hoekpunten ook, want elke coördinaat verschilt $1$.
+    - opgave: |-
+        Het viervlak ontstaat door vier hoeken van de kubus af te snijden. Welk deel van het volume van de kubus blijft er over?
+      antwoord: |-
+        een derde
+      uitwerking: |-
+        Elke afgesneden hoek is een piramide met als grondvlak een rechthoekige driehoek met rechthoekszijden $2$ en $2$, en hoogte $2$. Haar volume is $\frac13 \cdot \frac{2 \cdot 2}{2} \cdot 2 = \frac43$. Er blijft $8 - 4 \cdot \frac43 = \frac83$ over: een derde van de kubus.
+
+- id: h1-o26
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een bol
+  opgave: |-
+    De bol met middelpunt $M(1, 2, -1)$ en straal $3$ bestaat uit alle punten op afstand $3$ van $M$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $P(x, y, z)$ op de bol ligt als en slechts als $(x - 1)^2 + (y - 2)^2 + (z + 1)^2 = 9$.
+      antwoord: |-
+        afstandsformule kwadrateren
+      uitwerking: |-
+        $P$ ligt op de bol als $|MP| = 3$. Beide leden zijn positief, dus dat is hetzelfde als $|MP|^2 = 9$, en met de afstandsformule is dat $(x - 1)^2 + (y - 2)^2 + (z + 1)^2 = 9$.
+    - opgave: |-
+        Ligt $A(3, 0, 0)$, $B(1, 2, 1)$ of $C(4, 4, 0)$ op, binnen of buiten de bol?
+      antwoord: |-
+        $A$ op, $B$ binnen, $C$ buiten
+      uitwerking: |-
+        $|MA| = \sqrt{4 + 4 + 1} = 3$: op de bol. $|MB| = \sqrt{0 + 0 + 4} = 2 < 3$: binnen. $|MC| = \sqrt{9 + 4 + 1} = \sqrt{14} > 3$: buiten.
+    - opgave: |-
+        Bereken de snijpunten van de bol met de $z$-as.
+      antwoord: |-
+        $(0, 0, 1)$ en $(0, 0, -3)$
+      uitwerking: |-
+        Vul $(0, 0, z)$ in: $1 + 4 + (z + 1)^2 = 9$, dus $(z + 1)^2 = 4$ en $z + 1 = \pm 2$: $z = 1$ of $z = -3$.
+    - opgave: |-
+        De bol snijdt het $xy$-vlak volgens een cirkel. Geef het middelpunt en de straal van die cirkel.
+      antwoord: |-
+        $(1, 2, 0)$; $2\sqrt2$
+      uitwerking: |-
+        $M$ ligt op afstand $1$ onder het $xy$-vlak. Het middelpunt van de cirkel is het punt recht boven $M$: $(1, 2, 0)$. Een punt $P$ van de cirkel vormt met $M$ en dat middelpunt een rechthoekige driehoek met schuine zijde $3$ en rechthoekszijde $1$, dus de straal is $\sqrt{9 - 1} = 2\sqrt2$. Controle: met $z = 0$ wordt de vergelijking $(x - 1)^2 + (y - 2)^2 = 8$.
+
+- id: h1-o27
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    het zwaartepunt van een viervlak
+  opgave: |-
+    Het zwaartepunt van een viervlak $ABCD$ is $G = \frac14(A + B + C + D)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Neem $A(1, 0, 0)$, $B(5, 2, 0)$, $C(0, 4, 3)$ en $D(2, 2, 9)$. Bereken $G$ en het zwaartepunt $Z$ van het zijvlak $ABC$, en toon aan dat $\overrightarrow{DG} = \frac34\overrightarrow{DZ}$.
+      antwoord: |-
+        $G(2, 2, 3)$, $Z(2, 2, 1)$
+      uitwerking: |-
+        $G = \frac14(8, 8, 12) = (2, 2, 3)$ en $Z = \frac13(6, 6, 3) = (2, 2, 1)$. $\overrightarrow{DZ} = \vcr{0}{0}{-8}$ en $\overrightarrow{DG} = \vcr{0}{0}{-6} = \frac34\overrightarrow{DZ}$.
+    - opgave: |-
+        Toon algemeen aan dat $G$ op het lijnstuk $[DZ]$ ligt, op drie vierde vanaf $D$.
+      antwoord: |-
+        $D + \frac34(Z - D) = G$
+      uitwerking: |-
+        Met $Z = \frac13(A + B + C)$ is $D + \frac34(Z - D) = \frac14 D + \frac34 \cdot \frac13(A + B + C) = \frac14(A + B + C + D) = G$.
+    - opgave: |-
+        Waarom ligt $G$ dan ook op de drie andere lijnstukken van een hoekpunt naar het zwaartepunt van het overstaande zijvlak?
+      antwoord: |-
+        de formule is symmetrisch
+      uitwerking: |-
+        De formule voor $G$ verandert niet als je de letters van plaats wisselt. Dezelfde berekening met $A$ in de rol van $D$ toont dus dat $G$ op drie vierde van het lijnstuk vanuit $A$ ligt, en zo ook voor $B$ en $C$. De vier lijnstukken gaan door één punt.
 
 #----------------------------------------------------------------------------------------
 # KOPPEL
@@ -335,3 +1175,39 @@
     ja: de derde is $2$ keer de eerste plus $3$ keer de tweede
   uitwerking: |-
     $r\vcr{1}{0}{2} + s\vcr{0}{1}{1} = \vcr{r}{s}{2r + s}$: $r = 2$, $s = 3$, en $2 \cdot 2 + 3 = 7$ klopt.
+
+- id: h1-t5
+  soort: test
+  niveau: 1
+  thema: |-
+    coördinaten van een balk
+  opgave: |-
+    Een balk heeft $O$ en $P(3, 2, 4)$ als overstaande hoekpunten en ribben langs de assen. Geef de coördinaten van de zes andere hoekpunten, en bereken de lengte van de lichaamsdiagonaal $[OP]$.
+  antwoord: |-
+    $(3, 0, 0)$, $(0, 2, 0)$, $(0, 0, 4)$, $(3, 2, 0)$, $(3, 0, 4)$, $(0, 2, 4)$; $\sqrt{29}$
+  uitwerking: |-
+    Elke coördinaat is $0$ of die van $P$: op de assen $(3, 0, 0)$, $(0, 2, 0)$ en $(0, 0, 4)$, en verder $(3, 2, 0)$, $(3, 0, 4)$ en $(0, 2, 4)$. $|OP| = \sqrt{9 + 4 + 16} = \sqrt{29} \approx 5{,}39$.
+
+- id: h1-t6
+  soort: test
+  niveau: 1
+  thema: |-
+    midden gegeven
+  opgave: |-
+    $M(2, 0, -1)$ is het midden van $[AB]$, met $A(4, -3, 1)$. Bereken $B$ en $|AB|$.
+  antwoord: |-
+    $B(0, 3, -3)$; $2\sqrt{17}$
+  uitwerking: |-
+    $B = 2M - A$ per coördinaat: $(4 - 4, 0 + 3, -2 - 1) = (0, 3, -3)$. $\overrightarrow{AB} = \vcr{-4}{6}{-4}$, dus $|AB| = \sqrt{16 + 36 + 16} = \sqrt{68} = 2\sqrt{17}$.
+
+- id: h1-t7
+  soort: test
+  niveau: 2
+  thema: |-
+    vector met gegeven norm
+  opgave: |-
+    Geef een vector met dezelfde richting en zin als $\vcr{6}{-2}{3}$ en met norm $14$.
+  antwoord: |-
+    $\vcr{12}{-4}{6}$
+  uitwerking: |-
+    $\norm{\vcr{6}{-2}{3}} = \sqrt{36 + 4 + 9} = 7$. Norm $14$ is het dubbele: $2 \cdot \vcr{6}{-2}{3} = \vcr{12}{-4}{6}$.

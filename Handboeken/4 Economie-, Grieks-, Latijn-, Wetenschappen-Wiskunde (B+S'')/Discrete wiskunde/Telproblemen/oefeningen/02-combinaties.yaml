@@ -69,6 +69,37 @@
       uitwerking: |-
         Elk comité van drie kan de drie functies op $3! = 6$ manieren verdelen. Dus $60 = 10 \cdot 6$, en het aantal comités is $\frac{60}{6} = 10$.
 
+#----------------------------------------------------------------------------------------
+# KORTE OEFENINGEN in de leerstof, in de volgorde van het boek
+#----------------------------------------------------------------------------------------
+
+- id: h2-groepje
+  soort: kort
+  opgave: |-
+    Telt de volgorde? Tel dan.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Je kiest 3 van je 12 boeken om mee op vakantie te nemen.
+      antwoord: |-
+        220
+      uitwerking: |-
+        Welke boeken je meeneemt telt, niet in welke volgorde je ze kiest: een combinatie.\par
+        $\Comb{12}{3} = \frac{12 \cdot 11 \cdot 10}{3!} = \frac{1320}{6} = 220$.
+    - opgave: |-
+        Je zet 3 van je 12 boeken op de drie plaatsen van een klein rekje.
+      antwoord: |-
+        1320
+      uitwerking: |-
+        Nu maakt het uit welk boek links, in het midden of rechts staat: een variatie.\par
+        $\Var{12}{3} = 12 \cdot 11 \cdot 10 = 1320$, zes keer zoveel als in a.
+    - opgave: |-
+        Bij een kansspel kruis je 5 getallen aan uit 1 tot en met 50.
+      antwoord: |-
+        $2\,118\,760$
+      uitwerking: |-
+        De volgorde van aankruisen telt niet: $\Comb{50}{5} = \frac{50 \cdot 49 \cdot 48 \cdot 47 \cdot 46}{5!} = 2\,118\,760$.
+
 - id: h2-comb
   soort: kort
   opgave: |-
@@ -80,19 +111,47 @@
       antwoord: |-
         210
       uitwerking: |-
-        $\Comb{10}{4} = \frac{10 \cdot 9 \cdot 8 \cdot 7}{4!} = 210$.
+        Een groepje, zonder volgorde: $\Comb{10}{4} = \frac{10 \cdot 9 \cdot 8 \cdot 7}{4!} = \frac{5040}{24} = 210$.
     - opgave: |-
         Je beantwoordt 5 van de 8 vragen op een examen.
       antwoord: |-
         56
       uitwerking: |-
-        $\Comb{8}{5} = \Comb{8}{3} = 56$.
+        Kiezen welke 5 je beantwoordt, is kiezen welke 3 je overslaat: $\Comb{8}{5} = \Comb{8}{3} = \frac{8 \cdot 7 \cdot 6}{6} = 56$.
     - opgave: |-
         Je krijgt 5 kaarten uit een spel van 52 kaarten, met precies 2 harten.
       antwoord: |-
         $712\,842$
       uitwerking: |-
-        2 harten uit 13 en 3 andere kaarten uit 39: $\Comb{13}{2} \cdot \Comb{39}{3} = 78 \cdot 9139 = 712\,842$.
+        Twee groepjes na elkaar: 2 harten uit 13 en 3 andere kaarten uit de 39 die geen harten zijn.\par
+        $\Comb{13}{2} \cdot \Comb{39}{3} = 78 \cdot 9139 = 712\,842$.
+
+- id: h2-team
+  soort: kort
+  opgave: |-
+    Een school stuurt 6 personen naar een debatwedstrijd. Ze worden gekozen uit 4 leerkrachten en 15 leerlingen. Op hoeveel manieren kan dat met
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        precies 2 leerkrachten?
+      antwoord: |-
+        8190
+      uitwerking: |-
+        2 leerkrachten uit 4 en 4 leerlingen uit 15: $\Comb{4}{2} \cdot \Comb{15}{4} = 6 \cdot 1365 = 8190$.
+    - opgave: |-
+        minstens 1 leerkracht?
+      antwoord: |-
+        $22\,127$
+      uitwerking: |-
+        Het tegendeel is \textit{geen leerkracht}: 6 leerlingen uit 15.\par
+        $\Comb{19}{6} - \Comb{15}{6} = 27\,132 - 5005 = 22\,127$.
+    - opgave: |-
+        hoogstens 1 leerkracht?
+      antwoord: |-
+        $17\,017$
+      uitwerking: |-
+        Twee gevallen: geen leerkracht, of precies één.\par
+        $\Comb{15}{6} + \Comb{4}{1} \cdot \Comb{15}{5} = 5005 + 4 \cdot 3003 = 17\,017$.
 
 - id: h2-pascal
   soort: kort
@@ -105,13 +164,121 @@
       antwoord: |-
         1 7 21 35 35 21 7 1; \ 1 8 28 56 70 56 28 8 1
       uitwerking: |-
-        Vanuit de rij $1 \ 6 \ 15 \ 20 \ 15 \ 6 \ 1$: telkens de som van de twee getallen erboven. Rij 7: $1 \ 7 \ 21 \ 35 \ 35 \ 21 \ 7 \ 1$. Rij 8: $1 \ 8 \ 28 \ 56 \ 70 \ 56 \ 28 \ 8 \ 1$.
+        Vanuit de rij $1 \ 6 \ 15 \ 20 \ 15 \ 6 \ 1$: telkens de som van de twee getallen erboven.\par
+        Rij 7: $1 \ 7 \ 21 \ 35 \ 35 \ 21 \ 7 \ 1$. Rij 8: $1 \ 8 \ 28 \ 56 \ 70 \ 56 \ 28 \ 8 \ 1$.
     - opgave: |-
         Bereken $\binom{9}{7}$ zonder rekentoestel.
       antwoord: |-
         36
       uitwerking: |-
-        $\binom{9}{7} = \binom{9}{2} = \frac{9 \cdot 8}{2} = 36$.
+        Met de symmetrie: $\binom{9}{7} = \binom{9}{2} = \frac{9 \cdot 8}{2} = 36$.
+
+- id: h2-eigenschap
+  soort: kort
+  opgave: |-
+    Bereken zonder rekentoestel, met de eigenschappen van de combinaties (a, b, d), of los op (c).
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\binom{15}{13}$
+      antwoord: |-
+        105
+      uitwerking: |-
+        Symmetrie: $\binom{15}{13} = \binom{15}{2} = \frac{15 \cdot 14}{2} = 105$.
+    - opgave: |-
+        $\binom{8}{3} + \binom{8}{4}$
+      antwoord: |-
+        126
+      uitwerking: |-
+        Regel van Pascal: $\binom{8}{3} + \binom{8}{4} = \binom{9}{4} = \frac{9 \cdot 8 \cdot 7 \cdot 6}{24} = 126$.
+    - opgave: |-
+        $\binom{n}{3} = \binom{n}{7}$
+      antwoord: |-
+        $n = 10$
+      uitwerking: |-
+        Twee combinaties uit dezelfde $n$ met verschillende $p$ zijn gelijk als de $p$'s samen $n$ zijn (symmetrie): $n = 3 + 7 = 10$.
+    - opgave: |-
+        $\binom{12}{5} - \binom{11}{4}$
+      antwoord: |-
+        462
+      uitwerking: |-
+        Regel van Pascal: $\binom{12}{5} = \binom{11}{4} + \binom{11}{5}$, dus het verschil is $\binom{11}{5} = 462$.
+
+- id: h2-woorden
+  soort: kort
+  opgave: |-
+    Op hoeveel manieren kan dat?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Je schrijft een rijtje van 8 bits met precies 3 enen en 5 nullen.
+      antwoord: |-
+        56
+      uitwerking: |-
+        8 tekens, waarvan 3 gelijk (enen) en 5 gelijk (nullen): $\frac{8!}{3! \, 5!} = 56$.
+    - opgave: |-
+        Je hangt 4 rode, 2 blauwe en 2 gele vlaggetjes op een rij. Vlaggetjes van dezelfde kleur zijn gelijk.
+      antwoord: |-
+        420
+      uitwerking: |-
+        $\frac{8!}{4! \, 2! \, 2!} = \frac{40\,320}{24 \cdot 2 \cdot 2} = 420$.
+    - opgave: |-
+        Je vormt woorden (ook zonder betekenis) met alle letters van KANGOEROE.
+      antwoord: |-
+        $90\,720$
+      uitwerking: |-
+        9 letters, met 2 O's en 2 E's: $\frac{9!}{2! \, 2!} = \frac{362\,880}{4} = 90\,720$.
+
+- id: h2-rooster
+  soort: kort
+  opgave: |-
+    Hoeveel kortste wegen zijn er van de ene hoek naar de overstaande hoek, met alleen stappen in de richting van het eindpunt?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        In een rooster van 4 bij 2.
+      antwoord: |-
+        15
+      uitwerking: |-
+        4 stappen naar rechts en 2 naar boven: $\frac{6!}{4! \, 2!} = \binom{6}{2} = 15$.
+    - opgave: |-
+        In een rooster van 6 bij 6.
+      antwoord: |-
+        924
+      uitwerking: |-
+        6 keer $R$ en 6 keer $B$: $\binom{12}{6} = 924$.
+    - opgave: |-
+        In een kubus van $2 \times 2 \times 2$ blokjes, langs de ribben, van de ene hoek naar de overstaande hoek. Er zijn nu drie richtingen.
+      antwoord: |-
+        90
+      uitwerking: |-
+        Een weg is een woord met 2 keer $R$ (rechts), 2 keer $V$ (vooruit) en 2 keer $B$ (boven): $\frac{6!}{2! \, 2! \, 2!} = \frac{720}{8} = 90$.
+
+- id: h2-sterren
+  soort: kort
+  opgave: |-
+    Op hoeveel manieren kan dat?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Je verdeelt 10 gelijke snoepjes onder 4 kinderen. Een kind mag niets krijgen.
+      antwoord: |-
+        286
+      uitwerking: |-
+        10 sterretjes (snoepjes) en 3 streepjes tussen de 4 kinderen: $\HComb{4}{10} = \binom{13}{10} = \binom{13}{3} = 286$.
+    - opgave: |-
+        Hetzelfde, maar elk kind krijgt minstens één snoepje. Tip: geef eerst elk kind één snoepje.
+      antwoord: |-
+        84
+      uitwerking: |-
+        Na het eerste snoepje voor elk kind blijven er 6 over, die je vrij verdeelt: $\HComb{4}{6} = \binom{9}{6} = \binom{9}{3} = 84$.
+    - opgave: |-
+        Je gooit 3 gelijke dobbelstenen tegelijk, en alleen telt hoeveel keer elk aantal ogen voorkomt.
+      antwoord: |-
+        56
+      uitwerking: |-
+        Je kiest 3 keer een aantal ogen uit 6, zonder volgorde en met herhaling: $\HComb{6}{3} = \binom{8}{3} = 56$.
 
 - id: h2-schema
   soort: kort
@@ -124,13 +291,13 @@
       antwoord: |-
         30; \ 3360
       uitwerking: |-
-        KAKAO: 2 K's, 2 A's, 1 O: $\frac{5!}{2! \, 2!} = 30$. PARALLEL: 8 letters met 2 A's en 3 L's: $\frac{8!}{2! \, 3!} = 3360$.
+        Permutaties met herhaling. KAKAO: 2 K's, 2 A's, 1 O: $\frac{5!}{2! \, 2!} = 30$. PARALLEL: 8 letters met 2 A's en 3 L's: $\frac{8!}{2! \, 3!} = 3360$.
     - opgave: |-
         Een ijssalon heeft 4 smaken. Je neemt 3 bollen in een potje (de volgorde in het potje telt niet; dezelfde smaak mag twee of drie keer).
       antwoord: |-
         20
       uitwerking: |-
-        Combinaties met herhaling: $\binom{4 + 3 - 1}{3} = \binom{6}{3} = 20$.
+        Geen volgorde, wel herhaling: combinaties met herhaling. $\HComb{4}{3} = \binom{4 + 3 - 1}{3} = \binom{6}{3} = 20$.
     - opgave: |-
         Hoeveel kortste wegen zijn er in een rooster van 4 bij 4, van de ene hoek naar de overstaande hoek?
       antwoord: |-
@@ -139,14 +306,14 @@
         4 stappen naar rechts en 4 naar boven: $\frac{8!}{4! \, 4!} = \binom{8}{4} = 70$.
 
 #----------------------------------------------------------------------------------------
-# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3 (in de volgorde van het boek)
 #----------------------------------------------------------------------------------------
 
 - id: h2-o1
   soort: opdracht
   niveau: 1
   thema: |-
-    combinaties berekenen
+    drill: combinaties berekenen
   opgave: |-
     Bereken zonder rekentoestel.
   lijst: reeks
@@ -157,13 +324,13 @@
       antwoord: |-
         35
       uitwerking: |-
-        $\frac{7 \cdot 6 \cdot 5}{6} = 35$.
+        $\frac{7 \cdot 6 \cdot 5}{3!} = \frac{210}{6} = 35$.
     - opgave: |-
         $\binom{20}{18}$
       antwoord: |-
         190
       uitwerking: |-
-        $\binom{20}{2} = \frac{20 \cdot 19}{2} = 190$.
+        Symmetrie: $\binom{20}{2} = \frac{20 \cdot 19}{2} = 190$.
     - opgave: |-
         $\binom{100}{1}$
       antwoord: |-
@@ -176,42 +343,54 @@
         1
       uitwerking: |-
         $\frac{n!}{0! \, n!} = 1$: niets kiezen kan op één manier.
-
-- id: h2-o2
-  soort: opdracht
-  niveau: 1
-  thema: |-
-    kaarten
-  opgave: |-
-    Hoeveel verschillende handen van 5 kaarten kun je krijgen uit een spel van 52 kaarten? Hoeveel daarvan bevatten alleen harten?
-  antwoord: |-
-    $2\,598\,960$; \ 1287
-  uitwerking: |-
-    $\Comb{52}{5} = 2\,598\,960$. Alleen harten: $\Comb{13}{5} = 1287$.
-
-- id: h2-o3
-  soort: opdracht
-  niveau: 1
-  thema: |-
-    pizza: met en zonder herhaling
-  opgave: |-
-    Een pizzeria heeft 10 toppings. Hoeveel pizza's met 3 toppings zijn er, als de toppings verschillend moeten zijn? En als je ook dubbele of driedubbele porties van een topping mag nemen?
-  antwoord: |-
-    120; \ 220
-  uitwerking: |-
-    Zonder herhaling: $\Comb{10}{3} = 120$. Met herhaling: $\binom{10 + 3 - 1}{3} = \binom{12}{3} = 220$.
-
-- id: h2-o4
-  soort: opdracht
-  niveau: 1
-  thema: |-
-    diagonalen van een veelhoek
-  opgave: |-
-    Hoeveel diagonalen heeft een achthoek? En een $n$-hoek?
-  antwoord: |-
-    20; \ $\binom{n}{2} - n = \frac{n(n - 3)}{2}$
-  uitwerking: |-
-    Twee hoekpunten bepalen een zijde of een diagonaal: $\binom{8}{2} = 28$, min de 8 zijden: 20. Algemeen: $\binom{n}{2} - n = \frac{n(n - 1)}{2} - n = \frac{n(n - 3)}{2}$.
+    - opgave: |-
+        $\binom{8}{4}$
+      antwoord: |-
+        70
+      uitwerking: |-
+        $\frac{8 \cdot 7 \cdot 6 \cdot 5}{4!} = \frac{1680}{24} = 70$.
+    - opgave: |-
+        $\binom{12}{10}$
+      antwoord: |-
+        66
+      uitwerking: |-
+        Symmetrie: $\binom{12}{2} = \frac{12 \cdot 11}{2} = 66$.
+    - opgave: |-
+        $\binom{9}{3}$
+      antwoord: |-
+        84
+      uitwerking: |-
+        $\frac{9 \cdot 8 \cdot 7}{6} = 84$.
+    - opgave: |-
+        $\binom{50}{49}$
+      antwoord: |-
+        50
+      uitwerking: |-
+        Symmetrie: $\binom{50}{1} = 50$.
+    - opgave: |-
+        $\binom{6}{6}$
+      antwoord: |-
+        1
+      uitwerking: |-
+        Alles kiezen kan op één manier.
+    - opgave: |-
+        $\binom{n}{1}$
+      antwoord: |-
+        $n$
+      uitwerking: |-
+        Eén element uit $n$: $\frac{n!}{1! \, (n - 1)!} = n$.
+    - opgave: |-
+        $\binom{n}{2}$
+      antwoord: |-
+        $\dfrac{n(n - 1)}{2}$
+      uitwerking: |-
+        $\frac{\Var{n}{2}}{2!} = \frac{n(n - 1)}{2}$.
+    - opgave: |-
+        $\binom{n}{n - 1}$
+      antwoord: |-
+        $n$
+      uitwerking: |-
+        Symmetrie: $\binom{n}{n - 1} = \binom{n}{1} = n$.
 
 - id: h2-o5
   soort: opdracht
@@ -223,7 +402,246 @@
   antwoord: |-
     180
   uitwerking: |-
-    6 letters: 2 T's, 2 E's, 1 O en 1 R: $\frac{6!}{2! \, 2!} = 180$.
+    6 letters: 2 T's, 2 E's, 1 O en 1 R. Verwissel je de twee T's of de twee E's, dan verandert het woord niet.\par
+    $\frac{6!}{2! \, 2!} = \frac{720}{4} = 180$.
+
+- id: h2-o16
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    combinatie of variatie: een competitie
+  opgave: |-
+    In een volleybalcompetitie spelen 12 ploegen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Elke ploeg speelt één keer tegen elke andere ploeg. Hoeveel wedstrijden zijn er?
+      antwoord: |-
+        66
+      uitwerking: |-
+        Een wedstrijd is een groepje van 2 ploegen: $\Comb{12}{2} = \frac{12 \cdot 11}{2} = 66$.
+    - opgave: |-
+        Elke ploeg speelt twee keer tegen elke andere: één keer thuis en één keer uit. Hoeveel wedstrijden zijn er nu?
+      antwoord: |-
+        132
+      uitwerking: |-
+        Nu telt de volgorde (thuisploeg, bezoekers): $\Var{12}{2} = 12 \cdot 11 = 132$, het dubbele van a.
+    - opgave: |-
+        In een andere competitie speelt elke ploeg één keer tegen elke andere, en zijn er 45 wedstrijden. Hoeveel ploegen zijn er?
+      antwoord: |-
+        10
+      uitwerking: |-
+        $\binom{n}{2} = \frac{n(n - 1)}{2} = 45$, dus $n(n - 1) = 90 = 10 \cdot 9$ en $n = 10$.
+
+- id: h2-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    kaarten
+  opgave: |-
+    Je krijgt een hand van 5 kaarten uit een spel van 52 kaarten. Hoeveel handen zijn er
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        in totaal?
+      antwoord: |-
+        $2\,598\,960$
+      uitwerking: |-
+        De volgorde in je hand telt niet: $\Comb{52}{5} = 2\,598\,960$.
+    - opgave: |-
+        met alleen harten?
+      antwoord: |-
+        1287
+      uitwerking: |-
+        5 kaarten uit de 13 harten: $\Comb{13}{5} = 1287$.
+    - opgave: |-
+        met vijf kaarten van dezelfde kleur (harten, ruiten, klaveren of schoppen)?
+      antwoord: |-
+        5148
+      uitwerking: |-
+        Kies de kleur (4), dan 5 kaarten van die kleur: $4 \cdot \Comb{13}{5} = 4 \cdot 1287 = 5148$.
+
+- id: h2-o17
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    driehoek van Pascal aanvullen
+  figuur:
+    code: |-
+      \begin{tikzpicture}[x=.5cm,y=.55cm,font=\scriptsize]
+        \foreach \c [count=\k from 0] in {1,6,15,20,15,6,1}{\node at ({\k-3},0) {\c};}
+        \foreach \c [count=\k from 0] in {1,7,x,35,35,21,7,1}{\node at ({\k-3.5},-1) {\c};}
+        \foreach \c [count=\k from 0] in {1,8,28,y,70,56,z,8,1}{\node at ({\k-4},-2) {\c};}
+        \node[draw=accent,thick,fill=white,inner sep=1.5pt] at (-1.5,-1) {$x$};
+        \node[draw=accent,thick,fill=white,inner sep=1.5pt] at (-1,-2) {$y$};
+        \node[draw=accent,thick,fill=white,inner sep=1.5pt] at (2,-2) {$z$};
+      \end{tikzpicture}
+  opgave: |-
+    De figuur toont de rijen 6, 7 en 8 van de driehoek van Pascal, met drie onbekende getallen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bepaal $x$, $y$ en $z$ zonder faculteiten te berekenen.
+      antwoord: |-
+        $x = 21$, $y = 56$, $z = 28$
+      uitwerking: |-
+        Elk getal is de som van de twee getallen erboven: $x = 6 + 15 = 21$ en $y = x + 35 = 56$.\par
+        Voor $z$ gebruik je de symmetrie van rij 8: $z$ staat op dezelfde plaats van rechts als 28 van links, dus $z = 28$. (Of: $z = 21 + 7 = 28$.)
+    - opgave: |-
+        Welke combinatie $\binom{n}{p}$ staat op de plaats van $y$?
+      antwoord: |-
+        $\binom{8}{3}$
+      uitwerking: |-
+        Rij $n = 8$, en $y$ is het vierde getal: $p = 3$, want $p$ begint bij 0. Controle: $\binom{8}{3} = \frac{8 \cdot 7 \cdot 6}{6} = 56$.
+    - opgave: |-
+        Schrijf rij 9 op.
+      antwoord: |-
+        1 9 36 84 126 126 84 36 9 1
+      uitwerking: |-
+        Telkens de som van twee buren uit rij 8: $1 \ 9 \ 36 \ 84 \ 126 \ 126 \ 84 \ 36 \ 9 \ 1$.
+
+- id: h2-o19
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    combinaties: rijtjes van bits
+  opgave: |-
+    Een rijtje van 10 bits bestaat uit nullen en enen. Hoeveel rijtjes zijn er met
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        precies 4 enen?
+      antwoord: |-
+        210
+      uitwerking: |-
+        Kies de 4 plaatsen van de enen uit 10: $\binom{10}{4} = 210$.
+    - opgave: |-
+        hoogstens 2 enen?
+      antwoord: |-
+        56
+      uitwerking: |-
+        Somregel over 0, 1 of 2 enen: $\binom{10}{0} + \binom{10}{1} + \binom{10}{2} = 1 + 10 + 45 = 56$.
+    - opgave: |-
+        evenveel nullen als enen?
+      antwoord: |-
+        252
+      uitwerking: |-
+        5 enen en 5 nullen: $\binom{10}{5} = 252$.
+
+- id: h2-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    pizza: met en zonder herhaling
+  opgave: |-
+    Een pizzeria heeft 10 toppings. Hoeveel pizza's met 3 toppings zijn er, als de toppings verschillend moeten zijn? En als je ook dubbele of driedubbele porties van een topping mag nemen?
+  antwoord: |-
+    120; \ 220
+  uitwerking: |-
+    De volgorde van de toppings telt niet. Zonder herhaling: $\Comb{10}{3} = 120$.\par
+    Met herhaling: $\HComb{10}{3} = \binom{10 + 3 - 1}{3} = \binom{12}{3} = 220$.
+
+- id: h2-o18
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    klassieke fouten: waar zit de fout?
+  opgave: |-
+    Waar zit de fout? Geef het juiste antwoord.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        `Woorden met alle letters van KOKOS: $\dfrac{5!}{2!} = 60$.'
+      antwoord: |-
+        30
+      uitwerking: |-
+        Er zijn twee letters die twee keer voorkomen, K en O. Deel dus door $2!$ voor de K's en door $2!$ voor de O's: $\frac{5!}{2! \, 2!} = 30$.
+    - opgave: |-
+        `Een comité van 3 leerlingen uit 10: $10 \cdot 9 \cdot 8 = 720$.'
+      antwoord: |-
+        120
+      uitwerking: |-
+        In een comité telt de volgorde niet: elk comité is $3! = 6$ keer geteld. Juist is $\frac{720}{6} = \binom{10}{3} = 120$.
+    - opgave: |-
+        `3 bollen ijs in een potje uit 5 smaken, en dezelfde smaak mag meer dan eens: $\binom{5}{3} = 10$.'
+      antwoord: |-
+        35
+      uitwerking: |-
+        $\binom{5}{3}$ telt alleen de keuzes met drie verschillende smaken. Met herhaling: $\HComb{5}{3} = \binom{7}{3} = 35$.
+
+- id: h2-o4
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    diagonalen van een veelhoek
+  opgave: |-
+    Hoeveel diagonalen heeft een achthoek? En een $n$-hoek?
+  antwoord: |-
+    20; \ $\binom{n}{2} - n = \frac{n(n - 3)}{2}$
+  uitwerking: |-
+    Twee hoekpunten bepalen een zijde of een diagonaal: $\binom{8}{2} = 28$ lijnstukken, min de 8 zijden: 20.\par
+    Algemeen: $\binom{n}{2} - n = \frac{n(n - 1)}{2} - n = \frac{n(n - 1) - 2n}{2} = \frac{n(n - 3)}{2}$.
+
+- id: h2-o15
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    drill: permutaties met herhaling
+  opgave: |-
+    Hoeveel woorden (ook zonder betekenis) kun je vormen met alle letters van het woord?
+  lijst: reeks
+  kolommen: 4
+  delen:
+    - opgave: |-
+        MAMA
+      antwoord: |-
+        6
+      uitwerking: |-
+        2 M's en 2 A's: $\frac{4!}{2! \, 2!} = 6$.
+    - opgave: |-
+        KIWI
+      antwoord: |-
+        12
+      uitwerking: |-
+        2 I's: $\frac{4!}{2!} = 12$.
+    - opgave: |-
+        RADAR
+      antwoord: |-
+        30
+      uitwerking: |-
+        2 R's en 2 A's: $\frac{5!}{2! \, 2!} = 30$.
+    - opgave: |-
+        APPEL
+      antwoord: |-
+        60
+      uitwerking: |-
+        2 P's: $\frac{5!}{2!} = 60$.
+    - opgave: |-
+        BOEKEN
+      antwoord: |-
+        360
+      uitwerking: |-
+        2 E's: $\frac{6!}{2!} = 360$.
+    - opgave: |-
+        SLEUTEL
+      antwoord: |-
+        1260
+      uitwerking: |-
+        2 L's en 2 E's: $\frac{7!}{2! \, 2!} = 1260$.
+    - opgave: |-
+        KOEKOEK
+      antwoord: |-
+        210
+      uitwerking: |-
+        3 K's, 2 O's en 2 E's: $\frac{7!}{3! \, 2! \, 2!} = 210$.
+    - opgave: |-
+        PAPEGAAI
+      antwoord: |-
+        3360
+      uitwerking: |-
+        2 P's en 3 A's: $\frac{8!}{2! \, 3!} = 3360$.
+
+#--- niveau 2
 
 - id: h2-o6
   soort: opdracht
@@ -258,49 +676,120 @@
         1296
       uitwerking: |-
         Volgorde en herhaling: $6^4 = 1296$.
+    - opgave: |-
+        De volgorde waarin 6 lopers over de meet komen (geen twee tegelijk).
+      antwoord: |-
+        720
+      uitwerking: |-
+        Alle 6 rangschikken: $6! = 720$.
+    - opgave: |-
+        Je kiest 3 verschillende smaken uit 8, en neemt van elke smaak één bol in een potje.
+      antwoord: |-
+        56
+      uitwerking: |-
+        Geen volgorde, geen herhaling: $\Comb{8}{3} = 56$.
+    - opgave: |-
+        Een code van 5 tekens met alleen de letters A en B.
+      antwoord: |-
+        32
+      uitwerking: |-
+        Volgorde en herhaling: $2^5 = 32$.
+    - opgave: |-
+        Vier gelijke boekenbonnen worden verdeeld onder 10 leerlingen; niemand krijgt er twee.
+      antwoord: |-
+        210
+      uitwerking: |-
+        De bonnen zijn gelijk, dus alleen telt wie er een krijgt: een groepje van 4 uit 10, $\Comb{10}{4} = 210$. (Waren de prijzen verschillend, dan was het $\Var{10}{4}$.)
+
+- id: h2-o21
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    wegen in een rooster met een verboden punt
+  figuur:
+    code: |-
+      \begin{tikzpicture}[x=.45cm,y=.45cm,font=\scriptsize]
+        \draw[black!20] (0,0) grid (6,4);
+        \fill[accent] (0,0) circle (2.5pt) node[below left] {$A$};
+        \fill[accent] (6,4) circle (2.5pt) node[above right] {$B$};
+        \draw[accent,thick,fill=white] (3,2) circle (3.5pt);
+        \node[above right,text=accent] at (3,2) {$P$};
+      \end{tikzpicture}
+  opgave: |-
+    In het rooster ga je met stappen naar rechts en naar boven van $A$ naar $B$. Op het kruispunt $P$ ligt een plas.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel kortste wegen zijn er van $A$ naar $B$?
+      antwoord: |-
+        210
+      uitwerking: |-
+        6 stappen naar rechts en 4 naar boven: $\binom{10}{4} = 210$.
+    - opgave: |-
+        Hoeveel daarvan vermijden de plas?
+      antwoord: |-
+        110
+      uitwerking: |-
+        Tel het tegendeel, de wegen door $P$: van $A$ naar $P$ is $\binom{5}{2} = 10$, van $P$ naar $B$ ook $\binom{5}{2} = 10$, samen $10 \cdot 10 = 100$.\par
+        Zonder de plas: $210 - 100 = 110$.
+    - opgave: |-
+        Schrijf bij elk kruispunt van het rooster het aantal kortste wegen van $A$ naar dat punt (vergeet de plas). Hoe vind je elk getal uit twee andere? Waar zie je de driehoek van Pascal?
+      antwoord: |-
+        som van het getal links en het getal eronder; schuine lijnen zijn rijen van de driehoek
+      uitwerking: |-
+        Je komt in een punt aan van links of van onder, dus het aantal wegen is de som van die twee getallen: de regel van Pascal. Op de randen staat overal 1.\par
+        De getallen op een schuine lijn met $x + y = n$ vormen rij $n$ van de driehoek, want in het punt $(x, y)$ staat $\binom{x + y}{x}$.
+        \figuren{\begin{tikzpicture}[x=.75cm,y=.55cm,font=\scriptsize]
+          \draw[black!20] (0,0) grid (6,4);
+          \foreach \c [count=\x from 0] in {1,1,1,1,1,1,1}{\node[fill=white,inner sep=.6pt] at (\x,0) {\c};}
+          \foreach \c [count=\x from 0] in {1,2,3,4,5,6,7}{\node[fill=white,inner sep=.6pt] at (\x,1) {\c};}
+          \foreach \c [count=\x from 0] in {1,3,6,10,15,21,28}{\node[fill=white,inner sep=.6pt] at (\x,2) {\c};}
+          \foreach \c [count=\x from 0] in {1,4,10,20,35,56,84}{\node[fill=white,inner sep=.6pt] at (\x,3) {\c};}
+          \foreach \c [count=\x from 0] in {1,5,15,35,70,126,210}{\node[fill=white,inner sep=.6pt] at (\x,4) {\c};}
+          \node[below left,text=accent] at (0,0) {$A$}; \node[above right,text=accent] at (6,4) {$B$};
+        \end{tikzpicture}}
 
 - id: h2-o7
   soort: opdracht
   niveau: 2
   thema: |-
-    minstens
+    minstens: twee manieren
   opgave: |-
     Een jury van 5 personen wordt gekozen uit 7 vrouwen en 6 mannen. Hoeveel jury's bevatten minstens 2 vrouwen? Los op twee manieren op: met het tegendeel, en door gevallen op te tellen.
   antwoord: |-
     1176
   uitwerking: |-
-    Tegendeel: alle jury's $\binom{13}{5} = 1287$, min die met 0 vrouwen ($\binom{6}{5} = 6$) en met 1 vrouw ($7 \cdot \binom{6}{4} = 105$): $1287 - 111 = 1176$.\par
-    Gevallen: $\binom72\binom63 + \binom73\binom62 + \binom74\binom61 + \binom75 = 420 + 525 + 210 + 21 = 1176$.
+    Tegendeel: \textit{hoogstens 1 vrouw}. Alle jury's: $\binom{13}{5} = 1287$. Met 0 vrouwen: $\binom{6}{5} = 6$. Met 1 vrouw: $7 \cdot \binom{6}{4} = 105$. Dus $1287 - 6 - 105 = 1176$.\par
+    Gevallen 2, 3, 4 of 5 vrouwen: $\binom72\binom63 + \binom73\binom62 + \binom74\binom61 + \binom75 = 420 + 525 + 210 + 21 = 1176$.
 
-- id: h2-o8
+- id: h2-o23
   soort: opdracht
   niveau: 2
   thema: |-
-    wegen in een rooster
-  figuur:
-    code: |-
-      \begin{tikzpicture}[x=.5cm,y=.5cm,font=\scriptsize]
-        \draw[black!20] (0,0) grid (5,3);
-        \fill[accent] (0,0) circle (2.5pt) node[below left] {$A$};
-        \fill[accent] (2,1) circle (2.5pt) node[below right] {$C$};
-        \fill[accent] (5,3) circle (2.5pt) node[above right] {$B$};
-      \end{tikzpicture}
+    combinaties met herhaling: een doos donuts
   opgave: |-
-    In het rooster ga je met stappen naar rechts en naar boven van $A$ naar $B$.
+    Een bakker verkoopt donuts in 5 soorten. Je stelt een doos van 12 donuts samen. Hoeveel dozen zijn er mogelijk
   lijst: enumerate
   delen:
     - opgave: |-
-        Hoeveel kortste wegen zijn er?
+        zonder voorwaarde?
       antwoord: |-
-        56
+        1820
       uitwerking: |-
-        5 stappen naar rechts en 3 naar boven: $\binom{8}{3} = 56$.
+        Geen volgorde, wel herhaling: 12 sterretjes en 4 streepjes. $\HComb{5}{12} = \binom{16}{12} = \binom{16}{4} = 1820$.
     - opgave: |-
-        Hoeveel daarvan gaan door $C$?
+        met minstens één donut van elke soort?
       antwoord: |-
-        30
+        330
       uitwerking: |-
-        Van $A$ naar $C$: 2 rechts, 1 boven: $\binom{3}{1} = 3$. Van $C$ naar $B$: 3 rechts, 2 boven: $\binom{5}{2} = 10$. Productregel: $3 \cdot 10 = 30$.
+        Leg eerst van elke soort één donut in de doos. De overige 7 kies je vrij: $\HComb{5}{7} = \binom{11}{7} = \binom{11}{4} = 330$.
+    - opgave: |-
+        met precies twee soorten?
+      antwoord: |-
+        110
+      uitwerking: |-
+        Kies de twee soorten: $\binom{5}{2} = 10$. Van elk minstens één, samen 12: de eerste soort 1, 2, \ldots{} of 11 keer, de rest is de tweede soort. Dat zijn 11 mogelijkheden.\par
+        $10 \cdot 11 = 110$.
 
 - id: h2-o9
   soort: opdracht
@@ -324,17 +813,138 @@
       uitwerking: |-
         Elke verdeling in drie groepen is in a $3! = 6$ keer geteld, één keer voor elke manier om de taken te verdelen: $\frac{34\,650}{6} = 5775$.
 
+- id: h2-o20
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    klassieke fout: dubbel tellen bij minstens één
+  opgave: |-
+    Uit 5 meisjes en 8 jongens wordt een team van 4 gekozen met minstens één meisje. Iemand redeneert: `Kies eerst een meisje (5 manieren), en dan de andere 3 uit de overige 12: $5 \cdot \binom{12}{3} = 1100$.'
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Waarom is dat te veel? Geef een team dat meer dan één keer geteld wordt.
+      antwoord: |-
+        een team met twee meisjes wordt twee keer geteld
+      uitwerking: |-
+        Neem een team met de meisjes Lien en Mila en twee jongens. Het wordt geteld met Lien als eerste meisje (Mila zit dan bij de andere 3), en nog eens met Mila als eerste meisje. Een team met $k$ meisjes wordt $k$ keer geteld.
+    - opgave: |-
+        Bereken het juiste aantal.
+      antwoord: |-
+        645
+      uitwerking: |-
+        Het tegendeel is \textit{geen meisje}: 4 jongens uit 8.\par
+        $\binom{13}{4} - \binom{8}{4} = 715 - 70 = 645$.
+
+- id: h2-o25
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    permutaties met herhaling en een voorwaarde
+  opgave: |-
+    Je vormt woorden (ook zonder betekenis) met alle letters van PANNEKOEK.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel woorden zijn er?
+      antwoord: |-
+        $45\,360$
+      uitwerking: |-
+        9 letters, met 2 N's, 2 E's en 2 K's: $\frac{9!}{2! \, 2! \, 2!} = \frac{362\,880}{8} = 45\,360$.
+    - opgave: |-
+        Hoeveel beginnen met een K?
+      antwoord: |-
+        $10\,080$
+      uitwerking: |-
+        Na de K blijven 8 letters over: P, A, N, N, E, O, E, K, met 2 N's en 2 E's: $\frac{8!}{2! \, 2!} = 10\,080$.
+    - opgave: |-
+        Bij hoeveel staan de twee N's naast elkaar?
+      antwoord: |-
+        $10\,080$
+      uitwerking: |-
+        Neem NN samen als één blok. Dan rangschik je 8 eenheden: NN, P, A, E, E, K, O, K, met 2 E's en 2 K's: $\frac{8!}{2! \, 2!} = 10\,080$. Binnen het blok kun je de N's niet verwisselen: ze zijn gelijk.
+
+- id: h2-o8
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    wegen in een rooster door een punt
+  figuur:
+    code: |-
+      \begin{tikzpicture}[x=.5cm,y=.5cm,font=\scriptsize]
+        \draw[black!20] (0,0) grid (5,3);
+        \fill[accent] (0,0) circle (2.5pt) node[below left] {$A$};
+        \fill[accent] (2,1) circle (2.5pt) node[below right] {$C$};
+        \fill[accent] (5,3) circle (2.5pt) node[above right] {$B$};
+      \end{tikzpicture}
+  opgave: |-
+    In het rooster ga je met stappen naar rechts en naar boven van $A$ naar $B$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel kortste wegen zijn er?
+      antwoord: |-
+        56
+      uitwerking: |-
+        5 stappen naar rechts en 3 naar boven: kies welke 3 van de 8 stappen naar boven gaan, $\binom{8}{3} = 56$.
+    - opgave: |-
+        Hoeveel daarvan gaan door $C$?
+      antwoord: |-
+        30
+      uitwerking: |-
+        Van $A$ naar $C$: 2 rechts, 1 boven: $\binom{3}{1} = 3$. Van $C$ naar $B$: 3 rechts, 2 boven: $\binom{5}{2} = 10$. Productregel: $3 \cdot 10 = 30$.
+
 - id: h2-o10
   soort: opdracht
   niveau: 2
   thema: |-
     oplossingen van een vergelijking tellen
   opgave: |-
-    Hoeveel oplossingen heeft $x + y + z = 10$ met $x, y, z$ natuurlijke getallen (0 mag)? Gebruik sterretjes en streepjes.
-  antwoord: |-
-    66
-  uitwerking: |-
-    Verdeel 10 sterretjes over 3 vakjes $x$, $y$, $z$ met 2 streepjes: $\binom{12}{2} = 66$.
+    Hoeveel oplossingen heeft $x + y + z = 10$? Gebruik sterretjes en streepjes.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        met $x, y, z$ natuurlijke getallen (0 mag)?
+      antwoord: |-
+        66
+      uitwerking: |-
+        Verdeel 10 sterretjes over 3 vakjes $x$, $y$, $z$ met 2 streepjes: $\binom{12}{2} = 66$.
+    - opgave: |-
+        met $x, y, z$ natuurlijke getallen verschillend van 0?
+      antwoord: |-
+        36
+      uitwerking: |-
+        Geef eerst elk vakje één sterretje. Er blijven 7 sterretjes over voor 3 vakjes: $\binom{9}{2} = 36$.
+
+- id: h2-o22
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    kaarten: precies en minstens
+  opgave: |-
+    Je krijgt 5 kaarten uit een spel van 52 kaarten. Hoeveel handen bevatten
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        precies 2 azen?
+      antwoord: |-
+        $103\,776$
+      uitwerking: |-
+        2 azen uit 4 en 3 andere kaarten uit 48: $\binom{4}{2} \cdot \binom{48}{3} = 6 \cdot 17\,296 = 103\,776$.
+    - opgave: |-
+        minstens één aas?
+      antwoord: |-
+        $886\,656$
+      uitwerking: |-
+        Tegendeel, geen aas: $\binom{48}{5} = 1\,712\,304$. Dus $\binom{52}{5} - \binom{48}{5} = 2\,598\,960 - 1\,712\,304 = 886\,656$.
+    - opgave: |-
+        van elke kleur (harten, ruiten, klaveren, schoppen) minstens één kaart?
+      antwoord: |-
+        $685\,464$
+      uitwerking: |-
+        Met 5 kaarten en 4 kleuren is er precies één kleur met 2 kaarten, de andere hebben er elk één.\par
+        Kies die kleur (4), dan 2 kaarten van die kleur ($\binom{13}{2} = 78$), en één kaart van elk van de drie andere kleuren ($13^3 = 2197$).\par
+        $4 \cdot 78 \cdot 2197 = 685\,464$.
 
 - id: h2-o11
   soort: opdracht
@@ -350,13 +960,13 @@
       antwoord: |-
         waar
       uitwerking: |-
-        Waar: de symmetrie, met $10 - 3 = 7$.
+        Waar: de symmetrie, met $10 - 3 = 7$. Drie kiezen is zeven niet kiezen.
     - opgave: |-
         $\Comb{n}{p} = \dfrac{n!}{p!}$
       antwoord: |-
         vals
       uitwerking: |-
-        Vals: $\Comb{n}{p} = \frac{n!}{p!\,(n - p)!}$. Zonder $(n - p)!$ heb je iets anders, bv. $\frac{5!}{2!} = 60 \neq 10$.
+        Vals: $\Comb{n}{p} = \frac{n!}{p!\,(n - p)!}$. Zonder $(n - p)!$ heb je iets anders, bv. $\frac{5!}{2!} = 60 \neq 10 = \Comb{5}{2}$.
     - opgave: |-
         Voor elke $n$ en $p$ is $\Var{n}{p} \geqslant \Comb{n}{p}$.
       antwoord: |-
@@ -370,6 +980,37 @@
       uitwerking: |-
         Waar: $1 + 5 + 10 + 10 + 5 + 1 = 32 = 2^5$. In hoofdstuk 3 zie je waarom dat altijd een macht van 2 is.
 
+- id: h2-o24
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    combinaties met een voorwaarde
+  opgave: |-
+    Een jeugdorkest heeft 9 violisten en 5 cellisten. Het kiest een ensemble van 5 muzikanten.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel ensembles hebben 3 violisten en 2 cellisten?
+      antwoord: |-
+        840
+      uitwerking: |-
+        $\binom{9}{3} \cdot \binom{5}{2} = 84 \cdot 10 = 840$.
+    - opgave: |-
+        De violisten Ilse en Jonas willen niet samen in het ensemble. Hoeveel ensembles zijn er dan?
+      antwoord: |-
+        1782
+      uitwerking: |-
+        Tegendeel: Ilse en Jonas zitten er allebei in, en de andere 3 komen uit de overige 12: $\binom{12}{3} = 220$.\par
+        $\binom{14}{5} - 220 = 2002 - 220 = 1782$.
+    - opgave: |-
+        Het ensemble krijgt een aanvoerder, die violist moet zijn. Hoeveel ensembles met aanvoerder zijn er?
+      antwoord: |-
+        6435
+      uitwerking: |-
+        Kies eerst de aanvoerder uit de 9 violisten, en daarna de 4 andere leden uit de overige 13 muzikanten: $9 \cdot \binom{13}{4} = 9 \cdot 715 = 6435$.
+
+#--- niveau 3
+
 - id: h2-o12
   soort: opdracht
   niveau: 3
@@ -380,7 +1021,41 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    $\binom{n - 1}{p - 1} + \binom{n - 1}{p} = \frac{(n - 1)!}{(p - 1)!\,(n - p)!} + \frac{(n - 1)!}{p!\,(n - 1 - p)!} = \frac{(n - 1)! \cdot p}{p!\,(n - p)!} + \frac{(n - 1)! \cdot (n - p)}{p!\,(n - p)!} = \frac{(n - 1)!\,(p + n - p)}{p!\,(n - p)!} = \frac{n!}{p!\,(n - p)!}$.
+    Schrijf beide termen met faculteiten:
+    \[\binom{n - 1}{p - 1} + \binom{n - 1}{p} = \frac{(n - 1)!}{(p - 1)!\,(n - p)!} + \frac{(n - 1)!}{p!\,(n - 1 - p)!}\]
+    Vermenigvuldig in de eerste breuk teller en noemer met $p$, want $p \cdot (p - 1)! = p!$, en in de tweede met $n - p$, want $(n - p) \cdot (n - p - 1)! = (n - p)!$:
+    \[= \frac{(n - 1)! \cdot p}{p!\,(n - p)!} + \frac{(n - 1)! \cdot (n - p)}{p!\,(n - p)!} = \frac{(n - 1)!\,(p + n - p)}{p!\,(n - p)!} = \frac{n!}{p!\,(n - p)!} = \binom{n}{p}\]
+
+- id: h2-o27
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    rechthoeken in een rooster
+  figuur:
+    code: |-
+      \begin{tikzpicture}[x=.45cm,y=.45cm]
+        \fill[accent!20] (1,1) rectangle (4,3);
+        \draw[black!35] (0,0) grid (5,4);
+        \draw[accent,very thick] (1,1) rectangle (4,3);
+      \end{tikzpicture}
+  opgave: |-
+    Een rooster heeft 5 bij 4 vakjes. Je tekent rechthoeken langs de lijnen van het rooster, zoals de gekleurde.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel rechthoeken (ook vierkanten) kun je zo tekenen? Tip: welke lijnen bepalen een rechthoek?
+      antwoord: |-
+        150
+      uitwerking: |-
+        Een rechthoek ligt vast door twee van de 6 verticale lijnen (links en rechts) en twee van de 5 horizontale lijnen (onder en boven).\par
+        $\binom{6}{2} \cdot \binom{5}{2} = 15 \cdot 10 = 150$.
+    - opgave: |-
+        Hoeveel daarvan zijn vierkanten?
+      antwoord: |-
+        40
+      uitwerking: |-
+        Tel per zijde $k$: een vierkant van $k$ bij $k$ kan op $(6 - k)(5 - k)$ plaatsen.\par
+        $k = 1$: $5 \cdot 4 = 20$; $k = 2$: $4 \cdot 3 = 12$; $k = 3$: $3 \cdot 2 = 6$; $k = 4$: $2 \cdot 1 = 2$. Samen 40.
 
 - id: h2-o13
   soort: opdracht
@@ -392,7 +1067,48 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Eerst het comité ($\binom{n}{p}$), dan de voorzitter erin ($p$): $p\binom{n}{p}$. Of eerst de voorzitter ($n$), dan de andere $p - 1$ leden uit de overige $n - 1$: $n\binom{n - 1}{p - 1}$. Beide tellen hetzelfde, dus zijn ze gelijk.
+    Eerst het comité ($\binom{n}{p}$ manieren), dan de voorzitter erin ($p$ manieren): $p\binom{n}{p}$.\par
+    Of eerst de voorzitter ($n$ manieren), dan de andere $p - 1$ leden uit de overige $n - 1$ personen: $n\binom{n - 1}{p - 1}$.\par
+    Beide tellen dezelfde comités met voorzitter, dus zijn ze gelijk. Controle voor $n = 5$, $p = 3$: $3 \cdot 10 = 30 = 5 \cdot 6$.
+
+- id: h2-o26
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een schuine som in de driehoek van Pascal
+  opgave: |-
+    We bekijken getallen op een schuine lijn in de driehoek van Pascal.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $\binom{2}{2} + \binom{3}{2} + \binom{4}{2} + \binom{5}{2}$ en vergelijk met $\binom{6}{3}$. Duid de getallen aan in de driehoek.
+      antwoord: |-
+        $1 + 3 + 6 + 10 = 20 = \binom{6}{3}$
+      uitwerking: |-
+        $1 + 3 + 6 + 10 = 20$ en $\binom{6}{3} = 20$. De vier getallen liggen op een schuine lijn, en de som staat er schuin onder, aan de andere kant.
+        \figuren{\begin{tikzpicture}[x=.6cm,y=.5cm,font=\scriptsize]
+          \foreach \n in {0,...,6}{
+            \foreach \k in {0,...,\n}{
+              \pgfmathtruncatemacro{\c}{round(\n!/(\k!*(\n-\k)!))}
+              \node (p\n-\k) at ({\k-\n/2},-\n) {\c};}}
+          \foreach \n in {2,3,4,5}{\draw[accent] (p\n-2) circle (2.4mm);}
+          \draw[accent,thick] (p6-3) circle (2.6mm);
+          \draw[accent,thick,->] (p5-2) -- (p6-3);
+        \end{tikzpicture}}
+    - opgave: |-
+        Verklaar met de regel van Pascal dat $\binom{2}{2} + \binom{3}{2} + \cdots + \binom{n}{2} = \binom{n + 1}{3}$. Begin met $\binom{2}{2} = \binom{3}{3}$.
+      antwoord: |-
+        telkens twee termen samennemen met de regel van Pascal
+      uitwerking: |-
+        Vervang $\binom{2}{2}$ door $\binom{3}{3}$, want beide zijn 1. Dan geeft de regel van Pascal stap voor stap:
+        \[\binom{3}{3} + \binom{3}{2} = \binom{4}{3}, \qquad \binom{4}{3} + \binom{4}{2} = \binom{5}{3}, \qquad \ldots, \qquad \binom{n}{3} + \binom{n}{2} = \binom{n + 1}{3}\]
+        Na de laatste term blijft $\binom{n + 1}{3}$ over.
+    - opgave: |-
+        Bereken daarmee $1 + 3 + 6 + 10 + \cdots + 45$.
+      antwoord: |-
+        165
+      uitwerking: |-
+        Dit zijn $\binom{2}{2}, \binom{3}{2}, \ldots, \binom{10}{2}$, want $\binom{10}{2} = 45$. De som is $\binom{11}{3} = 165$.
 
 - id: h2-o14
   soort: opdracht
@@ -404,7 +1120,31 @@
   antwoord: |-
     116
   uitwerking: |-
-    Drie punten vormen een driehoek, tenzij ze op één rechte liggen. Alle drietallen: $\binom{10}{3} = 120$. Op de rechte: $\binom{4}{3} = 4$. Dus $120 - 4 = 116$.
+    Drie punten vormen een driehoek, tenzij ze op één rechte liggen. Alle drietallen: $\binom{10}{3} = 120$. Drietallen op de rechte: $\binom{4}{3} = 4$. Dus $120 - 4 = 116$.
+
+- id: h2-o28
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    in paren verdelen
+  opgave: |-
+    Tien leerlingen worden verdeeld in vijf paren. De paren hebben geen naam of nummer.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Tel het aantal verdelingen op twee manieren: (1) de eerste leerling op de klaslijst kiest een partner, dan de eerste die nog over is, enzovoort; (2) vorm paren 1 tot 5 na elkaar, en deel dan door het aantal manieren om de nummers te verdelen.
+      antwoord: |-
+        945
+      uitwerking: |-
+        (1) De eerste leerling kiest uit 9, de eerste die overblijft uit 7, dan uit 5, 3 en 1: $9 \cdot 7 \cdot 5 \cdot 3 \cdot 1 = 945$.\par
+        (2) Met genummerde paren: $\binom{10}{2}\binom{8}{2}\binom{6}{2}\binom{4}{2}\binom{2}{2} = 45 \cdot 28 \cdot 15 \cdot 6 \cdot 1 = 113\,400$. Elke verdeling in paren komt daarin $5! = 120$ keer voor: $\frac{113\,400}{120} = 945$.
+    - opgave: |-
+        Toon aan dat $2n$ leerlingen op $\dfrac{(2n)!}{2^n \cdot n!}$ manieren in $n$ paren verdeeld kunnen worden.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Met genummerde paren: $\binom{2n}{2}\binom{2n - 2}{2} \cdots \binom{2}{2} = \frac{(2n)!}{2! \, (2n - 2)!} \cdot \frac{(2n - 2)!}{2! \, (2n - 4)!} \cdots \frac{2!}{2! \, 0!} = \frac{(2n)!}{2^n}$, want de tussenliggende faculteiten vallen weg.\par
+        De nummers van de $n$ paren kun je op $n!$ manieren verdelen. Dus $\frac{(2n)!}{2^n \cdot n!}$. Controle voor $n = 5$: $\frac{3\,628\,800}{32 \cdot 120} = 945$.
 
 #----------------------------------------------------------------------------------------
 # KOPPEL
@@ -482,7 +1222,7 @@
   antwoord: |-
     1365
   uitwerking: |-
-    $\binom{15}{4} = \frac{15 \cdot 14 \cdot 13 \cdot 12}{24} = 1365$.
+    Geen volgorde, geen herhaling: $\binom{15}{4} = \frac{15 \cdot 14 \cdot 13 \cdot 12}{24} = 1365$.
 
 - id: h2-t2
   soort: test
@@ -494,7 +1234,7 @@
   antwoord: |-
     840
   uitwerking: |-
-    $\binom83 \cdot \binom62 = 56 \cdot 15 = 840$.
+    Twee groepjes na elkaar: $\binom83 \cdot \binom62 = 56 \cdot 15 = 840$.
 
 - id: h2-t3
   soort: test
@@ -518,7 +1258,7 @@
   antwoord: |-
     1260
   uitwerking: |-
-    7 letters, met 2 N's en 2 E's: $\frac{7!}{2! \, 2!} = 1260$.
+    7 letters, met 2 N's en 2 E's: $\frac{7!}{2! \, 2!} = \frac{5040}{4} = 1260$.
 
 - id: h2-t5
   soort: test
@@ -530,7 +1270,7 @@
   antwoord: |-
     21
   uitwerking: |-
-    Combinaties met herhaling: $\binom{3 + 5 - 1}{5} = \binom{7}{5} = 21$.
+    Combinaties met herhaling, 5 sterretjes en 2 streepjes: $\binom{3 + 5 - 1}{5} = \binom{7}{5} = 21$.
 
 - id: h2-t6
   soort: test
@@ -543,3 +1283,29 @@
     4845; \ $116\,280$
   uitwerking: |-
     Gelijkwaardig: $\binom{20}{4} = 4845$. Met functies telt de volgorde: $\Var{20}{4} = 116\,280 = 4! \cdot 4845$.
+
+- id: h2-t7
+  soort: test
+  niveau: 2
+  thema: |-
+    wegen in een rooster
+  opgave: |-
+    In een rooster van 6 bij 3 ga je met stappen naar rechts en naar boven van linksonder naar rechtsboven. Hoeveel kortste wegen zijn er? Hoeveel daarvan gaan door het punt dat 2 stappen rechts en 2 stappen hoger ligt dan het vertrekpunt?
+  antwoord: |-
+    84; \ 30
+  uitwerking: |-
+    6 keer $R$ en 3 keer $B$: $\frac{9!}{6! \, 3!} = \binom{9}{3} = 84$.\par
+    Tot het punt: 2 keer $R$ en 2 keer $B$, $\binom{4}{2} = 6$. Daarna: 4 keer $R$ en 1 keer $B$, $\binom{5}{1} = 5$. Productregel: $6 \cdot 5 = 30$.
+
+- id: h2-t8
+  soort: test
+  niveau: 2
+  thema: |-
+    minstens: gevallen of tegendeel
+  opgave: |-
+    Uit 6 meisjes en 5 jongens kies je 4 leerlingen. Bij hoeveel keuzes zijn er minstens 2 meisjes?
+  antwoord: |-
+    265
+  uitwerking: |-
+    Tegendeel, 0 of 1 meisje: $\binom{5}{4} + 6 \cdot \binom{5}{3} = 5 + 60 = 65$. Alle keuzes: $\binom{11}{4} = 330$. Dus $330 - 65 = 265$.\par
+    Controle met gevallen: $\binom62\binom52 + \binom63\binom51 + \binom64 = 150 + 100 + 15 = 265$.

@@ -70,6 +70,31 @@
       uitwerking: |-
         $y = 3$ geeft $r = 3$; dan $x = 8$ en $z = 5$: ja.
 
+- id: h2-rechte-evenwijdig
+  soort: kort
+  opgave: |-
+    Gegeven de rechte $l\colon x = 3 - r$, $y = 1 + 2r$, $z = 4r$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef een punt en een richtingsvector van $l$.
+      antwoord: |-
+        $(3, 1, 0)$; $\vcr{-1}{2}{4}$
+      uitwerking: |-
+        Met $r = 0$ krijg je het punt $(3, 1, 0)$. De coëfficiënten van $r$ vormen een richtingsvector: $\vcr{-1}{2}{4}$.
+    - opgave: |-
+        Bereken het punt van $l$ met $z = 6$.
+      antwoord: |-
+        $\bigl(\frac32, 4, 6\bigr)$
+      uitwerking: |-
+        $4r = 6$ geeft $r = \frac32$. Dan is $x = 3 - \frac32 = \frac32$ en $y = 1 + 3 = 4$: het punt $\bigl(\frac32, 4, 6\bigr)$.
+    - opgave: |-
+        Geef parametervergelijkingen van de rechte door $P(0, 2, -1)$ die evenwijdig is met $l$.
+      antwoord: |-
+        $x = -s$, $y = 2 + 2s$, $z = -1 + 4s$
+      uitwerking: |-
+        Evenwijdige rechten hebben dezelfde richtingsvector. Door $P$ met richting $\vcr{-1}{2}{4}$: $x = -s$, $y = 2 + 2s$, $z = -1 + 4s$.
+
 - id: h2-vlak
   soort: kort
   opgave: |-
@@ -87,7 +112,48 @@
       antwoord: |-
         $2x + y + z = 4$
       uitwerking: |-
-        $\frac{x}{2} + \frac{y}{4} + \frac{z}{4} = 1$, of $2x + y + z = 4$.
+        De punten liggen op de assen, met asafsneden $2$, $4$ en $4$: $\frac{x}{2} + \frac{y}{4} + \frac{z}{4} = 1$. Maal $4$: $2x + y + z = 4$. Controle: $(0, 4, 0)$ geeft $4$.
+
+- id: h2-vlak-punt
+  soort: kort
+  opgave: |-
+    Het vlak $\alpha$ heeft parametervergelijkingen $x = 1 + r - s$, $y = 2r$, $z = 3 + s$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Liggen $P(2, 4, 2)$ en $Q(0, 2, 5)$ in $\alpha$?
+      antwoord: |-
+        $P$ niet, $Q$ wel
+      uitwerking: |-
+        Uit $y$ en $z$ haal je $r$ en $s$, en dan controleer je $x$.\par
+        $P$: $2r = 4$ en $3 + s = 2$ geven $r = 2$ en $s = -1$. Dan is $x = 1 + 2 + 1 = 4 \neq 2$: $P$ ligt niet in $\alpha$.\par
+        $Q$: $r = 1$ en $s = 2$, en $x = 1 + 1 - 2 = 0$ klopt: $Q$ ligt in $\alpha$.
+    - opgave: |-
+        Geef een cartesiaanse vergelijking van $\alpha$. Controleer daarmee je antwoord op a.
+      antwoord: |-
+        $2x - y + 2z = 8$
+      uitwerking: |-
+        $r = \frac{y}{2}$ en $s = z - 3$. Invullen in de eerste: $x = 1 + \frac{y}{2} - z + 3$, en maal $2$: $2x = y - 2z + 8$, of $2x - y + 2z = 8$.\par
+        Controle: $P$ geeft $4 - 4 + 4 = 4 \neq 8$ en $Q$ geeft $0 - 2 + 10 = 8$. Dat klopt met a.
+
+- id: h2-asafsneden
+  soort: kort
+  opgave: |-
+    Asafsneden.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef de snijpunten van het vlak $4x - 2y + z = 8$ met de assen en de asafsnedenvergelijking.
+      antwoord: |-
+        $(2, 0, 0)$, $(0, -4, 0)$, $(0, 0, 8)$; $\frac{x}{2} + \frac{y}{-4} + \frac{z}{8} = 1$
+      uitwerking: |-
+        Met $y = z = 0$ is $4x = 8$, dus $x = 2$. Zo ook $y = -4$ en $z = 8$. Deel de vergelijking door $8$: $\frac{x}{2} + \frac{y}{-4} + \frac{z}{8} = 1$. Een asafsnede kan negatief zijn.
+    - opgave: |-
+        Geef een vergelijking van het vlak door $(-3, 0, 0)$, $(0, 6, 0)$ en $(0, 0, 2)$, zonder breuken.
+      antwoord: |-
+        $-2x + y + 3z = 6$
+      uitwerking: |-
+        $\frac{x}{-3} + \frac{y}{6} + \frac{z}{2} = 1$. Maal $6$: $-2x + y + 3z = 6$. Controle: $(-3, 0, 0)$ geeft $6$.
 
 - id: h2-snijlijn
   soort: kort
@@ -97,6 +163,25 @@
     $(x, y, z) = (0, 2, 1) + r\vcr{1}{-1}{1}$
   uitwerking: |-
     Neem $x = r$: $y = 2 - r$ en $z = 2x + y - 1 = 2r + 2 - r - 1 = 1 + r$. Punt $(0, 2, 1)$, richting $\vcr{1}{-1}{1}$.
+
+- id: h2-elimineren
+  soort: kort
+  opgave: |-
+    Van de ene voorstelling naar de andere.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef twee cartesiaanse vergelijkingen van de rechte $x = 1 + 2r$, $y = -r$, $z = 3 + r$.
+      antwoord: |-
+        $x + 2y = 1$ en $y + z = 3$
+      uitwerking: |-
+        Uit de tweede: $r = -y$. Invullen in de eerste en de derde: $x = 1 - 2y$ en $z = 3 - y$, of $x + 2y = 1$ en $y + z = 3$. Controle met $r = 1$, het punt $(3, -1, 4)$: $3 - 2 = 1$ en $-1 + 4 = 3$.
+    - opgave: |-
+        Geef parametervergelijkingen van het vlak $2x + y - z = 4$.
+      antwoord: |-
+        $x = r$, $y = s$, $z = -4 + 2r + s$
+      uitwerking: |-
+        Een vlak heeft twee vrije onbekenden: $x = r$ en $y = s$. Dan is $z = 2x + y - 4 = -4 + 2r + s$. Punt $(0, 0, -4)$, richtingsvectoren $\vcr{1}{0}{2}$ en $\vcr{0}{1}{1}$.
 
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
@@ -153,7 +238,13 @@
   antwoord: |-
     $(4, 0, 0)$, $(0, 6, 0)$, $(0, 0, 2)$
   uitwerking: |-
-    $y = z = 0$ geeft $x = 4$, enzovoort. Asafsnedenvergelijking $\frac{x}{4} + \frac{y}{6} + \frac{z}{2} = 1$.
+    Met $y = z = 0$ is $3x = 12$, dus $x = 4$. Met $x = z = 0$ is $y = 6$, en met $x = y = 0$ is $z = 2$. Asafsnedenvergelijking: $\frac{x}{4} + \frac{y}{6} + \frac{z}{2} = 1$. Het stuk in het eerste octant is de driehoek met die drie hoekpunten.
+    \figuren{\begin{tikzpicture}[ruimte,scale=.42,font=\scriptsize]
+      \assendrie{7}
+      \fill[accent!15] (4,0,0) -- (0,6,0) -- (0,0,2) -- cycle;
+      \draw[accent,thick] (4,0,0) -- (0,6,0) -- (0,0,2) -- cycle;
+      \node[left] at (4,0,0) {$4$}; \node[below] at (0,6,0) {$6$}; \node[left] at (0,0,2) {$2$};
+    \end{tikzpicture}}
 
 - id: h2-o4
   soort: opdracht
@@ -234,6 +325,661 @@
     zelfde richting, en $(3, 0, 3)$ ligt op de eerste
   uitwerking: |-
     De richtingsvectoren $\vcr{2}{1}{3}$ en $\vcr{4}{2}{6}$ zijn collineair. Het punt $(3, 0, 3)$ van de tweede ligt op de eerste: $r = 1$ geeft $(3, 0, 3)$. Twee evenwijdige rechten met een gemeenschappelijk punt vallen samen.
+
+- id: h2-o9
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    parametervergelijkingen van een rechte (drill)
+  opgave: |-
+    Geef parametervergelijkingen van de rechte.
+  lijst: reeks
+  kolommen: 2
+  antwoord_voor: |-
+    (Andere voorstellingen kunnen ook.)
+  delen:
+    - opgave: |-
+        door $(1, 0, 2)$ met richting $\vcr{3}{-1}{1}$
+      antwoord: |-
+        $x = 1 + 3r$, $y = -r$, $z = 2 + r$
+      uitwerking: |-
+        Punt plus $r$ keer de richtingsvector: $x = 1 + 3r$, $y = -r$, $z = 2 + r$.
+    - opgave: |-
+        door $(2, -1, 4)$ en $(5, 1, 4)$
+      antwoord: |-
+        $x = 2 + 3r$, $y = -1 + 2r$, $z = 4$
+      uitwerking: |-
+        Richting: het verschil $\vcr{3}{2}{0}$. Dus $x = 2 + 3r$, $y = -1 + 2r$, $z = 4$: de rechte ligt in het vlak $z = 4$.
+    - opgave: |-
+        door $O$ en $(2, 3, -1)$
+      antwoord: |-
+        $x = 2r$, $y = 3r$, $z = -r$
+      uitwerking: |-
+        Punt $O$ en richting $\vcr{2}{3}{-1}$: $x = 2r$, $y = 3r$, $z = -r$.
+    - opgave: |-
+        door $(1, 2, 3)$, evenwijdig met de $z$-as
+      antwoord: |-
+        $x = 1$, $y = 2$, $z = 3 + r$
+      uitwerking: |-
+        De $z$-as heeft richting $\vcr{0}{0}{1}$: $x = 1$, $y = 2$, $z = 3 + r$.
+    - opgave: |-
+        de $x$-as
+      antwoord: |-
+        $x = r$, $y = 0$, $z = 0$
+      uitwerking: |-
+        Door $O$ met richting $\vcr{1}{0}{0}$: $x = r$, $y = 0$, $z = 0$.
+    - opgave: |-
+        door $(0, 4, -2)$ en $(0, 0, 1)$
+      antwoord: |-
+        $x = 0$, $y = 4 - 4r$, $z = -2 + 3r$
+      uitwerking: |-
+        Richting $\vcr{0}{-4}{3}$: $x = 0$, $y = 4 - 4r$, $z = -2 + 3r$. De rechte ligt in het $yz$-vlak.
+    - opgave: |-
+        door $(-1, 3, 0)$, evenwijdig met $(2, 0, 0) + s\vcr{1}{-2}{2}$
+      antwoord: |-
+        $x = -1 + r$, $y = 3 - 2r$, $z = 2r$
+      uitwerking: |-
+        Dezelfde richting $\vcr{1}{-2}{2}$, door $(-1, 3, 0)$: $x = -1 + r$, $y = 3 - 2r$, $z = 2r$.
+    - opgave: |-
+        door $(3, 3, 3)$ en $(1, 1, 1)$
+      antwoord: |-
+        $x = r$, $y = r$, $z = r$
+      uitwerking: |-
+        Richting $\vcr{-2}{-2}{-2}$, of eenvoudiger $\vcr{1}{1}{1}$. Door $(1, 1, 1)$: $x = 1 + r$, $y = 1 + r$, $z = 1 + r$. Met $r = -1$ zie je dat $O$ erop ligt, dus ook $x = r$, $y = r$, $z = r$.
+
+- id: h2-o10
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    cartesiaanse vergelijking van een vlak (drill)
+  opgave: |-
+    Geef een cartesiaanse vergelijking van het vlak.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        het $xz$-vlak
+      antwoord: |-
+        $y = 0$
+      uitwerking: |-
+        De punten van het $xz$-vlak zijn $(x, 0, z)$: $y = 0$.
+    - opgave: |-
+        door $(2, -1, 5)$, evenwijdig met het $xy$-vlak
+      antwoord: |-
+        $z = 5$
+      uitwerking: |-
+        Een horizontaal vlak: alle punten op hoogte $5$, dus $z = 5$.
+    - opgave: |-
+        door $(4, 0, 0)$, $(0, 2, 0)$ en $(0, 0, -4)$
+      antwoord: |-
+        $x + 2y - z = 4$
+      uitwerking: |-
+        $\frac{x}{4} + \frac{y}{2} + \frac{z}{-4} = 1$. Maal $4$: $x + 2y - z = 4$.
+    - opgave: |-
+        door $(1, 0, 0)$, $(0, 1, 0)$ en $(0, 0, 1)$
+      antwoord: |-
+        $x + y + z = 1$
+      uitwerking: |-
+        Alle asafsneden zijn $1$: $x + y + z = 1$.
+    - opgave: |-
+        door $(2, 0, 0)$ en $(0, 3, 0)$, evenwijdig met de $z$-as
+      antwoord: |-
+        $3x + 2y = 6$
+      uitwerking: |-
+        Evenwijdig met de $z$-as: er staat geen $z$ in de vergelijking. In het $xy$-vlak is het spoor de rechte $\frac{x}{2} + \frac{y}{3} = 1$, dus $3x + 2y = 6$.
+    - opgave: |-
+        door $O$ met richtingsvectoren $\vcr{1}{0}{1}$ en $\vcr{0}{1}{1}$
+      antwoord: |-
+        $x + y - z = 0$
+      uitwerking: |-
+        $x = r$, $y = s$, $z = r + s$. Dus $z = x + y$, of $x + y - z = 0$.
+    - opgave: |-
+        door $(1, 1, 1)$ met richtingsvectoren $\vcr{1}{0}{0}$ en $\vcr{0}{1}{0}$
+      antwoord: |-
+        $z = 1$
+      uitwerking: |-
+        $x = 1 + r$, $y = 1 + s$, $z = 1$: $x$ en $y$ zijn vrij, de hoogte is altijd $1$. Dus $z = 1$.
+    - opgave: |-
+        door $(3, 0, 0)$ en $(0, 0, 3)$, evenwijdig met de $y$-as
+      antwoord: |-
+        $x + z = 3$
+      uitwerking: |-
+        Geen $y$ in de vergelijking. In het $xz$-vlak gaat het spoor door $(3, 0)$ en $(0, 3)$: $x + z = 3$.
+
+- id: h2-o11
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    vergelijking bij een figuur kiezen
+  opgave: |-
+    Elke figuur toont een stuk van een vlak. Welke vergelijking hoort bij welke figuur? Eén vergelijking blijft over.
+    \[6x + 3y + 4z = 12 \qquad x + 2y = 4 \qquad z = 2 \qquad 3x + 6y + 4z = 12 \qquad 2x + y = 4\]
+    \figuren{\begin{tikzpicture}[ruimte,scale=.36,font=\scriptsize]
+      \assendrie{5}
+      \fill[accent!15] (2,0,0) -- (0,4,0) -- (0,0,3) -- cycle;
+      \draw[accent,thick] (2,0,0) -- (0,4,0) -- (0,0,3) -- cycle;
+      \node[left] at (2,0,0) {$2$}; \node[below] at (0,4,0) {$4$}; \node[left] at (0,0,3) {$3$};
+      \node at (2.5,2.5,-1.5) {\textbf{(1)}};
+    \end{tikzpicture}\enspace
+    \begin{tikzpicture}[ruimte,scale=.36,font=\scriptsize]
+      \assendrie{5}
+      \fill[accent!15] (4,0,0) -- (0,2,0) -- (0,0,3) -- cycle;
+      \draw[accent,thick] (4,0,0) -- (0,2,0) -- (0,0,3) -- cycle;
+      \node[left] at (4,0,0) {$4$}; \node[below] at (0,2,0) {$2$}; \node[left] at (0,0,3) {$3$};
+      \node at (2.5,2.5,-1.5) {\textbf{(2)}};
+    \end{tikzpicture}\enspace
+    \begin{tikzpicture}[ruimte,scale=.36,font=\scriptsize]
+      \assendrie{5}
+      \fill[accent!15] (2,0,0) -- (0,4,0) -- (0,4,3) -- (2,0,3) -- cycle;
+      \draw[accent,thick] (2,0,0) -- (0,4,0) -- (0,4,3) -- (2,0,3) -- cycle;
+      \node[left] at (2,0,0) {$2$}; \node[below] at (0,4,0) {$4$};
+      \node at (2.5,2.5,-1.5) {\textbf{(3)}};
+    \end{tikzpicture}\enspace
+    \begin{tikzpicture}[ruimte,scale=.36,font=\scriptsize]
+      \assendrie{5}
+      \fill[accent!15] (0,0,2) -- (3,0,2) -- (3,3,2) -- (0,3,2) -- cycle;
+      \draw[accent,thick] (0,0,2) -- (3,0,2) -- (3,3,2) -- (0,3,2) -- cycle;
+      \node[left] at (0,0,2) {$2$};
+      \node at (2.5,2.5,-1.5) {\textbf{(4)}};
+    \end{tikzpicture}}
+  antwoord: |-
+    (1) $6x + 3y + 4z = 12$; (2) $3x + 6y + 4z = 12$; (3) $2x + y = 4$; (4) $z = 2$; over: $x + 2y = 4$
+  uitwerking: |-
+    Lees de asafsneden af en vergelijk ze met de vergelijkingen.\par
+    (1) Asafsneden $2$, $4$ en $3$: $\frac{x}{2} + \frac{y}{4} + \frac{z}{3} = 1$, maal $12$ geeft $6x + 3y + 4z = 12$.\par
+    (2) Asafsneden $4$, $2$ en $3$: $\frac{x}{4} + \frac{y}{2} + \frac{z}{3} = 1$, maal $12$ geeft $3x + 6y + 4z = 12$.\par
+    (3) Een verticaal vlak, evenwijdig met de $z$-as, dus zonder $z$. Het gaat door $(2, 0, 0)$ en $(0, 4, 0)$: $\frac{x}{2} + \frac{y}{4} = 1$, of $2x + y = 4$.\par
+    (4) Een horizontaal vlak op hoogte $2$: $z = 2$.\par
+    $x + 2y = 4$ blijft over: dat verticale vlak gaat door $(4, 0, 0)$ en $(0, 2, 0)$.
+
+- id: h2-o12
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    fouten: rechten en vlakken
+  opgave: |-
+    Waar zit de fout? Verbeter.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Voor de rechte door $A(1, 2, 3)$ en $B(4, 0, 5)$ schrijft Sam: $x = 1 + 4r$, $y = 2$, $z = 3 + 5r$.
+      antwoord: |-
+        $x = 1 + 3r$, $y = 2 - 2r$, $z = 3 + 2r$
+      uitwerking: |-
+        Sam gebruikte de coördinaten van $B$ als richtingsvector. De richting is $\overrightarrow{AB} = \vcr{3}{-2}{2}$: $x = 1 + 3r$, $y = 2 - 2r$, $z = 3 + 2r$. Controle: $r = 1$ geeft $B$.
+    - opgave: |-
+        Voor het vlak $2x - y + 3z = 6$ schrijft Noor: de asafsneden zijn $2$, $-1$ en $3$.
+      antwoord: |-
+        $3$, $-6$ en $2$
+      uitwerking: |-
+        Noor nam de coëfficiënten. Met $y = z = 0$ is $2x = 6$, dus $x = 3$; zo ook $y = -6$ en $z = 2$. Of: deel door $6$, $\frac{x}{3} + \frac{y}{-6} + \frac{z}{2} = 1$.
+    - opgave: |-
+        Ilias schrijft: in de ruimte is $z = 2x + 1$ een rechte.
+      antwoord: |-
+        het is een vlak
+      uitwerking: |-
+        Er staat geen voorwaarde op $y$: met elk punt van de rechte $z = 2x + 1$ in het $xz$-vlak horen alle punten met dezelfde $x$ en $z$ en een willekeurige $y$. Het is een vlak, evenwijdig met de $y$-as. Eén cartesiaanse vergelijking is in de ruimte altijd een vlak.
+    - opgave: |-
+        Ella schrijft: $x = 1 + r - 2s$, $y = 2r - 4s$, $z = 3$ is een vlak.
+      antwoord: |-
+        het is een rechte
+      uitwerking: |-
+        De richtingsvectoren $\vcr{1}{2}{0}$ en $\vcr{-2}{-4}{0}$ zijn collineair. Met $t = r - 2s$ staat er $x = 1 + t$, $y = 2t$, $z = 3$: één parameter, dus een rechte. Voor een vlak moeten de twee richtingsvectoren niet collineair zijn.
+
+- id: h2-o13
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    punten in een vlak
+  opgave: |-
+    Gegeven het vlak $\alpha\colon 3x - y + 2z = 5$.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Ligt $P(1, 2, 2)$ in $\alpha$?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $3 - 2 + 4 = 5$: ja.
+    - opgave: |-
+        Ligt $Q(0, -1, 3)$ in $\alpha$?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        $0 + 1 + 6 = 7 \neq 5$: nee.
+    - opgave: |-
+        Ligt $R(2, 1, 0)$ in $\alpha$?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $6 - 1 + 0 = 5$: ja.
+    - opgave: |-
+        Voor welke $k$ ligt $(2, k, -1)$ in $\alpha$?
+      antwoord: |-
+        $k = -1$
+      uitwerking: |-
+        $6 - k - 2 = 5$, dus $k = -1$.
+
+- id: h2-o14
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    context: een stijgend vliegtuig
+  opgave: |-
+    Een vliegtuig stijgt op in $O$ en vliegt daarna in rechte lijn. Na $t$ minuten is het in het punt $(6t;\ 8t;\ 0{,}6t)$, in kilometer.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Waar is het na $5$ minuten?
+      antwoord: |-
+        $(30, 40, 3)$
+      uitwerking: |-
+        $t = 5$: $(30, 40, 3)$, op $3$ km hoogte.
+    - opgave: |-
+        Hoe ver is het dan in vogelvlucht van $O$? Rond af op $0{,}1$ km.
+      antwoord: |-
+        $\approx 50{,}1$ km
+      uitwerking: |-
+        $\sqrt{30^2 + 40^2 + 3^2} = \sqrt{2509} \approx 50{,}1$ km.
+    - opgave: |-
+        Na hoeveel minuten vliegt het op $4{,}5$ km hoogte?
+      antwoord: |-
+        na $7{,}5$ minuten
+      uitwerking: |-
+        $0{,}6t = 4{,}5$ geeft $t = 7{,}5$.
+    - opgave: |-
+        Komt het vliegtuig door het punt $(45;\ 60;\ 4{,}5)$? En door $(45;\ 61;\ 4{,}5)$?
+      antwoord: |-
+        ja; nee
+      uitwerking: |-
+        $6t = 45$ geeft $t = 7{,}5$, en dan is $8t = 60$ en $0{,}6t = 4{,}5$: ja. Voor het tweede punt geeft $x$ ook $t = 7{,}5$, maar $y = 60 \neq 61$: nee.
+
+- id: h2-o15
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    vlak door een rechte en een punt
+  opgave: |-
+    Geef een cartesiaanse vergelijking van het vlak.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Het vlak door $P(1, 1, 1)$ dat de rechte $l\colon (0, 0, 2) + r\vcr{1}{-1}{0}$ bevat.
+      antwoord: |-
+        $x + y + 2z = 4$
+      uitwerking: |-
+        Neem het punt $A(0, 0, 2)$ van $l$. Richtingsvectoren: $\vcr{1}{-1}{0}$ en $\overrightarrow{AP} = \vcr{1}{1}{-1}$. Parametervergelijkingen: $x = r + s$, $y = -r + s$, $z = 2 - s$. Optellen van de eerste twee: $x + y = 2s$, dus $s = \frac{x + y}{2}$ en $z = 2 - \frac{x + y}{2}$. Maal $2$: $x + y + 2z = 4$. Controle: $P$ geeft $1 + 1 + 2 = 4$.
+    - opgave: |-
+        Het vlak dat de evenwijdige rechten $(1, 2, 0) + r\vcr{1}{0}{1}$ en $s\vcr{1}{0}{1}$ bevat.
+      antwoord: |-
+        $2x - y - 2z = 0$
+      uitwerking: |-
+        Eén richtingsvector is $\vcr{1}{0}{1}$. De tweede verbindt een punt van elke rechte: van $O$ naar $(1, 2, 0)$, dus $\vcr{1}{2}{0}$. Parametervergelijkingen door $O$: $x = r + t$, $y = 2t$, $z = r$. Dan is $t = \frac{y}{2}$ en $x = z + \frac{y}{2}$, of $2x - y - 2z = 0$. Controle: $(1, 2, 0)$ geeft $2 - 2 - 0 = 0$.
+
+- id: h2-o16
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    snijlijnen
+  opgave: |-
+    Geef parametervergelijkingen van de snijlijn van de twee vlakken.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $x + y - z = 2$ en $2x - y + z = 1$
+      antwoord: |-
+        $(1, 1, 0) + r\vcr{0}{1}{1}$
+      uitwerking: |-
+        Optellen: $3x = 3$, dus $x = 1$ voor elk punt van de snijlijn. Dan is $y - z = 1$. Neem $z = r$: $y = 1 + r$. De snijlijn is $(1, 1, 0) + r\vcr{0}{1}{1}$. Controle in de tweede: $2 - 1 - r + r = 1$.
+    - opgave: |-
+        $z = 2$ en $x - 2y = 4$
+      antwoord: |-
+        $(4, 0, 2) + r\vcr{2}{1}{0}$
+      uitwerking: |-
+        Neem $y = r$: $x = 4 + 2r$ en $z = 2$. De snijlijn is $(4, 0, 2) + r\vcr{2}{1}{0}$, een horizontale rechte op hoogte $2$.
+    - opgave: |-
+        $x + y + z = 0$ en $x - z = 0$
+      antwoord: |-
+        $r\vcr{1}{-2}{1}$
+      uitwerking: |-
+        Neem $x = r$: dan $z = r$ en $y = -x - z = -2r$. De snijlijn gaat door $O$ met richting $\vcr{1}{-2}{1}$.
+
+- id: h2-o17
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: een laserstraal
+  figuur:
+    opties: |-
+      4cm
+    code: |-
+      \begin{tikzpicture}[ruimte,scale=.42,font=\scriptsize]
+        \draw[lijngrijs,dashed] (0,0,0) -- (6,0,0) (0,0,0) -- (0,8,0) (0,0,0) -- (0,0,3);
+        \draw[grijs] (6,0,0) -- (6,8,0) -- (0,8,0) (6,0,0) -- (6,0,3) -- (0,0,3) -- (0,8,3) -- (6,8,3) -- (6,0,3) (6,8,0) -- (6,8,3) (0,8,0) -- (0,8,3);
+        \fill[accent!10] (6,0,0) -- (6,8,0) -- (6,8,3) -- (6,0,3) -- cycle;
+        \draw[accent,thick,->] (1,2,2) -- (6,4.5,.75);
+        \fill[accent] (1,2,2) circle (.1) node[above,text=black] {$L$};
+        \node[left] at (0,0,0) {$O$};
+        \node[below left] at (3,0,0) {$6$}; \node[below] at (6,4,0) {$8$}; \node[right] at (6,8,1.5) {$3$};
+      \end{tikzpicture}
+  opgave: |-
+    Een kamer heeft de vloer in het vlak $z = 0$ en is $6$ m diep, $8$ m breed en $3$ m hoog, zoals in de figuur. De voorste muur ligt in het vlak $x = 6$. Een laser in $L(1, 2, 2)$ schijnt in de richting $\vcr{4}{2}{-1}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken het snijpunt van de straal met het vlak van de vloer. Ligt dat punt in de kamer?
+      antwoord: |-
+        $(9, 6, 0)$; nee
+      uitwerking: |-
+        De straal is $(1 + 4r, 2 + 2r, 2 - r)$ met $r \geqslant 0$. $z = 0$ geeft $r = 2$: het punt $(9, 6, 0)$. Maar $x = 9 > 6$: dat punt ligt achter de voorste muur, buiten de kamer.
+    - opgave: |-
+        Waar raakt de straal de voorste muur?
+      antwoord: |-
+        $\bigl(6, \frac92, \frac34\bigr)$
+      uitwerking: |-
+        $1 + 4r = 6$ geeft $r = \frac54$: het punt $\bigl(6, \frac92, \frac34\bigr)$. Het ligt op de muur, want $0 \leqslant y \leqslant 8$ en $0 \leqslant z \leqslant 3$. De straal raakt de muur op $75$ cm hoogte, nog voor hij de vloer bereikt.
+    - opgave: |-
+        Hoe lang is de straal van $L$ tot de muur? Rond af op een centimeter.
+      antwoord: |-
+        $\approx 5{,}73$ m
+      uitwerking: |-
+        Van $L$ naar het punt op de muur is de verplaatsing $\frac54\vcr{4}{2}{-1}$, met lengte $\frac54\sqrt{16 + 4 + 1} = \frac54\sqrt{21} \approx 5{,}73$ m.
+
+- id: h2-o18
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    vlakken in een balk
+  figuur:
+    opties: |-
+      3.8cm
+    code: |-
+      \begin{tikzpicture}[ruimte,scale=.5,font=\scriptsize]
+        \draw[grijs,dashed] (0,0,0) -- (4,0,0) (0,0,0) -- (0,6,0) (0,0,0) -- (0,0,3);
+        \draw[grijs] (4,0,0) -- (4,6,0) -- (0,6,0) (4,0,0) -- (4,0,3) -- (0,0,3) -- (0,6,3) -- (4,6,3) -- (4,0,3) (4,6,0) -- (4,6,3) (0,6,0) -- (0,6,3);
+        \fill[accent!15] (4,0,0) -- (0,6,0) -- (0,0,3) -- cycle;
+        \draw[accent,thick] (4,0,0) -- (0,6,0) -- (0,0,3) -- cycle;
+        \node[below left] at (0,0,0) {$O$}; \node[left] at (4,0,0) {$A$}; \node[below] at (4,6,0) {$B$}; \node[below right] at (0,6,0) {$C$};
+        \node[left] at (0,0,3) {$D$}; \node[left] at (4,0,3) {$E$}; \node[right] at (4,6,3) {$F$}; \node[above right] at (0,6,3) {$G$};
+      \end{tikzpicture}
+  opgave: |-
+    De balk heeft een hoekpunt in $O$ en ribben $4$, $6$ en $3$ langs de $x$-, de $y$- en de $z$-as.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef een vergelijking van het vlak $ACD$.
+      antwoord: |-
+        $3x + 2y + 4z = 12$
+      uitwerking: |-
+        $A(4, 0, 0)$, $C(0, 6, 0)$ en $D(0, 0, 3)$ liggen op de assen: $\frac{x}{4} + \frac{y}{6} + \frac{z}{3} = 1$. Maal $12$: $3x + 2y + 4z = 12$.
+    - opgave: |-
+        Toon aan dat $E$, $B$ en $G$ in het vlak $3x + 2y + 4z = 24$ liggen. Wat is de ligging van dat vlak ten opzichte van $ACD$?
+      antwoord: |-
+        evenwijdig met $ACD$
+      uitwerking: |-
+        $E(4, 0, 3)$: $12 + 0 + 12 = 24$. $B(4, 6, 0)$: $12 + 12 + 0 = 24$. $G(0, 6, 3)$: $0 + 12 + 12 = 24$. Het linkerlid is hetzelfde als bij $ACD$, het rechterlid niet: de vlakken zijn evenwijdig.
+    - opgave: |-
+        Bereken voor het middelpunt $M$ van de balk de waarde van $3x + 2y + 4z$. Wat valt op?
+      antwoord: |-
+        $18$, het gemiddelde van $12$ en $24$
+      uitwerking: |-
+        $M = \bigl(2, 3, \frac32\bigr)$, het midden van $[OF]$. Dan is $3x + 2y + 4z = 6 + 6 + 6 = 18$, precies het gemiddelde van $12$ en $24$. $M$ ligt in het evenwijdige vlak $3x + 2y + 4z = 18$, midden tussen de twee.
+
+- id: h2-o19
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een onbekende coördinaat
+  opgave: |-
+    Gegeven de punten $A(1, 0, 0)$, $B(0, 2, 0)$ en $C(0, 0, 3)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Voor welke $a$ ligt $D(a, 1, 1)$ in het vlak $ABC$?
+      antwoord: |-
+        $a = \frac16$
+      uitwerking: |-
+        Het vlak $ABC$ is $\frac{x}{1} + \frac{y}{2} + \frac{z}{3} = 1$, of $6x + 3y + 2z = 6$. Invullen: $6a + 3 + 2 = 6$, dus $a = \frac16$.
+    - opgave: |-
+        Waar snijdt de rechte $x = y = z$ het vlak $ABC$?
+      antwoord: |-
+        $\bigl(\frac{6}{11}, \frac{6}{11}, \frac{6}{11}\bigr)$
+      uitwerking: |-
+        Een punt van de rechte is $(t, t, t)$. Invullen: $6t + 3t + 2t = 6$, dus $t = \frac{6}{11}$.
+
+- id: h2-o20
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    rechten in een vlak
+  opgave: |-
+    Het punt $P(1, 1, 2)$ ligt in het vlak $\alpha\colon x + y - z = 0$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef parametervergelijkingen van twee verschillende rechten door $P$ die in $\alpha$ liggen.
+      antwoord: |-
+        bijvoorbeeld $P + r\vcr{1}{0}{1}$ en $P + r\vcr{0}{1}{1}$
+      uitwerking: |-
+        Een rechte $P + r\vcr{a}{b}{c}$ ligt in $\alpha$ als elk punt de vergelijking klopt: $(1 + ra) + (1 + rb) - (2 + rc) = r(a + b - c) = 0$ voor elke $r$. Dus moet $a + b - c = 0$. Bijvoorbeeld $\vcr{1}{0}{1}$ en $\vcr{0}{1}{1}$: de rechten $(1 + r, 1, 2 + r)$ en $(1, 1 + r, 2 + r)$.
+    - opgave: |-
+        Hoeveel zulke rechten zijn er? Ligt de rechte $P + r\vcr{1}{1}{1}$ in $\alpha$?
+      antwoord: |-
+        oneindig veel; nee
+      uitwerking: |-
+        Elke $\vcr{a}{b}{a + b}$, niet de nulvector, geeft er een: oneindig veel. Voor $\vcr{1}{1}{1}$ is $a + b - c = 1 \neq 0$: die rechte snijdt $\alpha$ alleen in $P$.
+
+- id: h2-o21
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: een zadeldak
+  figuur:
+    opties: |-
+      4.2cm
+    code: |-
+      \begin{tikzpicture}[ruimte,scale=.3,font=\scriptsize]
+        \draw[lijngrijs,dashed] (0,0,0) -- (10,0,0) (0,0,0) -- (0,8,0) (0,0,0) -- (0,0,3);
+        \draw[grijs] (10,0,0) -- (10,8,0) -- (0,8,0) (10,0,0) -- (10,0,3) (10,8,0) -- (10,8,3) (0,8,0) -- (0,8,3);
+        \fill[accent!12] (10,0,3) -- (10,4,6) -- (10,8,3) -- cycle;
+        \draw[accent] (10,0,3) -- (10,4,6) -- (10,8,3) -- cycle (0,0,3) -- (0,4,6) -- (0,8,3) (0,4,6) -- (10,4,6) (0,0,3) -- (10,0,3) (0,8,3) -- (10,8,3);
+        \draw[->,lijngrijs] (10,8,0) -- (10,10,0) node[right,text=black] {$y$};
+        \draw[->,lijngrijs] (10,0,0) -- (12.5,0,0) node[left,text=black] {$x$};
+        \node[below left] at (5,0,0) {$10$}; \node[below] at (10,4,0) {$8$};
+        \node[above] at (5,4,6) {nok};
+      \end{tikzpicture}
+  opgave: |-
+    Een huis heeft een rechthoekig grondvlak van $10$ m bij $8$ m en muren van $3$ m, zoals in de figuur. Het zadeldak heeft een nok op $6$ m hoogte, boven de rechte $y = 4$ en evenwijdig met de $x$-as.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef een vergelijking van het dakvlak aan de kant $y \leqslant 4$.
+      antwoord: |-
+        $3y - 4z = -12$
+      uitwerking: |-
+        Het dakvlak gaat door $(0, 0, 3)$, $(10, 0, 3)$ en $(0, 4, 6)$. Het is evenwijdig met de $x$-as, dus er staat geen $x$ in. In het $yz$-vlak gaat het door $(0, 3)$ en $(4, 6)$: $z = 3 + \frac34 y$. Maal $4$: $3y - 4z = -12$.
+    - opgave: |-
+        Hoe hoog ligt het dak boven het punt $(5, 2, 0)$ van de vloer?
+      antwoord: |-
+        $4{,}5$ m
+      uitwerking: |-
+        $z = 3 + \frac34 \cdot 2 = 4{,}5$ m. Dat het punt $x = 5$ heeft, speelt geen rol.
+    - opgave: |-
+        Een dakraam komt op $5$ m hoogte. Hoe ver van de muur $y = 0$ is dat, horizontaal gemeten?
+      antwoord: |-
+        $\frac83 \approx 2{,}67$ m
+      uitwerking: |-
+        $3 + \frac34 y = 5$ geeft $y = \frac83 \approx 2{,}67$ m.
+    - opgave: |-
+        Geef een vergelijking van het andere dakvlak.
+      antwoord: |-
+        $3y + 4z = 36$
+      uitwerking: |-
+        Het gaat door $(4, 6)$ en $(8, 3)$ in het $yz$-vlak: $z = 6 - \frac34(y - 4) = 9 - \frac34 y$. Maal $4$: $3y + 4z = 36$. Controle: $(0, 8, 3)$ geeft $24 + 12 = 36$.
+
+- id: h2-o22
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    twee snijdende rechten bepalen een vlak
+  opgave: |-
+    De rechten $l\colon (1, 0, 0) + r\vcr{1}{1}{0}$ en $m\colon (1, 0, 0) + s\vcr{0}{1}{1}$ gaan allebei door $(1, 0, 0)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef een cartesiaanse vergelijking van het vlak dat $l$ en $m$ bevat.
+      antwoord: |-
+        $x - y + z = 1$
+      uitwerking: |-
+        Het vlak door $(1, 0, 0)$ met de twee richtingsvectoren: $x = 1 + r$, $y = r + s$, $z = s$. Dan is $r = x - 1$ en $s = z$, dus $y = x - 1 + z$, of $x - y + z = 1$.
+    - opgave: |-
+        Ligt $Q(3, 1, -1)$ in dat vlak? Ligt $Q$ op $l$ of op $m$?
+      antwoord: |-
+        in het vlak, maar op geen van beide rechten
+      uitwerking: |-
+        $3 - 1 - 1 = 1$: $Q$ ligt in het vlak. Op $l$ is $z = 0$ en op $m$ is $x = 1$: $Q$ ligt op geen van beide.
+
+- id: h2-o23
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    drie punten die geen vlak bepalen
+  opgave: |-
+    Gegeven $A(1, 0, 1)$, $B(2, 1, 3)$ en $C(4, 3, k)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Voor welke $k$ bepalen $A$, $B$ en $C$ geen vlak?
+      antwoord: |-
+        $k = 7$
+      uitwerking: |-
+        Drie punten bepalen geen vlak als ze op één rechte liggen. $\overrightarrow{AB} = \vcr{1}{1}{2}$ en $\overrightarrow{AC} = \vcr{3}{3}{k - 1}$ zijn collineair als $k - 1 = 3 \cdot 2$, dus $k = 7$.
+    - opgave: |-
+        Geef een cartesiaanse vergelijking van het vlak $ABC$ voor $k = 0$.
+      antwoord: |-
+        $x - y = 1$
+      uitwerking: |-
+        $\overrightarrow{AC} = \vcr{3}{3}{-1}$. Parametervergelijkingen: $x = 1 + r + 3s$, $y = r + 3s$, $z = 1 + 2r - s$. Je ziet meteen dat $x - y = 1$ voor elke $r$ en $s$. Dat is de vergelijking: een vlak evenwijdig met de $z$-as. Controle: $C(4, 3, 0)$ geeft $4 - 3 = 1$.
+
+- id: h2-o24
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    alle vlakken door een rechte
+  opgave: |-
+    De vlakken $\alpha\colon x + y + z = 3$ en $\beta\colon x - y = 1$ snijden elkaar volgens een rechte $l$. Bekijk voor elk getal $k$ de vergelijking
+    \[(x + y + z - 3) + k(x - y - 1) = 0.\]
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat de vergelijking voor elke $k$ een vlak is dat $l$ bevat.
+      antwoord: |-
+        elk punt van $l$ maakt beide haakjes nul
+      uitwerking: |-
+        Uitgewerkt staat er $(1 + k)x + (1 - k)y + z = 3 + k$: een eerstegraadsvergelijking, en de coëfficiënt van $z$ is nooit nul. Het is dus een vlak. Een punt van $l$ ligt in $\alpha$ en in $\beta$, dus beide haakjes zijn nul en de vergelijking klopt.
+    - opgave: |-
+        Welk vlak van die familie gaat door de oorsprong?
+      antwoord: |-
+        $-2x + 4y + z = 0$
+      uitwerking: |-
+        $O$ invullen: $-3 + k \cdot (-1) = 0$, dus $k = -3$. Het vlak is $(x + y + z - 3) - 3(x - y - 1) = 0$, of $-2x + 4y + z = 0$. Controle met een punt van $l$, zoals $(1, 0, 2)$: $-2 + 0 + 2 = 0$.
+    - opgave: |-
+        Welk vlak van de familie is evenwijdig met de $y$-as?
+      antwoord: |-
+        $2x + z = 4$
+      uitwerking: |-
+        Er mag geen $y$ in staan: $1 - k = 0$, dus $k = 1$. Dat geeft $2x + z - 4 = 0$, of $2x + z = 4$.
+    - opgave: |-
+        Er is één vlak door $l$ dat niet in de familie zit. Welk?
+      antwoord: |-
+        $\beta$
+      uitwerking: |-
+        In elk vlak van de familie staat $z$ met coëfficiënt $1$. Het vlak $\beta\colon x - y = 1$ bevat $l$ maar heeft geen $z$: het zit er niet bij. Je krijgt het wel als je $k$ heel groot neemt en door $k$ deelt.
+
+- id: h2-o25
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    vergelijkingen die geen vlak zijn
+  opgave: |-
+    Welke figuur in de ruimte stelt de vergelijking voor? Leg uit.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $(x - 1)^2 + (y - 2)^2 = 0$
+      antwoord: |-
+        de rechte door $(1, 2, 0)$, evenwijdig met de $z$-as
+      uitwerking: |-
+        Een som van twee kwadraten is nul als beide nul zijn: $x = 1$ en $y = 2$, met $z$ vrij. Dat is de snijlijn van twee vlakken: de verticale rechte $(1, 2, 0) + r\vcr{0}{0}{1}$.
+    - opgave: |-
+        $xy = 0$
+      antwoord: |-
+        het $yz$-vlak samen met het $xz$-vlak
+      uitwerking: |-
+        Een product is nul als een van de factoren nul is: $x = 0$ of $y = 0$. De punten liggen in het $yz$-vlak of in het $xz$-vlak: de unie van twee vlakken.
+    - opgave: |-
+        $x^2 = y^2$
+      antwoord: |-
+        twee vlakken: $x = y$ en $x = -y$
+      uitwerking: |-
+        $x^2 - y^2 = (x - y)(x + y) = 0$: $x = y$ of $x = -y$. Twee verticale vlakken door de $z$-as, die loodrecht op elkaar staan.
+    - opgave: |-
+        Geef zelf één vergelijking waarvan de oplossingen precies de punten van de $x$-as zijn.
+      antwoord: |-
+        bijvoorbeeld $y^2 + z^2 = 0$
+      uitwerking: |-
+        Op de $x$-as is $y = 0$ en $z = 0$. Dat zijn twee voorwaarden, maar $y^2 + z^2 = 0$ zegt hetzelfde in één vergelijking. Een rechte heeft dus wel één vergelijking nodig als die niet van de eerste graad hoeft te zijn.
+
+- id: h2-o26
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    context: een schaduw
+  opgave: |-
+    De grond is het vlak $z = 0$, in meter. Een vlaggenmast staat verticaal in $(3, 1, 0)$ en is $6$ m hoog. De zonnestralen hebben de richting $\vcr{1}{2}{-4}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Waar valt de schaduw van de top van de mast op de grond? Hoe lang is de schaduw van de mast?
+      antwoord: |-
+        $\bigl(\frac92, 4, 0\bigr)$; $\frac32\sqrt5 \approx 3{,}35$ m
+      uitwerking: |-
+        De zonnestraal door de top $T(3, 1, 6)$ is $(3 + r, 1 + 2r, 6 - 4r)$. Op de grond: $6 - 4r = 0$, dus $r = \frac32$, het punt $\bigl(\frac92, 4, 0\bigr)$. De schaduw loopt van de voet $(3, 1, 0)$ tot daar: $\sqrt{\bigl(\frac32\bigr)^2 + 3^2} = \sqrt{\frac{45}{4}} = \frac32\sqrt5 \approx 3{,}35$ m.
+    - opgave: |-
+        In het vlak $y = 3$ staat een hoge muur. Valt de schaduw van de top op de grond of op de muur? Waar?
+      antwoord: |-
+        op de muur, in $(4, 3, 2)$
+      uitwerking: |-
+        De straal bereikt het vlak $y = 3$ als $1 + 2r = 3$, dus bij $r = 1$, in $(4, 3, 2)$. Dat is vroeger dan de grond ($r = \frac32$): de straal botst eerst op de muur. De schaduw van de top valt op de muur, op $2$ m hoogte.
+
+- id: h2-o27
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    parameters die niet alles bereiken
+  opgave: |-
+    Welke punten beschrijven de vergelijkingen als $r$ alle reële getallen doorloopt? Tip: noem het stuk dat telkens terugkomt $t$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $x = 1 + r^2$, $y = 2r^2$, $z = 3 - r^2$
+      antwoord: |-
+        een halfrechte vanuit $(1, 0, 3)$
+      uitwerking: |-
+        Met $t = r^2$ staat er $(1, 0, 3) + t\vcr{1}{2}{-1}$. Maar $t = r^2$ is nooit negatief: alleen $t \geqslant 0$ komt voor. Dat is een halfrechte die in $(1, 0, 3)$ begint.
+    - opgave: |-
+        $x = 1 + r^3$, $y = 2r^3$, $z = 3 - r^3$
+      antwoord: |-
+        de hele rechte
+      uitwerking: |-
+        Nu is $t = r^3$, en dat neemt elke reële waarde aan (neem $r = \sqrt[3]{t}$). Je krijgt de hele rechte $(1, 0, 3) + t\vcr{1}{2}{-1}$.
+    - opgave: |-
+        $x = 1 + \sin r$, $y = 2\sin r$, $z = 3 - \sin r$
+      antwoord: |-
+        het lijnstuk van $(0, -2, 4)$ tot $(2, 2, 2)$
+      uitwerking: |-
+        Met $t = \sin r$ is $-1 \leqslant t \leqslant 1$. Je krijgt het lijnstuk van $t = -1$, het punt $(0, -2, 4)$, tot $t = 1$, het punt $(2, 2, 2)$. Het punt beweegt er heen en weer over.
 
 #----------------------------------------------------------------------------------------
 # KOPPEL
@@ -322,7 +1068,7 @@
   antwoord: |-
     $x + y + 3z = 3$
   uitwerking: |-
-    $\frac{x}{3} + \frac{y}{3} + \frac{z}{1} = 1$.
+    De asafsneden zijn $3$, $3$ en $1$: $\frac{x}{3} + \frac{y}{3} + \frac{z}{1} = 1$. Maal $3$: $x + y + 3z = 3$.
 
 - id: h2-t4
   soort: test
@@ -335,3 +1081,39 @@
     $(x, y, z) = (2, 1, 0) + r\vcr{-3}{1}{1}$
   uitwerking: |-
     Neem $z = r$: $y = 1 + r$ en $x = 4 - 2y - z = 2 - 3r$.
+
+- id: h2-t5
+  soort: test
+  niveau: 1
+  thema: |-
+    evenwijdige rechte
+  opgave: |-
+    Geef parametervergelijkingen van de rechte $m$ door $P(2, 0, -1)$ die evenwijdig is met $l\colon x = 1 + 3r$, $y = 2 - r$, $z = r$. Bereken het snijpunt van $m$ met het $xy$-vlak.
+  antwoord: |-
+    $x = 2 + 3s$, $y = -s$, $z = -1 + s$; $(5, -1, 0)$
+  uitwerking: |-
+    $m$ heeft dezelfde richting $\vcr{3}{-1}{1}$: $x = 2 + 3s$, $y = -s$, $z = -1 + s$. In het $xy$-vlak is $z = 0$, dus $s = 1$: het punt $(5, -1, 0)$.
+
+- id: h2-t6
+  soort: test
+  niveau: 2
+  thema: |-
+    cartesiaanse vergelijkingen van een rechte
+  opgave: |-
+    Geef twee cartesiaanse vergelijkingen van de rechte $(x, y, z) = (2, 1, 0) + r\vcr{1}{-1}{2}$.
+  antwoord: |-
+    $x + y = 3$ en $2x - z = 4$
+  uitwerking: |-
+    $x = 2 + r$, $y = 1 - r$, $z = 2r$. Uit de eerste: $r = x - 2$. Dan $y = 1 - (x - 2)$, of $x + y = 3$, en $z = 2(x - 2)$, of $2x - z = 4$. Controle met $r = 1$, het punt $(3, 0, 2)$: $3 + 0 = 3$ en $6 - 2 = 4$.
+
+- id: h2-t7
+  soort: test
+  niveau: 2
+  thema: |-
+    vlak door drie punten
+  opgave: |-
+    Geef een cartesiaanse vergelijking van het vlak door $A(1, 2, 1)$, $B(2, 0, 3)$ en $C(0, 1, 0)$.
+  antwoord: |-
+    $4x - y - 3z = -1$
+  uitwerking: |-
+    Richtingsvectoren $\overrightarrow{AB} = \vcr{1}{-2}{2}$ en $\overrightarrow{AC} = \vcr{-1}{-1}{-1}$. Parametervergelijkingen: $x = 1 + r - s$, $y = 2 - 2r - s$, $z = 1 + 2r - s$. Trek de eerste af van de derde: $z - x = r$. Trek de tweede af van de eerste: $x - y = -1 + 3r$. Vul $r = z - x$ in: $x - y = -1 + 3z - 3x$, of $4x - y - 3z = -1$. Controle: $B$ geeft $8 - 0 - 9 = -1$ en $C$ geeft $0 - 1 - 0 = -1$.

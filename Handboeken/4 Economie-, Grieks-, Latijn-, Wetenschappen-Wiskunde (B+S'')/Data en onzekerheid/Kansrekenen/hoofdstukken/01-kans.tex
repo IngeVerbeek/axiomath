@@ -64,6 +64,8 @@ A \cup B = \{2, 4, 5, 6\} & Even, of minstens 4, of beide.
 
 \begin{oefeningen}
 \oef{h1-gebeurtenis}
+
+\oef{h1-woorden}
 \end{oefeningen}
 
 %========================================================================================
@@ -100,6 +102,10 @@ P(\text{som} \geqslant 10) = \frac{6}{36} = \frac16 & Som 10: 3 koppels, 11: 2, 
   \foreach \t in {1,...,6}{\node[grijs] at (\t,0) {\t}; \node[grijs] at (0,\t) {\t};}
 \end{tikzpicture}}}
 
+\begin{oefeningen}
+\oef{h1-rooster}
+\end{oefeningen}
+
 Bij ingewikkelder experimenten tel je de gunstige en de mogelijke uitkomsten met de technieken uit de cursus Telproblemen.
 
 \voorbeeld{}{Je trekt 3 kaarten uit een spel van 52 kaarten. Wat is de kans dat het drie harten zijn?\label{vb:h1-kaarten}}{%
@@ -118,6 +124,8 @@ Zoek een uitkomstenverzameling met even waarschijnlijke uitkomsten (bij twee dob
 
 \begin{oefeningen}
 \oef{h1-laplace}
+
+\oef{h1-combinaties}
 \end{oefeningen}
 
 %========================================================================================
@@ -155,6 +163,8 @@ P(\text{punt}) \approx \frac{412}{1000} = 0{,}412 & De relatieve frequentie. \\[
 
 \begin{oefeningen}
 \oef{h1-frequentie}
+
+\oef{h1-frequentie-2}
 \end{oefeningen}
 
 %========================================================================================
@@ -187,6 +197,10 @@ P(\text{geen zes}) = \frac{5^4}{6^4} = \frac{625}{1296} & Laplace, met $6^4$ eve
 P(\text{minstens één zes}) = 1 - \frac{625}{1296} \approx 0{,}518 & Het complement: iets meer dan een half.
 \end{stappen}}
 
+\begin{oefeningen}
+\oef{h1-minstens}
+\end{oefeningen}
+
 \voorbeeld{}{Je trekt een kaart uit een spel van 52. Wat is de kans op een harten of een aas?\label{vb:h1-som}}{%
 \uitleg{De gebeurtenissen overlappen: de hartenaas is beide. We gebruiken de somregel met overlap.}
 \begin{stappen}
@@ -198,6 +212,8 @@ Bij \textit{minstens één}: bereken de kans op het tegendeel en trek af van 1. 
 \end{werkwijze}
 
 \begin{oefeningen}
+\oef{h1-somregel}
+
 \oef{h1-regels}
 \end{oefeningen}
 
@@ -205,19 +221,48 @@ Bij \textit{minstens één}: bereken de kans op het tegendeel en trek af van 1. 
 \opdrachtenkop
 
 \begin{oefeningen}
+\needspace{12\baselineskip}
+\oef{h1-o13}
+
 \oef{h1-o1}
+
+\oef{h1-o16}
+
+\oef{h1-o3}
+
+\oef{h1-o20}
 
 \oef{h1-o2}
 
-\oef{h1-o3}
+\needspace{14\baselineskip}
+\oef{h1-o14}
+
+\oef{h1-o15}
+
+\oef{h1-o17}
 
 \oef{h1-o4}
 
 \oef{h1-o5}
 
-\oef{h1-o6}
+\needspace{19\baselineskip}
+\oef{h1-o19}
+
+\oef{h1-o23}
 
 \oef{h1-o7}
+
+\needspace{10\baselineskip}
+\oef{h1-o18}
+
+\oef{h1-o22}
+
+\oef{h1-o24}
+
+\oef{h1-o6}
+
+\needspace{10\baselineskip}
+\oef{h1-o21}
 
 \oef{h1-o8}
 
@@ -225,7 +270,13 @@ Bij \textit{minstens één}: bereken de kans op het tegendeel en trek af van 1. 
 
 \oef{h1-o10}
 
+\oef{h1-o26}
+
 \oef{h1-o11}
+
+\oef{h1-o25}
+
+\oef{h1-o27}
 
 \oef{h1-o12}
 \end{oefeningen}
@@ -259,15 +310,18 @@ Bij \textit{minstens één}: bereken de kans op het tegendeel en trek af van 1. 
 \oef{h1-t5}
 
 \oef{h1-t6}
+
+\oef{h1-t7}
 \end{oefeningen}
 
 \herhaalschema{%
   \fv{oef:h1-t1}{vb:h1-laplace}{oef:h1-laplace}%
-  \fv{oef:h1-t2}{vb:h1-complement}{oef:h1-regels}%
+  \fv{oef:h1-t2}{vb:h1-complement}{oef:h1-minstens}%
   \fv{oef:h1-t3}{vb:h1-som}{oef:h1-regels}%
-  \fv{oef:h1-t4}{vb:h1-kaarten}{oef:h1-laplace}%
+  \fv{oef:h1-t4}{vb:h1-kaarten}{oef:h1-combinaties}%
   \fv{oef:h1-t5}{vb:h1-frequentie}{oef:h1-frequentie}%
-  \fv{oef:h1-t6}{vb:h1-gebeurtenis}{oef:h1-gebeurtenis}}
+  \fv{oef:h1-t6}{vb:h1-gebeurtenis}{oef:h1-gebeurtenis}%
+  \fv{oef:h1-t7}{vb:h1-som}{oef:h1-somregel}}
 
 \ifzelfstudie
 \section*{Maak je eigen samenvatting}

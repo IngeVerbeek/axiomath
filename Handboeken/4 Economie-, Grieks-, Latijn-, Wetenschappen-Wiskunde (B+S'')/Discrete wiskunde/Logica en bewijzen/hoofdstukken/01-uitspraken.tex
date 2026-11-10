@@ -41,6 +41,10 @@ Een zin als $x + 2 = 5$ is geen uitspraak: of ze waar is, hangt af van $x$. Zo'n
 
 Je leest $\niet p$ als \textit{niet $p$}, $p \en q$ als \textit{$p$ en $q$}, en $p \of q$ als \textit{$p$ of $q$}. Het wiskundige \textit{of} sluit \textit{beide} niet uit.
 
+\begin{oefeningen}
+\oef{h1-open}
+\end{oefeningen}
+
 \begin{theorie}
 \begin{stelling}{Wetten van De Morgan}
 \qquad $\formule{\niet(p \en q) \asa (\niet p \of \niet q)} \qquad \formule{\niet(p \of q) \asa (\niet p \en \niet q)}$
@@ -60,6 +64,8 @@ $p \en q$ is vals als minstens één van beide vals is, dus als $\niet p \of \ni
 
 \begin{oefeningen}
 \oef{h1-uitspraak}
+
+\oef{h1-demorgan}
 \end{oefeningen}
 
 %========================================================================================
@@ -107,6 +113,10 @@ Met verzamelingen: is elk element van $P$ ook een element van $Q$, dan geldt \te
 n \text{ oneven} \dan 4 \nmid n: \ \text{waar} & De contrapositie: even waar als de oorspronkelijke.
 \end{stappenbreed}}
 
+\begin{oefeningen}
+\oef{h1-voorwaarde}
+\end{oefeningen}
+
 \subsection{Als en slechts als}
 
 \begin{theorie}
@@ -121,6 +131,8 @@ Bij een implicatie $p \dan q$: vraag je af of $q$ altijd volgt als $p$ waar is. 
 
 \begin{oefeningen}
 \oef{h1-implicatie}
+
+\oef{h1-equivalentie}
 \end{oefeningen}
 
 %========================================================================================
@@ -145,6 +157,10 @@ $\exists m\ \forall n\colon m > n$ & er is een getal dat groter is dan alle geta
 
 In de eerste uitspraak mag $m$ afhangen van $n$ (neem $m = n + 1$). In de tweede moet één vaste $m$ voor alle $n$ werken, en die bestaat niet.
 
+\begin{oefeningen}
+\oef{h1-volgorde}
+\end{oefeningen}
+
 \voorbeeld{}{Schrijf de uitspraak \textit{elke leerling heeft een vriend in de klas} met kwantoren, ontken ze, en zeg de ontkenning in woorden.\label{vb:h1-kwantoren}}{%
 \uitleg{We schrijven \textit{elke} als $\forall$ en \textit{een} als $\exists$. Bij het ontkennen wisselen de kwantoren, en wordt het laatste deel ontkend.}
 \begin{stappenbreed}
@@ -161,6 +177,8 @@ Om een uitspraak met kwantoren te ontkennen: wissel elke $\forall$ in $\exists$ 
 
 \begin{oefeningen}
 \oef{h1-kwantoren}
+
+\oef{h1-formaliseer}
 \end{oefeningen}
 
 %========================================================================================
@@ -169,21 +187,64 @@ Om een uitspraak met kwantoren te ontkennen: wissel elke $\forall$ in $\exists$ 
 \begin{oefeningen}
 \oef{h1-o1}
 
-\oef{h1-o2}
+\needspace{10\baselineskip}
+\oef{h1-o10}
+
+\needspace{12\baselineskip}
+\oef{h1-o11}
 
 \oef{h1-o3}
 
+\needspace{10\baselineskip}
+\oef{h1-o13}
+
+\oef{h1-o2}
+
+\oef{h1-o14}
+
+\oef{h1-o12}
+
+\oef{h1-o16}
+
+\oef{h1-o15}
+
 \oef{h1-o4}
+
+\oef{h1-o20}
+
+\oef{h1-o17}
+
+\oef{h1-o23}
+
+\needspace{12\baselineskip}
+\oef{h1-o19}
 
 \oef{h1-o5}
 
+\needspace{13\baselineskip}
+\oef{h1-o18}
+
 \oef{h1-o6}
 
+\oef{h1-o24}
+
+\oef{h1-o22}
+
+\oef{h1-o21}
+
 \oef{h1-o7}
+
+\oef{h1-o26}
 
 \oef{h1-o8}
 
 \oef{h1-o9}
+
+\oef{h1-o27}
+
+\oef{h1-o28}
+
+\oef{h1-o25}
 \end{oefeningen}
 
 %----------------------------------------------------------------------------------------
@@ -211,13 +272,22 @@ Om een uitspraak met kwantoren te ontkennen: wissel elke $\forall$ in $\exists$ 
 \oef{h1-t3}
 
 \oef{h1-t4}
+
+\oef{h1-t5}
+
+\oef{h1-t6}
+
+\oef{h1-t7}
 \end{oefeningen}
 
 \herhaalschema{%
   \fv{oef:h1-t1}{vb:h1-demorgan}{oef:h1-uitspraak}%
   \fv{oef:h1-t2}{vb:h1-implicatie}{oef:h1-implicatie}%
   \fv{oef:h1-t3}{vb:h1-kwantoren}{oef:h1-kwantoren}%
-  \fzv{oef:h1-t4}{oef:h1-kwantoren}}
+  \fv{oef:h1-t4}{vb:h1-implicatie}{oef:h1-o3}%
+  \fv{oef:h1-t5}{vb:h1-implicatie}{oef:h1-voorwaarde}%
+  \fv{oef:h1-t6}{vb:h1-kwantoren}{oef:h1-volgorde}%
+  \fv{oef:h1-t7}{vb:h1-demorgan}{oef:h1-open}}
 
 \ifzelfstudie
 \section*{Maak je eigen samenvatting}

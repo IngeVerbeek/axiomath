@@ -75,6 +75,90 @@
       uitwerking: |-
         Bij een pincode mag een cijfer terugkomen, bij de medailles niet: wie goud wint, kan niet ook zilver winnen. Daarom is er bij elke stap één mogelijkheid minder.
 
+#----------------------------------------------------------------------------------------
+# KORTE OEFENINGEN in de leerstof, in de volgorde van het boek
+#----------------------------------------------------------------------------------------
+
+- id: h1-boom
+  soort: kort
+  opgave: |-
+    Tel met de productregel.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een ijsje bestaat uit een hoorntje of een potje, één bol uit 8 smaken, en wel of geen slagroom. Teken het begin van het boomdiagram. Hoeveel ijsjes zijn er?
+      antwoord: |-
+        32
+      uitwerking: |-
+        Drie stappen: hoorntje of potje (2), smaak (8), slagroom of niet (2).\par
+        Productregel: $2 \cdot 8 \cdot 2 = 32$ ijsjes.\par
+        In het boomdiagram splitst de start in 2 takken, elke tak in 8 en elk van die takken nog eens in 2.
+    - opgave: |-
+        Een fietsslot heeft drie ringen met elk de cijfers 0 tot en met 9. Hoeveel codes zijn er? En hoeveel als het eerste cijfer oneven is?
+      antwoord: |-
+        1000; \ 500
+      uitwerking: |-
+        Elke ring heeft 10 mogelijkheden: $10 \cdot 10 \cdot 10 = 1000$ codes.\par
+        Eerste cijfer oneven (1, 3, 5, 7 of 9): $5 \cdot 10 \cdot 10 = 500$ codes.
+    - opgave: |-
+        Hoeveel getallen van drie cijfers zijn er? Waarom heeft het eerste cijfer maar 9 mogelijkheden?
+      antwoord: |-
+        900
+      uitwerking: |-
+        Een getal begint niet met 0: 9 mogelijkheden voor het eerste cijfer, 10 voor het tweede en 10 voor het derde.\par
+        $9 \cdot 10 \cdot 10 = 900$. Controle: van 100 tot en met 999 zijn het $999 - 100 + 1 = 900$ getallen.
+
+- id: h1-overlap
+  soort: kort
+  opgave: |-
+    Tel met de somregel met overlap.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel getallen van 1 tot en met 300 zijn deelbaar door 4 of door 6? Let op: welke getallen zijn deelbaar door 4 én door 6?
+      antwoord: |-
+        100
+      uitwerking: |-
+        Veelvouden van 4: $300 : 4 = 75$. Veelvouden van 6: $300 : 6 = 50$.\par
+        Deelbaar door 4 én door 6 betekent deelbaar door het kleinste gemeenschappelijk veelvoud 12, niet door 24: $300 : 12 = 25$.\par
+        $75 + 50 - 25 = 100$.
+    - opgave: |-
+        Van de 120 leerlingen van het vijfde jaar volgen er 70 Latijn en 45 Grieks; 30 volgen allebei. Hoeveel leerlingen volgen geen van beide? Teken een venndiagram.
+      antwoord: |-
+        35
+      uitwerking: |-
+        Minstens een van beide: $70 + 45 - 30 = 85$. Geen van beide: $120 - 85 = 35$.\par
+        In het venndiagram: 40 alleen Latijn, 30 beide, 15 alleen Grieks en 35 erbuiten.
+        \figuren{\begin{tikzpicture}[font=\small]
+          \draw[grijs] (-1.4,-1.2) rectangle (2.5,1.2);
+          \draw[verz] (0,0) circle (.95);
+          \draw[verz] (1.1,0) circle (.95);
+          \node at (-.45,0) {40}; \node at (.55,0) {30}; \node at (1.6,0) {15}; \node at (2.2,-.95) {35};
+          \node[text=accent] at (-.75,.95) {$L$}; \node[text=accent] at (1.85,.95) {$G$};
+        \end{tikzpicture}}
+
+- id: h1-tegendeel
+  soort: kort
+  opgave: |-
+    Tel het tegendeel.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Je gooit vier keer met een dobbelsteen en noteert de ogen in volgorde. Bij hoeveel uitkomsten gooi je minstens één zes?
+      antwoord: |-
+        671
+      uitwerking: |-
+        Alle uitkomsten: $6^4 = 1296$. Zonder zes: 5 mogelijkheden per worp, $5^4 = 625$.\par
+        Minstens één zes: $1296 - 625 = 671$.
+    - opgave: |-
+        Hoeveel getallen van vier cijfers bevatten minstens één even cijfer?
+      antwoord: |-
+        8375
+      uitwerking: |-
+        Alle getallen van vier cijfers: $9 \cdot 10^3 = 9000$.\par
+        Het tegendeel, alleen oneven cijfers: 5 mogelijkheden per plaats, ook voor het eerste cijfer, want 0 is even: $5^4 = 625$.\par
+        Minstens één even cijfer: $9000 - 625 = 8375$.
+
 - id: h1-product
   soort: kort
   opgave: |-
@@ -86,6 +170,7 @@
       antwoord: |-
         $158\,184\,000$
       uitwerking: |-
+        Zeven plaatsen na elkaar: 9 mogelijkheden voor het eerste cijfer, 26 voor elke letter en 10 voor elk van de laatste cijfers.\par
         $9 \cdot 26^3 \cdot 10^3 = 9 \cdot 17\,576 \cdot 1000 = 158\,184\,000$.
     - opgave: |-
         Een broodjeszaak heeft 3 soorten brood, 6 soorten beleg en 4 sauzen. Je mag ook zonder saus kiezen. Hoeveel broodjes kun je bestellen?
@@ -105,13 +190,15 @@
       antwoord: |-
         85
       uitwerking: |-
-        Veelvouden van 3: 66. Van 7: 28. Van 21 (beide): 9. Dus $66 + 28 - 9 = 85$.
+        Veelvouden van 3: $200 : 3 = 66{,}\ldots$, dus 66. Van 7: 28. Deelbaar door 3 én door 7 betekent deelbaar door 21: 9.\par
+        $66 + 28 - 9 = 85$.
     - opgave: |-
         Hoeveel codes van 3 cijfers bevatten minstens één 0?
       antwoord: |-
         271
       uitwerking: |-
-        Alle codes: $10^3 = 1000$. Zonder 0: $9^3 = 729$. Dus $1000 - 729 = 271$.
+        Alle codes: $10^3 = 1000$. Het tegendeel, zonder 0: $9^3 = 729$.\par
+        Minstens één 0: $1000 - 729 = 271$.
 
 - id: h1-hervar
   soort: kort
@@ -124,19 +211,40 @@
       antwoord: |-
         $1296$
       uitwerking: |-
-        $6^4 = 1296$.
+        Elke worp heeft 6 uitkomsten, de volgorde telt en een uitkomst mag terugkomen: $\HVar{6}{4} = 6^4 = 1296$.
     - opgave: |-
         Een toets heeft 10 meerkeuzevragen met elk 4 antwoorden. Op hoeveel manieren kun je hem invullen, als je op elke vraag één antwoord geeft?
       antwoord: |-
         $1\,048\,576$
       uitwerking: |-
-        $4^{10} = 1\,048\,576$: meer dan een miljoen.
+        Tien vragen na elkaar, elk met 4 mogelijkheden, en hetzelfde antwoord mag vaker voorkomen: $\HVar{4}{10} = 4^{10} = 1\,048\,576$, meer dan een miljoen.
     - opgave: |-
         Een byte is een rijtje van 8 bits, elk 0 of 1.
       antwoord: |-
         256
       uitwerking: |-
-        $2^8 = 256$.
+        Acht plaatsen met elk 2 mogelijkheden: $\HVar{2}{8} = 2^8 = 256$.
+
+- id: h1-variatie
+  soort: kort
+  opgave: |-
+    Hoeveel mogelijkheden zijn er?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bij een schoolloterij worden een fiets, een tablet en een boekenbon verloot onder 150 lotnummers. Een nummer kan maar één prijs winnen.
+      antwoord: |-
+        $3\,307\,800$
+      uitwerking: |-
+        De prijzen zijn verschillend, dus de volgorde telt, en een nummer komt hoogstens één keer voor.\par
+        $\Var{150}{3} = 150 \cdot 149 \cdot 148 = 3\,307\,800$.
+    - opgave: |-
+        Een strook heeft 9 vakjes op een rij. Je kleurt 4 vakjes, elk met een andere kleur: rood, geel, groen en blauw.
+      antwoord: |-
+        3024
+      uitwerking: |-
+        Kies een vakje voor rood (9), dan voor geel (8), voor groen (7) en voor blauw (6).\par
+        $\Var{9}{4} = 9 \cdot 8 \cdot 7 \cdot 6 = 3024$.
 
 - id: h1-var
   soort: kort
@@ -149,29 +257,88 @@
       antwoord: |-
         720
       uitwerking: |-
-        $\Var{10}{3} = 10 \cdot 9 \cdot 8 = 720$.
+        De volgorde in de top drie telt, en een team staat er maar één keer in: $\Var{10}{3} = 10 \cdot 9 \cdot 8 = 720$.
     - opgave: |-
         Een code bestaat uit 4 verschillende letters.
       antwoord: |-
         $358\,800$
       uitwerking: |-
-        $\Var{26}{4} = 26 \cdot 25 \cdot 24 \cdot 23 = 358\,800$.
+        Volgorde telt, geen herhaling: $\Var{26}{4} = 26 \cdot 25 \cdot 24 \cdot 23 = 358\,800$.
     - opgave: |-
         Zeven boeken worden naast elkaar op een plank gezet.
       antwoord: |-
         5040
       uitwerking: |-
-        $\Perm{7} = 7! = 5040$.
+        Alle zeven boeken worden gerangschikt: $\Perm{7} = 7! = 5040$.
+
+- id: h1-blok
+  soort: kort
+  opgave: |-
+    Zeven leerlingen, onder wie Lena, Mo en Noor, staan in een rij voor de klasfoto. Op hoeveel manieren kan dat als
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Lena en Mo naast elkaar staan?
+      antwoord: |-
+        1440
+      uitwerking: |-
+        Het blok Lena-Mo en de vijf anderen: 6 eenheden, $6! = 720$ rangschikkingen.\par
+        Binnen het blok: 2 manieren. Samen $720 \cdot 2 = 1440$.
+    - opgave: |-
+        Lena, Mo en Noor alle drie naast elkaar staan?
+      antwoord: |-
+        720
+      uitwerking: |-
+        Het blok van drie en de vier anderen: 5 eenheden, $5! = 120$. Binnen het blok: $3! = 6$.\par
+        Samen $120 \cdot 6 = 720$.
+    - opgave: |-
+        Lena helemaal links staat?
+      antwoord: |-
+        720
+      uitwerking: |-
+        Lena ligt vast; de andere zes worden gerangschikt: $6! = 720$.
+
+- id: h1-faculteit
+  soort: kort
+  opgave: |-
+    Bereken zonder rekentoestel.
+  lijst: reeks
+  kolommen: 4
+  delen:
+    - opgave: |-
+        $5! - 4!$
+      antwoord: |-
+        96
+      uitwerking: |-
+        $120 - 24 = 96$.
+    - opgave: |-
+        $\dfrac{8!}{6! \, 2!}$
+      antwoord: |-
+        28
+      uitwerking: |-
+        $\frac{8 \cdot 7 \cdot 6!}{6! \cdot 2} = \frac{56}{2} = 28$.
+    - opgave: |-
+        $\dfrac{12!}{11!}$
+      antwoord: |-
+        12
+      uitwerking: |-
+        $\frac{12 \cdot 11!}{11!} = 12$.
+    - opgave: |-
+        $0! + 1!$
+      antwoord: |-
+        2
+      uitwerking: |-
+        $1 + 1 = 2$: ook $0! = 1$.
 
 #----------------------------------------------------------------------------------------
-# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
+# OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3 (in de volgorde van het boek)
 #----------------------------------------------------------------------------------------
 
 - id: h1-o1
   soort: opdracht
   niveau: 1
   thema: |-
-    rekenen met faculteiten en variaties
+    drill: faculteiten, variaties en herhalingsvariaties berekenen
   opgave: |-
     Bereken zonder rekentoestel.
   lijst: reeks
@@ -188,7 +355,7 @@
       antwoord: |-
         $72$
       uitwerking: |-
-        $9 \cdot 8 = 72$.
+        Twee factoren vanaf 9: $9 \cdot 8 = 72$.
     - opgave: |-
         $\dfrac{10!}{8!}$
       antwoord: |-
@@ -201,18 +368,211 @@
         $128$
       uitwerking: |-
         $2^7 = 128$.
+    - opgave: |-
+        $\dfrac{6!}{4!}$
+      antwoord: |-
+        30
+      uitwerking: |-
+        $\frac{6 \cdot 5 \cdot 4!}{4!} = 30$.
+    - opgave: |-
+        $\Var{5}{5}$
+      antwoord: |-
+        120
+      uitwerking: |-
+        Alle vijf rangschikken: $5! = 120$.
+    - opgave: |-
+        $0!$
+      antwoord: |-
+        1
+      uitwerking: |-
+        Afspraak: $0! = 1$.
+    - opgave: |-
+        $\Var{12}{1}$
+      antwoord: |-
+        12
+      uitwerking: |-
+        Eén factor: 12.
+    - opgave: |-
+        $3! \cdot 4!$
+      antwoord: |-
+        144
+      uitwerking: |-
+        $6 \cdot 24 = 144$.
+    - opgave: |-
+        $\dfrac{8!}{5! \, 3!}$
+      antwoord: |-
+        56
+      uitwerking: |-
+        $\frac{8 \cdot 7 \cdot 6}{3!} = \frac{336}{6} = 56$.
+    - opgave: |-
+        $\HVar{10}{3}$
+      antwoord: |-
+        1000
+      uitwerking: |-
+        $10^3 = 1000$.
+    - opgave: |-
+        $1! + 2! + 3! + 4!$
+      antwoord: |-
+        33
+      uitwerking: |-
+        $1 + 2 + 6 + 24 = 33$.
 
 - id: h1-o2
   soort: opdracht
   niveau: 1
   thema: |-
-    herhalingsvariaties
+    herhalingsvariaties: wachtwoorden
   opgave: |-
-    Een wachtwoord bestaat uit 6 tekens. Elk teken is een kleine letter of een cijfer. Hoeveel wachtwoorden zijn er? Hoeveel als ook hoofdletters mogen?
+    Een wachtwoord bestaat uit 6 tekens.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Elk teken is een kleine letter of een cijfer. Hoeveel wachtwoorden zijn er?
+      antwoord: |-
+        $36^6 \approx 2{,}18 \cdot 10^9$
+      uitwerking: |-
+        Er zijn $26 + 10 = 36$ tekens, en een teken mag terugkomen: $36^6 = 2\,176\,782\,336$.
+    - opgave: |-
+        Hoeveel zijn er als ook hoofdletters mogen?
+      antwoord: |-
+        $62^6 \approx 5{,}68 \cdot 10^{10}$
+      uitwerking: |-
+        Nu zijn er $26 + 26 + 10 = 62$ tekens: $62^6 = 56\,800\,235\,584$, ongeveer 26 keer zoveel.
+    - opgave: |-
+        Een computer probeert een miljard wachtwoorden per seconde. Hoe lang duurt het om alle wachtwoorden van b te proberen?
+      antwoord: |-
+        ongeveer 57 seconden
+      uitwerking: |-
+        $\frac{56\,800\,235\,584}{10^9} \approx 56{,}8$ seconden. Zes tekens zijn dus veel te kort voor een veilig wachtwoord.
+
+- id: h1-o4
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    venndiagram tekenen
+  opgave: |-
+    In een klas van 30 leerlingen spelen 18 gitaar en 11 piano. Zes leerlingen spelen geen van beide. Hoeveel leerlingen spelen beide instrumenten? Teken een venndiagram.
   antwoord: |-
-    $36^6 \approx 2{,}18 \cdot 10^9$; \ $62^6 \approx 5{,}68 \cdot 10^{10}$
+    5
   uitwerking: |-
-    Er zijn $26 + 10 = 36$ tekens: $36^6 = 2\,176\,782\,336$. Met hoofdletters zijn er $62$ tekens: $62^6 = 56\,800\,235\,584$, ongeveer 26 keer zoveel.
+    $30 - 6 = 24$ leerlingen spelen minstens één instrument. Met de somregel: $24 = 18 + 11 - x$, dus $x = 5$.\par
+    In het venndiagram: 13 alleen gitaar, 5 beide, 6 alleen piano en 6 geen van beide.
+    \figuren{\begin{tikzpicture}[font=\small]
+      \draw[grijs] (-1.4,-1.2) rectangle (2.5,1.2);
+      \draw[verz] (0,0) circle (.95);
+      \draw[verz] (1.1,0) circle (.95);
+      \node at (-.45,0) {13}; \node at (.55,0) {5}; \node at (1.6,0) {6}; \node at (2.2,-.95) {6};
+      \node[text=accent] at (-.75,.95) {$G$}; \node[text=accent] at (1.85,.95) {$P$};
+    \end{tikzpicture}}
+
+- id: h1-o5
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    permutaties
+  opgave: |-
+    Op hoeveel manieren kan dat?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Vier personen gaan naast elkaar op een bank zitten.
+      antwoord: |-
+        24
+      uitwerking: |-
+        Alle vier worden gerangschikt: $\Perm{4} = 4! = 24$.
+    - opgave: |-
+        Acht leerlingen vormen een rij.
+      antwoord: |-
+        $40\,320$
+      uitwerking: |-
+        $\Perm{8} = 8! = 40\,320$.
+    - opgave: |-
+        Acht leerlingen vormen een rij, en de kleinste staat vooraan.
+      antwoord: |-
+        5040
+      uitwerking: |-
+        De eerste plaats ligt vast. De andere zeven worden gerangschikt: $7! = 5040$, een achtste van b.
+
+- id: h1-o19
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    productregel: kleuren van een vlag
+  figuur:
+    code: |-
+      \begin{tikzpicture}[x=.5cm,y=.5cm]
+        \fill[accent!15] (0,2) rectangle (4,3);
+        \fill[accent!40] (0,1) rectangle (4,2);
+        \fill[accent!15] (0,0) rectangle (4,1);
+        \draw[accent,thick] (0,0) rectangle (4,3) (0,1) -- (4,1) (0,2) -- (4,2);
+        \draw[grijs,thick] (0,-1.6) -- (0,3.3);
+      \end{tikzpicture}
+  opgave: |-
+    Een vlag heeft drie horizontale banen. Je kleurt elke baan met een van 6 kleuren. Hoeveel vlaggen zijn er als
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        alle drie de banen een andere kleur hebben?
+      antwoord: |-
+        120
+      uitwerking: |-
+        Van boven naar onder: 6, 5 en 4 mogelijkheden: $\Var{6}{3} = 120$.
+    - opgave: |-
+        alleen twee banen die aan elkaar grenzen een andere kleur moeten hebben?
+      antwoord: |-
+        150
+      uitwerking: |-
+        Bovenste baan: 6. Middelste baan: niet de kleur van de bovenste, 5. Onderste baan: niet de kleur van de middelste, 5; de kleur van de bovenste mag wel.\par
+        $6 \cdot 5 \cdot 5 = 150$. Het aantal per stap is telkens 5, ongeacht wat je eerder koos: de productregel geldt.
+    - opgave: |-
+        er geen voorwaarde is?
+      antwoord: |-
+        216
+      uitwerking: |-
+        $\HVar{6}{3} = 6^3 = 216$.
+
+- id: h1-o15
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    venndiagram aflezen
+  figuur:
+    code: |-
+      \begin{tikzpicture}[font=\small]
+        \draw[grijs] (-1.4,-1.2) rectangle (2.5,1.2);
+        \draw[verz] (0,0) circle (.95);
+        \draw[verz] (1.1,0) circle (.95);
+        \node at (-.45,0) {12}; \node at (.55,0) {7}; \node at (1.6,0) {9}; \node at (2.2,-.95) {5};
+        \node[text=accent] at (-.75,.95) {$H$}; \node[text=accent] at (1.85,.95) {$K$};
+      \end{tikzpicture}
+  opgave: |-
+    Het venndiagram toont hoeveel leerlingen van een klas thuis een hond ($H$) of een kat ($K$) hebben.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel leerlingen hebben een hond?
+      antwoord: |-
+        19
+      uitwerking: |-
+        Alles binnen de cirkel $H$: $12 + 7 = 19$.
+    - opgave: |-
+        Hoeveel leerlingen hebben een hond of een kat?
+      antwoord: |-
+        28
+      uitwerking: |-
+        Alles binnen de twee cirkels: $12 + 7 + 9 = 28$.
+    - opgave: |-
+        Hoeveel leerlingen telt de klas?
+      antwoord: |-
+        33
+      uitwerking: |-
+        Ook de 5 erbuiten tellen mee: $28 + 5 = 33$.
+    - opgave: |-
+        Controleer b met de somregel met overlap.
+      antwoord: |-
+        $19 + 16 - 7 = 28$
+      uitwerking: |-
+        $\#H = 19$, $\#K = 7 + 9 = 16$ en $\#(H \cap K) = 7$: $19 + 16 - 7 = 28$.
 
 - id: h1-o3
   soort: opdracht
@@ -224,37 +584,243 @@
   antwoord: |-
     648
   uitwerking: |-
-    Het eerste cijfer mag geen 0 zijn: 9 mogelijkheden. Het tweede mag elk cijfer behalve het eerste: 9. Het derde: 8. Dus $9 \cdot 9 \cdot 8 = 648$.
+    Het eerste cijfer mag geen 0 zijn: 9 mogelijkheden. Het tweede mag elk cijfer behalve het eerste, ook 0: 9. Het derde: 8.\par
+    $9 \cdot 9 \cdot 8 = 648$.
 
-- id: h1-o4
+- id: h1-o16
   soort: opdracht
   niveau: 1
   thema: |-
-    venndiagram
+    herhalingsvariaties: een cijferslot
   opgave: |-
-    In een klas van 30 leerlingen spelen 18 gitaar en 11 piano. Zes leerlingen spelen geen van beide. Hoeveel leerlingen spelen beide instrumenten? Teken een venndiagram.
-  antwoord: |-
-    5
-  uitwerking: |-
-    $30 - 6 = 24$ leerlingen spelen minstens één instrument. Met de somregel: $24 = 18 + 11 - x$, dus $x = 5$. In het venndiagram: 13 alleen gitaar, 6 alleen piano, 5 beide, 6 geen.
+    Een kluisje heeft een cijferslot met 4 draaischijven, elk met de cijfers 0 tot en met 9.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel codes zijn er?
+      antwoord: |-
+        $10\,000$
+      uitwerking: |-
+        Vier schijven met elk 10 mogelijkheden: $\HVar{10}{4} = 10^4 = 10\,000$.
+    - opgave: |-
+        Iemand probeert elke code, en heeft daar 2 seconden per code voor nodig. Hoe lang duurt het om alle codes te proberen?
+      antwoord: |-
+        $20\,000$ s, ongeveer 5 u 33 min
+      uitwerking: |-
+        $10\,000 \cdot 2 = 20\,000$ seconden. Dat is $\frac{20\,000}{3600} \approx 5{,}56$ uur, of 5 uur 33 minuten.
+    - opgave: |-
+        Hoeveel codes hebben vier verschillende cijfers?
+      antwoord: |-
+        5040
+      uitwerking: |-
+        Nu zonder herhaling: $\Var{10}{4} = 10 \cdot 9 \cdot 8 \cdot 7 = 5040$.
 
-- id: h1-o5
+- id: h1-o17
   soort: opdracht
   niveau: 1
   thema: |-
-    permutaties
+    klassieke fouten: waar zit de fout?
   opgave: |-
-    Op hoeveel manieren kunnen vier personen naast elkaar op een bank gaan zitten? En op hoeveel manieren kunnen 8 leerlingen een rij vormen?
+    Waar zit de fout? Geef het juiste antwoord.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        `Een getal van vier cijfers: elk cijfer heeft 10 mogelijkheden, dus er zijn $10^4 = 10\,000$ zulke getallen.'
+      antwoord: |-
+        9000
+      uitwerking: |-
+        Het eerste cijfer mag geen 0 zijn: 0123 is geen getal van vier cijfers. Juist is $9 \cdot 10^3 = 9000$.
+    - opgave: |-
+        `Tien ploegen spelen een toernooi. De top drie kan op $10^3 = 1000$ manieren.'
+      antwoord: |-
+        720
+      uitwerking: |-
+        Een ploeg kan geen twee plaatsen innemen: er is geen herhaling. Juist is $\Var{10}{3} = 10 \cdot 9 \cdot 8 = 720$.
+    - opgave: |-
+        `Een deler van $72 = 2^3 \cdot 3^2$ is $2^a \cdot 3^b$ met 3 keuzes voor $a$ en 2 voor $b$: 6 delers.'
+      antwoord: |-
+        12
+      uitwerking: |-
+        De exponent 0 is vergeten: $a \in \{0, 1, 2, 3\}$ en $b \in \{0, 1, 2\}$. Juist is $4 \cdot 3 = 12$ delers. Zonder de 0 tel je de delers 1, 2, 3, 4, 8 en 9 niet mee.
+
+- id: h1-o18
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    variaties: stoelen en personen
+  opgave: |-
+    Op hoeveel manieren kan dat?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Vijf leerlingen gaan op vijf stoelen op een rij zitten.
+      antwoord: |-
+        120
+      uitwerking: |-
+        Alle vijf rangschikken: $5! = 120$.
+    - opgave: |-
+        Vijf leerlingen gaan op een rij van acht stoelen zitten, elk op een andere stoel.
+      antwoord: |-
+        6720
+      uitwerking: |-
+        De eerste leerling kiest een stoel uit 8, de tweede uit 7, \ldots, de vijfde uit 4: $\Var{8}{5} = 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 = 6720$.
+    - opgave: |-
+        Acht leerlingen komen binnen, maar er zijn maar vijf stoelen op een rij. Wie geen stoel heeft, blijft staan.
+      antwoord: |-
+        6720
+      uitwerking: |-
+        Stoel 1 krijgt een van de 8 leerlingen, stoel 2 een van de 7 andere, \ldots, stoel 5 een van 4: $\Var{8}{5} = 6720$.
+    - opgave: |-
+        Waarom zijn de antwoorden van b en c gelijk?
+      antwoord: |-
+        telkens 5 verschillende uit 8, in volgorde
+      uitwerking: |-
+        In b kies je voor 5 leerlingen een stoel uit 8, in c voor 5 stoelen een leerling uit 8. Telkens kies je 5 verschillende dingen uit 8 in een volgorde: een variatie van 5 uit 8.
+
+#--- niveau 2
+
+- id: h1-o20
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    drill: rekenen met faculteiten en variaties met n
+  opgave: |-
+    Vereenvoudig (a tot f) of los op naar het natuurlijk getal $n$ (g tot i).
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\dfrac{(n + 1)!}{n!}$
+      antwoord: |-
+        $n + 1$
+      uitwerking: |-
+        $\frac{(n + 1) \cdot n!}{n!} = n + 1$.
+    - opgave: |-
+        $\dfrac{n!}{(n - 2)!}$
+      antwoord: |-
+        $n(n - 1)$
+      uitwerking: |-
+        $\frac{n(n - 1) \cdot (n - 2)!}{(n - 2)!} = n(n - 1)$.
+    - opgave: |-
+        $\dfrac{(n + 2)!}{n!}$
+      antwoord: |-
+        $(n + 2)(n + 1)$
+      uitwerking: |-
+        $\frac{(n + 2)(n + 1) \cdot n!}{n!} = (n + 2)(n + 1)$.
+    - opgave: |-
+        $(n + 1)! - n!$
+      antwoord: |-
+        $n \cdot n!$
+      uitwerking: |-
+        Breng $n!$ buiten haakjes: $(n + 1) \cdot n! - n! = n! \,(n + 1 - 1) = n \cdot n!$.
+    - opgave: |-
+        $\dfrac{(2n)!}{(2n - 2)!}$
+      antwoord: |-
+        $2n(2n - 1)$
+      uitwerking: |-
+        $(2n)! = 2n \cdot (2n - 1) \cdot (2n - 2)!$, dus de breuk is $2n(2n - 1)$.
+    - opgave: |-
+        $\dfrac{1}{n!} - \dfrac{1}{(n + 1)!}$
+      antwoord: |-
+        $\dfrac{n}{(n + 1)!}$
+      uitwerking: |-
+        Gelijke noemer $(n + 1)!$: $\frac{n + 1}{(n + 1)!} - \frac{1}{(n + 1)!} = \frac{n}{(n + 1)!}$.
+    - opgave: |-
+        $\Var{n}{2} = 56$
+      antwoord: |-
+        $n = 8$
+      uitwerking: |-
+        $n(n - 1) = 56 = 8 \cdot 7$, dus $n = 8$. (Of: $n^2 - n - 56 = 0$ met $n = 8$ of $n = -7$.)
+    - opgave: |-
+        $n! = 720$
+      antwoord: |-
+        $n = 6$
+      uitwerking: |-
+        $1, 2, 6, 24, 120, 720$: $6! = 720$, dus $n = 6$.
+    - opgave: |-
+        $\Var{n}{3} = 10 \cdot \Var{n}{2}$
+      antwoord: |-
+        $n = 12$
+      uitwerking: |-
+        $n(n - 1)(n - 2) = 10\,n(n - 1)$. Deel door $n(n - 1) \neq 0$ (want $n \geqslant 3$): $n - 2 = 10$, dus $n = 12$.
+
+- id: h1-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    niet naast elkaar: het tegendeel van een blok
+  opgave: |-
+    Vijf boeken worden naast elkaar op een plank gezet. Op hoeveel manieren kan dat zodat twee bepaalde boeken niet naast elkaar staan?
   antwoord: |-
-    24; \ $40\,320$
+    72
   uitwerking: |-
-    $4! = 24$ en $8! = 40\,320$.
+    Alle rangschikkingen: $5! = 120$.\par
+    Het tegendeel, de twee boeken wel naast elkaar: het blok en de drie andere boeken zijn 4 eenheden, $4! = 24$, en binnen het blok 2 volgordes: $24 \cdot 2 = 48$.\par
+    Niet naast elkaar: $120 - 48 = 72$.
+
+- id: h1-o9
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een cijfer dat voorkomt: het tegendeel
+  opgave: |-
+    Hoeveel natuurlijke getallen kleiner dan 1000 bevatten minstens één keer het cijfer 7?
+  antwoord: |-
+    271
+  uitwerking: |-
+    Schrijf elk getal van 0 tot 999 met drie cijfers, zoals 007. Een voorloopnul verandert niets aan het voorkomen van een 7.\par
+    Er zijn $10^3 = 1000$ zulke getallen, en $9^3 = 729$ zonder 7. Dus $1000 - 729 = 271$.
+
+- id: h1-o21
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    boomdiagram als de productregel niet past
+  opgave: |-
+    Amir en Bo spelen een tennismatch. Wie eerst twee sets wint, heeft de match gewonnen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Teken een boomdiagram met alle mogelijke verlopen van de match. Hoeveel zijn er?
+      antwoord: |-
+        6
+      uitwerking: |-
+        Elke tak stopt zodra iemand twee sets heeft. Met A voor een set van Amir en B voor een set van Bo: AA, ABA, ABB, BAA, BAB en BB. Dat zijn 6 verlopen.
+        \figuren{\begin{tikzpicture}[x=1.3cm,y=.4cm,font=\scriptsize]
+          \node[blad] (s) at (0,0) {start};
+          \node[blad] (a) at (1,3) {A}; \node[blad] (b) at (1,-3) {B};
+          \draw[tak] (s) -- (a); \draw[tak] (s) -- (b);
+          \node[blad] (aa) at (2,4.5) {A}; \node[blad] (ab) at (2,1.5) {B};
+          \node[blad] (ba) at (2,-1.5) {A}; \node[blad] (bb) at (2,-4.5) {B};
+          \draw[tak] (a) -- (aa); \draw[tak] (a) -- (ab); \draw[tak] (b) -- (ba); \draw[tak] (b) -- (bb);
+          \node[blad] (aba) at (3,2.3) {A}; \node[blad] (abb) at (3,.7) {B};
+          \node[blad] (baa) at (3,-.7) {A}; \node[blad] (bab) at (3,-2.3) {B};
+          \draw[tak] (ab) -- (aba); \draw[tak] (ab) -- (abb); \draw[tak] (ba) -- (baa); \draw[tak] (ba) -- (bab);
+          \node[anchor=west] at (2.2,4.5) {AA: Amir};
+          \node[anchor=west] at (3.2,2.3) {ABA: Amir}; \node[anchor=west] at (3.2,.7) {ABB: Bo};
+          \node[anchor=west] at (3.2,-.7) {BAA: Amir}; \node[anchor=west] at (3.2,-2.3) {BAB: Bo};
+          \node[anchor=west] at (2.2,-4.5) {BB: Bo};
+        \end{tikzpicture}}
+    - opgave: |-
+        Waarom kun je hier niet gewoon $2 \cdot 2 \cdot 2 = 8$ rekenen?
+      antwoord: |-
+        de match stopt soms na twee sets
+      uitwerking: |-
+        Na AA of BB is de match voorbij: die takken splitsen niet meer. Het aantal mogelijkheden in de derde stap hangt dus af van wat er eerder gebeurde, en dan geldt de productregel niet. De rijtjes AAA, AAB, BBA en BBB van $2^3$ bestaan niet; AA en BB komen in de plaats van telkens twee ervan: $8 - 2 = 6$.
+    - opgave: |-
+        Hoeveel verlopen zijn er als wie eerst drie sets wint, de match wint? Tel per aantal gespeelde sets.
+      antwoord: |-
+        20
+      uitwerking: |-
+        Neem aan dat Amir wint; voor Bo is het evenveel.\par
+        3 sets: AAA, 1 verloop. 4 sets: de laatste set is van Amir, en in de eerste drie zit één B: 3 verlopen. 5 sets: de laatste is van Amir, en in de eerste vier zitten twee A's en twee B's. Systematisch geteld: AABB, ABAB, ABBA, BAAB, BABA, BBAA, 6 verlopen.\par
+        Amir wint op $1 + 3 + 6 = 10$ manieren, Bo ook: 20 verlopen.
 
 - id: h1-o6
   soort: opdracht
   niveau: 2
   thema: |-
-    even getallen met verschillende cijfers
+    even getallen met verschillende cijfers: splitsen in gevallen
   opgave: |-
     Hoeveel even getallen van vier cijfers hebben vier verschillende cijfers? Splits in twee gevallen: het laatste cijfer is 0, of niet.
   antwoord: |-
@@ -262,43 +828,67 @@
   uitwerking: |-
     Laatste cijfer 0: de andere drie cijfers zijn verschillend en niet 0: $9 \cdot 8 \cdot 7 = 504$.\par
     Laatste cijfer 2, 4, 6 of 8 (4 mogelijkheden): het eerste cijfer is niet 0 en niet het laatste (8 mogelijkheden), dan $8$ en $7$ voor de middelste twee: $4 \cdot 8 \cdot 8 \cdot 7 = 1792$.\par
-    Somregel: $504 + 1792 = 2296$.
+    Somregel: $504 + 1792 = 2296$.\par
+    Waarom twee gevallen? Kies je eerst het laatste cijfer, dan hangt het aantal mogelijkheden voor het eerste cijfer af van de vraag of je al een 0 gebruikt hebt.
 
-- id: h1-o7
+- id: h1-o25
   soort: opdracht
   niveau: 2
   thema: |-
-    niet naast elkaar
+    gemengd: drie keer een dobbelsteen
   opgave: |-
-    Vijf boeken worden naast elkaar op een plank gezet. Op hoeveel manieren kan dat zodat twee bepaalde boeken niet naast elkaar staan?
-  antwoord: |-
-    72
-  uitwerking: |-
-    Alle rangschikkingen: $5! = 120$. Met de twee boeken naast elkaar (als blok): $4! \cdot 2 = 48$. Het tegendeel: $120 - 48 = 72$.
+    Je gooit drie keer met een dobbelsteen en noteert de ogen in volgorde. Bij hoeveel uitkomsten
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        zijn de drie aantallen ogen verschillend?
+      antwoord: |-
+        120
+      uitwerking: |-
+        Volgorde telt, geen herhaling: $\Var{6}{3} = 6 \cdot 5 \cdot 4 = 120$.
+    - opgave: |-
+        zijn er minstens twee gelijke aantallen ogen?
+      antwoord: |-
+        96
+      uitwerking: |-
+        Het tegendeel van a: $6^3 - 120 = 216 - 120 = 96$.
+    - opgave: |-
+        is de som van de ogen 5?
+      antwoord: |-
+        6
+      uitwerking: |-
+        Som 5 met drie getallen van minstens 1: $1 + 1 + 3$ of $1 + 2 + 2$.\par
+        Elk geval kan in 3 volgordes (de plaats van het getal dat anders is): 113, 131, 311, 122, 212, 221. Samen 6.
+    - opgave: |-
+        stijgen de ogen strikt, zoals 2, 3, 6? Hoeveel uitkomsten van a horen bij dezelfde drie getallen?
+      antwoord: |-
+        20
+      uitwerking: |-
+        Drie verschillende getallen kun je op $3! = 6$ manieren in een volgorde zetten, en precies één daarvan stijgt.\par
+        Dus horen bij elk drietal 6 uitkomsten van a, waarvan één stijgende: $\frac{120}{6} = 20$.
 
-- id: h1-o8
+- id: h1-o22
   soort: opdracht
   niveau: 2
   thema: |-
-    minstens twee gelijke
+    klassieke fout: dubbel tellen bij minstens één
   opgave: |-
-    Hoeveel pincodes van 4 cijfers hebben minstens twee gelijke cijfers?
-  antwoord: |-
-    4960
-  uitwerking: |-
-    Alle pincodes: $10^4 = 10\,000$. Met vier verschillende cijfers: $\Var{10}{4} = 5040$. Het tegendeel: $10\,000 - 5040 = 4960$, bijna de helft.
-
-- id: h1-o9
-  soort: opdracht
-  niveau: 2
-  thema: |-
-    een cijfer dat voorkomt
-  opgave: |-
-    Hoeveel natuurlijke getallen kleiner dan 1000 bevatten minstens één keer het cijfer 7?
-  antwoord: |-
-    271
-  uitwerking: |-
-    Schrijf elk getal van 0 tot 999 met drie cijfers, zoals 007. Er zijn $10^3 = 1000$ zulke getallen, en $9^3 = 729$ zonder 7. Dus $1000 - 729 = 271$.
+    Iemand telt de codes van 3 letters met minstens één A zo: `Kies de plaats van de A (3 mogelijkheden) en vul de twee andere plaatsen willekeurig in: $3 \cdot 26^2 = 2028$.'
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Waarom is dat te veel? Geef een code die meer dan één keer geteld wordt.
+      antwoord: |-
+        bv. AAB wordt twee keer geteld
+      uitwerking: |-
+        AAB wordt geteld met de A op plaats 1 (en daarna AB), en nog eens met de A op plaats 2 (en daarna A en B ingevuld). Een code met twee A's telt dus twee keer, en AAA zelfs drie keer.
+    - opgave: |-
+        Bereken het juiste aantal. Verklaar het verschil met 2028.
+      antwoord: |-
+        1951
+      uitwerking: |-
+        Met het tegendeel: $26^3 - 25^3 = 17\,576 - 15\,625 = 1951$.\par
+        Verschil: $2028 - 1951 = 77$. De codes met precies twee A's ($3 \cdot 25 = 75$) zijn één keer te veel geteld, en AAA twee keer te veel: $75 + 2 = 77$.
 
 - id: h1-o10
   soort: opdracht
@@ -306,11 +896,98 @@
   thema: |-
     delers tellen
   opgave: |-
-    Hoeveel delers heeft 360? Schrijf 360 eerst als product van priemfactoren.
+    Schrijf 360 eerst als product van priemfactoren.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel delers heeft 360?
+      antwoord: |-
+        24
+      uitwerking: |-
+        $360 = 2^3 \cdot 3^2 \cdot 5$. Een deler is $2^a \cdot 3^b \cdot 5^c$ met $a \in \{0, 1, 2, 3\}$, $b \in \{0, 1, 2\}$ en $c \in \{0, 1\}$.\par
+        Productregel: $4 \cdot 3 \cdot 2 = 24$.
+    - opgave: |-
+        Hoeveel delers van 360 zijn oneven?
+      antwoord: |-
+        6
+      uitwerking: |-
+        Oneven: geen factor 2, dus $a = 0$. Dan blijven 3 keuzes voor $b$ en 2 voor $c$: $3 \cdot 2 = 6$. Het zijn 1, 3, 5, 9, 15 en 45.
+
+- id: h1-o8
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    minstens twee gelijke: het tegendeel
+  opgave: |-
+    Hoeveel pincodes van 4 cijfers hebben minstens twee gelijke cijfers?
   antwoord: |-
-    24
+    4960
   uitwerking: |-
-    $360 = 2^3 \cdot 3^2 \cdot 5$. Een deler is $2^a \cdot 3^b \cdot 5^c$ met 4 keuzes voor $a$, 3 voor $b$ en 2 voor $c$: $4 \cdot 3 \cdot 2 = 24$.
+    Het tegendeel van \textit{minstens twee gelijke} is \textit{alle cijfers verschillend}.\par
+    Alle pincodes: $10^4 = 10\,000$. Met vier verschillende cijfers: $\Var{10}{4} = 5040$.\par
+    Minstens twee gelijke: $10\,000 - 5040 = 4960$, bijna de helft.
+
+- id: h1-o23
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    permutaties met voorwaarden
+  opgave: |-
+    Vier jongens en drie meisjes gaan op een rij staan. Op hoeveel manieren kan dat als
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        de drie meisjes naast elkaar staan?
+      antwoord: |-
+        720
+      uitwerking: |-
+        Het blok meisjes en de vier jongens: 5 eenheden, $5! = 120$. Binnen het blok: $3! = 6$.\par
+        $120 \cdot 6 = 720$.
+    - opgave: |-
+        jongens en meisjes afwisselen?
+      antwoord: |-
+        144
+      uitwerking: |-
+        Met 4 jongens en 3 meisjes kan dat alleen als J M J M J M J.\par
+        De jongens op hun 4 plaatsen: $4! = 24$, de meisjes op hun 3 plaatsen: $3! = 6$. Samen $24 \cdot 6 = 144$.
+    - opgave: |-
+        aan beide uiteinden een jongen staat?
+      antwoord: |-
+        1440
+      uitwerking: |-
+        Eerst de uiteinden: een jongen links (4) en een andere rechts (3): $\Var{4}{2} = 12$.\par
+        Daarna de vijf anderen in het midden: $5! = 120$. Samen $12 \cdot 120 = 1440$.
+
+- id: h1-o24
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    getallen van vier cijfers
+  opgave: |-
+    Hoeveel getallen van vier cijfers
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        zijn deelbaar door 5?
+      antwoord: |-
+        1800
+      uitwerking: |-
+        Het laatste cijfer is 0 of 5. Eerste cijfer: 9, tweede en derde: 10, laatste: 2.\par
+        $9 \cdot 10 \cdot 10 \cdot 2 = 1800$.
+    - opgave: |-
+        zijn een palindroom, zoals 3883 (van achter naar voor hetzelfde)?
+      antwoord: |-
+        90
+      uitwerking: |-
+        Een palindroom $abba$ ligt vast zodra je $a$ en $b$ kiest: $a$ niet 0 (9), $b$ vrij (10).\par
+        $9 \cdot 10 = 90$.
+    - opgave: |-
+        bevatten minstens één 0?
+      antwoord: |-
+        2439
+      uitwerking: |-
+        Alle getallen van vier cijfers: 9000. Zonder 0: 9 mogelijkheden per plaats, $9^4 = 6561$.\par
+        Minstens één 0: $9000 - 6561 = 2439$.
 
 - id: h1-o11
   soort: opdracht
@@ -322,7 +999,11 @@
   antwoord: |-
     1000; \ 720
   uitwerking: |-
-    Met herhaling: elke prijs gaat naar een van de 10 leerlingen: $10^3 = 1000$. Zonder herhaling: $\Var{10}{3} = 720$. Het verschil, 280, zijn de verdelingen waarin iemand minstens twee prijzen krijgt.
+    Met herhaling: elke prijs gaat naar een van de 10 leerlingen: $\HVar{10}{3} = 10^3 = 1000$.\par
+    Zonder herhaling: $\Var{10}{3} = 10 \cdot 9 \cdot 8 = 720$.\par
+    Het verschil, 280, zijn de verdelingen waarin iemand minstens twee prijzen krijgt.
+
+#--- niveau 3
 
 - id: h1-o12
   soort: opdracht
@@ -336,6 +1017,41 @@
   uitwerking: |-
     Verwissel je in een rangschikking a en b, dan krijg je een andere rangschikking, met b vóór a. Zo vormen de $5! = 120$ rangschikkingen paren, met in elk paar één waarin a vóór b staat. Dus de helft: 60.
 
+- id: h1-o26
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    rond een tafel (buiten de leerstof)
+  figuur:
+    code: |-
+      \begin{tikzpicture}[font=\scriptsize]
+        \draw[accent,thick,fill=accent!10] (0,0) circle (.6);
+        \foreach \i/\n in {0/A,1/B,2/C,3/D,4/E,5/F}{\node[draw=accent,circle,inner sep=1.2pt,fill=white] at (90-60*\i:.95) {\n};}
+      \end{tikzpicture}
+  opgave: |-
+    Zes personen gaan rond een ronde tafel zitten. Twee schikkingen zijn dezelfde als iedereen dezelfde linker- en rechterbuur heeft: alleen draaien rond de tafel verandert niets.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel schikkingen zijn er? Tip: in hoeveel van de $6!$ rijtjes zit dezelfde schikking?
+      antwoord: |-
+        120
+      uitwerking: |-
+        Lees je een schikking rond de tafel af als rijtje, dan kun je bij elk van de 6 personen beginnen: elke schikking hoort bij 6 rijtjes. Dus $\frac{6!}{6} = 5! = 120$.\par
+        Of: zet A op een vaste plaats. De anderen vullen de vijf andere plaatsen in: $5! = 120$.
+    - opgave: |-
+        Hoeveel schikkingen zijn er als A en B naast elkaar willen zitten?
+      antwoord: |-
+        48
+      uitwerking: |-
+        Neem A en B samen als één blok: dan zitten 5 eenheden rond de tafel, $\frac{5!}{5} = 4! = 24$. Binnen het blok zit B links of rechts van A: $24 \cdot 2 = 48$.
+    - opgave: |-
+        Rekenen we ook het spiegelbeeld als dezelfde schikking, dan telt alleen wie naast wie zit. Hoeveel schikkingen zijn er dan?
+      antwoord: |-
+        60
+      uitwerking: |-
+        Spiegelen keert links en rechts om. Bij zes personen is het spiegelbeeld altijd een andere schikking uit a, want dan zou de linkerbuur van elke persoon ook zijn rechterbuur moeten zijn. De schikkingen van a vormen dus paren: $\frac{120}{2} = 60$.
+
 - id: h1-o13
   soort: opdracht
   niveau: 3
@@ -346,8 +1062,34 @@
   antwoord: |-
     $\#A + \#B + \#C - \#(A \cap B) - \#(A \cap C) - \#(B \cap C) + \#(A \cap B \cap C)$; \ 734
   uitwerking: |-
-    Tel de drie verzamelingen op, trek de drie doorsneden van twee af. Het middelste stuk is dan drie keer geteld en drie keer afgetrokken: tel het nog eens op.\par
+    Tel de drie verzamelingen op. Elk stuk waar twee verzamelingen overlappen, is dan twee keer geteld: trek de drie doorsneden van twee af. Het middelste stuk $A \cap B \cap C$ is dan drie keer geteld en drie keer afgetrokken: tel het nog eens op.\par
     Deelbaar door 2: 500, door 3: 333, door 5: 200, door 6: 166, door 10: 100, door 15: 66, door 30: 33. Dus $500 + 333 + 200 - 166 - 100 - 66 + 33 = 734$.
+
+- id: h1-o27
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    cijfers tellen
+  opgave: |-
+    Je schrijft alle getallen van 1 tot en met 999 op.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel keer schrijf je het cijfer 1? Tip: schrijf elk getal met drie cijfers, zoals 007, en tel per plaats.
+      antwoord: |-
+        300
+      uitwerking: |-
+        Met voorloopnullen schrijf je de 1000 getallen van 000 tot 999; 000 en de voorloopnullen bevatten geen 1, dus het aantal enen verandert niet.\par
+        Een 1 op de eerste plaats: de twee andere cijfers zijn vrij, $10^2 = 100$ getallen. Net zo 100 op de tweede en 100 op de derde plaats.\par
+        Samen $3 \cdot 100 = 300$ keer.
+    - opgave: |-
+        Hoeveel keer schrijf je het cijfer 0? Waarom werkt de redenering van a hier niet zomaar?
+      antwoord: |-
+        189
+      uitwerking: |-
+        De voorloopnullen schrijf je niet op, dus nu mag je ze niet meetellen.\par
+        Een 0 als laatste cijfer: 10, 20, \ldots, 990, dat zijn 99 getallen. Een 0 als middelste cijfer: alleen bij getallen van drie cijfers, $a0b$ met $a$ van 1 tot 9 en $b$ vrij: $9 \cdot 10 = 90$. Als eerste cijfer nooit.\par
+        Samen $99 + 90 = 189$ keer.
 
 - id: h1-o14
   soort: opdracht
@@ -359,8 +1101,33 @@
   antwoord: |-
     bewijs; 8
   uitwerking: |-
-    Voor een deelverzameling beslis je bij elk van de $n$ elementen: erin of niet. Dat zijn $n$ stappen met elk 2 mogelijkheden: $2^n$.\par
+    Voor een deelverzameling beslis je bij elk van de $n$ elementen: erin of niet. Dat zijn $n$ stappen met elk 2 mogelijkheden, en elke reeks beslissingen geeft een andere deelverzameling: $2^n$.\par
     $\{a, b, c\}$ heeft $2^3 = 8$ deelverzamelingen: $\emptyset$, $\{a\}$, $\{b\}$, $\{c\}$, $\{a, b\}$, $\{a, c\}$, $\{b, c\}$, $\{a, b, c\}$.
+
+- id: h1-o28
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    niemand krijgt zijn eigen toets
+  opgave: |-
+    Anna, Bert, Cleo en Dries verbeteren elkaars toets. De leerkracht deelt de vier toetsen willekeurig uit, één per leerling.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Op hoeveel manieren kan dat?
+      antwoord: |-
+        24
+      uitwerking: |-
+        Elke verdeling is een rangschikking van de vier toetsen: $4! = 24$.
+    - opgave: |-
+        Op hoeveel manieren krijgt niemand zijn eigen toets? Tel systematisch: welke toets krijgt Anna, en wat moet er dan met de toets van Anna gebeuren?
+      antwoord: |-
+        9
+      uitwerking: |-
+        Schrijf een verdeling als het rijtje toetsen van Anna, Bert, Cleo en Dries, met de beginletters.\par
+        Anna krijgt de toets van Bert. Krijgt Bert die van Anna, dan moeten Cleo en Dries ruilen: BADC. Krijgt Bert die van Cleo of Dries, dan ligt de rest vast: BCDA en BDAC. Samen 3.\par
+        Krijgt Anna de toets van Cleo of van Dries, dan is het net zo: telkens 3.\par
+        Samen $3 \cdot 3 = 9$. Dat is minder dan de helft van de 24 verdelingen.
 
 #----------------------------------------------------------------------------------------
 # KOPPEL
@@ -420,7 +1187,7 @@
   antwoord: |-
     72
   uitwerking: |-
-    $3 \cdot 6 \cdot 4 = 72$.
+    Drie keuzes na elkaar, elk onafhankelijk van de vorige: $3 \cdot 6 \cdot 4 = 72$.
 
 - id: h1-t2
   soort: test
@@ -444,7 +1211,7 @@
   antwoord: |-
     64
   uitwerking: |-
-    $\HVar{2}{6} = 2^6 = 64$.
+    Zes worpen met elk 2 uitkomsten, de volgorde telt en uitkomsten komen terug: $\HVar{2}{6} = 2^6 = 64$.
 
 - id: h1-t4
   soort: test
@@ -456,7 +1223,19 @@
   antwoord: |-
     1320
   uitwerking: |-
-    $\Var{12}{3} = 12 \cdot 11 \cdot 10 = 1320$.
+    De prijzen verschillen (volgorde telt) en niemand wint twee keer (geen herhaling): $\Var{12}{3} = 12 \cdot 11 \cdot 10 = 1320$.
+
+- id: h1-t8
+  soort: test
+  niveau: 1
+  thema: |-
+    rekenen met faculteiten
+  opgave: |-
+    Bereken zonder rekentoestel: \ $\dfrac{9!}{7!}$, \ $\Var{6}{3}$ \ en \ $\dfrac{10!}{8! \, 2!}$.
+  antwoord: |-
+    72; \ 120; \ 45
+  uitwerking: |-
+    $\frac{9 \cdot 8 \cdot 7!}{7!} = 72$. \quad $\Var{6}{3} = 6 \cdot 5 \cdot 4 = 120$. \quad $\frac{10 \cdot 9 \cdot 8!}{8! \cdot 2} = \frac{90}{2} = 45$.
 
 - id: h1-t5
   soort: test
@@ -480,4 +1259,19 @@
   antwoord: |-
     $7\,797\,275$
   uitwerking: |-
-    Alle woorden: $26^5 = 11\,881\,376$. Zonder klinker: $21^5 = 4\,084\,101$. Dus $11\,881\,376 - 4\,084\,101 = 7\,797\,275$.
+    Alle woorden: $26^5 = 11\,881\,376$. Het tegendeel, zonder klinker: $21^5 = 4\,084\,101$. Dus $11\,881\,376 - 4\,084\,101 = 7\,797\,275$.
+
+- id: h1-t7
+  soort: test
+  niveau: 2
+  thema: |-
+    gevallen splitsen en variaties
+  opgave: |-
+    Hoeveel getallen van 1 tot en met 999 hebben allemaal verschillende cijfers? Splits volgens het aantal cijfers.
+  antwoord: |-
+    738
+  uitwerking: |-
+    Eén cijfer: 1 tot 9, dat zijn 9 getallen.\par
+    Twee cijfers: het eerste niet 0 (9), het tweede anders dan het eerste (9): $9 \cdot 9 = 81$.\par
+    Drie cijfers: $9 \cdot 9 \cdot 8 = 648$.\par
+    Somregel: $9 + 81 + 648 = 738$.

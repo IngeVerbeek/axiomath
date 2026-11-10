@@ -226,6 +226,28 @@
   uitwerking: |-
     $L^{20} X_0 \approx \km{320{,}1 \\ 88{,}5 \\ 40{,}8}$, met totaal 449,5, en $L^{21} X_0 \approx \km{347{,}3 \\ 96{,}0 \\ 44{,}3}$, met totaal 487,6. De groeifactor is $\tfrac{487{,}6}{449{,}5} \approx 1{,}085$: de populatie groeit met ongeveer 8,5~\% per jaar.
 
+
+- id: h4-evenwicht3
+  soort: kort
+  opgave: |-
+    Een kat slaapt elke nacht in de keuken ($K$), in de zetel ($Z$) of in haar mand ($M$). De overgangsmatrix van nacht tot nacht, met de plaatsen in die volgorde, is
+    \[ P = \begin{bmatrix} 0{,}5 & 0{,}25 & 0 \\ 0{,}5 & 0{,}5 & 0{,}5 \\ 0 & 0{,}25 & 0{,}5 \end{bmatrix} . \]
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken het evenwicht met de methode van Gauss-Jordan. Wat betekent het?
+      antwoord: |-
+        $\km{\frac14 \\[.3ex] \frac12 \\[.3ex] \frac14}$
+      uitwerking: |-
+        Vermenigvuldig $(P - I)X = O$ met 4: $\um{ccc|c}{-2 & 1 & 0 & 0 \\ 2 & -2 & 2 & 0 \\ 0 & 1 & -2 & 0}$. $R_2 + R_1$ geeft $[0 \ {-1} \ 2 \,|\, 0]$, en dan $R_3 + R_2$ een nulrij. Dus $y = 2z$ en $x = \frac12 y = z$.\par
+        Met $z + 2z + z = 1$ is $z = \frac14$: $X = \km{\frac14 \\ \frac12 \\ \frac14}$. Op lange termijn slaapt de kat de helft van de nachten in de zetel, en een kwart in de keuken en een kwart in de mand.
+    - opgave: |-
+        Controleer met $P^{20}$ op je rekentoestel.
+      antwoord: |-
+        elke kolom $\approx \km{0{,}25 \\ 0{,}5 \\ 0{,}25}$
+      uitwerking: |-
+        $P^{20} \approx \km{0{,}25 & 0{,}25 & 0{,}25 \\ 0{,}5 & 0{,}5 & 0{,}5 \\ 0{,}25 & 0{,}25 & 0{,}25}$: elke kolom is het evenwicht.
+
 # ---------------------------------------------------------------- OPDRACHTEN, niveau 1
 
 - id: h4-o1
@@ -433,6 +455,82 @@
     $MX = X$, maar $MY = \km{120 \\ 105 \\ 75} \neq Y$
   uitwerking: |-
     $MX = \km{60 + 20 + 20 \\ 20 + 70 + 10 \\ 20 + 10 + 70} = \km{100 \\ 100 \\ 100} = X$. Maar $MY = \km{90 + 20 + 10 \\ 30 + 70 + 5 \\ 30 + 10 + 35} = \km{120 \\ 105 \\ 75} \neq Y$.
+
+
+- id: h4-o20
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    evenwicht met twee toestanden: drill
+  opgave: |-
+    Bereken het evenwicht van de overgangsmatrix.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\begin{bmatrix} 0{,}9 & 0{,}2 \\ 0{,}1 & 0{,}8 \end{bmatrix}$
+      antwoord: |-
+        $\km{\frac23 \\[.3ex] \frac13}$
+      uitwerking: |-
+        $0{,}9x + 0{,}2(1 - x) = x$ geeft $0{,}2 = 0{,}3x$, dus $x = \frac23$.
+    - opgave: |-
+        $\begin{bmatrix} 0{,}5 & 0{,}5 \\ 0{,}5 & 0{,}5 \end{bmatrix}$
+      antwoord: |-
+        $\km{\frac12 \\[.3ex] \frac12}$
+      uitwerking: |-
+        $0{,}5x + 0{,}5(1 - x) = x$ geeft $0{,}5 = x$.
+    - opgave: |-
+        $\begin{bmatrix} 0{,}8 & 0{,}6 \\ 0{,}2 & 0{,}4 \end{bmatrix}$
+      antwoord: |-
+        $\km{\frac34 \\[.3ex] \frac14}$
+      uitwerking: |-
+        $0{,}8x + 0{,}6(1 - x) = x$ geeft $0{,}6 = 0{,}8x$, dus $x = \frac34$.
+    - opgave: |-
+        $\begin{bmatrix} 0{,}4 & 0{,}1 \\ 0{,}6 & 0{,}9 \end{bmatrix}$
+      antwoord: |-
+        $\km{\frac17 \\[.3ex] \frac67}$
+      uitwerking: |-
+        $0{,}4x + 0{,}1(1 - x) = x$ geeft $0{,}1 = 0{,}7x$, dus $x = \frac17$.
+    - opgave: |-
+        $\begin{bmatrix} 1 & 0{,}3 \\ 0 & 0{,}7 \end{bmatrix}$
+      antwoord: |-
+        $\km{1 \\ 0}$
+      uitwerking: |-
+        $x + 0{,}3(1 - x) = x$ geeft $0{,}3(1 - x) = 0$, dus $x = 1$. Toestand 1 verlaat je nooit: op lange termijn komt alles daar terecht.
+    - opgave: |-
+        $\begin{bmatrix} 0{,}85 & 0{,}1 \\ 0{,}15 & 0{,}9 \end{bmatrix}$
+      antwoord: |-
+        $\km{0{,}4 \\ 0{,}6}$
+      uitwerking: |-
+        $0{,}85x + 0{,}1(1 - x) = x$ geeft $0{,}1 = 0{,}25x$, dus $x = 0{,}4$.
+
+- id: h4-o21
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    fouten: van en naar, machten, lesliematrix
+  opgave: |-
+    Waar zit de fout? Verbeter.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Van toestand $A$ gaat 70~\% naar $A$ en 30~\% naar $B$; van $B$ gaat 10~\% naar $A$ en 90~\% naar $B$. Iemand schrijft de overgangsmatrix \[ \begin{bmatrix} 0{,}7 & 0{,}3 \\ 0{,}1 & 0{,}9 \end{bmatrix} . \]
+      antwoord: |-
+        van moet in de kolommen: $\km{0{,}7 & 0{,}1 \\ 0{,}3 & 0{,}9}$
+      uitwerking: |-
+        Hier staat het vertrek in de rijen. Dat zie je aan de kolomsommen: $0{,}8$ en $1{,}2$ in plaats van 1. Met \textit{van} in de kolommen is de matrix $\km{0{,}7 & 0{,}1 \\ 0{,}3 & 0{,}9}$.
+    - opgave: |-
+        Een graaf met knopen $P$, $Q$, $R$ heeft verbindingsmatrix \[ V = \begin{bmatrix} 0 & 1 & 1 \\ 1 & 0 & 0 \\ 1 & 1 & 0 \end{bmatrix} . \] Iemand kwadrateert elk element van $V$, vindt opnieuw $V$, en besluit dat er geen weg van lengte 2 van $P$ terug naar $P$ is.
+      antwoord: |-
+        $V^2$ is rij maal kolom: $(V^2)_{PP} = 2$
+      uitwerking: |-
+        $V^2$ is het product $V \cdot V$, en niet de elementen in het kwadraat. Rij $P$ maal kolom $P$: $0 \cdot 0 + 1 \cdot 1 + 1 \cdot 1 = 2$. Er zijn twee zulke wegen: $P \to Q \to P$ en $P \to R \to P$. Volledig is $V^2 = \km{2 & 1 & 0 \\ 0 & 1 & 1 \\ 1 & 1 & 1}$.
+    - opgave: |-
+        Een diersoort heeft drie leeftijdsklassen, met overlevingskansen 0,5 en 0,4 en vruchtbaarheidscijfers 0, 2 en 1. Iemand schrijft \[ L = \begin{bmatrix} 0 & 2 & 1 \\ 0 & 0{,}5 & 0 \\ 0 & 0 & 0{,}4 \end{bmatrix} . \]
+      antwoord: |-
+        overlevingskansen onder de hoofddiagonaal: $\km{0 & 2 & 1 \\ 0{,}5 & 0 & 0 \\ 0 & 0{,}4 & 0}$
+      uitwerking: |-
+        Op de hoofddiagonaal zouden ze betekenen dat de dieren in dezelfde klasse blijven. Een dier dat overleeft, schuift een klasse op: van klasse 1 naar 2 en van 2 naar 3. Die kansen staan net onder de hoofddiagonaal: $L = \km{0 & 2 & 1 \\ 0{,}5 & 0 & 0 \\ 0 & 0{,}4 & 0}$.
 
 # ---------------------------------------------------------------- niveau 2
 
@@ -659,6 +757,151 @@
       uitwerking: |-
         $L^3 = I$, omdat $10 \cdot 0{,}5 \cdot 0{,}2 = 1$: elk vrouwtje wordt na drie jaar vervangen door precies één vrouwtje. Dus $X_{30} = (L^3)^{10} X_0 = X_0$ en $X_{31} = L X_{30} = X_1 = \km{200 \\ 50 \\ 8}$. Er is geen vaste groeifactor: de populatie schommelt met een periode van drie jaar.
 
+
+- id: h4-o22
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    grafiek: evenwicht aflezen en een kans terugrekenen
+  figuur:
+    code: |-
+      \begin{tikzpicture}[x=.5cm,y=3.6cm,font=\scriptsize]
+        \draw[black!14,very thin] (0,0) grid[xstep=1,ystep=.1] (10,1);
+        \draw[->,grijs] (0,0) -- (10.6,0) node[right,text=black] {week};
+        \draw[->,grijs] (0,0) -- (0,1.08) node[above,text=black] {aandeel $A$};
+        \foreach \t in {0,2,...,10} \node[below] at (\t,0) {\t};
+        \foreach \t/\l in {.2/{0,2},.4/{0,4},.6/{0,6},.8/{0,8},1/1} \node[left] at (0,\t) {\l};
+        \draw[accent,thick] plot[mark=*,mark size=1.3pt] coordinates {(0,.9) (1,.65) (2,.525) (3,.4625) (4,.43125) (5,.4156) (6,.4078) (7,.4039) (8,.4020) (9,.4010) (10,.4005)};
+      \end{tikzpicture}
+  opgave: |-
+    Twee supermarkten $A$ en $B$ delen de klanten van een dorp. Elke week kiest elke klant een van de twee. Een nieuwe supermarkt $A$ opent met veel reclame, en in week 0 koopt 90~\% van de klanten daar. De grafiek toont het aandeel van $A$ in de weken daarna.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Lees af: welk aandeel koopt in week 1 bij $A$? Rond welke waarde komt het aandeel op lange termijn?
+      antwoord: |-
+        0,65; ongeveer 0,4
+      uitwerking: |-
+        In week 1 ligt het punt halfweg tussen 0,6 en 0,7: 0,65. Vanaf week 6 ligt de kromme zo goed als op 0,4.
+    - opgave: |-
+        Van de klanten van $A$ blijft elke week 70~\% bij $A$. Bereken met de aandelen in week 0 en week 1 welk percentage van de klanten van $B$ per week overstapt naar $A$. Stel de overgangsmatrix op.
+      antwoord: |-
+        20~\%; $M = \km{0{,}7 & 0{,}2 \\ 0{,}3 & 0{,}8}$
+      uitwerking: |-
+        Noem $q$ de kans van $B$ naar $A$. Het aandeel van $A$ in week 1 is $0{,}7 \cdot 0{,}9 + q \cdot 0{,}1 = 0{,}65$, dus $0{,}1q = 0{,}02$ en $q = 0{,}2$: 20~\%. Met kolomsom 1 is $M = \km{0{,}7 & 0{,}2 \\ 0{,}3 & 0{,}8}$.
+    - opgave: |-
+        Bereken het evenwicht exact en vergelijk met de grafiek.
+      antwoord: |-
+        $\km{0{,}4 \\ 0{,}6}$
+      uitwerking: |-
+        $0{,}7x + 0{,}2(1 - x) = x$ geeft $0{,}2 = 0{,}5x$, dus $x = 0{,}4$. Dat is de waarde waar de grafiek naartoe gaat: op lange termijn koopt 40~\% bij $A$, ondanks de goede start.
+
+- id: h4-o23
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    wegen in een graaf: een rangschikking in een toernooi
+  figuur:
+    code: |-
+      \begin{tikzpicture}[font=\small]
+        \node[knoop] (a) at (0,2.2) {A};
+        \node[knoop] (b) at (2.4,2.2) {B};
+        \node[knoop] (c) at (2.4,0) {C};
+        \node[knoop] (d) at (0,0) {D};
+        \draw[boog] (a) -- (b);
+        \draw[boog] (a) -- (c);
+        \draw[boog] (b) -- (c);
+        \draw[boog] (b) -- (d);
+        \draw[boog] (c) -- (d);
+        \draw[boog] (d) -- (a);
+      \end{tikzpicture}
+  opgave: |-
+    Vier ploegen speelden elk één keer tegen elkaar, zonder gelijkspel. Een pijl van $X$ naar $Y$ betekent dat $X$ won van $Y$. Met de afspraak van dit hoofdstuk staat in kolom $X$ van de verbindingsmatrix $V$ een 1 voor elke ploeg die $X$ versloeg.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Stel $V$ op, met de ploegen in de volgorde $A$, $B$, $C$, $D$. Hoeveel wedstrijden won elke ploeg?
+      antwoord: |-
+        $\km{0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0 \\ 1 & 1 & 0 & 0 \\ 0 & 1 & 1 & 0}$; 2, 2, 1, 1
+      uitwerking: |-
+        $A$ won van $B$ en $C$, $B$ van $C$ en $D$, $C$ van $D$, en $D$ van $A$. Dus $V = \km{0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0 \\ 1 & 1 & 0 & 0 \\ 0 & 1 & 1 & 0}$. De kolomsommen zijn de overwinningen: 2, 2, 1 en 1. $A$ en $B$ staan gelijk.
+    - opgave: |-
+        Bereken $V^2$. Wat telt de som van kolom $A$ van $V^2$?
+      antwoord: |-
+        $\km{0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 1 \\ 2 & 1 & 0 & 0}$; 3 indirecte overwinningen
+      uitwerking: |-
+        $V^2 = \km{0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 1 \\ 2 & 1 & 0 & 0}$. Een weg van lengte 2 vanuit $A$ is een ploeg die verloor van een ploeg die van $A$ verloor: een indirecte overwinning. Kolom $A$ telt er $1 + 2 = 3$: $A \to B \to C$, $A \to B \to D$ en $A \to C \to D$.
+    - opgave: |-
+        Een ploeg krijgt 1 punt per overwinning en een half punt per indirecte overwinning. Bereken de punten met de kolomsommen van $V + \frac12 V^2$. Wie wint het toernooi?
+      antwoord: |-
+        $A$ 3,5; $B$ 3; $C$ 1,5; $D$ 2: $A$ wint
+      uitwerking: |-
+        De kolomsommen van $V^2$ zijn 3, 2, 1 en 2. Dus $A$: $2 + 1{,}5 = 3{,}5$, $B$: $2 + 1 = 3$, $C$: $1 + 0{,}5 = 1{,}5$ en $D$: $1 + 1 = 2$. $A$ wint, want $A$ versloeg sterkere ploegen dan $B$. Opvallend: $D$ eindigt boven $C$, door de overwinning op $A$.
+
+- id: h4-o24
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    lesliematrix terugrekenen uit tellingen
+  opgave: |-
+    Een fictieve populatie hagedissen heeft twee leeftijdsklassen van één jaar, met lesliematrix $L = \begin{bmatrix} v_1 & v_2 \\ o & 0 \end{bmatrix}$. Biologen tellen de vrouwtjes drie jaar na elkaar:
+    \[ X_0 = \begin{bmatrix} 200 \\ 100 \end{bmatrix}, \qquad X_1 = \begin{bmatrix} 260 \\ 120 \end{bmatrix}, \qquad X_2 = \begin{bmatrix} 316 \\ 156 \end{bmatrix} . \]
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bepaal de overlevingskans $o$. Controleer met $X_2$.
+      antwoord: |-
+        $o = 0{,}6$
+      uitwerking: |-
+        De tweede rij van $X_1 = LX_0$ is $o \cdot 200 = 120$, dus $o = 0{,}6$. Controle: $0{,}6 \cdot 260 = 156$.
+    - opgave: |-
+        Stel een stelsel op voor $v_1$ en $v_2$ en los het op.
+      antwoord: |-
+        $v_1 = 0{,}2$, $v_2 = 2{,}2$
+      uitwerking: |-
+        De eerste rij van $X_1 = LX_0$ en van $X_2 = LX_1$: $200v_1 + 100v_2 = 260$ en $260v_1 + 120v_2 = 316$. Met Cramer: $\det = 200 \cdot 120 - 100 \cdot 260 = -2000$, $v_1 = \frac{260 \cdot 120 - 100 \cdot 316}{-2000} = \frac{-400}{-2000} = 0{,}2$ en $v_2 = \frac{200 \cdot 316 - 260 \cdot 260}{-2000} = \frac{-4400}{-2000} = 2{,}2$.
+    - opgave: |-
+        Groeit de populatie op lange termijn? Met hoeveel procent per jaar? Gebruik je rekentoestel.
+      antwoord: |-
+        ja, met ongeveer 25~\% per jaar
+      uitwerking: |-
+        Met $L = \km{0{,}2 & 2{,}2 \\ 0{,}6 & 0}$: $L^{20}X_0 \approx \km{18\,633 \\ 8932}$ en $L^{21}X_0 \approx \km{23\,378 \\ 11\,180}$. De totalen zijn ongeveer 27\,565 en 34\,557, met quotiënt $1{,}25$. De populatie groeit met ongeveer 25~\% per jaar.
+
+- id: h4-o25
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: verzekeringsklassen, evenwicht met Gauss-Jordan
+  opgave: |-
+    Een autoverzekeraar deelt zijn klanten elk jaar in drie premieklassen in: laag ($L$), midden ($M$) en hoog ($H$). Van de klanten in $L$ blijft 80~\% in $L$ en gaat 20~\% naar $M$. Van $M$ gaat 50~\% naar $L$, blijft 30~\% in $M$ en gaat 20~\% naar $H$. Van $H$ gaat 60~\% naar $M$ en blijft 40~\% in $H$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Stel de overgangsmatrix op, met de klassen in de volgorde $L$, $M$, $H$.
+      antwoord: |-
+        $\km{0{,}8 & 0{,}5 & 0 \\ 0{,}2 & 0{,}3 & 0{,}6 \\ 0 & 0{,}2 & 0{,}4}$
+      uitwerking: |-
+        Per kolom de kansen vanuit één klasse: $P = \km{0{,}8 & 0{,}5 & 0 \\ 0{,}2 & 0{,}3 & 0{,}6 \\ 0 & 0{,}2 & 0{,}4}$. Elke kolomsom is 1.
+    - opgave: |-
+        Dit jaar starten 1000 nieuwe klanten in klasse $M$. Hoe zijn ze over twee jaar verdeeld?
+      antwoord: |-
+        550, 310 en 140
+      uitwerking: |-
+        $X_1 = P\km{0 \\ 1000 \\ 0} = \km{500 \\ 300 \\ 200}$, de tweede kolom maal 1000. $X_2 = P X_1 = \km{400 + 150 + 0 \\ 100 + 90 + 120 \\ 0 + 60 + 80} = \km{550 \\ 310 \\ 140}$.
+    - opgave: |-
+        Bereken het evenwicht met de methode van Gauss-Jordan.
+      antwoord: |-
+        $\km{\frac{15}{23} \\[.3ex] \frac{6}{23} \\[.3ex] \frac{2}{23}} \approx \km{0{,}652 \\ 0{,}261 \\ 0{,}087}$
+      uitwerking: |-
+        $10(P - I)X = O$ heeft als uitgebreide matrix $\um{ccc|c}{-2 & 5 & 0 & 0 \\ 2 & -7 & 6 & 0 \\ 0 & 2 & -6 & 0}$. $R_2 + R_1$ geeft $[0 \ {-2} \ 6 \,|\, 0]$, en dan $R_3 + R_2$ een nulrij. Uit $-2y + 6z = 0$ volgt $y = 3z$, en uit $-2x + 5y = 0$ volgt $x = \frac52 y = \frac{15}{2}z$.\par
+        De aandelen zijn samen 1: $\frac{15}{2}z + 3z + z = \frac{23}{2}z = 1$, dus $z = \frac{2}{23}$, $y = \frac{6}{23}$ en $x = \frac{15}{23}$.
+    - opgave: |-
+        De premie is 300 euro in $L$, 500 euro in $M$ en 800 euro in $H$. Wat betaalt een klant op lange termijn gemiddeld?
+      antwoord: |-
+        ongeveer 395,65 euro
+      uitwerking: |-
+        Het gemiddelde met het evenwicht als gewichten: $\frac{15 \cdot 300 + 6 \cdot 500 + 2 \cdot 800}{23} = \frac{9100}{23} \approx 395{,}65$ euro.
+
 # ---------------------------------------------------------------- niveau 3
 
 - id: h4-o16
@@ -715,7 +958,7 @@
       antwoord: |-
         $\tfrac{0{,}2}{0{,}6} = \tfrac13$
       uitwerking: |-
-        In de refter is $p = 0{,}4$ en $q = 0{,}2$, dus $x = \tfrac{0{,}2}{0{,}6} = \tfrac13$. Dat is het evenwicht uit voorbeeld \ref{vb:h4-evenwicht}.
+        In de refter is $p = 0{,}4$ en $q = 0{,}2$, dus $x = \tfrac{0{,}2}{0{,}6} = \tfrac13$. Dat is het evenwicht van de refter uit sectie 2.
 
 - id: h4-o18
   soort: opdracht
@@ -750,6 +993,36 @@
         een weg van lengte 2 van $i$ naar $i$ is heen en terug langs één pad
       uitwerking: |-
         Een weg van lengte 2 die in knoop $i$ begint en eindigt, gaat naar een buur en langs hetzelfde pad terug, want elk pad kun je in beide richtingen volgen. Er zijn dus evenveel zulke wegen als paden die in $i$ vertrekken.
+
+
+- id: h4-o26
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    machten van een overgangsmatrix, totaal blijft gelijk
+  opgave: |-
+    Neem de rij $E = \begin{bmatrix} 1 & 1 & \cdots & 1 \end{bmatrix}$ met $n$ enen, en een $n \times n$-matrix $M$ met elementen tussen 0 en 1.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan: elke kolomsom van $M$ is 1 als en slechts als $EM = E$.
+      antwoord: |-
+        element $j$ van $EM$ is de som van kolom $j$
+      uitwerking: |-
+        Element $j$ van $EM$ is $E$ maal kolom $j$ van $M$: $1 \cdot m_{1j} + 1 \cdot m_{2j} + \cdots + 1 \cdot m_{nj}$, de som van kolom $j$. Dus is $EM = E$ precies hetzelfde als: elke kolomsom is 1.
+    - opgave: |-
+        Toon aan: zijn $M$ en $N$ overgangsmatrices, dan ook $MN$. Wat besluit je over $M^2$, $M^3$, \ldots?
+      antwoord: |-
+        $E(MN) = (EM)N = EN = E$; elke macht is een overgangsmatrix
+      uitwerking: |-
+        Met de associativiteit: $E(MN) = (EM)N = EN = E$, dus elke kolomsom van $MN$ is 1. De elementen van $MN$ zijn sommen van producten van getallen die niet negatief zijn, dus ook niet negatief. Omdat de kolomsom 1 is, is elk element dan hoogstens 1.\par
+        Met $N = M$ is $M^2$ een overgangsmatrix, dan ook $M^3 = M^2 M$, enzovoort. Dat klopt met de betekenis: $(M^2)_{ij}$ is de kans om in twee stappen van $j$ naar $i$ te gaan, en wie vertrekt, komt na twee stappen ergens terecht.
+    - opgave: |-
+        Toon aan dat het totaal van een toestandsvector niet verandert: $EX_{n+1} = EX_n$.
+      antwoord: |-
+        $EX_{n+1} = EMX_n = EX_n$
+      uitwerking: |-
+        $EX_n$ is de som van de elementen van $X_n$, het totaal. Met $X_{n+1} = MX_n$ en $EM = E$ is $EX_{n+1} = (EM)X_n = EX_n$. Bij een lesliematrix is $EL \neq E$, en daarom kan het totaal daar wel veranderen.
 
 # ---------------------------------------------------------------- KOPPEL
 
@@ -931,3 +1204,19 @@
     2501 en 2926; ongeveer 17~\% per jaar
   uitwerking: |-
     $L^{20} X_0$ heeft totaal ongeveer 2501,3 en $L^{21} X_0$ ongeveer 2925,8. Het quotiënt is $\tfrac{2925{,}8}{2501{,}3} \approx 1{,}17$: de populatie groeit met ongeveer 17~\% per jaar.
+
+- id: h4-t7
+  soort: test
+  niveau: 2
+  thema: |-
+    evenwicht met drie toestanden
+  opgave: |-
+    De 290 leden van een sportclub kiezen elke week één training: zwemmen ($Z$), lopen ($L$) of fietsen ($F$). De overgangsmatrix, in die volgorde, is
+    \[ M = \begin{bmatrix} 0{,}7 & 0{,}2 & 0{,}1 \\ 0{,}2 & 0{,}6 & 0{,}3 \\ 0{,}1 & 0{,}2 & 0{,}6 \end{bmatrix} . \]
+    Hoeveel leden kiezen op lange termijn elke training?
+  antwoord: |-
+    100, 110 en 80
+  uitwerking: |-
+    $10(M - I)X = O$: $\um{ccc|c}{-3 & 2 & 1 & 0 \\ 2 & -4 & 3 & 0 \\ 1 & 2 & -4 & 0}$. Verwissel $R_1$ en $R_3$, en doe $R_2 - 2R_1$ en $R_3 + 3R_1$: de rijen $[0 \ {-8} \ 11 \,|\, 0]$ en $[0 \ 8 \ {-11} \,|\, 0]$. $R_3 + R_2$ geeft een nulrij.\par
+    Dus $y = \frac{11}{8}z$ en $x = -2y + 4z = \frac54 z$. Met $\frac{10}{8}z + \frac{11}{8}z + \frac88 z = 1$ is $z = \frac{8}{29}$: $X = \km{\frac{10}{29} \\ \frac{11}{29} \\ \frac{8}{29}}$.\par
+    Maal 290: 100 zwemmers, 110 lopers en 80 fietsers.

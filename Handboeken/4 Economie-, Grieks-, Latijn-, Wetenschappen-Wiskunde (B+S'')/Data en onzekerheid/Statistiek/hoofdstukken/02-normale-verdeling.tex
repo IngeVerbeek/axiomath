@@ -34,6 +34,10 @@ Een \textbf{\textcolor{accent}{continue toevalsvariabele}} $X$ wordt beschreven 
 
 Bij een continue variabele is de kans op één bepaalde waarde 0: de oppervlakte boven één punt is 0. Daarom is $P(X \leqslant a) = P(X < a)$. Met de cursus Integralen kun je zo'n oppervlakte als integraal schrijven.
 
+\begin{oefeningen}
+\oef{h2-dichtheid}
+\end{oefeningen}
+
 %========================================================================================
 \section{De normale verdeling}
 
@@ -70,6 +74,10 @@ Het voorschrift moet je niet kennen: je rekentoestel kent het. Belangrijk is wat
   \node[text=black] at (0,.15) {68~\%};
   \node[fel!80!black,right] at (1.05,.25) {buigpunt};
 \end{tikzpicture}}
+
+\begin{oefeningen}
+\oef{h2-gauss}
+\end{oefeningen}
 
 \subsection{De vuistregels}
 
@@ -137,6 +145,10 @@ Is $X \sim N(\mu, \sigma)$, dan is $Z = \frac{X - \mu}{\sigma}$ \textbf{\textcol
 
 Een appel van 200 g heeft $z = \frac{200 - 180}{12} \approx 1{,}67$. Met de standaardnormale verdeling vind je dezelfde kans: $P(Z > 1{,}67) \approx 0{,}048$. Een z-score groter dan 2 of kleiner dan $-2$ is uitzonderlijk: dat gebeurt maar bij ongeveer 5~\% van de waarden.
 
+\begin{oefeningen}
+\oef{h2-zscore}
+\end{oefeningen}
+
 \subsection{Een grens zoeken}
 
 Soms ken je de kans, en zoek je de grens: hoe zwaar moet een appel zijn om bij de zwaarste 10~\% te horen? Dan gebruik je \texttt{invNorm}, dat de grens geeft waarvoor de oppervlakte \textit{links} gelijk is aan de gegeven kans.
@@ -180,31 +192,81 @@ Lonen, huizenprijzen of wachttijden zijn meestal niet normaal verdeeld: ze zijn 
 
 \begin{oefeningen}
 \oef{h2-model}
+
+\oef{h2-model-2}
 \end{oefeningen}
 
 %========================================================================================
 \opdrachtenkop
 
 \begin{oefeningen}
-\oef{h2-o1}
+\needspace{12\baselineskip}
+\oef{h2-d1}
+
+\needspace{12\baselineskip}
+\oef{h2-o13}
 
 \oef{h2-o2}
 
+\needspace{12\baselineskip}
+\oef{h2-o11}
+
 \oef{h2-o3}
+
+\needspace{12\baselineskip}
+\oef{h2-d2}
+
+\oef{h2-o1}
+
+\needspace{16\baselineskip}
+\oef{h2-o14}
+
+\needspace{9\baselineskip}
+\oef{h2-o12}
 
 \oef{h2-o4}
 
-\oef{h2-o5}
+\needspace{14\baselineskip}
+\oef{h2-o15}
 
-\oef{h2-o6}
+\needspace{12\baselineskip}
+\oef{h2-o16}
 
 \oef{h2-o7}
 
+\needspace{12\baselineskip}
+\oef{h2-d3}
+
+\needspace{12\baselineskip}
+\oef{h2-o18}
+
+\oef{h2-o6}
+
+\needspace{10\baselineskip}
+\oef{h2-o19}
+
 \oef{h2-o8}
+
+\needspace{12\baselineskip}
+\oef{h2-o17}
+
+\needspace{12\baselineskip}
+\oef{h2-o21}
+
+\oef{h2-o5}
 
 \oef{h2-o9}
 
+\needspace{14\baselineskip}
+\oef{h2-o23}
+
+\needspace{14\baselineskip}
+\oef{h2-o22}
+
 \oef{h2-o10}
+
+\needspace{12\baselineskip}
+\oef{h2-o24}
 \end{oefeningen}
 
 %----------------------------------------------------------------------------------------
@@ -234,14 +296,23 @@ Lonen, huizenprijzen of wachttijden zijn meestal niet normaal verdeeld: ze zijn 
 \oef{h2-t4}
 
 \oef{h2-t5}
+
+\oef{h2-t6}
+
+\oef{h2-t7}
+
+\oef{h2-t8}
 \end{oefeningen}
 
 \herhaalschema{%
   \fv{oef:h2-t1}{vb:h2-vuistregel}{oef:h2-vuistregel}%
   \fv{oef:h2-t2}{vb:h2-normalcdf}{oef:h2-normalcdf}%
   \fv{oef:h2-t3}{vb:h2-invnorm}{oef:h2-invnorm}%
-  \fzv{oef:h2-t4}{oef:h2-normalcdf}%
-  \fv{oef:h2-t5}{vb:h2-model}{oef:h2-model}}
+  \fzv{oef:h2-t4}{oef:h2-zscore}%
+  \fv{oef:h2-t5}{vb:h2-model}{oef:h2-model-2}%
+  \fzv{oef:h2-t6}{oef:h2-dichtheid}%
+  \fzv{oef:h2-t7}{oef:h2-gauss}%
+  \fv{oef:h2-t8}{vb:h2-invnorm}{oef:h2-o4}}
 
 \ifzelfstudie
 \section*{Maak je eigen samenvatting}

@@ -69,6 +69,107 @@
       uitwerking: |-
         Het $(k + 1)$-ste oneven getal is $2k + 1$: $k^2 + 2k + 1 = (k + 1)^2$. Het patroon wordt dus altijd doorgegeven.
 
+- id: h3-domino
+  soort: kort
+  opgave: |-
+    Van een uitspraak $P(n)$ over natuurlijke getallen weet je het volgende. Voor welke $n$ weet je zeker dat $P(n)$ waar is?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $P(3)$ is waar, en $P(k) \dan P(k + 1)$ voor elke $k \geqslant 3$.
+      antwoord: |-
+        alle $n \geqslant 3$
+      uitwerking: |-
+        Alle $n \geqslant 3$: de eerste steen is $P(3)$, en elke steen vanaf 3 duwt de volgende om. Over $P(0)$, $P(1)$ en $P(2)$ weet je niets.
+    - opgave: |-
+        $P(0)$ is waar, en $P(k) \dan P(k + 1)$ voor elke $k \geqslant 1$.
+      antwoord: |-
+        alleen $n = 0$
+      uitwerking: |-
+        Alleen $n = 0$. Het doorgeven begint pas bij $k = 1$: $P(0) \dan P(1)$ is niet gegeven. Van $P(1)$ weet je dus niets, en dan ook niet van de volgende.
+    - opgave: |-
+        $P(k) \dan P(k + 1)$ voor elke $k \geqslant 0$, maar $P(0)$ is vals.
+      antwoord: |-
+        voor geen enkele $n$
+      uitwerking: |-
+        Voor geen enkele $n$. Zonder basisstap valt er niets om. (Een implicatie met een valse voorwaarde zegt niets over $P(1)$.)
+    - opgave: |-
+        $P(0)$ en $P(1)$ zijn waar, en $P(k) \dan P(k + 2)$ voor elke $k \geqslant 0$.
+      antwoord: |-
+        alle $n$
+      uitwerking: |-
+        Alle $n$: uit $P(0)$ volgen $P(2)$, $P(4)$, \ldots{} (de even getallen), en uit $P(1)$ volgen $P(3)$, $P(5)$, \ldots{} (de oneven getallen).
+
+- id: h3-hypothese
+  soort: kort
+  opgave: |-
+    Schrijf de basisstap, de inductiehypothese $P(k)$ en het doel $P(k + 1)$ volledig uit. Je hoeft niets te bewijzen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $2 + 6 + 10 + \cdots + (4n - 2) = 2n^2$ voor $n \geqslant 1$
+      antwoord: |-
+        $2 = 2 \cdot 1^2$; \ $\ldots + (4k - 2) = 2k^2$; \ $\ldots + (4k - 2) + (4k + 2) = 2(k + 1)^2$
+      uitwerking: |-
+        Basisstap: $2 = 2 \cdot 1^2$.\\
+        $P(k)$: $2 + 6 + \cdots + (4k - 2) = 2k^2$.\\
+        $P(k + 1)$: $2 + 6 + \cdots + (4k - 2) + (4k + 2) = 2(k + 1)^2$. De laatste term is $4(k + 1) - 2 = 4k + 2$.
+    - opgave: |-
+        $5 \deelt 6^n - 1$ voor $n \geqslant 0$
+      antwoord: |-
+        $5 \deelt 0$; \ $6^k - 1 = 5m$; \ $5 \deelt 6^{k + 1} - 1$
+      uitwerking: |-
+        Basisstap: $6^0 - 1 = 0 = 5 \cdot 0$.\\
+        $P(k)$: $6^k - 1 = 5m$ met $m \in \Z$.\\
+        $P(k + 1)$: $6^{k + 1} - 1 = 5 \cdot j$ voor een geheel getal $j$.
+    - opgave: |-
+        $3^n \geqslant 2n + 1$ voor $n \geqslant 0$
+      antwoord: |-
+        $1 \geqslant 1$; \ $3^k \geqslant 2k + 1$; \ $3^{k + 1} \geqslant 2k + 3$
+      uitwerking: |-
+        Basisstap: $3^0 = 1 \geqslant 1 = 2 \cdot 0 + 1$.\\
+        $P(k)$: $3^k \geqslant 2k + 1$.\\
+        $P(k + 1)$: $3^{k + 1} \geqslant 2(k + 1) + 1 = 2k + 3$.
+
+- id: h3-som2
+  soort: kort
+  opgave: |-
+    Bewijs met volledige inductie: $1 + 2 + 4 + \cdots + 2^{n - 1} = 2^n - 1$ voor alle $n \geqslant 1$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    \textit{Basisstap.} $n = 1$: links staat $1$, rechts $2^1 - 1 = 1$.\\
+    \textit{Inductiestap.} Stel $1 + 2 + \cdots + 2^{k - 1} = 2^k - 1$ (inductiehypothese). De volgende term is $2^k$, dus\\
+    $1 + 2 + \cdots + 2^{k - 1} + 2^k = 2^k - 1 + 2^k = 2 \cdot 2^k - 1 = 2^{k + 1} - 1$,\\
+    de formule voor $n = k + 1$.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt de formule voor alle $n \geqslant 1$.
+
+- id: h3-deelbaar2
+  soort: kort
+  opgave: |-
+    Bewijs met volledige inductie: $2^{3n} - 1$ is deelbaar door 7 voor elk natuurlijk getal $n$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    \textit{Basisstap.} $2^0 - 1 = 0 = 7 \cdot 0$.\\
+    \textit{Inductiestap.} Stel $2^{3k} - 1 = 7m$, dus $2^{3k} = 7m + 1$. Omdat $2^{3(k + 1)} = 2^{3k + 3} = 8 \cdot 2^{3k}$, is\\
+    $2^{3(k + 1)} - 1 = 8(7m + 1) - 1 = 56m + 7 = 7(8m + 1)$,\\
+    deelbaar door 7.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n$.
+
+- id: h3-ongelijkheid2
+  soort: kort
+  opgave: |-
+    Bewijs met volledige inductie: $2^n \geqslant 2n$ voor alle $n \geqslant 1$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    \textit{Basisstap.} $2^1 = 2 \geqslant 2$.\\
+    \textit{Inductiestap.} Stel $2^k \geqslant 2k$ met $k \geqslant 1$. Dan is\\
+    $2^{k + 1} = 2 \cdot 2^k \geqslant 4k = 2k + 2k \geqslant 2k + 2 = 2(k + 1)$,\\
+    want $2k \geqslant 2$ als $k \geqslant 1$.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n \geqslant 1$.
+
 - id: h3-som
   soort: kort
   opgave: |-
@@ -76,7 +177,11 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Basisstap: $1 = 1^2$. Inductiestap: stel $1 + 3 + \cdots + (2k - 1) = k^2$. Dan is $1 + 3 + \cdots + (2k - 1) + (2k + 1) = k^2 + 2k + 1 = (k + 1)^2$. Volgens het principe van volledige inductie geldt de formule voor alle $n \geqslant 1$.
+    \textit{Basisstap.} $n = 1$: $1 = 1^2$.\\
+    \textit{Inductiestap.} Stel $1 + 3 + \cdots + (2k - 1) = k^2$ (inductiehypothese). De volgende term is $2(k + 1) - 1 = 2k + 1$, dus\\
+    $1 + 3 + \cdots + (2k - 1) + (2k + 1) = k^2 + 2k + 1 = (k + 1)^2$,\\
+    de formule voor $n = k + 1$.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt de formule voor alle $n \geqslant 1$.
 
 - id: h3-deelbaar
   soort: kort
@@ -85,7 +190,11 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Basisstap: $5^0 - 1 = 0$. Inductiestap: stel $5^k - 1 = 4m$. Dan is $5^{k + 1} - 1 = 5(4m + 1) - 1 = 20m + 4 = 4(5m + 1)$.
+    \textit{Basisstap.} $5^0 - 1 = 0 = 4 \cdot 0$.\\
+    \textit{Inductiestap.} Stel $5^k - 1 = 4m$ met $m \in \Z$, dus $5^k = 4m + 1$. Dan is\\
+    $5^{k + 1} - 1 = 5 \cdot 5^k - 1 = 5(4m + 1) - 1 = 20m + 4 = 4(5m + 1)$,\\
+    deelbaar door 4.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n$.
 
 - id: h3-ongelijkheid
   soort: kort
@@ -94,7 +203,11 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Basisstap: $4! = 24 > 16$. Inductiestap: stel $k! > 2^k$ met $k \geqslant 4$. Dan is $(k + 1)! = (k + 1) \cdot k! > (k + 1) \cdot 2^k > 2 \cdot 2^k = 2^{k + 1}$, want $k + 1 > 2$.
+    \textit{Basisstap.} $4! = 24 > 16 = 2^4$.\\
+    \textit{Inductiestap.} Stel $k! > 2^k$ met $k \geqslant 4$. Dan is\\
+    $(k + 1)! = (k + 1) \cdot k! > (k + 1) \cdot 2^k > 2 \cdot 2^k = 2^{k + 1}$,\\
+    want $k + 1 > 2$.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n \geqslant 4$.
 
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
@@ -110,7 +223,116 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Basisstap: $2 = 1 \cdot 2$. Inductiestap: $k(k + 1) + 2(k + 1) = (k + 1)(k + 2)$.
+    \textit{Basisstap.} $n = 1$: links $2$, rechts $1 \cdot 2 = 2$.\\
+    \textit{Inductiestap.} Stel $2 + 4 + \cdots + 2k = k(k + 1)$ (inductiehypothese). De volgende term is $2(k + 1)$, dus\\
+    $2 + 4 + \cdots + 2k + 2(k + 1) = k(k + 1) + 2(k + 1) = (k + 1)(k + 2)$,\\
+    de formule voor $n = k + 1$.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt de formule voor alle $n \geqslant 1$.
+
+- id: h3-o10
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    van k naar k plus 1 herschrijven
+  opgave: |-
+    Schrijf de uitdrukking met de gegeven uitdrukking in $k$ erin.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $2^{k + 1}$ met $2^k$
+      antwoord: |-
+        $2 \cdot 2^k$
+      uitwerking: |-
+        $2^{k + 1} = 2 \cdot 2^k$.
+    - opgave: |-
+        $5^{k + 2}$ met $5^k$
+      antwoord: |-
+        $25 \cdot 5^k$
+      uitwerking: |-
+        $5^{k + 2} = 5^2 \cdot 5^k = 25 \cdot 5^k$.
+    - opgave: |-
+        $(k + 1)!$ met $k!$
+      antwoord: |-
+        $(k + 1) \cdot k!$
+      uitwerking: |-
+        $(k + 1)! = (k + 1) \cdot k \cdots 2 \cdot 1 = (k + 1) \cdot k!$.
+    - opgave: |-
+        $3^{2(k + 1)}$ met $3^{2k}$
+      antwoord: |-
+        $9 \cdot 3^{2k}$
+      uitwerking: |-
+        $3^{2k + 2} = 3^2 \cdot 3^{2k} = 9 \cdot 3^{2k}$.
+    - opgave: |-
+        $(k + 1)^2$ met $k^2$
+      antwoord: |-
+        $k^2 + 2k + 1$
+      uitwerking: |-
+        $(k + 1)^2 = k^2 + 2k + 1$.
+    - opgave: |-
+        $(k + 1)^3$ met $k^3$
+      antwoord: |-
+        $k^3 + 3k^2 + 3k + 1$
+      uitwerking: |-
+        $(k + 1)^3 = k^3 + 3k^2 + 3k + 1$.
+    - opgave: |-
+        $1 + 2 + \cdots + (k + 1)$ met $1 + 2 + \cdots + k$
+      antwoord: |-
+        $(1 + 2 + \cdots + k) + (k + 1)$
+      uitwerking: |-
+        Er komt één term bij: $(1 + 2 + \cdots + k) + (k + 1)$.
+    - opgave: |-
+        $3^{k + 1} - 1$ met $3^k - 1$
+      antwoord: |-
+        $3(3^k - 1) + 2$
+      uitwerking: |-
+        $3^{k + 1} - 1 = 3 \cdot 3^k - 3 + 2 = 3(3^k - 1) + 2$.
+    - opgave: |-
+        $2^{k + 1} + 1$ met $2^k + 1$
+      antwoord: |-
+        $2(2^k + 1) - 1$
+      uitwerking: |-
+        $2^{k + 1} + 1 = 2 \cdot 2^k + 2 - 1 = 2(2^k + 1) - 1$.
+    - opgave: |-
+        $(k + 1)^2 + (k + 1)$ met $k^2 + k$
+      antwoord: |-
+        $(k^2 + k) + 2k + 2$
+      uitwerking: |-
+        $k^2 + 2k + 1 + k + 1 = (k^2 + k) + 2k + 2$.
+
+- id: h3-o15
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    het principe: welke stenen vallen?
+  opgave: |-
+    Van een uitspraak $P(n)$ over natuurlijke getallen weet je het volgende. Voor welke $n$ weet je zeker dat $P(n)$ waar is?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $P(100)$ is waar, en $P(k) \dan P(k - 1)$ voor elke $k \geqslant 1$.
+      antwoord: |-
+        $n = 0, 1, \ldots, 100$
+      uitwerking: |-
+        De stenen vallen naar links: uit $P(100)$ volgt $P(99)$, dan $P(98)$, tot $P(0)$. Dus $n = 0, 1, \ldots, 100$. Over $P(101)$ weet je niets.
+    - opgave: |-
+        $P(1)$ is waar, en $P(k) \dan P(2k)$ voor elke $k \geqslant 1$.
+      antwoord: |-
+        de machten van 2
+      uitwerking: |-
+        $P(1)$, $P(2)$, $P(4)$, $P(8)$, \ldots: de machten van 2, dus $n = 2^j$ met $j \in \N$. Over $P(3)$ weet je niets.
+    - opgave: |-
+        $P(2)$ is waar, en $P(k) \dan P(k + 1)$ voor elke $k \geqslant 5$.
+      antwoord: |-
+        alleen $n = 2$
+      uitwerking: |-
+        Alleen $n = 2$. Het doorgeven begint pas bij 5, en over $P(5)$ weet je niets.
+    - opgave: |-
+        $P(0)$ is waar, en $P(k) \dan P(k + 3)$ voor elke $k \geqslant 0$.
+      antwoord: |-
+        de veelvouden van 3
+      uitwerking: |-
+        $P(0)$, $P(3)$, $P(6)$, \ldots: de veelvouden van 3.
 
 - id: h3-o2
   soort: opdracht
@@ -118,11 +340,188 @@
   thema: |-
     deelbaarheid
   opgave: |-
-    Bewijs met volledige inductie: $7^n - 1$ is deelbaar door 6.
+    Bewijs met volledige inductie, voor elk natuurlijk getal $n$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $7^n - 1$ is deelbaar door 6.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        \textit{Basisstap.} $7^0 - 1 = 0 = 6 \cdot 0$.\\
+        \textit{Inductiestap.} Stel $7^k - 1 = 6m$, dus $7^k = 6m + 1$. Dan is\\
+        $7^{k + 1} - 1 = 7(6m + 1) - 1 = 42m + 6 = 6(7m + 1)$.\\
+        \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n$.
+    - opgave: |-
+        $9^n - 1$ is deelbaar door 8.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        \textit{Basisstap.} $9^0 - 1 = 0$.\\
+        \textit{Inductiestap.} Stel $9^k = 8m + 1$. Dan is $9^{k + 1} - 1 = 9(8m + 1) - 1 = 72m + 8 = 8(9m + 1)$.\\
+        \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n$.
+    - opgave: |-
+        $4^n + 5$ is deelbaar door 3.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        \textit{Basisstap.} $4^0 + 5 = 6 = 3 \cdot 2$.\\
+        \textit{Inductiestap.} Stel $4^k + 5 = 3m$, dus $4^k = 3m - 5$. Dan is\\
+        $4^{k + 1} + 5 = 4(3m - 5) + 5 = 12m - 15 = 3(4m - 5)$.\\
+        \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n$.
+
+- id: h3-o9
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    hypothese en doel uitschrijven
+  opgave: |-
+    Schrijf de inductiehypothese $P(k)$ en het doel $P(k + 1)$ volledig uit. Je hoeft niets te bewijzen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $3 + 5 + 7 + \cdots + (2n + 1) = n(n + 2)$ voor $n \geqslant 1$
+      antwoord: |-
+        $\ldots + (2k + 1) = k(k + 2)$; \ $\ldots + (2k + 1) + (2k + 3) = (k + 1)(k + 3)$
+      uitwerking: |-
+        $P(k)$: $3 + 5 + \cdots + (2k + 1) = k(k + 2)$.\\
+        $P(k + 1)$: $3 + 5 + \cdots + (2k + 1) + (2k + 3) = (k + 1)(k + 3)$.
+    - opgave: |-
+        $2 + 6 + 18 + \cdots + 2 \cdot 3^{n - 1} = 3^n - 1$ voor $n \geqslant 1$
+      antwoord: |-
+        $\ldots + 2 \cdot 3^{k - 1} = 3^k - 1$; \ $\ldots + 2 \cdot 3^{k - 1} + 2 \cdot 3^k = 3^{k + 1} - 1$
+      uitwerking: |-
+        $P(k)$: $2 + 6 + \cdots + 2 \cdot 3^{k - 1} = 3^k - 1$.\\
+        $P(k + 1)$: $2 + 6 + \cdots + 2 \cdot 3^{k - 1} + 2 \cdot 3^k = 3^{k + 1} - 1$.
+    - opgave: |-
+        $\frac12 + \frac14 + \cdots + \frac{1}{2^n} = 1 - \frac{1}{2^n}$ voor $n \geqslant 1$
+      antwoord: |-
+        $\ldots + \frac{1}{2^k} = 1 - \frac{1}{2^k}$; \ $\ldots + \frac{1}{2^k} + \frac{1}{2^{k + 1}} = 1 - \frac{1}{2^{k + 1}}$
+      uitwerking: |-
+        $P(k)$: $\dfrac12 + \cdots + \dfrac{1}{2^k} = 1 - \dfrac{1}{2^k}$.\\
+        $P(k + 1)$: $\dfrac12 + \cdots + \dfrac{1}{2^k} + \dfrac{1}{2^{k + 1}} = 1 - \dfrac{1}{2^{k + 1}}$.
+    - opgave: |-
+        $10^n - 1$ is deelbaar door 3, voor $n \geqslant 0$
+      antwoord: |-
+        $10^k - 1 = 3m$; \ $3 \deelt 10^{k + 1} - 1$
+      uitwerking: |-
+        $P(k)$: $10^k - 1 = 3m$ met $m \in \Z$.\\
+        $P(k + 1)$: $10^{k + 1} - 1 = 3j$ voor een geheel getal $j$.
+    - opgave: |-
+        $5^n + 3$ is deelbaar door 4, voor $n \geqslant 0$
+      antwoord: |-
+        $5^k + 3 = 4m$; \ $4 \deelt 5^{k + 1} + 3$
+      uitwerking: |-
+        $P(k)$: $5^k + 3 = 4m$ met $m \in \Z$.\\
+        $P(k + 1)$: $5^{k + 1} + 3 = 4j$ voor een geheel getal $j$.
+    - opgave: |-
+        $n^2 \geqslant 2n + 3$ voor $n \geqslant 3$
+      antwoord: |-
+        $k^2 \geqslant 2k + 3$; \ $(k + 1)^2 \geqslant 2k + 5$
+      uitwerking: |-
+        $P(k)$: $k^2 \geqslant 2k + 3$, met $k \geqslant 3$.\\
+        $P(k + 1)$: $(k + 1)^2 \geqslant 2(k + 1) + 3 = 2k + 5$.
+    - opgave: |-
+        $2^n > 3n$ voor $n \geqslant 4$
+      antwoord: |-
+        $2^k > 3k$; \ $2^{k + 1} > 3k + 3$
+      uitwerking: |-
+        $P(k)$: $2^k > 3k$, met $k \geqslant 4$.\\
+        $P(k + 1)$: $2^{k + 1} > 3(k + 1) = 3k + 3$.
+    - opgave: |-
+        $u_n = 2^n + 1$ voor de rij met $u_0 = 2$ en $u_{n + 1} = 2u_n - 1$
+      antwoord: |-
+        $u_k = 2^k + 1$; \ $u_{k + 1} = 2^{k + 1} + 1$
+      uitwerking: |-
+        $P(k)$: $u_k = 2^k + 1$.\\
+        $P(k + 1)$: $u_{k + 1} = 2^{k + 1} + 1$. (Het bewijs: $u_{k + 1} = 2(2^k + 1) - 1 = 2^{k + 1} + 1$.)
+
+- id: h3-o16
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    ongelijkheden
+  opgave: |-
+    Bewijs met volledige inductie.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $3^n \geqslant 1 + 2n$ voor alle $n \geqslant 0$
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        \textit{Basisstap.} $3^0 = 1 \geqslant 1$.\\
+        \textit{Inductiestap.} Stel $3^k \geqslant 1 + 2k$. Dan is\\
+        $3^{k + 1} = 3 \cdot 3^k \geqslant 3(1 + 2k) = 3 + 6k \geqslant 3 + 2k = 1 + 2(k + 1)$,\\
+        want $6k \geqslant 2k$ voor $k \geqslant 0$.\\
+        \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n \geqslant 0$.
+    - opgave: |-
+        $n! \geqslant 2^{n - 1}$ voor alle $n \geqslant 1$
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        \textit{Basisstap.} $1! = 1 \geqslant 1 = 2^0$.\\
+        \textit{Inductiestap.} Stel $k! \geqslant 2^{k - 1}$ met $k \geqslant 1$. Dan is\\
+        $(k + 1)! = (k + 1) \cdot k! \geqslant (k + 1) \cdot 2^{k - 1} \geqslant 2 \cdot 2^{k - 1} = 2^k$,\\
+        want $k + 1 \geqslant 2$.\\
+        \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n \geqslant 1$.
+
+- id: h3-o13
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    somformule
+  opgave: |-
+    Bewijs met volledige inductie: $1 + 5 + 9 + \cdots + (4n - 3) = n(2n - 1)$ voor alle $n \geqslant 1$.
   antwoord: |-
     bewijs
   uitwerking: |-
-    Basisstap: $7^0 - 1 = 0$. Inductiestap: $7^{k + 1} - 1 = 7(6m + 1) - 1 = 42m + 6 = 6(7m + 1)$.
+    \textit{Basisstap.} $n = 1$: links $1$, rechts $1 \cdot 1 = 1$.\\
+    \textit{Inductiestap.} Stel $1 + 5 + \cdots + (4k - 3) = k(2k - 1)$. De volgende term is $4(k + 1) - 3 = 4k + 1$, dus\\
+    $1 + 5 + \cdots + (4k - 3) + (4k + 1) = 2k^2 - k + 4k + 1 = 2k^2 + 3k + 1 = (k + 1)(2k + 1)$.\\
+    Dat is de formule voor $n = k + 1$, want $(k + 1)\bigl(2(k + 1) - 1\bigr) = (k + 1)(2k + 1)$.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt de formule voor alle $n \geqslant 1$.
+
+- id: h3-o12
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    waar zit de fout: de basisstap
+  opgave: |-
+    Een leerling bewijst de uitspraak met alleen een inductiestap. Controleer de stap. Wat ontbreekt er? Is de uitspraak waar?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        \textit{$n^2 + n + 1$ is even voor alle $n$.} Stap: stel $k^2 + k + 1 = 2m$. Dan is $(k + 1)^2 + (k + 1) + 1 = (k^2 + k + 1) + 2k + 2 = 2(m + k + 1)$.
+      antwoord: |-
+        de basisstap ontbreekt; de uitspraak is vals
+      uitwerking: |-
+        De stap klopt, maar de basisstap ontbreekt. Voor $n = 0$ is $n^2 + n + 1 = 1$ oneven, en een basisstap lukt voor geen enkele $n$, want $n^2 + n + 1$ is altijd oneven (hoofdstuk 2). De uitspraak is dus vals.
+    - opgave: |-
+        \textit{$4^n + 1$ is deelbaar door 3 voor alle $n$.} Stap: stel $4^k + 1 = 3m$. Dan is $4^{k + 1} + 1 = 4(4^k + 1) - 3 = 3(4m - 1)$.
+      antwoord: |-
+        de basisstap ontbreekt; de uitspraak is vals
+      uitwerking: |-
+        De stap klopt, maar er is geen basisstap: $4^0 + 1 = 2$ en $4^1 + 1 = 5$ zijn niet deelbaar door 3. De uitspraak is vals: zonder eerste steen die valt, zegt de stap niets.
+
+- id: h3-o17
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    een inductiebewijs aanvullen
+  opgave: |-
+    Vul de puntjes aan in dit bewijs van $1 + 4 + 7 + \cdots + (3n - 2) = \dfrac{n(3n - 1)}{2}$ voor $n \geqslant 1$.\par
+    \textit{Basisstap.} Voor $n = \ldots$ staat links $\ldots$ en rechts $\frac{1 \cdot 2}{2} = 1$.\par
+    \textit{Inductiestap.} Stel $1 + 4 + \cdots + (3k - 2) = \ldots$. Dan is $1 + 4 + \cdots + (3k - 2) + (\ldots) = \dfrac{k(3k - 1)}{2} + \ldots = \dfrac{3k^2 + 5k + 2}{2} = \dfrac{(k + 1)(\ldots)}{2}$, en dat is de formule voor $n = \ldots$\par
+    \textit{Besluit.} \ldots
+  antwoord: |-
+    $1$; $1$; $\frac{k(3k - 1)}{2}$; $3k + 1$; $3k + 1$; $3k + 2$; $k + 1$; volgens het principe van volledige inductie geldt de formule voor alle $n \geqslant 1$
+  uitwerking: |-
+    Basisstap: $n = 1$, links staat $1$.\\
+    Inductiehypothese: $1 + 4 + \cdots + (3k - 2) = \dfrac{k(3k - 1)}{2}$.\\
+    De volgende term is $3(k + 1) - 2 = 3k + 1$, dus de som is $\dfrac{k(3k - 1)}{2} + 3k + 1 = \dfrac{3k^2 - k + 6k + 2}{2} = \dfrac{3k^2 + 5k + 2}{2} = \dfrac{(k + 1)(3k + 2)}{2}$.\\
+    Dat is de formule voor $n = k + 1$, want $3(k + 1) - 1 = 3k + 2$.\\
+    Besluit: volgens het principe van volledige inductie geldt de formule voor alle $n \geqslant 1$.
 
 - id: h3-o3
   soort: opdracht
@@ -134,7 +533,93 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Basisstap: $1 = \frac{1 \cdot 2 \cdot 3}{6}$. Inductiestap: $\frac{k(k + 1)(2k + 1)}{6} + (k + 1)^2 = \frac{(k + 1)\bigl(k(2k + 1) + 6(k + 1)\bigr)}{6} = \frac{(k + 1)(2k^2 + 7k + 6)}{6} = \frac{(k + 1)(k + 2)(2k + 3)}{6}$, de formule voor $n = k + 1$.
+    \textit{Basisstap.} $1 = \dfrac{1 \cdot 2 \cdot 3}{6}$.\\
+    \textit{Inductiestap.} Stel $1^2 + \cdots + k^2 = \dfrac{k(k + 1)(2k + 1)}{6}$. Dan is, met $k + 1$ buiten haakjes,\\
+    $1^2 + \cdots + k^2 + (k + 1)^2 = \dfrac{k(k + 1)(2k + 1)}{6} + (k + 1)^2 = \dfrac{(k + 1)\bigl(k(2k + 1) + 6(k + 1)\bigr)}{6} = \dfrac{(k + 1)(2k^2 + 7k + 6)}{6}$.\\
+    Omdat $2k^2 + 7k + 6 = (k + 2)(2k + 3)$, is dat $\dfrac{(k + 1)(k + 2)(2k + 3)}{6}$: de formule voor $n = k + 1$.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt de formule voor alle $n \geqslant 1$.
+
+- id: h3-o18
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: handdrukken
+  opgave: |-
+    Op een feest met $n$ personen geeft iedereen elke andere persoon één keer een hand. Noem $h_n$ het aantal handdrukken.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $h_1$, $h_2$, $h_3$ en $h_4$.
+      antwoord: |-
+        0, 1, 3, 6
+      uitwerking: |-
+        Alleen: 0. Met twee: 1. Met drie: elk paar één keer, 3. Met vier: 6 paren.
+    - opgave: |-
+        Er komt iemand bij. Leg uit waarom $h_{n + 1} = h_n + n$.
+      antwoord: |-
+        de nieuwe persoon geeft $n$ handen
+      uitwerking: |-
+        De handdrukken tussen de eerste $n$ personen blijven er $h_n$. De nieuwe persoon geeft elk van de $n$ anderen een hand: er komen er $n$ bij.
+    - opgave: |-
+        Bewijs met volledige inductie dat $h_n = \dfrac{n(n - 1)}{2}$ voor alle $n \geqslant 1$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        \textit{Basisstap.} $h_1 = 0 = \dfrac{1 \cdot 0}{2}$.\\
+        \textit{Inductiestap.} Stel $h_k = \dfrac{k(k - 1)}{2}$. Met b is\\
+        $h_{k + 1} = \dfrac{k(k - 1)}{2} + k = \dfrac{k^2 - k + 2k}{2} = \dfrac{(k + 1)k}{2}$,\\
+        de formule voor $n = k + 1$.\\
+        \textit{Besluit.} Volgens het principe van volledige inductie geldt de formule voor alle $n \geqslant 1$.
+
+- id: h3-o11
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    vanaf welke n? een grafiek lezen
+  figuur:
+    opties: |-
+      4.4cm
+    code: |-
+      \begin{tikzpicture}[x=.62cm,y=.011cm,font=\scriptsize]
+        \foreach \y in {50,100,...,250} \draw[black!14,very thin] (0,\y) -- (5.5,\y);
+        \foreach \x in {1,...,5} \draw[black!14,very thin] (\x,0) -- (\x,250);
+        \draw[->,grijs] (0,0) -- (5.8,0) node[right,text=black] {$n$};
+        \draw[->,grijs] (0,0) -- (0,270);
+        \foreach \x in {0,...,5} \node[below] at (\x,0) {$\x$};
+        \foreach \y in {50,100,...,250} \node[left] at (0,\y) {$\y$};
+        \foreach \x/\a/\b in {0/1/0,1/3/1,2/9/8,3/27/27,4/81/64,5/243/125}{
+          \fill[accent] (\x,\a) circle (2.2pt);
+          \draw[fel!80!black,thick] (\x,\b) ++(-2.2pt,-2.2pt) rectangle ++(4.4pt,4.4pt);}
+        \fill[accent] (.4,250) circle (2.2pt) node[right,text=black] {$3^n$};
+        \draw[fel!80!black,thick] (.4,215) ++(-2.2pt,-2.2pt) rectangle ++(4.4pt,4.4pt);
+        \node[right] at (.45,215) {$n^3$};
+      \end{tikzpicture}
+  opgave: |-
+    De grafiek toont $3^n$ (bolletjes) en $n^3$ (vierkantjes) voor $n = 0, 1, \ldots, 5$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Voor welke $n$ uit de grafiek is $3^n > n^3$? Controleer met een berekening waar de grafiek niet duidelijk is.
+      antwoord: |-
+        alle $n$ behalve $n = 3$
+      uitwerking: |-
+        $3^n$: 1, 3, 9, 27, 81, 243. $n^3$: 0, 1, 8, 27, 64, 125. Dus $3^n > n^3$ voor $n = 0, 1, 2, 4, 5$, en bij $n = 3$ zijn ze gelijk.
+    - opgave: |-
+        Je wilt $3^n > n^3$ bewijzen met volledige inductie. Welke basisstap kies je? Waarom niet $n = 0$?
+      antwoord: |-
+        $n = 4$
+      uitwerking: |-
+        Bij $n = 3$ is de uitspraak vals, dus geen basisstap vóór 3 kan ze voor alle volgende $n$ doorgeven. Je bewijst ze voor $n \geqslant 4$, met basisstap $n = 4$: $81 > 64$. (Voor $n = 0, 1, 2$ klopt ze los daarvan ook.)
+    - opgave: |-
+        Bewijs dat $3^n > n^3$ voor alle $n \geqslant 4$. Tip: toon aan dat $(k + 1)^3 \leqslant 3k^3$ als $k \geqslant 4$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        \textit{Basisstap.} $3^4 = 81 > 64 = 4^3$.\\
+        \textit{Inductiestap.} Stel $3^k > k^3$ met $k \geqslant 4$. Dan is $3^{k + 1} = 3 \cdot 3^k > 3k^3$.\\
+        Nu is $(k + 1)^3 = k^3 + 3k^2 + 3k + 1$. Omdat $k \geqslant 4$, is $3k^2 \leqslant k \cdot k^2 = k^3$ en $3k + 1 \leqslant 4k \leqslant k^2 \leqslant k^3$. Dus\\
+        $(k + 1)^3 \leqslant k^3 + k^3 + k^3 = 3k^3 < 3^{k + 1}$.\\
+        \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n \geqslant 4$.
 
 - id: h3-o4
   soort: opdracht
@@ -146,7 +631,66 @@
   antwoord: |-
     de inductiestap faalt van 1 naar 2
   uitwerking: |-
-    Van $k = 1$ naar $k + 1 = 2$ is er geen paard in het midden: de twee groepen van één paard overlappen niet. De inductiestap moet voor elke $k \geqslant n_0$ werken, en hier faalt hij voor $k = 1$.
+    Controleer de stap voor $k = 1$: er zijn dan $k + 1 = 2$ paarden. Zonder het eerste blijft het tweede over, zonder het laatste het eerste. De twee groepen van één paard overlappen niet: er is geen paard in het midden. De inductiestap moet voor elke $k \geqslant n_0$ werken, en hier faalt hij voor $k = 1$. Voor $k \geqslant 2$ werkt de stap wel, maar zonder de stap van 1 naar 2 valt de tweede steen niet.
+
+- id: h3-o24
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    som van producten
+  opgave: |-
+    Bewijs met volledige inductie: $1 \cdot 2 + 2 \cdot 3 + \cdots + n(n + 1) = \dfrac{n(n + 1)(n + 2)}{3}$ voor alle $n \geqslant 1$.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    \textit{Basisstap.} $1 \cdot 2 = 2 = \dfrac{1 \cdot 2 \cdot 3}{3}$.\\
+    \textit{Inductiestap.} Stel $1 \cdot 2 + \cdots + k(k + 1) = \dfrac{k(k + 1)(k + 2)}{3}$. De volgende term is $(k + 1)(k + 2)$, dus\\
+    $1 \cdot 2 + \cdots + k(k + 1) + (k + 1)(k + 2) = \dfrac{k(k + 1)(k + 2)}{3} + \dfrac{3(k + 1)(k + 2)}{3} = \dfrac{(k + 1)(k + 2)(k + 3)}{3}$,\\
+    de formule voor $n = k + 1$.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt de formule voor alle $n \geqslant 1$.
+
+- id: h3-o19
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    context: lucifers
+  figuur:
+    opties: |-
+      3.6cm
+    code: |-
+      \begin{tikzpicture}[x=.8cm,y=.8cm]
+        \foreach \i in {0,...,3}{
+          \draw[accent,line width=1.4pt,shorten <=2pt,shorten >=2pt] (\i,0) -- (\i+1,0);
+          \draw[accent,line width=1.4pt,shorten <=2pt,shorten >=2pt] (\i,1) -- (\i+1,1);
+          \fill[fel!80!black] (\i+.93,0) circle (2pt) (\i+.93,1) circle (2pt);}
+        \foreach \i in {0,...,4}{
+          \draw[accent,line width=1.4pt,shorten <=2pt,shorten >=2pt] (\i,0) -- (\i,1);
+          \fill[fel!80!black] (\i,.93) circle (2pt);}
+      \end{tikzpicture}
+  opgave: |-
+    Met lucifers leg je een rij van $n$ vierkantjes naast elkaar. De figuur toont $n = 4$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel lucifers heb je nodig voor 1, 2, 3 en 4 vierkantjes?
+      antwoord: |-
+        4, 7, 10, 13
+      uitwerking: |-
+        4, 7, 10 en 13: elk nieuw vierkantje deelt een zijde met het vorige.
+    - opgave: |-
+        Bewijs met volledige inductie dat je $3n + 1$ lucifers nodig hebt.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        \textit{Basisstap.} Eén vierkantje: $4 = 3 \cdot 1 + 1$ lucifers.\\
+        \textit{Inductiestap.} Stel dat $k$ vierkantjes $3k + 1$ lucifers vragen. Voor vierkantje $k + 1$ gebruik je de rechterzijde van het laatste vierkantje opnieuw, en heb je 3 nieuwe lucifers nodig: $3k + 1 + 3 = 3(k + 1) + 1$.\\
+        \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n \geqslant 1$.
+    - opgave: |-
+        Hoeveel vierkantjes leg je met precies 100 lucifers?
+      antwoord: |-
+        33
+      uitwerking: |-
+        $3n + 1 = 100$ geeft $n = 33$.
 
 - id: h3-o5
   soort: opdracht
@@ -158,7 +702,33 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Basisstap $n = 0$: $1 \geqslant 1$. Inductiestap: $(1 + x)^{k + 1} = (1 + x)^k(1 + x) \geqslant (1 + kx)(1 + x)$, want $1 + x \geqslant 0$. En $(1 + kx)(1 + x) = 1 + (k + 1)x + kx^2 \geqslant 1 + (k + 1)x$.
+    \textit{Basisstap.} $n = 0$: $(1 + x)^0 = 1 \geqslant 1 = 1 + 0 \cdot x$.\\
+    \textit{Inductiestap.} Stel $(1 + x)^k \geqslant 1 + kx$. Vermenigvuldig beide leden met $1 + x$. Dat mag zonder het teken om te keren, want $1 + x \geqslant 0$:\\
+    $(1 + x)^{k + 1} \geqslant (1 + kx)(1 + x) = 1 + (k + 1)x + kx^2 \geqslant 1 + (k + 1)x$,\\
+    want $kx^2 \geqslant 0$.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n$. (De voorwaarde $x \geqslant -1$ is nodig in de stap waar je vermenigvuldigt.)
+
+- id: h3-o23
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    waar zit de fout: de inductiestap
+  opgave: |-
+    Waar zit de fout in de inductiestap?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Sam schrijft: \textit{Stel dat de formule geldt voor alle natuurlijke getallen $n$. Dan geldt ze ook voor $n = k + 1$.}
+      antwoord: |-
+        hij neemt aan wat te bewijzen is
+      uitwerking: |-
+        Sam neemt aan wat hij wil bewijzen. De inductiehypothese gaat over één getal $k$: \textit{stel dat de formule geldt voor $n = k$}. Daaruit moet hij de formule voor $k + 1$ afleiden.
+    - opgave: |-
+        Lies controleert voor $k = 1$, $2$ en $3$ dat $P(k + 1)$ volgt uit $P(k)$, en besluit dat de inductiestap klopt.
+      antwoord: |-
+        de stap moet voor een willekeurige $k$
+      uitwerking: |-
+        Drie gevallen bewijzen de stap niet voor alle $k$. De inductiestap is zelf een uitspraak \textit{voor alle $k \geqslant n_0$}, en die bewijs je met een willekeurige $k$, zoals bij elk rechtstreeks bewijs.
 
 - id: h3-o6
   soort: opdracht
@@ -170,7 +740,118 @@
   antwoord: |-
     $\frac{n}{n + 1}$
   uitwerking: |-
-    $\frac12$, $\frac23$, $\frac34$, $\frac45$: vermoedelijk $\frac{n}{n + 1}$. Inductiestap: $\frac{k}{k + 1} + \frac{1}{(k + 1)(k + 2)} = \frac{k(k + 2) + 1}{(k + 1)(k + 2)} = \frac{(k + 1)^2}{(k + 1)(k + 2)} = \frac{k + 1}{k + 2}$.
+    $\dfrac12$, $\dfrac12 + \dfrac16 = \dfrac23$, $\dfrac23 + \dfrac{1}{12} = \dfrac34$, $\dfrac34 + \dfrac{1}{20} = \dfrac45$: vermoedelijk $\dfrac{n}{n + 1}$.\\
+    \textit{Basisstap.} $\dfrac{1}{1 \cdot 2} = \dfrac12$.\\
+    \textit{Inductiestap.} Stel dat de som tot $k$ gelijk is aan $\dfrac{k}{k + 1}$. Dan is de som tot $k + 1$\\
+    $\dfrac{k}{k + 1} + \dfrac{1}{(k + 1)(k + 2)} = \dfrac{k(k + 2) + 1}{(k + 1)(k + 2)} = \dfrac{(k + 1)^2}{(k + 1)(k + 2)} = \dfrac{k + 1}{k + 2}$,\\
+    de formule voor $n = k + 1$.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt de formule voor alle $n \geqslant 1$.
+
+- id: h3-o20
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een recursieve rij
+  opgave: |-
+    Een rij is gegeven door $u_1 = 1$ en $u_{n + 1} = 2u_n + 1$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $u_2$, $u_3$, $u_4$ en $u_5$.
+      antwoord: |-
+        3, 7, 15, 31
+      uitwerking: |-
+        $u_2 = 2 + 1 = 3$, $u_3 = 7$, $u_4 = 15$, $u_5 = 31$.
+    - opgave: |-
+        Vermoed een formule voor $u_n$.
+      antwoord: |-
+        $u_n = 2^n - 1$
+      uitwerking: |-
+        Telkens 1 minder dan een macht van 2: $u_n = 2^n - 1$.
+    - opgave: |-
+        Bewijs je vermoeden met volledige inductie.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        \textit{Basisstap.} $u_1 = 1 = 2^1 - 1$.\\
+        \textit{Inductiestap.} Stel $u_k = 2^k - 1$. Dan is $u_{k + 1} = 2u_k + 1 = 2(2^k - 1) + 1 = 2^{k + 1} - 1$.\\
+        \textit{Besluit.} Volgens het principe van volledige inductie is $u_n = 2^n - 1$ voor alle $n \geqslant 1$.
+
+- id: h3-o21
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    deelbaarheid met twee machten
+  opgave: |-
+    Bewijs met volledige inductie, voor elk natuurlijk getal $n$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $11^n - 4^n$ is deelbaar door 7.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        \textit{Basisstap.} $11^0 - 4^0 = 0$.\\
+        \textit{Inductiestap.} Stel $11^k - 4^k = 7m$. Splits $11 = 4 + 7$:\\
+        $11^{k + 1} - 4^{k + 1} = 11 \cdot 11^k - 4 \cdot 4^k = 11(11^k - 4^k) + 11 \cdot 4^k - 4 \cdot 4^k = 11 \cdot 7m + 7 \cdot 4^k = 7(11m + 4^k)$.\\
+        \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n$.
+    - opgave: |-
+        $2^{n + 2} + 3^{2n + 1}$ is deelbaar door 7.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        \textit{Basisstap.} $2^2 + 3^1 = 7$.\\
+        \textit{Inductiestap.} Stel $2^{k + 2} + 3^{2k + 1} = 7m$. Dan is\\
+        $2^{k + 3} + 3^{2k + 3} = 2 \cdot 2^{k + 2} + 9 \cdot 3^{2k + 1} = 2(2^{k + 2} + 3^{2k + 1}) + 7 \cdot 3^{2k + 1} = 7(2m + 3^{2k + 1})$.\\
+        \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n$.
+
+- id: h3-o25
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    som met faculteiten
+  opgave: |-
+    Bereken $1 \cdot 1! + 2 \cdot 2! + \cdots + n \cdot n!$ voor $n = 1, 2, 3$, vergelijk met $(n + 1)!$, en bewijs dat de som $(n + 1)! - 1$ is.
+  antwoord: |-
+    1, 5, 23; bewijs
+  uitwerking: |-
+    $1$, $1 + 4 = 5$, $5 + 18 = 23$: telkens 1 minder dan $2! = 2$, $3! = 6$, $4! = 24$.\\
+    \textit{Basisstap.} $1 \cdot 1! = 1 = 2! - 1$.\\
+    \textit{Inductiestap.} Stel $1 \cdot 1! + \cdots + k \cdot k! = (k + 1)! - 1$. Dan is\\
+    $1 \cdot 1! + \cdots + k \cdot k! + (k + 1)(k + 1)! = (k + 1)! - 1 + (k + 1)(k + 1)! = (k + 2)(k + 1)! - 1 = (k + 2)! - 1$.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n \geqslant 1$.
+
+- id: h3-o28
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    twee bewijzen vergelijken
+  opgave: |-
+    Je bewijst op twee manieren dat $n^3 + 5n$ deelbaar is door 6, voor elk natuurlijk getal $n$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bewijs het met volledige inductie. Tip: van twee opeenvolgende getallen is er één even.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        \textit{Basisstap.} $0^3 + 0 = 0$.\\
+        \textit{Inductiestap.} Stel $k^3 + 5k = 6m$. Dan is\\
+        $(k + 1)^3 + 5(k + 1) = k^3 + 3k^2 + 3k + 1 + 5k + 5 = (k^3 + 5k) + 3k(k + 1) + 6$.\\
+        $k(k + 1)$ is even, dus $3k(k + 1) = 6j$. Dan is het geheel $6m + 6j + 6 = 6(m + j + 1)$.\\
+        \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n$.
+    - opgave: |-
+        Bewijs het rechtstreeks. Tip: $n^3 + 5n = (n^3 - n) + 6n$, en gebruik opdracht \ref{oef:h2-o4}.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $n^3 + 5n = (n^3 - n) + 6n$. Een product van drie opeenvolgende getallen is deelbaar door 6 (hoofdstuk 2), dus $n^3 - n = (n - 1)n(n + 1) = 6j$, dus $n^3 + 5n = 6(j + n)$.
+    - opgave: |-
+        Vergelijk de twee bewijzen. Welke vind je eenvoudiger? Welk bewijs zegt beter \textit{waarom} het klopt?
+      antwoord: |-
+        eigen mening
+      uitwerking: |-
+        Het rechtstreekse bewijs is korter, maar steunt op een eerder resultaat. Het toont ook waarom: $n^3 + 5n$ verschilt een veelvoud van 6 van een product van drie opeenvolgende getallen. Het inductiebewijs is een vast stramien dat ook werkt als je zo'n truc niet ziet.
 
 - id: h3-o7
   soort: opdracht
@@ -182,19 +863,129 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Basisstap: $0$. Inductiestap: $(k + 1)^3 + 2(k + 1) = k^3 + 3k^2 + 3k + 1 + 2k + 2 = (k^3 + 2k) + 3(k^2 + k + 1)$. Het eerste deel is deelbaar door 3 volgens de hypothese, het tweede is een veelvoud van 3.
+    \textit{Basisstap.} $0^3 + 0 = 0$.\\
+    \textit{Inductiestap.} Stel $k^3 + 2k = 3m$. Dan is\\
+    $(k + 1)^3 + 2(k + 1) = k^3 + 3k^2 + 3k + 1 + 2k + 2 = (k^3 + 2k) + 3(k^2 + k + 1) = 3(m + k^2 + k + 1)$.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n$.
+
+- id: h3-o26
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    som van derdemachten
+  opgave: |-
+    Een verrassend verband tussen derdemachten en de som $1 + 2 + \cdots + n$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $1^3$, $1^3 + 2^3$, $1^3 + 2^3 + 3^3$ en $1^3 + 2^3 + 3^3 + 4^3$. Wat merk je?
+      antwoord: |-
+        1, 9, 36, 100: kwadraten van 1, 3, 6, 10
+      uitwerking: |-
+        1, 9, 36, 100: de kwadraten van 1, 3, 6, 10, en dat zijn de sommen $1 + 2 + \cdots + n$.
+    - opgave: |-
+        Bewijs met volledige inductie: $1^3 + 2^3 + \cdots + n^3 = \dfrac{n^2(n + 1)^2}{4}$ voor alle $n \geqslant 1$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        \textit{Basisstap.} $1 = \dfrac{1 \cdot 4}{4}$.\\
+        \textit{Inductiestap.} Stel $1^3 + \cdots + k^3 = \dfrac{k^2(k + 1)^2}{4}$. Dan is, met $(k + 1)^2$ buiten haakjes,\\
+        $1^3 + \cdots + k^3 + (k + 1)^3 = \dfrac{k^2(k + 1)^2}{4} + (k + 1)^3 = \dfrac{(k + 1)^2(k^2 + 4k + 4)}{4} = \dfrac{(k + 1)^2(k + 2)^2}{4}$,\\
+        de formule voor $n = k + 1$.\\
+        \textit{Besluit.} Volgens het principe van volledige inductie geldt de formule voor alle $n \geqslant 1$.
+    - opgave: |-
+        Leid af dat $1^3 + 2^3 + \cdots + n^3 = (1 + 2 + \cdots + n)^2$.
+      antwoord: |-
+        $\frac{n^2(n + 1)^2}{4} = \left(\frac{n(n + 1)}{2}\right)^2$
+      uitwerking: |-
+        Volgens de somformule uit de leerstof is $1 + 2 + \cdots + n = \dfrac{n(n + 1)}{2}$, en $\left(\dfrac{n(n + 1)}{2}\right)^2 = \dfrac{n^2(n + 1)^2}{4}$.
 
 - id: h3-o8
   soort: opdracht
   niveau: 3
   thema: |-
     stukken van een vlak
+  figuur:
+    opties: |-
+      3.6cm
+    code: |-
+      \begin{tikzpicture}[x=1.1cm,y=1.1cm,font=\scriptsize]
+        \draw[grijs] (0,0) rectangle (3,2);
+        \begin{scope}
+          \clip (0,0) rectangle (3,2);
+          \draw[accent,thick] (0,.2) -- (3,1.7);
+          \draw[accent,thick] (0,2) -- (3,-.4);
+          \draw[accent,thick] (1.8,0) -- (1.8,2);
+        \end{scope}
+        \node[below] at (1.5,0) {$p_3 = 7$};
+      \end{tikzpicture}
   opgave: |-
-    $n$ rechten in een vlak, waarvan er geen twee evenwijdig zijn en geen drie door één punt gaan, verdelen het vlak in $p_n$ stukken. Toon aan dat $p_{n + 1} = p_n + (n + 1)$, en bewijs met inductie dat $p_n = \dfrac{n^2 + n + 2}{2}$.
+    $n$ rechten in een vlak, waarvan er geen twee evenwijdig zijn en geen drie door één punt gaan, verdelen het vlak in $p_n$ stukken. De figuur toont $p_3 = 7$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $p_{n + 1} = p_n + (n + 1)$.
+      antwoord: |-
+        de nieuwe rechte snijdt $n$ rechten en doorloopt $n + 1$ stukken
+      uitwerking: |-
+        De nieuwe rechte snijdt de $n$ andere in $n$ verschillende punten (geen evenwijdige, geen drie door één punt), en wordt zo in $n + 1$ stukken verdeeld. Elk stuk loopt door een bestaand gebied en verdeelt het in twee: er komen $n + 1$ gebieden bij.
+    - opgave: |-
+        Bewijs met volledige inductie dat $p_n = \dfrac{n^2 + n + 2}{2}$ voor alle ${n \geqslant 0}$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        \textit{Basisstap.} Zonder rechten is er één stuk: $p_0 = 1 = \dfrac{2}{2}$.\\
+        \textit{Inductiestap.} Stel $p_k = \dfrac{k^2 + k + 2}{2}$. Met a is\\
+        $p_{k + 1} = \dfrac{k^2 + k + 2}{2} + k + 1 = \dfrac{k^2 + 3k + 4}{2} = \dfrac{(k + 1)^2 + (k + 1) + 2}{2}$,\\
+        de formule voor $n = k + 1$.\\
+        \textit{Besluit.} Volgens het principe van volledige inductie geldt de formule voor alle $n \geqslant 0$. Controle: $p_3 = \dfrac{9 + 3 + 2}{2} = 7$.
+
+- id: h3-o27
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    een sterkere uitspraak bewijzen
+  opgave: |-
+    Neem $S_n = 1 + \frac14 + \frac19 + \cdots + \frac{1}{n^2}$. Je wilt bewijzen dat $S_n \leqslant 2$ voor alle $n \geqslant 1$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Probeer het met inductie. Waarom lukt de inductiestap niet?
+      antwoord: |-
+        uit $S_k \leqslant 2$ volgt alleen $S_{k + 1} \leqslant 2 + \frac{1}{(k + 1)^2}$
+      uitwerking: |-
+        De hypothese $S_k \leqslant 2$ geeft $S_{k + 1} = S_k + \dfrac{1}{(k + 1)^2} \leqslant 2 + \dfrac{1}{(k + 1)^2}$, en dat is meer dan 2. De hypothese laat geen ruimte voor de nieuwe term.
+    - opgave: |-
+        Bewijs met inductie de sterkere uitspraak $S_n \leqslant 2 - \dfrac1n$. Tip: $\dfrac1k - \dfrac{1}{k + 1} = \dfrac{1}{k(k + 1)}$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        \textit{Basisstap.} $S_1 = 1 \leqslant 2 - 1$.\\
+        \textit{Inductiestap.} Stel $S_k \leqslant 2 - \dfrac1k$. Dan is $S_{k + 1} \leqslant 2 - \dfrac1k + \dfrac{1}{(k + 1)^2}$. Dat is hoogstens $2 - \dfrac{1}{k + 1}$ als\\
+        $\dfrac{1}{(k + 1)^2} \leqslant \dfrac1k - \dfrac{1}{k + 1} = \dfrac{1}{k(k + 1)}$,\\
+        en dat klopt, want $k(k + 1) \leqslant (k + 1)^2$.\\
+        \textit{Besluit.} Volgens het principe van volledige inductie is $S_n \leqslant 2 - \dfrac1n$ voor alle $n \geqslant 1$.
+    - opgave: |-
+        Besluit dat $S_n < 2$. Waarom is de sterkere uitspraak gemakkelijker te bewijzen?
+      antwoord: |-
+        $2 - \frac1n < 2$; de hypothese is sterker
+      uitwerking: |-
+        $S_n \leqslant 2 - \dfrac1n < 2$. De sterkere uitspraak geeft ook een sterkere inductiehypothese: er blijft een marge $\dfrac1k$ over voor de volgende term.
+
+- id: h3-o29
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    deelbaarheid met een macht en een veelterm
+  opgave: |-
+    Bewijs dat $4^n + 15n - 1$ deelbaar is door 9 voor elk natuurlijk getal $n$.
   antwoord: |-
     bewijs
   uitwerking: |-
-    De nieuwe rechte snijdt de $n$ andere in $n$ verschillende punten, en wordt zo in $n + 1$ stukken verdeeld. Elk stuk verdeelt een bestaand gebied in twee: er komen $n + 1$ gebieden bij. Basisstap: $p_0 = 1 = \frac{2}{2}$. Inductiestap: $\frac{k^2 + k + 2}{2} + k + 1 = \frac{k^2 + 3k + 4}{2} = \frac{(k + 1)^2 + (k + 1) + 2}{2}$.
+    \textit{Basisstap.} $4^0 + 0 - 1 = 0$.\\
+    \textit{Inductiestap.} Stel $4^k + 15k - 1 = 9m$, dus $4^k = 9m - 15k + 1$. Dan is\\
+    $4^{k + 1} + 15(k + 1) - 1 = 4(9m - 15k + 1) + 15k + 14 = 36m - 45k + 18 = 9(4m - 5k + 2)$.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n$.
 
 #----------------------------------------------------------------------------------------
 # KOPPEL
@@ -260,7 +1051,11 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Basisstap: $3 = 1 \cdot 3$. Inductiestap: $k(2k + 1) + 4(k + 1) - 1 = 2k^2 + 5k + 3 = (k + 1)(2k + 3)$, de formule voor $n = k + 1$.
+    \textit{Basisstap.} $n = 1$: $3 = 1 \cdot 3$.\\
+    \textit{Inductiestap.} Stel $3 + 7 + \cdots + (4k - 1) = k(2k + 1)$. De volgende term is $4(k + 1) - 1 = 4k + 3$, dus\\
+    $3 + 7 + \cdots + (4k - 1) + (4k + 3) = 2k^2 + k + 4k + 3 = 2k^2 + 5k + 3 = (k + 1)(2k + 3)$,\\
+    de formule voor $n = k + 1$.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt de formule voor alle $n \geqslant 1$.
 
 - id: h3-t2
   soort: test
@@ -272,7 +1067,9 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Basisstap: $3^0 - 1 = 0$. Inductiestap: $3^{k + 1} - 1 = 3(2m + 1) - 1 = 6m + 2 = 2(3m + 1)$.
+    \textit{Basisstap.} $3^0 - 1 = 0 = 2 \cdot 0$.\\
+    \textit{Inductiestap.} Stel $3^k - 1 = 2m$, dus $3^k = 2m + 1$. Dan is $3^{k + 1} - 1 = 3(2m + 1) - 1 = 6m + 2 = 2(3m + 1)$: even.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n$.
 
 - id: h3-t3
   soort: test
@@ -284,4 +1081,56 @@
   antwoord: |-
     bewijs
   uitwerking: |-
-    Basisstap: $9 > 5$. Inductiestap: $3^{k + 1} = 3 \cdot 3^k > 3(2k + 1) = 6k + 3 > 2k + 3 = 2(k + 1) + 1$, want $6k + 3 > 2k + 3$ voor $k \geqslant 1$.
+    \textit{Basisstap.} $3^2 = 9 > 5$.\\
+    \textit{Inductiestap.} Stel $3^k > 2k + 1$ met $k \geqslant 2$. Dan is\\
+    $3^{k + 1} = 3 \cdot 3^k > 3(2k + 1) = 6k + 3 > 2k + 3 = 2(k + 1) + 1$,\\
+    want $6k > 2k$ voor $k \geqslant 1$.\\
+    \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n \geqslant 2$.
+
+- id: h3-t4
+  soort: test
+  niveau: 1
+  thema: |-
+    het principe
+  opgave: |-
+    Van een uitspraak $P(n)$ weet je: $P(2)$ is waar, en $P(k) \dan P(k + 1)$ voor elke $k \geqslant 2$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Voor welke $n$ is $P(n)$ zeker waar?
+      antwoord: |-
+        alle $n \geqslant 2$
+      uitwerking: |-
+        Alle $n \geqslant 2$: $P(2)$ is waar, en wordt doorgegeven naar 3, 4, 5, \ldots
+    - opgave: |-
+        Weet je iets over $P(1)$?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: niets gegeven gaat over $P(1)$. De stap gaat alleen vooruit, vanaf 2.
+
+- id: h3-t5
+  soort: test
+  niveau: 1
+  thema: |-
+    hypothese en doel
+  opgave: |-
+    Schrijf voor $1 + 3 + 9 + \cdots + 3^{n - 1} = \dfrac{3^n - 1}{2}$ ($n \geqslant 1$) de basisstap, de inductiehypothese en het doel volledig uit.
+  antwoord: |-
+    $1 = \frac{3 - 1}{2}$; \ $\ldots + 3^{k - 1} = \frac{3^k - 1}{2}$; \ $\ldots + 3^{k - 1} + 3^k = \frac{3^{k + 1} - 1}{2}$
+  uitwerking: |-
+    Basisstap: $n = 1$, $1 = \dfrac{3 - 1}{2}$.\\
+    Hypothese: $1 + 3 + \cdots + 3^{k - 1} = \dfrac{3^k - 1}{2}$.\\
+    Doel: $1 + 3 + \cdots + 3^{k - 1} + 3^k = \dfrac{3^{k + 1} - 1}{2}$.
+
+- id: h3-t6
+  soort: test
+  niveau: 2
+  thema: |-
+    waar zit de fout
+  opgave: |-
+    Iemand bewijst dat $5^n + 2$ deelbaar is door 4: \textit{stel $5^k + 2 = 4m$. Dan is $5^{k + 1} + 2 = 5(5^k + 2) - 8 = 4(5m - 2)$.} Wat ontbreekt er? Is de uitspraak waar?
+  antwoord: |-
+    de basisstap; de uitspraak is vals
+  uitwerking: |-
+    De inductiestap klopt, maar de basisstap ontbreekt. $5^0 + 2 = 3$ en $5^1 + 2 = 7$ zijn niet deelbaar door 4. De uitspraak is vals: zonder eerste steen valt er niets om.
