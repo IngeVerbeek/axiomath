@@ -285,6 +285,97 @@
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
 
+- id: h2-vert-kort
+  soort: kort
+  opgave: |-
+    Geef een bijzonder punt, het domein en het bereik.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $g(x) = x^2 + 3$
+      antwoord: |-
+        top $(0, 3)$; $\R$; $\left[3, +\infty\right[$
+      uitwerking: |-
+        $x^2$ over 3 naar boven: de top $(0, 0)$ gaat naar $(0, 3)$. $\dom g = \R$, $\ber g = \left[3, +\infty\right[$.
+    - opgave: |-
+        $g(x) = \sqrt{x} - 1$
+      antwoord: |-
+        beginpunt $(0, -1)$; $\left[0, +\infty\right[$; $\left[-1, +\infty\right[$
+      uitwerking: |-
+        $\sqrt{x}$ over 1 naar onder: het beginpunt $(0, 0)$ gaat naar $(0, -1)$. Het domein blijft $\left[0, +\infty\right[$, het bereik wordt $\left[-1, +\infty\right[$.
+    - opgave: |-
+        $g(x) = \dfrac1x + 2$
+      antwoord: |-
+        $(1, 3)$; $\R \setminus \{0\}$; $\R \setminus \{2\}$
+      uitwerking: |-
+        $\frac1x$ over 2 naar boven: $(1, 1)$ gaat naar $(1, 3)$. Het domein blijft $\R \setminus \{0\}$. De waarde $0$ wordt door $\frac1x$ niet bereikt, dus $2$ niet door $g$: $\ber g = \R \setminus \{2\}$.
+
+- id: h2-hor-kort
+  soort: kort
+  opgave: |-
+    Geef een bijzonder punt, het domein en het bereik.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $g(x) = (x + 4)^2$
+      antwoord: |-
+        top $(-4, 0)$; $\R$; $\left[0, +\infty\right[$
+      uitwerking: |-
+        $x + 4 = x - (-4)$: $x^2$ over 4 naar links. De top gaat naar $(-4, 0)$. $\dom g = \R$, $\ber g = \left[0, +\infty\right[$.
+    - opgave: |-
+        $g(x) = \sqrt{x - 3}$
+      antwoord: |-
+        beginpunt $(3, 0)$; $\left[3, +\infty\right[$; $\left[0, +\infty\right[$
+      uitwerking: |-
+        $\sqrt{x}$ over 3 naar rechts. Het beginpunt gaat naar $(3, 0)$, het domein naar $\left[3, +\infty\right[$. Het bereik blijft $\left[0, +\infty\right[$.
+    - opgave: |-
+        $g(x) = \dfrac{1}{x + 2}$
+      antwoord: |-
+        $(-1, 1)$; $\R \setminus \{-2\}$; $\R \setminus \{0\}$
+      uitwerking: |-
+        $\frac1x$ over 2 naar links: $(1, 1)$ gaat naar $(-1, 1)$, en $g$ bestaat niet in $-2$. $\dom g = \R \setminus \{-2\}$, $\ber g = \R \setminus \{0\}$.
+
+- id: h2-vertrekken-kort
+  soort: kort
+  opgave: |-
+    Het punt $(2, 3)$ ligt op de grafiek van $f$, en $5$ is een nulwaarde van $f$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Welk punt ligt zeker op de grafiek van $4f(x)$? En op die van $\frac13 f(x)$?
+      antwoord: |-
+        $(2, 12)$; $(2, 1)$
+      uitwerking: |-
+        Verticaal uitrekken: $(x, y) \mapsto (x, ay)$. Met $a = 4$ wordt $(2, 3)$ het punt $(2, 12)$, met $a = \frac13$ het punt $(2, 1)$.
+    - opgave: |-
+        Geef een nulwaarde van $2f(x)$.
+      antwoord: |-
+        $5$
+      uitwerking: |-
+        $2f(5) = 2 \cdot 0 = 0$: een punt op de $x$-as blijft liggen bij verticaal uitrekken.
+
+- id: h2-horrekken-kort
+  soort: kort
+  opgave: |-
+    Een functie $f$ heeft domein $[-8, 4]$ en de nulwaarden $-6$ en $3$. Geef het domein en de nulwaarden van:
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(3x)$
+      antwoord: |-
+        $\left[-\frac83, \frac43\right]$; $-2$ en $1$
+      uitwerking: |-
+        $b = 3$: alle $x$-coördinaten gedeeld door $3$. Domein $\left[-\frac83, \frac43\right]$, nulwaarden $-2$ en $1$. Controle: $f(3 \cdot 1) = f(3) = 0$.
+    - opgave: |-
+        $f\bigl(\frac12 x\bigr)$
+      antwoord: |-
+        $[-16, 8]$; $-12$ en $6$
+      uitwerking: |-
+        $b = \frac12$: alle $x$-coördinaten gedeeld door $\frac12$, dus maal $2$. Domein $[-16, 8]$, nulwaarden $-12$ en $6$. Controle: $f\bigl(\frac12 \cdot 6\bigr) = f(3) = 0$.
+
 - id: h2-o1
   soort: opdracht
   niveau: 1
