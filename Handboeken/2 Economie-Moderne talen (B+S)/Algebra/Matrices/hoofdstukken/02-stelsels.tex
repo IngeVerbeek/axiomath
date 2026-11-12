@@ -67,11 +67,13 @@ Een elementaire rijbewerking verandert de oplossingen van een stelsel niet.
 \end{stelling}
 
 \begin{bewijs}
-Een oplossing van het oude stelsel voldoet aan elke vergelijking, dus ook aan $r$ keer een vergelijking en aan een som van vergelijkingen: ze is een oplossing van het nieuwe stelsel. Omgekeerd maak je elke rijbewerking ongedaan met een rijbewerking van dezelfde soort: terug verwisselen, vermenigvuldigen met $\frac1r$, of $rR_j$ weer aftrekken. Dus is elke oplossing van het nieuwe stelsel ook een oplossing van het oude.
+Schrijf vergelijking $i$ kort als $L_i = c_i$, met $L_i$ het linkerlid. Neem een oplossing van het oude stelsel. Verwisselen verandert niets aan de vergelijkingen zelf. Uit $L_i = c_i$ volgt $rL_i = rc_i$, en uit $L_i = c_i$ en $L_j = c_j$ volgt
+\bewijsregel{L_i + rL_j = c_i + rc_j .}
+De oplossing voldoet dus ook aan het nieuwe stelsel. Omgekeerd maak je elke rijbewerking ongedaan met een rijbewerking van dezelfde soort: terug verwisselen, vermenigvuldigen met $\frac1r$, of $rR_j$ weer aftrekken. Met dezelfde redenering is elke oplossing van het nieuwe stelsel dus ook een oplossing van het oude.
 \end{bewijs}
 \end{theorie}
 
-Daarom moet $r$ bij de tweede bewerking verschillend zijn van 0: een rij maal 0 kun je niet terugdraaien, en dan verlies je een vergelijking.
+Stelsels met dezelfde oplossingen heten \textbf{gelijkwaardig}. Het bewijs toont waarom $r$ bij de tweede bewerking verschillend moet zijn van 0: een rij maal 0 kun je niet terugdraaien. Neem $x + y = 2$ en $x - y = 0$, met als enige oplossing $(1, 1)$. Vermenigvuldig je de tweede vergelijking met 0, dan staat er $0 = 0$, en is ook $(2, 0)$ een oplossing: je bent een vergelijking kwijt.
 
 \begin{oefeningen}
 \oef{h2-rijbew}
@@ -160,22 +162,32 @@ Bij twee onbekenden is elke vergelijking een rechte. Twee rechten snijden elkaar
 \end{tikzpicture}}
 
 \begin{theorie}
-Na rijherleiden is een stelsel
+Een stelsel is \textbf{\textcolor{accent}{strijdig}} als het geen oplossing heeft, \textbf{\textcolor{accent}{bepaald}} als het precies één oplossing heeft, en \textbf{\textcolor{accent}{onbepaald}} als het oneindig veel oplossingen heeft.
+
+\begin{stelling}{Soort stelsel aflezen}
+Rijherleid de uitgebreide matrix. Dan is het stelsel
 
 \vspace{1mm}
 {\centering\arrayrulecolor{accent}\renewcommand{\arraystretch}{1.5}%
-\begin{tabular}{|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{6.6cm}|>{\centering\arraybackslash}m{4.2cm}|}
+\begin{tabular}{|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{9.6cm}|}
 \hline
-\textbf{\textcolor{accent}{strijdig}} & er is een rij $[0 \ \cdots \ 0 \,|\, c]$ met $c \neq 0$ & geen oplossing \\ \hline
-\textbf{\textcolor{accent}{bepaald}} & niet strijdig, en elke onbekende heeft een spil & precies één oplossing \\ \hline
-\textbf{\textcolor{accent}{onbepaald}} & niet strijdig, en minstens één onbekende heeft geen spil & oneindig veel oplossingen \\ \hline
+\textbf{\textcolor{accent}{strijdig}} & als er een rij $\formule{[0 \ \cdots \ 0 \,|\, c]}$ is met $c \neq 0$ \\ \hline
+\textbf{\textcolor{accent}{bepaald}} & als het niet strijdig is, en elke onbekende een spil heeft \\ \hline
+\textbf{\textcolor{accent}{onbepaald}} & als het niet strijdig is, en minstens één onbekende geen spil heeft \\ \hline
 \end{tabular}\par}
 
 \vspace{1mm}
 Bij een onbepaald stelsel is elke onbekende zonder spil een \textbf{\textcolor{accent}{parameter}}: ze mag elke waarde aannemen.
+\end{stelling}
+
+\begin{bewijs}
+Rijbewerkingen veranderen de oplossingen niet, dus kijken we naar het rijgereduceerde stelsel. Een rij $[0 \ \cdots \ 0 \,|\, c]$ staat voor $0 = c$. Is $c \neq 0$, dan klopt die vergelijking nooit: geen oplossing. Is er geen zo'n rij, dan zeggen de nulrijen $0 = 0$, en blijft er per spil één vergelijking over. Omdat in de kolom van een spil verder alleen nullen staan, komt in die vergelijking geen andere onbekende met een spil voor:
+\bewijsregel{(\text{onbekende met spil}) + (\text{termen met onbekenden zonder spil}) = d .}
+Heeft elke onbekende een spil, dan staat er gewoon $x_k = d_k$: precies één oplossing. Zijn er onbekenden zonder spil, geef die dan om het even welke waarden. Elke vergelijking geeft dan de waarde van haar onbekende met spil, en dat is een oplossing. Verschillende waarden geven verschillende oplossingen, dus zijn er oneindig veel.
+\end{bewijs}
 \end{theorie}
 
-Een rij $[0 \ 0 \ 0 \,|\, c]$ staat voor de vergelijking $0x + 0y + 0z = c$. Met $c \neq 0$ kan die nooit kloppen. Met $c = 0$ is ze altijd waar: een nulrij zegt niets, en die vergelijking was een gevolg van de andere.
+Een nulrij $[0 \ 0 \ 0 \,|\, 0]$ zegt dus niets: die vergelijking was een gevolg van de andere. Pas op: een stelsel met een nulrij is daarom nog niet onbepaald. Dat beslis je met de spillen. Zo geeft het stelsel $x + y = 2$, $x - y = 0$, $2x = 2$ na rijherleiden een nulrij, maar $x$ en $y$ hebben allebei een spil: het is bepaald, met oplossing $(1, 1)$.
 
 \voorbeeld{}{Los op: $\begin{cases} x + 2y - z = 3 \\ 2x + 5y + z = 8 \\ x + 3y + 2z = 5 \end{cases}$\label{vb:h2-onbepaald}}{%
 \uitleg{We rijherleiden zoals altijd. Er blijft een nulrij over, en de derde kolom krijgt geen spil: $z$ wordt een parameter.}
@@ -219,6 +231,10 @@ a \neq 5: \quad z = 0, \ y = 1, \ x = 0 & Deel $R_3$ door $a - 5 \neq 0$: $z = 0
 a = 5: \quad (x, y, z) = (t, \ 1 - 2t, \ t) & De laatste rij wordt een nulrij: onbepaald, met $z = t$ als parameter.
 \end{stappenbreed}
 Strijdig is het stelsel nooit: het rechterlid van de laatste rij is altijd 0.}
+
+\begin{werkwijze}
+Rijherleid zoals gewoonlijk, maar deel nooit door een uitdrukking met de parameter die 0 kan worden. Zoek de waarden van de parameter waarvoor een spil 0 wordt. Bespreek die waarden elk apart, en alle andere waarden samen.
+\end{werkwijze}
 
 \begin{oefeningen}
 \oef{h2-parameter}
