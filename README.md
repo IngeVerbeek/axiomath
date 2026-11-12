@@ -20,9 +20,9 @@ Een geïntegreerd ecosysteem, volledig open:
 Eerst maken we van elk handboek een eerste versie, daarna lezen leerkrachten ze na. Dit overzicht komt uit [voortgang.yaml](voortgang.yaml). Zie [Handboeken/README.md](Handboeken/README.md) voor de indeling per pakket en richting.
 
 <!-- voortgang:begin -->
-**Totaal** &nbsp; `████████░░░░░░░░░░░░` &nbsp; **39 %** van 47 handboeken
+**Totaal** &nbsp; `████████░░░░░░░░░░░░` &nbsp; **40 %** van 47 handboeken
 
-⚪ 1 gepland · 🟠 46 eerste versie · 🟡 0 nagelezen · 🟢 0 klaar
+⚪ 0 gepland · 🟠 47 eerste versie · 🟡 0 nagelezen · 🟢 0 klaar
 
 ### Per richting
 
@@ -38,10 +38,10 @@ Elke richting volgt één pakket, en de voortgang van de richting is het gemidde
 | Latijn-Wetenschappen | 3 (B+S') | `████████░░░░░░░░░░░░` |  40 % |
 | Moderne talen-Wetenschappen | 3 (B+S') | `████████░░░░░░░░░░░░` |  40 % |
 | Sportwetenschappen | 3 (B+S') | `████████░░░░░░░░░░░░` |  40 % |
-| Economie-Wiskunde | 4 (B+S'') | `████████░░░░░░░░░░░░` |  38 % |
-| Grieks-Wiskunde | 4 (B+S'') | `████████░░░░░░░░░░░░` |  38 % |
-| Latijn-Wiskunde | 4 (B+S'') | `████████░░░░░░░░░░░░` |  38 % |
-| Wetenschappen-Wiskunde | 4 (B+S'') | `████████░░░░░░░░░░░░` |  38 % |
+| Economie-Wiskunde | 4 (B+S'') | `████████░░░░░░░░░░░░` |  40 % |
+| Grieks-Wiskunde | 4 (B+S'') | `████████░░░░░░░░░░░░` |  40 % |
+| Latijn-Wiskunde | 4 (B+S'') | `████████░░░░░░░░░░░░` |  40 % |
+| Wetenschappen-Wiskunde | 4 (B+S'') | `████████░░░░░░░░░░░░` |  40 % |
 
 ### Per handboek
 
@@ -99,7 +99,7 @@ Een percentage hoort bij een status: ⚪ **gepland** (0 %): nog niet begonnen, �
 | [Statistiek](<Handboeken/3 Latijn-Wet., Moderne talen-Wet., Sportwetenschappen (B+S')/Data en onzekerheid/Statistiek/README.md>) | Data en onzekerheid | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Onderzoekscompetentie](<Handboeken/3 Latijn-Wet., Moderne talen-Wet., Sportwetenschappen (B+S')/Onderzoekscompetentie/README.md>) | – | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 
-#### Pakket 4 · B+S'' &nbsp; `████████░░░░░░░░░░░░` 38 %
+#### Pakket 4 · B+S'' &nbsp; `████████░░░░░░░░░░░░` 40 %
 
 <sub>Economie-Wiskunde, Grieks-Wiskunde, Latijn-Wiskunde, Wetenschappen-Wiskunde</sub>
 
@@ -113,7 +113,7 @@ Een percentage hoort bij een status: ⚪ **gepland** (0 %): nog niet begonnen, �
 | [Integralen](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Analyse/Integralen/README.md>) | Analyse | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Matrices](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Algebra/Matrices/README.md>) | Algebra | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Complexe getallen](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Algebra/Complexe getallen/README.md>) | Algebra | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
-| Groepen | Algebra | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
+| [Groepen](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Algebra/Groepen/README.md>) | Algebra | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Ruimtemeetkunde](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Meetkunde/Ruimtemeetkunde/README.md>) | Meetkunde | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Rijen](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Discrete wiskunde/Rijen/README.md>) | Discrete wiskunde | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Telproblemen](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Discrete wiskunde/Telproblemen/README.md>) | Discrete wiskunde | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |

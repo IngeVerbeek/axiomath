@@ -1,0 +1,918 @@
+# Oefeningen van hoofdstuk 3. Zie oefeningenbank.py voor de velden.
+# Afspraken voor de driehoek: r is de draaiing over 120 graden tegen de wijzers van de klok in,
+# s1, s2, s3 de spiegelingen om de as door de hoek boven, linksonder en rechtsonder (vast in het vlak).
+# Vierkant: hoekpunten 1 rechtsboven, 2 linksboven, 3 linksonder, 4 rechtsonder; r is een kwartdraai
+# tegen de wijzers in; d1 de diagonaal door rechtsboven en linksonder, d2 door linksboven en rechtsonder.
+
+- id: h3-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Hoeveel symmetrieassen heeft een vierkant? En een rechthoek die geen vierkant is?
+      antwoord: |-
+        $4$ en $2$
+      uitwerking: |-
+        Het vierkant: twee middenparallellen en twee diagonalen. De rechthoek: alleen de twee middenparallellen.
+    - opgave: |-
+        Over welke hoeken tussen $0^\circ$ en $360^\circ$ kun je een gelijkzijdige driehoek om zijn middelpunt draaien zodat hij op zichzelf valt?
+      antwoord: |-
+        $120^\circ$ en $240^\circ$
+      uitwerking: |-
+        Een derde en twee derde van een volle draai (en de volle draai zelf).
+    - opgave: |-
+        Neem $f(x) = x + 1$ en $g(x) = -x$. Bepaal $(f \circ g)(x)$ en $(g \circ f)(x)$.
+      antwoord: |-
+        $-x + 1$ en $-x - 1$
+      uitwerking: |-
+        $f(-x) = -x + 1$ en $g(x + 1) = -x - 1$.
+    - opgave: |-
+        Op hoeveel manieren kun je vier boeken naast elkaar op een plank zetten?
+      antwoord: |-
+        $24$
+      uitwerking: |-
+        $4! = 4 \cdot 3 \cdot 2 \cdot 1 = 24$.
+    - opgave: |-
+        Wat is het beeld van $(2, 3)$ bij de spiegeling om de $x$-as? En bij de draaiing over $90^\circ$ om de oorsprong, tegen de wijzers van de klok in?
+      antwoord: |-
+        $(2, -3)$ en $(-3, 2)$
+      uitwerking: |-
+        Bij de spiegeling verandert het teken van $y$. Bij de kwartdraai wordt $(x, y)$ het punt $(-y, x)$.
+    - opgave: |-
+        De functie $f$ op $\{1, 2, 3\}$ heeft $f(1) = 2$, $f(2) = 3$ en $f(3) = 1$. Bereken $f\bigl(f(1)\bigr)$ en $f\bigl(f(f(2))\bigr)$.
+      antwoord: |-
+        $3$ en $2$
+      uitwerking: |-
+        $f(f(1)) = f(2) = 3$ en $f(f(f(2))) = f(f(3)) = f(1) = 2$.
+
+- id: h3-verken
+  soort: start
+  figuur:
+    code: |-
+      \begin{tikzpicture}[scale=.75]
+        \driehoekassen
+        \driehoek{1}{2}{3}
+      \end{tikzpicture}
+  opgave: |-
+    \blokkop{Verken}\quad Knip een gelijkzijdige driehoek uit karton en nummer de hoekpunten op beide kanten 1, 2 en 3, zoals in de figuur. Teken de omtrek van de driehoek op een blad.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Op hoeveel manieren kun je de driehoek terug in zijn omtrek leggen? Teken telkens de nummers.
+      antwoord: |-
+        $6$
+      uitwerking: |-
+        Hoekpunt 1 kan op drie plaatsen komen, en daarna kun je de driehoek nog omklappen of niet: $3 \cdot 2 = 6$ standen.
+    - opgave: |-
+        Welke standen krijg je door te draaien, zonder de driehoek op te tillen? Welke door hem om te klappen?
+      antwoord: |-
+        drie door te draaien, drie door om te klappen
+      uitwerking: |-
+        Draaien over $0^\circ$, $120^\circ$ en $240^\circ$ geeft drie standen; bij die standen staan de nummers tegen de wijzers van de klok in in de volgorde 1, 2, 3. Omklappen om een van de drie assen geeft de drie andere.
+    - opgave: |-
+        Draai de driehoek over $120^\circ$ tegen de wijzers van de klok in, en klap hem dan om om de verticale as. Doe het daarna in de omgekeerde volgorde. Krijg je dezelfde stand?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Eerst draaien, dan omklappen: boven 3, linksonder 2, rechtsonder 1. Eerst omklappen, dan draaien: boven 2, linksonder 1, rechtsonder 3. De volgorde maakt een verschil.
+
+- id: h3-driehoek
+  soort: kort
+  opgave: |-
+    Gebruik de symmetrieën van de gelijkzijdige driehoek. Teken de standen, of gebruik de tabel.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $r \circ r$, \ $s_2 \circ s_3$, \ $s_3 \circ s_2$ \ en \ $r^2 \circ s_2$.
+      antwoord: |-
+        $r^2$, \ $r$, \ $r^2$, \ $s_3$
+      uitwerking: |-
+        Twee keer $120^\circ$ is $240^\circ$. Uit de tabel: $s_2 \circ s_3 = r$, $s_3 \circ s_2 = r^2$ en $r^2 \circ s_2 = s_3$. Twee spiegelingen geven een draaiing, en de volgorde telt.
+    - opgave: |-
+        Bepaal de inverse van elke symmetrie.
+      antwoord: |-
+        $e^{-1} = e$, $r^{-1} = r^2$, $(r^2)^{-1} = r$, $s_i^{-1} = s_i$
+      uitwerking: |-
+        Zoek $e$ in elke rij van de tabel. Een draaiing over $120^\circ$ maak je ongedaan met een draaiing over $240^\circ$; een spiegeling met dezelfde spiegeling.
+    - opgave: |-
+        Los op: $r \circ x = s_1$.
+      antwoord: |-
+        $x = s_2$
+      uitwerking: |-
+        $x = r^{-1} \circ s_1 = r^2 \circ s_1 = s_2$. Controle: $r \circ s_2 = s_1$.
+
+- id: h3-figuren
+  soort: kort
+  opgave: |-
+    Hoeveel symmetrieën heeft de figuur? Tel ook de identieke transformatie $e$ mee.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        een regelmatige zeshoek
+      antwoord: |-
+        $12$
+      uitwerking: |-
+        Zes draaiingen (over een veelvoud van $60^\circ$) en zes spiegelingen.
+    - opgave: |-
+        een gelijkbenige driehoek die niet gelijkzijdig is
+      antwoord: |-
+        $2$
+      uitwerking: |-
+        $e$ en de spiegeling om de hoogtelijn op de basis.
+    - opgave: |-
+        de hoofdletter Z
+      antwoord: |-
+        $2$
+      uitwerking: |-
+        $e$ en de halve draai om het midden; geen spiegeling.
+    - opgave: |-
+        de hoofdletter H
+      antwoord: |-
+        $4$
+      uitwerking: |-
+        $e$, de halve draai, en de spiegelingen om de horizontale en de verticale as.
+    - opgave: |-
+        een parallellogram dat geen ruit en geen rechthoek is
+      antwoord: |-
+        $2$
+      uitwerking: |-
+        $e$ en de halve draai om het snijpunt van de diagonalen.
+    - opgave: |-
+        een cirkel
+      antwoord: |-
+        oneindig veel
+      uitwerking: |-
+        Elke draaiing om het middelpunt en elke spiegeling om een middellijn.
+
+- id: h3-perm
+  soort: kort
+  opgave: |-
+    Neem $\sigma = \perm{1 & 2 & 3 \\ 2 & 3 & 1}$ en $\tau = \perm{1 & 2 & 3 \\ 1 & 3 & 2}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $\sigma \circ \tau$ en $\tau \circ \sigma$.
+      antwoord: |-
+        $\perm{1 & 2 & 3 \\ 2 & 1 & 3}$ en $\perm{1 & 2 & 3 \\ 3 & 2 & 1}$
+      uitwerking: |-
+        $\sigma \circ \tau$: $1 \to 1 \to 2$, $2 \to 3 \to 1$, $3 \to 2 \to 3$. \ $\tau \circ \sigma$: $1 \to 2 \to 3$, $2 \to 3 \to 2$, $3 \to 1 \to 1$.
+    - opgave: |-
+        Bereken $\sigma^2$ en $\sigma^3$.
+      antwoord: |-
+        $\sigma^2 = \perm{1 & 2 & 3 \\ 3 & 1 & 2}$, \ $\sigma^3 = e$
+      uitwerking: |-
+        $1 \to 2 \to 3$, $2 \to 3 \to 1$, $3 \to 1 \to 2$. Nog een keer $\sigma$ brengt alles terug.
+    - opgave: |-
+        Bepaal $\sigma^{-1}$ en $\tau^{-1}$.
+      antwoord: |-
+        $\sigma^{-1} = \perm{1 & 2 & 3 \\ 3 & 1 & 2}$, \ $\tau^{-1} = \tau$
+      uitwerking: |-
+        Rijen wisselen en sorteren. $\tau$ wisselt alleen 2 en 3, en is dus zijn eigen inverse.
+    - opgave: |-
+        Bepaal de inverse van $\perm{1 & 2 & 3 & 4 & 5 \\ 2 & 5 & 4 & 1 & 3}$.
+      antwoord: |-
+        $\perm{1 & 2 & 3 & 4 & 5 \\ 4 & 1 & 5 & 3 & 2}$
+      uitwerking: |-
+        Na het wisselen van de rijen: $\perm{2 & 5 & 4 & 1 & 3 \\ 1 & 2 & 3 & 4 & 5}$. Gesorteerd: $1 \to 4$, $2 \to 1$, $3 \to 5$, $4 \to 3$, $5 \to 2$.
+    - opgave: |-
+        Los op: $\sigma \circ x = \tau$.
+      antwoord: |-
+        $x = \perm{1 & 2 & 3 \\ 3 & 2 & 1}$
+      uitwerking: |-
+        $x = \sigma^{-1} \circ \tau$: $1 \to 1 \to 3$, $2 \to 3 \to 2$, $3 \to 2 \to 1$. Controle: $\sigma \circ x$ geeft $1 \to 3 \to 1$, $2 \to 2 \to 3$, $3 \to 1 \to 2$, en dat is $\tau$.
+
+- id: h3-orde
+  soort: kort
+  opgave: |-
+    Bepaal de orde van elk element.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $(\Zn{6}, \plusn)$
+      antwoord: |-
+        $0$: 1, \ $1$: 6, \ $2$: 3, \ $3$: 2, \ $4$: 3, \ $5$: 6
+      uitwerking: |-
+        $2 \plusn 2 \plusn 2 = 0$, $3 \plusn 3 = 0$, $4 \plusn 4 \plusn 4 = 12 \to 0$; voor 1 en 5 heb je zes stappen nodig.
+    - opgave: |-
+        $\bigl(\Zn{5} \setminus \{0\}, \maaln\bigr)$
+      antwoord: |-
+        $1$: 1, \ $2$: 4, \ $3$: 4, \ $4$: 2
+      uitwerking: |-
+        Machten van 2: $2, 4, 3, 1$. Machten van 3: $3, 4, 2, 1$. En $4 \maaln 4 = 1$.
+    - opgave: |-
+        Hebben $\bigl(\Zn{5} \setminus \{0\}, \maaln\bigr)$ en $(\Zn{4}, \plusn)$ dezelfde structuur? Geef de nieuwe namen.
+      antwoord: |-
+        ja: $1 \to 0$, $2 \to 1$, $4 \to 2$, $3 \to 3$
+      uitwerking: |-
+        Noem $2^k$ het getal $k$: $2^0 = 1$, $2^1 = 2$, $2^2 = 4$, $2^3 = 3$. Machten vermenigvuldigen is exponenten optellen, en $2^4 = 1$. Controle: $2 \maaln 4 = 3$ en $1 \plusn 2 = 3$.
+
+- id: h3-structuur
+  soort: kort
+  opgave: |-
+    Welke van deze groepen hebben dezelfde structuur? Gebruik de orde van de elementen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $(\Zn{4}, \plusn)$
+      antwoord: |-
+        zoals c
+      uitwerking: |-
+        Ordes 1, 4, 2, 4.
+    - opgave: |-
+        de symmetriegroep van de rechthoek
+      antwoord: |-
+        zoals d
+      uitwerking: |-
+        Ordes 1, 2, 2, 2.
+    - opgave: |-
+        $\bigl(\{1, i, -1, -i\}, \cdot\bigr)$
+      antwoord: |-
+        zoals a
+      uitwerking: |-
+        $i^2 = -1$, $i^4 = 1$: ordes 1, 4, 2, 4. Met $i^k \to k$ krijg je de tabel van $\Zn{4}$.
+    - opgave: |-
+        $\bigl(\{1, 3, 5, 7\}, \maaln\bigr)$ in $\Zn{8}$
+      antwoord: |-
+        zoals b
+      uitwerking: |-
+        $3^2 = 5^2 = 7^2 = 1$: ordes 1, 2, 2, 2. Met $3 \to d$, $5 \to h$, $7 \to v$ krijg je de tabel van de rechthoek ($3 \maaln 5 = 7$ en $d \circ h = v$).
+
+- id: h3-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    permutaties samenstellen en inverteren
+  opgave: |-
+    Neem\par\smallskip\qquad $\sigma = \perm{1 & 2 & 3 & 4 \\ 2 & 3 & 4 & 1}$ \quad en \quad $\tau = \perm{1 & 2 & 3 & 4 \\ 4 & 3 & 2 & 1}$.\par\smallskip Bereken.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\sigma \circ \tau$
+      antwoord: |-
+        $\perm{1 & 2 & 3 & 4 \\ 1 & 4 & 3 & 2}$
+      uitwerking: |-
+        $1 \to 4 \to 1$, $2 \to 3 \to 4$, $3 \to 2 \to 3$, $4 \to 1 \to 2$.
+    - opgave: |-
+        $\tau \circ \sigma$
+      antwoord: |-
+        $\perm{1 & 2 & 3 & 4 \\ 3 & 2 & 1 & 4}$
+      uitwerking: |-
+        $1 \to 2 \to 3$, $2 \to 3 \to 2$, $3 \to 4 \to 1$, $4 \to 1 \to 4$.
+    - opgave: |-
+        $\sigma^2$
+      antwoord: |-
+        $\perm{1 & 2 & 3 & 4 \\ 3 & 4 & 1 & 2}$
+      uitwerking: |-
+        $1 \to 2 \to 3$, $2 \to 3 \to 4$, $3 \to 4 \to 1$, $4 \to 1 \to 2$.
+    - opgave: |-
+        $\sigma^{-1}$
+      antwoord: |-
+        $\perm{1 & 2 & 3 & 4 \\ 4 & 1 & 2 & 3}$
+      uitwerking: |-
+        Rijen wisselen en sorteren: $2 \to 1$ wordt $1 \to 4$ in de inverse, enzovoort.
+    - opgave: |-
+        $\tau^{-1}$
+      antwoord: |-
+        $\tau$
+      uitwerking: |-
+        $\tau$ wisselt 1 met 4 en 2 met 3: twee keer $\tau$ brengt alles terug.
+    - opgave: |-
+        $\sigma^4$
+      antwoord: |-
+        $e$
+      uitwerking: |-
+        $\sigma$ schuift elk getal één plaats op in de kring $1 \to 2 \to 3 \to 4 \to 1$: na vier keer is alles terug.
+
+- id: h3-o5
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    symmetrieën tellen
+  opgave: |-
+    Hoeveel symmetrieën heeft elke figuur? Hoeveel daarvan zijn draaiingen (met $e$) en hoeveel spiegelingen?
+  slot: |-
+    \figuren{\begin{tikzpicture}[font=\small]
+      \begin{scope}
+      \draw[accent,thick,fill=accent!8] (0:1) \foreach \k in {1,...,5}{-- (60*\k:1)} -- cycle;
+      \node at (0,-1.4) {A};
+      \end{scope}
+      \begin{scope}[xshift=3.2cm]
+      \draw[accent,thick,fill=accent!8] (-.3,1) -- (.3,1) -- (.3,.3) -- (1,.3) -- (1,-.3) -- (.3,-.3) -- (.3,-1) -- (-.3,-1) -- (-.3,-.3) -- (-1,-.3) -- (-1,.3) -- (-.3,.3) -- cycle;
+      \node at (0,-1.4) {B};
+      \end{scope}
+      \begin{scope}[xshift=6.2cm]
+      \draw[accent,thick,fill=accent!8] (0,1) -- (.6,.35) -- (0,-1.05) -- (-.6,.35) -- cycle;
+      \node at (0,-1.4) {C};
+      \end{scope}
+      \begin{scope}[xshift=9.2cm]
+      \foreach \h in {0,90,180,270}{\draw[accent,thick,fill=accent!8,rotate=\h,line join=round] (0,0) -- (1.05,0) -- (.7,.5) -- cycle;}
+      \node at (0,-1.4) {D};
+      \end{scope}
+    \end{tikzpicture}}
+  antwoord: |-
+    A: 12 (6 en 6) \quad B: 8 (4 en 4) \quad C: 2 (1 en 1) \quad D: 4 (4 en 0)
+  uitwerking: |-
+    A is een regelmatige zeshoek: draaiingen over een veelvoud van $60^\circ$ en zes spiegelassen. B, het kruis, heeft dezelfde symmetrieën als een vierkant. C, de vlieger, heeft alleen $e$ en de spiegeling om de verticale as. D heeft de vier draaiingen over een veelvoud van $90^\circ$, maar geen spiegeling: de wieken hellen allemaal naar dezelfde kant.
+
+- id: h3-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    rekenen in de symmetriegroep van de driehoek
+  opgave: |-
+    Bereken in de symmetriegroep van de gelijkzijdige driehoek.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $r \circ s_3$
+      antwoord: |-
+        $s_2$
+      uitwerking: |-
+        Eerst $s_3$: boven 2, linksonder 1, rechtsonder 3. Dan $r$: boven 3, linksonder 2, rechtsonder 1. Dat is $s_2$.
+    - opgave: |-
+        $s_3 \circ r$
+      antwoord: |-
+        $s_1$
+      uitwerking: |-
+        Uit de tabel: rij van $s_3$, kolom van $r$.
+    - opgave: |-
+        $s_1 \circ s_2 \circ s_1$
+      antwoord: |-
+        $s_3$
+      uitwerking: |-
+        $s_2 \circ s_1 = r^2$, en $s_1 \circ r^2 = s_3$.
+    - opgave: |-
+        $(r \circ s_1)^{-1}$
+      antwoord: |-
+        $s_3$
+      uitwerking: |-
+        $r \circ s_1 = s_3$, en een spiegeling is haar eigen inverse. Ook: $s_1^{-1} \circ r^{-1} = s_1 \circ r^2 = s_3$.
+    - opgave: |-
+        $r^5$
+      antwoord: |-
+        $r^2$
+      uitwerking: |-
+        $r^3 = e$, dus $r^5 = r^3 \circ r^2 = r^2$.
+    - opgave: |-
+        $s_2^{7}$
+      antwoord: |-
+        $s_2$
+      uitwerking: |-
+        $s_2^2 = e$, dus $s_2^7 = (s_2^2)^3 \circ s_2 = s_2$.
+
+- id: h3-o4
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    orde van een element
+  opgave: |-
+    Bepaal de orde van het element.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $2$, $3$, $4$ en $6$ in $(\Zn{8}, \plusn)$
+      antwoord: |-
+        $4$, $8$, $2$, $4$
+      uitwerking: |-
+        $4 \cdot 2 = 8$; $3k$ is pas een veelvoud van 8 voor $k = 8$; $2 \cdot 4 = 8$; $4 \cdot 6 = 24$.
+    - opgave: |-
+        $2$, $3$ en $6$ in $\bigl(\Zn{7} \setminus \{0\}, \maaln\bigr)$
+      antwoord: |-
+        $3$, $6$, $2$
+      uitwerking: |-
+        Machten van 2: $2, 4, 1$. Machten van 3: $3, 2, 6, 4, 5, 1$. En $6 \maaln 6 = 1$.
+    - opgave: |-
+        $\perm{1 & 2 & 3 \\ 2 & 3 & 1}$ en $\perm{1 & 2 & 3 \\ 2 & 1 & 3}$ in $S_3$
+      antwoord: |-
+        $3$ en $2$
+      uitwerking: |-
+        De eerste schuift de drie getallen rond in een kring, de tweede wisselt er twee.
+    - opgave: |-
+        $r$, $r^2$ en $h$ in de symmetriegroep van het vierkant
+      antwoord: |-
+        $4$, $2$, $2$
+      uitwerking: |-
+        Vier kwartdraaien zijn een volle draai; twee halve draaien ook; twee keer spiegelen brengt alles terug.
+
+- id: h3-o3
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    de symmetrieën van het vierkant
+  figuur:
+    code: |-
+      \begin{tikzpicture}[scale=.9,font=\small]
+        \draw[grijs,dashed,thin] (-1.2,0) -- (1.2,0) node[right,text=black] {$h$};
+        \draw[grijs,dashed,thin] (0,-1.2) -- (0,1.2) node[above,text=black] {$v$};
+        \draw[grijs,dashed,thin] (-1.3,-1.3) -- (1.3,1.3) node[above right=-2pt,text=black] {$d_1$};
+        \draw[grijs,dashed,thin] (1.3,-1.3) -- (-1.3,1.3) node[above left=-2pt,text=black] {$d_2$};
+        \vierkant{1}{2}{3}{4}
+      \end{tikzpicture}
+  opgave: |-
+    Een vierkant heeft acht symmetrieën: $e$, de draaiingen $r$, $r^2$ en $r^3$ over $90^\circ$, $180^\circ$ en $270^\circ$ tegen de wijzers van de klok in, en de spiegelingen om de assen $h$, $v$, $d_1$ en $d_2$ in de figuur. We noemen de spiegelingen zoals hun as.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Teken het vierkant met de nummers na $r$, na $h$ en na $d_1$.
+      antwoord: |-
+        zie de uitgewerkte oplossingen
+      uitwerking: |-
+        \begin{tikzpicture}[scale=.6,font=\small]
+          \vierkant[0,0]{4}{1}{2}{3}\node at (0,-1.5) {$r$};
+          \vierkant[3.2,0]{4}{3}{2}{1}\node at (3.2,-1.5) {$h$};
+          \vierkant[6.4,0]{1}{4}{3}{2}\node at (6.4,-1.5) {$d_1$};
+        \end{tikzpicture}
+    - opgave: |-
+        Bereken $r \circ h$ en $h \circ r$. Is de groep commutatief?
+      antwoord: |-
+        $r \circ h = d_1$, $h \circ r = d_2$: niet commutatief
+      uitwerking: |-
+        Eerst $h$ en dan $r$: rechtsboven 1, linksboven 4, linksonder 3, rechtsonder 2, en dat is de stand van $d_1$. Eerst $r$ en dan $h$: rechtsboven 3, linksboven 2, linksonder 1, rechtsonder 4: de stand van $d_2$.
+    - opgave: |-
+        Bereken $h \circ v$ en $d_1 \circ d_2$. Wat stel je vast?
+      antwoord: |-
+        allebei $r^2$
+      uitwerking: |-
+        Twee spiegelingen om loodrechte assen geven een halve draai om hun snijpunt.
+
+- id: h3-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    permutaties in een context
+  prent:
+    naam: beker
+  opgave: |-
+    Een goochelaar zet drie bekers op een rij, op de plaatsen 1, 2 en 3. Hij kent twee bewegingen: $A$ wisselt de bekers op plaats 1 en 2, $B$ wisselt de bekers op plaats 2 en 3.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Schrijf $A$ en $B$ als permutaties van de plaatsen.
+      antwoord: |-
+        $A = \perm{1 & 2 & 3 \\ 2 & 1 & 3}$, \ $B = \perm{1 & 2 & 3 \\ 1 & 3 & 2}$
+      uitwerking: |-
+        De beker op plaats 1 gaat bij $A$ naar plaats 2, en omgekeerd; plaats 3 blijft.
+    - opgave: |-
+        Hij voert eerst $A$ uit en dan $B$. Schrijf het resultaat als permutatie. Krijg je hetzelfde als eerst $B$ en dan $A$?
+      antwoord: |-
+        $B \circ A = \perm{1 & 2 & 3 \\ 3 & 1 & 2}$; nee, $A \circ B = \perm{1 & 2 & 3 \\ 2 & 3 & 1}$
+      uitwerking: |-
+        Eerst $A$, dan $B$ is $B \circ A$: $1 \to 2 \to 3$, $2 \to 1 \to 1$, $3 \to 3 \to 2$. In de andere volgorde: $1 \to 1 \to 2$, $2 \to 3 \to 3$, $3 \to 2 \to 1$.
+    - opgave: |-
+        Hoe vaak moet hij ``eerst $A$, dan $B$'' herhalen voor de bekers terug op hun plaats staan?
+      antwoord: |-
+        $3$ keer
+      uitwerking: |-
+        $B \circ A$ schuift de bekers rond in een kring van drie plaatsen: het heeft orde 3.
+    - opgave: |-
+        Kan hij met $A$ en $B$ elke volgorde van de bekers maken?
+      antwoord: |-
+        ja, alle 6
+      uitwerking: |-
+        Met $e$, $A$, $B$, $B \circ A$, $A \circ B$ en $A \circ B \circ A = \perm{1 & 2 & 3 \\ 3 & 2 & 1}$ krijg je zes verschillende permutaties: alle elementen van $S_3$.
+
+- id: h3-o8
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    klassieke fouten
+  opgave: |-
+    Wat is er fout? Verbeter.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        \textit{Bij $\sigma \circ \tau$ voer je eerst $\sigma$ uit.}
+      antwoord: |-
+        eerst $\tau$
+      uitwerking: |-
+        $\sigma \circ \tau$ is \textit{$\sigma$ na $\tau$}: eerst de rechtse.
+    - opgave: |-
+        \textit{De inverse van $\perm{1 & 2 & 3 \\ 2 & 3 & 1}$ is $\perm{1 & 2 & 3 \\ 3 & 2 & 1}$.}
+      antwoord: |-
+        het is $\perm{1 & 2 & 3 \\ 3 & 1 & 2}$
+      uitwerking: |-
+        De onderste rij omkeren is niet de inverse. Wissel de rijen en sorteer: $2 \to 1$, $3 \to 2$, $1 \to 3$.
+    - opgave: |-
+        \textit{Een vierkant heeft vier symmetrieën: de spiegelingen om de vier assen.}
+      antwoord: |-
+        er zijn er acht
+      uitwerking: |-
+        Ook de draaiingen over $90^\circ$, $180^\circ$ en $270^\circ$ en de identieke transformatie $e$ zijn symmetrieën.
+    - opgave: |-
+        \textit{De symmetriegroep van de rechthoek heeft dezelfde structuur als $\Zn{4}$, want beide hebben vier elementen.}
+      antwoord: |-
+        de ordes verschillen
+      uitwerking: |-
+        In $\Zn{4}$ heeft 1 orde 4; in de rechthoek heeft geen enkel element orde 4.
+    - opgave: |-
+        \textit{$(s_1 \circ r)^{-1} = s_1^{-1} \circ r^{-1}$.}
+      antwoord: |-
+        $(s_1 \circ r)^{-1} = r^{-1} \circ s_1^{-1}$
+      uitwerking: |-
+        De volgorde keert om: $(s_1 \circ r)^{-1} = r^2 \circ s_1 = s_2$, en $s_1 \circ r^2 = s_3$ is iets anders.
+
+- id: h3-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    symmetrieën van een zeester
+  prent:
+    naam: zeester
+  opgave: |-
+    Een zeester heeft vijf gelijke armen. Doe alsof hij precies regelmatig is.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel symmetrieën heeft hij? Welke?
+      antwoord: |-
+        $10$: vijf draaiingen en vijf spiegelingen
+      uitwerking: |-
+        Draaiingen over $0^\circ$, $72^\circ$, $144^\circ$, $216^\circ$ en $288^\circ$, en de spiegelingen om de vijf assen door een arm.
+    - opgave: |-
+        Welke orde heeft de draaiing over $72^\circ$? En een spiegeling?
+      antwoord: |-
+        $5$ en $2$
+      uitwerking: |-
+        Vijf keer $72^\circ$ is $360^\circ$.
+    - opgave: |-
+        Met welke groep uit hoofdstuk 2 hebben de vijf draaiingen samen dezelfde structuur?
+      antwoord: |-
+        $(\Zn{5}, \plusn)$
+      uitwerking: |-
+        Noem de draaiing over $k \cdot 72^\circ$ het getal $k$: twee draaiingen na elkaar tellen de getallen op, modulo 5.
+
+- id: h3-o9
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    vergelijkingen met permutaties
+  opgave: |-
+    Neem opnieuw $\sigma = \perm{1 & 2 & 3 & 4 \\ 2 & 3 & 4 & 1}$ en $\tau = \perm{1 & 2 & 3 & 4 \\ 4 & 3 & 2 & 1}$ uit opdracht \ref{oef:h3-o1}.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Los op: $\sigma \circ x = \tau$.
+      antwoord: |-
+        $x = \perm{1 & 2 & 3 & 4 \\ 3 & 2 & 1 & 4}$
+      uitwerking: |-
+        $x = \sigma^{-1} \circ \tau$, met $\sigma^{-1} = \perm{1 & 2 & 3 & 4 \\ 4 & 1 & 2 & 3}$: $1 \to 4 \to 3$, $2 \to 3 \to 2$, $3 \to 2 \to 1$, $4 \to 1 \to 4$.
+    - opgave: |-
+        Los op: $x \circ \sigma = \tau$.
+      antwoord: |-
+        $x = \perm{1 & 2 & 3 & 4 \\ 1 & 4 & 3 & 2}$
+      uitwerking: |-
+        $x = \tau \circ \sigma^{-1}$: $1 \to 4 \to 1$, $2 \to 1 \to 4$, $3 \to 2 \to 3$, $4 \to 3 \to 2$.
+    - opgave: |-
+        Waarom zijn de twee oplossingen verschillend?
+      antwoord: |-
+        $S_4$ is niet commutatief
+      uitwerking: |-
+        In a staat $\sigma^{-1}$ links van $\tau$, in b rechts. Omdat $S_4$ niet commutatief is, geeft dat iets anders.
+
+- id: h3-o11
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    de symmetrieën van een fries
+  figuur:
+    code: |-
+      \begin{tikzpicture}[font=\small]
+        \foreach \k in {0,...,4}{\draw[accent,thick,fill=accent!8] (\k*.9,-.35) -- (\k*.9+.6,0) -- (\k*.9,.35) -- (\k*.9+.2,0) -- cycle;}
+        \node at (-.4,0) {$\cdots$};\node at (4.6,0) {$\cdots$};
+        \draw[grijs,dashed,thin] (-.6,0) -- (4.8,0);
+        \draw[-{Stealth[length=2mm]},fel!85!black,thick] (0,.7) -- node[above] {$t$} (.9,.7);
+      \end{tikzpicture}
+  opgave: |-
+    Een fries loopt naar links en naar rechts oneindig ver door. De verschuiving $t$ schuift de fries één motief naar rechts.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Wat is $t^2$? Wat is $t^{-1}$?
+      antwoord: |-
+        twee motieven naar rechts; één motief naar links
+      uitwerking: |-
+        $t \circ t$ schuift twee motieven op; $t^{-1}$ maakt $t$ ongedaan.
+    - opgave: |-
+        Elke verschuiving van de fries is een $t^k$ met $k \in \Z$. Met welke groep hebben de verschuivingen dezelfde structuur?
+      antwoord: |-
+        $(\Z, +)$
+      uitwerking: |-
+        $t^k \circ t^l = t^{k + l}$: noem $t^k$ het getal $k$, dan wordt samenstellen optellen.
+    - opgave: |-
+        Is de spiegeling $m$ om de gestippelde horizontale lijn een symmetrie van de fries? En een spiegeling om een verticale lijn?
+      antwoord: |-
+        ja; nee
+      uitwerking: |-
+        Elk motief is symmetrisch om de horizontale lijn. Een spiegeling om een verticale lijn laat de pijlen naar links wijzen.
+    - opgave: |-
+        Is $t \circ m = m \circ t$?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        Het maakt niet uit of je eerst opschuift en dan omklapt, of omgekeerd: de horizontale lijn schuift mee in zichzelf.
+
+- id: h3-o12
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    permutaties die geen symmetrie zijn
+  opgave: |-
+    Elke symmetrie van een vierkant permuteert de vier hoekpunten.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel permutaties van de vier hoekpunten zijn er? Hoeveel daarvan zijn een symmetrie?
+      antwoord: |-
+        $24$; $8$
+      uitwerking: |-
+        $4! = 24$ permutaties, en het vierkant heeft 8 symmetrieën. Er zijn dus 16 permutaties die geen symmetrie zijn.
+    - opgave: |-
+        Geef een permutatie die geen symmetrie is, en leg met afstanden uit waarom.
+      antwoord: |-
+        bijvoorbeeld 1 en 2 wisselen, 3 en 4 laten staan
+      uitwerking: |-
+        Hoekpunt 1 gaat naar de plaats van 2, en 3 blijft staan. De afstand van 1 tot 3 is een diagonaal, maar de afstand van de plaats van 2 tot die van 3 is een zijde. Een symmetrie moet afstanden bewaren.
+
+- id: h3-o10
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    de tabel van de symmetriegroep van het vierkant
+  opgave: |-
+    Stel de tabel op van de symmetriegroep van het vierkant, met de namen uit opdracht \ref{oef:h3-o3}. Welke elementen zijn hun eigen inverse?
+  antwoord: |-
+    zie de uitgewerkte oplossingen; $e$, $r^2$, $h$, $v$, $d_1$ en $d_2$
+  uitwerking: |-
+    In de rij van $a$ en de kolom van $b$ staat $a \circ b$. Op de diagonaal staat $e$ bij $e$, $r^2$ en de vier spiegelingen.\par
+    \begin{bewtabel}[7.5mm]{8}{\circ}{e & r & r^2 & r^3 & h & v & d_1 & d_2}
+    e & e & r & r^2 & r^3 & h & v & d_1 & d_2 \\ \hline
+    r & r & r^2 & r^3 & e & d_1 & d_2 & v & h \\ \hline
+    r^2 & r^2 & r^3 & e & r & v & h & d_2 & d_1 \\ \hline
+    r^3 & r^3 & e & r & r^2 & d_2 & d_1 & h & v \\ \hline
+    h & h & d_2 & v & d_1 & e & r^2 & r^3 & r \\ \hline
+    v & v & d_1 & h & d_2 & r^2 & e & r & r^3 \\ \hline
+    d_1 & d_1 & h & d_2 & v & r & r^3 & e & r^2 \\ \hline
+    d_2 & d_2 & v & d_1 & h & r^3 & r & r^2 & e \\ \hline
+    \end{bewtabel}
+
+- id: h3-o13
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    alle groepen met drie elementen
+  opgave: |-
+    Bewijs dat elke groep met drie elementen dezelfde structuur heeft als $(\Zn{3}, \plusn)$. Noem de elementen $e$, $a$ en $b$, en toon eerst aan dat $a \ast a = e$ onmogelijk is.
+  antwoord: |-
+    bewijs
+  uitwerking: |-
+    Als $a \ast a = e$, dan moet in de rij van $a$ nog $b$ komen, dus $a \ast b = b$. Maar $e \ast b = b$ staat al in de kolom van $b$: dat kan niet in een groepstabel. Dus is $a \ast a = b$, en dan volgen $a \ast b = e$, $b \ast a = e$ en $b \ast b = a$. Met $e \to 0$, $a \to 1$, $b \to 2$ is dat de tabel van $\Zn{3}$.
+
+- id: h3-o14
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    de twee soorten groepen met vier elementen
+  opgave: |-
+    $G = \{e, a, b, c\}$ is een groep met vier elementen. Je mag aannemen dat elk element een orde heeft van hoogstens 4.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat geen enkel element orde 3 heeft. Stel dat $a$ orde 3 heeft, zodat $e$, $a$ en $a^2$ verschillend zijn, en bekijk $a \ast c$, met $c$ het vierde element.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $a \ast c = e$ geeft $c = a^{-1} = a^2$; $a \ast c = a$ geeft $c = e$; $a \ast c = a^2$ geeft $c = a$; $a \ast c = c$ geeft $a = e$. Alle vier zijn onmogelijk, want $c$ is verschillend van $e$, $a$ en $a^2$.
+    - opgave: |-
+        Heeft een element $a$ orde 4, toon dan aan dat $G$ dezelfde structuur heeft als $(\Zn{4}, \plusn)$.
+      antwoord: |-
+        $G = \{e, a, a^2, a^3\}$, met $a^k \to k$
+      uitwerking: |-
+        $e$, $a$, $a^2$ en $a^3$ zijn vier verschillende elementen, dus heel $G$. Dan is $a^k \ast a^l = a^{k + l}$, met de exponent modulo 4: noem $a^k$ het getal $k$.
+    - opgave: |-
+        Heeft geen enkel element orde 4, toon dan aan dat $G$ dezelfde structuur heeft als de symmetriegroep van de rechthoek.
+      antwoord: |-
+        alle elementen behalve $e$ hebben orde 2
+      uitwerking: |-
+        Dan heeft elk element $\neq e$ orde 2: $a \ast a = b \ast b = c \ast c = e$. In oefening \ref{oef:h2-aanvullen} zag je dat de tabel dan maar op één manier kan, en dat is de tabel van de rechthoek.
+
+- id: h3-o15
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    de orde van een element en de orde van de groep
+  opgave: |-
+    Onderzoek het verband tussen de orde van een element en het aantal elementen van de groep.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef de orde van alle elementen van de symmetriegroep van de driehoek, van die van het vierkant en van $\Zn{6}$.
+      antwoord: |-
+        driehoek: 1, 3, 3, 2, 2, 2; vierkant: 1, 4, 2, 4, 2, 2, 2, 2; $\Zn{6}$: 1, 6, 3, 2, 3, 6
+      uitwerking: |-
+        Zie voorbeeld \ref{vb:h3-orde}, opdracht \ref{oef:h3-o4} en oefening \ref{oef:h3-orde}. Bij het vierkant hebben $r$ en $r^3$ orde 4, $r^2$ en de spiegelingen orde 2.
+    - opgave: |-
+        Wat valt je op?
+      antwoord: |-
+        de orde van een element deelt de orde van de groep
+      uitwerking: |-
+        De ordes 1, 2, 3 delen 6; de ordes 1, 2, 4 delen 8.
+    - opgave: |-
+        Heeft $a$ orde $k$, toon dan aan dat $\{e, a, a^2, \ldots, a^{k - 1}\}$ een deelgroep is met $k$ elementen (zie opdracht \ref{oef:h2-o14}).
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $a^i \ast a^j = a^{i + j}$, en omdat $a^k = e$ mag je de exponent modulo $k$ nemen: de verzameling is gesloten. Ze bevat $e = a^0$, en de inverse van $a^i$ is $a^{k - i}$. De elementen zijn verschillend: als $a^i = a^j$ met $0 \leqslant i < j < k$, dan is $a^{j - i} = e$ met $0 < j - i < k$, in strijd met de orde. Volgens de stelling van Lagrange deelt het aantal elementen van een deelgroep de orde van de groep: dat verklaart b.
+
+- id: h3-o16
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    $S_n$ is niet commutatief
+  opgave: |-
+    Neem $n \geqslant 3$. De permutatie $\alpha$ wisselt 1 en 2, de permutatie $\beta$ wisselt 2 en 3. Alle andere getallen blijven op hun plaats.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $(\alpha \circ \beta)(1)$ en $(\beta \circ \alpha)(1)$. Besluit dat $S_n$ niet commutatief is.
+      antwoord: |-
+        $2$ en $3$
+      uitwerking: |-
+        $(\alpha \circ \beta)(1) = \alpha(1) = 2$ en $(\beta \circ \alpha)(1) = \beta(2) = 3$. Dus $\alpha \circ \beta \neq \beta \circ \alpha$.
+    - opgave: |-
+        Waarom is $S_2$ wel commutatief?
+      antwoord: |-
+        $S_2 = \{e, \alpha\}$
+      uitwerking: |-
+        $S_2$ heeft maar twee elementen, $e$ en de wissel van 1 en 2, en $e$ is met elk element commutatief.
+
+- id: h3-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: discreet
+    onderwerp: Telproblemen
+  thema: |-
+    permutaties tellen
+  opgave: |-
+    Tel de permutaties.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel elementen heeft $S_5$?
+      antwoord: |-
+        $120$
+      uitwerking: |-
+        $5! = 120$.
+    - opgave: |-
+        Hoeveel permutaties $\sigma \in S_5$ hebben $\sigma(1) = 1$?
+      antwoord: |-
+        $24$
+      uitwerking: |-
+        De andere vier getallen permuteer je vrij: $4! = 24$.
+    - opgave: |-
+        Hoeveel permutaties $\sigma \in S_4$ zijn hun eigen inverse, dus $\sigma \circ \sigma = e$?
+      antwoord: |-
+        $10$
+      uitwerking: |-
+        Zo'n permutatie wisselt paren: $e$ (1), één paar wisselen ($\binom42 = 6$), of twee paren wisselen (3 manieren om vier getallen in twee paren te verdelen). Samen $1 + 6 + 3 = 10$.
+
+- id: h3-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: algebra
+    onderwerp: Complexe getallen
+  thema: |-
+    symmetrieën als complexe functies
+  opgave: |-
+    In het vlak van Gauss liggen de hoekpunten van een vierkant in $1$, $i$, $-1$ en $-i$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Welke symmetrie van het vierkant is de functie $z \mapsto iz$?
+      antwoord: |-
+        de kwartdraai om 0 tegen de wijzers van de klok in
+      uitwerking: |-
+        $1 \to i$, $i \to -1$, $-1 \to -i$, $-i \to 1$: vermenigvuldigen met $i$ is een draaiing over $90^\circ$.
+    - opgave: |-
+        Welke symmetrie is $z \mapsto \overline{z}$? En $z \mapsto i\overline{z}$?
+      antwoord: |-
+        de spiegeling om de reële as; de spiegeling om de rechte $y = x$
+      uitwerking: |-
+        $z \mapsto \overline{z}$ houdt $1$ en $-1$ op hun plaats en wisselt $i$ en $-i$. Bij $z \mapsto i\overline{z}$ gaat eerst $z$ naar $\overline{z}$, daarna draai je: $1 \to i$, $i \to 1$, $-1 \to -i$, $-i \to -1$. De punten op de rechte $y = x$ blijven staan.
+    - opgave: |-
+        Schrijf alle acht symmetrieën van het vierkant als een complexe functie.
+      antwoord: |-
+        $z \mapsto i^k z$ en $z \mapsto i^k \overline{z}$, met $k = 0, 1, 2, 3$
+      uitwerking: |-
+        De vier draaiingen zijn $z \mapsto z$, $iz$, $-z$ en $-iz$. De vier spiegelingen zijn $z \mapsto \overline{z}$, $i\overline{z}$, $-\overline{z}$ en $-i\overline{z}$.
+
+- id: h3-koppel-3
+  soort: koppel
+  niveau: 3
+  koppel:
+    rubriek: algebra
+    onderwerp: Matrices
+  thema: |-
+    symmetrieën als matrices
+  opgave: |-
+    De gelijkzijdige driehoek heeft de hoekpunten $A(0, 1)$ boven, $B\bigl(-\frac{\sqrt3}{2}, -\frac12\bigr)$ linksonder en $C\bigl(\frac{\sqrt3}{2}, -\frac12\bigr)$ rechtsonder. Je schrijft een punt als kolom en vermenigvuldigt met \ $R = \begin{bmatrix} -\frac12 & -\frac{\sqrt3}{2} \\ \frac{\sqrt3}{2} & -\frac12 \end{bmatrix}$ \ of \ $S = \begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken het beeld van $A$ onder $R$, en van $B$ onder $S$. Welke symmetrieën zijn $R$ en $S$?
+      antwoord: |-
+        $RA = B$, $SB = C$; $R$ is $r$, $S$ is $s_1$
+      uitwerking: |-
+        $R \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} -\frac{\sqrt3}{2} \\ -\frac12 \end{bmatrix}$: de draaiing over $120^\circ$. $S$ verandert het teken van $x$: de spiegeling om de verticale as.
+    - opgave: |-
+        Bereken $R^2$ en $R^3$.
+      antwoord: |-
+        $R^2 = \begin{bmatrix} -\frac12 & \frac{\sqrt3}{2} \\ -\frac{\sqrt3}{2} & -\frac12 \end{bmatrix}$, \ $R^3 = I$
+      uitwerking: |-
+        $R^3 = I$ zegt dat drie keer $120^\circ$ draaien niets verandert: $r$ heeft orde 3.
+    - opgave: |-
+        Bereken $RS$ en $SR$. Welke symmetrieën zijn het? Vergelijk met de tabel.
+      antwoord: |-
+        $RS = \begin{bmatrix} \frac12 & -\frac{\sqrt3}{2} \\ -\frac{\sqrt3}{2} & -\frac12 \end{bmatrix} = s_3$, \ $SR = \begin{bmatrix} \frac12 & \frac{\sqrt3}{2} \\ \frac{\sqrt3}{2} & -\frac12 \end{bmatrix} = s_2$
+      uitwerking: |-
+        $RS$ is eerst $S$, dan $R$: $r \circ s_1 = s_3$. Controle: $RS$ houdt $C$ op zijn plaats, want $SC = B$ en $RB = C$. Net zo houdt $SR$ het punt $B$ vast: $s_1 \circ r = s_2$. Het product van matrices volgt de samenstelling.
+
+- id: h3-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    symmetrieën samenstellen
+  opgave: |-
+    Bereken $s_2 \circ r$ en $r \circ s_2$ in de symmetriegroep van de gelijkzijdige driehoek. Teken de standen.
+  antwoord: |-
+    $s_2 \circ r = s_3$, \ $r \circ s_2 = s_1$
+  uitwerking: |-
+    Eerst $r$: boven 3, linksonder 1, rechtsonder 2. Dan $s_2$ (de hoeken boven en rechtsonder wisselen): boven 2, linksonder 1, rechtsonder 3, de stand van $s_3$. Eerst $s_2$: boven 3, linksonder 2, rechtsonder 1. Dan $r$: boven 1, linksonder 3, rechtsonder 2, de stand van $s_1$.
+
+- id: h3-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    symmetriegroep van een figuur
+  opgave: |-
+    Geef alle symmetrieën van een ruit die geen vierkant is. Is de symmetriegroep commutatief? Met welke groep uit dit hoofdstuk heeft ze dezelfde structuur?
+  antwoord: |-
+    $e$, de halve draai en de spiegelingen om de twee diagonalen; commutatief; de rechthoek
+  uitwerking: |-
+    Vier symmetrieën, elk met orde 1 of 2: net als bij de rechthoek, met de diagonalen in plaats van de middenparallellen. De groep is commutatief.
+
+- id: h3-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    permutaties samenstellen
+  opgave: |-
+    Neem $\sigma = \perm{1 & 2 & 3 & 4 \\ 2 & 3 & 1 & 4}$ en $\tau = \perm{1 & 2 & 3 & 4 \\ 1 & 2 & 4 & 3}$. Bereken $\tau \circ \sigma$ en $\sigma \circ \tau$.
+  antwoord: |-
+    $\tau \circ \sigma = \perm{1 & 2 & 3 & 4 \\ 2 & 4 & 1 & 3}$, \ $\sigma \circ \tau = \perm{1 & 2 & 3 & 4 \\ 2 & 3 & 4 & 1}$
+  uitwerking: |-
+    $\tau \circ \sigma$: $1 \to 2 \to 2$, $2 \to 3 \to 4$, $3 \to 1 \to 1$, $4 \to 4 \to 3$. \ $\sigma \circ \tau$: $1 \to 1 \to 2$, $2 \to 2 \to 3$, $3 \to 4 \to 4$, $4 \to 3 \to 1$.
+
+- id: h3-t4
+  soort: test
+  niveau: 1
+  thema: |-
+    inverse permutatie
+  opgave: |-
+    Bepaal de inverse van $\perm{1 & 2 & 3 & 4 & 5 \\ 3 & 5 & 1 & 2 & 4}$.
+  antwoord: |-
+    $\perm{1 & 2 & 3 & 4 & 5 \\ 3 & 4 & 1 & 5 & 2}$
+  uitwerking: |-
+    Rijen wisselen: $3 \to 1$, $5 \to 2$, $1 \to 3$, $2 \to 4$, $4 \to 5$. Gesorteerd: $1 \to 3$, $2 \to 4$, $3 \to 1$, $4 \to 5$, $5 \to 2$.
+
+- id: h3-t5
+  soort: test
+  niveau: 1
+  thema: |-
+    orde van een element
+  opgave: |-
+    Bepaal de orde van 2, 5 en 3 in $(\Zn{10}, \plusn)$.
+  antwoord: |-
+    $5$, $2$, $10$
+  uitwerking: |-
+    $5 \cdot 2 = 10$, $2 \cdot 5 = 10$, en $3k$ is pas een veelvoud van 10 voor $k = 10$.
+
+- id: h3-t6
+  soort: test
+  niveau: 2
+  thema: |-
+    dezelfde structuur
+  opgave: |-
+    Hebben $(\Zn{6}, \plusn)$ en de symmetriegroep van de gelijkzijdige driehoek dezelfde structuur? Geef twee redenen.
+  antwoord: |-
+    nee: $\Zn{6}$ is commutatief en heeft een element van orde 6, de driehoek niet
+  uitwerking: |-
+    Beide hebben zes elementen. Maar $\Zn{6}$ is commutatief en de symmetriegroep van de driehoek niet. Bovendien heeft 1 in $\Zn{6}$ orde 6, terwijl de ordes in de driehoek 1, 2 en 3 zijn.

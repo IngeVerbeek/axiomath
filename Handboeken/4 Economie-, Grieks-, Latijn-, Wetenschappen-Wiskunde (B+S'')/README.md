@@ -14,7 +14,7 @@ Leerplan: B+S'' (Katholiek Onderwijs Vlaanderen). Doelen volgens de tabel met le
 | [Analyse/Integralen](Analyse/Integralen) | LPD 31-33 | vier hoofdstukken, eerste versie, nog na te lezen |
 | [Algebra/Matrices](Algebra/Matrices) | LPD 34-37 | 4 hoofdstukken, eerste versie, nog na te lezen |
 | [Algebra/Complexe getallen](Algebra/Complexe%20getallen) | LPD 38-42 | vier hoofdstukken, eerste versie, nog na te lezen |
-| Algebra/Groepen | LPD 43 | bestaat, wordt overgezet |
+| [Algebra/Groepen](Algebra/Groepen) | LPD 43 | drie hoofdstukken, eerste versie, nog na te lezen |
 | [Meetkunde/Ruimtemeetkunde](Meetkunde/Ruimtemeetkunde) | LPD 5-8 | vier hoofdstukken, eerste versie, nog na te lezen |
 | [Discrete wiskunde/Rijen](Discrete%20wiskunde/Rijen) | LPD 44-46 | vier hoofdstukken, eerste versie, nog na te lezen |
 | [Discrete wiskunde/Telproblemen](Discrete%20wiskunde/Telproblemen) | LPD 47 | drie hoofdstukken, eerste versie, nog na te lezen |

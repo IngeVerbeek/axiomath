@@ -1,0 +1,411 @@
+%----------------------------------------------------------------------------------------
+% GROEPEN. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h2-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{2}{Groepen}
+
+\lkr{Leerplan B+S'': LPD 43, met de groep als algebraïsche structuur. Het leerplan noemt als voorbeelden getallenverzamelingen met optelling of vermenigvuldiging, vectoren en matrices met optelling, en de gehele getallen modulo $n$ met optelling, met de link naar klokrekenen: die staan allemaal in dit hoofdstuk. Symmetriegroepen en permutaties volgen in hoofdstuk 3. Vermenigvuldigen modulo $n$ is een kleine uitbreiding: het toont een groep die niet uit een optelling komt, en het verband met priemgetallen. Deelgroepen en de stelling van Lagrange staan in het leerplan pas bij het complementair gedeelte: ze komen hier alleen in een opdracht van niveau 3 aan bod.}
+
+In hoofdstuk 1 bekeek je de eigenschappen van een bewerking één voor één. Sommige bewerkingen hebben er veel tegelijk: de optelling van gehele getallen is associatief, heeft een neutraal element 0, en elk getal heeft een tegengestelde. Dezelfde drie eigenschappen vind je bij de vermenigvuldiging van rationale getallen verschillend van 0, bij het optellen van vectoren en matrices, en bij het draaien van een wijzer op een klok.
+
+Zo'n verzameling met een bewerking heet een \textit{groep}. Het begrip komt van de Franse wiskundige Évariste Galois (1811-1832). Hij gebruikte groepen om te bewijzen dat er geen formule bestaat voor de oplossingen van een vijfdegraadsvergelijking, zoals de formule met de discriminant voor de tweede graad. Vandaag gebruiken scheikundigen groepen om kristallen te beschrijven, natuurkundigen om elementaire deeltjes te ordenen, en informatici om berichten te versleutelen. Het voordeel is groot: wat je één keer bewijst voor een groep, geldt meteen voor al die voorbeelden.
+
+\begin{oefeningen}[Start]
+\oef{h2-start-1}
+
+\oef{h2-verken}
+\end{oefeningen}
+
+\lkr{Laat oefening \ref{oef:h2-verken} maken vóór de uitleg. Een klok met zes uren is $\Zn{6}$: de leerlingen vinden het neutraal element en de inversen, en zien in vraag d dat elk getal precies één keer in elke rij en kolom staat. Die vaststelling wordt in sectie 2 een stelling.}
+
+%========================================================================================
+\section{Wat is een groep?}
+
+\subsection{De definitie}
+
+Zet de bewerkingen uit hoofdstuk 1 naast elkaar, dan valt op dat sommige alles hebben wat je nodig hebt om te rekenen zoals met de optelling in $\Z$. Bij andere ontbreekt er iets.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\rowcolor{accent!14} verzameling en bewerking & associatief & neutraal element & elk element een inverse \\ \hline
+$(\Z, +)$ & ja & $0$ & ja: $-a$ \\ \hline
+$(\N, +)$ & ja & $0$ & nee: $-1 \notin \N$ \\ \hline
+$(\Z, \cdot)$ & ja & $1$ & nee: $\tfrac12 \notin \Z$ \\ \hline
+$(\Q_0, \cdot)$ & ja & $1$ & ja: $\tfrac1a$ \\ \hline
+$(\Z, \ast)$ met $a \ast b = a + b - 3$ & ja & $3$ & ja: $6 - a$ \\ \hline
+$(\Z, -)$ & nee & geen & --- \\ \hline
+$\bigl(\{0, 1, 2\}, \ast\bigr)$ met $a \ast b = |a - b|$ & nee & $0$ & ja: $a' = a$ \\ \hline
+\end{tabular}
+\end{center}
+
+De rijen met drie keer ja verdienen een eigen naam.
+
+\begin{theorie}
+Een \textbf{\textcolor{accent}{groep}} $\formule{(G, \ast)}$ is een niet-lege verzameling $G$ met een bewerking $\ast$ op $G$ die
+
+\vspace{1mm}
+\begin{enumerate}[leftmargin=8mm,itemsep=1mm]
+\item \textbf{\textcolor{accent}{associatief}} is: \quad $\formule{(a \ast b) \ast c = a \ast (b \ast c)}$ \quad voor alle $a, b, c \in G$;
+\item een \textbf{\textcolor{accent}{neutraal element}} $e \in G$ heeft: \quad $\formule{a \ast e = e \ast a = a}$ \quad voor alle $a \in G$;
+\item bij elk element $a \in G$ een \textbf{\textcolor{accent}{inverse}} $a' \in G$ heeft: \quad $\formule{a \ast a' = a' \ast a = e}$
+\end{enumerate}
+
+\vspace{1mm}
+Is $\ast$ bovendien commutatief, dan is $(G, \ast)$ een \textbf{\textcolor{accent}{commutatieve groep}}.
+
+\vspace{1mm}
+Heeft $G$ een eindig aantal elementen, dan is dat aantal de \textbf{\textcolor{accent}{orde}} $\formule{|G|}$ van de groep.
+\end{theorie}
+
+Vergeet niet dat $\ast$ eerst een bewerking moet zijn: voor alle $a, b \in G$ ligt $a \ast b$ in $G$. Omdat de bewerking associatief is, heeft een groep precies één neutraal element en heeft elk element precies één inverse: dat bewees je in hoofdstuk 1. Een commutatieve groep heet ook een \textit{abelse groep}, naar de Noorse wiskundige Niels Henrik Abel (1802-1829).
+
+Je kent al veel groepen. Bij elk van deze voorbeelden is de bewerking commutatief.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|}
+\hline
+\rowcolor{accent!14} groep & neutraal element & inverse van $a$ \\ \hline
+$(\Z, +)$, \ $(\Q, +)$, \ $(\R, +)$, \ $(\C, +)$ & $0$ & $-a$ \\ \hline
+$(\Q_0, \cdot)$, \ $(\R_0, \cdot)$, \ $(\C_0, \cdot)$, \ $(\R^+_0, \cdot)$ & $1$ & $\tfrac1a$ \\ \hline
+$(\R^2, +)$, de vectoren in het vlak & $(0, 0)$ & $(-a_1, -a_2)$ \\ \hline
+de $m \times n$-matrices met de optelling & de nulmatrix & $-A$ \\ \hline
+$\bigl(\{1, -1, i, -i\}, \cdot\bigr)$ & $1$ & $\tfrac1a$, dus $i' = -i$ \\ \hline
+\end{tabular}
+\end{center}
+
+Groepen die niet commutatief zijn, ken je ook: de inverteerbare $2 \times 2$-matrices met het product vormen een groep, en $AB$ is niet altijd gelijk aan $BA$. In hoofdstuk 3 vind je nog veel meer zulke groepen.
+
+\voorbeeld{}{Toon aan dat $(\Q_0, \ast)$ met $a \ast b = \dfrac{ab}{2}$ een commutatieve groep is.\label{vb:h2-groep}}{%
+\uitleg{We gaan de voorwaarden na in volgorde: eerst of $\ast$ een bewerking is, dan associatief, neutraal element en inverse. Telkens redeneren we met willekeurige elementen.}
+\begin{stappenbreed}
+a, b \in \Q_0 \ \Rightarrow \ \frac{ab}{2} \in \Q_0 & Een product van rationale getallen verschillend van 0 is rationaal en niet 0: een bewerking. \\[2ex]
+(a \ast b) \ast c = \frac{\frac{ab}{2} \cdot c}{2} = \frac{abc}{4} = \frac{a \cdot \frac{bc}{2}}{2} = a \ast (b \ast c) & Associatief. \\[3ex]
+a \ast e = a \iff \frac{ae}{2} = a \iff e = 2 & Deel door $a \neq 0$. Het neutraal element is $2 \in \Q_0$. \\[2ex]
+a \ast a' = 2 \iff \frac{aa'}{2} = 2 \iff a' = \frac{4}{a} & De inverse $\frac4a$ ligt in $\Q_0$, omdat $a \neq 0$. \\[2ex]
+a \ast b = \frac{ab}{2} = \frac{ba}{2} = b \ast a & Commutatief, dus ook $e \ast a = a$ en $a' \ast a = e$.
+\end{stappenbreed}
+$(\Q_0, \ast)$ is een commutatieve groep.}
+
+\voorbeeld{}{Is $(\Z, \cdot)$ een groep?\label{vb:h2-geengroep}}{%
+\uitleg{De vermenigvuldiging is een associatieve bewerking op $\Z$ met neutraal element 1. We kijken of elk element een inverse heeft in $\Z$.}
+\begin{stappen}
+2 \cdot a' = 1 \iff a' = \tfrac12 & De enige kandidaat. \\[1ex]
+\tfrac12 \notin \Z & Het getal 2 heeft geen inverse in $\Z$.
+\end{stappen}
+$(\Z, \cdot)$ is geen groep. Ook $(\Q, \cdot)$ is geen groep, want 0 heeft geen inverse. Laat je 0 weg, dan krijg je de groep $(\Q_0, \cdot)$.}
+
+\begin{werkwijze}
+Ga de voorwaarden na in deze volgorde: is $\ast$ een bewerking op $G$, is ze associatief, is er een neutraal element in $G$, en heeft elk element een inverse in $G$? Bewijs ze met willekeurige elementen. Faalt één voorwaarde, geef dan een tegenvoorbeeld: dan is het geen groep. Voor een commutatieve groep ga je ook $a \ast b = b \ast a$ na.
+\end{werkwijze}
+
+\nujij{Is $(\R, \ast)$ met $a \ast b = a + b + 1$ een groep?}{Ja. De bewerking is associatief: beide leden zijn $a + b + c + 2$. Het neutraal element is $-1$, en de inverse van $a$ is $-2 - a$.}
+
+\begin{oefeningen}
+\oef{h2-groep}
+\end{oefeningen}
+
+%========================================================================================
+\section{Rekenen in een groep}
+
+\subsection{Vergelijkingen oplossen}
+
+Hoe los je $5 + x = 2$ op in $\Z$? Je telt bij beide leden $-5$ op, de inverse van 5. En $5x = 2$ in $\Q_0$? Je vermenigvuldigt met $\frac15$. Het is telkens hetzelfde idee: je ``ontdoet'' je van 5 met zijn inverse. In elke groep kan dat.
+
+Bij een willekeurige groep schrijven we de bewerking als $\ast$ en de inverse als $a'$. Is de bewerking een vermenigvuldiging of een samenstelling, dan schrijft men de inverse meestal $a^{-1}$; bij een optelling is het $-a$.
+
+\begin{theorie}
+\begin{stelling}{Vergelijkingen in een groep}
+In een groep $(G, \ast)$ heeft de vergelijking $a \ast x = b$ precies één oplossing \quad $\formule{x = a' \ast b}$
+
+\vspace{1mm}
+en heeft de vergelijking $x \ast a = b$ precies één oplossing \quad $\formule{x = b \ast a'}$
+\end{stelling}
+
+\begin{bewijs}
+Het element $a' \ast b$ is een oplossing, want
+\bewijsregel{a \ast (a' \ast b) = (a \ast a') \ast b = e \ast b = b .}
+Er is geen andere oplossing: stel dat $a \ast x = b$. Dan is
+\bewijsregel{x = e \ast x = (a' \ast a) \ast x = a' \ast (a \ast x) = a' \ast b .}
+Voor $x \ast a = b$ gaat het net zo, met $a'$ aan de rechterkant.
+\end{bewijs}
+\end{theorie}
+
+In woorden: in een groep kun je elke bewerking ongedaan maken. Let wel op de kant. Staat $a$ links van $x$, dan komt $a'$ links van $b$. In een groep die niet commutatief is, zijn $a' \ast b$ en $b \ast a'$ meestal verschillend.
+
+\voorbeeld{}{Los op in de groep $(\Q_0, \ast)$ met $a \ast b = \dfrac{ab}{2}$: \ $6 \ast x = 9$.\label{vb:h2-vergelijking}}{%
+\uitleg{Uit voorbeeld \ref{vb:h2-groep} kennen we de inverse: $a' = \frac4a$. Volgens de stelling is $x = 6' \ast 9$.}
+\begin{stappen}
+6' = \tfrac46 = \tfrac23 & De inverse van 6. \\[1ex]
+x = 6' \ast 9 = \frac{\frac23 \cdot 9}{2} = 3 & $6'$ links van 9, omdat 6 links van $x$ staat.
+\end{stappen}
+Controle: $6 \ast 3 = \frac{18}{2} = 9$. Je kunt deze vergelijking ook rechtstreeks oplossen uit $\frac{6x}{2} = 9$. De methode met de inverse werkt ook in groepen zonder formule, zoals een groep die je alleen met een tabel kent.}
+
+\begin{theorie}
+\begin{stelling}{Schrappen}
+In een groep $(G, \ast)$ geldt \quad $\formule{a \ast x = a \ast y \ \Rightarrow \ x = y}$ \quad en \quad $\formule{x \ast a = y \ast a \ \Rightarrow \ x = y}$
+\end{stelling}
+
+\begin{bewijs}
+Noem $b = a \ast x$. Dan zijn $x$ en $y$ allebei een oplossing van de vergelijking $a \ast X = b$. Die heeft maar één oplossing, dus $x = y$. Het tweede deel gaat net zo.
+\end{bewijs}
+\end{theorie}
+
+Zo schrap je in $\Q_0$ een factor: uit $3x = 3y$ volgt $x = y$. In $(\Q, \cdot)$ mag dat niet met 0, want $0 \cdot 2 = 0 \cdot 5$. Dat kan alleen omdat $(\Q, \cdot)$ geen groep is.
+
+\subsection{De inverse van een product}
+
+Je trekt eerst je sokken aan en daarna je schoenen. Om dat ongedaan te maken, trek je eerst je schoenen uit en dan je sokken: in de omgekeerde volgorde. Met inversen is het net zo.
+
+\begin{theorie}
+\begin{stelling}{Inverse van een product}
+In een groep $(G, \ast)$ geldt \quad $\formule{(a \ast b)' = b' \ast a'}$ \quad en \quad $\formule{(a')' = a}$
+\end{stelling}
+
+\begin{bewijs}
+Met de associativiteit is
+\bewijsregel{(a \ast b) \ast (b' \ast a') = a \ast (b \ast b') \ast a' = a \ast e \ast a' = a \ast a' = e}
+en net zo is $(b' \ast a') \ast (a \ast b) = b' \ast (a' \ast a) \ast b = b' \ast b = e$. Dus $b' \ast a'$ is de inverse van $a \ast b$, en die is uniek. Verder zegt $a' \ast a = a \ast a' = e$ precies dat $a$ de inverse is van $a'$.
+\end{bewijs}
+\end{theorie}
+
+In een commutatieve groep is $b' \ast a' = a' \ast b'$, en dan maakt de volgorde niet uit. Bij matrices wel: daar is $(AB)^{-1} = B^{-1} A^{-1}$.
+
+\voorbeeld{}{Neem $A = \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix}$ en $B = \begin{bmatrix} 1 & 0 \\ 3 & 1 \end{bmatrix}$. Controleer dat $(AB)^{-1} = B^{-1} A^{-1}$, en dat $A^{-1} B^{-1}$ niet de inverse is van $AB$.\label{vb:h2-inverseproduct}}{%
+\uitleg{De inverteerbare $2 \times 2$-matrices vormen een groep met het product. We berekenen beide kanten met de formule voor de inverse van een $2 \times 2$-matrix: beide determinanten zijn 1.}
+\begin{stappenbreed}
+AB = \begin{bmatrix} 7 & 2 \\ 3 & 1 \end{bmatrix}, \quad (AB)^{-1} = \begin{bmatrix} 1 & -2 \\ -3 & 7 \end{bmatrix} & $\det(AB) = 7 - 6 = 1$. \\[3ex]
+A^{-1} = \begin{bmatrix} 1 & -2 \\ 0 & 1 \end{bmatrix}, \quad B^{-1} = \begin{bmatrix} 1 & 0 \\ -3 & 1 \end{bmatrix} & Wissel de diagonaal, verander het teken van de andere twee. \\[3ex]
+B^{-1} A^{-1} = \begin{bmatrix} 1 & -2 \\ -3 & 7 \end{bmatrix} & Gelijk aan $(AB)^{-1}$. \\[3ex]
+A^{-1} B^{-1} = \begin{bmatrix} 7 & -2 \\ -3 & 1 \end{bmatrix} & In de verkeerde volgorde krijg je iets anders.
+\end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h2-vergelijking}
+\end{oefeningen}
+
+\subsection{De groepstabel}
+
+In de Verken stond in elke rij en elke kolom van de tabel elk getal precies één keer. Dat is geen toeval: het volgt uit de stelling over vergelijkingen.
+
+\begin{theorie}
+\begin{stelling}{Groepstabel}
+In de tabel van een eindige groep staat elk element precies één keer in elke rij en precies één keer in elke kolom.
+\end{stelling}
+
+\begin{bewijs}
+In de rij van $a$ staan de elementen $a \ast x$, met $x \in G$. Een element $b$ staat in die rij op de plaatsen waar $a \ast x = b$. Die vergelijking heeft precies één oplossing, dus $b$ staat er precies één keer. In de kolom van $a$ staan de elementen $x \ast a$, en de vergelijking $x \ast a = b$ heeft ook precies één oplossing.
+\end{bewijs}
+\end{theorie}
+
+Een groepstabel is dus een soort sudoku: in elke rij en in elke kolom komt elk element één keer voor. Met die regel kun je een groepstabel vaak aanvullen. Het omgekeerde geldt niet: een tabel waarin elk element één keer in elke rij en kolom staat, hoort niet altijd bij een groep, want de bewerking moet ook associatief zijn. Dat zie je in de opdrachten.
+
+\voorbeeld{}{$G = \{e, a, b, c\}$ is een groep met neutraal element $e$, en $a \ast a = b$ en $b \ast b = e$. Vul de groepstabel aan.\label{vb:h2-aanvullen}}{%
+\uitleg{De rij en de kolom van $e$ kennen we. Daarna zoeken we telkens een rij of kolom waarin voor een vakje nog maar één element kan: elk element staat één keer in elke rij en kolom.}
+\naast{\begin{minipage}{\linewidth}
+\begin{stappenvrij}{1.7cm}{7.2cm}
+b \ast a = c & In de kolom van $a$ staan $a$ en $b$ al, en in de rij van $b$ staat $e$ al: alleen $c$ past. \\[1ex]
+b \ast c = a & Het laatste vakje van de rij van $b$. \\[1ex]
+c \ast a = e & Het laatste vakje van de kolom van $a$. \\[1ex]
+a \ast c = e & In de rij van $a$ ontbreken $c$ en $e$, en in de kolom van $c$ staat $c$ al. \\[1ex]
+a \ast b = c & Het laatste vakje van de rij van $a$. \\[1ex]
+c \ast b = a & Het laatste vakje van de kolom van $b$. \\[1ex]
+c \ast c = b & Het laatste vakje van de kolom van $c$.
+\end{stappenvrij}
+\end{minipage}}{\begin{bewtabel}{4}{\ast}{e & a & b & c}
+e & e & a & b & c \\ \hline
+a & a & b & \cellcolor{fel!35}c & \cellcolor{fel!35}e \\ \hline
+b & b & \cellcolor{fel!35}c & e & \cellcolor{fel!35}a \\ \hline
+c & c & \cellcolor{fel!35}e & \cellcolor{fel!35}a & \cellcolor{fel!35}b \\ \hline
+\end{bewtabel}}}
+
+\begin{werkwijze}
+Vul eerst de rij en de kolom van het neutraal element in. Zoek dan een vakje waarin nog maar één element kan: elk element staat precies één keer in elke rij en in elke kolom. Lukt dat nergens, gebruik dan een gegeven samen met de associativiteit, zoals $a \ast (a \ast a) = (a \ast a) \ast a$.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h2-aanvullen}
+\end{oefeningen}
+
+%========================================================================================
+\section{Rekenen modulo \texorpdfstring{$n$}{n}}
+
+\subsection{Optellen modulo \texorpdfstring{$n$}{n}}
+
+Het is 9 uur. Over 5 uur is het niet 14 uur maar 2 uur, op een wijzerplaat tenminste. Op een klok tel je op en hou je alleen de rest bij deling door 12 over. Dat is de klok uit de Verken, met 6 in plaats van 12 uren.
+
+\begin{theorie}
+Voor een natuurlijk getal $n \geqslant 2$ is \quad $\formule{\Zn{n} = \{0, 1, 2, \ldots, n - 1\}}$
+
+\vspace{1mm}
+De \textbf{\textcolor{accent}{optelling modulo $n$}} op $\Zn{n}$ is \quad $\formule{a \plusn b = \text{de rest van } a + b \text{ bij deling door } n}$
+
+\begin{stelling}{Optellen modulo $n$}
+$(\Zn{n}, \plusn)$ is een commutatieve groep met $n$ elementen. Het neutraal element is 0, de inverse van 0 is 0, en de inverse van $a \neq 0$ is $n - a$.
+\end{stelling}
+
+\begin{bewijs}
+Een rest bij deling door $n$ ligt in $\Zn{n}$: $\plusn$ is een bewerking. Ze is commutatief omdat $a + b = b + a$. Verder is $a \plusn 0 = a$, en $a + (n - a) = n$ heeft rest 0.
+
+Associatief: schrijf $a + b = qn + (a \plusn b)$, met $q$ het quotiënt. Dan is
+\bewijsregel{(a \plusn b) + c = (a + b + c) - qn ,}
+en dat heeft dezelfde rest bij deling door $n$ als $a + b + c$. Dus is $(a \plusn b) \plusn c$ de rest van $a + b + c$. Op dezelfde manier is ook $a \plusn (b \plusn c)$ de rest van $a + b + c$.
+\end{bewijs}
+\end{theorie}
+
+\naast{\begin{minipage}{11cm}
+Getallen die een veelvoud van $n$ verschillen, gedragen zich in $\Zn{n}$ hetzelfde: op een klok met 12 uren is 3 uur hetzelfde als 15 uur en als 27 uur. Daarom mag je eerst gewoon rekenen en pas op het einde de rest nemen. Een negatief getal maak je positief door er $n$ bij op te tellen: 5 uur terug vanaf 2 uur is $2 - 5 = -3$, en $-3 + 12 = 9$ uur.
+
+\vspace{1mm}
+Met de klok in de figuur zie je de optelling: $a \plusn b$ is waar de wijzer staat als hij vanaf $a$ nog $b$ stappen verder draait.
+\end{minipage}}{\begin{tikzpicture}[scale=.95]
+  \klok[1.25]{12}
+  \draw[fel!85!black,thick,-{Stealth[length=2mm]}] (-120:.85) arc[start angle=-120,end angle=-390,radius=.85];
+  \node[font=\scriptsize,fill=white,inner sep=1pt] at (0,0) {$7 \plusn 9 = 4$};
+\end{tikzpicture}}
+
+\voorbeeld{}{Bereken in $\Zn{12}$: \ $7 \plusn 9$, de inverse van 5, en de oplossing van $8 \plusn x = 3$.\label{vb:h2-modulo}}{%
+\uitleg{We rekenen gewoon en houden de rest bij deling door 12 over. Voor de vergelijking gebruiken we de inverse van 8, zoals in elke groep.}
+\begin{stappen}
+7 + 9 = 16 = 12 + 4 \ \Rightarrow \ 7 \plusn 9 = 4 & De rest bij deling door 12. \\[1ex]
+5' = 12 - 5 = 7 & Controle: $5 + 7 = 12$, rest 0. \\[1ex]
+x = 8' \plusn 3 = 4 \plusn 3 = 7 & De inverse van 8 is $12 - 8 = 4$.
+\end{stappen}
+Controle: $8 + 7 = 15$, met rest 3 bij deling door 12.}
+
+\begin{werkwijze}
+Reken met gewone gehele getallen en neem op het einde de rest bij deling door $n$. Is de uitkomst negatief, tel er dan $n$ bij op. De inverse van $a \neq 0$ in $(\Zn{n}, \plusn)$ is $n - a$.
+\end{werkwijze}
+
+\subsection{Vermenigvuldigen modulo \texorpdfstring{$n$}{n}}
+
+Je kunt ook vermenigvuldigen en daarna de rest nemen. Op $\Zn{n}$ geeft dat nooit een groep: $0 \maaln a = 0$ voor elke $a$, dus 0 heeft geen inverse. Daarom laten we 0 weg.
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{vermenigvuldiging modulo $n$}} op $\Zn{n}$ is \quad $\formule{a \maaln b = \text{de rest van } a \cdot b \text{ bij deling door } n}$
+\end{theorie}
+
+\voorbeeld{}{Stel de tabel op van $\maaln$ op $\Zn{5} \setminus \{0\} = \{1, 2, 3, 4\}$. Is het een groep?\label{vb:h2-maal5}}{%
+\uitleg{We vermenigvuldigen en nemen de rest bij deling door 5. Daarna gaan we de voorwaarden na met de tabel. De associativiteit volgt zoals bij de optelling uit die van de gewone vermenigvuldiging.}
+\naast{\begin{minipage}{\linewidth}
+\begin{stappenvrij}{3.2cm}{5.8cm}
+3 \maaln 4 = 2 & $3 \cdot 4 = 12 = 2 \cdot 5 + 2$. \\[1ex]
+e = 1 & De rij van 1 herhaalt de bovenste rij. \\[1ex]
+2' = 3, \ 3' = 2, \ 4' = 4 & Waar staat 1 in de rij? \\[1ex]
+\text{een bewerking} & Elke uitkomst ligt in $\{1, 2, 3, 4\}$.
+\end{stappenvrij}
+
+\vspace{1mm}
+Het is een commutatieve groep met 4 elementen.
+\end{minipage}}{\begin{bewtabel}{4}{\maaln}{1 & 2 & 3 & 4}
+1 & 1 & 2 & 3 & 4 \\ \hline
+2 & 2 & 4 & 1 & 3 \\ \hline
+3 & 3 & 1 & 4 & 2 \\ \hline
+4 & 4 & 3 & 2 & 1 \\ \hline
+\end{bewtabel}}}
+
+\voorbeeld{}{Is $\bigl(\Zn{6} \setminus \{0\}, \maaln\bigr)$ een groep?\label{vb:h2-maal6}}{%
+\uitleg{We zoeken een product waarvan de rest 0 is: dan valt de uitkomst buiten de verzameling.}
+\begin{stappen}
+2 \maaln 3 = 0 & $2 \cdot 3 = 6$ heeft rest 0, en $0 \notin \Zn{6} \setminus \{0\}$.
+\end{stappen}
+$\maaln$ is zelfs geen bewerking op $\Zn{6} \setminus \{0\}$. Ook heeft 2 geen inverse: in de rij van 2 staan alleen $2, 4, 0, 2, 4$.}
+
+Het verschil tussen 5 en 6 is geen toeval. Je kunt bewijzen dat $\bigl(\Zn{n} \setminus \{0\}, \maaln\bigr)$ een groep is als $n$ een priemgetal is, en geen groep als $n$ geen priemgetal is. Is $n = pq$ met $1 < p, q < n$, dan is $p \maaln q = 0$, zoals bij $2 \cdot 3 = 6$. De andere helft van het bewijs staat in de opdrachten.
+
+\nujij{Bereken in $\Zn{7}$: \ $5 \maaln 6$, en de inverse van 3 voor $\maaln$.}{$30 = 4 \cdot 7 + 2$, dus $5 \maaln 6 = 2$. Verder $3 \maaln 5 = 1$, want $15 = 2 \cdot 7 + 1$: de inverse van 3 is 5.}
+
+\begin{oefeningen}
+\oef{h2-modulo}
+
+\oef{h2-tabelmaal}
+\end{oefeningen}
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h2-o1}
+
+\oef{h2-o2}
+
+\oef{h2-o4}
+
+\oef{h2-o3}
+
+\oef{h2-o6}
+
+\oef{h2-o5}
+
+\oef{h2-o12}
+
+\oef{h2-o7}
+
+\oef{h2-o9}
+
+\oef{h2-o8}
+
+\oef{h2-o13}
+
+\oef{h2-o10}
+
+\oef{h2-o11}
+
+\oef{h2-o14}
+
+\oef{h2-o15}
+
+\oef{h2-o16}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{Complexe getallen, Matrices en Exponentiële en logaritmische functies staan in het 5de jaar, deze cursus in het 6de. De oefening over logaritmen toont in feite een isomorfisme tussen $(\R^+_0, \cdot)$ en $(\R, +)$, zonder dat woord te gebruiken: morfismen horen bij het complementair gedeelte.}
+
+\begin{oefeningen}
+\oef{h2-koppel-1}
+
+\oef{h2-koppel-2}
+
+\oef{h2-koppel-3}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h2-t1}
+
+\oef{h2-t2}
+
+\oef{h2-t3}
+
+\oef{h2-t4}
+
+\oef{h2-t5}
+
+\oef{h2-t6}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h2-t1}{vb:h2-groep}{oef:h2-groep}%
+  \fv{oef:h2-t2}{vb:h2-geengroep}{oef:h2-groep}%
+  \fv{oef:h2-t3}{vb:h2-vergelijking}{oef:h2-vergelijking}%
+  \fv{oef:h2-t4}{vb:h2-aanvullen}{oef:h2-aanvullen}%
+  \fv{oef:h2-t5}{vb:h2-modulo}{oef:h2-modulo}%
+  \fv{oef:h2-t6}{vb:h2-maal6}{oef:h2-tabelmaal}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: de definitie van een groep en van een commutatieve groep, vijf voorbeelden van groepen en drie van verzamelingen met een bewerking die geen groep zijn, hoe je een vergelijking oplost in een groep, de inverse van $a \ast b$, de eigenschap van een groepstabel, en hoe je optelt en vermenigvuldigt modulo $n$. Vergelijk daarna met de kaders.
+\fi
