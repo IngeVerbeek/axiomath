@@ -41,6 +41,7 @@ Een nieuwe cursus begint met een kopie van de cursus [Integralen](<4 Economie-, 
 | Exponentiële en logaritmische functies | [Pakket 1 / Analyse](<1 Grieks-Latijn, Humane, Latijn-Moderne, Moderne talen (Basis)/Analyse/Exponentiële en logaritmische functies/README.md>) | eerste versie, nog na te lezen |
 | Goniometrische functies | [Pakket 1 / Analyse](<1 Grieks-Latijn, Humane, Latijn-Moderne, Moderne talen (Basis)/Analyse/Goniometrische functies/README.md>) | eerste versie, nog na te lezen |
 | Kansrekenen | [Pakket 1 / Data en onzekerheid](<1 Grieks-Latijn, Humane, Latijn-Moderne, Moderne talen (Basis)/Data en onzekerheid/Kansrekenen/README.md>) | eerste versie, nog na te lezen |
+| Rijen | [Pakket 1 / Discrete wiskunde](<1 Grieks-Latijn, Humane, Latijn-Moderne, Moderne talen (Basis)/Discrete wiskunde/Rijen/README.md>) | eerste versie, nog na te lezen |
 | Statistiek | [Pakket 1 / Data en onzekerheid](<1 Grieks-Latijn, Humane, Latijn-Moderne, Moderne talen (Basis)/Data en onzekerheid/Statistiek/README.md>) | eerste versie, nog na te lezen |
 | Onderzoekscompetentie | [Pakket 2](<2 Economie-Moderne talen (B+S)/Onderzoekscompetentie/README.md>) | eerste versie, nog na te lezen |
 | Matrices | [Pakket 2 / Algebra](<2 Economie-Moderne talen (B+S)/Algebra/Matrices/README.md>) | eerste versie, nog na te lezen |
@@ -51,6 +52,7 @@ Een nieuwe cursus begint met een kopie van de cursus [Integralen](<4 Economie-, 
 | Integralen | [Pakket 2 / Analyse](<2 Economie-Moderne talen (B+S)/Analyse/Integralen/README.md>) | eerste versie, nog na te lezen |
 | Rationale functies | [Pakket 2 / Analyse](<2 Economie-Moderne talen (B+S)/Analyse/Rationale functies/README.md>) | eerste versie, nog na te lezen |
 | Kansrekenen | [Pakket 2 / Data en onzekerheid](<2 Economie-Moderne talen (B+S)/Data en onzekerheid/Kansrekenen/README.md>) | eerste versie, nog na te lezen |
+| Rijen | [Pakket 2 / Discrete wiskunde](<2 Economie-Moderne talen (B+S)/Discrete wiskunde/Rijen/README.md>) | eerste versie, nog na te lezen |
 | Statistiek | [Pakket 2 / Data en onzekerheid](<2 Economie-Moderne talen (B+S)/Data en onzekerheid/Statistiek/README.md>) | eerste versie, nog na te lezen |
 | Onderzoekscompetentie | [Pakket 3](<3 Latijn-Wet., Moderne talen-Wet., Sportwetenschappen (B+S')/Onderzoekscompetentie/README.md>) | eerste versie, nog na te lezen |
 | Complexe getallen | [Pakket 3 / Algebra](<3 Latijn-Wet., Moderne talen-Wet., Sportwetenschappen (B+S')/Algebra/Complexe getallen/README.md>) | eerste versie, nog na te lezen |
@@ -62,6 +64,7 @@ Een nieuwe cursus begint met een kopie van de cursus [Integralen](<4 Economie-, 
 | Integralen | [Pakket 3 / Analyse](<3 Latijn-Wet., Moderne talen-Wet., Sportwetenschappen (B+S')/Analyse/Integralen/README.md>) | eerste versie, nog na te lezen |
 | Rationale functies | [Pakket 3 / Analyse](<3 Latijn-Wet., Moderne talen-Wet., Sportwetenschappen (B+S')/Analyse/Rationale functies/README.md>) | eerste versie, nog na te lezen |
 | Kansrekenen | [Pakket 3 / Data en onzekerheid](<3 Latijn-Wet., Moderne talen-Wet., Sportwetenschappen (B+S')/Data en onzekerheid/Kansrekenen/README.md>) | eerste versie, nog na te lezen |
+| Rijen | [Pakket 3 / Discrete wiskunde](<3 Latijn-Wet., Moderne talen-Wet., Sportwetenschappen (B+S')/Discrete wiskunde/Rijen/README.md>) | eerste versie, nog na te lezen |
 | Statistiek | [Pakket 3 / Data en onzekerheid](<3 Latijn-Wet., Moderne talen-Wet., Sportwetenschappen (B+S')/Data en onzekerheid/Statistiek/README.md>) | eerste versie, nog na te lezen |
 | Onderzoekscompetentie | [Pakket 4](<4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Onderzoekscompetentie/README.md>) | eerste versie, nog na te lezen |
 | Complexe getallen | [Pakket 4 / Algebra](<4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Algebra/Complexe getallen/README.md>) | eerste versie, nog na te lezen |
