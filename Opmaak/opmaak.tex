@@ -16,7 +16,7 @@
 \ifdefstring{\versie}{zelfstudie}{\zelfstudietrue\uitwerkingtrue}{}
 
 \usepackage[dutch]{babel}
-\usepackage[a4paper,left=2.5cm,right=2.5cm,top=2.2cm,bottom=2.2cm,headsep=6mm,footskip=8mm,headheight=14pt]{geometry}
+\usepackage[a4paper,left=2.5cm,right=2.5cm,top=2.4cm,bottom=2.2cm,headsep=6mm,footskip=8mm,headheight=14pt]{geometry}
 
 \usepackage{amsmath}
 % Source Sans voor tekst en koppen, newtxsf voor schreefloze wiskunde (beide onder de SIL Open Font License)
@@ -152,14 +152,12 @@
     \draw[decorate,decoration={brace,amplitude=4pt},grijs] (0,.62) -- (9.4,.62)
       node[midway,above=3pt,text=black] {$n-1$ sprongen};
   \end{tikzpicture}}
+% Nummers hangen in de linkermarge: bij een sectie in een kader, bij een subsectie zonder kader in de kleur van de kop
 \renewcommand{\@seccntformat}[1]{%
-  \ifstrequal{#1}{subsection}{%
-    \llap{\textcolor{accent}{%
-      \raisebox{0.5mm}{\rule{1.5mm}{1.5mm} \rule{1.5mm}{1.5mm} \rule{1.5mm}{1.5mm}}%%% vierkantjes voor subsection
-    }\hspace{2mm}}%
-  }{%
-    \llap{\secnummer{\csname the#1\endcsname}\hspace{2mm}}%% nummer hangt in de linkermarge voor section
-  }}\setcounter{secnumdepth}{1} % subsecties krijgen geen nummer
+  \ifstrequal{#1}{subsection}%
+    {\llap{\csname the#1\endcsname\hspace{2mm}}}%
+    {\llap{\secnummer{\csname the#1\endcsname}\hspace{2mm}}}}
+\setcounter{secnumdepth}{2}
 \renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}
   {-3ex \@plus -.8ex \@minus -.3ex}{1ex \@plus .2ex}
   {\normalfont\kopletter\color{accent}\nobreak}}% \nobreak: \color maakt anders een breekpunt vlak na een sectiekop
@@ -177,7 +175,7 @@
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \renewcommand{\sectionmark}[1]{}
 \fancyhf{}
-%\fancyhead[L]{\sffamily\footnotesize\color{accent}\leftmark\ifopdrachtdeel\ \textperiodcentered\ Opdrachten\fi}
+\fancyhead[L]{\sffamily\footnotesize\color{grijs}\leftmark\ifopdrachtdeel\ \textperiodcentered\ Opdrachten\fi}% rustig, zoals het paginanummer
 \fancyfoot[R]{\sffamily\footnotesize\color{grijs}\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[R]{\sffamily\footnotesize\color{grijs}\thepage}\renewcommand{\headrulewidth}{0pt}}

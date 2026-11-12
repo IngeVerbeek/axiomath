@@ -143,7 +143,7 @@ Toegevoegd op 5 november 2026, om dezelfde reden: de eerste versie tekende allee
 Leerlingen zien in één oogopslag in welk hoofdstuk ze zitten en waar de opdrachten staan.
 
 - **Elk hoofdstuk heeft een eigen kleur.** Maximaal 8 per cursus: blauw, groen, oranje, roze, paars, rood, cyaan, olijf.
-- **Donkere tint = uitleg:** hoofdstukband, kop van de pagina, kaders, voorbeelden, sectienummers.
+- **Donkere tint = uitleg:** hoofdstukband, kaders, voorbeelden, sectienummers.
 - **Felle tint = opdrachten:** band van de Opdrachten, balken, oefeningnummers, tab vanaf de Opdrachten.
 - **Tab aan de rand** van elke pagina met het hoofdstuknummer. Hij staat per hoofdstuk lager, en is 14 mm breed omdat printers de uiterste rand vaak niet bedrukken.
 - Alles moet ook in zwart-wit werken: labels en vormen dragen de betekenis, kleur komt erbovenop.
@@ -202,7 +202,9 @@ Het logo van Axiomath is vastgelegd op 6 nov 2026. De bestanden staan in `Ontwer
 - Figuren staan bij de tekst, met labels in de figuur. Geen decoratie in de leerstof.
 - **Kleine prenten** mogen bij Opdrachten en Koppel, als de opgave over een concreet ding of dier gaat. Niet bij de leerstof, de korte oefeningen of de test. Ze zijn klein (hoogstens 2,1 cm), staan rechts naast de opgave en dragen geen wiskunde. Spaarzaam: een paar per hoofdstuk.
 - **Stijl van de prenten:** lijntekeningen in zwart-wit, want die drukken scherp op een kopieerapparaat. Alleen publiek domein, met per prent de bron en de licentie in `afbeeldingen/prenten/README.md`.
-- **Sectienummers** hangen links in de marge, zodat de titels op de tekstrand beginnen.
+- **Sectie- en subsectienummers** hangen links in de marge, zodat de titels op de tekstrand beginnen. Een sectienummer staat in een kader, een subsectienummer (1.2.3) niet.
+- **Elke sectie begint op een nieuwe pagina**, behalve de eerste van een hoofdstuk. Voorstel van 12 nov 2026.
+- **Kop bovenaan de pagina:** het hoofdstuk (en "Opdrachten" in dat deel) staat links bovenaan, klein en in grijs zoals het paginanummer rechtsonder. Handig bij het bladeren, maar niet opzichtig.
 
 ## Inhoud en rechten
 
