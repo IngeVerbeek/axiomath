@@ -217,6 +217,56 @@
       uitwerking: |-
         $P(X \geqslant 30) = 1 - P(X \leqslant 29) \approx 0{,}013$. Bij een eerlijke dobbelsteen gebeurt dit in ongeveer 1 op 80 reeksen, en 30 ligt $\frac{30 - 20}{4{,}08} \approx 2{,}4$ standaardafwijkingen boven $\mu$. Dat is een sterke aanwijzing dat de dobbelsteen te vaak zes geeft.
 
+- id: h4-model
+  soort: kort
+  opgave: |-
+    Is $X$ binomiaal? Geef zo ja $n$ en $p$; zo nee, welke voorwaarde ontbreekt?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een tennisser slaagt zijn eerste opslag met kans $0{,}6$, onafhankelijk van de vorige. $X$ is het aantal geslaagde opslagen bij 8 opslagen.
+      antwoord: |-
+        ja: $n = 8$, $p = 0{,}6$
+      uitwerking: |-
+        Ja: 8 onafhankelijke herhalingen met telkens kans $0{,}6$ op succes.
+    - opgave: |-
+        Uit een klas van 12 jongens en 10 meisjes worden 3 leerlingen geloot. $X$ is het aantal jongens.
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: je loot zonder teruglegging uit een kleine groep. Is de eerste een jongen, dan is de kans dat de tweede een jongen is $\frac{11}{21}$ in plaats van $\frac{12}{22}$: de trekkingen zijn afhankelijk.
+    - opgave: |-
+        Een rad heeft 5 gelijke vakken, waarvan één rood. $X$ is het aantal keer rood bij 12 draaien.
+      antwoord: |-
+        ja: $n = 12$, $p = 0{,}2$
+      uitwerking: |-
+        Ja: 12 onafhankelijke draaien met telkens kans $\frac15 = 0{,}2$ op rood.
+    - opgave: |-
+        $X$ is de som van de ogen bij 3 worpen met een dobbelsteen.
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: $X$ telt geen successen. Elke worp heeft zes uitkomsten die allemaal meetellen, niet twee.
+
+- id: h4-verrassend-laag
+  soort: kort
+  opgave: |-
+    Een webwinkel beweert dat 90~\% van zijn pakjes de volgende dag aankomt. Van 25 bestelde pakjes kwamen er maar 19 de volgende dag aan. Neem aan dat de pakjes onafhankelijk van elkaar op tijd komen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel pakjes verwacht je op tijd als de bewering klopt, met welke standaardafwijking?
+      antwoord: |-
+        $22{,}5$; \ $1{,}5$
+      uitwerking: |-
+        $X \sim B(25;\, 0{,}9)$: $\mu = 25 \cdot 0{,}9 = 22{,}5$ en $\sigma = \sqrt{25 \cdot 0{,}9 \cdot 0{,}1} = \sqrt{2{,}25} = 1{,}5$.
+    - opgave: |-
+        Bereken de kans op 19 of minder pakjes op tijd. Is de uitkomst verrassend?
+      antwoord: |-
+        $\approx 0{,}033$; ja
+      uitwerking: |-
+        19 ligt onder $\mu$, dus bereken je $P(X \leqslant 19) \approx 0{,}033$ met \texttt{binomcdf(25,0.9,19)}. Als de bewering klopt, gebeurt dit maar in ongeveer 3~\% van de bestellingen: een reden om aan de bewering te twijfelen, maar geen bewijs. 19 ligt $\frac{22{,}5 - 19}{1{,}5} \approx 2{,}3$ standaardafwijkingen onder $\mu$.
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
