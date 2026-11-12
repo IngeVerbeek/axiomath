@@ -30,7 +30,7 @@ python Opmaak/maak-pdf.py "4/Data en onzekerheid/Kansrekenen"
 - **Hoofdstuk 1:** uitkomstenverzameling, gebeurtenissen, wet van Laplace (met rooster en telformules), relatieve frequentie en wet van de grote aantallen (met een simulatie), rekenregels met bewijs voor het Laplace-geval.
 - **Hoofdstuk 2:** voorwaardelijke kans in kruistabellen, productregel en boomdiagrammen, onafhankelijkheid (en het verschil met onverenigbaar), totale kans en Bayes. Bayes wordt eerst met een tabel van 10\,000 personen uitgelegd, dan met de formule.
 - **Hoofdstuk 3:** toevalsvariabele, kansverdeling, verwachtingswaarde, variantie en standaardafwijking (rekenformule met bewijs), cumulatieve verdelingsfunctie. Continue variabelen alleen vermeld; ze komen in Statistiek.
-- **Hoofdstuk 4:** binomiale verdeling met bewijs van de formule, rekentoestel (`binompdf`, `binomcdf`), $\E(X) = np$ en $\sigma = \sqrt{np(1-p)}$ (niet bewezen; als opdracht voor $n = 2$), grafisch verband met de normale verdeling, en beoordelen of een uitkomst verrassend is (voorbereiding op hypothesetoetsen in Statistiek).
+- **Hoofdstuk 4:** binomiale verdeling met bewijs van de formule, rekentoestel (`binompdf`, `binomcdf`), $\E(X) = np$ en $\sigma = \sqrt{np(1-p)}$ (met bewijs via $k\binom{n}{k} = n\binom{n-1}{k-1}$), grafisch verband met de normale verdeling, en beoordelen of een uitkomst verrassend is (voorbereiding op hypothesetoetsen in Statistiek).
 - **Rekentoestel:** de leerkrachtenversie noemt de TI-84.
 
 ## Eigen macro's
