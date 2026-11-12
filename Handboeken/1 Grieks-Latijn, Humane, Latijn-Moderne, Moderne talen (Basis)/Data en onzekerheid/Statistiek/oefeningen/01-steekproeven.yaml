@@ -245,6 +245,44 @@
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
 
+- id: h1-afronden
+  soort: kort
+  opgave: |-
+    Een muziekacademie telt 130 leerlingen piano, 95 leerlingen gitaar en 75 leerlingen viool. Ze wil een gestratificeerde steekproef van 40 leerlingen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken voor elke groep $\frac{N_i}{N} \cdot n$.
+      antwoord: |-
+        $17{,}33$; \ $12{,}67$; \ $10$
+      uitwerking: |-
+        $N = 130 + 95 + 75 = 300$, dus $\frac{130}{300} \cdot 40 \approx 17{,}33$, $\frac{95}{300} \cdot 40 \approx 12{,}67$ en $\frac{75}{300} \cdot 40 = 10$.
+    - opgave: |-
+        Hoeveel leerlingen kies je uit elke groep?
+      antwoord: |-
+        17, 13 en 10
+      uitwerking: |-
+        Rond af naar het dichtste geheel getal: 17, 13 en 10. De som is $17 + 13 + 10 = 40$, zoals het moet.
+
+- id: h1-toeval
+  soort: kort
+  opgave: |-
+    Een website toont een grafiek waarin het aantal films met een bepaalde acteur per jaar sterk samenhangt met het aantal verdrinkingen in zwembaden, over 10 jaar.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Welke verklaring is hier het meest waarschijnlijk: een verborgen variabele, omgekeerde causaliteit of toeval?
+      antwoord: |-
+        toeval
+      uitwerking: |-
+        Er is geen derde variabele die beide redelijk beïnvloedt, en geen van beide kan de andere veroorzaken. Met maar 10 waarnemingen per variabele is een toevallige samenhang goed mogelijk.
+    - opgave: |-
+        De makers vergeleken duizenden reeksen met elkaar en toonden alleen de reeksen die het best samenhingen. Waarom maakt dat toeval nog waarschijnlijker?
+      antwoord: |-
+        wie veel paren vergelijkt, vindt er vanzelf enkele die sterk samenhangen
+      uitwerking: |-
+        Bij duizenden paren zijn er altijd enkele die door het toeval een grote $r$ hebben. Wie alleen die toont, laat een toevallige samenhang zien. Bij nieuwe jaren verdwijnt ze waarschijnlijk.
+
 - id: h1-d2
   soort: opdracht
   niveau: 1

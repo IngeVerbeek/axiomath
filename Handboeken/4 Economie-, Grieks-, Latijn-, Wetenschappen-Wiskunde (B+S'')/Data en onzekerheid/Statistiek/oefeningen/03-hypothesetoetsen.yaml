@@ -216,6 +216,94 @@
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
 
+- id: h3-dobbel
+  soort: kort
+  opgave: |-
+    Je gooit twee keer met een eerlijke dobbelsteen en neemt het gemiddelde $\overline{X}$ van de twee ogen. Eén worp heeft $\mu = 3{,}5$ en $\sigma = \sqrt{\frac{35}{12}} \approx 1{,}708$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Maak een tabel met de kansverdeling van $\overline{X}$.
+      antwoord: |-
+        waarden $1;\ 1{,}5;\ \ldots;\ 6$ met kansen $\frac{1}{36}, \frac{2}{36}, \ldots, \frac{6}{36}, \ldots, \frac{1}{36}$
+      uitwerking: |-
+        Er zijn 36 even waarschijnlijke uitkomsten. Het gemiddelde $1$ komt 1 keer voor, $1{,}5$ 2 keer, $2$ 3 keer, $2{,}5$ 4 keer, $3$ 5 keer, $3{,}5$ 6 keer, en daarna symmetrisch: $4$ 5 keer, $4{,}5$ 4 keer, $5$ 3 keer, $5{,}5$ 2 keer en $6$ 1 keer.
+    - opgave: |-
+        Bereken $\E(\overline{X})$ en $\sigma(\overline{X})$.
+      antwoord: |-
+        $3{,}5$ en $\approx 1{,}208$
+      uitwerking: |-
+        De verdeling is symmetrisch rond $3{,}5$, dus $\E(\overline{X}) = 3{,}5$. De variantie is $\sum (x - 3{,}5)^2\, P(\overline{X} = x) = \frac{2 \cdot (6{,}25 \cdot 1 + 4 \cdot 2 + 2{,}25 \cdot 3 + 1 \cdot 4 + 0{,}25 \cdot 5)}{36} = \frac{52{,}5}{36} = \frac{35}{24}$, dus $\sigma(\overline{X}) = \sqrt{\frac{35}{24}} \approx 1{,}208$.
+    - opgave: |-
+        Klopt dat met de stelling over de steekproevenverdeling van een gemiddelde?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        De stelling geeft $\E(\overline{X}) = \mu = 3{,}5$ en $\sigma(\overline{X}) = \frac{\sigma}{\sqrt 2} = \frac{1{,}708}{1{,}414} \approx 1{,}208$. Exact: $\frac{35}{12} : 2 = \frac{35}{24}$.
+
+- id: h3-clt
+  soort: kort
+  opgave: |-
+    Het bedrag van een bestelling bij een webshop heeft $\mu = 42$~euro en $\sigma = 30$~euro. Veel bestellingen zijn klein, enkele heel groot.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Waarom is het bedrag van één bestelling niet normaal verdeeld?
+      antwoord: |-
+        de verdeling is scheef
+      uitwerking: |-
+        De verdeling is scheef, met een lange staart naar grote bedragen. Een normaal model $N(42, 30)$ zou ook een flinke kans geven aan negatieve bedragen ($z = -1{,}4$).
+    - opgave: |-
+        Bereken de kans dat 100 aselect gekozen bestellingen gemiddeld meer dan 48~euro bedragen.
+      antwoord: |-
+        $\approx 0{,}023$
+      uitwerking: |-
+        Volgens de centrale limietstelling is $\overline{X} \approx N\bigl(42, \frac{30}{10}\bigr) = N(42, 3)$, want $n = 100$ is groot. 48 ligt 2 standaardafwijkingen boven 42: \texttt{normalcdf(48,1E99,42,3)} $\approx 0{,}023$.
+
+- id: h3-hypothesen
+  soort: kort
+  opgave: |-
+    Formuleer $H_0$ en $H_1$. Zeg ook welke parameter je toetst.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een school beweert dat haar leerlingen gemiddeld 8 uur per nacht slapen. Een ouder vermoedt dat het minder is.
+      antwoord: |-
+        $H_0\colon \mu = 8$, $H_1\colon \mu < 8$
+      uitwerking: |-
+        De parameter is de gemiddelde slaapduur $\mu$ van alle leerlingen. $H_0\colon \mu = 8$ (de bewering van de school), $H_1\colon \mu < 8$ (het vermoeden).
+    - opgave: |-
+        Vroeger had 15~\% van de klanten een klacht. Na een nieuwe verpakking hoopt het bedrijf dat het aandeel gedaald is.
+      antwoord: |-
+        $H_0\colon p = 0{,}15$, $H_1\colon p < 0{,}15$
+      uitwerking: |-
+        De parameter is het aandeel $p$ van alle klanten met een klacht, na de nieuwe verpakking. $H_0\colon p = 0{,}15$ (er is niets veranderd), $H_1\colon p < 0{,}15$.
+    - opgave: |-
+        Spelers speelden een spel gemiddeld 25 minuten per sessie. De makers denken dat een nieuwe versie spelers langer vasthoudt.
+      antwoord: |-
+        $H_0\colon \mu = 25$, $H_1\colon \mu > 25$
+      uitwerking: |-
+        De parameter is de gemiddelde speelduur $\mu$ per sessie met de nieuwe versie. $H_0\colon \mu = 25$, $H_1\colon \mu > 25$.
+
+- id: h3-fouten-n
+  soort: kort
+  opgave: |-
+    De klant uit de vorige oefening controleert nu 60 schroeven in plaats van 20. Hij toetst opnieuw $H_0\colon p = 0{,}05$ tegen $H_1\colon p > 0{,}05$, bij $\alpha = 0{,}05$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Vanaf hoeveel defecte schroeven keurt hij de lading af?
+      antwoord: |-
+        vanaf 7
+      uitwerking: |-
+        Onder $H_0$ is $X \sim B(60;\, 0{,}05)$. $P(X \geqslant 6) \approx 0{,}079 > 0{,}05$ en $P(X \geqslant 7) \approx 0{,}030 \leqslant 0{,}05$: afkeuren vanaf 7 defecte schroeven.
+    - opgave: |-
+        Wat is de kans op een fout van de tweede soort als in werkelijkheid 15~\% defect is? Vergelijk met de steekproef van 20.
+      antwoord: |-
+        $\approx 0{,}18$, veel kleiner dan $0{,}65$
+      uitwerking: |-
+        Een slechte lading aanvaarden: $P(X \leqslant 6 \mid p = 0{,}15) = {}$\texttt{binomcdf(60,0.15,6)} $\approx 0{,}18$. Met 20 schroeven en een kans op een fout van de eerste soort onder 5~\% was dat 0,65: de grotere steekproef verkleint de fout van de tweede soort sterk.
+
 - id: h3-o3
   soort: opdracht
   niveau: 1
