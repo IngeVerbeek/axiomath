@@ -32,7 +32,7 @@ python Opmaak/maak-pdf.py "4/Meetkunde/Ruimtemeetkunde"
 - **Hoofdstuk 1:** coördinaten in de ruimte, afstand en midden, vectoren, norm, collineaire en coplanaire vectoren.
 - **Hoofdstuk 2:** vector- en parametervergelijkingen van rechten en vlakken, cartesiaanse vergelijking van een vlak (ook de asafsnedenvergelijking), een rechte als snijlijn van twee vlakken.
 - **Hoofdstuk 3:** onderlinge ligging van twee rechten (ook kruisend), van een rechte en een vlak, van twee en drie vlakken (stelsels, zoals in Matrices).
-- **Hoofdstuk 4:** scalair product met bewijs via de cosinusregel, hoeken, normaalvector, loodrechte stand, afstand van een punt tot een vlak (met bewijs als opdracht) en tot een rechte.
+- **Hoofdstuk 4:** scalair product met bewijs via de cosinusregel, hoeken, normaalvector, loodrechte stand, afstand van een punt tot een vlak (met bewijs, en een tweede bewijs als opdracht) en tot een rechte.
 - Het vectorieel product staat er niet in.
 
 ## Figuren

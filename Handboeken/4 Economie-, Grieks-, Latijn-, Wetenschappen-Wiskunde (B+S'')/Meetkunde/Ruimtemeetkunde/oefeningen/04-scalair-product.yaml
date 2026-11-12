@@ -216,6 +216,61 @@
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
 
+- id: h4-rekenregels
+  soort: kort
+  opgave: |-
+    Rekenen met het scalair product, zonder coördinaten.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $(\vec u + \vec v) \cdot (\vec u - \vec v) = \norm{\vec u}^2 - \norm{\vec v}^2$.
+      antwoord: |-
+        uitwerken met de rekenregels
+      uitwerking: |-
+        Distributiviteit: $(\vec u + \vec v) \cdot (\vec u - \vec v) = \vec u \cdot \vec u - \vec u \cdot \vec v + \vec v \cdot \vec u - \vec v \cdot \vec v$. De middelste termen heffen elkaar op, want $\vec v \cdot \vec u = \vec u \cdot \vec v$. Met het scalair kwadraat blijft $\norm{\vec u}^2 - \norm{\vec v}^2$ over.
+    - opgave: |-
+        Van twee vectoren weet je dat $\norm{\vec u} = 3$, $\norm{\vec v} = 2$ en $\vec u \cdot \vec v = -1$. Bereken $\norm{\vec u + \vec v}$ en $\norm{2\vec u - \vec v}$.
+      antwoord: |-
+        $\sqrt{11}$; $2\sqrt{11}$
+      uitwerking: |-
+        $\norm{\vec u + \vec v}^2 = \norm{\vec u}^2 + 2\,\vec u \cdot \vec v + \norm{\vec v}^2 = 9 - 2 + 4 = 11$, dus $\norm{\vec u + \vec v} = \sqrt{11}$.\par
+        $\norm{2\vec u - \vec v}^2 = 4\norm{\vec u}^2 - 4\,\vec u \cdot \vec v + \norm{\vec v}^2 = 36 + 4 + 4 = 44$, dus $\norm{2\vec u - \vec v} = \sqrt{44} = 2\sqrt{11}$.
+
+- id: h4-normaalvlak
+  soort: kort
+  opgave: |-
+    Normaalvectoren en vergelijkingen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef een vergelijking van het vlak door $(3, -1, 2)$ met normaalvector $\vcr{2}{0}{-1}$.
+      antwoord: |-
+        $2x - z = 4$
+      uitwerking: |-
+        $2(x - 3) + 0 \cdot (y + 1) - (z - 2) = 0$, of $2x - z = 4$. Controle: $6 - 2 = 4$.
+    - opgave: |-
+        Geef een normaalvector van het vlak $3x - y = 2$ en van het vlak $z = 5$.
+      antwoord: |-
+        $\vcr{3}{-1}{0}$; $\vcr{0}{0}{1}$
+      uitwerking: |-
+        De coëfficiënten van $x$, $y$ en $z$, met $0$ voor een ontbrekende onbekende: $\vcr{3}{-1}{0}$ en $\vcr{0}{0}{1}$. Het vlak $z = 5$ is horizontaal, met een verticale normaalvector.
+    - opgave: |-
+        Is $\vcr{2}{-4}{6}$ een normaalvector van het vlak $x - 2y + 3z = 7$?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $\vcr{2}{-4}{6} = 2\vcr{1}{-2}{3}$: een veelvoud van $\vcr{1}{-2}{3}$, dus een normaalvector.
+
+- id: h4-voetpunt
+  soort: kort
+  opgave: |-
+    Bereken het voetpunt $V$ van de loodlijn uit $P(3, 3, 1)$ op het vlak $\alpha\colon x + 2y - 2z = -2$, en controleer $|PV|$ met de afstandsformule.
+  antwoord: |-
+    $V(2, 1, 3)$; afstand $3$
+  uitwerking: |-
+    De loodlijn is $(3 + r, 3 + 2r, 1 - 2r)$. Invullen: $(3 + r) + 2(3 + 2r) - 2(1 - 2r) = 7 + 9r = -2$, dus $r = -1$ en $V(2, 1, 3)$.\par
+    $|PV| = \sqrt{1 + 4 + 4} = 3$. Met de formule: $\frac{|3 + 6 - 2 + 2|}{\sqrt{1 + 4 + 4}} = \frac93 = 3$.
+
 - id: h4-o1
   soort: opdracht
   niveau: 1

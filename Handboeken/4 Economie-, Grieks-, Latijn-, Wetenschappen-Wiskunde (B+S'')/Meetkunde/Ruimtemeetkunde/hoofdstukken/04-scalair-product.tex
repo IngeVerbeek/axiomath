@@ -21,78 +21,258 @@ Hoe bereken je de hoek tussen twee ribben van een piramide, of de afstand van ee
 %========================================================================================
 \section{Het scalair product}
 
+\subsection{Definitie}
+
+In de Verken gaf de som $v_1w_1 + v_2w_2 + v_3w_3$ nul bij twee loodrechte vectoren, en het kwadraat van de lengte bij een vector met zichzelf. Die som krijgt een eigen naam.
+
 \begin{theorie}
-Het \textbf{\textcolor{accent}{scalair product}} van $\vec v = \vcr{v_1}{v_2}{v_3}$ en $\vec w = \vcr{w_1}{w_2}{w_3}$ is het getal
-\[\formule{\vec v \cdot \vec w = v_1w_1 + v_2w_2 + v_3w_3}.\]
-\begin{stelling}{Scalair product en hoek}
-Is $\theta$ de hoek tussen $\vec v$ en $\vec w$ (beide niet $\vec 0$), dan is
-\[\formule{\vec v \cdot \vec w = \norm{\vec v}\,\norm{\vec w}\cos\theta}.\]
-In het bijzonder: $\formule{\vec v \perp \vec w \iff \vec v \cdot \vec w = 0}$.
+Het \textbf{\textcolor{accent}{scalair product}} van $\vec v = \vcr{v_1}{v_2}{v_3}$ en $\vec w = \vcr{w_1}{w_2}{w_3}$ is het getal \quad $\formule{\vec v \cdot \vec w = v_1w_1 + v_2w_2 + v_3w_3}$
+\begin{stelling}{Scalair kwadraat}
+Voor elke vector $\vec v$ is \quad $\formule{\vec v \cdot \vec v = \norm{\vec v}^2}$
 \end{stelling}
 \begin{bewijs}
-Neem de driehoek met zijden $\vec v$, $\vec w$ en $\vec v - \vec w$. De cosinusregel geeft
-\bewijsregel{\norm{\vec v - \vec w}^2 = \norm{\vec v}^2 + \norm{\vec w}^2 - 2\norm{\vec v}\norm{\vec w}\cos\theta.}
-Met coördinaten is $\norm{\vec v - \vec w}^2 = \sum (v_i - w_i)^2 = \norm{\vec v}^2 + \norm{\vec w}^2 - 2(v_1w_1 + v_2w_2 + v_3w_3)$. Vergelijk beide.
+Met $\vec v = \vcr{a}{b}{c}$ is $\vec v \cdot \vec v = a^2 + b^2 + c^2 = \bigl(\sqrt{a^2 + b^2 + c^2}\bigr)^2 = \norm{\vec v}^2$.
 \end{bewijs}
 \end{theorie}
 
-\voorbeeld{}{Bereken de hoek tussen $\vec v = \vcr{1}{2}{2}$ en $\vec w = \vcr{2}{-1}{2}$.\label{vb:h4-hoek}}{%
-\uitleg{Bereken het scalair product en de normen, en los op naar $\cos\theta$.}
+Het scalair product van twee vectoren is een getal, geen vector: een \textit{scalair}. Zo is $\vcr{1}{2}{2} \cdot \vcr{2}{-1}{2} = 2 - 2 + 4 = 4$. Met zichzelf geeft een vector het kwadraat van zijn norm, zoals in de Verken: $\vcr{1}{1}{0} \cdot \vcr{1}{1}{0} = 2 = \bigl(\sqrt2\,\bigr)^2$. Lengtes kun je dus schrijven met scalaire producten. Dat gebruiken we zo meteen.
+
+\subsection{Rekenregels}
+
+Met het scalair product reken je bijna zoals met een gewoon product van getallen. De belangrijkste regel is het uitwerken van haakjes.
+
+\begin{theorie}
+\begin{stelling}{Distributiviteit}
+Voor alle vectoren $\vec u$, $\vec v$ en $\vec w$ is \quad $\formule{\vec u \cdot (\vec v + \vec w) = \vec u \cdot \vec v + \vec u \cdot \vec w}$
+\end{stelling}
+\begin{bewijs}
+De linkerkant is $u_1(v_1 + w_1) + u_2(v_2 + w_2) + u_3(v_3 + w_3)$. Werk de haakjes uit en zet de termen met $v$ en met $w$ samen:
+\bewijsregel{(u_1v_1 + u_2v_2 + u_3v_3) + (u_1w_1 + u_2w_2 + u_3w_3) = \vec u \cdot \vec v + \vec u \cdot \vec w .}
+\end{bewijs}
+\end{theorie}
+
+Even eenvoudig zie je per coördinaat dat $\vec v \cdot \vec w = \vec w \cdot \vec v$ en $(k\vec v) \cdot \vec w = k\,(\vec v \cdot \vec w)$. Daarmee werk je uitdrukkingen met vectoren uit zoals merkwaardige producten.
+
+\voorbeeld{}{Toon aan dat $\norm{\vec v - \vec w}^2 = \norm{\vec v}^2 - 2\,\vec v \cdot \vec w + \norm{\vec w}^2$.\label{vb:h4-rekenregels}}{%
+\uitleg{Schrijf het kwadraat van de norm als scalair product, en werk de haakjes uit zoals bij $(a - b)^2$.}
 \begin{stappenbreed}
-\vec v \cdot \vec w = 2 - 2 + 4 = 4,\quad \norm{\vec v} = \norm{\vec w} = 3 & \\
-\cos\theta = \tfrac{4}{9} \iff \theta \approx 63{,}6^\circ & Rekentoestel in graden.
+\norm{\vec v - \vec w}^2 = (\vec v - \vec w) \cdot (\vec v - \vec w) & Scalair kwadraat. \\
+= \vec v \cdot \vec v - \vec v \cdot \vec w - \vec w \cdot \vec v + \vec w \cdot \vec w & Distributiviteit, met $-\vec w = (-1)\vec w$. \\
+= \norm{\vec v}^2 - 2\,\vec v \cdot \vec w + \norm{\vec w}^2 & $\vec w \cdot \vec v = \vec v \cdot \vec w$, en twee keer het scalair kwadraat.
 \end{stappenbreed}}
 
 \begin{oefeningen}
-\oef{h4-hoek}
+\oef{h4-rekenregels}
 \end{oefeningen}
 
-\voorbeeld{}{Welke hoek maakt een lichaamsdiagonaal van een kubus met een ribbe?\label{vb:h4-kubus}}{%
-\uitleg{Neem de kubus met ribbe 1 in de oorsprong. De diagonaal is $\vcr{1}{1}{1}$, de ribbe $\vcr{1}{0}{0}$.}
+\subsection{Scalair product en hoek}
+
+De \textit{hoek} $\theta$ tussen twee vectoren $\vec v$ en $\vec w$, beide niet $\vec 0$, is de hoek tussen hun pijlen vanuit eenzelfde punt, met $0^\circ \leqslant \theta \leqslant 180^\circ$. Het scalair product geeft die hoek, zonder figuur.
+
+\begin{theorie}
+\begin{stelling}{Scalair product en hoek}
+Is $\theta$ de hoek tussen $\vec v$ en $\vec w$, beide niet $\vec 0$, dan is
+
+\vspace{1mm}
+\qquad $\formule{\vec v \cdot \vec w = \norm{\vec v}\,\norm{\vec w}\cos\theta}$
+\end{stelling}
+\begin{bewijs}
+\naast{Stel $\vec v = \overrightarrow{OV}$ en $\vec w = \overrightarrow{OW}$. Zijn $\vec v$ en $\vec w$ niet collineair, dan is $OVW$ een driehoek met hoek $\theta$ in $O$, en is $\overrightarrow{WV} = \vec v - \vec w$. De cosinusregel geeft
+\bewijsregel{\norm{\vec v - \vec w}^2 = \norm{\vec v}^2 + \norm{\vec w}^2 - 2\norm{\vec v}\norm{\vec w}\cos\theta ,}
+en volgens voorbeeld~\ref{vb:h4-rekenregels} is
+\bewijsregel{\norm{\vec v - \vec w}^2 = \norm{\vec v}^2 + \norm{\vec w}^2 - 2\,\vec v \cdot \vec w .}}{%
+\begin{tikzpicture}[x=.9cm,y=.9cm,font=\scriptsize]
+  \draw[->,accent,very thick] (0,0) -- (3,0) node[below,text=black] {$V$};
+  \draw[->,accent,very thick] (0,0) -- (1,1.8) node[above,text=black] {$W$};
+  \draw[->,thick] (1,1.8) -- (3,0);
+  \node[below left] at (0,0) {$O$};
+  \node[below] at (1.5,0) {$\vec v$};
+  \node[left] at (.5,.9) {$\vec w$};
+  \node[above right] at (2,.9) {$\vec v - \vec w$};
+  \draw[grijs] (.45,0) arc (0:61:.45);
+  \node at (.68,.22) {$\theta$};
+\end{tikzpicture}}
+Vergelijk beide: $\vec v \cdot \vec w = \norm{\vec v}\norm{\vec w}\cos\theta$.
+
+Zijn $\vec v$ en $\vec w$ collineair, dan is er geen driehoek, maar is $\vec w = k\vec v$ en $\vec v \cdot \vec w = k\,\vec v \cdot \vec v = k\norm{\vec v}^2$. Is $k > 0$, dan is $\theta = 0^\circ$ en $\norm{\vec w} = k\norm{\vec v}$, zodat $\norm{\vec v}\norm{\vec w}\cos 0^\circ = k\norm{\vec v}^2$. Is $k < 0$, dan is $\theta = 180^\circ$ en $\norm{\vec w} = -k\norm{\vec v}$, zodat $\norm{\vec v}\norm{\vec w}\cos 180^\circ = k\norm{\vec v}^2$.
+\end{bewijs}
+\end{theorie}
+
+Het scalair product meet dus hoe goed twee vectoren dezelfde kant op wijzen. Het is positief bij een scherpe hoek, nul bij een rechte hoek en negatief bij een stompe hoek. Om de hoek te berekenen, los je op naar $\cos\theta$: deel het scalair product door $\norm{\vec v}\,\norm{\vec w}$.
+
+\voorbeeld{}{Bereken de hoek tussen $\vec v = \vcr{1}{2}{2}$ en $\vec w = \vcr{2}{-1}{2}$.\label{vb:h4-hoek}}{%
+\uitleg{Bereken het scalair product en de twee normen, en los op naar $\cos\theta$.}
 \begin{stappenbreed}
-\cos\theta = \frac{1}{\sqrt3 \cdot 1} \iff \theta \approx 54{,}7^\circ & Voor elke kubus dezelfde hoek.
+\vec v \cdot \vec w = 2 - 2 + 4 = 4 & Positief: een scherpe hoek. \\
+\norm{\vec v} = \sqrt{1 + 4 + 4} = 3,\quad \norm{\vec w} = \sqrt{4 + 1 + 4} = 3 & \\
+\cos\theta = \tfrac{4}{3 \cdot 3} = \tfrac49 \iff \theta \approx 63{,}6^\circ & Rekentoestel in graden.
+\end{stappenbreed}}
+
+\naast{%
+\voorbeeld{}{Welke hoek maakt een lichaamsdiagonaal van een kubus met een ribbe?\label{vb:h4-kubus}}{%
+\uitleg{Neem een kubus met ribbe 1, met een hoekpunt in $O$ en ribben langs de assen. De diagonaal is $\vcr{1}{1}{1}$, de ribbe $\vcr{1}{0}{0}$.}
+\begin{stappenvrij}{3.4cm}{3.6cm}
+\vcr{1}{1}{1} \cdot \vcr{1}{0}{0} = 1 & \\
+\cos\theta = \dfrac{1}{\sqrt3 \cdot 1} & De normen zijn $\sqrt3$ en $1$. \\
+\theta \approx 54{,}7^\circ & Voor elke kubus dezelfde hoek.
+\end{stappenvrij}}}{%
+\begin{tikzpicture}[ruimte,scale=1.15,font=\scriptsize]
+  \assendrie{1.7}
+  \draw[grijs] (1,0,0) -- (1,1,0) -- (0,1,0) (1,0,0) -- (1,0,1) -- (0,0,1) -- (0,1,1) -- (1,1,1) -- (1,0,1) (1,1,0) -- (1,1,1) (0,1,0) -- (0,1,1);
+  \draw[->,accent,very thick] (0,0,0) -- (1,1,1);
+  \draw[->,accent,very thick] (0,0,0) -- (1,0,0);
+  \draw[accent] (.3,0,0) to[bend right=20] (.2,.2,.2);
+  \node[accent] at (.45,.3,.05) {$\theta$};
+\end{tikzpicture}}
+
+\begin{werkwijze}
+De hoek tussen twee vectoren: bereken het scalair product en de twee normen, deel, en neem de boogcosinus. Een negatief scalair product geeft een stompe hoek.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h4-hoek}
+
+\oef{h4-kubushoek}
+\end{oefeningen}
+
+\subsection{Loodrechte vectoren}
+
+Het belangrijkste gevolg is een snelle toets voor een rechte hoek.
+
+\begin{theorie}
+\begin{stelling}{Loodrechte vectoren}
+Twee vectoren $\vec v$ en $\vec w$, beide niet $\vec 0$, staan loodrecht op elkaar als en slechts als \quad $\formule{\vec v \cdot \vec w = 0}$
+\end{stelling}
+\begin{bewijs}
+Omdat $\norm{\vec v} \neq 0$ en $\norm{\vec w} \neq 0$, is $\vec v \cdot \vec w = \norm{\vec v}\norm{\vec w}\cos\theta = 0$ als en slechts als $\cos\theta = 0$. Met $0^\circ \leqslant \theta \leqslant 180^\circ$ is dat zo als en slechts als $\theta = 90^\circ$.
+\end{bewijs}
+\end{theorie}
+
+Om te weten of een hoek recht is, volstaat dus het scalair product.
+
+\voorbeeld{}{Voor welke $k$ staan $\vcr{3}{k}{2}$ en $\vcr{k}{-1}{4}$ loodrecht op elkaar?\label{vb:h4-loodrecht}}{%
+\uitleg{Stel het scalair product gelijk aan nul en los op naar $k$.}
+\begin{stappenbreed}
+3k - k + 8 = 0 \iff 2k = -8 \iff k = -4 & Het scalair product is nul. \\
+\vcr{3}{-4}{2} \cdot \vcr{-4}{-1}{4} = -12 + 4 + 8 = 0 & Controle.
 \end{stappenbreed}}
 
 \begin{oefeningen}
 \oef{h4-scalair}
-
-\oef{h4-kubushoek}
 \end{oefeningen}
 
 %========================================================================================
 \section{Normaalvector en loodrechte stand}
 
-\naast{%
-\begin{theorie}
-Een \textbf{\textcolor{accent}{normaalvector}} van een vlak staat loodrecht op elke vector in dat vlak. Het vlak $\formule{ax + by + cz = d}$ heeft normaalvector $\formule{\vec n = \vcr{a}{b}{c}}$.
+\subsection{De normaalvector van een vlak}
 
-Het vlak door $P_0(x_0, y_0, z_0)$ met normaalvector $\vcr{a}{b}{c}$ is $\formule{a(x - x_0) + b(y - y_0) + c(z - z_0) = 0}$.
-\end{theorie}}{%
-\begin{tikzpicture}[ruimte,scale=.7,font=\scriptsize]
+Een vlak heeft veel richtingsvectoren, maar maar één richting die er loodrecht op staat. Die richting lees je meteen af uit de cartesiaanse vergelijking.
+
+\begin{theorie}
+\naast{Een \textbf{\textcolor{accent}{normaalvector}} van een vlak is een vector $\vec n \neq \vec 0$ die loodrecht staat op elke vector $\overrightarrow{P_1P_2}$ met $P_1$ en $P_2$ in het vlak.}{%
+\begin{tikzpicture}[ruimte,scale=.55,font=\scriptsize]
   \fill[accent!12] (0,0,0) -- (3,0,0) -- (3,3,0) -- (0,3,0) -- cycle;
   \draw[accent] (0,0,0) -- (3,0,0) -- (3,3,0) -- (0,3,0) -- cycle;
-  \draw[->,accent,very thick] (1.5,1.5,0) -- (1.5,1.5,2) node[above,text=black] {$\vec n$};
+  \draw[->,accent,very thick] (1.5,1.5,0) -- (1.5,1.5,1.8) node[right,text=black] {$\vec n$};
   \draw[->,grijs,thick] (1.5,1.5,0) -- (1.5,2.8,0);
   \draw (1.5,1.5,.3) -- (1.5,1.8,.3) -- (1.5,1.8,0);
+  \fill (1.5,1.5,0) circle (.06) node[below,text=black] {$P_1$};
+  \fill (1.5,2.8,0) circle (.06) node[below,text=black] {$P_2$};
 \end{tikzpicture}}
+\begin{stelling}{Normaalvector uit de vergelijking}
+De normaalvectoren van het vlak $ax + by + cz = d$ zijn de veelvouden $\formule{\vec n = k\vcr{a}{b}{c}}$ met $k \neq 0$.
+\end{stelling}
+\begin{bewijs}
+Liggen $P_1(x_1, y_1, z_1)$ en $P_2(x_2, y_2, z_2)$ in het vlak, dan is
+\bewijsregel{\vcr{a}{b}{c} \cdot \overrightarrow{P_1P_2} = (ax_2 + by_2 + cz_2) - (ax_1 + by_1 + cz_1) = d - d = 0 ,}
+dus $\vcr{a}{b}{c}$ is een normaalvector, en met de rekenregels ook $k\vcr{a}{b}{c}$.
 
-Waarom? Liggen $P_0$ en $P$ in het vlak, dan is $a(x - x_0) + b(y - y_0) + c(z - z_0) = d - d = 0$: dat is $\vec n \cdot \overrightarrow{P_0P} = 0$. Met de normaalvector beslis je over loodrechte stand:
-\begin{itemize}
-\item een rechte staat loodrecht op een vlak als haar richtingsvector collineair is met $\vec n$;
-\item twee vlakken staan loodrecht op elkaar als $\vec n_1 \cdot \vec n_2 = 0$;
-\item de hoek tussen twee vlakken is de (scherpe) hoek tussen hun normaalvectoren.
-\end{itemize}
+Omgekeerd: neem een normaalvector $\vec m$, en stel bijvoorbeeld $c \neq 0$ (anders werk je met $a$ of $b$). De punten $\bigl(0, 0, \frac dc\bigr)$, $\bigl(c, 0, \frac dc - a\bigr)$ en $\bigl(0, c, \frac dc - b\bigr)$ liggen in het vlak, dus $\vec m$ staat loodrecht op de vectoren $\vcr{c}{0}{-a}$ en $\vcr{0}{c}{-b}$ ertussen:
+\bewijsregel{cm_1 - am_3 = 0 \quad\text{en}\quad cm_2 - bm_3 = 0 .}
+Dan is $m_1 = \frac{m_3}{c}a$, $m_2 = \frac{m_3}{c}b$ en $m_3 = \frac{m_3}{c}c$, dus $\vec m = \frac{m_3}{c}\vcr{a}{b}{c}$.
+\end{bewijs}
+\end{theorie}
+
+Alle normaalvectoren van een vlak hebben dus dezelfde richting. Evenwijdige vlakken, met hetzelfde linkerlid, hebben dezelfde normaalvectoren.
+
+\subsection{Een vlak met een gegeven normaalvector}
+
+Door een punt gaat precies één vlak loodrecht op een gegeven richting. De vorige stelling geeft zijn vergelijking.
+
+\begin{theorie}
+\begin{stelling}{Vergelijking met een normaalvector}
+Het vlak door $P_0(x_0, y_0, z_0)$ met normaalvector $\vcr{a}{b}{c}$ is
+
+\vspace{1mm}
+\qquad $\formule{a(x - x_0) + b(y - y_0) + c(z - z_0) = 0}$
+\end{stelling}
+\begin{bewijs}
+Deze vergelijking is $ax + by + cz = ax_0 + by_0 + cz_0$: een vlak met normaalvector $\vcr{a}{b}{c}$, door $P_0$. Omgekeerd: heeft een vlak door $P_0$ de normaalvector $\vcr{a}{b}{c}$, en vergelijking $a'x + b'y + c'z = d'$, dan is $\vcr{a}{b}{c} = k\vcr{a'}{b'}{c'}$ met $k \neq 0$. Maal $k$ wordt die vergelijking $ax + by + cz = kd'$, en omdat $P_0$ erin ligt, is $kd' = ax_0 + by_0 + cz_0$. Het is dus hetzelfde vlak.
+\end{bewijs}
+\end{theorie}
+
+Het linkerlid is het scalair product $\vec n \cdot \overrightarrow{P_0P}$: het vlak bestaat uit de punten $P$ waarvoor $\overrightarrow{P_0P}$ loodrecht staat op $\vec n$.
+
+\voorbeeld{}{Geef een vergelijking van het vlak door $P_0(2, 0, -1)$ met normaalvector $\vcr{1}{-3}{2}$.\label{vb:h4-normaalvlak}}{%
+\uitleg{Vul het punt en de normaalvector in de formule in, en werk uit.}
+\begin{stappenbreed}
+1(x - 2) - 3(y - 0) + 2(z + 1) = 0 \iff x - 3y + 2z = 0 & Controle: $P_0$ geeft $2 - 0 - 2 = 0$.
+\end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h4-normaalvlak}
+\end{oefeningen}
+
+\subsection{Een rechte loodrecht op een vlak}
+
+Een rechte staat loodrecht op een vlak als ze loodrecht staat op elke rechte in dat vlak, zoals een vlaggenmast op een vlak terrein.
+
+\begin{theorie}
+Een rechte staat \textbf{\textcolor{accent}{loodrecht}} op een vlak als haar richtingsvector een normaalvector van het vlak is: voor het vlak $ax + by + cz = d$ is dat zo als ze collineair is met $\formule{\vcr{a}{b}{c}}$.
+\end{theorie}
+
+De richtingsvector van de rechte is dus een normaalvector van het vlak, en omgekeerd.
 
 \voorbeeld{}{Geef een vergelijking van het vlak door $A(1, 2, 3)$ dat loodrecht staat op de rechte $l\colon (0, 0, 1) + r\vcr{2}{-1}{1}$.\label{vb:h4-loodvlak}}{%
 \uitleg{De richtingsvector van $l$ is een normaalvector van het gezochte vlak.}
 \begin{stappenbreed}
-2(x - 1) - (y - 2) + (z - 3) = 0 & \\
-2x - y + z = 3 & Controle: $A$ geeft $2 - 2 + 3 = 3$.
+2(x - 1) - (y - 2) + (z - 3) = 0 \iff 2x - y + z = 3 & Normaalvector $\vcr{2}{-1}{1}$, door $A$. Controle: $2 - 2 + 3 = 3$.
+\end{stappenbreed}}
+
+\voorbeeld{}{Geef parametervergelijkingen van de rechte door $P(2, -1, 1)$ die loodrecht staat op het vlak $3x - y + 2z = 5$.\label{vb:h4-loodlijn}}{%
+\uitleg{Nu omgekeerd: de normaalvector van het vlak is een richtingsvector van de rechte.}
+\begin{stappenbreed}
+x = 2 + 3r,\quad y = -1 - r,\quad z = 1 + 2r & Door $P$ met richtingsvector $\vec n = \vcr{3}{-1}{2}$.
 \end{stappenbreed}}
 
 \begin{oefeningen}
 \oef{h4-loodvlak}
+
+\oef{h4-normaal}
 \end{oefeningen}
+
+\subsection{Loodrechte vlakken en de hoek tussen twee vlakken}
+
+\naast{Kijk je langs de snijlijn van twee vlakken, dan zie je ze als twee rechten, en hun normaalvectoren als pijlen loodrecht op die rechten. Draai je een vlak over een hoek, dan draait zijn normaalvector mee over dezelfde hoek. De hoek tussen de vlakken is dus de hoek tussen de normaalvectoren. Omdat je een normaalvector ook kunt omkeren, kies je de scherpe hoek.}{%
+\begin{tikzpicture}[x=.7cm,y=.7cm,font=\scriptsize]
+  \draw[accent,thick] (-1.8,0) -- (2.2,0) node[right,text=black] {$\alpha$};
+  \draw[accent,thick] (-1.2,-.9) -- (1.8,1.35) node[right,text=black] {$\beta$};
+  \draw[->,accent,very thick] (-1,0) -- (-1,1.3) node[above,text=black] {$\vec n_1$};
+  \draw[->,accent,very thick] (1,.75) -- (.4,1.55) node[above,text=black] {$\vec n_2$};
+  \draw[grijs] (.6,0) arc (0:36.9:.6);
+  \node at (.85,.25) {$\theta$};
+  \draw[grijs] (-1,.55) arc (90:126.9:.55);
+  \node at (-1.25,.8) {$\theta$};
+  \draw[grijs,dashed] (-1,0) -- (-1.6,.8);
+\end{tikzpicture}}
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{hoek tussen twee vlakken}} met normaalvectoren $\vec n_1$ en $\vec n_2$ is de hoek $\theta$ met $0^\circ \leqslant \theta \leqslant 90^\circ$ waarvoor
+
+\qquad $\formule{\cos\theta = \dfrac{|\vec n_1 \cdot \vec n_2|}{\norm{\vec n_1}\,\norm{\vec n_2}}}$
+
+Twee vlakken staan \textbf{\textcolor{accent}{loodrecht}} op elkaar als $\formule{\vec n_1 \cdot \vec n_2 = 0}$.
+\end{theorie}
 
 \voorbeeld{}{Staan de vlakken $x + 2y - z = 4$ en $3x - y + z = 0$ loodrecht op elkaar?\label{vb:h4-loodvlakken}}{%
 \uitleg{Bereken het scalair product van de normaalvectoren.}
@@ -100,45 +280,122 @@ Waarom? Liggen $P_0$ en $P$ in het vlak, dan is $a(x - x_0) + b(y - y_0) + c(z -
 \vcr{1}{2}{-1} \cdot \vcr{3}{-1}{1} = 3 - 2 - 1 = 0 & Ja: loodrecht.
 \end{stappenbreed}}
 
-\begin{oefeningen}
-\oef{h4-normaal}
+\voorbeeld{}{Bereken de hoek tussen de vlakken $x - z = 0$ en $-y + z = 2$.\label{vb:h4-hoekvlakken}}{%
+\uitleg{Lees de normaalvectoren af. Let op de ontbrekende onbekenden: hun coëfficiënt is $0$.}
+\begin{stappenbreed}
+\vec n_1 = \vcr{1}{0}{-1},\quad \vec n_2 = \vcr{0}{-1}{1},\quad \vec n_1 \cdot \vec n_2 = -1 & De normen zijn $\sqrt2$. \\
+\cos\theta = \tfrac{|-1|}{2} = \tfrac12 \iff \theta = 60^\circ & Zonder absolute waarde krijg je de stompe hoek $120^\circ$.
+\end{stappenbreed}}
 
+\begin{oefeningen}
 \oef{h4-hoekvlakken}
 \end{oefeningen}
 
 %========================================================================================
 \section{Afstanden}
 
+\subsection{Afstand en loodlijn}
+
+De afstand van een punt tot een vlak is de kortste afstand van dat punt tot een punt van het vlak. Je vindt ze langs de loodlijn, zoals een steen die recht naar beneden valt.
+
+\naast{%
+\begin{theorie}
+De \textbf{\textcolor{accent}{loodlijn}} uit $P$ op een vlak $\alpha$ is de rechte door $P$ loodrecht op $\alpha$. Ze snijdt $\alpha$ in het \textbf{\textcolor{accent}{voetpunt}} $V$. De \textbf{\textcolor{accent}{afstand}} van $P$ tot $\alpha$ is $\formule{d(P, \alpha) = |PV|}$.
+\begin{stelling}{Kortste afstand}
+Voor elk punt $Q \neq V$ van $\alpha$ is $\formule{|PQ| > |PV|}$.
+\end{stelling}
+\begin{bewijs}
+De loodlijn $PV$ staat loodrecht op $\alpha$, dus ook op $VQ$. In de rechthoekige driehoek $PVQ$ is $|PQ|^2 = |PV|^2 + |VQ|^2 > |PV|^2$, omdat $|VQ| > 0$. Ligt $P$ in $\alpha$, dan is $V = P$ en de afstand $0$.
+\end{bewijs}
+\end{theorie}}{%
+\begin{tikzpicture}[ruimte,scale=.75,font=\scriptsize]
+  \fill[accent!12] (3,-.5,0) -- (3,3.8,0) -- (-.5,3.8,0) -- (-.5,-.5,0) -- cycle;
+  \draw[accent!60] (3,-.5,0) -- (3,3.8,0) -- (-.5,3.8,0) -- (-.5,-.5,0) -- cycle;
+  \draw[accent,very thick] (1.2,1,0) -- (1.2,1,2.4);
+  \draw[thick] (1.2,1,2.4) -- (1.6,3.2,0);
+  \draw[grijs,dashed] (1.2,1,0) -- (1.6,3.2,0);
+  \draw (1.2,1,.3) -- (1.23,1.3,.3) -- (1.23,1.3,0);
+  \fill (1.2,1,2.4) circle (.06) node[above,text=black] {$P$};
+  \fill (1.2,1,0) circle (.06) node[below,text=black] {$V$};
+  \fill (1.6,3.2,0) circle (.06) node[below,text=black] {$Q$};
+  \node at (2.6,-.2,0) {$\alpha$};
+\end{tikzpicture}}
+
+Zo definieer je ook de afstand van een punt tot een rechte: het voetpunt $V$ is het punt van de rechte met $PV$ loodrecht op de rechte. Ook dan is $|PV|$ de kortste afstand, met hetzelfde bewijs.
+
+\subsection{Afstand van een punt tot een vlak}
+
+Met het scalair product vind je een formule voor $|PV|$, zonder het voetpunt te berekenen.
+
 \begin{theorie}
 \begin{stelling}{Afstand van een punt tot een vlak}
-De afstand van $P(x_0, y_0, z_0)$ tot het vlak $ax + by + cz = d$ is
-\[\formule{d(P, \alpha) = \frac{|ax_0 + by_0 + cz_0 - d|}{\sqrt{a^2 + b^2 + c^2}}}.\]
+De afstand van $P(x_0, y_0, z_0)$ tot het vlak $\alpha\colon ax + by + cz = d$ is
+
+\vspace{1mm}
+\qquad $\formule{d(P, \alpha) = \dfrac{|ax_0 + by_0 + cz_0 - d|}{\sqrt{a^2 + b^2 + c^2}}}$
 \end{stelling}
+\begin{bewijs}
+Neem $\vec n = \vcr{a}{b}{c}$ en een punt $Q(x_1, y_1, z_1)$ van $\alpha$, zoals in de figuur hierboven. De loodlijn heeft de richting van $\vec n$, dus $\overrightarrow{VP} = t\,\vec n$ voor een getal $t$, en $|PV| = |t|\,\norm{\vec n}$. Met Chasles en de rekenregels is
+\bewijsregel{\vec n \cdot \overrightarrow{QP} = \vec n \cdot \overrightarrow{QV} + \vec n \cdot \overrightarrow{VP} = 0 + t\,\vec n \cdot \vec n = t\,\norm{\vec n}^2 ,}
+want $\overrightarrow{QV}$ ligt in $\alpha$. Verder is $\vec n \cdot \overrightarrow{QP} = (ax_0 + by_0 + cz_0) - (ax_1 + by_1 + cz_1) = ax_0 + by_0 + cz_0 - d$. Dus
+\bewijsregel{|PV| = |t|\,\norm{\vec n} = \dfrac{|\vec n \cdot \overrightarrow{QP}|}{\norm{\vec n}^2}\,\norm{\vec n} = \dfrac{|ax_0 + by_0 + cz_0 - d|}{\sqrt{a^2 + b^2 + c^2}} .}
+\end{bewijs}
 \end{theorie}
 
-De afstand is de lengte van de loodlijn uit $P$ op het vlak. Die loodlijn heeft richting $\vec n$; de formule volgt door haar snijpunt met het vlak te berekenen (opdracht~\ref{oef:h4-o8}). De afstand van een punt tot een rechte vind je met een loodvlak: het vlak door $P$ loodrecht op de rechte snijdt ze in het voetpunt van de loodlijn.
+In de teller staat wat je krijgt als je $P$ invult in de vergelijking: nul als $P$ in het vlak ligt, en hoe verder van het vlak, hoe groter. De noemer zet dat om naar een afstand. In opdracht~\ref{oef:h4-o8} bewijs je de formule op een andere manier, met de loodlijn.
 
 \voorbeeld{}{Bereken de afstand van $P(1, 2, 3)$ tot het vlak $2x - y + 2z = 1$.\label{vb:h4-afstandvlak}}{%
 \uitleg{Vul $P$ in het linkerlid in, trek $d$ af, en deel door de norm van $\vec n$.}
 \begin{stappenbreed}
-\frac{|2 - 2 + 6 - 1|}{\sqrt{4 + 1 + 4}} = \frac{5}{3} &
+2 \cdot 1 - 2 + 2 \cdot 3 - 1 = 5 & De teller, zonder absolute waarde. \\
+\sqrt{4 + 1 + 4} = 3 & De norm van $\vec n = \vcr{2}{-1}{2}$. \\
+d(P, \alpha) = \tfrac{|5|}{3} = \tfrac53 &
 \end{stappenbreed}}
 
 \begin{oefeningen}
 \oef{h4-afstandvlak}
+
+\oef{h4-afstand}
 \end{oefeningen}
+
+\subsection{Het voetpunt van de loodlijn}
+
+Soms heb je het voetpunt zelf nodig, bijvoorbeeld voor een spiegelbeeld. Dan snijd je de loodlijn met het vlak.
+
+\voorbeeld{}{Bereken het voetpunt $V$ van de loodlijn uit $P(5, -1, 5)$ op het vlak $\alpha\colon 2x - y + 2z = 3$, en de afstand van $P$ tot $\alpha$.\label{vb:h4-voetpunt}}{%
+\uitleg{De loodlijn gaat door $P$ met richtingsvector $\vec n = \vcr{2}{-1}{2}$. Haar snijpunt met $\alpha$ is $V$.}
+\begin{stappenbreed}
+(5 + 2r,\ -1 - r,\ 5 + 2r) & Een punt van de loodlijn. \\
+2(5 + 2r) - (-1 - r) + 2(5 + 2r) = 3 & Invullen in $\alpha$. \\
+21 + 9r = 3 \iff r = -2 & \\
+V(1, 1, 1),\quad |PV| = \sqrt{16 + 4 + 16} = 6 & Controle met de formule: $\frac{|10 + 1 + 10 - 3|}{3} = 6$.
+\end{stappenbreed}}
+
+\begin{werkwijze}
+Het voetpunt van de loodlijn uit $P$ op een vlak: schrijf de loodlijn $P + r\vec n$, vul ze in de vergelijking van het vlak in, los op naar $r$, en vul $r$ in.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h4-voetpunt}
+\end{oefeningen}
+
+\subsection{Afstand van een punt tot een rechte}
+
+Een rechte heeft geen vergelijking zoals een vlak, en dus ook geen afstandsformule zoals hierboven. Je zoekt het voetpunt met een vlak: het vlak door $P$ loodrecht op de rechte $l$ snijdt $l$ in het voetpunt $V$. De rechte $PV$ ligt immers in dat vlak, en staat dus loodrecht op $l$.
 
 \voorbeeld{}{Bereken de afstand van $P(3, 1, 2)$ tot de rechte $l\colon r\vcr{1}{1}{1}$ door de oorsprong.\label{vb:h4-afstandrechte}}{%
 \uitleg{Het vlak door $P$ loodrecht op $l$ heeft normaalvector $\vcr{1}{1}{1}$. Zijn snijpunt met $l$ is het voetpunt $V$.}
 \begin{stappenbreed}
 x + y + z = 6 & Loodvlak door $P$: $3 + 1 + 2 = 6$. \\
 r + r + r = 6 \iff r = 2,\quad V(2, 2, 2) & Snijpunt met $l$. \\
-|PV| = \sqrt{1 + 1 + 0} = \sqrt2 & De afstand.
+|PV| = \sqrt{1 + 1 + 0} = \sqrt2 & De afstand. Controle: $\overrightarrow{VP} \cdot \vcr{1}{1}{1} = 1 - 1 + 0 = 0$.
 \end{stappenbreed}}
 
-\begin{oefeningen}
-\oef{h4-afstand}
+\begin{werkwijze}
+De afstand van $P$ tot een rechte $l$: stel het vlak op door $P$ met de richtingsvector van $l$ als normaalvector, snijd het met $l$ om het voetpunt $V$ te vinden, en bereken $|PV|$.
+\end{werkwijze}
 
+\begin{oefeningen}
 \oef{h4-afstandrechte}
 \end{oefeningen}
 
@@ -249,11 +506,11 @@ r + r + r = 6 \iff r = 2,\quad V(2, 2, 2) & Snijpunt met $l$. \\
 
 \herhaalschema{%
   \fv{oef:h4-t1}{vb:h4-hoek}{oef:h4-hoek}%
-  \fv{oef:h4-t6}{vb:h4-hoek}{oef:h4-scalair}%
+  \fv{oef:h4-t6}{vb:h4-loodrecht}{oef:h4-scalair}%
   \fv{oef:h4-t2}{vb:h4-loodvlak}{oef:h4-loodvlak}%
   \fv{oef:h4-t5}{vb:h4-loodvlakken}{oef:h4-hoekvlakken}%
   \fv{oef:h4-t3}{vb:h4-afstandvlak}{oef:h4-afstandvlak}%
-  \fv{oef:h4-t7}{vb:h4-afstandvlak}{oef:h4-o15}%
+  \fv{oef:h4-t7}{vb:h4-voetpunt}{oef:h4-voetpunt}%
   \fv{oef:h4-t4}{vb:h4-afstandrechte}{oef:h4-afstandrechte}}
 
 \ifzelfstudie

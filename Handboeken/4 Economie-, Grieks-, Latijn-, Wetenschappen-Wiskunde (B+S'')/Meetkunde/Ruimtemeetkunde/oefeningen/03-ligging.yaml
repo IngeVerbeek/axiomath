@@ -213,6 +213,44 @@
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
 
+- id: h3-evenwijdig-rechten
+  soort: kort
+  opgave: |-
+    Gegeven de rechte $l\colon (1, 1, 1) + r\vcr{-1}{2}{-1}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Voor welke $a$ valt $m\colon (a, 3, 0) + s\vcr{2}{-4}{2}$ samen met $l$?
+      antwoord: |-
+        $a = 0$
+      uitwerking: |-
+        $\vcr{2}{-4}{2} = -2\vcr{-1}{2}{-1}$: de rechten zijn evenwijdig voor elke $a$. Ze vallen samen als $(a, 3, 0)$ op $l$ ligt. $1 + 2r = 3$ geeft $r = 1$, dan is $z = 1 - 1 = 0$: dat klopt, en $x = 1 - 1 = 0$. Dus $a = 0$. Voor elke andere $a$ zijn de rechten strikt evenwijdig.
+    - opgave: |-
+        Geef een rechte door de oorsprong die strikt evenwijdig is met $l$.
+      antwoord: |-
+        $r\vcr{-1}{2}{-1}$
+      uitwerking: |-
+        Neem dezelfde richtingsvector: $n\colon r\vcr{-1}{2}{-1}$. Ligt $O$ op $l$? $1 - r = 0$ geeft $r = 1$, maar dan is $y = 3 \neq 0$. $O$ ligt niet op $l$, dus $n$ is strikt evenwijdig met $l$.
+
+- id: h3-drievlakken-rechte
+  soort: kort
+  opgave: |-
+    Welke punten hebben de drie vlakken gemeen?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $x + y = 2$, $y + z = 3$ en $x - z = -1$
+      antwoord: |-
+        de rechte $(2, 0, 3) + r\vcr{-1}{1}{-1}$
+      uitwerking: |-
+        Eerste min tweede: $x - z = -1$, precies de derde vergelijking. Die valt dus weg ($0 = 0$). Neem $y = r$: $x = 2 - r$ en $z = 3 - r$. De vlakken hebben de rechte $(2, 0, 3) + r\vcr{-1}{1}{-1}$ gemeen.
+    - opgave: |-
+        $x + y = 2$, $y + z = 3$ en $x - z = 1$
+      antwoord: |-
+        geen enkel punt
+      uitwerking: |-
+        Eerste min tweede: $x - z = -1$. Samen met de derde geeft dat $-1 = 1$: onmogelijk. Er is geen gemeenschappelijk punt. Geen twee coëfficiëntenrijtjes zijn evenredig, dus de vlakken snijden twee aan twee volgens drie evenwijdige rechten, zoals een prisma.
+
 - id: h3-o1
   soort: opdracht
   niveau: 1
