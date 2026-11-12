@@ -17,6 +17,16 @@ Cursus voor pakket 3 (B+S'), LPD 34, volgens de [ontwerpregels](../../../../Ontw
 - Waar de oefening met de formule voor $\sum i^2$ geschrapt is, staat die formule nu in de opgave van de Koppel-oefening over integralen (`h3-koppel-4`).
 - Uitbreidingen die het leerplan niet uitdrukkelijk vraagt, met een nota voor de leerkracht: het somteken en sparen met vaste stortingen.
 
+## PDF's
+
+De PDF's staan niet in git maar bij de [release](https://github.com/Klaasvdb/axiomath/releases/tag/v0.2-alle-cursussen):
+
+- [Handboek](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Rijen-handboek.pdf)
+- [Handboek, numerieke oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Rijen-handboek-numerieke-oplossingen.pdf)
+- [Handboek, uitgewerkte oplossingen](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Rijen-handboek-uitgewerkte-oplossingen.pdf)
+- [Leerkracht](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Rijen-leerkracht.pdf)
+- [Zelfstudie](https://github.com/Klaasvdb/axiomath/releases/download/v0.2-alle-cursussen/p3-Rijen-zelfstudie.pdf)
+
 ## Maken
 
 ```
