@@ -1,0 +1,1056 @@
+# Oefeningen van hoofdstuk 1. Zie oefeningenbank.py voor de velden.
+
+- id: h1-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Bereken $12 - (7 - 3)$ en $(12 - 7) - 3$.
+      antwoord: |-
+        $8$ en $2$
+      uitwerking: |-
+        $12 - 4 = 8$ en $5 - 3 = 2$.
+    - opgave: |-
+        Bereken $2^{(3^2)}$ en $(2^3)^2$.
+      antwoord: |-
+        $512$ en $64$
+      uitwerking: |-
+        $2^9 = 512$ en $8^2 = 64$.
+    - opgave: |-
+        Bereken $AB$ en $BA$ voor $A = \left[\begin{smallmatrix} 1 & 2 \\ 0 & 1 \end{smallmatrix}\right]$ en $B = \left[\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right]$.
+      antwoord: |-
+        $AB = \begin{bmatrix} 2 & 1 \\ 1 & 0 \end{bmatrix}$, \ $BA = \begin{bmatrix} 0 & 1 \\ 1 & 2 \end{bmatrix}$
+      uitwerking: |-
+        Rij maal kolom: $AB = \begin{bmatrix} 0 + 2 & 1 + 0 \\ 0 + 1 & 0 + 0 \end{bmatrix} = \begin{bmatrix} 2 & 1 \\ 1 & 0 \end{bmatrix}$ en $BA = \begin{bmatrix} 0 & 1 \\ 1 & 2 \end{bmatrix}$. Ze zijn verschillend.
+    - opgave: |-
+        Neem $f(x) = 2x$ en $g(x) = x + 3$. Bepaal $(f \circ g)(x)$ en $(g \circ f)(x)$.
+      antwoord: |-
+        $2x + 6$ en $2x + 3$
+      uitwerking: |-
+        $(f \circ g)(x) = f(x + 3) = 2x + 6$ en $(g \circ f)(x) = g(2x) = 2x + 3$.
+    - opgave: |-
+        Welk getal $x$ voldoet aan $7 + x = 0$? En welk aan $7 \cdot x = 1$?
+      antwoord: |-
+        $-7$ en $\tfrac17$
+      uitwerking: |-
+        De tegengestelde van 7 is $-7$, de omgekeerde is $\tfrac17$.
+    - opgave: |-
+        Is het gemiddelde van twee gehele getallen altijd een geheel getal?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: het gemiddelde van 1 en 2 is $\tfrac32$.
+
+- id: h1-verken
+  soort: start
+  opgave: |-
+    \blokkop{Verken}\quad Op de gehele getallen spreken we een nieuwe bewerking af: \ $a \ast b = a + b - 3$. \ Zo is $5 \ast 4 = 5 + 4 - 3 = 6$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $2 \ast 7$ en $7 \ast 2$.
+      antwoord: |-
+        $6$ en $6$
+      uitwerking: |-
+        $2 + 7 - 3 = 6$ en $7 + 2 - 3 = 6$.
+    - opgave: |-
+        Bereken $(2 \ast 7) \ast 1$ en $2 \ast (7 \ast 1)$.
+      antwoord: |-
+        allebei $4$
+      uitwerking: |-
+        $(2 \ast 7) \ast 1 = 6 \ast 1 = 4$ en $2 \ast (7 \ast 1) = 2 \ast 5 = 4$.
+    - opgave: |-
+        Zoek een geheel getal $e$ zodat $8 \ast e = 8$. Werkt hetzelfde getal ook bij andere getallen dan 8?
+      antwoord: |-
+        $e = 3$; ja, $a \ast 3 = a$ voor elke $a$
+      uitwerking: |-
+        $8 + e - 3 = 8$ geeft $e = 3$. Voor elke $a$ is $a \ast 3 = a + 3 - 3 = a$: het getal 3 speelt de rol van 0 bij optellen.
+    - opgave: |-
+        Zoek een geheel getal $x$ zodat $8 \ast x = 3$.
+      antwoord: |-
+        $x = -2$
+      uitwerking: |-
+        $8 + x - 3 = 3$ geeft $x = -2$.
+    - opgave: |-
+        Is $a \ast b$ altijd een geheel getal als $a$ en $b$ geheel zijn?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        Ja: een som en verschil van gehele getallen is geheel.
+
+- id: h1-bewerking
+  soort: kort
+  opgave: |-
+    Is $\ast$ een bewerking op $V$? Geef een tegenvoorbeeld als dat niet zo is.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        De aftrekking op $\Z$.
+      antwoord: |-
+        ja
+      uitwerking: |-
+        Het verschil van twee gehele getallen is geheel.
+    - opgave: |-
+        De aftrekking op $\N$.
+      antwoord: |-
+        nee: $2 - 5 \notin \N$
+      uitwerking: |-
+        $2 - 5 = -3$ is geen natuurlijk getal.
+    - opgave: |-
+        De vermenigvuldiging op de oneven gehele getallen.
+      antwoord: |-
+        ja
+      uitwerking: |-
+        Stel $a = 2k + 1$ en $b = 2l + 1$. Dan is $ab = 4kl + 2k + 2l + 1 = 2(2kl + k + l) + 1$: weer oneven.
+    - opgave: |-
+        De optelling op de oneven gehele getallen.
+      antwoord: |-
+        nee: $1 + 3 = 4$
+      uitwerking: |-
+        $1 + 3 = 4$ is even.
+    - opgave: |-
+        $a \ast b = \sqrt{ab}$ op $\R^+$.
+      antwoord: |-
+        ja
+      uitwerking: |-
+        Voor $a, b \geqslant 0$ is $ab \geqslant 0$, dus $\sqrt{ab}$ bestaat en is positief of 0.
+    - opgave: |-
+        $a \ast b = \sqrt{ab}$ op $\R$.
+      antwoord: |-
+        nee: $\sqrt{(-1) \cdot 1}$ bestaat niet
+      uitwerking: |-
+        Voor $a = -1$ en $b = 1$ is $ab = -1$: de vierkantswortel bestaat niet in $\R$.
+
+- id: h1-tabel
+  soort: kort
+  opgave: |-
+    Neem $V = \{0, 1, 2\}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Stel de bewerkingstabel op van $a \ast b = |a - b|$. Is $\ast$ een bewerking op $V$?
+      antwoord: |-
+        ja; zie de uitgewerkte oplossingen
+      uitwerking: |-
+        Elke uitkomst ligt in $V$, dus $\ast$ is een bewerking op $V$.\par
+        \begin{bewtabel}{3}{\ast}{0 & 1 & 2}
+        0 & 0 & 1 & 2 \\ \hline
+        1 & 1 & 0 & 1 \\ \hline
+        2 & 2 & 1 & 0 \\ \hline
+        \end{bewtabel}
+    - opgave: |-
+        Stel de bewerkingstabel op van de gewone optelling. Is de optelling een bewerking op $V$?
+      antwoord: |-
+        nee: $2 + 2 = 4 \notin V$
+      uitwerking: |-
+        De uitkomsten 3 en 4 vallen buiten $V$: geen bewerking.\par
+        \begin{bewtabel}{3}{+}{0 & 1 & 2}
+        0 & 0 & 1 & 2 \\ \hline
+        1 & 1 & 2 & 3 \\ \hline
+        2 & 2 & 3 & 4 \\ \hline
+        \end{bewtabel}
+
+- id: h1-assoc
+  soort: kort
+  opgave: |-
+    Is de bewerking associatief? Bewijs het, of geef een tegenvoorbeeld.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $a \ast b = a + b + 5$ op $\Z$
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $(a \ast b) \ast c = (a + b + 5) + c + 5 = a + b + c + 10$ en $a \ast (b \ast c) = a + (b + c + 5) + 5 = a + b + c + 10$.
+    - opgave: |-
+        $a \ast b = ab + 1$ op $\Z$
+      antwoord: |-
+        nee: $(0 \ast 0) \ast 1 = 2$, $0 \ast (0 \ast 1) = 1$
+      uitwerking: |-
+        Met letters: $(a \ast b) \ast c = abc + c + 1$ en $a \ast (b \ast c) = abc + a + 1$. Kies $a \neq c$: $(0 \ast 0) \ast 1 = 1 \ast 1 = 2$ en $0 \ast (0 \ast 1) = 0 \ast 1 = 1$.
+    - opgave: |-
+        $a \ast b = a$ op $\R$ (neem altijd het linkse getal)
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $(a \ast b) \ast c = a \ast c = a$ en $a \ast (b \ast c) = a$.
+    - opgave: |-
+        $a \ast b = |a - b|$ op $V = \{0, 1, 2\}$
+      antwoord: |-
+        nee: $(2 \ast 1) \ast 1 = 0$, $2 \ast (1 \ast 1) = 2$
+      uitwerking: |-
+        $(2 \ast 1) \ast 1 = 1 \ast 1 = 0$ en $2 \ast (1 \ast 1) = 2 \ast 0 = 2$.
+
+- id: h1-comm
+  soort: kort
+  figuur:
+    code: |-
+      \begin{bewtabel}{3}{\ast}{p & q & r}
+      p & p & q & r \\ \hline
+      q & q & r & p \\ \hline
+      r & r & q & q \\ \hline
+      \end{bewtabel}
+  opgave: |-
+    Welke bewerkingen zijn commutatief? Geef een tegenvoorbeeld bij de andere.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $a \ast b = a + b - 3$ op $\Z$
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $b \ast a = b + a - 3 = a + b - 3 = a \ast b$.
+    - opgave: |-
+        $a \ast b = a - b$ op $\Z$
+      antwoord: |-
+        nee: $1 \ast 0 = 1$, $0 \ast 1 = -1$
+      uitwerking: |-
+        $1 \ast 0 = 1$ en $0 \ast 1 = -1$.
+    - opgave: |-
+        $a \ast b = a^2 + b^2$ op $\R$
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $b \ast a = b^2 + a^2 = a^2 + b^2 = a \ast b$.
+    - opgave: |-
+        $a \ast b = a^b$ op $\N_0$
+      antwoord: |-
+        nee: $2^3 \neq 3^2$
+      uitwerking: |-
+        $2 \ast 3 = 8$ en $3 \ast 2 = 9$. Dat $2^4 = 4^2$ helpt niet: het moet voor alle koppels kloppen.
+    - opgave: |-
+        De bewerking op $\{p, q, r\}$ met de tabel hiernaast
+      antwoord: |-
+        nee: $q \ast r = p$, $r \ast q = q$
+      uitwerking: |-
+        De tabel is niet symmetrisch: in de rij van $q$ en de kolom van $r$ staat $p$, in de rij van $r$ en de kolom van $q$ staat $q$.
+
+- id: h1-neutraal-invers
+  soort: kort
+  opgave: |-
+    Bepaal het neutraal element, en de inverse van elk element dat er een heeft.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $a \ast b = a + b + 5$ op $\Z$
+      antwoord: |-
+        $e = -5$, $a' = -10 - a$
+      uitwerking: |-
+        $a + e + 5 = a$ geeft $e = -5$. Uit $a + a' + 5 = -5$ volgt $a' = -10 - a \in \Z$. De bewerking is commutatief.
+    - opgave: |-
+        $a \ast b = \dfrac{ab}{3}$ op $\Q_0$
+      antwoord: |-
+        $e = 3$, $a' = \dfrac{9}{a}$
+      uitwerking: |-
+        $\tfrac{ae}{3} = a$ geeft $e = 3$ (deel door $a \neq 0$). Uit $\tfrac{aa'}{3} = 3$ volgt $a' = \tfrac9a \in \Q_0$.
+    - opgave: |-
+        $a \ast b = ab$ op $\Z$
+      antwoord: |-
+        $e = 1$; alleen $1$ en $-1$ hebben een inverse
+      uitwerking: |-
+        $e = 1$. Uit $a a' = 1$ volgt $a' = \tfrac1a$, en dat is alleen geheel voor $a = 1$ en $a = -1$. Zij zijn hun eigen inverse.
+    - opgave: |-
+        $a \ast b = a + b + ab$ op $\Q$
+      antwoord: |-
+        $e = 0$, $a' = \dfrac{-a}{1 + a}$ voor $a \neq -1$; $-1$ heeft geen inverse
+      uitwerking: |-
+        $a + e + ae = a$ geeft $e(1 + a) = 0$ voor elke $a$, dus $e = 0$. Uit $a + a' + aa' = 0$ volgt $a'(1 + a) = -a$, dus $a' = \tfrac{-a}{1 + a}$ als $a \neq -1$. Voor $a = -1$ is $-1 \ast b = -1$ voor elke $b$: nooit 0.
+
+- id: h1-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    rekenen met een nieuwe bewerking
+  opgave: |-
+    Op $\Z$ is $a \ast b = 2a - b + 1$. Bereken.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $3 \ast 5$
+      antwoord: |-
+        $2$
+      uitwerking: |-
+        $6 - 5 + 1 = 2$.
+    - opgave: |-
+        $5 \ast 3$
+      antwoord: |-
+        $8$
+      uitwerking: |-
+        $10 - 3 + 1 = 8$.
+    - opgave: |-
+        $(1 \ast 2) \ast 3$
+      antwoord: |-
+        $0$
+      uitwerking: |-
+        $1 \ast 2 = 1$, en $1 \ast 3 = 2 - 3 + 1 = 0$.
+    - opgave: |-
+        $1 \ast (2 \ast 3)$
+      antwoord: |-
+        $1$
+      uitwerking: |-
+        $2 \ast 3 = 2$, en $1 \ast 2 = 1$.
+    - opgave: |-
+        $x$ als $x \ast 4 = 7$
+      antwoord: |-
+        $x = 5$
+      uitwerking: |-
+        $2x - 4 + 1 = 7$, dus $x = 5$.
+    - opgave: |-
+        $x$ als $4 \ast x = 7$
+      antwoord: |-
+        $x = 2$
+      uitwerking: |-
+        $8 - x + 1 = 7$, dus $x = 2$.
+
+- id: h1-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    bewerking of niet
+  opgave: |-
+    Is $\ast$ een bewerking op $V$? Geef een tegenvoorbeeld als dat niet zo is.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        De vermenigvuldiging op $V = \{-1, 0, 1\}$.
+      antwoord: |-
+        ja
+      uitwerking: |-
+        Elk product van twee getallen uit $V$ is $-1$, $0$ of $1$.
+    - opgave: |-
+        De optelling op $V = \{-1, 0, 1\}$.
+      antwoord: |-
+        nee: $1 + 1 = 2$
+      uitwerking: |-
+        $1 + 1 = 2 \notin V$.
+    - opgave: |-
+        De deling op $\Z_0$.
+      antwoord: |-
+        nee: $1 : 2 \notin \Z$
+      uitwerking: |-
+        $\tfrac12$ is geen geheel getal.
+    - opgave: |-
+        De aftrekking op de even gehele getallen.
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $2k - 2l = 2(k - l)$ is even.
+    - opgave: |-
+        $a \ast b = a^b$ op $\Q_0$.
+      antwoord: |-
+        nee: $2^{1/2} = \sqrt2 \notin \Q$
+      uitwerking: |-
+        $2 \ast \tfrac12 = \sqrt2$ is niet rationaal. (En $(-1)^{1/2}$ bestaat zelfs niet in $\R$.)
+    - opgave: |-
+        $a \ast b = \dfrac{1}{a + b}$ op $\R^+_0$.
+      antwoord: |-
+        ja
+      uitwerking: |-
+        Voor $a, b > 0$ is $a + b > 0$, dus $\tfrac{1}{a + b}$ bestaat en is strikt positief.
+    - opgave: |-
+        $a \ast b = \sqrt{a + b}$ op $\N$.
+      antwoord: |-
+        nee: $\sqrt{1 + 1} \notin \N$
+      uitwerking: |-
+        $1 \ast 1 = \sqrt2$ is geen natuurlijk getal.
+
+- id: h1-o5
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    neutraal element en inverse
+  opgave: |-
+    Bepaal het neutraal element, als dat bestaat, en de inverse van elk element dat er een heeft.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $a \ast b = a + b - 7$ op $\Z$
+      antwoord: |-
+        $e = 7$, $a' = 14 - a$
+      uitwerking: |-
+        $a + e - 7 = a$ geeft $e = 7$; $a + a' - 7 = 7$ geeft $a' = 14 - a$.
+    - opgave: |-
+        $a \ast b = 5ab$ op $\Q_0$
+      antwoord: |-
+        $e = \tfrac15$, $a' = \dfrac{1}{25a}$
+      uitwerking: |-
+        $5ae = a$ geeft $e = \tfrac15$; $5aa' = \tfrac15$ geeft $a' = \tfrac{1}{25a}$.
+    - opgave: |-
+        $a \ast b = a + 3b$ op $\Z$
+      antwoord: |-
+        geen neutraal element
+      uitwerking: |-
+        $a \ast e = a$ geeft $e = 0$, maar $0 \ast a = 3a \neq a$ voor $a \neq 0$. Er is geen element dat aan beide kanten werkt.
+    - opgave: |-
+        De optelling op $\N$
+      antwoord: |-
+        $e = 0$; alleen $0$ heeft een inverse
+      uitwerking: |-
+        $e = 0$. Uit $a + a' = 0$ volgt $a' = -a$, en dat ligt alleen in $\N$ voor $a = 0$.
+    - opgave: |-
+        De vermenigvuldiging op $\Q$
+      antwoord: |-
+        $e = 1$; elk element behalve $0$ heeft een inverse, $a' = \tfrac1a$
+      uitwerking: |-
+        $a \cdot 1 = a$. Voor $a \neq 0$ is $a' = \tfrac1a \in \Q$. Voor $a = 0$ is $0 \cdot a' = 0 \neq 1$: geen inverse.
+
+- id: h1-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    een bewerkingstabel lezen
+  figuur:
+    code: |-
+      \begin{bewtabel}{4}{\ast}{p & q & r & s}
+      p & r & s & p & q \\ \hline
+      q & s & r & q & p \\ \hline
+      r & p & q & r & s \\ \hline
+      s & q & p & s & r \\ \hline
+      \end{bewtabel}
+  opgave: |-
+    Hiernaast staat de tabel van een bewerking op $V = \{p, q, r, s\}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $(p \ast q) \ast s$ en $q \ast (s \ast p)$.
+      antwoord: |-
+        $r$ en $r$
+      uitwerking: |-
+        $p \ast q = s$ en $s \ast s = r$; \ $s \ast p = q$ en $q \ast q = r$.
+    - opgave: |-
+        Welk element is neutraal?
+      antwoord: |-
+        $r$
+      uitwerking: |-
+        De rij van $r$ herhaalt de bovenste rij en de kolom van $r$ de eerste kolom.
+    - opgave: |-
+        Bepaal de inverse van elk element.
+      antwoord: |-
+        elk element is zijn eigen inverse
+      uitwerking: |-
+        Op de diagonaal staat telkens $r$: $p \ast p = q \ast q = r \ast r = s \ast s = r$.
+    - opgave: |-
+        Is de bewerking commutatief?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        De tabel is symmetrisch ten opzichte van de diagonaal.
+
+- id: h1-o4
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    associatief of niet
+  opgave: |-
+    Is de bewerking associatief? Bewijs het, of geef een tegenvoorbeeld.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $a \ast b = 3ab$ op $\R$
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $(a \ast b) \ast c = 3(3ab)c = 9abc$ en $a \ast (b \ast c) = 3a(3bc) = 9abc$.
+    - opgave: |-
+        $a \ast b = a^2 + b$ op $\R$
+      antwoord: |-
+        nee: $(1 \ast 1) \ast 0 = 4$, $1 \ast (1 \ast 0) = 2$
+      uitwerking: |-
+        $(a \ast b) \ast c = (a^2 + b)^2 + c$ en $a \ast (b \ast c) = a^2 + b^2 + c$. Met $a = b = 1$ en $c = 0$: $2 \ast 0 = 4$ en $1 \ast 1 = 2$.
+    - opgave: |-
+        $a \ast b$ is het grootste van de twee getallen, op $\R$
+      antwoord: |-
+        ja
+      uitwerking: |-
+        Beide leden zijn het grootste van de drie getallen $a$, $b$ en $c$.
+    - opgave: |-
+        $a \ast b = a - b + 1$ op $\Z$
+      antwoord: |-
+        nee: $(0 \ast 0) \ast 0 = 2$, $0 \ast (0 \ast 0) = 0$
+      uitwerking: |-
+        $(a \ast b) \ast c = a - b - c + 2$ en $a \ast (b \ast c) = a - b + c$. Met $a = b = c = 0$: $1 \ast 0 = 2$ en $0 \ast 1 = 0$.
+
+- id: h1-o6
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    commutatief of niet
+  opgave: |-
+    Is de bewerking commutatief? Bewijs het, of geef een tegenvoorbeeld.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $a \ast b = ab + a + b$ op $\Z$
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $b \ast a = ba + b + a = ab + a + b$.
+    - opgave: |-
+        $a \ast b = a + 2b$ op $\Z$
+      antwoord: |-
+        nee: $1 \ast 0 = 1$, $0 \ast 1 = 2$
+      uitwerking: |-
+        $1 \ast 0 = 1$ en $0 \ast 1 = 2$.
+    - opgave: |-
+        Het product van matrices van de vorm $\begin{bmatrix} a & 0 \\ 0 & b \end{bmatrix}$
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $\begin{bmatrix} a & 0 \\ 0 & b \end{bmatrix} \begin{bmatrix} c & 0 \\ 0 & d \end{bmatrix} = \begin{bmatrix} ac & 0 \\ 0 & bd \end{bmatrix}$, en in de andere volgorde krijg je $\begin{bmatrix} ca & 0 \\ 0 & db \end{bmatrix}$: hetzelfde.
+    - opgave: |-
+        Het samenstellen van de functies $f(x) = x + 2$ en $g(x) = 3x$
+      antwoord: |-
+        nee: $f \circ g \neq g \circ f$
+      uitwerking: |-
+        $(f \circ g)(x) = 3x + 2$ en $(g \circ f)(x) = 3x + 6$.
+
+- id: h1-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    eigenschappen in een context
+  opgave: |-
+    Bij \textit{steen, papier, schaar} wint steen van schaar, schaar van papier en papier van steen. Op $V = \{\text{steen}, \text{papier}, \text{schaar}\}$ is $a \ast b$ de winnaar van $a$ en $b$, en $a \ast a = a$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Stel de bewerkingstabel op.
+      antwoord: |-
+        zie de uitgewerkte oplossingen
+      uitwerking: |-
+        Met $t$ = steen, $p$ = papier, $s$ = schaar:\par
+        \begin{bewtabel}{3}{\ast}{t & p & s}
+        t & t & p & t \\ \hline
+        p & p & p & s \\ \hline
+        s & t & s & s \\ \hline
+        \end{bewtabel}
+    - opgave: |-
+        Is de bewerking commutatief?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        De winnaar hangt niet af van de volgorde: de tabel is symmetrisch.
+    - opgave: |-
+        Is de bewerking associatief? Wat betekent je antwoord voor een toernooi met drie spelers?
+      antwoord: |-
+        nee; de winnaar hangt af van wie eerst speelt
+      uitwerking: |-
+        $(\text{steen} \ast \text{papier}) \ast \text{schaar} = \text{papier} \ast \text{schaar} = \text{schaar}$, maar $\text{steen} \ast (\text{papier} \ast \text{schaar}) = \text{steen} \ast \text{schaar} = \text{steen}$. Wie de eerste partij niet speelt, kan het toernooi winnen door de volgorde.
+    - opgave: |-
+        Is er een neutraal element?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Geen enkele rij herhaalt de bovenste rij: elk element verliest van een ander.
+
+- id: h1-o11
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    bewerking met een parameter
+  opgave: |-
+    Op $\R$ is $a \ast b = a + b + kab$, met $k$ een reëel getal.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $\ast$ commutatief is.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $b \ast a = b + a + kba = a + b + kab = a \ast b$.
+    - opgave: |-
+        Toon aan dat 0 het neutraal element is, voor elke waarde van $k$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $a \ast 0 = a + 0 + 0 = a$, en $0 \ast a = a$ omdat $\ast$ commutatief is.
+    - opgave: |-
+        Neem $k = 2$. Bepaal de inverse van 3.
+      antwoord: |-
+        $-\tfrac37$
+      uitwerking: |-
+        $3 + x + 6x = 0$ geeft $x = -\tfrac37$.
+    - opgave: |-
+        Neem $k = 2$. Welk element heeft geen inverse?
+      antwoord: |-
+        $-\tfrac12$
+      uitwerking: |-
+        $a + a' + 2aa' = 0$ geeft $a'(1 + 2a) = -a$. Voor $a = -\tfrac12$ staat er $0 = \tfrac12$: geen oplossing. Voor elke andere $a$ is $a' = \tfrac{-a}{1 + 2a}$.
+
+- id: h1-o8
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    grootste gemene deler als bewerking
+  opgave: |-
+    Op $\N_0$ is $a \ast b = \operatorname{ggd}(a, b)$, de grootste gemene deler.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $12 \ast 18$, $(12 \ast 18) \ast 8$ en $12 \ast (18 \ast 8)$.
+      antwoord: |-
+        $6$, $2$, $2$
+      uitwerking: |-
+        $\operatorname{ggd}(12, 18) = 6$, $\operatorname{ggd}(6, 8) = 2$; $\operatorname{ggd}(18, 8) = 2$, $\operatorname{ggd}(12, 2) = 2$.
+    - opgave: |-
+        Leg uit waarom $\ast$ commutatief en associatief is.
+      antwoord: |-
+        beide leden zijn de grootste deler die alle getallen delen
+      uitwerking: |-
+        $\operatorname{ggd}(a, b)$ hangt niet af van de volgorde. $(a \ast b) \ast c$ en $a \ast (b \ast c)$ zijn allebei het grootste getal dat $a$, $b$ en $c$ samen deelt.
+    - opgave: |-
+        Toon aan dat er geen neutraal element is in $\N_0$.
+      antwoord: |-
+        $e$ zou een veelvoud van elk getal moeten zijn
+      uitwerking: |-
+        $\operatorname{ggd}(a, e) = a$ betekent dat $a$ een deler is van $e$. Dat moet voor elke $a$, ook voor $a = e + 1$, en $e + 1$ deelt $e$ niet.
+    - opgave: |-
+        Neem nu dezelfde bewerking op $\N$, met $\operatorname{ggd}(a, 0) = a$. Is er nu een neutraal element? Welke elementen hebben een inverse?
+      antwoord: |-
+        $e = 0$; alleen $0$ heeft een inverse
+      uitwerking: |-
+        $a \ast 0 = a$, dus 0 is neutraal. Een inverse $a'$ van $a$ voldoet aan $\operatorname{ggd}(a, a') = 0$, en dat kan alleen als $a = a' = 0$.
+
+- id: h1-o12
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    klassieke fouten
+  opgave: |-
+    Wat is er fout aan de redenering? Verbeter.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Lies: \textit{$a \ast b = 2a + b$ is commutatief, want $1 \ast 1 = 1 \ast 1$.}
+      antwoord: |-
+        één geval bewijst niets: $1 \ast 0 = 2$, $0 \ast 1 = 1$
+      uitwerking: |-
+        Commutatief betekent: voor alle koppels. Met $a = b$ klopt het altijd, maar $1 \ast 0 = 2$ en $0 \ast 1 = 1$.
+    - opgave: |-
+        Jonas: \textit{in $\Z$ met de optelling heeft 5 geen inverse, want $\frac15 \notin \Z$.}
+      antwoord: |-
+        bij optellen is de inverse $-5$
+      uitwerking: |-
+        De inverse hangt af van de bewerking: bij optellen zoek je $5 + x = 0$, dus $x = -5 \in \Z$.
+    - opgave: |-
+        Sara: \textit{het neutraal element van $\Q_0$ met de vermenigvuldiging is 0.}
+      antwoord: |-
+        het is 1
+      uitwerking: |-
+        $a \cdot 0 = 0 \neq a$. Het neutraal element verandert niets: $a \cdot 1 = a$. Bovendien ligt 0 niet in $\Q_0$.
+    - opgave: |-
+        Mila: \textit{bij $a \ast b = 2a + b$ is $e = -a$ het neutraal element, want $a \ast (-a) = a$.}
+      antwoord: |-
+        $e$ mag niet van $a$ afhangen
+      uitwerking: |-
+        Eén element moet voor alle $a$ werken. Voor $a = 1$ zou $e = -1$ zijn, voor $a = 2$ zou $e = -2$ zijn: er is geen neutraal element.
+
+- id: h1-o9
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    een tabel aanvullen
+  figuur:
+    code: |-
+      \begin{bewtabel}{3}{\ast}{a & b & c}
+      a & c & \cdot & b \\ \hline
+      b & \cdot & \cdot & \cdot \\ \hline
+      c & \cdot & \cdot & a \\ \hline
+      \end{bewtabel}
+  opgave: |-
+    Vul de tabel van een bewerking op $V = \{a, b, c\}$ aan, zodat de bewerking commutatief is en $b$ het neutraal element. Bepaal daarna de inverse van elk element.
+  antwoord: |-
+    $a \ast b = b \ast a = a$, $c \ast b = b \ast c = c$, $b \ast b = b$, $c \ast a = b$; \ $a' = c$, $b' = b$, $c' = a$
+  uitwerking: |-
+    De rij en de kolom van $b$ herhalen de kopregel. Omdat de bewerking commutatief is, is $c \ast a = a \ast c = b$.\par
+    \begin{bewtabel}{3}{\ast}{a & b & c}
+    a & c & a & b \\ \hline
+    b & a & b & c \\ \hline
+    c & b & c & a \\ \hline
+    \end{bewtabel}\par
+    Inverse: $a \ast c = b$, dus $a' = c$ en $c' = a$; en $b' = b$.
+
+- id: h1-o13
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    gemiddelde in een context
+  opgave: |-
+    Je mengt telkens een liter water van $a$ \textdegree C met een liter water van $b$ \textdegree C. Het mengsel heeft dan de temperatuur $a \ast b = \dfrac{a + b}{2}$. Van een mengsel gebruik je telkens één liter voor de volgende stap.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $(20 \ast 60) \ast 80$ en $20 \ast (60 \ast 80)$.
+      antwoord: |-
+        $60$ \textdegree C en $45$ \textdegree C
+      uitwerking: |-
+        $20 \ast 60 = 40$ en $40 \ast 80 = 60$; \ $60 \ast 80 = 70$ en $20 \ast 70 = 45$.
+    - opgave: |-
+        Is de bewerking commutatief? Associatief?
+      antwoord: |-
+        commutatief, niet associatief
+      uitwerking: |-
+        $\tfrac{a + b}{2} = \tfrac{b + a}{2}$. Deelvraag a is een tegenvoorbeeld voor de associativiteit.
+    - opgave: |-
+        Leg uit waarom de volgorde een verschil maakt: welk water telt het zwaarst door in het eindresultaat?
+      antwoord: |-
+        het water dat je als laatste toevoegt
+      uitwerking: |-
+        $(a \ast b) \ast c = \tfrac14 a + \tfrac14 b + \tfrac12 c$: het water dat je het laatst toevoegt, telt voor de helft mee, de andere twee elk voor een kwart.
+    - opgave: |-
+        Is er een neutraal element?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        $\tfrac{a + e}{2} = a$ geeft $e = a$: dat hangt af van $a$.
+
+- id: h1-o10
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    unie en doorsnede als bewerking
+  opgave: |-
+    Neem $V = \bigl\{\varnothing, \{1\}, \{2\}, \{1, 2\}\bigr\}$, de verzameling van alle deelverzamelingen van $\{1, 2\}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Stel de tabel op van de unie $\cup$ op $V$.
+      antwoord: |-
+        zie de uitgewerkte oplossingen
+      uitwerking: |-
+        Met $A = \{1\}$, $B = \{2\}$ en $U = \{1, 2\}$:\par
+        \begin{bewtabel}{4}{\cup}{\varnothing & A & B & U}
+        \varnothing & \varnothing & A & B & U \\ \hline
+        A & A & A & U & U \\ \hline
+        B & B & U & B & U \\ \hline
+        U & U & U & U & U \\ \hline
+        \end{bewtabel}
+    - opgave: |-
+        Bepaal het neutraal element van $\cup$. Welke elementen hebben een inverse?
+      antwoord: |-
+        $\varnothing$; alleen $\varnothing$
+      uitwerking: |-
+        $X \cup \varnothing = X$. Een unie is leeg alleen als beide verzamelingen leeg zijn: alleen $\varnothing$ heeft een inverse.
+    - opgave: |-
+        Bepaal het neutraal element van de doorsnede $\cap$ op $V$. Welke elementen hebben een inverse?
+      antwoord: |-
+        $\{1, 2\}$; alleen $\{1, 2\}$
+      uitwerking: |-
+        $X \cap \{1, 2\} = X$ voor elke $X \in V$. Een doorsnede is $\{1, 2\}$ alleen als beide verzamelingen $\{1, 2\}$ zijn.
+
+- id: h1-o14
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    alle bewerkingen op een kleine verzameling
+  opgave: |-
+    Neem $V = \{a, b\}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel verschillende bewerkingen bestaan er op $V$? En op een verzameling met drie elementen?
+      antwoord: |-
+        $2^4 = 16$; \ $3^9 = 19\,683$
+      uitwerking: |-
+        Een tabel met 2 rijen en 2 kolommen heeft 4 vakjes, en in elk vakje kies je uit 2 elementen: $2^4 = 16$. Met drie elementen: 9 vakjes en telkens 3 keuzes, dus $3^9 = 19\,683$.
+    - opgave: |-
+        Zoek een bewerking op $V$ die commutatief is, maar niet associatief.
+      antwoord: |-
+        bijvoorbeeld $a \ast a = b$, $a \ast b = b \ast a = a$, $b \ast b = a$
+      uitwerking: |-
+        De tabel is symmetrisch, dus commutatief. Maar $(a \ast a) \ast b = b \ast b = a$ en $a \ast (a \ast b) = a \ast a = b$. (Er zijn nog andere oplossingen.)
+    - opgave: |-
+        Zoek een bewerking op $V$ die associatief is, maar niet commutatief.
+      antwoord: |-
+        bijvoorbeeld $x \ast y = x$
+      uitwerking: |-
+        Neem altijd het linkse element: $a \ast b = a$ en $b \ast a = b$. Ze is associatief, want $(x \ast y) \ast z = x = x \ast (y \ast z)$.
+
+- id: h1-o15
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    links- en rechtsneutraal
+  opgave: |-
+    Een element $l$ is \textit{linksneutraal} als $l \ast a = a$ voor alle $a$, en $r$ is \textit{rechtsneutraal} als $a \ast r = a$ voor alle $a$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Neem $a \ast b = b$ op $\R$. Toon aan dat elk getal linksneutraal is, maar dat er geen neutraal element is.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $l \ast a = a$ voor elke $l$: elk getal is linksneutraal. Een neutraal element $e$ zou ook rechtsneutraal zijn: $a \ast e = e = a$ voor elke $a$, en dat kan niet, want er zijn verschillende getallen.
+    - opgave: |-
+        Bewijs: als een bewerking een linksneutraal element $l$ en een rechtsneutraal element $r$ heeft, dan is $l = r$, en dat element is neutraal.
+      antwoord: |-
+        bewijs: $l = l \ast r = r$
+      uitwerking: |-
+        Omdat $r$ rechtsneutraal is, is $l \ast r = l$. Omdat $l$ linksneutraal is, is $l \ast r = r$. Dus $l = r$, en dat element werkt aan beide kanten.
+
+- id: h1-o16
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    slim bewijzen met een ontbinding
+  opgave: |-
+    Op $\R$ is $a \ast b = a + b - ab$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $1 - a \ast b = (1 - a)(1 - b)$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $(1 - a)(1 - b) = 1 - a - b + ab = 1 - (a + b - ab)$.
+    - opgave: |-
+        Bewijs daarmee, zonder haakjes uit te werken, dat $\ast$ associatief is.
+      antwoord: |-
+        beide leden geven $(1 - a)(1 - b)(1 - c)$
+      uitwerking: |-
+        $1 - (a \ast b) \ast c = \bigl(1 - a \ast b\bigr)(1 - c) = (1 - a)(1 - b)(1 - c)$ en $1 - a \ast (b \ast c) = (1 - a)\bigl(1 - b \ast c\bigr) = (1 - a)(1 - b)(1 - c)$. Gelijke getallen min 1 zijn gelijk.
+    - opgave: |-
+        Bereken $3 \ast 3 \ast 3 \ast 3 \ast 3$.
+      antwoord: |-
+        $33$
+      uitwerking: |-
+        $1 - x = (1 - 3)^5 = -32$, dus $x = 33$.
+    - opgave: |-
+        Bepaal het neutraal element en de inverse van $a$. Welk getal heeft geen inverse, en waarom zie je dat meteen aan de ontbinding?
+      antwoord: |-
+        $e = 0$, $a' = \dfrac{a}{a - 1}$; \ $1$ heeft geen inverse
+      uitwerking: |-
+        $e = 0$, want $1 - a \ast 0 = 1 - a$. De inverse voldoet aan $(1 - a)(1 - a') = 1$, dus $1 - a' = \tfrac{1}{1 - a}$ en $a' = \tfrac{a}{a - 1}$. Voor $a = 1$ is $(1 - a)(1 - b) = 0$ voor elke $b$: nooit 1.
+
+- id: h1-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: algebra
+    onderwerp: Matrices
+  thema: |-
+    het product van matrices
+  opgave: |-
+    Het product van matrices is een bewerking op de $2 \times 2$-matrices. Neem $A = \left[\begin{smallmatrix} 1 & 1 \\ 0 & 1 \end{smallmatrix}\right]$ en $B = \left[\begin{smallmatrix} 1 & 0 \\ 1 & 1 \end{smallmatrix}\right]$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $AB$ en $BA$. Is het product commutatief?
+      antwoord: |-
+        $AB = \begin{bmatrix} 2 & 1 \\ 1 & 1 \end{bmatrix}$, $BA = \begin{bmatrix} 1 & 1 \\ 1 & 2 \end{bmatrix}$: nee
+      uitwerking: |-
+        Rij maal kolom. De twee producten verschillen, dus het product is niet commutatief.
+    - opgave: |-
+        Welke matrix is het neutraal element?
+      antwoord: |-
+        $I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$
+      uitwerking: |-
+        $AI = IA = A$ voor elke $2 \times 2$-matrix $A$.
+    - opgave: |-
+        Bepaal de inverse van $A$, en geef een matrix zonder inverse.
+      antwoord: |-
+        $A^{-1} = \begin{bmatrix} 1 & -1 \\ 0 & 1 \end{bmatrix}$; bijvoorbeeld $\begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix}$
+      uitwerking: |-
+        $\det A = 1$, dus $A^{-1} = \begin{bmatrix} 1 & -1 \\ 0 & 1 \end{bmatrix}$; controle: $AA^{-1} = I$. Een matrix met determinant 0 heeft geen inverse, zoals $\begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix}$.
+
+- id: h1-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Algemene functies
+  thema: |-
+    samenstellen van functies
+  opgave: |-
+    Het samenstellen $\circ$ is een bewerking op de functies van $\R$ naar $\R$. Neem $f(x) = 2x - 1$ en $g(x) = x^2$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bepaal $f \circ g$ en $g \circ f$. Is $\circ$ commutatief?
+      antwoord: |-
+        $2x^2 - 1$ en $(2x - 1)^2$: nee
+      uitwerking: |-
+        $(f \circ g)(x) = f(x^2) = 2x^2 - 1$ en $(g \circ f)(x) = (2x - 1)^2 = 4x^2 - 4x + 1$.
+    - opgave: |-
+        Welke functie is het neutraal element?
+      antwoord: |-
+        $x \mapsto x$
+      uitwerking: |-
+        Met $i(x) = x$ is $(f \circ i)(x) = f(x)$ en $(i \circ f)(x) = f(x)$.
+    - opgave: |-
+        Bepaal de inverse van $f$ voor $\circ$. Heeft $g$ een inverse?
+      antwoord: |-
+        $f^{-1}(x) = \dfrac{x + 1}{2}$; $g$ niet
+      uitwerking: |-
+        De inverse voor $\circ$ is de inverse functie: $f\bigl(\tfrac{x + 1}{2}\bigr) = x + 1 - 1 = x$, en ook $f^{-1}\bigl(f(x)\bigr) = x$. De functie $g$ heeft geen inverse functie, want $g(1) = g(-1)$: je kunt niet terugvinden of je van 1 of van $-1$ vertrok.
+
+- id: h1-koppel-3
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: meetkunde
+    onderwerp: Vectoren
+  thema: |-
+    midden van een lijnstuk en inproduct
+  opgave: |-
+    Voor twee punten $P$ en $Q$ van het vlak is $P \ast Q$ het midden van $[PQ]$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $(0, 0) \ast (4, 2)$. Is $\ast$ commutatief?
+      antwoord: |-
+        $(2, 1)$; ja
+      uitwerking: |-
+        Het midden is $\bigl(\tfrac{0 + 4}{2}, \tfrac{0 + 2}{2}\bigr) = (2, 1)$. Het midden van $[PQ]$ en van $[QP]$ is hetzelfde punt.
+    - opgave: |-
+        Toon met $(0, 0)$, $(4, 0)$ en $(0, 4)$ aan dat $\ast$ niet associatief is. Maak een tekening.
+      antwoord: |-
+        $(1, 2)$ en $(1, 1)$
+      uitwerking: |-
+        $\bigl((0, 0) \ast (4, 0)\bigr) \ast (0, 4) = (2, 0) \ast (0, 4) = (1, 2)$ en $(0, 0) \ast \bigl((4, 0) \ast (0, 4)\bigr) = (0, 0) \ast (2, 2) = (1, 1)$.\par
+        \begin{tikzpicture}[x=.55cm,y=.55cm,font=\scriptsize]
+          \draw[black!14,very thin] (-.5,-.5) grid (4.5,4.5);
+          \draw[->,grijs] (-.5,0) -- (4.8,0);
+          \draw[->,grijs] (0,-.5) -- (0,4.8);
+          \draw[grijs,dashed] (2,0) -- (0,4);
+          \draw[accent,dashed] (4,0) -- (0,4);
+          \draw[accent,dashed] (0,0) -- (2,2);
+          \foreach \p/\n/\q in {{(0,0)}/O/below left,{(4,0)}/A/below,{(0,4)}/B/left}{\fill \p circle (2pt) node[\q] {$\n$};}
+          \fill[grijs] (2,0) circle (2pt) node[below] {$O \ast A$};
+          \fill[accent] (2,2) circle (2pt) node[right] {$A \ast B$};
+          \fill[fel!85!black] (1,2) circle (2.2pt) node[left=2pt,fill=white,inner sep=1pt] {$(O \ast A) \ast B$};
+          \fill[fel!85!black] (1,1) circle (2.2pt) node[right=2pt,fill=white,inner sep=1pt] {$O \ast (A \ast B)$};
+        \end{tikzpicture}
+    - opgave: |-
+        Is het inproduct van twee vectoren een bewerking op $\R^2$?
+      antwoord: |-
+        nee: de uitkomst is een getal
+      uitwerking: |-
+        $(1, 2) \cdot (3, 4) = 3 + 8 = 11$ is een reëel getal en geen vector: de uitkomst ligt niet in $\R^2$.
+
+- id: h1-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    bewerking of niet
+  opgave: |-
+    Is $\ast$ een bewerking op $V$? Geef een tegenvoorbeeld als dat niet zo is.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        De aftrekking op $\N_0$.
+      antwoord: |-
+        nee: $1 - 2 \notin \N_0$
+      uitwerking: |-
+        $1 - 2 = -1$ (en ook $1 - 1 = 0$) ligt niet in $\N_0$.
+    - opgave: |-
+        De vermenigvuldiging op $\{-1, 1\}$.
+      antwoord: |-
+        ja
+      uitwerking: |-
+        De producten zijn $1$ en $-1$.
+    - opgave: |-
+        $a \ast b = \dfrac{a + b}{2}$ op de even gehele getallen.
+      antwoord: |-
+        nee: $2 \ast 4 = 3$
+      uitwerking: |-
+        Het gemiddelde van 2 en 4 is 3, en dat is oneven.
+
+- id: h1-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    bewerkingstabel
+  opgave: |-
+    Op $V = \{1, 2, 3\}$ is $a \ast b$ het kleinste van de twee getallen. Stel de tabel op. Is de bewerking commutatief?
+  antwoord: |-
+    ja; zie de uitgewerkte oplossingen
+  uitwerking: |-
+    De tabel is symmetrisch ten opzichte van de diagonaal: de bewerking is commutatief.\par
+    \begin{bewtabel}{3}{\ast}{1 & 2 & 3}
+    1 & 1 & 1 & 1 \\ \hline
+    2 & 1 & 2 & 2 \\ \hline
+    3 & 1 & 2 & 3 \\ \hline
+    \end{bewtabel}
+
+- id: h1-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    associativiteit
+  opgave: |-
+    Is de bewerking associatief? Bewijs het, of geef een tegenvoorbeeld.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $a \ast b = a + b + 4$ op $\Z$
+      antwoord: |-
+        ja
+      uitwerking: |-
+        Beide leden zijn $a + b + c + 8$.
+    - opgave: |-
+        $a \ast b = a - 2b$ op $\Z$
+      antwoord: |-
+        nee: $(0 \ast 0) \ast 1 = -2$, $0 \ast (0 \ast 1) = 4$
+      uitwerking: |-
+        $(a \ast b) \ast c = a - 2b - 2c$ en $a \ast (b \ast c) = a - 2b + 4c$. Met $a = b = 0$ en $c = 1$: $-2$ en $4$.
+
+- id: h1-t4
+  soort: test
+  niveau: 1
+  thema: |-
+    commutativiteit
+  opgave: |-
+    Is $a \ast b = a + 3b$ commutatief op $\Z$?
+  antwoord: |-
+    nee: $1 \ast 0 = 1$, $0 \ast 1 = 3$
+  uitwerking: |-
+    Een tegenvoorbeeld: $1 \ast 0 = 1$ en $0 \ast 1 = 3$.
+
+- id: h1-t5
+  soort: test
+  niveau: 1
+  thema: |-
+    neutraal element en inverse
+  opgave: |-
+    Bepaal het neutraal element en de inverse van $a$ voor $a \ast b = a + b - 6$ op $\Z$.
+  antwoord: |-
+    $e = 6$, $a' = 12 - a$
+  uitwerking: |-
+    $a + e - 6 = a$ geeft $e = 6$. Uit $a + a' - 6 = 6$ volgt $a' = 12 - a \in \Z$. De bewerking is commutatief, dus het werkt aan beide kanten.
+
+- id: h1-t6
+  soort: test
+  niveau: 1
+  thema: |-
+    neutraal element en inverse in een tabel
+  figuur:
+    code: |-
+      \begin{bewtabel}{4}{\ast}{a & b & c & d}
+      a & b & d & a & c \\ \hline
+      b & d & c & b & a \\ \hline
+      c & a & b & c & d \\ \hline
+      d & c & a & d & b \\ \hline
+      \end{bewtabel}
+  opgave: |-
+    Bepaal met de tabel hiernaast het neutraal element en de inverse van elk element.
+  antwoord: |-
+    $e = c$; \ $a' = d$, $b' = b$, $c' = c$, $d' = a$
+  uitwerking: |-
+    De rij van $c$ herhaalt de bovenste rij, en de kolom van $c$ de eerste kolom. In de rij van $a$ staat $c$ in de kolom van $d$, en ook $d \ast a = c$: $a' = d$. Verder $b \ast b = c$ en $c \ast c = c$.
+
+- id: h1-t7
+  soort: test
+  niveau: 2
+  thema: |-
+    geen neutraal element
+  opgave: |-
+    Heeft $a \ast b = a - b$ een neutraal element op $\Z$?
+  antwoord: |-
+    nee
+  uitwerking: |-
+    $a \ast e = a$ geeft $e = 0$, maar $0 \ast a = -a \neq a$ als $a \neq 0$. Het getal 0 werkt alleen rechts: er is geen neutraal element.

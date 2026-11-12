@@ -1,0 +1,1000 @@
+# Oefeningen van hoofdstuk 2. Zie oefeningenbank.py voor de velden.
+
+- id: h2-start-1
+  soort: start
+  opgave: |-
+    \blokkop{Opwarmer}
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Wat is de rest bij deling van 47 door 5?
+      antwoord: |-
+        $2$
+      uitwerking: |-
+        $47 = 9 \cdot 5 + 2$.
+    - opgave: |-
+        Het is 9 uur. Welk uur wijst een klok aan over 7 uur? En over 30 uur?
+      antwoord: |-
+        4 uur en 3 uur
+      uitwerking: |-
+        $9 + 7 = 16 = 12 + 4$ en $9 + 30 = 39 = 3 \cdot 12 + 3$.
+    - opgave: |-
+        Vandaag is het woensdag. Welke dag is het over 100 dagen?
+      antwoord: |-
+        vrijdag
+      uitwerking: |-
+        $100 = 14 \cdot 7 + 2$: twee dagen na woensdag.
+    - opgave: |-
+        Los op: $3 + x = 1$ in $\Z$, en $3x = 1$ in $\Q$.
+      antwoord: |-
+        $x = -2$ en $x = \tfrac13$
+      uitwerking: |-
+        Tel $-3$ op, of vermenigvuldig met $\tfrac13$.
+    - opgave: |-
+        Bepaal de inverse matrix van $\left[\begin{smallmatrix} 2 & 1 \\ 1 & 1 \end{smallmatrix}\right]$.
+      antwoord: |-
+        $\left[\begin{smallmatrix} 1 & -1 \\ -1 & 2 \end{smallmatrix}\right]$
+      uitwerking: |-
+        De determinant is $2 - 1 = 1$. Wissel de diagonaal en verander het teken van de andere twee elementen.
+    - opgave: |-
+        Heeft 0 een omgekeerde? Heeft 0 een tegengestelde?
+      antwoord: |-
+        nee; ja, $0$ zelf
+      uitwerking: |-
+        $0 \cdot x = 0 \neq 1$ voor elke $x$. Wel is $0 + 0 = 0$.
+
+- id: h2-verken
+  soort: start
+  figuur:
+    code: |-
+      \begin{tikzpicture}
+        \klok[1]{6}
+        \draw[fel!85!black,thick,-{Stealth[length=2mm]}] (-150:.65) arc[start angle=-150,end angle=-330,radius=.65];
+      \end{tikzpicture}
+  opgave: |-
+    \blokkop{Verken}\quad Een klok heeft zes uren: $0, 1, 2, 3, 4, 5$. Staat de wijzer op $a$ en draait hij $b$ uren verder, dan komt hij op $a \plusn b$. Zo is $4 \plusn 3 = 1$, zoals in de figuur.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Stel de tabel op van $\plusn$ op $\{0, 1, 2, 3, 4, 5\}$.
+      antwoord: |-
+        zie de uitgewerkte oplossingen
+      uitwerking: |-
+        \begin{bewtabel}{6}{\plusn}{0 & 1 & 2 & 3 & 4 & 5}
+        0 & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
+        1 & 1 & 2 & 3 & 4 & 5 & 0 \\ \hline
+        2 & 2 & 3 & 4 & 5 & 0 & 1 \\ \hline
+        3 & 3 & 4 & 5 & 0 & 1 & 2 \\ \hline
+        4 & 4 & 5 & 0 & 1 & 2 & 3 \\ \hline
+        5 & 5 & 0 & 1 & 2 & 3 & 4 \\ \hline
+        \end{bewtabel}
+    - opgave: |-
+        Welk element is neutraal?
+      antwoord: |-
+        $0$
+      uitwerking: |-
+        Nul uren verder draaien verandert niets: de rij van 0 herhaalt de bovenste rij.
+    - opgave: |-
+        Zoek bij elk element een inverse.
+      antwoord: |-
+        $0' = 0$, $1' = 5$, $2' = 4$, $3' = 3$, $4' = 2$, $5' = 1$
+      uitwerking: |-
+        Zoek 0 in elke rij: $1 \plusn 5 = 0$, $2 \plusn 4 = 0$, $3 \plusn 3 = 0$.
+    - opgave: |-
+        Wat valt je op als je de getallen in één rij of in één kolom bekijkt?
+      antwoord: |-
+        elk getal staat er precies één keer in
+      uitwerking: |-
+        In elke rij en in elke kolom staat elk van de zes getallen precies één keer, zoals in een sudoku.
+
+- id: h2-groep
+  soort: kort
+  opgave: |-
+    Is $(G, \ast)$ een groep? Is ze commutatief? Geef een tegenvoorbeeld als het geen groep is.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $(\Z, \ast)$ met $a \ast b = a + b - 1$
+      antwoord: |-
+        ja, commutatief; $e = 1$, $a' = 2 - a$
+      uitwerking: |-
+        Een bewerking op $\Z$. Associatief: beide leden zijn $a + b + c - 2$. Neutraal: $a + e - 1 = a$ geeft $e = 1$. Inverse: $a + a' - 1 = 1$ geeft $a' = 2 - a \in \Z$. Commutatief: $a + b - 1 = b + a - 1$.
+    - opgave: |-
+        $(\Q_0, \ast)$ met $a \ast b = 3ab$
+      antwoord: |-
+        ja, commutatief; $e = \tfrac13$, $a' = \dfrac{1}{9a}$
+      uitwerking: |-
+        $3ab \in \Q_0$. Associatief: beide leden zijn $9abc$. Neutraal: $3ae = a$ geeft $e = \tfrac13$. Inverse: $3aa' = \tfrac13$ geeft $a' = \tfrac{1}{9a} \in \Q_0$.
+    - opgave: |-
+        $(\N, \ast)$ met $a \ast b = a + b + 1$
+      antwoord: |-
+        nee: het neutraal element $-1$ ligt niet in $\N$
+      uitwerking: |-
+        Uit $a + e + 1 = a$ volgt $e = -1 \notin \N$: er is geen neutraal element in $\N$.
+    - opgave: |-
+        $\bigl(\{1, -1\}, \cdot\bigr)$
+      antwoord: |-
+        ja, commutatief
+      uitwerking: |-
+        De producten liggen in $\{1, -1\}$, de vermenigvuldiging is associatief, $e = 1$, en elk element is zijn eigen inverse.
+    - opgave: |-
+        De even gehele getallen met de optelling
+      antwoord: |-
+        ja, commutatief; $e = 0$, $a' = -a$
+      uitwerking: |-
+        Een som van even getallen is even; de optelling is associatief; 0 is even; de tegengestelde van een even getal is even.
+    - opgave: |-
+        $(\R, -)$
+      antwoord: |-
+        nee: niet associatief
+      uitwerking: |-
+        $(5 - 3) - 1 = 1$ en $5 - (3 - 1) = 3$.
+
+- id: h2-vergelijking
+  soort: kort
+  opgave: |-
+    Rekenen in een groep.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Los op in de groep $(\Z, \ast)$ met $a \ast b = a + b - 2$: \ $5 \ast x = 1$.
+      antwoord: |-
+        $x = -2$
+      uitwerking: |-
+        $e = 2$ en $a' = 4 - a$, dus $5' = -1$. Dan is $x = 5' \ast 1 = -1 + 1 - 2 = -2$. Controle: $5 - 2 - 2 = 1$.
+    - opgave: |-
+        Los op in de groep $(\Q_0, \ast)$ met $a \ast b = \dfrac{ab}{2}$: \ $x \ast 4 = 10$.
+      antwoord: |-
+        $x = 5$
+      uitwerking: |-
+        $4' = \tfrac44 = 1$, en $x$ staat links, dus $x = 10 \ast 4' = 10 \ast 1 = 5$. Controle: $\tfrac{5 \cdot 4}{2} = 10$.
+    - opgave: |-
+        Toon aan dat in elke groep $(a \ast b \ast c)' = c' \ast b' \ast a'$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Pas de stelling twee keer toe: $\bigl((a \ast b) \ast c\bigr)' = c' \ast (a \ast b)' = c' \ast b' \ast a'$.
+
+- id: h2-aanvullen
+  soort: kort
+  opgave: |-
+    Vul de groepstabel aan. Toon aan dat dat maar op één manier kan.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $G = \{e, p, q\}$, met neutraal element $e$.
+      antwoord: |-
+        $p \ast p = q$, $p \ast q = q \ast p = e$, $q \ast q = p$
+      uitwerking: |-
+        In de rij van $p$ ontbreken $e$ en $q$. Was $p \ast p = e$, dan moest $p \ast q = q$, maar $q$ staat al in de kolom van $q$ (want $e \ast q = q$). Dus $p \ast p = q$ en $p \ast q = e$. De rij van $q$ volgt dan uit de kolommen.\par
+        \begin{bewtabel}{3}{\ast}{e & p & q}
+        e & e & p & q \\ \hline
+        p & p & q & e \\ \hline
+        q & q & e & p \\ \hline
+        \end{bewtabel}
+    - opgave: |-
+        $G = \{e, a, b, c\}$, met neutraal element $e$, en $a \ast a = b \ast b = c \ast c = e$.
+      antwoord: |-
+        $a \ast b = b \ast a = c$, $a \ast c = c \ast a = b$, $b \ast c = c \ast b = a$
+      uitwerking: |-
+        In de rij van $a$ ontbreken $b$ en $c$; in de kolom van $b$ staat $b$ al, dus $a \ast b = c$ en $a \ast c = b$. Zo ook in de andere rijen.\par
+        \begin{bewtabel}{4}{\ast}{e & a & b & c}
+        e & e & a & b & c \\ \hline
+        a & a & e & c & b \\ \hline
+        b & b & c & e & a \\ \hline
+        c & c & b & a & e \\ \hline
+        \end{bewtabel}
+
+- id: h2-modulo
+  soort: kort
+  opgave: |-
+    Bereken.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $9 \plusn 8$ in $\Zn{11}$
+      antwoord: |-
+        $6$
+      uitwerking: |-
+        $17 = 11 + 6$.
+    - opgave: |-
+        $3 \maaln 5$ in $\Zn{7}$
+      antwoord: |-
+        $1$
+      uitwerking: |-
+        $15 = 2 \cdot 7 + 1$.
+    - opgave: |-
+        de inverse van 4 in $(\Zn{9}, \plusn)$
+      antwoord: |-
+        $5$
+      uitwerking: |-
+        $9 - 4 = 5$, en $4 + 5 = 9$ heeft rest 0.
+    - opgave: |-
+        de inverse van 4 in $\bigl(\Zn{7} \setminus \{0\}, \maaln\bigr)$
+      antwoord: |-
+        $2$
+      uitwerking: |-
+        $4 \cdot 2 = 8 = 7 + 1$.
+    - opgave: |-
+        $x$ in $\Zn{10}$ als $7 \plusn x = 2$
+      antwoord: |-
+        $x = 5$
+      uitwerking: |-
+        $7' = 3$, dus $x = 3 \plusn 2 = 5$. Controle: $7 + 5 = 12$, rest 2.
+    - opgave: |-
+        $x$ in $\Zn{7} \setminus \{0\}$ als $3 \maaln x = 4$
+      antwoord: |-
+        $x = 6$
+      uitwerking: |-
+        $3' = 5$ (want $15$ heeft rest 1), dus $x = 5 \maaln 4 = 6$ (want $20 = 2 \cdot 7 + 6$). Controle: $3 \cdot 6 = 18$, rest 4.
+
+- id: h2-tabelmaal
+  soort: kort
+  opgave: |-
+    Stel de tabel op van $\maaln$ op de gegeven verzameling. Is het een groep?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\{1, 2, 3\}$ in $\Zn{4}$
+      antwoord: |-
+        nee: $2 \maaln 2 = 0$
+      uitwerking: |-
+        $2 \cdot 2 = 4$ heeft rest 0, en $0 \notin \{1, 2, 3\}$: geen bewerking.\par
+        \begin{bewtabel}{3}{\maaln}{1 & 2 & 3}
+        1 & 1 & 2 & 3 \\ \hline
+        2 & 2 & 0 & 2 \\ \hline
+        3 & 3 & 2 & 1 \\ \hline
+        \end{bewtabel}
+    - opgave: |-
+        $\{1, 3\}$ in $\Zn{4}$
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $3 \cdot 3 = 9$ heeft rest 1. Neutraal element 1, en elk element is zijn eigen inverse.\par
+        \begin{bewtabel}{2}{\maaln}{1 & 3}
+        1 & 1 & 3 \\ \hline
+        3 & 3 & 1 \\ \hline
+        \end{bewtabel}
+    - opgave: |-
+        $\Zn{7} \setminus \{0\} = \{1, 2, 3, 4, 5, 6\}$
+      antwoord: |-
+        ja; $2' = 4$, $3' = 5$, $6' = 6$
+      uitwerking: |-
+        Geen enkel product heeft rest 0, en in elke rij staat 1: het is een groep.\par
+        \begin{bewtabel}{6}{\maaln}{1 & 2 & 3 & 4 & 5 & 6}
+        1 & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+        2 & 2 & 4 & 6 & 1 & 3 & 5 \\ \hline
+        3 & 3 & 6 & 2 & 5 & 1 & 4 \\ \hline
+        4 & 4 & 1 & 5 & 2 & 6 & 3 \\ \hline
+        5 & 5 & 3 & 1 & 6 & 4 & 2 \\ \hline
+        6 & 6 & 5 & 4 & 3 & 2 & 1 \\ \hline
+        \end{bewtabel}
+
+- id: h2-o1
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    groep of niet
+  opgave: |-
+    Is $(G, \ast)$ een groep? Is ze commutatief? Geef een tegenvoorbeeld als het geen groep is.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $(\Z, \ast)$ met $a \ast b = a + b - 5$
+      antwoord: |-
+        ja, commutatief; $e = 5$, $a' = 10 - a$
+      uitwerking: |-
+        Associatief: beide leden zijn $a + b + c - 10$. Neutraal: $e = 5$. Inverse: $a + a' - 5 = 5$ geeft $a' = 10 - a$.
+    - opgave: |-
+        $(\R, \cdot)$
+      antwoord: |-
+        nee: 0 heeft geen inverse
+      uitwerking: |-
+        $0 \cdot x = 0 \neq 1$ voor elke $x$.
+    - opgave: |-
+        $(\Q_0, :)$
+      antwoord: |-
+        nee: niet associatief
+      uitwerking: |-
+        $(8 : 4) : 2 = 1$ en $8 : (4 : 2) = 4$.
+    - opgave: |-
+        $(\R^+_0, \cdot)$
+      antwoord: |-
+        ja, commutatief
+      uitwerking: |-
+        Een product van strikt positieve getallen is strikt positief; $e = 1$; de inverse $\tfrac1a$ is strikt positief.
+    - opgave: |-
+        $\bigl(\{1, -1, i, -i\}, \cdot\bigr)$
+      antwoord: |-
+        ja, commutatief
+      uitwerking: |-
+        Zie de tabel in hoofdstuk 1: een bewerking, associatief omdat de vermenigvuldiging in $\C$ dat is, $e = 1$, en $1' = 1$, $(-1)' = -1$, $i' = -i$, $(-i)' = i$.
+    - opgave: |-
+        $(\Z, \ast)$ met $a \ast b = 2a + b$
+      antwoord: |-
+        nee: niet associatief
+      uitwerking: |-
+        $(1 \ast 0) \ast 0 = 4$ en $1 \ast (0 \ast 0) = 2$. (Er is ook geen neutraal element.)
+    - opgave: |-
+        $\bigl(\{-1, 0, 1\}, +\bigr)$
+      antwoord: |-
+        nee: $1 + 1 = 2$
+      uitwerking: |-
+        De optelling is geen bewerking op $\{-1, 0, 1\}$.
+
+- id: h2-o2
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    rekenen modulo n
+  opgave: |-
+    Bereken.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $8 \plusn 7$ in $\Zn{9}$
+      antwoord: |-
+        $6$
+      uitwerking: |-
+        $15 = 9 + 6$.
+    - opgave: |-
+        $4 \maaln 6$ in $\Zn{7}$
+      antwoord: |-
+        $3$
+      uitwerking: |-
+        $24 = 3 \cdot 7 + 3$.
+    - opgave: |-
+        $11 \plusn 11$ in $\Zn{12}$
+      antwoord: |-
+        $10$
+      uitwerking: |-
+        $22 = 12 + 10$.
+    - opgave: |-
+        de inverse van 7 in $(\Zn{10}, \plusn)$
+      antwoord: |-
+        $3$
+      uitwerking: |-
+        $10 - 7 = 3$.
+    - opgave: |-
+        $4 \maaln 4 \maaln 4$ in $\Zn{5}$
+      antwoord: |-
+        $4$
+      uitwerking: |-
+        $64 = 12 \cdot 5 + 4$. Of: $4 \maaln 4 = 1$ en $1 \maaln 4 = 4$.
+    - opgave: |-
+        de inverse van 6 in $\bigl(\Zn{7} \setminus \{0\}, \maaln\bigr)$
+      antwoord: |-
+        $6$
+      uitwerking: |-
+        $36 = 5 \cdot 7 + 1$: 6 is zijn eigen inverse.
+    - opgave: |-
+        $3 \plusn 3 \plusn 3 \plusn 3 \plusn 3$ in $\Zn{8}$
+      antwoord: |-
+        $7$
+      uitwerking: |-
+        $15 = 8 + 7$.
+    - opgave: |-
+        $2 \maaln 2 \maaln 2 \maaln 2 \maaln 2$ in $\Zn{11}$
+      antwoord: |-
+        $10$
+      uitwerking: |-
+        $32 = 2 \cdot 11 + 10$.
+
+- id: h2-o4
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    een groepstabel lezen
+  figuur:
+    code: |-
+      \begin{bewtabel}{4}{\ast}{w & x & y & z}
+      w & y & z & w & x \\ \hline
+      x & z & w & x & y \\ \hline
+      y & w & x & y & z \\ \hline
+      z & x & y & z & w \\ \hline
+      \end{bewtabel}
+  opgave: |-
+    Hiernaast staat de tabel van een groep $G = \{w, x, y, z\}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Welk element is neutraal?
+      antwoord: |-
+        $y$
+      uitwerking: |-
+        De rij van $y$ herhaalt de bovenste rij.
+    - opgave: |-
+        Bepaal de inverse van elk element.
+      antwoord: |-
+        $w' = w$, $x' = z$, $y' = y$, $z' = x$
+      uitwerking: |-
+        Zoek $y$ in elke rij: $w \ast w = y$, $x \ast z = y$, $z \ast x = y$.
+    - opgave: |-
+        Is de groep commutatief?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        De tabel is symmetrisch ten opzichte van de diagonaal.
+    - opgave: |-
+        Los op: $x \ast t = w$.
+      antwoord: |-
+        $t = x$
+      uitwerking: |-
+        $t = x' \ast w = z \ast w = x$. Controle: $x \ast x = w$.
+
+- id: h2-o3
+  soort: opdracht
+  niveau: 1
+  thema: |-
+    vergelijkingen in een groep
+  opgave: |-
+    Los op in de gegeven groep.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $7 \ast x = 2$ in $(\Z, \ast)$ met $a \ast b = a + b - 5$
+      antwoord: |-
+        $x = 0$
+      uitwerking: |-
+        $7' = 10 - 7 = 3$, dus $x = 3 \ast 2 = 0$. Controle: $7 + 0 - 5 = 2$.
+    - opgave: |-
+        $6 \plusn x = 1$ in $\Zn{8}$
+      antwoord: |-
+        $x = 3$
+      uitwerking: |-
+        $6' = 2$, dus $x = 2 \plusn 1 = 3$. Controle: $9$ heeft rest 1.
+    - opgave: |-
+        $4 \maaln x = 3$ in $\Zn{11} \setminus \{0\}$
+      antwoord: |-
+        $x = 9$
+      uitwerking: |-
+        $4 \cdot 3 = 12$ heeft rest 1, dus $4' = 3$ en $x = 3 \maaln 3 = 9$. Controle: $4 \cdot 9 = 36 = 3 \cdot 11 + 3$.
+    - opgave: |-
+        $x \ast 2 = 4$ in $(\Q_0, \ast)$ met $a \ast b = 3ab$
+      antwoord: |-
+        $x = \tfrac23$
+      uitwerking: |-
+        $e = \tfrac13$ en $a' = \tfrac{1}{9a}$, dus $2' = \tfrac{1}{18}$ en $x = 4 \ast \tfrac{1}{18} = 3 \cdot 4 \cdot \tfrac{1}{18} = \tfrac23$. Controle: $3 \cdot \tfrac23 \cdot 2 = 4$.
+
+- id: h2-o6
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    weekdagen modulo 7
+  opgave: |-
+    We nummeren de dagen van de week: maandag is 0, dinsdag 1, \ldots, zondag 6. Een aantal dagen verder gaan, is optellen in $\Zn{7}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Welke dag is het 100 dagen na een vrijdag?
+      antwoord: |-
+        zondag
+      uitwerking: |-
+        $4 + 100 = 104 = 14 \cdot 7 + 6$: dag 6, een zondag.
+    - opgave: |-
+        Welke dag was het 30 dagen vóór een dinsdag?
+      antwoord: |-
+        zondag
+      uitwerking: |-
+        $1 - 30 = -29$, en $-29 + 35 = 6$: een zondag.
+    - opgave: |-
+        1 januari 2027 is een vrijdag. Welke dag is 1 januari 2028? En 1 januari 2029? (2028 is een schrikkeljaar.)
+      antwoord: |-
+        zaterdag en maandag
+      uitwerking: |-
+        $365 = 52 \cdot 7 + 1$: één dag verder, zaterdag. $366 = 52 \cdot 7 + 2$: nog twee dagen verder, $5 \plusn 2 = 0$, maandag.
+    - opgave: |-
+        Welk element van $\Zn{7}$ hoort bij ``een week later''? Welke rol speelt het in de groep?
+      antwoord: |-
+        $0$, het neutraal element
+      uitwerking: |-
+        $7$ heeft rest 0: een week later is het dezelfde dag. Optellen met 0 verandert niets.
+
+- id: h2-o5
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    klassieke fouten
+  opgave: |-
+    Wat is er fout? Verbeter.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        \textit{$(\N, +)$ is een groep, want 0 is het neutraal element.}
+      antwoord: |-
+        er zijn geen inversen
+      uitwerking: |-
+        Een neutraal element is niet genoeg: ook elk element moet een inverse hebben, en $-1 \notin \N$.
+    - opgave: |-
+        \textit{$\bigl(\Zn{6} \setminus \{0\}, \maaln\bigr)$ is een groep met neutraal element 1.}
+      antwoord: |-
+        $2 \maaln 3 = 0$
+      uitwerking: |-
+        $\maaln$ is zelfs geen bewerking op die verzameling, want $2 \maaln 3 = 0$.
+    - opgave: |-
+        \textit{De inverse van 5 in $(\Zn{12}, \plusn)$ is $\frac15$.}
+      antwoord: |-
+        het is $7$
+      uitwerking: |-
+        De bewerking is een optelling: zoek $5 \plusn x = 0$, dus $x = 7$.
+    - opgave: |-
+        \textit{Uit $a \ast x = b$ volgt $x = b \ast a'$.}
+      antwoord: |-
+        $x = a' \ast b$
+      uitwerking: |-
+        $a$ staat links van $x$, dus komt $a'$ links van $b$. Alleen in een commutatieve groep is $a' \ast b = b \ast a'$.
+    - opgave: |-
+        \textit{In elke groep is $(a \ast b)' = a' \ast b'$.}
+      antwoord: |-
+        $(a \ast b)' = b' \ast a'$
+      uitwerking: |-
+        De volgorde keert om. Alleen in een commutatieve groep mag je ze verwisselen.
+
+- id: h2-o12
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    even en oneven
+  opgave: |-
+    Neem $V = \{E, O\}$, met $E$ voor \textit{even} en $O$ voor \textit{oneven}. Zo is $E + O = O$, want een even getal plus een oneven getal is oneven.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Stel de tabel op voor de optelling. Is het een groep? Met welke groep uit dit hoofdstuk heeft ze dezelfde tabel?
+      antwoord: |-
+        ja; $(\Zn{2}, \plusn)$
+      uitwerking: |-
+        $E + E = E$, $E + O = O + E = O$, $O + O = E$. Neutraal element $E$, elk element is zijn eigen inverse. Met $E = 0$ en $O = 1$ is het de tabel van $\Zn{2}$.
+    - opgave: |-
+        Stel de tabel op voor de vermenigvuldiging. Is het een groep?
+      antwoord: |-
+        nee: $E$ heeft geen inverse
+      uitwerking: |-
+        $E \cdot E = E$, $E \cdot O = O \cdot E = E$, $O \cdot O = O$. Het neutraal element is $O$, maar in de rij van $E$ staat geen $O$.
+
+- id: h2-o7
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    sprongen op een klok
+  prent:
+    naam: klok
+  opgave: |-
+    De wijzer van een klok met 12 uren staat op 0 (12 uur) en springt telkens even ver vooruit.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hij springt telkens 5 uur. Na hoeveel sprongen staat hij voor het eerst weer op 0?
+      antwoord: |-
+        $12$
+      uitwerking: |-
+        Hij komt op $5, 10, 3, 8, 1, 6, 11, 4, 9, 2, 7, 0$: na 12 sprongen, en hij is op elk uur geweest. ($5k$ is pas een veelvoud van 12 voor $k = 12$.)
+    - opgave: |-
+        En met sprongen van 4 uur? Van 9 uur?
+      antwoord: |-
+        $3$ sprongen; $4$ sprongen
+      uitwerking: |-
+        Met 4 uur: $4, 8, 0$. Met 9 uur: $9, 6, 3, 0$.
+    - opgave: |-
+        Voor welke sprongen komt de wijzer op elk uur van de klok? Wat hebben die getallen gemeen?
+      antwoord: |-
+        $1$, $5$, $7$ en $11$: geen gemeenschappelijke deler met 12
+      uitwerking: |-
+        Alleen bij sprongen van 1, 5, 7 en 11 uur. Die getallen hebben geen deler groter dan 1 gemeen met 12. Bij een gemeenschappelijke deler $d$ komt de wijzer alleen op veelvouden van $d$.
+
+- id: h2-o9
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    neutraal en invers, maar geen groep
+  figuur:
+    code: |-
+      \begin{bewtabel}{3}{\ast}{e & a & b}
+      e & e & a & b \\ \hline
+      a & a & a & e \\ \hline
+      b & b & e & b \\ \hline
+      \end{bewtabel}
+  opgave: |-
+    Hiernaast staat de tabel van een bewerking op $V = \{e, a, b\}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $\ast$ commutatief is, een neutraal element heeft, en dat elk element een inverse heeft.
+      antwoord: |-
+        $e$ is neutraal; $a' = b$, $b' = a$, $e' = e$
+      uitwerking: |-
+        De tabel is symmetrisch. De rij en de kolom van $e$ herhalen de kopregel. Verder $a \ast b = b \ast a = e$ en $e \ast e = e$.
+    - opgave: |-
+        Toon aan dat $\ast$ niet associatief is.
+      antwoord: |-
+        $(a \ast a) \ast b = e$, $a \ast (a \ast b) = a$
+      uitwerking: |-
+        $(a \ast a) \ast b = a \ast b = e$, maar $a \ast (a \ast b) = a \ast e = a$.
+    - opgave: |-
+        Hoe zie je aan de tabel meteen dat dit geen groep kan zijn?
+      antwoord: |-
+        $a$ staat twee keer in de rij van $a$
+      uitwerking: |-
+        In een groepstabel staat elk element precies één keer in elke rij. In de rij van $a$ staat $a$ twee keer.
+
+- id: h2-o8
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    controlegetal modulo 97
+  opgave: |-
+    Een Belgisch rekeningnummer heeft 12 cijfers, zoals 001-2345678-03. De laatste twee cijfers vormen een controlegetal: de rest bij deling door 97 van het getal dat de eerste tien cijfers vormen. Is die rest 0, dan is het controlegetal 97.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Controleer het rekeningnummer 001-2345678-03.
+      antwoord: |-
+        het klopt
+      uitwerking: |-
+        $12\,345\,678 = 127\,275 \cdot 97 + 3$: het controlegetal is 03.
+    - opgave: |-
+        Bereken het controlegetal van 063-0123456.
+      antwoord: |-
+        $10$
+      uitwerking: |-
+        $630\,123\,456 = 6\,496\,118 \cdot 97 + 10$.
+    - opgave: |-
+        Iemand typt 001-2345687-03, met de laatste twee cijfers van het nummer verwisseld. Merkt de controle dat?
+      antwoord: |-
+        ja: de rest is dan 12
+      uitwerking: |-
+        Het getal wordt $9$ groter, want $87 - 78 = 9$. De rest wordt dan $3 + 9 = 12$, en niet 3.
+
+- id: h2-o13
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    machten modulo 7
+  opgave: |-
+    We rekenen in de groep $\bigl(\Zn{7} \setminus \{0\}, \maaln\bigr)$, en schrijven $3^2 = 3 \maaln 3$, $3^3 = 3 \maaln 3 \maaln 3$, enzovoort.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $3^1, 3^2, 3^3, \ldots$ tot je 1 uitkomt.
+      antwoord: |-
+        $3, 2, 6, 4, 5, 1$
+      uitwerking: |-
+        Telkens maal 3 en de rest bij deling door 7: $3$, $9 \to 2$, $6$, $18 \to 4$, $12 \to 5$, $15 \to 1$.
+    - opgave: |-
+        Doe hetzelfde met 2. Wat is het verschil met 3?
+      antwoord: |-
+        $2, 4, 1$: maar drie elementen
+      uitwerking: |-
+        De machten van 3 geven alle zes elementen, die van 2 alleen 2, 4 en 1.
+    - opgave: |-
+        Bereken $3^{100}$ in deze groep.
+      antwoord: |-
+        $4$
+      uitwerking: |-
+        $3^6 = 1$ en $100 = 16 \cdot 6 + 4$, dus $3^{100} = (3^6)^{16} \maaln 3^4 = 3^4 = 4$. Zo rekende je ook $i^{2027}$ uit bij de complexe getallen.
+
+- id: h2-o10
+  soort: opdracht
+  niveau: 2
+  thema: |-
+    groep met een parameter
+  opgave: |-
+    Op $\R$ is $a \ast b = a + b + k$, met $k$ een reëel getal.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $(\R, \ast)$ voor elke $k$ een commutatieve groep is. Geef het neutraal element en de inverse van $a$.
+      antwoord: |-
+        $e = -k$, $a' = -a - 2k$
+      uitwerking: |-
+        Associatief: beide leden zijn $a + b + c + 2k$. Neutraal: $a + e + k = a$ geeft $e = -k$. Inverse: $a + a' + k = -k$ geeft $a' = -a - 2k$. Commutatief: $a + b + k = b + a + k$.
+    - opgave: |-
+        Voor welke $k$ is 5 het neutraal element?
+      antwoord: |-
+        $k = -5$
+      uitwerking: |-
+        $-k = 5$.
+    - opgave: |-
+        Voor welke $k$ is 3 zijn eigen inverse?
+      antwoord: |-
+        $k = -3$
+      uitwerking: |-
+        $3' = -3 - 2k = 3$ geeft $k = -3$. Controle: $3 \ast 3 = 3 + 3 - 3 = 3 = e$.
+
+- id: h2-o11
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    groep bewijzen met een ontbinding
+  opgave: |-
+    Op $G = \Q \setminus \{-1\}$ is $a \ast b = a + b + ab$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $1 + a \ast b = (1 + a)(1 + b)$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $(1 + a)(1 + b) = 1 + a + b + ab$.
+    - opgave: |-
+        Toon aan dat $\ast$ een bewerking is op $G$: als $a, b \neq -1$, dan is $a \ast b \neq -1$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $a \ast b = -1$ betekent $(1 + a)(1 + b) = 0$, dus $a = -1$ of $b = -1$.
+    - opgave: |-
+        Bewijs dat $(G, \ast)$ een commutatieve groep is.
+      antwoord: |-
+        $e = 0$, $a' = \dfrac{-a}{1 + a}$
+      uitwerking: |-
+        Associatief: $1 + (a \ast b) \ast c = (1 + a)(1 + b)(1 + c) = 1 + a \ast (b \ast c)$. Neutraal: $a \ast 0 = a$. Inverse: $(1 + a)(1 + a') = 1$ geeft $a' = \tfrac{1}{1 + a} - 1 = \tfrac{-a}{1 + a}$, en dat is rationaal en niet $-1$, want $1 + a' = \tfrac{1}{1 + a} \neq 0$. Commutatief: $a + b + ab = b + a + ba$.
+
+- id: h2-o14
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    deelgroepen (uitbreiding)
+  opgave: |-
+    Een deelverzameling $H$ van een groep $(G, \ast)$ die zelf een groep is met dezelfde bewerking, heet een \textit{deelgroep} van $G$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $\{0, 2, 4\}$ en $\{0, 3\}$ deelgroepen zijn van $(\Zn{6}, \plusn)$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        In $\{0, 2, 4\}$: $2 \plusn 2 = 4$, $2 \plusn 4 = 0$, $4 \plusn 4 = 2$; het neutraal element 0 zit erin, en $2' = 4$. In $\{0, 3\}$: $3 \plusn 3 = 0$. De associativiteit erven ze van $\Zn{6}$.
+    - opgave: |-
+        Is $\{0, 1, 5\}$ een deelgroep?
+      antwoord: |-
+        nee: $1 \plusn 1 = 2$
+      uitwerking: |-
+        $1 \plusn 1 = 2 \notin \{0, 1, 5\}$: geen bewerking op die verzameling.
+    - opgave: |-
+        Zoek alle deelgroepen van $\Zn{6}$. Wat valt je op aan hun aantal elementen?
+      antwoord: |-
+        $\{0\}$, $\{0, 3\}$, $\{0, 2, 4\}$, $\Zn{6}$; het aantal deelt 6
+      uitwerking: |-
+        Bevat een deelgroep 1 of 5, dan bevat ze alle veelvouden ervan, dus heel $\Zn{6}$. Bevat ze 2 of 4, dan bevat ze $\{0, 2, 4\}$; komt daar 3 bij, dan ook $2 \plusn 3 = 5$. De aantallen 1, 2, 3 en 6 zijn delers van 6. Dat geldt in elke eindige groep: dat is de \textit{stelling van Lagrange}.
+
+- id: h2-o15
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    bewijs in een groep
+  opgave: |-
+    In een groep $(G, \ast)$ geldt $a \ast a = e$ voor elk element $a$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat elk element zijn eigen inverse is.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        $a \ast a = e$ zegt precies dat $a' = a$.
+    - opgave: |-
+        Bewijs dat de groep commutatief is.
+      antwoord: |-
+        bewijs: $a \ast b = (a \ast b)' = b' \ast a' = b \ast a$
+      uitwerking: |-
+        Ook $a \ast b$ is zijn eigen inverse, dus $a \ast b = (a \ast b)' = b' \ast a' = b \ast a$.
+    - opgave: |-
+        Geef een voorbeeld van zo'n groep met vier elementen.
+      antwoord: |-
+        bijvoorbeeld $\{1, 3, 5, 7\}$ in $\Zn{8}$ met $\maaln$
+      uitwerking: |-
+        $3 \maaln 3 = 5 \maaln 5 = 7 \maaln 7 = 1$. Ook de tweede groep in oefening \ref{oef:h2-aanvullen} is een voorbeeld.
+
+- id: h2-o16
+  soort: opdracht
+  niveau: 3
+  thema: |-
+    vermenigvuldigen modulo een priemgetal
+  opgave: |-
+    Neem een priemgetal $p$. We bewijzen dat $\bigl(\Zn{p} \setminus \{0\}, \maaln\bigr)$ een groep is. Je mag gebruiken: als een priemgetal een product deelt, dan deelt het een van de factoren. De associativiteit mag je aannemen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $\maaln$ een bewerking is: als $a, b \in \{1, \ldots, p - 1\}$, dan is $a \maaln b \neq 0$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Als $a \maaln b = 0$, dan deelt $p$ het product $ab$, dus $p$ deelt $a$ of $b$. Dat kan niet, want $0 < a, b < p$.
+    - opgave: |-
+        Toon aan: als $a \maaln x = a \maaln y$, dan is $x = y$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Dan heeft $ax - ay = a(x - y)$ rest 0, dus $p$ deelt $a(x - y)$. Het deelt $a$ niet, dus het deelt $x - y$. Omdat $-p < x - y < p$, is $x - y = 0$.
+    - opgave: |-
+        Leid af dat in de rij van $a$ elk element precies één keer staat, en dus dat $a$ een inverse heeft.
+      antwoord: |-
+        de $p - 1$ uitkomsten zijn verschillend, dus ook 1 komt voor
+      uitwerking: |-
+        De rij van $a$ bevat $p - 1$ uitkomsten in $\{1, \ldots, p - 1\}$, en volgens b zijn ze allemaal verschillend. Dus komt elk element, ook 1, precies één keer voor: er is een $x$ met $a \maaln x = 1$. Met 1 als neutraal element is $(\Zn{p} \setminus \{0\}, \maaln)$ een groep.
+    - opgave: |-
+        Waar loopt het bewijs mis voor $p = 6$?
+      antwoord: |-
+        in a: 6 deelt $2 \cdot 3$ zonder 2 of 3 te delen
+      uitwerking: |-
+        6 is geen priemgetal: het deelt $2 \cdot 3$ maar niet 2 en niet 3. Daardoor is $2 \maaln 3 = 0$.
+
+- id: h2-koppel-1
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: algebra
+    onderwerp: Complexe getallen
+  thema: |-
+    machten van i en eenheidswortels
+  opgave: |-
+    De groep $\bigl(\{1, i, -1, -i\}, \cdot\bigr)$ lijkt sterk op $(\Zn{4}, \plusn)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef elk complex getal een naam uit $\Zn{4}$ zodat de twee tabellen gelijk worden.
+      antwoord: |-
+        $1 \to 0$, $i \to 1$, $-1 \to 2$, $-i \to 3$
+      uitwerking: |-
+        Noem $i^k$ het getal $k$. Controle: $i \cdot (-i) = 1$ en $1 \plusn 3 = 0$; $(-1) \cdot (-i) = i$ en $2 \plusn 3 = 1$.
+    - opgave: |-
+        Leg uit waarom dat werkt, met $i^a \cdot i^b = i^{a + b}$ en $i^4 = 1$.
+      antwoord: |-
+        vermenigvuldigen van machten van $i$ is exponenten optellen modulo 4
+      uitwerking: |-
+        Bij het vermenigvuldigen tel je de exponenten op, en omdat $i^4 = 1$ telt alleen de rest van de exponent bij deling door 4.
+    - opgave: |-
+        Neem $\omega = \cos\frac{2\pi}{3} + i\sin\frac{2\pi}{3}$. Toon aan dat $\{1, \omega, \omega^2\}$ met de vermenigvuldiging een groep is. Op welke groep uit dit hoofdstuk lijkt ze?
+      antwoord: |-
+        een groep, zoals $(\Zn{3}, \plusn)$
+      uitwerking: |-
+        Volgens De Moivre is $\omega^3 = \cos 2\pi + i \sin 2\pi = 1$. Dus $\omega \cdot \omega^2 = 1$, $\omega^2 \cdot \omega^2 = \omega^4 = \omega$: de producten blijven in de verzameling, 1 is neutraal, en $\omega$ en $\omega^2$ zijn elkaars inverse. Met $\omega^k \to k$ krijg je de tabel van $\Zn{3}$.
+
+- id: h2-koppel-2
+  soort: koppel
+  niveau: 2
+  koppel:
+    rubriek: analyse
+    onderwerp: Logaritmen
+  thema: |-
+    de logaritme verbindt twee groepen
+  opgave: |-
+    $(\R^+_0, \cdot)$ en $(\R, +)$ zijn twee commutatieve groepen. De functie $\log$ gaat van de ene naar de andere.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef van beide groepen het neutraal element en de inverse van een element.
+      antwoord: |-
+        $1$ en $\tfrac1x$; \ $0$ en $-y$
+      uitwerking: |-
+        In $(\R^+_0, \cdot)$: $e = 1$, $x' = \tfrac1x$. In $(\R, +)$: $e = 0$, $y' = -y$.
+    - opgave: |-
+        Welke rekenregel van logaritmen zegt dat $\log$ een product omzet in een som? Welke regels zeggen wat $\log$ doet met het neutraal element en met een inverse?
+      antwoord: |-
+        $\log(xy) = \log x + \log y$; $\log 1 = 0$; $\log \tfrac1x = -\log x$
+      uitwerking: |-
+        $\log$ zet de bewerking $\cdot$ om in $+$, het neutraal element 1 in het neutraal element 0, en de inverse $\tfrac1x$ in de inverse $-\log x$. De twee groepen hebben dezelfde structuur.
+    - opgave: |-
+        Bereken zonder rekentoestel: $\log 4 + \log 25$ en $\log 2 - \log 200$.
+      antwoord: |-
+        $2$ en $-2$
+      uitwerking: |-
+        $\log(4 \cdot 25) = \log 100 = 2$ en $\log \tfrac{2}{200} = \log 0{,}01 = -2$.
+
+- id: h2-koppel-3
+  soort: koppel
+  niveau: 3
+  koppel:
+    rubriek: algebra
+    onderwerp: Matrices
+  thema: |-
+    de groep van de inverteerbare matrices
+  opgave: |-
+    $G$ is de verzameling van de $2 \times 2$-matrices met determinant verschillend van 0, met het product van matrices.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon met $\det(AB) = \det A \cdot \det B$ aan dat het product een bewerking is op $G$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Als $\det A \neq 0$ en $\det B \neq 0$, dan is $\det(AB) = \det A \cdot \det B \neq 0$.
+    - opgave: |-
+        Toon aan dat $(G, \cdot)$ een groep is die niet commutatief is.
+      antwoord: |-
+        $e = I$, inverse $A^{-1}$; $AB \neq BA$ voor $A = \left[\begin{smallmatrix} 1 & 1 \\ 0 & 1 \end{smallmatrix}\right]$, $B = \left[\begin{smallmatrix} 1 & 0 \\ 1 & 1 \end{smallmatrix}\right]$
+      uitwerking: |-
+        Het product van matrices is associatief, $I \in G$ is neutraal, en elke $A$ met $\det A \neq 0$ heeft een inverse $A^{-1}$, met $\det A^{-1} = \tfrac{1}{\det A} \neq 0$. Met de matrices $A$ en $B$ is $AB = \left[\begin{smallmatrix} 2 & 1 \\ 1 & 1 \end{smallmatrix}\right] \neq \left[\begin{smallmatrix} 1 & 1 \\ 1 & 2 \end{smallmatrix}\right] = BA$.
+    - opgave: |-
+        Vormen de matrices met determinant 1 ook een groep?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $\det(AB) = 1 \cdot 1 = 1$, $\det I = 1$ en $\det A^{-1} = \tfrac11 = 1$.
+
+- id: h2-t1
+  soort: test
+  niveau: 1
+  thema: |-
+    een groep herkennen
+  opgave: |-
+    Toon aan dat $(\Z, \ast)$ met $a \ast b = a + b + 4$ een groep is. Geef het neutraal element en de inverse van $a$.
+  antwoord: |-
+    $e = -4$, $a' = -a - 8$
+  uitwerking: |-
+    Een bewerking op $\Z$. Associatief: beide leden zijn $a + b + c + 8$. Neutraal: $a + e + 4 = a$ geeft $e = -4$. Inverse: $a + a' + 4 = -4$ geeft $a' = -a - 8 \in \Z$. De bewerking is commutatief, dus dat werkt aan beide kanten.
+
+- id: h2-t2
+  soort: test
+  niveau: 1
+  thema: |-
+    geen groep
+  opgave: |-
+    Is $(\Q, \cdot)$ een groep? En $(\Q^+_0, \cdot)$? Verklaar.
+  antwoord: |-
+    nee: 0 heeft geen inverse; ja
+  uitwerking: |-
+    In $(\Q, \cdot)$ is $0 \cdot x = 0 \neq 1$. In $\Q^+_0$ is het product van strikt positieve rationale getallen strikt positief en rationaal, $e = 1$, en $\tfrac1a \in \Q^+_0$.
+
+- id: h2-t3
+  soort: test
+  niveau: 1
+  thema: |-
+    vergelijkingen in een groep
+  opgave: |-
+    Los op in de groep $(\Z, \ast)$ met $a \ast b = a + b + 4$: \ $3 \ast x = 10$ \ en \ $x \ast (-2) = 5$.
+  antwoord: |-
+    $x = 3$ en $x = 3$
+  uitwerking: |-
+    $a' = -a - 8$, dus $3' = -11$ en $x = 3' \ast 10 = -11 + 10 + 4 = 3$. Verder is $(-2)' = -6$ en $x = 5 \ast (-6) = 3$. Controle: $3 + 3 + 4 = 10$ en $3 - 2 + 4 = 5$.
+
+- id: h2-t4
+  soort: test
+  niveau: 2
+  thema: |-
+    een groepstabel aanvullen
+  opgave: |-
+    $G = \{e, a, b, c\}$ is een groep met neutraal element $e$. Verder is $a \ast a = e$, $a \ast b = c$ en $b \ast b = a$. Vul de groepstabel aan.
+  antwoord: |-
+    zie de uitgewerkte oplossingen
+  uitwerking: |-
+    De rij van $a$ wordt $a, e, c, b$. In de rij van $b$ ontbreken $c$ en $e$, en in de kolom van $a$ staat $e$ al, dus $b \ast a = c$ en $b \ast c = e$. De rij van $c$ volgt uit de kolommen.\par
+    \begin{bewtabel}{4}{\ast}{e & a & b & c}
+    e & e & a & b & c \\ \hline
+    a & a & e & c & b \\ \hline
+    b & b & c & a & e \\ \hline
+    c & c & b & e & a \\ \hline
+    \end{bewtabel}
+
+- id: h2-t5
+  soort: test
+  niveau: 1
+  thema: |-
+    optellen modulo n
+  opgave: |-
+    Bereken in $\Zn{9}$: \ $7 \plusn 5$, de inverse van 4, en de oplossing van $6 \plusn x = 2$.
+  antwoord: |-
+    $3$; \ $5$; \ $x = 5$
+  uitwerking: |-
+    $12 = 9 + 3$. De inverse van 4 is $9 - 4 = 5$. $6' = 3$, dus $x = 3 \plusn 2 = 5$; controle: $11 = 9 + 2$.
+
+- id: h2-t6
+  soort: test
+  niveau: 2
+  thema: |-
+    vermenigvuldigen modulo n
+  opgave: |-
+    Is $\bigl(\Zn{8} \setminus \{0\}, \maaln\bigr)$ een groep? Stel daarna de tabel op van $\maaln$ op $\{1, 3, 5, 7\}$ in $\Zn{8}$. Is dat een groep?
+  antwoord: |-
+    nee: $2 \maaln 4 = 0$; ja
+  uitwerking: |-
+    $2 \cdot 4 = 8$ heeft rest 0: geen bewerking. Op $\{1, 3, 5, 7\}$ blijven alle producten in de verzameling, 1 is neutraal en elk element is zijn eigen inverse.\par
+    \begin{bewtabel}{4}{\maaln}{1 & 3 & 5 & 7}
+    1 & 1 & 3 & 5 & 7 \\ \hline
+    3 & 3 & 1 & 7 & 5 \\ \hline
+    5 & 5 & 7 & 1 & 3 \\ \hline
+    7 & 7 & 5 & 3 & 1 \\ \hline
+    \end{bewtabel}

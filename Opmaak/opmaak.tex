@@ -122,7 +122,7 @@
   {\normalfont\kopletter\large}}
 \DeclareRobustCommand{\secnummer}[1]{%
   \ifopdrachtdeel\def\secvul{fel}\def\sectekst{inkt}\else\def\secvul{accent}\def\sectekst{white}\fi
-  \tikz[baseline=(c.base)]\node[fill=\secvul,rounded corners=2pt,text=\sectekst,inner xsep=1.2mm,inner ysep=.6mm,font=\sffamily\bfseries\small](c){#1};}
+  \tikz[baseline=(c.base)]\node[fill=\secvul,rounded corners=2pt,text=\sectekst,inner xsep=1.5mm,inner ysep=1.5mm,font=\sffamily\bfseries\large](c){#1};} 
 % Start van de Opdrachten: nieuwe pagina met een felle band
 \newcommand{\opdrachtenkop}{%
   \clearpage\global\opdrachtdeeltrue\thispagestyle{plain}%
@@ -152,14 +152,20 @@
     \draw[decorate,decoration={brace,amplitude=4pt},grijs] (0,.62) -- (9.4,.62)
       node[midway,above=3pt,text=black] {$n-1$ sprongen};
   \end{tikzpicture}}
-\renewcommand{\@seccntformat}[1]{\llap{\secnummer{\csname the#1\endcsname}\hspace{2mm}}}% nummer hangt in de linkermarge
-\setcounter{secnumdepth}{1} % subsecties krijgen geen nummer
+% Nummers hangen in de linkermarge: bij een sectie in een kader, bij een subsectie zonder kader in de kleur van de kop
+\renewcommand{\@seccntformat}[1]{%
+  \ifstrequal{#1}{subsection}%
+    {\llap{\csname the#1\endcsname\hspace{2mm}}}%
+    {\llap{\secnummer{\csname the#1\endcsname}\hspace{2mm}}}}
+\setcounter{secnumdepth}{2}
 \renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}
   {-3ex \@plus -.8ex \@minus -.3ex}{1ex \@plus .2ex}
   {\normalfont\kopletter\color{accent}\nobreak}}% \nobreak: \color maakt anders een breekpunt vlak na een sectiekop
 \makeatother
 \newcommand{\blokkop}[1]{\leavevmode{\kopletter\small\color{accent}#1}}
-\pretocmd{\section}{\needspace{9\baselineskip}}{}{} % kop en kader niet los van de rest
+\pretocmd{\section}{
+   \ifnum\value{section}>0 \newpage\fi %nieuwe section start op nieuwe pagina, behalve de eerste
+   \needspace{9\baselineskip}}{}{} % kop en kader niet los van de rest
 % Niet meteen na een sectiekop: \needspace geeft daar een breekpunt, en dan blijft de sectiekop alleen onderaan staan
 \makeatletter
 \pretocmd{\subsection}{\if@nobreak\else\needspace{7\baselineskip}\fi}{}{}
@@ -169,7 +175,7 @@
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \renewcommand{\sectionmark}[1]{}
 \fancyhf{}
-\fancyhead[L]{\kopletter\footnotesize\color{accent}\leftmark\ifopdrachtdeel\ \textperiodcentered\ Opdrachten\fi}
+\fancyhead[L]{\sffamily\footnotesize\color{grijs}\leftmark\ifopdrachtdeel\ \textperiodcentered\ Opdrachten\fi}% rustig, zoals het paginanummer
 \fancyfoot[R]{\sffamily\footnotesize\color{grijs}\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[R]{\sffamily\footnotesize\color{grijs}\thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -227,10 +233,17 @@
 % Voorbeeld: altijd uitgewerkt, ook in het handboek. Oefeningen zijn dat niet.
 \newcounter{voorbeeld}[chapter]
 \providecommand{\theHvoorbeeld}{\thechapter.\arabic{voorbeeld}}
-\newcommand{\voorbeeld}[3]{%
+\newcommand{\voorbeeld}[3]{
   \par\addvspace{2ex}\refstepcounter{voorbeeld}%
-  \vbox{\noindent\tikz[baseline=(c.base)]\node[fill=accent,rounded corners=2pt,text=white,inner xsep=1.6mm,inner ysep=.6mm,font=\sffamily\bfseries\footnotesize](c){Voorbeeld \thevoorbeeld\ifstrempty{#1}{}{: #1}};\quad #2\par
-  \uitwerkingblok{#3}}
+  \vbox{%
+    \setbox0=\hbox{%
+      \tikz[baseline=(c.base)]\node[fill=accent,rounded corners=2pt,text=white,
+        inner xsep=1.6mm,inner ysep=.6mm,
+        font=\sffamily\bfseries\footnotesize](c)
+        {Voorbeeld \thevoorbeeld\ifstrempty{#1}{}{: #1}};\quad}%
+    \hangindent=\wd0 \hangafter=1
+    \noindent\box0 #2\par
+    \uitwerkingblok{#3}}%
   \addvspace{1.5ex}}
 
 \newcommand{\uitwerkingblok}[1]{%

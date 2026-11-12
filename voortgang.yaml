@@ -25,6 +25,9 @@ statussen:
 handboeken:
   "4/Analyse/Integralen": eerste-versie
   "4/Discrete wiskunde/Rijen": eerste-versie
+  "1/Discrete wiskunde/Rijen": eerste-versie
+  "2/Discrete wiskunde/Rijen": eerste-versie
+  "3/Discrete wiskunde/Rijen": eerste-versie
   "1/Algebra/Matrices": eerste-versie
   "4/Algebra/Matrices": eerste-versie
   "1/Data en onzekerheid/Statistiek": eerste-versie
@@ -55,6 +58,7 @@ handboeken:
   "3/Data en onzekerheid/Statistiek": eerste-versie
   "3/Onderzoekscompetentie": eerste-versie
   "4/Algebra/Complexe getallen": eerste-versie
+  "4/Algebra/Groepen": eerste-versie
   "4/Analyse/Algemene functies": eerste-versie
   "4/Analyse/Exponentiële en logaritmische functies": eerste-versie
   "4/Analyse/Goniometrische functies": eerste-versie

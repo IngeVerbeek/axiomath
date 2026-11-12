@@ -20,9 +20,9 @@ Een geïntegreerd ecosysteem, volledig open:
 Eerst maken we van elk handboek een eerste versie, daarna lezen leerkrachten ze na. Dit overzicht komt uit [voortgang.yaml](voortgang.yaml). Zie [Handboeken/README.md](Handboeken/README.md) voor de indeling per pakket en richting.
 
 <!-- voortgang:begin -->
-**Totaal** &nbsp; `███████░░░░░░░░░░░░░` &nbsp; **37 %** van 47 handboeken
+**Totaal** &nbsp; `████████░░░░░░░░░░░░` &nbsp; **40 %** van 47 handboeken
 
-⚪ 4 gepland · 🟠 43 eerste versie · 🟡 0 nagelezen · 🟢 0 klaar
+⚪ 0 gepland · 🟠 47 eerste versie · 🟡 0 nagelezen · 🟢 0 klaar
 
 ### Per richting
 
@@ -30,24 +30,24 @@ Elke richting volgt één pakket, en de voortgang van de richting is het gemidde
 
 | Richting | Pakket | Voortgang | |
 |---|---|---|---:|
-| Grieks-Latijn | 1 (Basis) | `███████░░░░░░░░░░░░░` |  35 % |
-| Humane wetenschappen | 1 (Basis) | `███████░░░░░░░░░░░░░` |  35 % |
-| Latijn-Moderne talen | 1 (Basis) | `███████░░░░░░░░░░░░░` |  35 % |
-| Moderne talen | 1 (Basis) | `███████░░░░░░░░░░░░░` |  35 % |
-| Economie-Moderne talen | 2 (B+S) | `███████░░░░░░░░░░░░░` |  36 % |
-| Latijn-Wetenschappen | 3 (B+S') | `███████░░░░░░░░░░░░░` |  37 % |
-| Moderne talen-Wetenschappen | 3 (B+S') | `███████░░░░░░░░░░░░░` |  37 % |
-| Sportwetenschappen | 3 (B+S') | `███████░░░░░░░░░░░░░` |  37 % |
-| Economie-Wiskunde | 4 (B+S'') | `████████░░░░░░░░░░░░` |  38 % |
-| Grieks-Wiskunde | 4 (B+S'') | `████████░░░░░░░░░░░░` |  38 % |
-| Latijn-Wiskunde | 4 (B+S'') | `████████░░░░░░░░░░░░` |  38 % |
-| Wetenschappen-Wiskunde | 4 (B+S'') | `████████░░░░░░░░░░░░` |  38 % |
+| Grieks-Latijn | 1 (Basis) | `████████░░░░░░░░░░░░` |  40 % |
+| Humane wetenschappen | 1 (Basis) | `████████░░░░░░░░░░░░` |  40 % |
+| Latijn-Moderne talen | 1 (Basis) | `████████░░░░░░░░░░░░` |  40 % |
+| Moderne talen | 1 (Basis) | `████████░░░░░░░░░░░░` |  40 % |
+| Economie-Moderne talen | 2 (B+S) | `████████░░░░░░░░░░░░` |  40 % |
+| Latijn-Wetenschappen | 3 (B+S') | `████████░░░░░░░░░░░░` |  40 % |
+| Moderne talen-Wetenschappen | 3 (B+S') | `████████░░░░░░░░░░░░` |  40 % |
+| Sportwetenschappen | 3 (B+S') | `████████░░░░░░░░░░░░` |  40 % |
+| Economie-Wiskunde | 4 (B+S'') | `████████░░░░░░░░░░░░` |  40 % |
+| Grieks-Wiskunde | 4 (B+S'') | `████████░░░░░░░░░░░░` |  40 % |
+| Latijn-Wiskunde | 4 (B+S'') | `████████░░░░░░░░░░░░` |  40 % |
+| Wetenschappen-Wiskunde | 4 (B+S'') | `████████░░░░░░░░░░░░` |  40 % |
 
 ### Per handboek
 
 Een percentage hoort bij een status: ⚪ **gepland** (0 %): nog niet begonnen, 🟠 **eerste versie** (40 %): tekst en oefeningen geschreven, nog niet nagelezen door andere leerkrachten, 🟡 **nagelezen** (70 %): nagelezen door leerkrachten, feedback verwerkt, 🟢 **klaar** (100 %): in de klas gebruikt en bijgewerkt, versie 1.0.
 
-#### Pakket 1 · Basis &nbsp; `███████░░░░░░░░░░░░░` 35 %
+#### Pakket 1 · Basis &nbsp; `████████░░░░░░░░░░░░` 40 %
 
 <sub>Grieks-Latijn, Humane wetenschappen, Latijn-Moderne talen, Moderne talen</sub>
 
@@ -58,11 +58,11 @@ Een percentage hoort bij een status: ⚪ **gepland** (0 %): nog niet begonnen, �
 | [Goniometrische functies](<Handboeken/1 Grieks-Latijn, Humane, Latijn-Moderne, Moderne talen (Basis)/Analyse/Goniometrische functies/README.md>) | Analyse | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Afgeleiden](<Handboeken/1 Grieks-Latijn, Humane, Latijn-Moderne, Moderne talen (Basis)/Analyse/Afgeleiden/README.md>) | Analyse | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Matrices](<Handboeken/1 Grieks-Latijn, Humane, Latijn-Moderne, Moderne talen (Basis)/Algebra/Matrices/README.md>) | Algebra | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
-| Rijen | Discrete wiskunde | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
+| [Rijen](<Handboeken/1 Grieks-Latijn, Humane, Latijn-Moderne, Moderne talen (Basis)/Discrete wiskunde/Rijen/README.md>) | Discrete wiskunde | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Kansrekenen](<Handboeken/1 Grieks-Latijn, Humane, Latijn-Moderne, Moderne talen (Basis)/Data en onzekerheid/Kansrekenen/README.md>) | Data en onzekerheid | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Statistiek](<Handboeken/1 Grieks-Latijn, Humane, Latijn-Moderne, Moderne talen (Basis)/Data en onzekerheid/Statistiek/README.md>) | Data en onzekerheid | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 
-#### Pakket 2 · B+S &nbsp; `███████░░░░░░░░░░░░░` 36 %
+#### Pakket 2 · B+S &nbsp; `████████░░░░░░░░░░░░` 40 %
 
 <sub>Economie-Moderne talen</sub>
 
@@ -75,12 +75,12 @@ Een percentage hoort bij een status: ⚪ **gepland** (0 %): nog niet begonnen, �
 | [Afgeleiden](<Handboeken/2 Economie-Moderne talen (B+S)/Analyse/Afgeleiden/README.md>) | Analyse | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Integralen](<Handboeken/2 Economie-Moderne talen (B+S)/Analyse/Integralen/README.md>) | Analyse | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Matrices](<Handboeken/2 Economie-Moderne talen (B+S)/Algebra/Matrices/README.md>) | Algebra | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
-| Rijen | Discrete wiskunde | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
+| [Rijen](<Handboeken/2 Economie-Moderne talen (B+S)/Discrete wiskunde/Rijen/README.md>) | Discrete wiskunde | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Kansrekenen](<Handboeken/2 Economie-Moderne talen (B+S)/Data en onzekerheid/Kansrekenen/README.md>) | Data en onzekerheid | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Statistiek](<Handboeken/2 Economie-Moderne talen (B+S)/Data en onzekerheid/Statistiek/README.md>) | Data en onzekerheid | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Onderzoekscompetentie](<Handboeken/2 Economie-Moderne talen (B+S)/Onderzoekscompetentie/README.md>) | – | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 
-#### Pakket 3 · B+S' &nbsp; `███████░░░░░░░░░░░░░` 37 %
+#### Pakket 3 · B+S' &nbsp; `████████░░░░░░░░░░░░` 40 %
 
 <sub>Latijn-Wetenschappen, Moderne talen-Wetenschappen, Sportwetenschappen</sub>
 
@@ -94,12 +94,12 @@ Een percentage hoort bij een status: ⚪ **gepland** (0 %): nog niet begonnen, �
 | [Integralen](<Handboeken/3 Latijn-Wet., Moderne talen-Wet., Sportwetenschappen (B+S')/Analyse/Integralen/README.md>) | Analyse | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Matrices](<Handboeken/3 Latijn-Wet., Moderne talen-Wet., Sportwetenschappen (B+S')/Algebra/Matrices/README.md>) | Algebra | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Complexe getallen](<Handboeken/3 Latijn-Wet., Moderne talen-Wet., Sportwetenschappen (B+S')/Algebra/Complexe getallen/README.md>) | Algebra | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
-| Rijen | Discrete wiskunde | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
+| [Rijen](<Handboeken/3 Latijn-Wet., Moderne talen-Wet., Sportwetenschappen (B+S')/Discrete wiskunde/Rijen/README.md>) | Discrete wiskunde | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Kansrekenen](<Handboeken/3 Latijn-Wet., Moderne talen-Wet., Sportwetenschappen (B+S')/Data en onzekerheid/Kansrekenen/README.md>) | Data en onzekerheid | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Statistiek](<Handboeken/3 Latijn-Wet., Moderne talen-Wet., Sportwetenschappen (B+S')/Data en onzekerheid/Statistiek/README.md>) | Data en onzekerheid | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Onderzoekscompetentie](<Handboeken/3 Latijn-Wet., Moderne talen-Wet., Sportwetenschappen (B+S')/Onderzoekscompetentie/README.md>) | – | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 
-#### Pakket 4 · B+S'' &nbsp; `████████░░░░░░░░░░░░` 38 %
+#### Pakket 4 · B+S'' &nbsp; `████████░░░░░░░░░░░░` 40 %
 
 <sub>Economie-Wiskunde, Grieks-Wiskunde, Latijn-Wiskunde, Wetenschappen-Wiskunde</sub>
 
@@ -113,7 +113,7 @@ Een percentage hoort bij een status: ⚪ **gepland** (0 %): nog niet begonnen, �
 | [Integralen](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Analyse/Integralen/README.md>) | Analyse | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Matrices](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Algebra/Matrices/README.md>) | Algebra | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Complexe getallen](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Algebra/Complexe getallen/README.md>) | Algebra | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
-| Groepen | Algebra | ⚪ gepland | `░░░░░░░░░░░░░░░░░░░░` |   0 % |
+| [Groepen](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Algebra/Groepen/README.md>) | Algebra | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Ruimtemeetkunde](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Meetkunde/Ruimtemeetkunde/README.md>) | Meetkunde | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Rijen](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Discrete wiskunde/Rijen/README.md>) | Discrete wiskunde | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |
 | [Telproblemen](<Handboeken/4 Economie-, Grieks-, Latijn-, Wetenschappen-Wiskunde (B+S'')/Discrete wiskunde/Telproblemen/README.md>) | Discrete wiskunde | 🟠 eerste versie | `████████░░░░░░░░░░░░` |  40 % |

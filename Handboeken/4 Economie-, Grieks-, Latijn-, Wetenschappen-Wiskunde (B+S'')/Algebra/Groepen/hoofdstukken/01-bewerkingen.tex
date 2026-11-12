@@ -1,0 +1,386 @@
+%----------------------------------------------------------------------------------------
+% BEWERKINGEN. Alle opgaven zijn eigen werk.
+%
+% Opbouw: Start, leerstof (theorie, werkwijze of uitleg, voorbeeld, korte oefening), en op een
+% nieuwe pagina de Opdrachten (door elkaar, stijgende moeilijkheid), Koppel en Test jezelf.
+% Labels van dit hoofdstuk beginnen met h1-.
+%----------------------------------------------------------------------------------------
+
+\mychapter{1}{Bewerkingen}
+
+\lkr{Leerplan B+S'': LPD 43 (verzamelingen met een bewerking analyseren aan de hand van een algebraïsche structuur). Het leerplan laat de keuze van de structuur vrij; deze cursus kiest de groep. Dit hoofdstuk legt de bouwstenen: wat een bewerking is, en de eigenschappen associatief, commutatief, neutraal element en invers element. Het leerplan stelt voor de structuur te definiëren ``vanuit de eigenschappen van bewerkingen bij concrete voorbeelden'': daarom staan die eigenschappen eerst los, met veel voorbeelden, en komt de groep pas in hoofdstuk 2. LPD 4 (beargumenteren en bewijzen) komt hier telkens terug: een eigenschap bewijs je met letters, en je weerlegt ze met één tegenvoorbeeld.}
+
+Je rekent al jaren met optellen en vermenigvuldigen, en je weet waar je op moet letten. Bij optellen mag je de termen van plaats wisselen, bij aftrekken niet. Optellen met 0 verandert niets, vermenigvuldigen met 1 ook niet. Door 0 kun je niet delen. Bij matrices merkte je dat $AB$ en $BA$ kunnen verschillen, en bij functies dat $f \circ g$ en $g \circ f$ meestal niet hetzelfde zijn.
+
+In dit hoofdstuk kijken we naar die regels zelf, los van de getallen waarop je ze toepast. Wat is een bewerking eigenlijk? Wanneer mag je haakjes weglaten of factoren van plaats wisselen? Wanneer kun je een bewerking ``ongedaan maken''? Dezelfde vragen kun je stellen bij getallen, matrices, functies en zelfs bij het draaien van een figuur. In hoofdstuk 2 bundel je de antwoorden in één begrip: de groep.
+
+\begin{oefeningen}[Start]
+\oef{h1-start-1}
+
+\oef{h1-verken}
+\end{oefeningen}
+
+\lkr{Laat oefening \ref{oef:h1-verken} maken vóór de uitleg, na de Opwarmer. Leerlingen ontdekken zelf dat de nieuwe bewerking commutatief en associatief lijkt, dat 3 de rol van 0 speelt, en dat je bij elk getal een ``tegengestelde'' vindt. In de uitleg komt dezelfde bewerking terug, en daar bewijs je wat ze met getallen vermoedden.}
+
+%========================================================================================
+\section{Bewerkingen op een verzameling}
+
+\subsection{Wat is een bewerking?}
+
+Een bewerking neemt twee elementen en maakt er één nieuw element van. Bij de optelling in $\N$ is $3 + 5 = 8$ weer een natuurlijk getal. Bij de aftrekking in $\N$ loopt het mis: $3 - 5 = -2$ is geen natuurlijk getal meer. Of iets een bewerking is, hangt dus ook af van de verzameling waarin je werkt.
+
+\figuren{\begin{tikzpicture}[font=\small]
+  \draw[accent,thick,fill=accent!8] (0,0) ellipse (2.1 and 1.1);
+  \node[text=accent] at (-1.55,.95) {$\N$};
+  \fill (-1,.3) circle (1.6pt) node[above left=-1pt] {$3$};
+  \fill (-.9,-.45) circle (1.6pt) node[below left=-1pt] {$5$};
+  \fill (1.1,0) circle (1.6pt) node[right] {$8$};
+  \draw[-{Stealth[length=2mm]},fel!85!black,thick] (-.9,.3) to[bend left=15] (1.02,.05);
+  \draw[-{Stealth[length=2mm]},fel!85!black,thick] (-.8,-.45) to[bend right=15] (1.02,-.05);
+  \node[below] at (0,-1.15) {$3 + 5 = 8$ ligt in $\N$};
+  \begin{scope}[xshift=6.2cm]
+  \draw[accent,thick,fill=accent!8] (0,0) ellipse (2.1 and 1.1);
+  \node[text=accent] at (-1.55,.95) {$\N$};
+  \fill (-1,.3) circle (1.6pt) node[above left=-1pt] {$3$};
+  \fill (-.9,-.45) circle (1.6pt) node[below left=-1pt] {$5$};
+  \fill (2.9,0) circle (1.6pt) node[right] {$-2$};
+  \draw[-{Stealth[length=2mm]},fel!85!black,thick] (-.9,.3) to[bend left=15] (2.82,.05);
+  \draw[-{Stealth[length=2mm]},fel!85!black,thick] (-.8,-.45) to[bend right=15] (2.82,-.05);
+  \node[below] at (0,-1.15) {$3 - 5 = -2$ valt buiten $\N$};
+  \end{scope}
+\end{tikzpicture}}
+
+\begin{theorie}
+Een \textbf{\textcolor{accent}{bewerking}} $\ast$ op een niet-lege verzameling $V$ is een voorschrift dat aan elk koppel $(a, b)$ van elementen van $V$ precies één element $a \ast b$ van $V$ toekent:
+
+\vspace{1mm}
+\qquad $\formule{a, b \in V \ \Rightarrow \ a \ast b \in V}$
+
+\vspace{1mm}
+We zeggen ook dat $V$ \textbf{\textcolor{accent}{gesloten}} is onder $\ast$, en we noteren de verzameling met de bewerking als $\formule{(V, \ast)}$.
+\end{theorie}
+
+Twee dingen moeten dus kloppen: $a \ast b$ moet voor elk koppel bestaan, en het moet in $V$ liggen. Het teken $\ast$ (lees: \textit{ster}) gebruiken we voor een willekeurige bewerking. Bij een concrete bewerking schrijf je het voorschrift erbij, zoals $a \ast b = a + b - 3$.
+
+\voorbeeld{}{Is de deling een bewerking op $\Q$? En op $\Q_0$?\label{vb:h1-deling}}{%
+\uitleg{We gaan na of $a : b$ voor elk koppel bestaat en of de uitkomst in de verzameling ligt.}
+\begin{stappen}
+5 : 0 \text{ bestaat niet} & In $\Q$ bestaat $a : b$ niet als $b = 0$: de deling is geen bewerking op $\Q$. \\[1ex]
+a, b \in \Q_0 \ \Rightarrow \ \frac{a}{b} \in \Q_0 & In $\Q_0$ is $b \neq 0$, en het quotiënt van twee rationale getallen verschillend van 0 is rationaal en verschillend van 0.
+\end{stappen}
+De deling is dus wel een bewerking op $\Q_0$.}
+
+\voorbeeld{}{Is $a \ast b = \dfrac{a + b}{2}$ (het gemiddelde) een bewerking op $\Z$? En op $\Q$?\label{vb:h1-gemiddelde}}{%
+\uitleg{Het gemiddelde bestaat altijd. De vraag is of het in de verzameling ligt. Bij $\Z$ zoeken we een tegenvoorbeeld met een oneven som.}
+\begin{stappen}
+1 \ast 2 = \tfrac32 \notin \Z & Eén koppel waarvoor het misloopt volstaat: geen bewerking op $\Z$. \\[1ex]
+a, b \in \Q \ \Rightarrow \ \frac{a + b}{2} \in \Q & Een som van rationale getallen gedeeld door 2 is rationaal: een bewerking op $\Q$.
+\end{stappen}}
+
+\begin{werkwijze}
+Ga na of $a \ast b$ voor alle $a, b \in V$ bestaat en in $V$ ligt. Om te tonen dat $\ast$ een bewerking is, redeneer je met willekeurige $a$ en $b$. Om te tonen dat $\ast$ geen bewerking is, volstaat één tegenvoorbeeld: een koppel waarvoor $a \ast b$ niet bestaat of buiten $V$ valt.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h1-bewerking}
+\end{oefeningen}
+
+\subsection{De bewerkingstabel}
+
+Heeft $V$ maar een paar elementen, dan kun je alle uitkomsten van een bewerking in een tabel zetten. Je ziet er dan in één oogopslag alles in.
+
+\begin{theorie}
+\begin{minipage}[t]{.6\linewidth}
+\vspace{0pt}
+In de \textbf{\textcolor{accent}{bewerkingstabel}} van $\ast$ op een eindige verzameling $V$ staat $\formule{a \ast b}$ in de \textbf{\textcolor{accent}{rij}} van $a$ en de \textbf{\textcolor{accent}{kolom}} van $b$.
+
+\vspace{1mm}
+Het linkse element $a$ lees je in de eerste kolom, het rechtse element $b$ in de bovenste rij.
+\end{minipage}\hfill
+\begin{minipage}[t]{.33\linewidth}
+\vspace{0pt}
+\begin{bewtabel}[8mm]{3}{\ast}{ & b & }
+ & & & \\ \hline
+a & & a \ast b & \\ \hline
+ & & & \\ \hline
+\end{bewtabel}
+\end{minipage}
+\end{theorie}
+
+Zo'n tabel heet ook een \textit{Cayleytabel}, naar de Engelse wiskundige Arthur Cayley (1821-1895). Let op de volgorde: bij een bewerking zoals $a \ast b = 2a + b$ is $a \ast b$ meestal iets anders dan $b \ast a$.
+
+\voorbeeld{}{Stel de bewerkingstabel op van de vermenigvuldiging op $V = \{1, -1, i, -i\}$. Is de vermenigvuldiging een bewerking op $V$?\label{vb:h1-tabel}}{%
+\uitleg{We vermenigvuldigen elk element van de eerste kolom met elk element van de bovenste rij, en gebruiken $i^2 = -1$. Daarna kijken we of er een uitkomst buiten $V$ valt.}
+\naast{\begin{minipage}{\linewidth}
+\begin{stappenvrij}{3.3cm}{5.0cm}
+i \cdot i = -1 & Rij van $i$, kolom van $i$. \\[1ex]
+i \cdot (-i) = -i^2 = 1 & Rij van $i$, kolom van $-i$. \\[1ex]
+(-1) \cdot (-i) = i & Rij van $-1$, kolom van $-i$.
+\end{stappenvrij}
+
+\vspace{1mm}
+Zo vul je de hele tabel in. Elke uitkomst ligt in $V$: de vermenigvuldiging is een bewerking op $V$.
+\end{minipage}}{\begin{bewtabel}[7.5mm]{4}{\cdot}{1 & -1 & i & -i}
+1 & 1 & -1 & i & -i \\ \hline
+-1 & -1 & 1 & -i & i \\ \hline
+i & i & -i & -1 & 1 \\ \hline
+-i & -i & i & 1 & -1 \\ \hline
+\end{bewtabel}}}
+
+\begin{oefeningen}
+\oef{h1-tabel}
+\end{oefeningen}
+
+%========================================================================================
+\section{Associatief en commutatief}
+
+\subsection{Associativiteit}
+
+In de Opwarmer vond je $12 - (7 - 3) = 8$ en $(12 - 7) - 3 = 2$: bij aftrekken mag je de haakjes niet verplaatsen. Bij optellen mag dat wel: $(12 + 7) + 3 = 12 + (7 + 3)$. Daarom schrijf je bij een som zonder bezwaar $12 + 7 + 3$, zonder haakjes.
+
+\begin{theorie}
+Een bewerking $\ast$ op $V$ is \textbf{\textcolor{accent}{associatief}} als
+
+\vspace{1mm}
+\qquad $\formule{(a \ast b) \ast c = a \ast (b \ast c)}$ \qquad voor alle $a, b, c \in V$.
+\end{theorie}
+
+Bij een associatieve bewerking mag je de haakjes weglaten en $a \ast b \ast c$ schrijven: de uitkomst hangt niet af van welke bewerking je eerst uitvoert. Optellen en vermenigvuldigen van getallen en van matrices zijn associatief, net als het samenstellen van functies. Aftrekken, delen en machtsverheffen zijn het niet: in de Opwarmer was $2^{(3^2)} = 512$ en $(2^3)^2 = 64$.
+
+\voorbeeld{}{Toon aan dat $a \ast b = a + b - 3$ associatief is op $\Z$.\label{vb:h1-assoc}}{%
+\uitleg{In de Verken gaf $(2 \ast 7) \ast 1$ hetzelfde als $2 \ast (7 \ast 1)$. Dat ene voorbeeld bewijst niets: we werken beide leden uit voor willekeurige $a$, $b$ en $c$.}
+\begin{stappen}
+(a \ast b) \ast c = (a + b - 3) + c - 3 = a + b + c - 6 & Eerst $a \ast b$, dan die uitkomst ster $c$. \\[1ex]
+a \ast (b \ast c) = a + (b + c - 3) - 3 = a + b + c - 6 & Eerst $b \ast c$, dan $a$ ster die uitkomst.
+\end{stappen}
+Beide leden zijn gelijk voor alle $a, b, c \in \Z$: de bewerking is associatief.}
+
+\voorbeeld{}{Is $a \ast b = 2a + b$ associatief op $\R$?\label{vb:h1-nietassoc}}{%
+\uitleg{We werken beide leden eerst met letters uit. Zijn ze niet gelijk, dan zien we welke getallen een tegenvoorbeeld geven.}
+\begin{stappen}
+(a \ast b) \ast c = 2(2a + b) + c = 4a + 2b + c & Het linkerlid. \\[1ex]
+a \ast (b \ast c) = 2a + (2b + c) = 2a + 2b + c & Het rechterlid: alleen de term met $a$ verschilt. \\[1ex]
+(1 \ast 0) \ast 0 = 4 \text{ en } 1 \ast (0 \ast 0) = 2 & Kies $a \neq 0$: met $a = 1$, $b = c = 0$ heb je een tegenvoorbeeld.
+\end{stappen}
+De bewerking is niet associatief.}
+
+\begin{werkwijze}
+Om te bewijzen dat $\ast$ associatief is, werk je $(a \ast b) \ast c$ en $a \ast (b \ast c)$ uit met letters en toon je dat ze gelijk zijn. Om te tonen dat $\ast$ niet associatief is, volstaat één tegenvoorbeeld met getallen. Voorbeelden met getallen die wel kloppen, bewijzen niets.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h1-assoc}
+\end{oefeningen}
+
+\subsection{Commutativiteit}
+
+Bij optellen en vermenigvuldigen van getallen mag je de twee elementen van plaats wisselen. Bij matrices niet: in de Opwarmer was $AB \neq BA$.
+
+\begin{theorie}
+Een bewerking $\ast$ op $V$ is \textbf{\textcolor{accent}{commutatief}} als
+
+\vspace{1mm}
+\qquad $\formule{a \ast b = b \ast a}$ \qquad voor alle $a, b \in V$.
+\end{theorie}
+
+In een bewerkingstabel zie je het meteen: de bewerking is commutatief als de tabel symmetrisch is ten opzichte van de diagonaal van linksboven naar rechtsonder. Kijk maar naar de tabel van $\{1, -1, i, -i\}$ hierboven.
+
+Associatief en commutatief hebben niets met elkaar te maken. De bewerking $a \ast b = a$ (neem altijd het linkse element) is associatief, want beide leden zijn $a$, maar niet commutatief. Het gemiddelde is commutatief, maar niet associatief: dat zie je in de opdrachten.
+
+\voorbeeld{}{Is $a \ast b = ab - a$ commutatief op $\Z$? Voor welke koppels is $a \ast b = b \ast a$ toch?\label{vb:h1-comm}}{%
+\uitleg{We proberen eerst een koppel met verschillende getallen. Daarna zoeken we met letters wanneer de twee uitkomsten gelijk zijn.}
+\begin{stappen}
+2 \ast 3 = 6 - 2 = 4 \text{ en } 3 \ast 2 = 6 - 3 = 3 & Een tegenvoorbeeld: de bewerking is niet commutatief. \\[1ex]
+ab - a = ba - b \iff a = b & Omdat $ab = ba$, blijft alleen $-a = -b$ over.
+\end{stappen}
+Alleen als $a = b$ is $a \ast b = b \ast a$. Dat de gelijkheid voor sommige koppels klopt, volstaat niet: ze moet voor alle koppels gelden.}
+
+\begin{oefeningen}
+\oef{h1-comm}
+\end{oefeningen}
+
+%========================================================================================
+\section{Neutraal en invers element}
+
+\subsection{Het neutraal element}
+
+Bij optellen verandert 0 niets: $a + 0 = a$. Bij vermenigvuldigen speelt 1 die rol, bij het product van matrices de eenheidsmatrix $I$, en bij het samenstellen van functies de functie $x \mapsto x$. In de Verken vond je dat 3 die rol speelt bij $a \ast b = a + b - 3$.
+
+\begin{theorie}
+Een element $e \in V$ is een \textbf{\textcolor{accent}{neutraal element}} voor $\ast$ als
+
+\vspace{1mm}
+\qquad $\formule{a \ast e = e \ast a = a}$ \qquad voor alle $a \in V$.
+
+\begin{stelling}{Hoogstens één neutraal element}
+Een bewerking heeft hoogstens één neutraal element.
+\end{stelling}
+
+\begin{bewijs}
+Stel dat $e$ en $f$ allebei neutrale elementen zijn. Omdat $f$ neutraal is, is $e \ast f = e$. Omdat $e$ neutraal is, is $e \ast f = f$. Dus
+\bewijsregel{e = e \ast f = f .}
+\end{bewijs}
+\end{theorie}
+
+Je mag dus spreken over \textit{het} neutraal element. Let op: hetzelfde element $e$ moet voor elke $a$ werken, en aan beide kanten. Een getal dat je bij elke $a$ anders moet kiezen, is geen neutraal element.
+
+\voorbeeld{}{Bepaal het neutraal element van $a \ast b = a + b - 3$ op $\Z$.\label{vb:h1-neutraal}}{%
+\uitleg{We zoeken een $e$ waarvoor $a \ast e = a$, voor elke $a$. Omdat de bewerking commutatief is, geldt dan ook $e \ast a = a$.}
+\begin{stappen}
+a + e - 3 = a & Schrijf $a \ast e = a$ uit. \\[1ex]
+e = 3 & De $a$ valt weg: $e$ hangt niet van $a$ af, en $3 \in \Z$.
+\end{stappen}
+Controle: $3 \ast a = 3 + a - 3 = a$. Het neutraal element is 3.}
+
+\voorbeeld{}{Heeft $a \ast b = 2a + b$ een neutraal element op $\R$?\label{vb:h1-geenneutraal}}{%
+\uitleg{De bewerking is niet commutatief, dus we bekijken beide kanten apart.}
+\begin{stappen}
+a \ast e = a \iff 2a + e = a \iff e = -a & Het getal $e$ hangt af van $a$: er is geen $e$ die voor elke $a$ werkt. \\[1ex]
+e \ast a = a \iff 2e + a = a \iff e = 0 & Aan de linkerkant werkt 0 wel, maar $1 \ast 0 = 2 \neq 1$.
+\end{stappen}
+Er is geen neutraal element. Het getal 0 werkt alleen als het links staat: dat volstaat niet.}
+
+In een bewerkingstabel herken je het neutraal element meteen: zijn rij herhaalt de bovenste rij, en zijn kolom herhaalt de eerste kolom. In de tabel van $\{1, -1, i, -i\}$ is dat 1.
+
+\subsection{Het invers element}
+
+Bij optellen heeft elk getal een tegengestelde, waarmee je terugkeert naar het neutraal element: $7 + (-7) = 0$. Bij vermenigvuldigen heeft elk getal behalve 0 een omgekeerde: $7 \cdot \frac17 = 1$. Dat idee werkt voor elke bewerking met een neutraal element.
+
+\begin{theorie}
+Stel dat $e$ het neutraal element is van $\ast$ op $V$. Een element $a' \in V$ is een \textbf{\textcolor{accent}{invers element}} of \textbf{\textcolor{accent}{inverse}} van $a$ als
+
+\vspace{1mm}
+\qquad $\formule{a \ast a' = a' \ast a = e}$
+
+\begin{stelling}{Hoogstens één inverse}
+Is $\ast$ associatief, dan heeft elk element hoogstens één inverse.
+\end{stelling}
+
+\begin{bewijs}
+Stel dat $a'$ en $a''$ allebei een inverse zijn van $a$. Dan is $a \ast a'' = e$ en $a' \ast a = e$, zodat
+\bewijsregel{a' = a' \ast e = a' \ast (a \ast a'') = (a' \ast a) \ast a'' = e \ast a'' = a'' .}
+In de derde stap gebruiken we dat $\ast$ associatief is.
+\end{bewijs}
+\end{theorie}
+
+Het invers element heet ook het \textit{symmetrisch element}. Bij optellen is de inverse van $a$ de tegengestelde $-a$, bij vermenigvuldigen de omgekeerde $\frac1a$. De inverse moet in $V$ liggen: in $\Z$ met de vermenigvuldiging heeft 2 geen inverse, want $\frac12 \notin \Z$.
+
+\voorbeeld{}{Bepaal de inverse van elk geheel getal $a$ voor $a \ast b = a + b - 3$.\label{vb:h1-invers}}{%
+\uitleg{Het neutraal element is 3. We lossen $a \ast a' = 3$ op naar $a'$ en kijken of de uitkomst in $\Z$ ligt. De bewerking is commutatief, dus dan is ook $a' \ast a = 3$.}
+\begin{stappen}
+a + a' - 3 = 3 & Schrijf $a \ast a' = e$ uit. \\[1ex]
+a' = 6 - a & Voor elk geheel getal $a$ is $6 - a \in \Z$.
+\end{stappen}
+Elk element heeft een inverse. Zo is $8' = -2$: dat vond je ook in de Verken.}
+
+\voorbeeld{}{Op $V = \{0, 1, 2\}$ is $a \ast b$ het grootste van de twee getallen. Stel de tabel op. Bepaal het neutraal element en de elementen die een inverse hebben.\label{vb:h1-inverstabel}}{%
+\uitleg{Na de tabel zoeken we de rij die de bovenste rij herhaalt. Voor de inverse van $a$ zoeken we het neutraal element in de rij van $a$.}
+\naast{\begin{minipage}{\linewidth}
+\begin{stappenvrij}{3.3cm}{6.3cm}
+e = 0 & De rij van 0 is $0, 1, 2$, net als de bovenste rij, en de kolom van 0 herhaalt de eerste kolom. \\[1ex]
+0' = 0 & Want $0 \ast 0 = 0$. \\[1ex]
+1 \text{ en } 2 \text{: geen inverse} & In de rij van 1 en in de rij van 2 staat geen 0.
+\end{stappenvrij}
+\end{minipage}}{\begin{bewtabel}{3}{\ast}{0 & 1 & 2}
+0 & 0 & 1 & 2 \\ \hline
+1 & 1 & 1 & 2 \\ \hline
+2 & 2 & 2 & 2 \\ \hline
+\end{bewtabel}}}
+
+\begin{werkwijze}
+Voor het neutraal element los je $a \ast e = a$ op naar $e$. Hangt $e$ af van $a$, dan is er geen neutraal element. Controleer dat $e \in V$, en ook dat $e \ast a = a$ als $\ast$ niet commutatief is. Voor de inverse los je $a \ast a' = e$ op naar $a'$, en controleer je dat $a' \in V$ (en $a' \ast a = e$). In een tabel zoek je de rij die de bovenste rij herhaalt, en daarna het neutraal element in de rij van $a$.
+\end{werkwijze}
+
+\nujij{Bepaal het neutraal element en de inverse van $a$ voor $a \ast b = a + b + 2$ op $\Z$.}{$a + e + 2 = a$, dus $e = -2$. Uit $a + a' + 2 = -2$ volgt $a' = -4 - a$.}
+
+\begin{oefeningen}
+\oef{h1-neutraal-invers}
+\end{oefeningen}
+
+Je kent nu de vier eigenschappen die in de rest van deze cursus terugkomen: een bewerking kan associatief en commutatief zijn, een neutraal element hebben, en elk element kan een inverse hebben. In hoofdstuk 2 zie je wat er gebeurt als een bewerking er drie tegelijk heeft.
+
+%========================================================================================
+\opdrachtenkop
+
+\begin{oefeningen}
+\oef{h1-o1}
+
+\oef{h1-o2}
+
+\oef{h1-o5}
+
+\oef{h1-o3}
+
+\oef{h1-o4}
+
+\oef{h1-o6}
+
+\oef{h1-o7}
+
+\oef{h1-o11}
+
+\oef{h1-o8}
+
+\oef{h1-o12}
+
+\oef{h1-o9}
+
+\oef{h1-o13}
+
+\oef{h1-o10}
+
+\oef{h1-o14}
+
+\oef{h1-o15}
+
+\oef{h1-o16}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+% KOPPEL: verbanden met andere leerstof
+%----------------------------------------------------------------------------------------
+\needspace{20\baselineskip}
+\opdrachtsectie{Koppel}
+
+\lkr{Matrices en Algemene functies staan in het 5de jaar, deze cursus in het 6de. Het midden van een lijnstuk en het inproduct kennen de leerlingen uit de 2de graad.}
+
+\begin{oefeningen}
+\oef{h1-koppel-1}
+
+\oef{h1-koppel-2}
+
+\oef{h1-koppel-3}
+\end{oefeningen}
+
+%----------------------------------------------------------------------------------------
+\opdrachtsectie{Test jezelf}
+
+\begin{oefeningen}
+\oef{h1-t1}
+
+\oef{h1-t2}
+
+\oef{h1-t3}
+
+\oef{h1-t4}
+
+\oef{h1-t5}
+
+\oef{h1-t6}
+
+\oef{h1-t7}
+\end{oefeningen}
+
+\herhaalschema{%
+  \fv{oef:h1-t1}{vb:h1-gemiddelde}{oef:h1-bewerking}%
+  \fv{oef:h1-t2}{vb:h1-tabel}{oef:h1-tabel}%
+  \fv{oef:h1-t3}{vb:h1-assoc}{oef:h1-assoc}%
+  \fv{oef:h1-t4}{vb:h1-comm}{oef:h1-comm}%
+  \fv{oef:h1-t5}{vb:h1-invers}{oef:h1-neutraal-invers}%
+  \fv{oef:h1-t6}{vb:h1-inverstabel}{oef:h1-o3}%
+  \fv{oef:h1-t7}{vb:h1-geenneutraal}{oef:h1-o5}}
+
+\ifzelfstudie
+\section*{Maak je eigen samenvatting}
+Sluit dit boek en schrijf in je schrift: wat een bewerking is, hoe je een bewerkingstabel leest, wat associatief, commutatief, een neutraal element en een invers element betekenen, en hoe je elk van die eigenschappen bewijst of weerlegt. Schrijf bij elke eigenschap een voorbeeld en een tegenvoorbeeld. Vergelijk daarna met de kaders.
+\fi
