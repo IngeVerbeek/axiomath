@@ -21,10 +21,40 @@ Wiskunde spreekt een precieze taal. In het dagelijkse leven betekent \textit{of}
 \lkr{Laat oefening \ref{oef:h1-verken} maken vóór de uitleg. Het verschil tussen een implicatie en haar omgekeerde (vraag b) en de juiste ontkenning (vraag d) zijn de twee kernpunten van het hoofdstuk.}
 
 %========================================================================================
-\section{Uitspraken}
+\section{Uitspraken}\label{sec:h1-uitspraken}
+
+\subsection{Uitspraken en open zinnen}
+
+Wiskunde bestaat uit beweringen die je kunt controleren: \textit{7 is een priemgetal}, \textit{elk vierkant is een rechthoek}. Elke bewering is waar of vals, nooit allebei en nooit geen van beide. Zo'n bewering is de bouwsteen van alles wat volgt.
 
 \begin{theorie}
-Een \textbf{\textcolor{accent}{uitspraak}} is een bewering die waar of vals is. Uit uitspraken $p$ en $q$ maak je nieuwe:
+Een \textbf{\textcolor{accent}{uitspraak}} is een bewering die waar of vals is.
+
+\vspace{1mm}
+Een \textbf{\textcolor{accent}{open zin}} is een bewering met een letter, waarvan de waarheid afhangt van de waarde van die letter.
+\end{theorie}
+
+Een open zin noteer je vaak als $P(x)$ of $P(n)$. Hij wordt een uitspraak als je een waarde invult, of als je er een kwantor voor zet zoals \textit{voor elke $x$} of \textit{er is een $x$} (sectie~\ref{sec:h1-kwantoren}). Een vraag of een bevel is geen uitspraak: \textit{los op} is waar noch vals.
+
+\voorbeeld{}{Is $x^2 - 5x + 6 = 0$ een uitspraak? Maak er een ware en een valse uitspraak van.\label{vb:h1-openzin}}{%
+\uitleg{Of de gelijkheid klopt, hangt af van $x$: het is een open zin. Een waarde invullen maakt er een uitspraak van.}
+\begin{stappen}
+x^2 - 5x + 6 = (x - 2)(x - 3) & De open zin is waar voor $x = 2$ en $x = 3$, en vals voor elke andere $x$. \\[1ex]
+2^2 - 5 \cdot 2 + 6 = 0\colon \ \text{waar} & Vul $x = 2$ in. \\[1ex]
+0^2 - 5 \cdot 0 + 6 = 0\colon \ \text{vals} & Vul $x = 0$ in: $6 \neq 0$.
+\end{stappen}
+Met een kwantor kan het ook: \textit{er is een reëel getal $x$ met $x^2 - 5x + 6 = 0$} is een ware uitspraak.}
+
+\begin{oefeningen}
+\oef{h1-openzin}
+\end{oefeningen}
+
+\subsection{Niet, en, of}
+
+Uit uitspraken bouw je nieuwe met de woorden \textit{niet}, \textit{en} en \textit{of}. Of de nieuwe uitspraak waar is, hangt alleen af van de waarheid van de delen. Bij \textit{of} moet je daarbij opletten: in de wiskunde sluit het \textit{beide} niet uit.
+
+\begin{theorie}
+Uit uitspraken $p$ en $q$ maak je nieuwe uitspraken:
 
 \vspace{1mm}
 {\centering\arrayrulecolor{accent}\renewcommand{\arraystretch}{1.45}%
@@ -37,23 +67,92 @@ disjunctie & $\formule{p \of q}$ & minstens één van beide waar is (eventueel b
 \end{tabular}\par}
 \end{theorie}
 
-Een zin als $x + 2 = 5$ is geen uitspraak: of ze waar is, hangt af van $x$. Zo'n zin heet een \textbf{open zin}. Vul je een waarde in, of zet je er een kwantor voor (sectie 3), dan wordt het een uitspraak.
+\naast{\begin{minipage}{9.4cm}
+Je leest $\niet p$ als \textit{niet $p$}, $p \en q$ als \textit{$p$ en $q$}, en $p \of q$ als \textit{$p$ of $q$}. Er zijn maar vier combinaties van waarheidswaarden voor $p$ en $q$. Zet je ze onder elkaar, met W voor waar en V voor vals, dan krijg je een \textbf{waarheidstabel}. Die rechts vat het kader samen. We gebruiken altijd de volgorde WW, WV, VW, VV.
+\end{minipage}}{{\arrayrulecolor{accent}\renewcommand{\arraystretch}{1.2}%
+\begin{tabular}{|c|c|c|c|c|}\hline
+$p$ & $q$ & $\niet p$ & $p \en q$ & $p \of q$ \\ \hline
+W & W & V & W & W \\ \hline
+W & V & V & V & W \\ \hline
+V & W & W & V & W \\ \hline
+V & V & W & V & V \\ \hline
+\end{tabular}}}
 
-Je leest $\niet p$ als \textit{niet $p$}, $p \en q$ als \textit{$p$ en $q$}, en $p \of q$ als \textit{$p$ of $q$}. Het wiskundige \textit{of} sluit \textit{beide} niet uit.
+\voorbeeld{}{Neem $p$: \textit{91 is een priemgetal} en $q$: \textit{91 is oneven}. Is $\niet p \en q$ waar? En $p \of \niet q$?\label{vb:h1-connectieven}}{%
+\uitleg{Bepaal eerst de waarheid van $p$ en $q$ zelf. Daarna volg je het kader, van binnen naar buiten.}
+\begin{stappen}
+p \text{ is vals},\ q \text{ is waar} & $91 = 7 \cdot 13$ is geen priemgetal, en 91 is oneven. \\[1ex]
+\niet p \en q\colon \ \text{waar} & $\niet p$ en $q$ zijn allebei waar. In woorden: \textit{91 is geen priemgetal en 91 is oneven}. \\[1ex]
+p \of \niet q\colon \ \text{vals} & $p$ en $\niet q$ zijn allebei vals.
+\end{stappen}}
 
 \begin{oefeningen}
 \oef{h1-open}
 \end{oefeningen}
 
+\subsection{Gelijkwaardige uitspraken}
+
+Twee zinnen kunnen er anders uitzien en toch hetzelfde zeggen: \textit{het is niet waar dat 91 even is} en \textit{91 is oneven}. Met een waarheidstabel controleer je dat voor samengestelde uitspraken.
+
 \begin{theorie}
-\begin{stelling}{Wetten van De Morgan}
-\qquad $\formule{\niet(p \en q) \asa (\niet p \of \niet q)} \qquad \formule{\niet(p \of q) \asa (\niet p \en \niet q)}$
+Twee samengestelde uitspraken zijn \textbf{\textcolor{accent}{gelijkwaardig}} als ze voor elke combinatie van waarheidswaarden van hun delen dezelfde waarheidswaarde hebben. Notatie: $\formule{\ldots \asa \ldots}$
+\end{theorie}
+
+Het teken $\asa$ komt terug in sectie~\ref{sec:h1-implicatie}: twee uitspraken zijn gelijkwaardig als hun equivalentie altijd waar is.
+
+Zo is $\niet(\niet p) \asa p$: twee keer ontkennen geeft de oorspronkelijke uitspraak. Gelijkwaardige uitspraken mag je altijd door elkaar vervangen. Dat doe je bij elk bewijs in hoofdstuk 2.
+
+\voorbeeld{}{Zijn $\niet(p \en q)$ en $\niet p \en \niet q$ gelijkwaardig?\label{vb:h1-gelijkwaardig}}{%
+\naast{\begin{minipage}{8.2cm}
+\uitleg{Maak een waarheidstabel met een kolom voor elke tussenstap, en vergelijk de twee laatste kolommen rij per rij.}
+In de rijen WV en VW verschillen ze: $\niet(p \en q)$ is waar, $\niet p \en \niet q$ is vals. Ze zijn dus \textbf{niet} gelijkwaardig.
+
+Met woorden: \textit{het is niet waar dat ik de trein en de bus neem} klopt ook als ik alleen de trein neem. \textit{Ik neem de trein niet en de bus niet} klopt dan niet.
+\end{minipage}}{{\arrayrulecolor{accent}\renewcommand{\arraystretch}{1.2}%
+\begin{tabular}{|c|c|c|c|c|}\hline
+$p$ & $q$ & $p \en q$ & $\niet(p \en q)$ & $\niet p \en \niet q$ \\ \hline
+W & W & W & V & V \\ \hline
+W & V & V & \textbf{W} & \textbf{V} \\ \hline
+V & W & V & \textbf{W} & \textbf{V} \\ \hline
+V & V & V & W & W \\ \hline
+\end{tabular}}}}
+
+\begin{werkwijze}
+Maak een waarheidstabel met de vier rijen WW, WV, VW, VV, en een kolom voor elk deel van de uitspraken. Zijn de kolommen van de twee uitspraken in elke rij gelijk, dan zijn ze gelijkwaardig. Verschillen ze in één rij, dan niet: die rij is een tegenvoorbeeld.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h1-tabel}
+\end{oefeningen}
+
+\subsection{De wetten van De Morgan}
+
+Voorbeeld~\ref{vb:h1-gelijkwaardig} toont dat je een \textit{en} niet ontkent door elk deel te ontkennen en het \textit{en} te laten staan. Wat is dan wel de ontkenning? Ontkennen heb je bij elk bewijs uit het ongerijmde nodig, dus het moet precies kloppen.
+
+\begin{theorie}
+\begin{stelling}{Eerste wet van De Morgan}
+\qquad $\formule{\niet(p \en q) \asa \niet p \of \niet q}$
 \end{stelling}
 
 \begin{bewijs}
-$p \en q$ is vals als minstens één van beide vals is, dus als $\niet p \of \niet q$ waar is. $p \of q$ is vals als geen van beide waar is, dus als $\niet p$ en $\niet q$ allebei waar zijn.
+We vergelijken de twee uitspraken in de vier mogelijke gevallen.
+
+\vspace{1mm}
+{\centering\arrayrulecolor{accent}\renewcommand{\arraystretch}{1.2}%
+\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+$p$ & $q$ & $p \en q$ & $\niet(p \en q)$ & $\niet p$ & $\niet q$ & $\niet p \of \niet q$ \\ \hline
+W & W & W & V & V & V & V \\ \hline
+W & V & V & W & V & W & W \\ \hline
+V & W & V & W & W & V & W \\ \hline
+V & V & V & W & W & W & W \\ \hline
+\end{tabular}\par}
+
+\vspace{1mm}
+De kolommen van $\niet(p \en q)$ en $\niet p \of \niet q$ zijn in elke rij gelijk.
 \end{bewijs}
 \end{theorie}
+
+Om te weerleggen dat twee dingen allebei gelden, volstaat het dat één van de twee niet geldt. De ontkenning van \textit{en} is dus een \textit{of}.
 
 \voorbeeld{}{Ontken de uitspraak \textit{het getal is even en groter dan 10}.\label{vb:h1-demorgan}}{%
 \uitleg{De ontkenning van \textit{en} is een \textit{of} van de ontkenningen (De Morgan). Niet: \textit{het getal is oneven en kleiner dan 10}.}
@@ -62,39 +161,111 @@ $p \en q$ is vals als minstens één van beide vals is, dus als $\niet p \of \ni
 \text{het getal is oneven, of het is hoogstens 10} & De ontkenning van \textit{groter dan 10} is \textit{hoogstens 10}, niet \textit{kleiner dan 10}.
 \end{stappenbreed}}
 
-\begin{oefeningen}
-\oef{h1-uitspraak}
+Voor een \textit{of} geldt hetzelfde, met de rollen omgekeerd. Deze keer bewijzen we het met een redenering in plaats van een tabel.
 
+\begin{theorie}
+\begin{stelling}{Tweede wet van De Morgan}
+\qquad $\formule{\niet(p \of q) \asa \niet p \en \niet q}$
+\end{stelling}
+
+\begin{bewijs}
+$\niet(p \of q)$ is waar als $p \of q$ vals is. Een disjunctie is alleen vals als geen van beide delen waar is, dus als $p$ vals en $q$ vals is. Dat betekent: $\niet p$ en $\niet q$ zijn allebei waar, dus $\niet p \en \niet q$ is waar. Zo zijn beide uitspraken in precies dezelfde gevallen waar.
+\end{bewijs}
+\end{theorie}
+
+Om te weerleggen dat minstens één van twee dingen geldt, moet je aantonen dat geen van beide geldt.
+
+\voorbeeld{}{Ontken $x < -1$ of $x \geqslant 4$, en schrijf het resultaat zo eenvoudig mogelijk.\label{vb:h1-demorgan-of}}{%
+\uitleg{De ontkenning van \textit{of} is een \textit{en} van de ontkenningen. Een ongelijkheid ontken je door het teken om te keren, met of zonder gelijkheid.}
+\begin{stappen}
+\niet(p \of q) \asa \niet p \en \niet q & De tweede wet van De Morgan. \\[1ex]
+x \geqslant -1 \ \text{en} \ x < 4 & De ontkenning van $x < -1$ is $x \geqslant -1$, die van $x \geqslant 4$ is $x < 4$. \\[1ex]
+-1 \leqslant x < 4 & Samen: het interval $[-1, 4[$.
+\end{stappen}}
+
+\begin{werkwijze}
+Om \textit{en} of \textit{of} te ontkennen: ontken elk deel, en vervang \textit{en} door \textit{of}, of omgekeerd. Ontken een ongelijkheid door het teken om te keren: de ontkenning van $<$ is $\geqslant$, die van $>$ is $\leqslant$.
+\end{werkwijze}
+
+\begin{oefeningen}
 \oef{h1-demorgan}
+
+\oef{h1-uitspraak}
 \end{oefeningen}
 
 %========================================================================================
-\section{Implicatie en equivalentie}
+\section{Implicatie en equivalentie}\label{sec:h1-implicatie}
 
 \subsection{Als \ldots{} dan}
 
-De meeste stellingen hebben de vorm \textit{als \ldots, dan \ldots}: \textit{als een driehoek rechthoekig is, dan geldt de stelling van Pythagoras}. Wanneer is zo'n uitspraak waar?
+De meeste stellingen hebben de vorm \textit{als \ldots, dan \ldots}: \textit{als een driehoek rechthoekig is, dan geldt de stelling van Pythagoras}. Wanneer is zo'n uitspraak waar? Ze belooft iets voor het geval dat het eerste deel waar is. Ze is alleen gelogen als het eerste deel waar is en het tweede niet.
 
 \begin{theorie}
 De \textbf{\textcolor{accent}{implicatie}} $\formule{p \dan q}$ (\textit{als $p$, dan $q$}) is alleen vals als $p$ waar is en $q$ vals.
+\end{theorie}
 
-\vspace{1mm}
+\naast{\begin{minipage}{10.6cm}
+Een implicatie $p \dan q$ zegt niets over het geval dat $p$ vals is: dan is ze altijd waar. \textit{Als het regent, neem ik een paraplu} is niet gelogen als je een paraplu neemt terwijl het droog is, en ook niet als je er geen neemt terwijl het droog is.
+\end{minipage}}{{\arrayrulecolor{accent}\renewcommand{\arraystretch}{1.2}%
+\begin{tabular}{|c|c|c|}\hline
+$p$ & $q$ & $p \dan q$ \\ \hline
+W & W & W \\ \hline
+W & V & V \\ \hline
+V & W & W \\ \hline
+V & V & W \\ \hline
+\end{tabular}}}
+
+\voorbeeld{}{Neem $p$: \textit{$x > 3$} en $q$: \textit{$x^2 > 9$}. Is $p \dan q$ waar voor $x = 5$, $x = 1$ en $x = -4$?\label{vb:h1-als}}{%
+\uitleg{Bepaal voor elke waarde eerst $p$ en $q$, en kijk dan in de tabel.}
+\begin{stappen}
+x = 5\colon \ p \text{ waar},\ q \text{ waar} & $25 > 9$: de implicatie is waar. \\[1ex]
+x = 1\colon \ p \text{ vals},\ q \text{ vals} & Het eerste deel is vals: de implicatie is waar. \\[1ex]
+x = -4\colon \ p \text{ vals},\ q \text{ waar} & $16 > 9$, maar $-4 \leqslant 3$: ook nu is de implicatie waar.
+\end{stappen}
+Er is geen $x$ met $x > 3$ en $x^2 \leqslant 9$, dus $p \dan q$ is waar voor elke $x$.}
+
+\begin{oefeningen}
+\oef{h1-als}
+\end{oefeningen}
+
+\subsection{Nodige en voldoende voorwaarde}
+
+Een implicatie kun je ook in termen van voorwaarden zeggen. Weet je dat $p$ waar is, dan volstaat dat om te besluiten dat $q$ waar is. Omgekeerd kan $p$ niet waar zijn zonder $q$: $q$ is nodig.
+
+\begin{theorie}
 Bij $p \dan q$ heet $p$ een \textbf{\textcolor{accent}{voldoende voorwaarde}} voor $q$, en $q$ een \textbf{\textcolor{accent}{nodige voorwaarde}} voor $p$.
+\end{theorie}
 
-\vspace{1mm}
-De \textbf{\textcolor{accent}{omgekeerde}} van $p \dan q$ is $q \dan p$. De \textbf{\textcolor{accent}{contrapositie}} van $p \dan q$ is $\niet q \dan \niet p$.
+\voorbeeld{}{Gegeven: \textit{als een getal deelbaar is door 12, dan is het deelbaar door 4}. Formuleer met \textit{voldoende} en \textit{nodig}. Is deelbaar zijn door 4 ook voldoende?\label{vb:h1-voorwaarde}}{%
+\uitleg{Het deel na \textit{als} is voldoende, het deel na \textit{dan} is nodig.}
+\begin{stappen}
+\text{deelbaar door 12 is voldoende} & Wie deelbaar is door 12, is zeker deelbaar door 4. \\[1ex]
+\text{deelbaar door 4 is nodig} & Een getal dat niet deelbaar is door 4, is ook niet deelbaar door 12. \\[1ex]
+\text{deelbaar door 4 is niet voldoende} & 8 is deelbaar door 4, maar niet door 12.
+\end{stappen}}
+
+\begin{oefeningen}
+\oef{h1-voorwaarde}
+\end{oefeningen}
+
+\subsection{Omgekeerde en contrapositie}\label{sec:h1-contrapositie}
+
+Bij een implicatie horen twee andere implicaties met dezelfde delen. De ene zegt hetzelfde, de andere niet, en het is een klassieke fout om ze te verwarren.
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{omgekeerde}} van $p \dan q$ is $\formule{q \dan p}$. De \textbf{\textcolor{accent}{contrapositie}} van $p \dan q$ is $\formule{\niet q \dan \niet p}$.
 
 \begin{stelling}{Contrapositie}
 \qquad $\formule{(p \dan q) \asa (\niet q \dan \niet p)}$
 \end{stelling}
 
 \begin{bewijs}
-$p \dan q$ is alleen vals als $p$ waar en $q$ vals is. $\niet q \dan \niet p$ is alleen vals als $\niet q$ waar en $\niet p$ vals is, dus ook als $q$ vals en $p$ waar is. Ze zijn dus in precies dezelfde gevallen vals.
+$p \dan q$ is alleen vals als $p$ waar en $q$ vals is. $\niet q \dan \niet p$ is alleen vals als $\niet q$ waar en $\niet p$ vals is, dus ook alleen als $q$ vals en $p$ waar is. Ze zijn dus in precies hetzelfde geval vals, en in alle andere gevallen waar.
 \end{bewijs}
 \end{theorie}
 
 \naast{\begin{minipage}{9.6cm}
-Een implicatie $p \dan q$ zegt niets over het geval dat $p$ vals is: dan is ze altijd waar. \textit{Als het regent, neem ik een paraplu} is niet gelogen als je een paraplu neemt terwijl het droog is.
+De omgekeerde is niet gelijkwaardig: is $p$ vals en $q$ waar, dan is $p \dan q$ waar en $q \dan p$ vals.
 
 Met verzamelingen: is elk element van $P$ ook een element van $Q$, dan geldt \textit{$x \in P \dan x \in Q$}. Wie buiten $Q$ valt, valt ook buiten $P$: dat is de contrapositie. Maar wie in $Q$ zit, zit niet noodzakelijk in $P$: de omgekeerde kan vals zijn.
 \end{minipage}}{\begin{tikzpicture}[font=\small]
@@ -106,24 +277,12 @@ Met verzamelingen: is elk element van $P$ ook een element van $Q$, dan geldt \te
 \end{tikzpicture}}
 
 \voorbeeld{}{Gegeven: \textit{als $n$ deelbaar is door 4, dan is $n$ even}. Is ze waar? Geef de omgekeerde en de contrapositie, en zeg of die waar zijn.\label{vb:h1-implicatie}}{%
-\uitleg{We onderzoeken elke uitspraak apart. Een implicatie die je wilt weerleggen, weerleg je met één geval waarin $p$ waar is en $q$ vals.}
-\begin{stappenbreed}
+\uitleg{We onderzoeken elke uitspraak apart, en weerleggen een valse met één geval waarin het eerste deel waar is en het tweede vals.}
+\begin{stappen}
 4 \deelt n \dan 2 \deelt n: \ \text{waar} & Is $n = 4k$, dan is $n = 2 \cdot 2k$. \\[1ex]
 2 \deelt n \dan 4 \deelt n: \ \text{vals} & De omgekeerde. Tegenvoorbeeld: 6 is even, maar niet deelbaar door 4. \\[1ex]
 n \text{ oneven} \dan 4 \nmid n: \ \text{waar} & De contrapositie: even waar als de oorspronkelijke.
-\end{stappenbreed}}
-
-\begin{oefeningen}
-\oef{h1-voorwaarde}
-\end{oefeningen}
-
-\subsection{Als en slechts als}
-
-\begin{theorie}
-De \textbf{\textcolor{accent}{equivalentie}} $\formule{p \asa q}$ (\textit{$p$ als en slechts als $q$}) betekent: $p \dan q$ én $q \dan p$. Ze is waar als $p$ en $q$ allebei waar of allebei vals zijn.
-\end{theorie}
-
-Wie een equivalentie bewijst, bewijst twee implicaties: \textit{als} en \textit{slechts als}. Een definitie is altijd een equivalentie, ook als er alleen \textit{als} staat: \textit{een getal is even als het deelbaar is door 2}.
+\end{stappen}}
 
 \begin{werkwijze}
 Bij een implicatie $p \dan q$: vraag je af of $q$ altijd volgt als $p$ waar is. Verwar ze niet met de omgekeerde $q \dan p$, die vals kan zijn. De contrapositie $\niet q \dan \niet p$ is altijd even waar. Om een implicatie te weerleggen, zoek je één geval met $p$ waar en $q$ vals.
@@ -131,43 +290,113 @@ Bij een implicatie $p \dan q$: vraag je af of $q$ altijd volgt als $p$ waar is. 
 
 \begin{oefeningen}
 \oef{h1-implicatie}
+\end{oefeningen}
 
+\subsection{Als en slechts als}
+
+Soms is ook de omgekeerde waar. Dan is elk van $p$ en $q$ nodig én voldoende voor het andere.
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{equivalentie}} $\formule{p \asa q}$ (\textit{$p$ als en slechts als $q$}) betekent: $p \dan q$ én $q \dan p$. Ze is waar als $p$ en $q$ allebei waar of allebei vals zijn.
+\end{theorie}
+
+Wie een equivalentie bewijst, bewijst twee implicaties: \textit{als} en \textit{slechts als}; is er één vals, dan is de equivalentie vals. Een definitie is altijd een equivalentie, ook als er alleen \textit{als} staat: \textit{een getal is even als het deelbaar is door 2}.
+
+\voorbeeld{}{Is de uitspraak waar: \textit{een driehoek met zijden $a \leqslant b \leqslant c$ is rechthoekig als en slechts als $a^2 + b^2 = c^2$}?\label{vb:h1-equivalentie}}{%
+\uitleg{Splits de equivalentie in twee implicaties en onderzoek elk.}
+\begin{stappen}
+\text{rechthoekig} \dan a^2 + b^2 = c^2\colon \ \text{waar} & De stelling van Pythagoras: $c$ is de schuine zijde, want die is de langste. \\[1ex]
+a^2 + b^2 = c^2 \dan \text{rechthoekig}\colon \ \text{waar} & De omgekeerde stelling van Pythagoras.
+\end{stappen}
+Beide implicaties zijn waar, dus de equivalentie is waar.}
+
+\begin{oefeningen}
 \oef{h1-equivalentie}
 \end{oefeningen}
 
 %========================================================================================
-\section{Kwantoren}
+\section{Kwantoren}\label{sec:h1-kwantoren}
+
+\subsection{Voor alle en er bestaat}
+
+Een open zin zoals $n^2 \geqslant n$ wordt een uitspraak als je zegt voor welke $n$ hij moet gelden: voor allemaal, of voor minstens één. Daarvoor dienen de kwantoren.
 
 \begin{theorie}
 De \textbf{\textcolor{accent}{universele kwantor}} $\formule{\forall}$ betekent \textit{voor alle}, de \textbf{\textcolor{accent}{existentiële kwantor}} $\formule{\exists}$ betekent \textit{er bestaat (minstens één)}.
-
-\begin{stelling}{Negatie van kwantoren}
-\qquad $\formule{\niet\bigl(\forall x\colon P(x)\bigr) \asa \exists x\colon \niet P(x)} \qquad \formule{\niet\bigl(\exists x\colon P(x)\bigr) \asa \forall x\colon \niet P(x)}$
-\end{stelling}
 \end{theorie}
 
-\textit{Niet alle zwanen zijn wit} betekent \textit{er is minstens één zwaan die niet wit is}, en niet \textit{geen enkele zwaan is wit}. Om een uitspraak met $\forall$ te weerleggen, volstaat dus één voorbeeld waarvoor ze niet klopt: een \textbf{tegenvoorbeeld}. Om een uitspraak met $\exists$ te bewijzen, volstaat ook één voorbeeld.
+Je leest $\forall n \in \N\colon n^2 \geqslant n$ als \textit{voor elk natuurlijk getal $n$ is $n^2 \geqslant n$}. Om een uitspraak met $\exists$ te bewijzen, volstaat één voorbeeld. Een uitspraak met $\forall$ bewijs je niet met voorbeelden: daarvoor heb je een redenering nodig, zoals in hoofdstuk 2. Klopt ze voor één waarde niet, dan is ze wel vals.
 
-De volgorde van kwantoren is belangrijk. Vergelijk, met natuurlijke getallen:
+\voorbeeld{}{Schrijf \textit{er is een natuurlijk getal $n$ met $2^n = n^2$} met een kwantor. Is het waar?\label{vb:h1-kwantor}}{%
+\uitleg{\textit{Er is} wordt $\exists$. Om het te bewijzen, volstaat één natuurlijk getal dat werkt.}
+\begin{stappen}
+\exists n \in \N\colon 2^n = n^2 & Het symbool $\exists$ met de verzameling erbij. \\[1ex]
+n = 2\colon \ 2^2 = 4 = 2^2 & Eén voorbeeld volstaat: de uitspraak is waar. Ook $n = 4$ werkt: $16 = 16$.
+\end{stappen}}
 
-\figuren{\renewcommand{\arraystretch}{1.5}\begin{tabular}{l|l|c}
-$\forall n\ \exists m\colon m > n$ & bij elk getal is er een groter getal & waar \\ \hline
-$\exists m\ \forall n\colon m > n$ & er is een getal dat groter is dan alle getallen & vals
-\end{tabular}}
+\begin{oefeningen}
+\oef{h1-kwantor}
+\end{oefeningen}
 
-In de eerste uitspraak mag $m$ afhangen van $n$ (neem $m = n + 1$). In de tweede moet één vaste $m$ voor alle $n$ werken, en die bestaat niet.
+\subsection{De volgorde van kwantoren}
+
+Staan er twee kwantoren na elkaar, dan is hun volgorde belangrijk. Het verschil zie je het best aan twee uitspraken die er bijna hetzelfde uitzien.
+
+\voorbeeld{}{Vergelijk, met $n, m \in \N$: \quad $\forall n\ \exists m\colon m > n$ \quad en \quad $\exists m\ \forall n\colon m > n$.\label{vb:h1-volgorde}}{%
+\uitleg{Lees de kwantoren van links naar rechts. Wat later komt, mag afhangen van wat ervoor staat.}
+\begin{stappen}
+\forall n\ \exists m\colon m > n\colon \ \text{waar} & Bij elk getal is er een groter getal. Hier mag $m$ afhangen van $n$: neem $m = n + 1$. \\[1ex]
+\exists m\ \forall n\colon m > n\colon \ \text{vals} & Er is één getal dat groter is dan alle getallen. Voor $n = m$ is $m > n$ vals, welke $m$ je ook kiest.
+\end{stappen}}
 
 \begin{oefeningen}
 \oef{h1-volgorde}
 \end{oefeningen}
 
+\subsection{Kwantoren ontkennen}\label{sec:h1-ontkennen}
+
+\textit{Niet alle zwanen zijn wit} betekent \textit{er is minstens één zwaan die niet wit is}, en niet \textit{geen enkele zwaan is wit}. Bij het ontkennen wordt \textit{alle} dus \textit{er is}, en omgekeerd.
+
+\begin{theorie}
+\begin{stelling}{Ontkenning van voor alle}
+\qquad $\formule{\niet\bigl(\forall x\colon P(x)\bigr) \asa \exists x\colon \niet P(x)}$
+\end{stelling}
+
+\begin{bewijs}
+$\niet\bigl(\forall x\colon P(x)\bigr)$ is waar als $\forall x\colon P(x)$ vals is, dus als niet elke $x$ voldoet aan $P(x)$. Dat betekent dat er minstens één $x$ is waarvoor $P(x)$ vals is, dus waarvoor $\niet P(x)$ waar is.
+\end{bewijs}
+
+\begin{stelling}{Ontkenning van er bestaat}
+\qquad $\formule{\niet\bigl(\exists x\colon P(x)\bigr) \asa \forall x\colon \niet P(x)}$
+\end{stelling}
+
+\begin{bewijs}
+$\niet\bigl(\exists x\colon P(x)\bigr)$ is waar als er geen enkele $x$ is waarvoor $P(x)$ waar is. Dat betekent dat $P(x)$ vals is voor elke $x$, dus dat $\niet P(x)$ waar is voor elke $x$.
+\end{bewijs}
+\end{theorie}
+
+Een kwantor is in feite een lange \textit{en} of een lange \textit{of}. Kan $x$ alleen $a$ of $b$ zijn, dan is $\forall x\colon P(x)$ hetzelfde als $P(a) \en P(b)$, en De Morgan geeft als ontkenning $\niet P(a) \of \niet P(b)$: dat is $\exists x\colon \niet P(x)$.
+
+Om een uitspraak met $\forall$ te weerleggen, volstaat dus één voorbeeld waarvoor ze niet klopt: een \textbf{tegenvoorbeeld}. Gaat het om $\forall x\colon P(x) \dan Q(x)$, dan is een tegenvoorbeeld een $x$ met $P(x)$ waar en $Q(x)$ vals, want alleen dan is de implicatie vals.
+
+\voorbeeld{}{Ontken \textit{elk priemgetal is oneven}. Is de uitspraak of haar ontkenning waar?\label{vb:h1-negatie-alle}}{%
+\uitleg{De uitspraak is een $\forall$-uitspraak. Haar ontkenning is een $\exists$-uitspraak, die je met één voorbeeld bewijst.}
+\begin{stappen}
+\forall p\colon p \text{ priem} \dan p \text{ oneven} & De uitspraak met een kwantor. \\[1ex]
+\exists p\colon p \text{ priem en } p \text{ even} & De ontkenning: \textit{er is een even priemgetal}. \\[1ex]
+p = 2 & 2 is priem en even. De ontkenning is waar, de uitspraak vals.
+\end{stappen}}
+
+Bij een uitspraak met meer kwantoren pas je de stellingen toe van links naar rechts: elke kwantor wisselt, en de ontkenning schuift telkens één plaats op tot ze bij de bewering staat.
+
 \voorbeeld{}{Schrijf de uitspraak \textit{elke leerling heeft een vriend in de klas} met kwantoren, ontken ze, en zeg de ontkenning in woorden.\label{vb:h1-kwantoren}}{%
 \uitleg{We schrijven \textit{elke} als $\forall$ en \textit{een} als $\exists$. Bij het ontkennen wisselen de kwantoren, en wordt het laatste deel ontkend.}
-\begin{stappenbreed}
+\begin{stappen}
 \forall l\ \exists v\colon v \text{ is een vriend van } l & $l$ en $v$ zijn leerlingen van de klas. \\[1ex]
-\exists l\ \forall v\colon v \text{ is geen vriend van } l & $\forall$ wordt $\exists$, $\exists$ wordt $\forall$, en de bewering wordt ontkend. \\[1ex]
+\exists l\ \niet\bigl(\exists v\colon v \text{ is een vriend van } l\bigr) & Eerst wisselt $\forall$: de ontkenning schuift naar binnen. \\[1ex]
+\exists l\ \forall v\colon v \text{ is geen vriend van } l & Dan wisselt $\exists$, en wordt de bewering ontkend. \\[1ex]
 \text{er is een leerling zonder vriend in de klas} & In woorden.
-\end{stappenbreed}}
+\end{stappen}}
 
 \begin{werkwijze}
 Om een uitspraak met kwantoren te ontkennen: wissel elke $\forall$ in $\exists$ en omgekeerd, in dezelfde volgorde, en ontken de bewering op het einde. Een $\forall$-uitspraak weerleg je met één tegenvoorbeeld; een $\exists$-uitspraak bewijs je met één voorbeeld.
@@ -281,15 +510,15 @@ Om een uitspraak met kwantoren te ontkennen: wissel elke $\forall$ in $\exists$ 
 \end{oefeningen}
 
 \herhaalschema{%
-  \fv{oef:h1-t1}{vb:h1-demorgan}{oef:h1-uitspraak}%
+  \fv{oef:h1-t1}{vb:h1-demorgan-of}{oef:h1-demorgan}%
   \fv{oef:h1-t2}{vb:h1-implicatie}{oef:h1-implicatie}%
   \fv{oef:h1-t3}{vb:h1-kwantoren}{oef:h1-kwantoren}%
-  \fv{oef:h1-t4}{vb:h1-implicatie}{oef:h1-o3}%
-  \fv{oef:h1-t5}{vb:h1-implicatie}{oef:h1-voorwaarde}%
-  \fv{oef:h1-t6}{vb:h1-kwantoren}{oef:h1-volgorde}%
-  \fv{oef:h1-t7}{vb:h1-demorgan}{oef:h1-open}}
+  \fv{oef:h1-t4}{vb:h1-negatie-alle}{oef:h1-o3}%
+  \fv{oef:h1-t5}{vb:h1-voorwaarde}{oef:h1-voorwaarde}%
+  \fv{oef:h1-t6}{vb:h1-volgorde}{oef:h1-volgorde}%
+  \fv{oef:h1-t7}{vb:h1-connectieven}{oef:h1-open}}
 
 \ifzelfstudie
 \section*{Maak je eigen samenvatting}
-Sluit dit boek en schrijf in je schrift: wat een uitspraak en een open zin zijn, de betekenis van $\niet$, $\en$ en $\of$, de wetten van De Morgan, wanneer een implicatie waar is, het verschil tussen de omgekeerde en de contrapositie, nodige en voldoende voorwaarde, de equivalentie, en hoe je kwantoren ontkent. Vergelijk daarna met de kaders.
+Sluit dit boek en schrijf in je schrift: wat een uitspraak en een open zin zijn, de betekenis van $\niet$, $\en$ en $\of$, wanneer twee uitspraken gelijkwaardig zijn, de wetten van De Morgan, wanneer een implicatie waar is, het verschil tussen de omgekeerde en de contrapositie, nodige en voldoende voorwaarde, de equivalentie, en hoe je kwantoren ontkent. Vergelijk daarna met de kaders.
 \fi

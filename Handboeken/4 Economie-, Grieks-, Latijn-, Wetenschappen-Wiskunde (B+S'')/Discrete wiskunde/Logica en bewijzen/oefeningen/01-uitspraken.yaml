@@ -325,6 +325,102 @@
         Ontkenning: $\exists x \in \R\ \forall n \in \Z\colon n \leqslant x$.\\
         In woorden: \textit{er is een reëel getal dat groter is dan of gelijk aan elk geheel getal}.
 
+- id: h1-openzin
+  soort: kort
+  opgave: |-
+    Maak van de open zin, door een waarde in te vullen, een ware en een valse uitspraak, als dat kan. Zet er daarna een kwantor voor, zodat je een ware uitspraak krijgt.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $2n + 1 = 9$, met $n \in \N$
+      antwoord: |-
+        waar voor $n = 4$, vals voor bv. $n = 0$; $\exists n \in \N\colon 2n + 1 = 9$
+      uitwerking: |-
+        $n = 4$: $9 = 9$, waar. $n = 0$: $1 = 9$, vals.\\
+        Ware uitspraak: $\exists n \in \N\colon 2n + 1 = 9$.
+    - opgave: |-
+        $x^2 < x$, met $x \in \R$
+      antwoord: |-
+        waar voor bv. $x = \frac12$, vals voor bv. $x = 2$; $\exists x \in \R\colon x^2 < x$
+      uitwerking: |-
+        $x = \frac12$: $\frac14 < \frac12$, waar. $x = 2$: $4 < 2$, vals.\\
+        Ware uitspraak: $\exists x \in \R\colon x^2 < x$. Met $\forall$ wordt ze vals, want $x = 2$ voldoet niet.
+    - opgave: |-
+        $|x| \geqslant 0$, met $x \in \R$
+      antwoord: |-
+        altijd waar, geen valse uitspraak mogelijk; $\forall x \in \R\colon |x| \geqslant 0$
+      uitwerking: |-
+        Een absolute waarde is nooit negatief: elke waarde geeft een ware uitspraak, een valse uitspraak lukt niet.\\
+        Ware uitspraak: $\forall x \in \R\colon |x| \geqslant 0$ (en dus ook $\exists x \in \R\colon |x| \geqslant 0$).
+
+- id: h1-tabel
+  soort: kort
+  opgave: |-
+    Zijn de twee uitspraken gelijkwaardig? Maak een waarheidstabel.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\niet(p \of q)$ \quad en \quad $\niet p \of \niet q$
+      antwoord: |-
+        niet gelijkwaardig: ze verschillen in de rijen WV en VW
+      uitwerking: |-
+        \begin{tabular}{cc|c|c|c} $p$ & $q$ & $p \of q$ & $\niet(p \of q)$ & $\niet p \of \niet q$ \\ \hline W & W & W & V & V \\ W & V & W & V & W \\ V & W & W & V & W \\ V & V & V & W & W \end{tabular}\\
+        In de rijen WV en VW verschillen de laatste twee kolommen: niet gelijkwaardig.
+    - opgave: |-
+        $p \of (p \en q)$ \quad en \quad $p$
+      antwoord: |-
+        gelijkwaardig
+      uitwerking: |-
+        \begin{tabular}{cc|c|c|c} $p$ & $q$ & $p \en q$ & $p \of (p \en q)$ & $p$ \\ \hline W & W & W & W & W \\ W & V & V & W & W \\ V & W & V & V & V \\ V & V & V & V & V \end{tabular}\\
+        De laatste twee kolommen zijn in elke rij gelijk: gelijkwaardig.
+
+- id: h1-als
+  soort: kort
+  opgave: |-
+    Neem $p$: \textit{$n$ is deelbaar door 3} en $q$: \textit{$n$ is oneven}, met $n \in \N$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Is $p \dan q$ waar voor $n = 9$, $n = 5$, $n = 6$ en $n = 4$?
+      antwoord: |-
+        waar, waar, vals, waar
+      uitwerking: |-
+        $n = 9$: $p$ en $q$ waar, dus waar.\\
+        $n = 5$: $p$ vals, dus waar.\\
+        $n = 6$: $p$ waar en $q$ vals, dus vals.\\
+        $n = 4$: $p$ vals, dus waar.
+    - opgave: |-
+        Is \textit{als $n$ deelbaar is door 3, dan is $n$ oneven} waar voor elk natuurlijk getal $n$?
+      antwoord: |-
+        nee, $n = 6$
+      uitwerking: |-
+        Nee: voor $n = 6$ is het eerste deel waar en het tweede vals.
+
+- id: h1-kwantor
+  soort: kort
+  opgave: |-
+    Schrijf met een kwantor, en zeg of de uitspraak waar is.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Er is een natuurlijk getal waarvan het kwadraat gelijk is aan het dubbel.
+      antwoord: |-
+        $\exists n \in \N\colon n^2 = 2n$; waar
+      uitwerking: |-
+        $\exists n \in \N\colon n^2 = 2n$. Waar: $n = 2$ geeft $4 = 4$ (ook $n = 0$ werkt).
+    - opgave: |-
+        Elk reëel getal is kleiner dan zijn kwadraat.
+      antwoord: |-
+        $\forall x \in \R\colon x < x^2$; vals
+      uitwerking: |-
+        $\forall x \in \R\colon x < x^2$. Vals: voor $x = 1$ is $1 < 1$ vals.
+    - opgave: |-
+        Elk geheel getal is kleiner dan of gelijk aan zijn kwadraat.
+      antwoord: |-
+        $\forall n \in \Z\colon n \leqslant n^2$; waar
+      uitwerking: |-
+        $\forall n \in \Z\colon n \leqslant n^2$. Waar. Is $n \leqslant 0$, dan is $n \leqslant 0 \leqslant n^2$. Is $n \geqslant 1$, dan is $n^2 = n \cdot n \geqslant n \cdot 1 = n$.
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
