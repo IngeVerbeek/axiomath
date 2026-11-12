@@ -153,6 +153,33 @@
         Twee gevallen: geen leerkracht, of precies één.\par
         $\Comb{15}{6} + \Comb{4}{1} \cdot \Comb{15}{5} = 5005 + 4 \cdot 3003 = 17\,017$.
 
+- id: h2-symm
+  soort: kort
+  opgave: |-
+    Gebruik de symmetrie.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $\binom{30}{28}$ en $\binom{100}{97}$ zonder rekentoestel.
+      antwoord: |-
+        $435$; \ $161\,700$
+      uitwerking: |-
+        $\binom{30}{28} = \binom{30}{2} = \frac{30 \cdot 29}{2} = 435$.\par
+        $\binom{100}{97} = \binom{100}{3} = \frac{100 \cdot 99 \cdot 98}{6} = 161\,700$.
+    - opgave: |-
+        Bepaal alle natuurlijke getallen $p$ met $\binom{12}{p} = \binom{12}{4}$.
+      antwoord: |-
+        $p = 4$ of $p = 8$
+      uitwerking: |-
+        $p = 4$ is een oplossing, en met de symmetrie ook $p = 12 - 4 = 8$.\par
+        Andere zijn er niet: in rij 12 van de driehoek stijgen de getallen tot het midden ($p = 6$) en dalen ze daarna, dus elke waarde komt hoogstens twee keer voor.
+    - opgave: |-
+        Een leerkracht zegt: \textit{Er zijn evenveel manieren om 3 van de 10 vragen te kiezen die je overslaat, als om de 7 vragen te kiezen die je beantwoordt.} Leg uit zonder te rekenen.
+      antwoord: |-
+        elke keuze van 3 overgeslagen vragen legt de 7 beantwoorde vast
+      uitwerking: |-
+        Kies je de 3 vragen die je overslaat, dan liggen de 7 die je beantwoordt vast, en omgekeerd. Bij elke keuze van 3 hoort precies één keuze van 7: $\binom{10}{3} = \binom{10}{7} = 120$.
+
 - id: h2-pascal
   soort: kort
   opgave: |-

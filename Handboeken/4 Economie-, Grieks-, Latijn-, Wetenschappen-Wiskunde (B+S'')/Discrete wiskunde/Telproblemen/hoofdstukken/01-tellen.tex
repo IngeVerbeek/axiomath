@@ -20,6 +20,7 @@ Hoeveel pincodes zijn er? Op hoeveel manieren kan een klas een voorzitter en een
 
 \lkr{Laat oefening \ref{oef:h1-verken} maken vóór de uitleg. Vraag a mag met een boomdiagram, maar het patroon (vermenigvuldigen) moet eruit komen. Het verschil tussen b en c is de kern van het hoofdstuk: mag een keuze herhaald worden of niet?}
 
+
 %========================================================================================
 \section{De somregel en de productregel}
 
@@ -36,7 +37,7 @@ Bestaat een keuze uit $k$ stappen na elkaar, met $n_1$ mogelijkheden voor de eer
 \end{stelling}
 \end{theorie}
 
-Het woord \textit{ongeacht} is belangrijk: het aantal mogelijkheden in een stap mag niet afhangen van wat je eerder koos. De keuzes zelf mogen wel verschillen.
+Het woord \textit{ongeacht} is belangrijk: het aantal mogelijkheden in een stap mag niet afhangen van wat je eerder koos. De keuzes zelf mogen wel verschillen. Je kent deze regel uit de 2de graad; hij draagt alle telformules van dit boek. Verderop zie je wat je doet als dat aantal toch afhangt van een vorige keuze.
 
 \voorbeeld{}{Een restaurant heeft 4 voorgerechten, 5 hoofdgerechten en 3 desserts. Hoeveel menu's met één gerecht van elk zijn er?\label{vb:h1-product}}{%
 \uitleg{Een menu kies je in drie stappen. Elk voorgerecht kan met elk hoofdgerecht, en elk van die combinaties met elk dessert.}
@@ -56,29 +57,81 @@ Het boomdiagram toont het begin: elk voorgerecht splitst in 5 takken, en elk hoo
   \foreach \y in {3,2,1}{\node[grijs] at (2.5,\y) {$\cdots$};}
 \end{tikzpicture}}}
 
+\nujij{Hoeveel delers heeft $72 = 2^3 \cdot 3^2$?}{Een deler is $2^a \cdot 3^b$ met $a \in \{0, 1, 2, 3\}$ en $b \in \{0, 1, 2\}$: $4 \cdot 3 = 12$ delers.}
+
 \begin{oefeningen}
 \oef{h1-boom}
+
+\oef{h1-product}
 \end{oefeningen}
 
 \subsection{De somregel}
 
-Soms moet je eerst splitsen in gevallen die elkaar uitsluiten, zoals \textit{een code van 2 letters} of \textit{een code van 3 letters}. Dan tel je elk geval apart, en tel je op.
+Soms moet je eerst splitsen in gevallen die elkaar uitsluiten, zoals \textit{een code van 2 letters} of \textit{een code van 3 letters}. Dan tel je elk geval apart, en tel je op. Met $\#A$ bedoelen we het aantal elementen van een eindige verzameling $A$.
 
 \begin{theorie}
 \begin{stelling}{Somregel}
-Valt een verzameling uiteen in delen $A$ en $B$ zonder gemeenschappelijke elementen, dan is \quad $\formule{\#(A \cup B) = \#A + \#B}$
-\end{stelling}
+Valt een verzameling uiteen in delen $A$ en $B$ zonder gemeenschappelijke elementen, dan is
 
+\vspace{1mm}
+\qquad $\formule{\#(A \cup B) = \#A + \#B}$
+\end{stelling}
+\end{theorie}
+
+Ook deze regel ken je uit de 2de graad. Hij geldt net zo voor meer dan twee delen, zolang geen twee delen een element gemeen hebben.
+
+\voorbeeld{}{Hoeveel codes van 2 of 3 letters (uit 26) zijn er?\label{vb:h1-som}}{%
+\uitleg{Een code heeft 2 letters of 3 letters, nooit allebei: twee gevallen die elkaar uitsluiten. Elk geval tellen we met de productregel.}
+\begin{stappen}
+26^2 = 676 & Codes van 2 letters: 26 mogelijkheden per plaats. \\[1ex]
+26^3 = 17\,576 & Codes van 3 letters. \\[1ex]
+676 + 17\,576 = 18\,252 & Somregel: geen code zit in beide gevallen.
+\end{stappen}}
+
+Met de somregel los je ook het probleem van het woord \textit{ongeacht} op. Hangt het aantal mogelijkheden in een stap af van een vorige keuze, dan splits je volgens die keuze in gevallen. In elk geval ligt het aantal dan wel vast.
+
+\voorbeeld{}{Hoeveel getallen van drie cijfers zijn deelbaar door 5 en hebben drie verschillende cijfers?\label{vb:h1-gevallen}}{%
+\uitleg{Het laatste cijfer is 0 of 5: daar begin je, want die plaats is het strengst. Maar dan hangt het aantal keuzes voor het eerste cijfer af van dat laatste cijfer: het eerste cijfer mag geen 0 zijn, en ook niet gelijk aan het laatste. De productregel werkt dus niet in één keer. We splitsen volgens het laatste cijfer.}
+\begin{stappen}
+\text{laatste } 0: \ 9 \cdot 8 = 72 & Eerste cijfer: 1 tot 9, dus 9 keuzes. Middelste: alles behalve de twee gebruikte, dus 8. \\[1ex]
+\text{laatste } 5: \ 8 \cdot 8 = 64 & Eerste cijfer: niet 0 en niet 5, dus 8 keuzes. Middelste: niet de twee gebruikte, dus 8 (de 0 mag hier wel). \\[1ex]
+72 + 64 = 136 & Somregel: de twee gevallen sluiten elkaar uit.
+\end{stappen}}
+
+Wie het eerste cijfer altijd 8 keuzes geeft, vindt $2 \cdot 8 \cdot 8 = 128$: te weinig, want eindigt het getal op 0, dan zijn er voor het eerste cijfer 9 keuzes.
+
+\begin{oefeningen}
+\oef{h1-somregel}
+
+\oef{h1-gevallen}
+\end{oefeningen}
+
+\subsection{De somregel met overlap}
+
+Overlappen de delen wel, dan klopt de somregel niet meer. Hoeveel getallen van 1 tot 10 zijn even of deelbaar door 3? Er zijn 5 even getallen en 3 veelvouden van 3, maar het antwoord is geen 8: het getal 6 zit in beide groepen en is twee keer geteld. Het juiste antwoord is $5 + 3 - 1 = 7$.
+
+\begin{theorie}
 \begin{stelling}{Somregel met overlap}
 Voor eindige verzamelingen $A$ en $B$ is \quad $\formule{\#(A \cup B) = \#A + \#B - \#(A \cap B)}$
 \end{stelling}
 
 \begin{bewijs}
-In $\#A + \#B$ zijn de elementen van $A \cap B$ twee keer geteld, en alle andere één keer. Trek je $\#(A \cap B)$ af, dan is elk element van $A \cup B$ precies één keer geteld.
+\naast{\begin{minipage}{9.4cm}
+De drie stukken van het venndiagram, $A \setminus B$, $A \cap B$ en $B \setminus A$, hebben twee aan twee geen gemeenschappelijke elementen. Met de somregel is dus
+\bewijsregel{\#A = \#(A \setminus B) + \#(A \cap B), \qquad \#B = \#(B \setminus A) + \#(A \cap B)}
+\bewijsregel{\#(A \cup B) = \#(A \setminus B) + \#(A \cap B) + \#(B \setminus A) .}
+\end{minipage}}{\begin{tikzpicture}[font=\scriptsize]
+  \draw[verz] (0,0) circle (.85);
+  \draw[verz] (1,0) circle (.85);
+  \node at (-.4,0) {$A \setminus B$}; \node at (.5,0) {$A \cap B$}; \node at (1.42,0) {$B \setminus A$};
+  \node[text=accent] at (-.65,.85) {$A$}; \node[text=accent] at (1.65,.85) {$B$};
+\end{tikzpicture}}
+Tel je de eerste twee gelijkheden op, dan staat $\#(A \cap B)$ er één keer te veel:
+\bewijsregel{\#A + \#B - \#(A \cap B) = \#(A \setminus B) + \#(A \cap B) + \#(B \setminus A) = \#(A \cup B) .}
 \end{bewijs}
 \end{theorie}
 
-Met $\#A$ bedoelen we het aantal elementen van $A$. Het venndiagram toont waarom je het stuk in het midden aftrekt.
+In $\#A + \#B$ zijn de elementen van $A \cap B$ dus twee keer geteld, en alle andere één keer. Daarom trek je het stuk in het midden één keer af. Sluiten $A$ en $B$ elkaar uit, dan is $\#(A \cap B) = 0$ en vind je de gewone somregel terug.
 
 \voorbeeld{}{Hoeveel natuurlijke getallen van 1 tot en met 100 zijn deelbaar door 2 of door 5?\label{vb:h1-venn}}{%
 \uitleg{Noem $A$ de veelvouden van 2 en $B$ die van 5. De getallen die in beide zitten, zijn de veelvouden van 10. We gebruiken de somregel met overlap.}
@@ -99,7 +152,21 @@ Met $\#A$ bedoelen we het aantal elementen van $A$. Het venndiagram toont waarom
 \oef{h1-overlap}
 \end{oefeningen}
 
-Vaak is het gemakkelijker om te tellen wat je \textit{niet} wilt, en dat af te trekken van het totaal. Dat is de somregel met $A$ en het complement van $A$.
+\subsection{Het tegendeel tellen}
+
+Vaak is het gemakkelijker om te tellen wat je \textit{niet} wilt, en dat af te trekken van het totaal. Dat is opnieuw de somregel.
+
+\begin{theorie}
+\begin{stelling}{Tegendeel}
+Is $A$ een deel van een eindige verzameling $U$, dan is \quad $\formule{\#(U \setminus A) = \#U - \#A}$
+\end{stelling}
+
+\begin{bewijs}
+$U$ valt uiteen in $A$ en $U \setminus A$, zonder gemeenschappelijke elementen. De somregel geeft $\#U = \#A + \#(U \setminus A)$, waaruit de formule volgt.
+\end{bewijs}
+\end{theorie}
+
+Hier is $U$ alles wat je kunt tellen, en $U \setminus A$ wat overblijft als je $A$ weglaat. De regel loont bij \textit{minstens één}: dat zijn veel gevallen, terwijl het tegendeel, \textit{geen enkele}, één geval is.
 
 \voorbeeld{}{Hoeveel codes van 4 letters (uit 26) bevatten minstens één A?\label{vb:h1-complement}}{%
 \uitleg{\textit{Minstens één A} omvat veel gevallen: één A, twee A's, \ldots{} Het tegendeel is één geval: geen enkele A. We tellen alle codes en trekken die zonder A af.}
@@ -110,56 +177,78 @@ Vaak is het gemakkelijker om te tellen wat je \textit{niet} wilt, en dat af te t
 \end{stappen}}
 
 \begin{werkwijze}
-Splits de keuze in stappen en vermenigvuldig (productregel). Splits in gevallen die elkaar uitsluiten en tel op (somregel); overlappen de gevallen, trek dan het gemeenschappelijke deel af. Bij \textit{minstens één} tel je vaak beter het tegendeel.
+Splits de keuze in stappen en vermenigvuldig (productregel). Hangt het aantal mogelijkheden in een stap af van een vorige keuze, of bestaat de vraag uit gevallen die elkaar uitsluiten, splits dan in gevallen en tel op (somregel); overlappen de gevallen, trek dan het gemeenschappelijke deel af. Bij \textit{minstens één} tel je vaak beter het tegendeel.
 \end{werkwijze}
 
-\nujij{Hoeveel delers heeft $72 = 2^3 \cdot 3^2$?}{Een deler is $2^a \cdot 3^b$ met $a \in \{0, 1, 2, 3\}$ en $b \in \{0, 1, 2\}$: $4 \cdot 3 = 12$ delers.}
-
 \begin{oefeningen}
-\oef{h1-product}
+\oef{h1-tegendeel}
 
 \oef{h1-venn}
-
-\oef{h1-tegendeel}
 \end{oefeningen}
 
 %========================================================================================
-\section{Rijtjes met herhaling}
+\section{Rijtjes}
+
+Bij een pincode, een podium of een rij in de bioscoop kies je elementen in een volgorde: je maakt een rijtje. Twee vragen bepalen hoe je telt: mag een element meer dan eens voorkomen, en kies je alle elementen of maar een deel?
+
+\subsection{Herhalingsvariaties}
 
 Bij een pincode kies je vier keer een cijfer, en een cijfer mag opnieuw voorkomen. Elke plaats heeft dus 10 mogelijkheden. Zo'n geordend rijtje waarin herhaling toegelaten is, heet een herhalingsvariatie.
 
 \begin{theorie}
-Een \textbf{\textcolor{accent}{herhalingsvariatie}} van $p$ elementen uit $n$ is een rijtje van $p$ elementen gekozen uit $n$, waarbij de volgorde belangrijk is en elementen mogen terugkomen. Hun aantal is
+Een \textbf{\textcolor{accent}{herhalingsvariatie}} van $p$ elementen uit $n$ is een rijtje van $p$ elementen gekozen uit $n$, waarbij de volgorde belangrijk is en elementen mogen terugkomen.
 
-\vspace{1mm}
-\qquad $\formule{\HVar{n}{p} = n^p}$
+\begin{stelling}{Aantal herhalingsvariaties}
+Het aantal herhalingsvariaties van $p$ elementen uit $n$ is \quad $\formule{\HVar{n}{p} = n^p}$
+\end{stelling}
+
+\begin{bewijs}
+Vul het rijtje plaats per plaats in: $p$ stappen. Omdat elementen mogen terugkomen, heeft elke stap $n$ mogelijkheden, wat er ook eerder gekozen is. De productregel geeft
+\bewijsregel{\HVar{n}{p} = \underbrace{n \cdot n \cdots n}_{p \text{ factoren}} = n^p .}
+\end{bewijs}
 \end{theorie}
 
-Dat is de productregel met $p$ stappen van elk $n$ mogelijkheden. Je leest $\HVar{n}{p}$ als \textit{het aantal herhalingsvariaties van $p$ uit $n$}.
+Je leest $\HVar{n}{p}$ als \textit{het aantal herhalingsvariaties van $p$ uit $n$}. Het grondtal $n$ is het aantal mogelijkheden per plaats, de exponent $p$ het aantal plaatsen.
 
 \voorbeeld{}{Hoeveel woorden van 5 letters bestaan er, als elk rijtje van letters meetelt, ook zonder betekenis?\label{vb:h1-hervar}}{%
 \uitleg{Elke plaats krijgt een van de 26 letters, en letters mogen herhaald worden. De volgorde telt: ROMAN en MANOR zijn verschillende woorden.}
 \begin{stappen}
-\HVar{26}{5} = 26^5 = 11\,881\,376 & Ongeveer twaalf miljoen.
+\HVar{26}{5} = 26^5 = 11\,881\,376 & Vijf plaatsen met elk 26 mogelijkheden: ongeveer twaalf miljoen.
+\end{stappen}}
+
+Een klassieke fout is $n$ en $p$ verwisselen. Vraag je daarom altijd af wat de plaatsen zijn, en wat je op elke plaats kunt kiezen.
+
+\voorbeeld{}{Drie kinderen kiezen elk een ijsje uit 5 smaken; twee kinderen mogen dezelfde smaak nemen. Hoeveel mogelijkheden zijn er? En bij 5 kinderen en 3 smaken?\label{vb:h1-plaatsen}}{%
+\uitleg{De kinderen zijn de plaatsen: elk kind krijgt één smaak. De smaken zijn de mogelijkheden per plaats, en een smaak mag terugkomen.}
+\begin{stappen}
+\HVar{5}{3} = 5^3 = 125 & 3 kinderen, elk 5 mogelijkheden. \\[1ex]
+\HVar{3}{5} = 3^5 = 243 & Nu 5 kinderen, elk 3 mogelijkheden: een ander antwoord.
 \end{stappen}}
 
 \begin{oefeningen}
 \oef{h1-hervar}
 \end{oefeningen}
 
-%========================================================================================
-\section{Rijtjes zonder herhaling}
-
 \subsection{Variaties}
 
 Kiest een klas een voorzitter, een secretaris en een penningmeester, dan telt de volgorde: wie voorzitter is, maakt uit. Maar niemand kan twee functies krijgen. Bij elke stap is er dus één mogelijkheid minder.
 
 \begin{theorie}
-Een \textbf{\textcolor{accent}{variatie}} van $p$ elementen uit $n$ (met $p \leqslant n$) is een rijtje van $p$ verschillende elementen gekozen uit $n$, waarbij de volgorde belangrijk is. Hun aantal is
+Een \textbf{\textcolor{accent}{variatie}} van $p$ elementen uit $n$ (met $p \leqslant n$) is een rijtje van $p$ verschillende elementen gekozen uit $n$, waarbij de volgorde belangrijk is.
+
+\begin{stelling}{Aantal variaties}
+Het aantal variaties van $p$ elementen uit $n$ is
 
 \vspace{1mm}
 \qquad $\formule{\Var{n}{p} = n(n - 1)(n - 2) \cdots (n - p + 1)}$ \qquad ($p$ factoren)
+\end{stelling}
+
+\begin{bewijs}
+Vul het rijtje plaats per plaats in. Voor de eerste plaats zijn er $n$ mogelijkheden. Voor de tweede $n - 1$: alles behalve het eerste element. Voor de $i$-de plaats zijn $i - 1$ elementen al gebruikt, dus blijven er $n - (i - 1) = n - i + 1$ over, welke dat ook zijn. Voor de laatste plaats, $i = p$, is dat $n - p + 1$. De productregel geeft het product van die $p$ getallen.
+\end{bewijs}
 \end{theorie}
+
+Welke elementen nog vrij zijn, hangt af van de vorige keuzes; hoeveel het er zijn, niet. Daarom mag je de productregel gebruiken.
 
 \voorbeeld{}{Een klas van 22 leerlingen kiest een voorzitter, een secretaris en een penningmeester. Op hoeveel manieren kan dat?\label{vb:h1-var}}{%
 \uitleg{De volgorde telt, want de functies zijn verschillend, en niemand krijgt twee functies. Dat is een variatie van 3 uit 22.}
@@ -171,46 +260,97 @@ Een \textbf{\textcolor{accent}{variatie}} van $p$ elementen uit $n$ (met $p \leq
 \oef{h1-variatie}
 \end{oefeningen}
 
-\subsection{Permutaties}
+\subsection{Permutaties en faculteiten}
 
 Kies je alle $n$ elementen, dan rangschik je ze gewoon. Het product $n(n - 1) \cdots 2 \cdot 1$ komt zo vaak voor dat het een eigen naam heeft.
 
 \begin{theorie}
-De \textbf{\textcolor{accent}{faculteit}} van een natuurlijk getal $n \geqslant 1$ is \quad $\formule{n! = n(n - 1) \cdots 2 \cdot 1}$, \quad en we spreken af dat $\formule{0! = 1}$.
+De \textbf{\textcolor{accent}{faculteit}} van een natuurlijk getal $n \geqslant 1$ is het product van alle natuurlijke getallen van 1 tot $n$. Voor $n = 0$ spreken we af dat het product 1 is:
 
 \vspace{1mm}
-Een \textbf{\textcolor{accent}{permutatie}} van $n$ elementen is een rangschikking van alle $n$ elementen. Hun aantal is \quad $\formule{\Perm{n} = n!}$
+\qquad $\formule{n! = n(n - 1) \cdots 2 \cdot 1}$ \qquad en \qquad $\formule{0! = 1}$
 
-\begin{stelling}{Variaties met faculteiten}
-Voor $0 \leqslant p \leqslant n$ is \quad $\formule{\Var{n}{p} = \dfrac{n!}{(n - p)!}}$
+\vspace{1mm}
+Een \textbf{\textcolor{accent}{permutatie}} van $n$ elementen is een rangschikking van alle $n$ elementen.
+
+\begin{stelling}{Aantal permutaties}
+Het aantal permutaties van $n$ elementen is \quad $\formule{\Perm{n} = n!}$
 \end{stelling}
 
 \begin{bewijs}
-In $\frac{n!}{(n - p)!}$ vallen de factoren $(n - p)(n - p - 1) \cdots 1$ weg tegen de noemer, en blijven $n(n - 1) \cdots (n - p + 1)$ over: precies $\Var{n}{p}$.
+Een permutatie is een variatie van $n$ elementen uit $n$. De formule voor $\Var{n}{p}$ met $p = n$ heeft als laatste factor $n - n + 1 = 1$:
+\bewijsregel{\Perm{n} = \Var{n}{n} = n(n - 1) \cdots 2 \cdot 1 = n! .}
 \end{bewijs}
 \end{theorie}
 
-Je leest $n!$ als \textit{$n$ faculteit}. Faculteiten groeien heel snel: $10! = 3\,628\,800$ en $20!$ heeft al 19 cijfers. De afspraak $0! = 1$ zorgt ervoor dat de formule ook klopt voor $p = n$: $\Var{n}{n} = \frac{n!}{0!} = n!$.
+Je leest $n!$ als \textit{$n$ faculteit}. Faculteiten groeien heel snel: $10! = 3\,628\,800$ en $20!$ heeft al 19 cijfers. Handig bij het rekenen is $n! = n \cdot (n - 1)!$: zo is $7! = 7 \cdot 6! = 7 \cdot 720 = 5040$.
 
-\voorbeeld{}{Zes vrienden gaan naast elkaar zitten in de bioscoop. Op hoeveel manieren kan dat? En als Anna en Ben naast elkaar willen zitten?\label{vb:h1-perm}}{%
-\uitleg{Alle zes worden gerangschikt: een permutatie. Voor de tweede vraag behandelen we Anna en Ben eerst als één blok, en tellen daarna op hoeveel manieren ze binnen het blok zitten.}
+\voorbeeld{}{Zes vrienden gaan naast elkaar zitten in de bioscoop. Op hoeveel manieren kan dat?\label{vb:h1-perm}}{%
+\uitleg{Alle zes worden gerangschikt, en niemand zit op twee stoelen: een permutatie van 6 elementen.}
 \begin{stappen}
-\Perm{6} = 6! = 720 & Alle rangschikkingen. \\[1ex]
-\Perm{5} \cdot \Perm{2} = 120 \cdot 2 = 240 & Het blok \textit{Anna-Ben} en de vier anderen: 5 eenheden. Binnen het blok: Anna links of Ben links.
+\Perm{6} = 6! = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 720 & 6 keuzes voor de eerste stoel, 5 voor de tweede, enzovoort.
 \end{stappen}}
 
-\begin{werkwijze}
-Vraag je af: telt de volgorde, en mag een element terugkomen? Volgorde en herhaling: $n^p$. Volgorde zonder herhaling: $\Var{n}{p}$, of $n!$ als je alle elementen rangschikt. Bij een voorwaarde zoals \textit{naast elkaar}: neem de elementen samen als één blok, en vermenigvuldig met het aantal rangschikkingen binnen het blok.
-\end{werkwijze}
+\begin{oefeningen}
+\oef{h1-var}
+\end{oefeningen}
+
+\subsection{Variaties met faculteiten}
+
+Het product $n(n - 1) \cdots (n - p + 1)$ is het begin van $n!$: alleen de factoren vanaf $n - p$ ontbreken. Daarom kun je een variatie schrijven als een quotiënt van twee faculteiten. Die vorm is kort, werkt op het rekentoestel, en is nodig voor de combinaties in hoofdstuk 2.
+
+\begin{theorie}
+\begin{stelling}{Variaties met faculteiten}
+Voor $1 \leqslant p \leqslant n$ is \quad $\formule{\Var{n}{p} = \dfrac{n!}{(n - p)!}}$
+\end{stelling}
+
+\begin{bewijs}
+Is $p < n$, dan splits je $n!$ na de factor $n - p + 1$:
+\bewijsregel{n! = n(n - 1) \cdots (n - p + 1) \cdot (n - p)(n - p - 1) \cdots 1 = \Var{n}{p} \cdot (n - p)! .}
+Deel door $(n - p)!$. Is $p = n$, dan is $\frac{n!}{0!} = n! = \Var{n}{n}$, dankzij de afspraak $0! = 1$.
+\end{bewijs}
+\end{theorie}
+
+Zo zie je waarom de afspraak $0! = 1$ handig is: zonder die afspraak zou de formule niet gelden voor $p = n$.
+
+\voorbeeld{}{Bepaal $n$ zodat $\Var{n}{3} = 6 \cdot \Var{n}{2}$.\label{vb:h1-facvar}}{%
+\uitleg{We schrijven beide variaties met faculteiten. Dan valt $n!$ weg, en blijft een quotiënt van twee opeenvolgende faculteiten over.}
+\begin{stappen}
+\frac{n!}{(n - 3)!} = 6 \cdot \frac{n!}{(n - 2)!} & De formule, met $n \geqslant 3$. \\[3ex]
+\frac{(n - 2)!}{(n - 3)!} = 6 & Deel door $n!$ en vermenigvuldig met $(n - 2)!$. \\[3ex]
+n - 2 = 6, \text{ dus } n = 8 & Want $(n - 2)! = (n - 2) \cdot (n - 3)!$. Controle: $\Var{8}{3} = 336 = 6 \cdot 56$.
+\end{stappen}}
+
+Dat klopt ook met de betekenis: na twee keuzes zijn er nog $n - 2$ elementen over voor de derde plaats.
 
 \nujij{Bereken $\Var{7}{2}$ en $\dfrac{9!}{7!}$.}{$\Var{7}{2} = 7 \cdot 6 = 42$ en $\frac{9!}{7!} = 9 \cdot 8 = 72$.}
 
 \begin{oefeningen}
-\oef{h1-var}
-
-\oef{h1-blok}
-
 \oef{h1-faculteit}
+
+\oef{h1-facvar}
+\end{oefeningen}
+
+\subsection{Elementen naast elkaar}
+
+Moeten twee elementen naast elkaar staan, dan plak je ze aan elkaar tot één blok. Je rangschikt eerst de blokken, daarna de elementen binnen het blok.
+
+\voorbeeld{}{Zes vrienden gaan naast elkaar zitten in de bioscoop. Anna en Ben willen naast elkaar zitten. Op hoeveel manieren kan dat?\label{vb:h1-blok}}{%
+\uitleg{We behandelen Anna en Ben eerst als één blok, en tellen daarna op hoeveel manieren ze binnen het blok zitten. Dat zijn twee stappen: de productregel.}
+\begin{stappen}
+\Perm{5} = 120 & Het blok \textit{Anna-Ben} en de vier anderen: 5 eenheden. \\[1ex]
+\Perm{2} = 2 & Binnen het blok: Anna links of Ben links. \\[1ex]
+120 \cdot 2 = 240 & Productregel.
+\end{stappen}}
+
+Wie de stap binnen het blok vergeet, vindt 120: dan zit Anna altijd links van Ben. En willen Anna en Ben \textit{niet} naast elkaar zitten, dan tel je het tegendeel: $720 - 240 = 480$.
+
+\begin{werkwijze}
+Vraag je af: telt de volgorde, en mag een element terugkomen? Volgorde en herhaling: $n^p$. Volgorde zonder herhaling: $\Var{n}{p}$, of $n!$ als je alle elementen rangschikt. Bij een voorwaarde zoals \textit{naast elkaar}: neem de elementen samen als één blok, en vermenigvuldig met het aantal rangschikkingen binnen het blok. Bij \textit{niet naast elkaar}: tel het tegendeel.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h1-blok}
 \end{oefeningen}
 
 %========================================================================================
@@ -316,10 +456,10 @@ Vraag je af: telt de volgorde, en mag een element terugkomen? Volgorde en herhal
   \fv{oef:h1-t2}{vb:h1-venn}{oef:h1-overlap}%
   \fv{oef:h1-t3}{vb:h1-hervar}{oef:h1-hervar}%
   \fv{oef:h1-t4}{vb:h1-var}{oef:h1-variatie}%
-  \fv{oef:h1-t8}{vb:h1-perm}{oef:h1-faculteit}%
-  \fv{oef:h1-t5}{vb:h1-perm}{oef:h1-blok}%
+  \fv{oef:h1-t8}{vb:h1-facvar}{oef:h1-faculteit}%
+  \fv{oef:h1-t5}{vb:h1-blok}{oef:h1-blok}%
   \fv{oef:h1-t6}{vb:h1-complement}{oef:h1-tegendeel}%
-  \fv{oef:h1-t7}{vb:h1-var}{oef:h1-o3}}
+  \fv{oef:h1-t7}{vb:h1-gevallen}{oef:h1-o3}}
 
 \ifzelfstudie
 \section*{Maak je eigen samenvatting}

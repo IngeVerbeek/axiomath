@@ -108,6 +108,78 @@
         Een getal begint niet met 0: 9 mogelijkheden voor het eerste cijfer, 10 voor het tweede en 10 voor het derde.\par
         $9 \cdot 10 \cdot 10 = 900$. Controle: van 100 tot en met 999 zijn het $999 - 100 + 1 = 900$ getallen.
 
+- id: h1-product
+  soort: kort
+  opgave: |-
+    Tel met de productregel.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een nummerplaat bestaat uit een cijfer van 1 tot 9, drie letters en drie cijfers, zoals 1-ABC-234. Hoeveel nummerplaten zijn er?
+      antwoord: |-
+        $158\,184\,000$
+      uitwerking: |-
+        Zeven plaatsen na elkaar: 9 mogelijkheden voor het eerste cijfer, 26 voor elke letter en 10 voor elk van de laatste cijfers.\par
+        $9 \cdot 26^3 \cdot 10^3 = 9 \cdot 17\,576 \cdot 1000 = 158\,184\,000$.
+    - opgave: |-
+        Een broodjeszaak heeft 3 soorten brood, 6 soorten beleg en 4 sauzen. Je mag ook zonder saus kiezen. Hoeveel broodjes kun je bestellen?
+      antwoord: |-
+        90
+      uitwerking: |-
+        Voor de saus zijn er $4 + 1 = 5$ mogelijkheden (geen saus telt mee): $3 \cdot 6 \cdot 5 = 90$.
+
+- id: h1-somregel
+  soort: kort
+  opgave: |-
+    Tel met de somregel en de productregel.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een wachtwoord bestaat uit 4, 5 of 6 cijfers. Hoeveel wachtwoorden zijn er?
+      antwoord: |-
+        $1\,110\,000$
+      uitwerking: |-
+        Drie gevallen die elkaar uitsluiten: $10^4 = 10\,000$ wachtwoorden van 4 cijfers, $10^5 = 100\,000$ van 5 en $10^6 = 1\,000\,000$ van 6.\par
+        Somregel: $10\,000 + 100\,000 + 1\,000\,000 = 1\,110\,000$.
+    - opgave: |-
+        Hoeveel getallen van één, twee of drie cijfers kun je schrijven met alleen de cijfers 1, 2 en 3? Een cijfer mag terugkomen.
+      antwoord: |-
+        39
+      uitwerking: |-
+        Eén cijfer: 3. Twee cijfers: $3^2 = 9$. Drie cijfers: $3^3 = 27$.\par
+        Somregel: $3 + 9 + 27 = 39$.
+    - opgave: |-
+        Een lunch is een soep of een broodje, niet allebei. Er zijn 3 soepen. Een broodje heeft een van 4 soorten brood en een van 5 soorten beleg. Hoeveel lunches zijn er?
+      antwoord: |-
+        23
+      uitwerking: |-
+        Broodjes: productregel, $4 \cdot 5 = 20$. Soepen: 3.\par
+        Een lunch is soep of broodje, nooit beide: somregel, $3 + 20 = 23$.
+
+- id: h1-gevallen
+  soort: kort
+  opgave: |-
+    Hoeveel getallen zijn er? Splits in gevallen als dat nodig is.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Oneven getallen van vier cijfers, met vier verschillende cijfers. Waarom hoef je hier niet te splitsen?
+      antwoord: |-
+        2240
+      uitwerking: |-
+        Begin met het laatste cijfer: 1, 3, 5, 7 of 9, dus 5 keuzes. Het eerste cijfer: niet 0 en niet het laatste, dus 8 keuzes. Dan 8 en 7 keuzes voor de twee middelste.\par
+        $5 \cdot 8 \cdot 8 \cdot 7 = 2240$.\par
+        Splitsen is niet nodig: het laatste cijfer is nooit 0, dus het eerste cijfer heeft altijd 8 keuzes.
+    - opgave: |-
+        Even getallen groter dan 500, van drie cijfers, met drie verschillende cijfers.
+      antwoord: |-
+        184
+      uitwerking: |-
+        Het eerste cijfer is 5, 6, 7, 8 of 9. Of het laatste cijfer (even) gelijk kan zijn aan het eerste, hangt af van het eerste cijfer: splits.\par
+        Eerste cijfer oneven (5, 7 of 9): 5 keuzes voor het laatste cijfer (0, 2, 4, 6, 8) en 8 voor het middelste: $3 \cdot 5 \cdot 8 = 120$.\par
+        Eerste cijfer even (6 of 8): 4 keuzes voor het laatste cijfer (niet het eerste) en 8 voor het middelste: $2 \cdot 4 \cdot 8 = 64$.\par
+        Somregel: $120 + 64 = 184$.
+
 - id: h1-overlap
   soort: kort
   opgave: |-
@@ -158,26 +230,6 @@
         Alle getallen van vier cijfers: $9 \cdot 10^3 = 9000$.\par
         Het tegendeel, alleen oneven cijfers: 5 mogelijkheden per plaats, ook voor het eerste cijfer, want 0 is even: $5^4 = 625$.\par
         Minstens één even cijfer: $9000 - 625 = 8375$.
-
-- id: h1-product
-  soort: kort
-  opgave: |-
-    Tel met de productregel.
-  lijst: enumerate
-  delen:
-    - opgave: |-
-        Een nummerplaat bestaat uit een cijfer van 1 tot 9, drie letters en drie cijfers, zoals 1-ABC-234. Hoeveel nummerplaten zijn er?
-      antwoord: |-
-        $158\,184\,000$
-      uitwerking: |-
-        Zeven plaatsen na elkaar: 9 mogelijkheden voor het eerste cijfer, 26 voor elke letter en 10 voor elk van de laatste cijfers.\par
-        $9 \cdot 26^3 \cdot 10^3 = 9 \cdot 17\,576 \cdot 1000 = 158\,184\,000$.
-    - opgave: |-
-        Een broodjeszaak heeft 3 soorten brood, 6 soorten beleg en 4 sauzen. Je mag ook zonder saus kiezen. Hoeveel broodjes kun je bestellen?
-      antwoord: |-
-        90
-      uitwerking: |-
-        Voor de saus zijn er $4 + 1 = 5$ mogelijkheden (geen saus telt mee): $3 \cdot 6 \cdot 5 = 90$.
 
 - id: h1-venn
   soort: kort
@@ -271,33 +323,6 @@
       uitwerking: |-
         Alle zeven boeken worden gerangschikt: $\Perm{7} = 7! = 5040$.
 
-- id: h1-blok
-  soort: kort
-  opgave: |-
-    Zeven leerlingen, onder wie Lena, Mo en Noor, staan in een rij voor de klasfoto. Op hoeveel manieren kan dat als
-  lijst: enumerate
-  delen:
-    - opgave: |-
-        Lena en Mo naast elkaar staan?
-      antwoord: |-
-        1440
-      uitwerking: |-
-        Het blok Lena-Mo en de vijf anderen: 6 eenheden, $6! = 720$ rangschikkingen.\par
-        Binnen het blok: 2 manieren. Samen $720 \cdot 2 = 1440$.
-    - opgave: |-
-        Lena, Mo en Noor alle drie naast elkaar staan?
-      antwoord: |-
-        720
-      uitwerking: |-
-        Het blok van drie en de vier anderen: 5 eenheden, $5! = 120$. Binnen het blok: $3! = 6$.\par
-        Samen $120 \cdot 6 = 720$.
-    - opgave: |-
-        Lena helemaal links staat?
-      antwoord: |-
-        720
-      uitwerking: |-
-        Lena ligt vast; de andere zes worden gerangschikt: $6! = 720$.
-
 - id: h1-faculteit
   soort: kort
   opgave: |-
@@ -329,6 +354,59 @@
         2
       uitwerking: |-
         $1 + 1 = 2$: ook $0! = 1$.
+
+- id: h1-facvar
+  soort: kort
+  opgave: |-
+    Reken met faculteiten.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Schrijf $\Var{9}{4}$ als quotiënt van twee faculteiten en reken uit.
+      antwoord: |-
+        $\dfrac{9!}{5!} = 3024$
+      uitwerking: |-
+        $\Var{9}{4} = \frac{9!}{(9 - 4)!} = \frac{9!}{5!} = 9 \cdot 8 \cdot 7 \cdot 6 = 3024$.
+    - opgave: |-
+        Vereenvoudig $\dfrac{(n + 2)!}{n!}$.
+      antwoord: |-
+        $(n + 2)(n + 1)$
+      uitwerking: |-
+        $(n + 2)! = (n + 2)(n + 1) \cdot n!$, dus $\frac{(n + 2)!}{n!} = (n + 2)(n + 1) = n^2 + 3n + 2$.
+    - opgave: |-
+        Bepaal $n$ zodat $\Var{n}{2} = 90$.
+      antwoord: |-
+        $n = 10$
+      uitwerking: |-
+        $\Var{n}{2} = n(n - 1) = 90$, dus $n^2 - n - 90 = 0$, of $(n - 10)(n + 9) = 0$.\par
+        Alleen $n = 10$ is een natuurlijk getal. Controle: $10 \cdot 9 = 90$.
+
+- id: h1-blok
+  soort: kort
+  opgave: |-
+    Zeven leerlingen, onder wie Lena, Mo en Noor, staan in een rij voor de klasfoto. Op hoeveel manieren kan dat als
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Lena en Mo naast elkaar staan?
+      antwoord: |-
+        1440
+      uitwerking: |-
+        Het blok Lena-Mo en de vijf anderen: 6 eenheden, $6! = 720$ rangschikkingen.\par
+        Binnen het blok: 2 manieren. Samen $720 \cdot 2 = 1440$.
+    - opgave: |-
+        Lena, Mo en Noor alle drie naast elkaar staan?
+      antwoord: |-
+        720
+      uitwerking: |-
+        Het blok van drie en de vier anderen: 5 eenheden, $5! = 120$. Binnen het blok: $3! = 6$.\par
+        Samen $120 \cdot 6 = 720$.
+    - opgave: |-
+        Lena helemaal links staat?
+      antwoord: |-
+        720
+      uitwerking: |-
+        Lena ligt vast; de andere zes worden gerangschikt: $6! = 720$.
 
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3 (in de volgorde van het boek)
