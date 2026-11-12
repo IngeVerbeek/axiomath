@@ -186,6 +186,112 @@
       uitwerking: |-
         Bijvoorbeeld: \textit{Figuur 3: temperatuur van thee (in $^\circ$C) tegen de tijd (in min), gemeten om de vijf minuten, met het model $T = 20 + 70 \cdot 0{,}951^t$. De gestreepte lijn is de kamertemperatuur: het temperatuurverschil met de kamer neemt elke minuut met ongeveer $5$\,\% af.}
 
+- id: h3-onderdelen
+  soort: kort
+  opgave: |-
+    In welk onderdeel van een verslag hoort elke zin?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        \textit{Bij een lengte van $0{,}60$ m maten we $15{,}5$ s voor tien periodes.}
+      antwoord: |-
+        resultaten
+      uitwerking: |-
+        Resultaten: een meting, met eenheden.
+    - opgave: |-
+        \textit{We gebruikten bij elke meting hetzelfde gewichtje van $50$ g.}
+      antwoord: |-
+        methode
+      uitwerking: |-
+        Methode: zo kan iemand anders het experiment herhalen.
+    - opgave: |-
+        \textit{Een volgende keer zouden we ook langere slingers meten, tot $2$ m.}
+      antwoord: |-
+        reflectie
+      uitwerking: |-
+        Reflectie: wat je anders zou doen.
+    - opgave: |-
+        \textit{We onderzoeken voor welke $n$ het getal $n^2 + n + 11$ een priemgetal is.}
+      antwoord: |-
+        inleiding
+      uitwerking: |-
+        Inleiding: de onderzoeksvraag.
+    - opgave: |-
+        \textit{Voor $n = 0, 1, \ldots, 9$ is $n^2 + n + 11$ priem, maar niet voor $n = 10$ en $n = 11$.}
+      antwoord: |-
+        besluit
+      uitwerking: |-
+        Besluit: een precies antwoord op de vraag. (Voor $n = 10$ is het $121 = 11^2$, voor $n = 11$ is het $143 = 11 \cdot 13$.)
+
+- id: h3-beduidend
+  soort: kort
+  opgave: |-
+    Elk getal is gemeten op de laatste decimaal. Hoeveel beduidende cijfers heeft het? Geef de absolute en de relatieve fout.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $0{,}0306$ kg
+      antwoord: |-
+        $3$; $0{,}00005$ kg; $0{,}16$\,\%
+      uitwerking: |-
+        Drie beduidende cijfers: $3$, $0$, $6$. Gemeten op $0{,}0001$ kg, dus $\Delta x = 0{,}00005$ kg, en $\frac{0{,}00005}{0{,}0306} \approx 0{,}0016 = 0{,}16$\,\%.
+    - opgave: |-
+        $12{,}50$ s
+      antwoord: |-
+        $4$; $0{,}005$ s; $0{,}04$\,\%
+      uitwerking: |-
+        Vier beduidende cijfers. $\Delta x = 0{,}005$ s, en $\frac{0{,}005}{12{,}50} = 0{,}0004 = 0{,}04$\,\%.
+    - opgave: |-
+        $3{,}0$ m
+      antwoord: |-
+        $2$; $0{,}05$ m; $1{,}7$\,\%
+      uitwerking: |-
+        Twee beduidende cijfers. $\Delta x = 0{,}05$ m, en $\frac{0{,}05}{3{,}0} \approx 0{,}017 = 1{,}7$\,\%.
+
+- id: h3-fouten
+  soort: kort
+  opgave: |-
+    Rekenen met gemeten getallen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een fietstocht bestaat uit twee ritten: $12{,}5$ km (gemeten op $0{,}1$ km) en $3{,}27$ km (gemeten op $0{,}01$ km). Hoe lang is de tocht, en hoe groot kan de fout zijn? Hoe rapporteer je de lengte?
+      antwoord: |-
+        $15{,}77$ km, fout hoogstens $0{,}055$ km; $15{,}8$ km
+      uitwerking: |-
+        $12{,}5 + 3{,}27 = 15{,}77$ km. De absolute fouten tellen op: $0{,}05 + 0{,}005 = 0{,}055$ km. Rapporteer $15{,}8$ km: één decimaal, zoals de minst nauwkeurige rit.
+    - opgave: |-
+        Een rechthoek meet $4{,}0$ cm bij $3{,}5$ cm, beide gemeten op $0{,}1$ cm. Hoe groot is de relatieve fout van de oppervlakte? Hoe rapporteer je de oppervlakte?
+      antwoord: |-
+        ongeveer $2{,}7$\,\%; $14$ cm$^2$
+      uitwerking: |-
+        Relatieve fouten $\frac{0{,}05}{4{,}0} = 1{,}25$\,\% en $\frac{0{,}05}{3{,}5} \approx 1{,}43$\,\%: samen ongeveer $2{,}7$\,\%. $A = 14{,}0$ cm$^2$, met een fout van ongeveer $0{,}027 \cdot 14 \approx 0{,}4$ cm$^2$. Rapporteer $A \approx 14$ cm$^2$: twee beduidende cijfers, zoals de metingen.
+
+- id: h3-tabel
+  soort: kort
+  opgave: |-
+    Een leerling hangt gewichtjes aan een veer en meet de lengte van de veer, telkens op $1$ mm. Verbeter haar tabel.
+    \figuren{\renewcommand{\arraystretch}{1.2}%
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    massa & 50 g & 0,1 kg & 150 g \\ \hline
+    lengte & 12 cm & 14,05 cm & 16,1 \\ \hline
+    \end{tabular}}
+  antwoord: |-
+    kop $m$ (g) en $L$ (cm); $50$, $100$, $150$; $12{,}0$; $14{,}1$; $16{,}1$
+  uitwerking: |-
+    Zet de grootheden met hun eenheid in de kop: $m$ (g) en $L$ (cm). De massa's worden $50$, $100$ en $150$ g. De lengtes zijn op $1$ mm $= 0{,}1$ cm gemeten, dus allemaal met één decimaal: $12{,}0$; $14{,}1$; $16{,}1$ (ook $14{,}05$ kan niet nauwkeuriger zijn dan de meting). Zet er een nummer en een titel boven, bijvoorbeeld \textit{Tabel 2: lengte van de veer bij verschillende massa's.}
+
+- id: h3-dia
+  soort: kort
+  opgave: |-
+    Een leerling stelt haar onderzoek voor met een dia met als titel \textit{Resultaten}, twaalf regels tekst in kleine letters en een tabel met dertig getallen. Geef drie verbeteringen.
+  antwoord: |-
+    titel als boodschap; figuur in plaats van tekst; alleen de belangrijkste getallen
+  uitwerking: |-
+    Maak van de titel de boodschap, bijvoorbeeld \textit{De remafstand groeit met het kwadraat van de snelheid}. Vervang de tekst door een figuur die die boodschap toont. Toon alleen de paar getallen die het publiek moet onthouden; de volledige tabel hoort in het verslag. Gebruik ook grote letters.
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------

@@ -149,6 +149,203 @@
       uitwerking: |-
         Op één punt na liggen de residuen dicht bij nul. Kijk die ene meting na: is het een meetfout of een overschrijffout? Laat ze niet zomaar weg, maar vermeld in het verslag wat je ermee deed.
 
+- id: h2-variabelen
+  soort: kort
+  opgave: |-
+    Geef telkens de onafhankelijke en de afhankelijke variabele, en twee controlevariabelen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Je laat een bal vallen van verschillende hoogtes, en meet hoe hoog hij terugbotst.
+      antwoord: |-
+        valhoogte; terugbotshoogte; bv. dezelfde bal, dezelfde vloer
+      uitwerking: |-
+        Onafhankelijk: de valhoogte, die je zelf kiest. Afhankelijk: de hoogte van de terugbots, die je meet. Controlevariabelen: dezelfde bal (even hard opgepompt) en dezelfde vloer.
+    - opgave: |-
+        Je meet hoe lang een ijsblokje nodig heeft om te smelten in water van verschillende temperaturen.
+      antwoord: |-
+        watertemperatuur; smelttijd; bv. grootte van het blokje, hoeveelheid water
+      uitwerking: |-
+        Onafhankelijk: de temperatuur van het water. Afhankelijk: de smelttijd. Controlevariabelen: even grote ijsblokjes en telkens evenveel water.
+    - opgave: |-
+        Je onderzoekt hoe je hartslag afhangt van het aantal kniebuigingen dat je net deed.
+      antwoord: |-
+        aantal kniebuigingen; hartslag; bv. dezelfde persoon, hetzelfde tempo
+      uitwerking: |-
+        Onafhankelijk: het aantal kniebuigingen. Afhankelijk: de hartslag in slagen per minuut. Controlevariabelen: dezelfde persoon, hetzelfde tempo, en telkens even lang rust vóór elke reeks.
+
+- id: h2-meten
+  soort: kort
+  opgave: |-
+    Meetfouten.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een blad papier is te dun om met een lat te meten. Een stapel van $250$ bladen is $2{,}7$ cm dik. Hoe dik is één blad? Waarom is deze werkwijze nauwkeuriger?
+      antwoord: |-
+        ongeveer $0{,}11$ mm; de fout wordt door $250$ gedeeld
+      uitwerking: |-
+        $\frac{27 \text{ mm}}{250} \approx 0{,}108$ mm, dus ongeveer $0{,}11$ mm. Een fout van $1$ mm op de stapel wordt per blad maar $\frac{1}{250}$ mm $= 0{,}004$ mm.
+    - opgave: |-
+        Een keukenweegschaal toont $0{,}3$ kg als er niets op ligt. Welke soort fout is dat? Helpt het om elke meting drie keer te herhalen?
+      antwoord: |-
+        systematisch; nee
+      uitwerking: |-
+        Een systematische fout: elke meting is $0{,}3$ kg te groot. Herhalen helpt niet, want de fout zit in elke meting. Zet de weegschaal op nul, of trek $0{,}3$ kg af.
+    - opgave: |-
+        Vijf leerlingen meten dezelfde lengte met een meetlint: $152{,}3$; $152{,}6$; $151{,}9$; $152{,}4$; $152{,}3$ cm. Welke soort fout zie je? Welke lengte rapporteer je?
+      antwoord: |-
+        toevallig; $152{,}3$ cm
+      uitwerking: |-
+        Een toevallige fout: de metingen liggen nu eens hoger, dan weer lager. Rapporteer het gemiddelde: $\frac{761{,}5}{5} = 152{,}3$ cm.
+
+- id: h2-model
+  soort: kort
+  opgave: |-
+    Voor $x = 0, 1, 2, 3, 4$ vind je deze waarden van $y$. Is het verband lineair, exponentieel of een macht? Geef het voorschrift.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $7,\ 10,\ 13,\ 16,\ 19$
+      antwoord: |-
+        lineair: $y = 3x + 7$
+      uitwerking: |-
+        De verschillen zijn constant $3$, en voor $x = 0$ is $y = 7$: $y = 3x + 7$.
+    - opgave: |-
+        $500,\ 400,\ 320,\ 256,\ 204{,}8$
+      antwoord: |-
+        exponentieel: $y = 500 \cdot 0{,}8^x$
+      uitwerking: |-
+        De verschillen ($-100$, $-80$, $-64$, $-51{,}2$) zijn niet constant, de verhoudingen wel: telkens $0{,}8$. Met $y = 500$ voor $x = 0$: $y = 500 \cdot 0{,}8^x$.
+    - opgave: |-
+        $0,\ 0{,}5,\ 2,\ 4{,}5,\ 8$
+      antwoord: |-
+        macht: $y = 0{,}5\,x^2$
+      uitwerking: |-
+        De verschillen $0{,}5$; $1{,}5$; $2{,}5$; $3{,}5$ zijn niet constant, en een verhouding met $0$ bestaat niet. Maar $\frac{y}{x^2} = 0{,}5$ voor $x = 1, 2, 3, 4$: $y = 0{,}5\,x^2$. (De tweede verschillen zijn constant $1$, zoals bij elke kwadratische formule.)
+
+- id: h2-residu
+  soort: kort
+  opgave: |-
+    Voor de punten $(1, 3)$, $(2, 4)$, $(3, 4)$, $(4, 6)$, $(5, 8)$ stellen twee leerlingen een rechte voor: $y = x + 2$ en $y = 1{,}5x$. Bereken voor elke rechte de residuen en de kwadratensom. Welke rechte past het best?
+  antwoord: |-
+    $0, 0, -1, 0, 1$ en $S = 2$; $1{,}5;\ 1;\ -0{,}5;\ 0;\ 0{,}5$ en $S = 3{,}75$; $y = x + 2$
+  uitwerking: |-
+    Voor $y = x + 2$ zijn de voorspellingen $3, 4, 5, 6, 7$: residuen $0, 0, -1, 0, 1$ en $S = 0 + 0 + 1 + 0 + 1 = 2$. Voor $y = 1{,}5x$ zijn de voorspellingen $1{,}5;\ 3;\ 4{,}5;\ 6;\ 7{,}5$: residuen $1{,}5;\ 1;\ -0{,}5;\ 0;\ 0{,}5$ en $S = 2{,}25 + 1 + 0{,}25 + 0 + 0{,}25 = 3{,}75$. De rechte $y = x + 2$ heeft de kleinste kwadratensom en past dus het best van de twee.
+
+- id: h2-besteb
+  soort: kort
+  opgave: |-
+    Neem de punten uit oefening~\ref{oef:h2-residu}.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Welke rechte met richtingscoëfficiënt $1{,}5$ past het best? Bereken haar kwadratensom.
+      antwoord: |-
+        $y = 1{,}5x + 0{,}5$; $S = 2{,}5$
+      uitwerking: |-
+        Het gemiddelde punt is $(3, 5)$, dus $b = 5 - 1{,}5 \cdot 3 = 0{,}5$. Residuen van $y = 1{,}5x + 0{,}5$: $1;\ 0{,}5;\ -1;\ -0{,}5;\ 0$, en $S = 1 + 0{,}25 + 1 + 0{,}25 + 0 = 2{,}5$, kleiner dan de $3{,}75$ van $y = 1{,}5x$.
+    - opgave: |-
+        Is $y = x + 2$ de beste rechte met richtingscoëfficiënt $1$?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        Ja: $b = 5 - 1 \cdot 3 = 2$. De rechte gaat door het gemiddelde punt $(3, 5)$.
+
+- id: h2-helling
+  soort: kort
+  opgave: |-
+    Bepaal de kleinste-kwadratenrechte voor de punten $(1, 2)$, $(2, 2)$, $(3, 4)$, $(4, 5)$, $(5, 7)$.
+  antwoord: |-
+    $y = 1{,}3x + 0{,}1$
+  uitwerking: |-
+    $\xbar = 3$, $\ybar = 4$. Afwijkingen $x$: $-2, -1, 0, 1, 2$; $y$: $-2, -2, 0, 1, 3$. Producten $4, 2, 0, 1, 6$, samen $13$; $\sum(x_i - \xbar)^2 = 10$. Dus $a = \frac{13}{10} = 1{,}3$ en $b = 4 - 1{,}3 \cdot 3 = 0{,}1$: $y = 1{,}3x + 0{,}1$.
+
+- id: h2-controle
+  soort: kort
+  opgave: |-
+    Voor de punten $(0, 1)$, $(2, 2)$, $(4, 6)$, $(6, 7)$ zijn enkele rechten voorgesteld.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon zonder de formule voor $a$ aan dat $y = 1{,}1x + 0{,}8$ niet de kleinste-kwadratenrechte is.
+      antwoord: |-
+        som van de residuen $-0{,}4 \neq 0$
+      uitwerking: |-
+        $\sum r_i = \sum y_i - 1{,}1\sum x_i - 4 \cdot 0{,}8 = 16 - 13{,}2 - 3{,}2 = -0{,}4 \neq 0$. Ook: het gemiddelde punt $(3, 4)$ ligt niet op de rechte, want $1{,}1 \cdot 3 + 0{,}8 = 4{,}1$.
+    - opgave: |-
+        De rechte $y = 1{,}2x + 0{,}4$ gaat door $(3, 4)$, en haar residuen hebben som $0$. Is zij dus de kleinste-kwadratenrechte?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee. De eigenschap kan alleen een fout opsporen: elke rechte door $(3, 4)$ heeft residuen met som $0$. De formule geeft een andere richtingscoëfficiënt (zie c).
+    - opgave: |-
+        Bepaal de kleinste-kwadratenrechte.
+      antwoord: |-
+        $y = 1{,}1x + 0{,}7$
+      uitwerking: |-
+        Afwijkingen $x$: $-3, -1, 1, 3$; $y$: $-3, -2, 2, 3$. Producten $9, 2, 2, 9$, samen $22$; $\sum(x_i - \xbar)^2 = 20$. Dus $a = 1{,}1$ en $b = 4 - 3{,}3 = 0{,}7$.
+
+- id: h2-rgrenzen
+  soort: kort
+  opgave: |-
+    De kwadratensom van de kleinste-kwadratenrechte.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Voor tien metingen is $\sum (y_i - \ybar)^2 = 50$ en $r = 0{,}9$. Bereken de kwadratensom van de kleinste-kwadratenrechte.
+      antwoord: |-
+        $9{,}5$
+      uitwerking: |-
+        $S_{\min} = (1 - 0{,}81) \cdot 50 = 0{,}19 \cdot 50 = 9{,}5$.
+    - opgave: |-
+        Voor welke waarden van $r$ is die kwadratensom $0$? Wat betekent dat voor de punten?
+      antwoord: |-
+        $r = 1$ of $r = -1$; alle punten op één rechte
+      uitwerking: |-
+        $(1 - r^2) \sum (y_i - \ybar)^2 = 0$ met $\sum (y_i - \ybar)^2 > 0$ geeft $r^2 = 1$, dus $r = \pm 1$. Alle residuen zijn dan $0$: de punten liggen op één rechte.
+    - opgave: |-
+        Een leerling vindt $r = 0$. Welke rechte is dan de kleinste-kwadratenrechte, en wat is haar kwadratensom?
+      antwoord: |-
+        $y = \ybar$; $\sum (y_i - \ybar)^2$
+      uitwerking: |-
+        Bij $r = 0$ is de teller $\sum (x_i - \xbar)(y_i - \ybar) = 0$, dus ook $a = 0$ en $b = \ybar$: de horizontale rechte $y = \ybar$. Haar kwadratensom is $(1 - 0) \sum (y_i - \ybar)^2$: de rechte verklaart niets van de spreiding.
+
+- id: h2-macht
+  soort: kort
+  opgave: |-
+    Je weegt stalen knikkers met diameter $d$ (in mm): voor $d = 10$; $12$; $15$; $20$; $25$ is de massa $m = 4{,}1$; $7{,}1$; $13{,}9$; $32{,}9$; $64{,}2$ g. Je vermoedt $m = c \cdot d^k$. Bepaal $k$ en $c$ met een kleinste-kwadratenrechte. Welke $k$ verwacht je, en waarom?
+  antwoord: |-
+    $k \approx 3{,}00$; $c \approx 0{,}0041$ g/mm$^3$; de massa volgt het volume
+  uitwerking: |-
+    Zet $\ln m$ uit tegen $\ln d$. $\ln d$: $2{,}303$; $2{,}485$; $2{,}708$; $2{,}996$; $3{,}219$. $\ln m$: $1{,}411$; $1{,}960$; $2{,}632$; $3{,}493$; $4{,}162$. Gemiddelden $2{,}742$ en $2{,}732$, $\sum (X_i - \overline{X})^2 \approx 0{,}552$ en $\sum (X_i - \overline{X})(Y_i - \overline{Y}) \approx 1{,}657$. Dus $k \approx \frac{1{,}657}{0{,}552} \approx 3{,}00$ en $\ln c \approx 2{,}732 - 3{,}00 \cdot 2{,}742 \approx -5{,}50$, zodat $c \approx \e^{-5{,}50} \approx 0{,}0041$. Dat $k = 3$ is, verwacht je: de massa is evenredig met het volume van een bol, $\frac{\pi}{6}d^3$.
+
+- id: h2-inter
+  soort: kort
+  opgave: |-
+    Voor tweedehandse smartphones van $1$ tot $4$ jaar oud vind je het model $p = -70t + 380$, met $p$ de prijs in euro en $t$ de leeftijd in jaar. Bereken de voorspelling. Is het interpoleren of extrapoleren? Vertrouw je ze?
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $t = 2{,}5$
+      antwoord: |-
+        $205$ euro; interpoleren; ja
+      uitwerking: |-
+        $p = -175 + 380 = 205$ euro. Interpoleren: $2{,}5$ ligt tussen $1$ en $4$. Betrouwbaar.
+    - opgave: |-
+        $t = 6$
+      antwoord: |-
+        $-40$ euro; extrapoleren; nee
+      uitwerking: |-
+        $p = -420 + 380 = -40$ euro. Extrapoleren, en een negatieve prijs kan niet: buiten de metingen klopt het model niet meer.
+    - opgave: |-
+        $t = 0$
+      antwoord: |-
+        $380$ euro; extrapoleren; onzeker
+      uitwerking: |-
+        $p = 380$ euro. Ook extrapoleren, al ligt $t = 0$ dicht bij de metingen. Een nieuwe smartphone verliest in het eerste jaar vaak meer waarde dan later, dus de echte nieuwprijs kan hoger liggen.
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
