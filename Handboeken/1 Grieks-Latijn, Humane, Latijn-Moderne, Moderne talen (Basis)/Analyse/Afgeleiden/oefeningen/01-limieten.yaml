@@ -59,34 +59,18 @@
 
 - id: h1-begrip
   soort: kort
-  figuur:
-    opties: |-
-      4.2cm
-    code: |-
-      \begin{tikzpicture}[x=.55cm,y=.55cm,font=\scriptsize]
-        \rooster{-2}{1}{3}{-2}{1}{3}
-        \draw[accent,thick] (-2,-1) -- (1,2);
-        \draw[accent,thick] (1,-1) -- (3,1);
-        \open{(1,2)} \vol{(1,-1)}
-      \end{tikzpicture}
   opgave: |-
-    Limieten.
+    Bewijs met de definitie.
   lijst: enumerate
   delen:
     - opgave: |-
-        Lees af op de grafiek: $\liml{x}{1} f(x)$, $\limr{x}{1} f(x)$, $f(1)$. Bestaat $\lim_{x \to 1} f(x)$?
-      antwoord: |-
-        $2$; $-1$; $-1$; nee
-      uitwerking: |-
-        Linkerlimiet $2$, rechterlimiet $-1$, $f(1) = -1$ (het volle bolletje). De limiet bestaat niet: links en rechts verschillen.
-    - opgave: |-
-        Bewijs met de definitie: $\lim_{x \to 1} (2x + 3) = 5$.
+        $\lim_{x \to 1} (2x + 3) = 5$
       antwoord: |-
         $\delta = \frac{\varepsilon}{2}$
       uitwerking: |-
-        $|(2x + 3) - 5| = 2|x - 1|$. Neem $\delta = \frac{\varepsilon}{2}$: als $0 < |x - 1| < \delta$, dan is $|f(x) - 5| < 2\delta = \varepsilon$.
+        Neem $\varepsilon > 0$. $|(2x + 3) - 5| = 2|x - 1|$. Neem $\delta = \frac{\varepsilon}{2}$: als $0 < |x - 1| < \delta$, dan is $|f(x) - 5| = 2|x - 1| < 2\delta = \varepsilon$.
     - opgave: |-
-        Bewijs met de definitie: $\lim_{x \to -1} (4 - 3x) = 7$.
+        $\lim_{x \to -1} (4 - 3x) = 7$
       antwoord: |-
         $\delta = \frac{\varepsilon}{3}$
       uitwerking: |-
@@ -274,6 +258,279 @@
         $x \approx 0{,}7$
       uitwerking: |-
         $g(0{,}5) \approx 0{,}38 > 0$ en $g(0{,}75) \approx -0{,}02 < 0$: de oplossing ligt in $\left]0{,}5;\ 0{,}75\right[$. $g(0{,}7) \approx 0{,}06 > 0$: ze ligt in $\left]0{,}7;\ 0{,}75\right[$, dus $x \approx 0{,}7$ (preciezer $0{,}739$).
+
+- id: h1-aflezen
+  soort: kort
+  figuur:
+    opties: |-
+      4.4cm
+    code: |-
+      \begin{tikzpicture}[x=.6cm,y=.6cm,font=\scriptsize]
+        \rooster{-2}{1}{3}{-2}{1}{3}
+        \kromme{-2}{3.4}{3-.5*(\x-1)^2}
+        \open{(-1,1)} \vol{(-1,-1)} \open{(1,3)}
+      \end{tikzpicture}
+  opgave: |-
+    De figuur toont de grafiek van een functie $f$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Lees af: $\lim_{x \to -1} f(x)$ en $f(-1)$.
+      antwoord: |-
+        $1$; $-1$
+      uitwerking: |-
+        Langs beide kanten nadert de grafiek de hoogte van het open bolletje: $\lim_{x \to -1} f(x) = 1$. Het volle bolletje geeft $f(-1) = -1$. Limiet en functiewaarde verschillen.
+    - opgave: |-
+        Lees af: $\lim_{x \to 1} f(x)$ en $f(1)$.
+      antwoord: |-
+        $3$; bestaat niet
+      uitwerking: |-
+        De grafiek nadert $3$ van links en van rechts, dus $\lim_{x \to 1} f(x) = 3$. Boven $x = 1$ staat alleen een open bolletje en geen vol: $f(1)$ bestaat niet.
+    - opgave: |-
+        Lees af: $\lim_{x \to 3} f(x)$ en $f(3)$.
+      antwoord: |-
+        $1$; $1$
+      uitwerking: |-
+        Hier loopt de grafiek gewoon door: $\lim_{x \to 3} f(x) = 1 = f(3)$.
+
+- id: h1-links-rechts
+  soort: kort
+  figuur:
+    opties: |-
+      4.2cm
+    code: |-
+      \begin{tikzpicture}[x=.55cm,y=.55cm,font=\scriptsize]
+        \rooster{-2}{1}{3}{-2}{1}{3}
+        \draw[accent,thick] (-2,-1) -- (1,2);
+        \draw[accent,thick] (1,-1) -- (3,1);
+        \open{(1,2)} \vol{(1,-1)}
+      \end{tikzpicture}
+  opgave: |-
+    Linker- en rechterlimiet.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Lees af op de grafiek: $\liml{x}{1} f(x)$, $\limr{x}{1} f(x)$, $f(1)$. Bestaat $\lim_{x \to 1} f(x)$?
+      antwoord: |-
+        $2$; $-1$; $-1$; nee
+      uitwerking: |-
+        Linkerlimiet $2$, rechterlimiet $-1$, $f(1) = -1$ (het volle bolletje). De limiet bestaat niet: links en rechts verschillen.
+    - opgave: |-
+        $g(x) = x^2 + 1$ voor $x < 1$ en $g(x) = 3x - 1$ voor $x \geqslant 1$. Bereken $\liml{x}{1} g(x)$ en $\limr{x}{1} g(x)$. Bestaat $\lim_{x \to 1} g(x)$?
+      antwoord: |-
+        $2$; $2$; ja, $2$
+      uitwerking: |-
+        Links van $1$ geldt het eerste voorschrift: $\liml{x}{1} (x^2 + 1) = 2$. Rechts het tweede: $\limr{x}{1} (3x - 1) = 2$. Beide eenzijdige limieten zijn $2$, dus $\lim_{x \to 1} g(x) = 2$.
+    - opgave: |-
+        $h(x) = \dfrac{x^2 + 3x}{|x + 3|}$. Bereken $\liml{x}{-3} h(x)$ en $\limr{x}{-3} h(x)$. Bestaat $\lim_{x \to -3} h(x)$?
+      antwoord: |-
+        $3$; $-3$; nee
+      uitwerking: |-
+        $h(x) = \dfrac{x(x + 3)}{|x + 3|}$. Voor $x < -3$ is $|x + 3| = -(x + 3)$, dus $h(x) = -x \to 3$. Voor $x > -3$ is $|x + 3| = x + 3$, dus $h(x) = x \to -3$. Links en rechts verschillen: de limiet bestaat niet.
+
+- id: h1-somregel
+  soort: kort
+  opgave: |-
+    Gegeven: $\lim_{x \to 3} f(x) = 2$ en $\lim_{x \to 3} g(x) = -5$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $\lim_{x \to 3} \bigl(f(x) + g(x)\bigr)$ en $\lim_{x \to 3} \bigl(g(x) - f(x) + 4\bigr)$.
+      antwoord: |-
+        $-3$; $-3$
+      uitwerking: |-
+        Somregel: $2 + (-5) = -3$. Somregel en de basislimiet van de constante $4$: $-5 - 2 + 4 = -3$.
+    - opgave: |-
+        Bereken $\lim_{x \to 3} \bigl(x - f(x)\bigr)$.
+      antwoord: |-
+        $1$
+      uitwerking: |-
+        Basislimiet $\lim_{x \to 3} x = 3$ en somregel: $3 - 2 = 1$.
+    - opgave: |-
+        Bedenk twee functies $u$ en $v$ zodat $\lim_{x \to 0} \bigl(u(x) + v(x)\bigr)$ bestaat, maar $\lim_{x \to 0} u(x)$ niet. Waarom is dat geen tegenspraak met de somregel?
+      antwoord: |-
+        bv. $u(x) = \frac{1}{x^2}$, $v(x) = 1 - \frac{1}{x^2}$
+      uitwerking: |-
+        Neem $u(x) = \frac{1}{x^2}$ en $v(x) = 1 - \frac{1}{x^2}$. Dan is $u(x) + v(x) = 1$, met limiet $1$, maar $\lim_{x \to 0} \frac{1}{x^2}$ bestaat niet (de functie wordt onbeperkt groot). De somregel zegt alleen iets als beide limieten bestaan; dat is hier niet zo.
+
+- id: h1-productregel
+  soort: kort
+  opgave: |-
+    Gegeven: $\lim_{x \to 3} f(x) = 2$ en $\lim_{x \to 3} g(x) = -5$. Bereken.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\lim_{x \to 3} 3f(x)$
+      antwoord: |-
+        $6$
+      uitwerking: |-
+        Een constante factor mag voor de limiet: $3 \cdot 2 = 6$.
+    - opgave: |-
+        $\lim_{x \to 3} f(x)\,g(x)$
+      antwoord: |-
+        $-10$
+      uitwerking: |-
+        Productregel: $2 \cdot (-5) = -10$.
+    - opgave: |-
+        $\lim_{x \to 3} x^2 g(x)$
+      antwoord: |-
+        $-45$
+      uitwerking: |-
+        Productregel met $\lim_{x \to 3} x^2 = 9$: $9 \cdot (-5) = -45$.
+    - opgave: |-
+        $\lim_{x \to 3} \bigl(f(x)\bigr)^3$
+      antwoord: |-
+        $8$
+      uitwerking: |-
+        $\bigl(f(x)\bigr)^3 = f(x) \cdot f(x) \cdot f(x)$, dus de productregel geeft $2^3 = 8$.
+
+- id: h1-quotientregel
+  soort: kort
+  opgave: |-
+    Gegeven: $\lim_{x \to 3} f(x) = 2$ en $\lim_{x \to 3} g(x) = -5$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $\displaystyle\lim_{x \to 3} \dfrac{f(x)}{g(x)}$ en $\displaystyle\lim_{x \to 3} \dfrac{g(x) + x}{f(x)}$.
+      antwoord: |-
+        $-\frac25$; $-1$
+      uitwerking: |-
+        De noemer heeft telkens een limiet verschillend van $0$. Quotiëntregel: $\frac{2}{-5} = -\frac25$, en $\frac{-5 + 3}{2} = -1$.
+    - opgave: |-
+        Kun je $\displaystyle\lim_{x \to 3} \dfrac{f(x)}{g(x) + 5}$ berekenen met de quotiëntregel? Leg uit.
+      antwoord: |-
+        nee: de noemer gaat naar $0$
+      uitwerking: |-
+        De noemer heeft limiet $-5 + 5 = 0$, en dan geldt de quotiëntregel niet. De teller gaat naar $2$: een getal gedeeld door nul. Zonder meer gegevens over het teken van de noemer weet je niet of het $+\infty$ of $-\infty$ wordt.
+
+- id: h1-invullen
+  soort: kort
+  opgave: |-
+    Bereken door in te vullen. Controleer eerst dat het mag.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\displaystyle\lim_{x \to 2} (x^3 - 4x + 1)$
+      antwoord: |-
+        $1$
+      uitwerking: |-
+        Een veelterm: invullen mag altijd. $8 - 8 + 1 = 1$.
+    - opgave: |-
+        $\displaystyle\lim_{x \to -1} \dfrac{2x^2 + x}{x - 3}$
+      antwoord: |-
+        $-\frac14$
+      uitwerking: |-
+        De noemer is $-4 \neq 0$, dus invullen mag: $\frac{2 - 1}{-4} = -\frac14$.
+    - opgave: |-
+        $\displaystyle\lim_{x \to 0} \dfrac{x^2 + 5}{x^4 + x + 1}$
+      antwoord: |-
+        $5$
+      uitwerking: |-
+        De noemer is $1 \neq 0$: $\frac{5}{1} = 5$.
+
+- id: h1-va
+  soort: kort
+  opgave: |-
+    Bepaal de verticale asymptoten en de perforaties van de grafiek.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x) = \dfrac{x + 2}{x^2 - 4}$
+      antwoord: |-
+        VA $x = 2$; perforatie in $\bigl(-2, -\frac14\bigr)$
+      uitwerking: |-
+        $f(x) = \dfrac{x + 2}{(x - 2)(x + 2)}$. In $2$ geeft invullen $\frac40$: verticale asymptoot $x = 2$. In $-2$ geeft het $\frac00$. Schrappen: $\frac{1}{x - 2} \to -\frac14$. Daar is een perforatie in $\bigl(-2, -\frac14\bigr)$.
+    - opgave: |-
+        $g(x) = \dfrac{x^2 + 1}{x^2 - 3x}$
+      antwoord: |-
+        VA $x = 0$ en $x = 3$
+      uitwerking: |-
+        $x^2 - 3x = x(x - 3)$ is nul in $0$ en $3$. De teller $x^2 + 1$ is nooit nul: in $0$ geeft invullen $\frac10$ en in $3$ geeft het $\frac{10}{0}$. Twee verticale asymptoten: $x = 0$ en $x = 3$.
+
+- id: h1-graad
+  soort: kort
+  opgave: |-
+    Bereken.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\displaystyle\lim_{x \to +\infty} \dfrac{3x - 1}{x^2 + 2}$
+      antwoord: |-
+        $0$
+      uitwerking: |-
+        Delen door $x^2$: $\dfrac{\frac3x - \frac{1}{x^2}}{1 + \frac{2}{x^2}} \to \frac01 = 0$. De graad van de teller is kleiner.
+    - opgave: |-
+        $\displaystyle\lim_{x \to +\infty} \dfrac{4x^3 + x}{2x^3 - 7}$
+      antwoord: |-
+        $2$
+      uitwerking: |-
+        Gelijke graad. Delen door $x^3$: $\dfrac{4 + \frac{1}{x^2}}{2 - \frac{7}{x^3}} \to \frac42 = 2$.
+    - opgave: |-
+        $\displaystyle\lim_{x \to +\infty} \dfrac{x^3 - 1}{5x^2 + x}$
+      antwoord: |-
+        $+\infty$
+      uitwerking: |-
+        Delen door $x^2$: $\dfrac{x - \frac{1}{x^2}}{5 + \frac1x}$. De teller wordt onbeperkt groot, de noemer gaat naar $5$: $+\infty$.
+    - opgave: |-
+        $\displaystyle\lim_{x \to -\infty} \dfrac{x^3 - 1}{5x^2 + x}$
+      antwoord: |-
+        $-\infty$
+      uitwerking: |-
+        Dezelfde breuk: $\dfrac{x - \frac{1}{x^2}}{5 + \frac1x}$. Nu gaat de teller naar $-\infty$ en de noemer naar $5$: $-\infty$.
+
+- id: h1-continupunt
+  soort: kort
+  opgave: |-
+    Is $f$ continu in $a$? Controleer de drie voorwaarden.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $f(x) = \dfrac{x^2 + x - 2}{x - 1}$ voor $x \neq 1$ en $f(1) = 3$, \ $a = 1$.
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $f(1) = 3$ bestaat. $\lim_{x \to 1} \dfrac{(x - 1)(x + 2)}{x - 1} = \lim_{x \to 1} (x + 2) = 3$. De limiet is gelijk aan $f(1)$: continu.
+    - opgave: |-
+        $f(x) = x^2$ voor $x < 0$ en $f(x) = x + 1$ voor $x \geqslant 0$, \ $a = 0$.
+      antwoord: |-
+        nee: sprong
+      uitwerking: |-
+        $f(0) = 1$. De linkerlimiet is $0$, de rechterlimiet is $1$: de limiet bestaat niet. Niet continu in $0$.
+    - opgave: |-
+        $f(x) = |x|$, \ $a = 0$.
+      antwoord: |-
+        ja
+      uitwerking: |-
+        $f(0) = 0$. Links is $f(x) = -x \to 0$, rechts is $f(x) = x \to 0$, dus $\lim_{x \to 0} |x| = 0 = f(0)$: continu.
+
+- id: h1-tws
+  soort: kort
+  opgave: |-
+    De tussenwaardestelling.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $f(x) = \frac{1}{x - 1}$ heeft $f(0) = -1$ en $f(2) = 1$. Heeft $f$ een nulwaarde in $\left]0, 2\right[$? Is dat in tegenspraak met de tussenwaardestelling?
+      antwoord: |-
+        nee; geen tegenspraak: $f$ is niet continu op $[0, 2]$
+      uitwerking: |-
+        $\frac{1}{x - 1} = 0$ heeft geen oplossing, want de teller is nooit nul. Er is geen tegenspraak: $f$ bestaat niet in $1$, dus $f$ is niet continu op $[0, 2]$ en de stelling is niet van toepassing. De grafiek springt over de $x$-as, bij de verticale asymptoot $x = 1$.
+    - opgave: |-
+        Toon aan dat $x^5 + 2x = 1$ een oplossing heeft in $\left]0, 1\right[$.
+      antwoord: |-
+        $g(x) = x^5 + 2x - 1$: $g(0) = -1$, $g(1) = 2$
+      uitwerking: |-
+        Neem $g(x) = x^5 + 2x - 1$, een veelterm en dus continu. $g(0) = -1 < 0$ en $g(1) = 2 > 0$. Volgens de tussenwaardestelling heeft $g$ een nulwaarde in $\left]0, 1\right[$, en die is een oplossing van de vergelijking.
+    - opgave: |-
+        Toon aan dat de grafiek van $f(x) = \e^x$ de rechte $y = 3 - x$ snijdt voor een $x$ in $\left]0, 1\right[$.
+      antwoord: |-
+        $g(x) = \e^x + x - 3$: $g(0) = -2$, $g(1) = \e - 2 > 0$
+      uitwerking: |-
+        Snijden betekent $\e^x = 3 - x$, dus $g(x) = \e^x + x - 3 = 0$. De functie $g$ is continu, $g(0) = 1 - 3 = -2 < 0$ en $g(1) = \e - 2 \approx 0{,}72 > 0$. Er is dus een nulwaarde in $\left]0, 1\right[$.
 
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3

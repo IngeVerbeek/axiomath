@@ -21,67 +21,179 @@ In het vlak snijden twee rechten elkaar, of ze zijn evenwijdig. In de ruimte is 
 %========================================================================================
 \section{Twee rechten}
 
-\naast{%
+\subsection{Vier mogelijke liggingen}
+
+Twee rechten in een vlak snijden elkaar, of ze zijn evenwijdig. In de ruimte is er een derde mogelijkheid. In de kubus $ABCD.EFGH$ uit de Verken is $HG$ evenwijdig met $AB$ en snijdt $BF$ de ribbe $AB$ in $B$. Maar $CG$ en $AB$ hebben geen punt gemeen, en toch zijn ze niet evenwijdig.
+
+\figuren{\begin{tikzpicture}[ruimte,scale=.62,font=\scriptsize]
+  \draw[grijs] (2,0,0) -- (2,2,0) -- (0,2,0) (2,0,0) -- (2,0,2) -- (0,0,2) -- (0,2,2) -- (2,2,2) -- (2,0,2) (2,2,0) -- (2,2,2) (0,2,0) -- (0,2,2);
+  \draw[grijs,dashed] (0,0,0) -- (2,0,0) (0,0,0) -- (0,2,0) (0,0,0) -- (0,0,2);
+  \draw[accent,very thick] (-.6,0,0) -- (2.8,0,0) (-.6,2,2) -- (2.8,2,2);
+  \node[below left] at (0,0,0) {$A$}; \node[below] at (2,0,0) {$B$}; \node[right] at (2,2,2) {$G$}; \node[above] at (0,2,2) {$H$};
+  \node at (1,1,-1.3) {evenwijdig};
+\end{tikzpicture}\qquad
+\begin{tikzpicture}[ruimte,scale=.62,font=\scriptsize]
+  \draw[grijs] (2,0,0) -- (2,2,0) -- (0,2,0) (2,0,0) -- (2,0,2) -- (0,0,2) -- (0,2,2) -- (2,2,2) -- (2,0,2) (2,2,0) -- (2,2,2) (0,2,0) -- (0,2,2);
+  \draw[grijs,dashed] (0,0,0) -- (2,0,0) (0,0,0) -- (0,2,0) (0,0,0) -- (0,0,2);
+  \draw[accent,very thick] (-.6,0,0) -- (2.8,0,0) (2,0,-.6) -- (2,0,2.8);
+  \node[below left] at (0,0,0) {$A$}; \node[below right] at (2,0,0) {$B$}; \node[left] at (2,0,2) {$F$};
+  \node at (1,1,-1.3) {snijdend};
+\end{tikzpicture}\qquad
+\begin{tikzpicture}[ruimte,scale=.62,font=\scriptsize]
+  \draw[grijs] (2,0,0) -- (2,2,0) -- (0,2,0) (2,0,0) -- (2,0,2) -- (0,0,2) -- (0,2,2) -- (2,2,2) -- (2,0,2) (2,2,0) -- (2,2,2) (0,2,0) -- (0,2,2);
+  \draw[grijs,dashed] (0,0,0) -- (2,0,0) (0,0,0) -- (0,2,0) (0,0,0) -- (0,0,2);
+  \draw[accent,very thick] (-.6,0,0) -- (2.8,0,0) (2,2,-.6) -- (2,2,2.8);
+  \node[below left] at (0,0,0) {$A$}; \node[below] at (2,0,0) {$B$}; \node[right] at (2,2,0) {$C$}; \node[right] at (2,2,2) {$G$};
+  \node at (1,1,-1.3) {kruisend};
+\end{tikzpicture}}
+
 \begin{theorie}
 Twee rechten in de ruimte zijn
 \begin{itemize}
-\item \textbf{\textcolor{accent}{evenwijdig}} als hun richtingsvectoren collineair zijn (en \textbf{samenvallend} als ze ook een punt gemeen hebben);
+\item \textbf{\textcolor{accent}{evenwijdig}} als hun richtingsvectoren collineair zijn, en \textbf{\textcolor{accent}{samenvallend}} als ze bovendien een punt gemeen hebben;
 \item \textbf{\textcolor{accent}{snijdend}} als ze precies één punt gemeen hebben;
 \item \textbf{\textcolor{accent}{kruisend}} als ze niet evenwijdig zijn en geen punt gemeen hebben.
 \end{itemize}
-\end{theorie}}{%
-\begin{tikzpicture}[ruimte,scale=.75,font=\scriptsize]
-  \draw[grijs] (2,0,0) -- (2,2,0) -- (0,2,0) (2,0,0) -- (2,0,2) -- (0,0,2) -- (0,2,2) -- (2,2,2) -- (2,0,2) (2,2,0) -- (2,2,2) (0,2,0) -- (0,2,2);
-  \draw[grijs,dashed] (0,0,0) -- (2,0,0) (0,0,0) -- (0,2,0) (0,0,0) -- (0,0,2);
-  \draw[accent,very thick] (0,0,0) -- (2,0,0);
-  \draw[accent,very thick] (0,0,2) -- (0,2,2);
-  \node[accent,below left] at (1,0,0) {$l$};
-  \node[accent,above] at (0,1,2) {$m$};
-\end{tikzpicture}}
+\begin{stelling}{Kruisende rechten}
+Twee rechten zijn kruisend als en slechts als ze niet in één vlak liggen.
+\end{stelling}
+\begin{bewijs}
+Liggen $l$ en $m$ in één vlak, dan zijn ze in dat vlak evenwijdig of snijdend, zoals elke twee rechten in een vlak. Ze zijn dus niet kruisend.
+
+Omgekeerd: zijn $l$ en $m$ niet kruisend, dan liggen ze in één vlak. Snijden ze elkaar in $S$, neem dan het vlak door $S$ met hun richtingsvectoren, die niet collineair zijn. Vallen ze samen, neem dan een vlak door die rechte. Zijn ze evenwijdig en verschillend, neem $A$ op $l$, $B$ op $m$, en het vlak door $A$ met richtingsvectoren $\vec u$ (van $l$ en $m$) en $\overrightarrow{AB}$. Daarin ligt $l$, en ook $m$, want $B + s\vec u = A + \overrightarrow{AB} + s\vec u$.
+\end{bewijs}
+\end{theorie}
+
+Kruisende rechten bestaan dus alleen in de ruimte. In een lokaal kruisen een rand van het plafond en een rand van de vloer die er dwars op staat.
+
+\subsection{Evenwijdige rechten}
+
+Of twee rechten evenwijdig zijn, zie je meteen aan hun richtingsvectoren. Daarna beslist één punt of ze samenvallen.
+
+\voorbeeld{}{Onderzoek de ligging van $l\colon (0, 1, -2) + r\vcr{3}{1}{-1}$ en $m\colon (6, 2, 1) + s\vcr{-6}{-2}{2}$.\label{vb:h3-evenwijdig-rechten}}{%
+\uitleg{Vergelijk eerst de richtingsvectoren. Zijn ze collineair, controleer dan of een punt van $m$ op $l$ ligt.}
+\begin{stappenbreed}
+\vcr{-6}{-2}{2} = -2\vcr{3}{1}{-1} & Collineair: de rechten zijn evenwijdig. \\
+3r = 6 \iff r = 2;\quad y = 1 + 2 = 3 \neq 2 & $(6, 2, 1)$ ligt niet op $l$: de rechten zijn \textit{strikt} evenwijdig.
+\end{stappenbreed}}
+
+\begin{oefeningen}
+\oef{h3-evenwijdig-rechten}
+\end{oefeningen}
+
+\subsection{Snijdende rechten}
+
+Zijn de richtingsvectoren niet collineair, dan snijden de rechten elkaar of ze kruisen. Een snijpunt ligt op beide rechten, dus het heeft een waarde van $r$ op $l$ en een waarde van $s$ op $m$.
 
 \voorbeeld{}{Onderzoek de ligging van $l\colon (1, 0, 2) + r\vcr{1}{1}{0}$ en $m\colon (0, 3, 0) + s\vcr{1}{-1}{1}$.\label{vb:h3-snijdend}}{%
 \uitleg{De richtingsvectoren zijn niet collineair. Zoek een gemeenschappelijk punt: stel de coördinaten gelijk.}
 \begin{stappenbreed}
 1 + r = s,\quad r = 3 - s,\quad 2 = s & Drie vergelijkingen, twee onbekenden. \\
-s = 2,\ r = 1,\ \text{controle } 1 + 1 = 2 & De eerste klopt ook. \\
-\text{snijpunt } (2, 1, 2) & $r = 1$ invullen in $l$.
+s = 2,\quad r = 1,\quad 1 + 1 = 2 & Uit de derde en de tweede; de eerste klopt ook. \\
+\text{snijpunt } (2, 1, 2) & $r = 1$ invullen in $l$, of $s = 2$ in $m$.
 \end{stappenbreed}}
+
+Gebruik twee verschillende parameters. Schrijf je voor $l\colon r\vcr{1}{0}{0}$ en $m\colon (2, 1, 0) + s\vcr{0}{1}{0}$ twee keer de letter $r$, dan krijg je $r = 2$ en $0 = 1 + r$, een tegenspraak. Toch snijden ze elkaar in $(2, 0, 0)$, bij $r = 2$ op $l$ en $s = -1$ op $m$.
 
 \begin{oefeningen}
 \oef{h3-snijdend}
 \end{oefeningen}
 
-\voorbeeld{}{In de kubus hierboven ligt $l$ op de $x$-as en $m\colon (0, 0, 2) + s\vcr{0}{1}{0}$. Toon aan dat ze kruisend zijn.\label{vb:h3-kruisend}}{%
-\uitleg{De richtingsvectoren $\vcr{1}{0}{0}$ en $\vcr{0}{1}{0}$ zijn niet collineair. Zoek een gemeenschappelijk punt.}
-\begin{stappenbreed}
-r = 0,\quad 0 = s,\quad 0 = 2 & De derde vergelijking kan niet. \\
-\text{geen gemeenschappelijk punt} & Niet evenwijdig en niet snijdend: kruisend.
-\end{stappenbreed}}
+\subsection{Kruisende rechten}
 
-\begin{oefeningen}
-\oef{h3-kruisend}
-\end{oefeningen}
+Zijn de richtingsvectoren niet collineair en heeft het stelsel geen oplossing, dan kruisen de rechten.
+
+\voorbeeld{}{De rechte $l$ is de $x$-as, en $m\colon (0, 0, 2) + s\vcr{0}{1}{0}$. Toon aan dat ze kruisend zijn.\label{vb:h3-kruisend}}{%
+\uitleg{De $x$-as is $l\colon r\vcr{1}{0}{0}$. De richtingsvectoren $\vcr{1}{0}{0}$ en $\vcr{0}{1}{0}$ zijn niet collineair. Zoek een gemeenschappelijk punt.}
+\naast{\begin{stappenvrij}{4cm}{4.6cm}
+r = 0,\quad 0 = s,\quad 0 = 2 & De derde vergelijking kan niet: $m$ ligt op hoogte $2$, boven de $x$-as. \\
+\text{kruisend} & Niet evenwijdig en geen gemeenschappelijk punt.
+\end{stappenvrij}}{%
+\begin{tikzpicture}[ruimte,scale=.6,font=\scriptsize]
+  \draw[grijs] (2,0,0) -- (2,2,0) -- (0,2,0) (2,0,0) -- (2,0,2) -- (0,0,2) -- (0,2,2) -- (2,2,2) -- (2,0,2) (2,2,0) -- (2,2,2) (0,2,0) -- (0,2,2);
+  \draw[grijs,dashed] (0,0,0) -- (2,0,0) (0,0,0) -- (0,2,0) (0,0,0) -- (0,0,2);
+  \draw[accent,very thick] (-.6,0,0) -- (2.8,0,0);
+  \draw[accent,very thick] (0,-.6,2) -- (0,2.8,2);
+  \node[accent,below left] at (1.6,0,0) {$l$};
+  \node[accent,above] at (0,1.4,2) {$m$};
+\end{tikzpicture}}}
 
 \begin{werkwijze}
-Vergelijk de richtingsvectoren. Collineair: evenwijdig; ligt een punt van de ene op de andere, dan samenvallend. Niet collineair: stel de parametervergelijkingen gelijk (gebruik twee verschillende parameters!) en los op. Een oplossing geeft het snijpunt; geen oplossing betekent kruisend.
+Vergelijk de richtingsvectoren. Collineair: evenwijdig, en samenvallend als een punt van de ene op de andere ligt. Niet collineair: stel de parametervergelijkingen gelijk, met twee parameters. Een oplossing geeft het snijpunt, geen oplossing betekent kruisend.
 \end{werkwijze}
 
 \begin{oefeningen}
+\oef{h3-kruisend}
+
 \oef{h3-rechten}
 \end{oefeningen}
 
 %========================================================================================
 \section{Een rechte en een vlak}
 
-Een rechte en een vlak kunnen elkaar in één punt snijden, evenwijdig zijn zonder gemeenschappelijk punt, of de rechte ligt in het vlak. Vul de parametervergelijkingen van de rechte in de vergelijking van het vlak in: dat geeft één vergelijking in de parameter.
+Een rechte en een vlak kunnen elkaar in één punt snijden, geen punt gemeen hebben, of de rechte ligt in het vlak. Welke van de drie het is, beslist één vergelijking.
+
+\figuren{\begin{tikzpicture}[ruimte,scale=.55,font=\scriptsize]
+  \fill[accent!12] (3,0,0) -- (3,4,0) -- (0,4,0) -- (0,0,0) -- cycle;
+  \draw[accent!60] (3,0,0) -- (3,4,0) -- (0,4,0) -- (0,0,0) -- cycle;
+  \draw[accent,very thick] (1.5,1.2,-1.6) -- (1.5,2,0);
+  \draw[accent,very thick,dashed] (1.5,2,0) -- (1.5,2.2,.4);
+  \draw[accent,very thick] (1.5,2.2,.4) -- (1.5,2.8,1.6);
+  \fill (1.5,2,0) circle (.08);
+  \node at (1.5,2,-2.4) {snijdend};
+\end{tikzpicture}\qquad
+\begin{tikzpicture}[ruimte,scale=.55,font=\scriptsize]
+  \fill[accent!12] (3,0,0) -- (3,4,0) -- (0,4,0) -- (0,0,0) -- cycle;
+  \draw[accent!60] (3,0,0) -- (3,4,0) -- (0,4,0) -- (0,0,0) -- cycle;
+  \draw[accent,very thick] (2,-.5,1.3) -- (1,4.5,1.3);
+  \node at (1.5,2,-2.4) {strikt evenwijdig};
+\end{tikzpicture}\qquad
+\begin{tikzpicture}[ruimte,scale=.55,font=\scriptsize]
+  \fill[accent!12] (3,0,0) -- (3,4,0) -- (0,4,0) -- (0,0,0) -- cycle;
+  \draw[accent!60] (3,0,0) -- (3,4,0) -- (0,4,0) -- (0,0,0) -- cycle;
+  \draw[accent,very thick] (2.5,.3,0) -- (.5,3.7,0);
+  \node at (1.5,2,-2.4) {ligt in het vlak};
+\end{tikzpicture}}
+
+\begin{theorie}
+Een rechte en een vlak zijn \textbf{\textcolor{accent}{snijdend}} als ze precies één punt gemeen hebben, en \textbf{\textcolor{accent}{strikt evenwijdig}} als ze geen punt gemeen hebben.
+\begin{stelling}{Ligging van een rechte en een vlak}
+Vul de parametervergelijkingen van een rechte in de vergelijking van een vlak in. Dat geeft een vergelijking $\formule{p\,r = q}$, en
+\begin{itemize}
+\item is $p \neq 0$, dan snijden de rechte en het vlak elkaar in één punt;
+\item is $p = 0$ en $q \neq 0$, dan zijn ze strikt evenwijdig;
+\item is $p = 0$ en $q = 0$, dan ligt de rechte in het vlak.
+\end{itemize}
+\end{stelling}
+\begin{bewijs}
+Neem $l\colon x = a_1 + ru_1$, $y = a_2 + ru_2$, $z = a_3 + ru_3$ en $\alpha\colon ax + by + cz = d$. Het punt van $l$ met parameter $r$ ligt in $\alpha$ als en slechts als
+\bewijsregel{a(a_1 + ru_1) + b(a_2 + ru_2) + c(a_3 + ru_3) = d ,}
+of $(au_1 + bu_2 + cu_3)\,r = d - (aa_1 + ba_2 + ca_3)$: een vergelijking $pr = q$. Elke oplossing $r$ geeft een gemeenschappelijk punt, en verschillende $r$ geven verschillende punten. Is $p \neq 0$, dan is er precies één oplossing $r = \frac{q}{p}$. Is $p = 0$ en $q \neq 0$, dan staat er $0 = q$: geen oplossing, geen gemeenschappelijk punt. Is $p = q = 0$, dan staat er $0 = 0$: elke $r$ is een oplossing, en alle punten van $l$ liggen in $\alpha$.
+\end{bewijs}
+\end{theorie}
+
+Het getal $p$ hangt alleen af van de richtingsvector van de rechte, niet van haar punt. Of de rechte het vlak snijdt, hangt dus alleen af van haar richting.
 
 \voorbeeld{}{Bereken het snijpunt van de rechte $l\colon (1, 0, 2) + r\vcr{1}{1}{-1}$ met het vlak $\alpha\colon x + 2y + z = 7$.\label{vb:h3-rechtevlak}}{%
 \uitleg{Een punt van $l$ is $(1 + r, r, 2 - r)$. Het ligt in $\alpha$ als het de vergelijking klopt.}
 \begin{stappenbreed}
-(1 + r) + 2r + (2 - r) = 7 \iff 2r = 4 \iff r = 2 & Invullen. \\
+(1 + r) + 2r + (2 - r) = 7 \iff 2r = 4 \iff r = 2 & Invullen: $p = 2 \neq 0$. \\
 \text{snijpunt } (3, 2, 0) & Controle: $3 + 4 + 0 = 7$.
-\end{stappenbreed}
-Was er een vergelijking zonder oplossing gekomen (zoals $3 = 7$), dan was de rechte evenwijdig met het vlak. Een vergelijking die altijd klopt (zoals $7 = 7$) betekent dat de rechte in het vlak ligt.}
+\end{stappenbreed}}
+
+Komt de parameter niet meer voor na het invullen, dan is $p = 0$. Het rechterlid beslist dan.
+
+\voorbeeld{}{Onderzoek de ligging van $l\colon (2, 0, 1) + r\vcr{1}{1}{1}$ met het vlak $\alpha\colon x - 2y + z = 1$ en met het vlak $\beta\colon x - 2y + z = 3$.\label{vb:h3-rechtevlak-ligt}}{%
+\uitleg{De twee vlakken verschillen alleen in het rechterlid. Vul het punt $(2 + r, r, 1 + r)$ van $l$ in het linkerlid in.}
+\begin{stappenbreed}
+(2 + r) - 2r + (1 + r) = 3 & De parameter valt weg: $p = 0$. \\
+\alpha\colon\ 3 = 1 & Nooit waar: $l$ is strikt evenwijdig met $\alpha$. \\
+\beta\colon\ 3 = 3 & Altijd waar: $l$ ligt in $\beta$.
+\end{stappenbreed}}
+
+\begin{werkwijze}
+Vul de parametervergelijkingen van de rechte in de vergelijking van het vlak in, en los op naar $r$. Eén oplossing: vul ze in om het snijpunt te vinden. Een valse gelijkheid zoals $3 = 1$: strikt evenwijdig. Een gelijkheid die altijd klopt: de rechte ligt in het vlak.
+\end{werkwijze}
 
 \begin{oefeningen}
 \oef{h3-rechtevlak}
@@ -92,36 +204,126 @@ Was er een vergelijking zonder oplossing gekomen (zoals $3 = 7$), dan was de rec
 %========================================================================================
 \section{Vlakken}
 
+\subsection{Twee vlakken}
+
+Twee vlakken snijden elkaar volgens een rechte, zoals een muur en de vloer, of ze zijn evenwijdig, zoals de vloer en het plafond. Aan hun vergelijkingen zie je meteen welk geval het is.
+
 \begin{theorie}
-De vlakken $a_1x + b_1y + c_1z = d_1$ en $a_2x + b_2y + c_2z = d_2$ zijn \textbf{\textcolor{accent}{evenwijdig}} als $(a_1, b_1, c_1)$ en $(a_2, b_2, c_2)$ evenredig zijn; ze \textbf{vallen samen} als ook $d_1$ en $d_2$ in dezelfde verhouding staan. Anders snijden ze elkaar volgens een rechte.
+Twee vlakken zijn \textbf{\textcolor{accent}{snijdend}} als ze een rechte gemeen hebben, \textbf{\textcolor{accent}{strikt evenwijdig}} als ze geen punt gemeen hebben, en \textbf{\textcolor{accent}{samenvallend}} als ze gelijk zijn.
+\begin{stelling}{Evenwijdige vlakken}
+Neem de vlakken $\alpha\colon a_1x + b_1y + c_1z = d_1$ en $\beta\colon a_2x + b_2y + c_2z = d_2$.
+\begin{itemize}
+\item Is $\formule{(a_2, b_2, c_2) = k\,(a_1, b_1, c_1)}$ en $d_2 = k\,d_1$, dan vallen ze samen.
+\item Is $\formule{(a_2, b_2, c_2) = k\,(a_1, b_1, c_1)}$ en $d_2 \neq k\,d_1$, dan zijn ze strikt evenwijdig.
+\item Zijn $(a_1, b_1, c_1)$ en $(a_2, b_2, c_2)$ niet evenredig, dan snijden ze elkaar.
+\end{itemize}
+\end{stelling}
+\begin{bewijs}
+Stel $(a_2, b_2, c_2) = k(a_1, b_1, c_1)$, met $k \neq 0$ omdat $a_2$, $b_2$, $c_2$ niet alle nul zijn. Is $d_2 = kd_1$, dan is de vergelijking van $\beta$ die van $\alpha$ maal $k$: ze hebben dezelfde oplossingen. Is $d_2 \neq kd_1$ en ligt $P(x, y, z)$ in beide vlakken, dan is
+\bewijsregel{d_2 = a_2x + b_2y + c_2z = k(a_1x + b_1y + c_1z) = kd_1 ,}
+een tegenspraak: er is geen gemeenschappelijk punt.
+
+Zijn de coëfficiënten niet evenredig, dan is, zoals in het bewijs van de cartesiaanse vergelijking in hoofdstuk 2, minstens een van de getallen $a_1b_2 - a_2b_1$, $a_1c_2 - a_2c_1$, $b_1c_2 - b_2c_1$ niet nul. Stel $D = a_1b_2 - a_2b_1 \neq 0$ (anders wissel je de rol van de onbekenden), en neem $z = r$. Het stelsel
+\bewijsregel{a_1x + b_1y = d_1 - c_1r, \qquad a_2x + b_2y = d_2 - c_2r}
+heeft dan, net zoals in dat bewijs, precies één oplossing (invullen toont dat ze klopt): $Dx = b_2(d_1 - c_1r) - b_1(d_2 - c_2r)$ en $Dy = a_1(d_2 - c_2r) - a_2(d_1 - c_1r)$. Dat zijn punten $P_0 + r\vec w$, met $P_0$ het punt voor $r = 0$ en $\vec w$ een vector met derde coördinaat $1$: een rechte.
+\end{bewijs}
 \end{theorie}
+
+De coëfficiënten van $x$, $y$ en $z$ bepalen dus de stand van een vlak, en het rechterlid bepaalt welk van de evenwijdige vlakken met die stand het is.
 
 \voorbeeld{}{Zijn de vlakken $x + y + z = 3$ en $2x + 2y + 2z = 5$ evenwijdig?\label{vb:h3-vlakken}}{%
 \uitleg{Vergelijk de coëfficiënten van $x$, $y$ en $z$, en daarna de rechterleden.}
 \begin{stappenbreed}
-(2, 2, 2) = 2 \cdot (1, 1, 1) & Evenredig: evenwijdig. \\
-5 \neq 2 \cdot 3 & Niet samenvallend.
+(2, 2, 2) = 2 \cdot (1, 1, 1) & Evenredig met $k = 2$: evenwijdig. \\
+5 \neq 2 \cdot 3 & Niet samenvallend: strikt evenwijdig.
+\end{stappenbreed}
+Deel je de tweede vergelijking door $2$, dan zie je het meteen: $x + y + z = \frac52$ en $x + y + z = 3$ kunnen niet tegelijk gelden.}
+
+Wil je een vlak evenwijdig met een gegeven vlak, dan neem je dus hetzelfde linkerlid.
+
+\voorbeeld{}{Geef een vergelijking van het vlak door $P(1, 0, -2)$ dat evenwijdig is met $\alpha\colon 2x + y - 3z = 4$.\label{vb:h3-evenwijdigvlak}}{%
+\uitleg{Een evenwijdig vlak heeft een vergelijking $2x + y - 3z = d$. Het punt $P$ bepaalt $d$.}
+\begin{stappenbreed}
+d = 2 \cdot 1 + 0 - 3 \cdot (-2) = 8 & $P$ invullen in het linkerlid. \\
+2x + y - 3z = 8 & Een ander rechterlid dan $4$: strikt evenwijdig met $\alpha$.
 \end{stappenbreed}}
 
 \begin{oefeningen}
 \oef{h3-evenwijdig}
 \end{oefeningen}
 
-Drie vlakken snijden elkaar meestal in één punt: de oplossing van een stelsel van drie vergelijkingen met drie onbekenden (zie Matrices). Het kan ook dat ze een rechte gemeen hebben, of geen enkel punt.
+Zijn de coëfficiënten niet evenredig, dan bereken je de snijlijn zoals in hoofdstuk 2.
+
+\subsection{Drie vlakken}
+
+Drie vlakken hebben meestal één punt gemeen, zoals de vloer en twee muren in een hoek van een kamer. Het kan ook dat ze een rechte gemeen hebben, zoals de bladzijden van een open boek, of geen enkel punt. Dat laatste gebeurt als twee vlakken strikt evenwijdig zijn, of als ze twee aan twee snijden volgens drie evenwijdige rechten, zoals de zijvlakken van een prisma.
+
+\figuren{\begin{tikzpicture}[ruimte,scale=.5,font=\scriptsize]
+  \fill[accent!10] (3,0,0) -- (3,3,0) -- (0,3,0) -- (0,0,0) -- cycle;
+  \fill[accent!20] (0,0,0) -- (3,0,0) -- (3,0,2.5) -- (0,0,2.5) -- cycle;
+  \fill[accent!30] (0,0,0) -- (0,3,0) -- (0,3,2.5) -- (0,0,2.5) -- cycle;
+  \draw[accent!70] (3,0,0) -- (3,3,0) -- (0,3,0) (3,0,0) -- (3,0,2.5) -- (0,0,2.5) -- (0,3,2.5) -- (0,3,0);
+  \draw[accent!70] (0,0,0) -- (3,0,0) (0,0,0) -- (0,3,0) (0,0,0) -- (0,0,2.5);
+  \fill (0,0,0) circle (.09);
+  \node at (1.5,1.5,-2) {één punt};
+\end{tikzpicture}\qquad
+\begin{tikzpicture}[ruimte,scale=.5,font=\scriptsize]
+  \fill[accent!10] (0,0,0) -- (0,3,0) -- (3,3,0) -- (3,0,0) -- cycle;
+  \fill[accent!20] (0,0,0) -- (0,3,0) -- (2,3,2) -- (2,0,2) -- cycle;
+  \fill[accent!30] (0,0,0) -- (0,3,0) -- (0,3,2.8) -- (0,0,2.8) -- cycle;
+  \draw[accent!70] (0,3,0) -- (3,3,0) -- (3,0,0) -- (0,0,0) (0,3,0) -- (2,3,2) -- (2,0,2) -- (0,0,0) (0,3,0) -- (0,3,2.8) -- (0,0,2.8) -- (0,0,0);
+  \draw[accent,very thick] (0,-.6,0) -- (0,3.6,0);
+  \node at (1.5,1.5,-2) {een rechte};
+\end{tikzpicture}\qquad
+\begin{tikzpicture}[x=.5cm,y=.5cm,font=\scriptsize]
+  \fill[accent!15] (0,0) -- (3,0) -- (4.6,1.2) -- (1.6,1.2) -- cycle;
+  \fill[accent!35] (3,0) -- (1.5,2.4) -- (3.1,3.6) -- (4.6,1.2) -- cycle;
+  \fill[accent!25,opacity=.8] (0,0) -- (1.5,2.4) -- (3.1,3.6) -- (1.6,1.2) -- cycle;
+  \draw[accent!70] (0,0) -- (3,0) -- (1.5,2.4) -- cycle (3,0) -- (4.6,1.2) -- (3.1,3.6) -- (1.5,2.4);
+  \draw[accent!70,dashed] (0,0) -- (1.6,1.2) -- (4.6,1.2) (1.6,1.2) -- (3.1,3.6);
+  \node at (2.3,-1.2) {geen punt (prisma)};
+\end{tikzpicture}\qquad
+\begin{tikzpicture}[ruimte,scale=.5,font=\scriptsize]
+  \foreach \h/\t in {0/10,1.2/20,2.4/30}{\fill[accent!\t] (3,0,\h) -- (3,3,\h) -- (0,3,\h) -- (0,0,\h) -- cycle; \draw[accent!70] (3,0,\h) -- (3,3,\h) -- (0,3,\h) -- (0,0,\h) -- cycle;}
+  \node at (1.5,1.5,-2) {geen punt};
+\end{tikzpicture}}
+
+De gemeenschappelijke punten zijn de oplossingen van een stelsel van drie vergelijkingen met drie onbekenden. Je lost het op door telkens een onbekende te elimineren, zoals bij de methode van Gauss.
 
 \voorbeeld{}{Bereken het gemeenschappelijke punt van de vlakken $x + y + z = 6$, $x - y + 2z = 5$ en $2x + y - z = 1$.\label{vb:h3-drievlakken}}{%
-\uitleg{Elimineer telkens een onbekende, zoals bij de methode van Gauss.}
+\uitleg{Elimineer $x$ met de eerste vergelijking. Dan blijft een stelsel van twee vergelijkingen met $y$ en $z$ over.}
 \begin{stappenbreed}
 -2y + z = -1 & Tweede min eerste. \\
 -y - 3z = -11 & Derde min twee keer de eerste. \\
 z = 2y - 1 \Rightarrow -y - 6y + 3 = -11 \iff y = 2 & Invullen. \\
 z = 3,\quad x = 6 - 2 - 3 = 1 & Het punt $(1, 2, 3)$.
-\end{stappenbreed}}
+\end{stappenbreed}
+Controle in de derde vergelijking: $2 + 2 - 3 = 1$.}
 
 \begin{oefeningen}
 \oef{h3-vlakken}
 
 \oef{h3-drievlakken}
+\end{oefeningen}
+
+Valt bij het elimineren een hele vergelijking weg, dan is er geen enkel punt, of zijn er oneindig veel.
+
+\voorbeeld{}{Onderzoek welke punten de vlakken $x + y + z = 6$, $x - y + 2z = 5$ en $2x + 3z = 11$ gemeen hebben.\label{vb:h3-drievlakken-rechte}}{%
+\uitleg{Elimineer $x$ zoals in het vorige voorbeeld.}
+\begin{stappenbreed}
+-2y + z = -1 & Tweede min eerste. \\
+-2y + z = -1 & Derde min twee keer de eerste: dezelfde vergelijking. \\
+0 = 0 & Trek ze af: geen voorwaarde meer. \\
+y = r,\quad z = 2r - 1,\quad x = 6 - y - z = 7 - 3r & Neem $y = r$ vrij.
+\end{stappenbreed}
+De drie vlakken gaan door de rechte $(7, 0, -1) + r\vcr{-3}{1}{2}$. Met $2x + 3z = 10$ als derde vlak was er $0 = -1$ gekomen, en hadden de drie vlakken geen punt gemeen.}
+
+\begin{werkwijze}
+Drie vlakken: elimineer telkens een onbekende. Eén oplossing is het gemeenschappelijke punt. Krijg je $0 = 0$, neem dan een onbekende als parameter: de vlakken hebben een rechte gemeen. Krijg je een valse gelijkheid zoals $0 = -1$, dan hebben ze geen punt gemeen.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h3-drievlakken-rechte}
 \end{oefeningen}
 
 %========================================================================================
@@ -229,9 +431,9 @@ z = 3,\quad x = 6 - 2 - 3 = 1 & Het punt $(1, 2, 3)$.
   \fv{oef:h3-t1}{vb:h3-snijdend}{oef:h3-snijdend}%
   \fv{oef:h3-t5}{vb:h3-kruisend}{oef:h3-kruisend}%
   \fv{oef:h3-t2}{vb:h3-rechtevlak}{oef:h3-rechtevlak}%
-  \fv{oef:h3-t6}{vb:h3-rechtevlak}{oef:h3-rechtevlak-ligt}%
+  \fv{oef:h3-t6}{vb:h3-rechtevlak-ligt}{oef:h3-rechtevlak-ligt}%
   \fv{oef:h3-t3}{vb:h3-vlakken}{oef:h3-vlakken}%
-  \fv{oef:h3-t7}{vb:h3-vlakken}{oef:h3-evenwijdig}%
+  \fv{oef:h3-t7}{vb:h3-evenwijdigvlak}{oef:h3-evenwijdig}%
   \fv{oef:h3-t4}{vb:h3-drievlakken}{oef:h3-drievlakken}}
 
 \ifzelfstudie

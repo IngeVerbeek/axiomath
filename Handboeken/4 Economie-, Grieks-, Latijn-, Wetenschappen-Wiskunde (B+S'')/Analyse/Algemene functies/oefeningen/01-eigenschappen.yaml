@@ -305,6 +305,143 @@
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
 
+- id: h1-domein-valkuil
+  soort: kort
+  opgave: |-
+    Bepaal eerst het domein, en vereenvoudig daarna het voorschrift.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x) = \dfrac{x^2 - 9}{x + 3}$
+      antwoord: |-
+        $\R \setminus \{-3\}$; $f(x) = x - 3$
+      uitwerking: |-
+        De noemer: $x + 3 \neq 0$, dus $\dom f = \R \setminus \{-3\}$. Voor $x \neq -3$ is $f(x) = \frac{(x - 3)(x + 3)}{x + 3} = x - 3$. De grafiek is de rechte $y = x - 3$ met een open bolletje in $(-3, -6)$.
+    - opgave: |-
+        $g(x) = \dfrac{x^2 - 2x}{x^2 - 4}$
+      antwoord: |-
+        $\R \setminus \{-2, 2\}$; $g(x) = \dfrac{x}{x + 2}$
+      uitwerking: |-
+        De noemer: $x^2 - 4 = (x - 2)(x + 2) \neq 0$, dus $\dom g = \R \setminus \{-2, 2\}$. Voor die $x$ is $g(x) = \frac{x(x - 2)}{(x - 2)(x + 2)} = \frac{x}{x + 2}$. Het vereenvoudigde voorschrift bestaat ook in $2$, maar $g$ niet.
+
+- id: h1-bereik
+  soort: kort
+  opgave: |-
+    Bepaal het bereik.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $f(x) = x^2 - 2x + 5$
+      antwoord: |-
+        $\left[4, +\infty\right[$
+      uitwerking: |-
+        $f(x) = (x - 1)^2 + 4 \geqslant 4$. Omgekeerd: voor $y \geqslant 4$ is $x = 1 + \sqrt{y - 4}$ een oplossing van $f(x) = y$. Dus $\ber f = \left[4, +\infty\right[$.
+    - opgave: |-
+        $g(x) = 3 - x^2$
+      antwoord: |-
+        $\left]-\infty, 3\right]$
+      uitwerking: |-
+        $x^2 \geqslant 0$, dus $g(x) \leqslant 3$. Omgekeerd: voor $y \leqslant 3$ is $x = \sqrt{3 - y}$ een oplossing van $g(x) = y$. Dus $\ber g = \left]-\infty, 3\right]$.
+    - opgave: |-
+        $h(x) = 2 + \sqrt{x - 1}$
+      antwoord: |-
+        $\left[2, +\infty\right[$
+      uitwerking: |-
+        Een wortel is nooit negatief, dus $h(x) \geqslant 2$. Omgekeerd: voor $y \geqslant 2$ geeft $\sqrt{x - 1} = y - 2$ de oplossing $x = 1 + (y - 2)^2$, en die ligt in $\dom h = \left[1, +\infty\right[$. Dus $\ber h = \left[2, +\infty\right[$.
+
+- id: h1-teken-factoren
+  soort: kort
+  opgave: |-
+    Bepaal de nulwaarden en stel de tekentabel op.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x) = (x + 1)(x - 2)(x - 5)$
+      antwoord: |-
+        \tekentabel{cccccccc}{x & & -1 & & 2 & & 5 & }{f(x) & - & 0 & + & 0 & - & 0 & +}
+      uitwerking: |-
+        Nulwaarden $-1$, $2$ en $5$. Eén getal per interval: $f(-2) = -28$, $f(0) = 10$, $f(3) = -8$, $f(6) = 28$.\\
+        \tekentabel{cccccccc}{x & & -1 & & 2 & & 5 & }{f(x) & - & 0 & + & 0 & - & 0 & +}
+    - opgave: |-
+        $g(x) = (x^2 + x + 1)(3 - x)$
+      antwoord: |-
+        \tekentabel{cccc}{x & & 3 & }{g(x) & + & 0 & -}
+      uitwerking: |-
+        De factor $x^2 + x + 1$ heeft $D = 1 - 4 = -3 < 0$: geen nulwaarden, en overal positief (zoals de coëfficiënt $1$ van $x^2$). Dus $g$ heeft het teken van $3 - x$, met nulwaarde $3$.\\
+        \tekentabel{cccc}{x & & 3 & }{g(x) & + & 0 & -}
+
+- id: h1-stijgend-def
+  soort: kort
+  opgave: |-
+    Toon aan met de definitie.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $f(x) = 4 - 3x$ is dalend op $\R$.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Neem $x_1 < x_2$. Dan is $f(x_2) - f(x_1) = (4 - 3x_2) - (4 - 3x_1) = -3(x_2 - x_1) < 0$, want $x_2 - x_1 > 0$. Dus $f(x_1) > f(x_2)$: $f$ is dalend.
+    - opgave: |-
+        $g(x) = 2 - \sqrt{x}$ is dalend op $\left[0, +\infty\right[$. Je mag voorbeeld~\ref{vb:h1-stijgend} gebruiken.
+      antwoord: |-
+        bewijs
+      uitwerking: |-
+        Neem $0 \leqslant x_1 < x_2$. Omdat $\sqrt{x}$ stijgend is, is $\sqrt{x_1} < \sqrt{x_2}$. Dan is $g(x_2) - g(x_1) = -\bigl(\sqrt{x_2} - \sqrt{x_1}\bigr) < 0$, dus $g(x_1) > g(x_2)$: $g$ is dalend.
+
+- id: h1-absoluut
+  soort: kort
+  opgave: |-
+    Neem $f(x) = |x - 1|$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef alle extrema als het domein $[-2, 3]$ is. Welke zijn absoluut?
+      antwoord: |-
+        min. $0$ in $1$ (absoluut); max. $3$ in $-2$ (absoluut); max. $2$ in $3$ (niet absoluut)
+      uitwerking: |-
+        $f$ daalt op $[-2, 1]$ van $3$ naar $0$ en stijgt op $[1, 3]$ van $0$ naar $2$. Minimum $f(1) = 0$, absoluut, want een absolute waarde is nooit negatief. Maximum $f(-2) = 3$ in het linkerrandpunt, absoluut. Maximum $f(3) = 2$ in het rechterrandpunt, niet absoluut, want $f(-2) = 3 > 2$.
+        \figuren{\begin{tikzpicture}[x=.45cm,y=.45cm,font=\scriptsize]
+          \rooster{-2}{1}{3}{0}{1}{3}
+          \draw[accent,thick] (-2,3) -- (1,0) -- (3,2);
+          \vol{(-2,3)} \vol{(1,0)} \vol{(3,2)}
+        \end{tikzpicture}}
+    - opgave: |-
+        Dezelfde vraag als het domein $\left]-2, 3\right]$ is.
+      antwoord: |-
+        min. $0$ in $1$ (absoluut); max. $2$ in $3$ (niet absoluut); geen absoluut maximum
+      uitwerking: |-
+        Het minimum $f(1) = 0$ en het maximum $f(3) = 2$ blijven. Het maximum in $-2$ verdwijnt, want $-2$ hoort niet meer bij het domein. De beelden komen willekeurig dicht bij $3$ zonder het te bereiken, en ze zijn groter dan $2$ voor $x$ dicht bij $-2$. Er is dus geen absoluut maximum.
+
+- id: h1-symm-domein
+  soort: kort
+  opgave: |-
+    Even, oneven of geen van beide? Let op het domein, en op $f(0)$.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x) = x^4$, $\dom f = [-2, 2]$
+      antwoord: |-
+        even
+      uitwerking: |-
+        Het domein is symmetrisch: met $x$ ligt ook $-x$ in $[-2, 2]$. En $f(-x) = (-x)^4 = x^4 = f(x)$.
+    - opgave: |-
+        $g(x) = x^3$, $\dom g = \left]-2, 2\right]$
+      antwoord: |-
+        geen van beide
+      uitwerking: |-
+        $2 \in \dom g$, maar $-2 \notin \dom g$. Het domein is niet symmetrisch, dus $g$ is even noch oneven.
+    - opgave: |-
+        $h(x) = x^3 + 2x + 1$
+      antwoord: |-
+        geen van beide
+      uitwerking: |-
+        $h(0) = 1 \neq 0$, dus $h$ is niet oneven. $h(1) = 4$ en $h(-1) = -2$, dus $h(-1) \neq h(1)$: niet even.
+
 - id: h1-o1
   soort: opdracht
   niveau: 1

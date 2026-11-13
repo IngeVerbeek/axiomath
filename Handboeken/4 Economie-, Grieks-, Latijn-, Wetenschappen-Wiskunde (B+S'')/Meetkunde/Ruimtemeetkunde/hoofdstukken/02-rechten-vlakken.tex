@@ -21,69 +21,249 @@ In het vlak beschrijft $y = 2x + 1$ een rechte. Wat beschrijft $z = 2x + 1$ in d
 %========================================================================================
 \section{Vergelijkingen van een rechte}
 
-\naast{%
-\begin{theorie}
-De rechte door het punt $A$ met \textbf{\textcolor{accent}{richtingsvector}} $\vec u \neq \vec 0$ bestaat uit de punten
-\[\formule{P = A + r\,\vec u} \qquad (r \in \R).\]
-Met $A(a_1, a_2, a_3)$ en $\vec u = \vcr{u_1}{u_2}{u_3}$ geeft dat de \textbf{\textcolor{accent}{parametervergelijkingen}}
-\[\formule{x = a_1 + r u_1,\quad y = a_2 + r u_2,\quad z = a_3 + r u_3}.\]
-\end{theorie}}{%
-\begin{tikzpicture}[ruimte,scale=.75,font=\scriptsize]
+\subsection{Vectorvergelijking en parametervergelijkingen}
+
+\naast{Een rechte ligt vast door één punt en een richting. Vertrek je in een punt $A$ van de rechte en verplaats je in de richting van de rechte, dan bereik je al haar punten: een klein stuk of een groot stuk, vooruit of achteruit. Zo liep de mier in de Verken langs een rechte. Met de stelling over drie punten op één rechte uit hoofdstuk 1 wordt dat een vergelijking.}{%
+\begin{tikzpicture}[ruimte,scale=.7,font=\scriptsize]
   \assendrie{4}
   \draw[accent,thick] (2,-.5,0.5) -- (-.5,4.5,3.5);
   \fill[accent] (1.5,.5,1.1) circle (.07) node[below right,text=black] {$A$};
   \draw[->,accent,very thick] (1.5,.5,1.1) -- (1,1.5,1.7) node[above left,text=black] {$\vec u$};
-  \fill (0,3.5,2.9) circle (.06) node[right] {$P$};
+  \fill (0,3.5,2.9) circle (.06) node[right] {$P = A + r\,\vec u$};
 \end{tikzpicture}}
 
-Elke waarde van de parameter $r$ geeft een punt van de rechte: $r = 0$ geeft $A$, $r = 1$ het punt $A + \vec u$. Een richtingsvector vind je met twee punten: $\vec u = \overrightarrow{AB}$. Elk veelvoud ervan (behalve $\vec 0$) is ook een richtingsvector.
+\begin{theorie}
+Een \textbf{\textcolor{accent}{richtingsvector}} van een rechte is een vector $\vec u \neq \vec 0$ met de richting van die rechte.
+\begin{stelling}{Vectorvergelijking van een rechte}
+Een punt $P$ ligt op de rechte door $A$ met richtingsvector $\vec u$ als en slechts als
+
+\vspace{1mm}
+\qquad $\formule{P = A + r\,\vec u}$ \quad voor een getal $r$.
+\end{stelling}
+\begin{bewijs}
+Het punt $B = A + \vec u$ ligt op de rechte, en verschilt van $A$ omdat $\vec u \neq \vec 0$. Volgens de stelling over drie punten op één rechte ligt $P$ op $AB$ als en slechts als
+\bewijsregel{\overrightarrow{AP} = r\,\overrightarrow{AB} = r\,\vec u \quad\iff\quad P = A + r\,\vec u}
+voor een getal $r$.
+\end{bewijs}
+Met $A(a_1, a_2, a_3)$ en $\vec u = \vcr{u_1}{u_2}{u_3}$ geeft dat per coördinaat de \textbf{\textcolor{accent}{parametervergelijkingen}} van de rechte:
+\[\formule{x = a_1 + r u_1, \quad y = a_2 + r u_2, \quad z = a_3 + r u_3} \qquad (r \in \R)\]
+\end{theorie}
+
+Elke waarde van de parameter $r$ geeft een punt van de rechte: $r = 0$ geeft $A$, $r = 1$ het punt $A + \vec u$, en een negatieve $r$ een punt aan de andere kant van $A$. Een richtingsvector vind je met twee punten van de rechte: $\vec u = \overrightarrow{AB}$.
 
 \voorbeeld{}{Geef parametervergelijkingen van de rechte $AB$ met $A(1, 2, 0)$ en $B(3, -1, 4)$. Liggen $C(5, -4, 8)$ en $D(4, 0, 6)$ op de rechte?\label{vb:h2-rechte}}{%
-\uitleg{Een punt ligt op de rechte als er één waarde van $r$ is die alle drie de vergelijkingen klopt.}
+\uitleg{Neem $A$ als punt en $\overrightarrow{AB}$ als richtingsvector. Een punt ligt op de rechte als er één waarde van $r$ is die alle drie de vergelijkingen klopt.}
 \begin{stappenbreed}
-\vec u = \overrightarrow{AB} = \vcr{2}{-3}{4}\colon\ x = 1 + 2r,\ y = 2 - 3r,\ z = 4r & Parametervergelijkingen. \\
-C\colon\ 5 = 1 + 2r \iff r = 2;\ y = -4,\ z = 8 & Klopt: $C$ ligt erop. \\
-D\colon\ 4 = 1 + 2r \iff r = \tfrac32;\ y = -\tfrac52 \neq 0 & $D$ ligt er niet op.
+\vec u = \overrightarrow{AB} = \vcr{2}{-3}{4} & \\
+x = 1 + 2r,\quad y = 2 - 3r,\quad z = 4r & Parametervergelijkingen. \\
+C\colon\ 5 = 1 + 2r \iff r = 2 & De eerste vergelijking bepaalt $r$. \\
+y = 2 - 6 = -4,\quad z = 8 & Met $r = 2$ kloppen ook $y$ en $z$: $C$ ligt op de rechte. \\
+D\colon\ 4 = 1 + 2r \iff r = \tfrac32;\quad y = -\tfrac52 \neq 0 & Met $r = \frac32$ klopt $y$ niet: $D$ ligt niet op de rechte.
 \end{stappenbreed}}
+
+\begin{werkwijze}
+Ligt een punt op een rechte? Bereken $r$ uit één parametervergelijking, en controleer met die $r$ de andere twee.
+\end{werkwijze}
 
 \begin{oefeningen}
 \oef{h2-rechte}
+\end{oefeningen}
 
+\subsection{Eén rechte, veel vergelijkingen}
+
+Een rechte heeft niet één vaste vergelijking. Je mag elk punt van de rechte als steunpunt nemen, en elk veelvoud $k\vec u$ met $k \neq 0$ als richtingsvector: de punten blijven dezelfde. Omgekeerd lees je uit parametervergelijkingen meteen een punt en een richtingsvector af. Neem $r = 0$ voor het punt, en de coëfficiënten van $r$ voor de richtingsvector. Evenwijdige rechten hebben dezelfde richting, dus een richtingsvector van de ene is er ook een van de andere.
+
+\voorbeeld{}{Geef parametervergelijkingen van de rechte $m$ door $P(-1, 4, 2)$ die evenwijdig is met $l\colon x = 5 - r$, $y = 2r$, $z = -3 + 4r$.\label{vb:h2-evenwijdig}}{%
+\uitleg{Lees een richtingsvector van $l$ af. De evenwijdige rechte $m$ krijgt dezelfde richtingsvector, maar een ander punt.}
+\begin{stappenbreed}
+\vec u = \vcr{-1}{2}{4} & De coëfficiënten van $r$, met hun teken. Niet $\vcr{5}{0}{-3}$: dat is een punt van $l$. \\
+m\colon\ x = -1 - s,\quad y = 4 + 2s,\quad z = 2 + 4s & Door $P$ met dezelfde richting. Een andere letter voor de parameter toont dat het om een andere rechte gaat.
+\end{stappenbreed}}
+
+\begin{oefeningen}
 \oef{h2-rechte-evenwijdig}
+\end{oefeningen}
+
+Twee verschillende parametervoorstellingen kunnen dus dezelfde rechte beschrijven. Dat ga je na met de twee vrijheden die je hebt: het punt en de richtingsvector.
+
+\voorbeeld{}{Toon aan dat $l\colon (1, 2, 0) + r\vcr{2}{-3}{4}$ en $m\colon (5, -4, 8) + s\vcr{-4}{6}{-8}$ dezelfde rechte zijn.\label{vb:h2-zelfde}}{%
+\uitleg{Twee rechten vallen samen als ze dezelfde richting hebben en een punt gemeen hebben: dan gaat er door dat punt maar één rechte met die richting.}
+\begin{stappenbreed}
+\vcr{-4}{6}{-8} = -2\vcr{2}{-3}{4} & De richtingsvectoren zijn collineair. \\
+1 + 2r = 5 \iff r = 2;\quad y = 2 - 6 = -4,\quad z = 8 & Het punt $(5, -4, 8)$ van $m$ ligt op $l$, met $r = 2$.
+\end{stappenbreed}
+De rechten vallen samen. Met $(5, -4, 7)$ als punt van $m$ zouden ze evenwijdig zijn, maar verschillend.}
+
+\begin{werkwijze}
+Dezelfde rechte? Controleer dat de richtingsvectoren collineair zijn, en dat een punt van de ene rechte op de andere ligt.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h2-zelfde}
 \end{oefeningen}
 
 %========================================================================================
 \section{Vergelijkingen van een vlak}
 
+\subsection{Vectorvergelijking en parametervergelijkingen}
+
+\naast{Een vlak heeft twee richtingen. Vanuit een punt $A$ van het vlak bereik je elk ander punt met een stuk in de ene richting en een stuk in de andere. Dat is het kenmerk van coplanaire vectoren uit hoofdstuk 1.}{%
+\begin{tikzpicture}[ruimte,scale=.75,font=\scriptsize]
+  \fill[accent!12] (3,-.5,0) -- (3,4,0) -- (-1,4,0) -- (-1,-.5,0) -- cycle;
+  \draw[accent!60] (3,-.5,0) -- (3,4,0) -- (-1,4,0) -- (-1,-.5,0) -- cycle;
+  \fill[accent] (2,.3,0) circle (.07) node[below,text=black] {$A$};
+  \draw[->,accent,very thick] (2,.3,0) -- (1,.3,0) node[left,text=black] {$\vec u$};
+  \draw[->,accent,very thick] (2,.3,0) -- (2,1.3,0) node[below,text=black] {$\vec v$};
+  \draw[grijs,dashed] (2,.3,0) -- (-.2,.3,0) -- (-.2,3.3,0);
+  \fill (-.2,3.3,0) circle (.06) node[above] {$P$};
+  \draw[->,thick] (2,.3,0) -- (-.2,3.3,0);
+\end{tikzpicture}}
+
 \begin{theorie}
-Het vlak door $A$ met twee niet-collineaire \textbf{\textcolor{accent}{richtingsvectoren}} $\vec u$ en $\vec v$ bestaat uit de punten
-\[\formule{P = A + r\,\vec u + s\,\vec v} \qquad (r, s \in \R).\]
-Elk vlak heeft een \textbf{\textcolor{accent}{cartesiaanse vergelijking}} $\formule{ax + by + cz = d}$, met $a$, $b$, $c$ niet alle nul. Omgekeerd stelt zo'n vergelijking altijd een vlak voor.
+Twee vectoren die niet collineair zijn en evenwijdig zijn met een vlak, heten \textbf{\textcolor{accent}{richtingsvectoren}} van dat vlak.
+\begin{stelling}{Vectorvergelijking van een vlak}
+Een punt $P$ ligt in het vlak door $A$ met richtingsvectoren $\vec u$ en $\vec v$ als en slechts als
+
+\vspace{1mm}
+\qquad $\formule{P = A + r\,\vec u + s\,\vec v}$ \quad voor getallen $r$ en $s$.
+\end{stelling}
+\begin{bewijs}
+De pijlen van $\vec u$ en $\vec v$ vanuit $A$ liggen in het vlak. Ligt $P$ in het vlak, dan ligt ook de pijl $\overrightarrow{AP}$ erin, en zijn $\overrightarrow{AP}$, $\vec u$ en $\vec v$ coplanair. Omgekeerd: zijn ze coplanair, dan liggen hun pijlen vanuit $A$ in één vlak door $A$ met de richtingen van $\vec u$ en $\vec v$, en dat is ons vlak. Dus ligt $P$ in het vlak als en slechts als $\overrightarrow{AP}$, $\vec u$ en $\vec v$ coplanair zijn. Omdat $\vec u$ en $\vec v$ niet collineair zijn, is dat zo als en slechts als
+\bewijsregel{\overrightarrow{AP} = r\,\vec u + s\,\vec v \quad\iff\quad P = A + r\,\vec u + s\,\vec v .}
+\end{bewijs}
+Per coördinaat geeft dat de \textbf{\textcolor{accent}{parametervergelijkingen}} van het vlak:
+\[\formule{x = a_1 + r u_1 + s v_1, \quad y = a_2 + r u_2 + s v_2, \quad z = a_3 + r u_3 + s v_3} \qquad (r, s \in \R)\]
 \end{theorie}
 
-Een vlak heeft twee parameters, omdat het twee richtingen heeft. Je vindt de cartesiaanse vergelijking door $r$ en $s$ te elimineren uit de drie parametervergelijkingen.
+Een vlak heeft dus twee parameters, omdat het twee richtingen heeft. Drie punten die niet op één rechte liggen, bepalen een vlak: twee richtingsvectoren vind je met de drie punten.
+
+\voorbeeld{}{Geef parametervergelijkingen van het vlak door $A(1, 0, 2)$, $B(2, 1, 1)$ en $C(0, 2, 1)$.\label{vb:h2-vlakpar}}{%
+\uitleg{Neem $\overrightarrow{AB}$ en $\overrightarrow{AC}$ als richtingsvectoren. Controleer eerst dat ze niet collineair zijn, anders liggen de punten op één rechte.}
+\begin{stappenbreed}
+\overrightarrow{AB} = \vcr{1}{1}{-1},\quad \overrightarrow{AC} = \vcr{-1}{2}{-1} & Niet collineair: de eerste coördinaten geven de factor $-1$, de tweede niet. \\
+x = 1 + r - s,\quad y = r + 2s,\quad z = 2 - r - s & Punt $A$, richtingsvectoren $\overrightarrow{AB}$ en $\overrightarrow{AC}$.
+\end{stappenbreed}}
+
+Drie punten op één rechte bepalen geen vlak. Bij $A(1, 0, 1)$, $B(2, 1, 3)$ en $C(3, 2, 5)$ is $\overrightarrow{AC} = 2\overrightarrow{AB}$: je vindt maar één richting, en door die rechte gaan oneindig veel vlakken.
+
+\begin{oefeningen}
+\oef{h2-vlakpar}
+\end{oefeningen}
+
+\subsection{De cartesiaanse vergelijking van een vlak}
+
+Of een punt in een vlak ligt, zie je niet meteen aan parametervergelijkingen: je moet eerst $r$ en $s$ zoeken. Met één vergelijking in $x$, $y$ en $z$, zonder parameters, gaat het veel sneller: vul het punt in. Zo'n vergelijking bestaat voor elk vlak.
+
+\begin{theorie}
+Een \textbf{\textcolor{accent}{cartesiaanse vergelijking}} is een vergelijking \quad $\formule{ax + by + cz = d}$ \quad met $a$, $b$, $c$ niet alle nul.
+\begin{stelling}{Cartesiaanse vergelijking van een vlak}
+Elk vlak heeft een cartesiaanse vergelijking. Omgekeerd stelt elke cartesiaanse vergelijking een vlak voor.
+\end{stelling}
+\begin{bewijs}
+Neem eerst $ax + by + cz = d$ met bijvoorbeeld $c \neq 0$ (anders werk je met $a$ of $b$). Kies $x = r$ en $y = s$ vrij; dan is $z = \frac{d - ar - bs}{c}$. De oplossingen zijn dus de punten
+\bewijsregel{(x, y, z) = \bigl(0, 0, \tfrac{d}{c}\bigr) + r\,\vcr{1}{0}{-\tfrac{a}{c}} + s\,\vcr{0}{1}{-\tfrac{b}{c}} ,}
+met twee richtingsvectoren die niet collineair zijn: een vlak.
+
+Omgekeerd: neem het vlak $P = A + r\vec u + s\vec v$. Minstens een van de getallen $u_1v_2 - u_2v_1$, $u_1v_3 - u_3v_1$ en $u_2v_3 - u_3v_2$ is niet nul. Zijn ze alle drie nul en is bijvoorbeeld $v_1 \neq 0$, dan geeft $k = \frac{u_1}{v_1}$ immers $u_2 = kv_2$ en $u_3 = kv_3$. Dan is $\vec u = k\vec v$, en dat kan niet. Stel $D = u_1v_2 - u_2v_1 \neq 0$ (anders wissel je de rol van de coördinaten). Uit de eerste twee parametervergelijkingen $x - a_1 = ru_1 + sv_1$ en $y - a_2 = ru_2 + sv_2$ volgt, door ze met $v_2$ en $v_1$, of met $u_2$ en $u_1$ te vermenigvuldigen en af te trekken:
+\bewijsregel{rD = v_2(x - a_1) - v_1(y - a_2), \qquad sD = u_1(y - a_2) - u_2(x - a_1) .}
+Bij elke $x$ en $y$ horen dus één $r$ en één $s$, en invullen toont dat die de eerste twee vergelijkingen kloppen. Vul ze in de derde vergelijking $z - a_3 = ru_3 + sv_3$ in, vermenigvuldigd met $D$:
+\bewijsregel{D(z - a_3) = u_3\bigl(v_2(x - a_1) - v_1(y - a_2)\bigr) + v_3\bigl(u_1(y - a_2) - u_2(x - a_1)\bigr) .}
+Een punt ligt dus in het vlak als en slechts als het deze vergelijking klopt. Breng je alles naar links, dan is ze van de vorm $ax + by + cz = d$ met $c = D \neq 0$.
+\end{bewijs}
+\end{theorie}
+
+Een vlak is dus de verzameling van de punten waarvan de coördinaten één lineaire vergelijking kloppen. De vergelijking is niet uniek: vermenigvuldig je ze met een getal $k \neq 0$, dan beschrijft ze hetzelfde vlak. Het bewijs toont ook hoe je ze vindt: elimineer $r$ en $s$.
 
 \voorbeeld{}{Geef een cartesiaanse vergelijking van het vlak door $A(1, 1, 1)$ met richtingsvectoren $\vec u = \vcr{1}{0}{2}$ en $\vec v = \vcr{0}{1}{-1}$.\label{vb:h2-vlak}}{%
-\uitleg{Schrijf de parametervergelijkingen. Uit de eerste twee haal je $r$ en $s$; vul ze in de derde in.}
+\uitleg{Schrijf de parametervergelijkingen. In de eerste staat alleen $r$, in de tweede alleen $s$: haal ze daaruit en vul ze in de derde in.}
 \begin{stappenbreed}
 x = 1 + r,\quad y = 1 + s,\quad z = 1 + 2r - s & Parametervergelijkingen. \\
-r = x - 1,\quad s = y - 1 & \\
-z = 1 + 2(x - 1) - (y - 1) \iff 2x - y - z = 0 & Controle: $A$ geeft $2 - 1 - 1 = 0$.
+r = x - 1,\quad s = y - 1 & Uit de eerste twee. \\
+z = 1 + 2(x - 1) - (y - 1) \iff 2x - y - z = 0 & Invullen in de derde. Controle: $A$ geeft $2 - 1 - 1 = 0$.
 \end{stappenbreed}}
+
+Meestal staan $r$ en $s$ samen in elke vergelijking. Dan combineer je de vergelijkingen zo dat een parameter wegvalt, zoals bij een stelsel.
+
+\voorbeeld{}{Geef een cartesiaanse vergelijking van het vlak door $A(1, 0, 2)$, $B(2, 1, 1)$ en $C(0, 2, 1)$ uit voorbeeld~\ref{vb:h2-vlakpar}.\label{vb:h2-driepunten}}{%
+\uitleg{In elke parametervergelijking staat $r$ met coëfficiënt $1$ of $-1$. Door op te tellen valt $r$ weg, en blijft er alleen $s$ over.}
+\begin{stappenbreed}
+x - 1 = r - s,\quad y = r + 2s,\quad z - 2 = -r - s & De parametervergelijkingen. \\
+x + z - 3 = -2s & Eerste plus derde: $r$ valt weg. \\
+y + z - 2 = s & Tweede plus derde: $r$ valt weg. \\
+x + z - 3 = -2(y + z - 2) & Vul $s$ uit de laatste in. \\
+x + 2y + 3z = 7 & Controle: $A$, $B$ en $C$ geven $1 + 0 + 6$, $2 + 2 + 3$ en $0 + 4 + 3$, telkens $7$.
+\end{stappenbreed}}
+
+\begin{werkwijze}
+Van parametervergelijkingen naar een cartesiaanse vergelijking: haal $r$ en $s$ uit twee vergelijkingen, of combineer ze zo dat een parameter wegvalt. Vul in de derde in, schrijf de vergelijking als $ax + by + cz = d$, en controleer met een punt van het vlak.
+\end{werkwijze}
 
 \begin{oefeningen}
 \oef{h2-vlak-punt}
+
+\oef{h2-driepunten}
 \end{oefeningen}
 
+\needspace{12\baselineskip}
+De andere richting volgt het bewijs van de stelling: kies twee onbekenden vrij als parameter.
+
+\voorbeeld{}{Geef parametervergelijkingen van het vlak $3x - y + 2z = 6$.\label{vb:h2-cart-par}}{%
+\uitleg{Een vlak heeft twee parameters. Los de vergelijking op naar de onbekende met coëfficiënt $\pm 1$, dat vermijdt breuken, en kies de twee andere vrij.}
+\begin{stappenbreed}
+y = 3x + 2z - 6 & Opgelost naar $y$. \\
+x = r,\quad y = -6 + 3r + 2s,\quad z = s & Neem $x = r$ en $z = s$. Punt $(0, -6, 0)$, richtingsvectoren $\vcr{1}{3}{0}$ en $\vcr{0}{2}{1}$.
+\end{stappenbreed}}
+
+\subsection{Vlakken evenwijdig met een as}
+
+In het vlak is $x + y = 3$ een rechte. In de ruimte legt dezelfde vergelijking geen voorwaarde op $z$: boven en onder elk punt van die rechte liggen alle punten met een willekeurige $z$. Het is een verticaal vlak, evenwijdig met de $z$-as. Zo is $z = 2$ het horizontale vlak op hoogte $2$, evenwijdig met het $xy$-vlak. Ontbreekt een onbekende in de vergelijking, dan is het vlak evenwijdig met die as.
+
 \naast{%
-\voorbeeld{}{Geef een cartesiaanse vergelijking van het vlak door $A(1, 0, 0)$, $B(0, 2, 0)$ en $C(0, 0, 3)$.\label{vb:h2-asafsneden}}{%
-\uitleg{Zoek $a$, $b$, $c$ en $d$ door de drie punten in te vullen in $ax + by + cz = d$.}
-\begin{stappenvrij}{4.6cm}{2.8cm}
-a = d,\quad 2b = d,\quad 3c = d & De drie punten. \\
-d = 6\colon\ 6x + 3y + 2z = 6 & Kies $d = 6$. \\
-\tfrac{x}{1} + \tfrac{y}{2} + \tfrac{z}{3} = 1 & Gedeeld door 6.
+\voorbeeld{}{Beschrijf en schets het vlak $y + z = 2$.\label{vb:h2-bijzonder}}{%
+\uitleg{De vergelijking bevat geen $x$: het vlak is evenwijdig met de $x$-as.}
+\begin{stappenvrij}{3.4cm}{3.8cm}
+x = 0\colon\ y + z = 2 & In het $yz$-vlak is dat een rechte door $(0, 2, 0)$ en $(0, 0, 2)$. \\
+(x, y, 2 - y) & Voor elke $x$ ligt dezelfde rechte: schuif ze langs de $x$-as.
 \end{stappenvrij}
-De laatste vorm heet de asafsnedenvergelijking: de noemers zijn de snijpunten met de assen.}}{%
+Het vlak is een schuin dak, evenwijdig met de $x$-as, door de rechte $y + z = 2$ in het $yz$-vlak.}}{%
+\begin{tikzpicture}[ruimte,scale=.8,font=\scriptsize]
+  \assendrie{3.4}
+  \fill[accent!15] (0,2,0) -- (0,0,2) -- (2.4,0,2) -- (2.4,2,0) -- cycle;
+  \draw[accent,thick] (0,2,0) -- (0,0,2) -- (2.4,0,2) -- (2.4,2,0) -- cycle;
+  \node[below] at (0,2,0) {$2$}; \node[left] at (0,0,2) {$2$};
+\end{tikzpicture}}
+
+\begin{oefeningen}
+\oef{h2-bijzonder}
+\end{oefeningen}
+
+\needspace{14\baselineskip}
+\subsection{De asafsnedenvergelijking}
+
+Snijdt een vlak de drie assen in drie punten verschillend van de oorsprong, dan kun je de vergelijking meteen opschrijven.
+
+\begin{theorie}
+\begin{stelling}{Asafsnedenvergelijking}
+Zijn $p$, $q$ en $t$ niet nul, dan is het vlak door $(p, 0, 0)$, $(0, q, 0)$ en $(0, 0, t)$
+
+\vspace{1mm}
+\qquad $\formule{\dfrac{x}{p} + \dfrac{y}{q} + \dfrac{z}{t} = 1}$
+\end{stelling}
+\begin{bewijs}
+Dit is een cartesiaanse vergelijking, want de coëfficiënten $\frac1p$, $\frac1q$ en $\frac1t$ zijn niet nul: ze stelt een vlak voor. Het punt $(p, 0, 0)$ geeft $\frac{p}{p} + 0 + 0 = 1$, en zo liggen ook de twee andere punten in het vlak. De vectoren $\vcr{-p}{q}{0}$ en $\vcr{-p}{0}{t}$ van het eerste punt naar de twee andere zijn niet collineair, dus de drie punten liggen niet op één rechte, en er gaat maar één vlak door.
+\end{bewijs}
+\end{theorie}
+
+De noemers zijn dus de \textit{asafsneden}: de coördinaten van de snijpunten met de assen. Omgekeerd lees je uit de vergelijking de snijpunten met de assen af door twee onbekenden nul te stellen.
+
+\naast{%
+\voorbeeld{}{Geef een cartesiaanse vergelijking zonder breuken van het vlak door $A(1, 0, 0)$, $B(0, 2, 0)$ en $C(0, 0, 3)$.\label{vb:h2-asafsneden}}{%
+\uitleg{De drie punten liggen op de assen, met asafsneden $1$, $2$ en $3$.}
+\begin{stappenvrij}{3.4cm}{3.8cm}
+\tfrac{x}{1} + \tfrac{y}{2} + \tfrac{z}{3} = 1 & De asafsnedenvergelijking. \\
+6x + 3y + 2z = 6 & Maal $6$, het kleinste gemeenschappelijke veelvoud van de noemers.
+\end{stappenvrij}
+Controle: $B$ geeft $3 \cdot 2 = 6$.}}{%
 \begin{tikzpicture}[ruimte,scale=.75,font=\scriptsize]
   \assendrie{3.8}
   \fill[accent!15] (1,0,0) -- (0,2,0) -- (0,0,3) -- cycle;
@@ -100,23 +280,43 @@ De laatste vorm heet de asafsnedenvergelijking: de noemers zijn de snijpunten me
 %========================================================================================
 \section{Een rechte als snijlijn van twee vlakken}
 
-Eén cartesiaanse vergelijking beschrijft een vlak. Twee vlakken die niet evenwijdig zijn, snijden elkaar in een rechte: een rechte heeft dus \textit{twee} cartesiaanse vergelijkingen nodig. Een parametervergelijking vind je door één onbekende als parameter te kiezen.
+\subsection{Van twee vergelijkingen naar parametervergelijkingen}
+
+Eén cartesiaanse vergelijking beschrijft een vlak. Twee vlakken die niet evenwijdig zijn, snijden elkaar volgens een rechte: een rechte heeft dus \textit{twee} cartesiaanse vergelijkingen nodig. De punten van de snijlijn zijn de oplossingen van dat stelsel met drie onbekenden: er blijft één onbekende vrij, en die wordt de parameter.
 
 \voorbeeld{}{Geef parametervergelijkingen van de snijlijn van de vlakken \mbox{$x + y + z = 3$} en \mbox{$x - y = 1$}.\label{vb:h2-snijlijn}}{%
-\uitleg{Twee vergelijkingen met drie onbekenden: neem $y = r$ en druk $x$ en $z$ uit in $r$.}
+\uitleg{Twee vergelijkingen met drie onbekenden: neem $y = r$, en druk $x$ en $z$ uit in $r$.}
 \begin{stappenbreed}
 y = r,\quad x = 1 + r & Uit de tweede vergelijking. \\
 z = 3 - x - y = 2 - 2r & Uit de eerste. \\
-(x, y, z) = (1, 0, 2) + r\,\vcr{1}{1}{-2} & Punt $(1, 0, 2)$, richting $\vcr{1}{1}{-2}$.
+(x, y, z) = (1, 0, 2) + r\,\vcr{1}{1}{-2} & Controle: $(1, 0, 2)$ ligt in beide vlakken.
 \end{stappenbreed}}
 
 \begin{werkwijze}
-Van parameters naar cartesiaans: elimineer de parameters (bij een rechte krijg je twee vergelijkingen, bij een vlak één). Van cartesiaans naar parameters: kies zoveel onbekenden als parameter als er vrijheid is (een rechte: één, een vlak: twee), en druk de andere erin uit.
+Van twee cartesiaanse vergelijkingen naar parametervergelijkingen van de snijlijn: kies een onbekende die niet vastligt als parameter, en druk de twee andere erin uit. Bij $x + z = 2$ en $y = 3$ kan $y = r$ dus niet: neem $x = r$, en dan is $y = 3$ en $z = 2 - r$.
 \end{werkwijze}
 
 \begin{oefeningen}
 \oef{h2-snijlijn}
+\end{oefeningen}
 
+\subsection{Van parametervergelijkingen naar twee vergelijkingen}
+
+Omgekeerd elimineer je de parameter, zoals bij een vlak. Een rechte heeft maar één parameter, dus je houdt twee vergelijkingen over: twee vlakken door de rechte.
+
+\voorbeeld{}{Geef twee cartesiaanse vergelijkingen van de rechte $x = 3 + r$, $y = 1 - 2r$, $z = 2r$.\label{vb:h2-tweevgl}}{%
+\uitleg{In de eerste vergelijking staat $r$ alleen, met coëfficiënt $1$: haal $r$ daaruit.}
+\begin{stappenbreed}
+r = x - 3 & Uit de eerste vergelijking. \\
+y = 1 - 2(x - 3) \iff 2x + y = 7 & Invullen in de tweede. \\
+z = 2(x - 3) \iff 2x - z = 6 & Invullen in de derde. Controle: het punt $(4, -1, 2)$, met $r = 1$.
+\end{stappenbreed}}
+
+\begin{werkwijze}
+Van parametervergelijkingen van een rechte naar twee cartesiaanse vergelijkingen: haal $r$ uit één vergelijking en vul in de twee andere in.
+\end{werkwijze}
+
+\begin{oefeningen}
 \oef{h2-elimineren}
 \end{oefeningen}
 
@@ -224,12 +424,12 @@ Van parameters naar cartesiaans: elimineer de parameters (bij een rechte krijg j
 
 \herhaalschema{%
   \fv{oef:h2-t1}{vb:h2-rechte}{oef:h2-rechte}%
-  \fv{oef:h2-t5}{vb:h2-rechte}{oef:h2-rechte-evenwijdig}%
+  \fv{oef:h2-t5}{vb:h2-evenwijdig}{oef:h2-rechte-evenwijdig}%
   \fv{oef:h2-t2}{vb:h2-vlak}{oef:h2-vlak}%
   \fv{oef:h2-t3}{vb:h2-asafsneden}{oef:h2-asafsneden}%
   \fv{oef:h2-t4}{vb:h2-snijlijn}{oef:h2-snijlijn}%
-  \fv{oef:h2-t6}{vb:h2-snijlijn}{oef:h2-elimineren}%
-  \fv{oef:h2-t7}{vb:h2-vlak}{oef:h2-vlak-punt}}
+  \fv{oef:h2-t6}{vb:h2-tweevgl}{oef:h2-elimineren}%
+  \fv{oef:h2-t7}{vb:h2-driepunten}{oef:h2-driepunten}}
 
 \ifzelfstudie
 \section*{Maak je eigen samenvatting}

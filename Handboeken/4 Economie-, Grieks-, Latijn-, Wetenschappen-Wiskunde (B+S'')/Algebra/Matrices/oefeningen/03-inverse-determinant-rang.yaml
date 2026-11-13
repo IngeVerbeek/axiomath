@@ -98,7 +98,7 @@
 - id: h3-matrixvgl
   soort: kort
   opgave: |-
-    Gegeven: $A = \begin{bmatrix} 4 & 7 \\ 1 & 2 \end{bmatrix}$, met de inverse uit de vorige oefening. Los op:
+    Gegeven: $A = \begin{bmatrix} 4 & 7 \\ 1 & 2 \end{bmatrix}$, met $A^{-1} = \km{2 & -7 \\ -1 & 4}$. Los op:
   lijst: reeks
   kolommen: 2
   delen:
@@ -318,6 +318,139 @@
         onbepaald, 2 parameters
       uitwerking: |-
         Niet strijdig, en $5 - 3 = 2$ parameters: onbepaald.
+
+- id: h3-k-invregels
+  soort: kort
+  opgave: |-
+    Van twee $2 \times 2$-matrices $A$ en $B$ ken je alleen de inversen: $A^{-1} = \km{1 & 2 \\ 1 & 3}$ en $B^{-1} = \km{2 & 1 \\ 1 & 1}$. Bereken zonder $A$ en $B$ te zoeken:
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $(AB)^{-1}$
+      antwoord: |-
+        $\km{3 & 7 \\ 2 & 5}$
+      uitwerking: |-
+        $(AB)^{-1} = B^{-1}A^{-1} = \km{2 & 1 \\ 1 & 1}\km{1 & 2 \\ 1 & 3} = \km{2 + 1 & 4 + 3 \\ 1 + 1 & 2 + 3} = \km{3 & 7 \\ 2 & 5}$.
+    - opgave: |-
+        $(BA)^{-1}$
+      antwoord: |-
+        $\km{4 & 3 \\ 5 & 4}$
+      uitwerking: |-
+        $(BA)^{-1} = A^{-1}B^{-1} = \km{1 & 2 \\ 1 & 3}\km{2 & 1 \\ 1 & 1} = \km{2 + 2 & 1 + 2 \\ 2 + 3 & 1 + 3} = \km{4 & 3 \\ 5 & 4}$. Een andere matrix dan in a.
+    - opgave: |-
+        $(A^2)^{-1}$
+      antwoord: |-
+        $\km{3 & 8 \\ 4 & 11}$
+      uitwerking: |-
+        $A^2 = AA$, dus $(A^2)^{-1} = A^{-1}A^{-1} = \km{1 & 2 \\ 1 & 3}\km{1 & 2 \\ 1 & 3} = \km{1 + 2 & 2 + 6 \\ 1 + 3 & 2 + 9} = \km{3 & 8 \\ 4 & 11}$.
+    - opgave: |-
+        $A$ zelf
+      antwoord: |-
+        $\km{3 & -2 \\ -1 & 1}$
+      uitwerking: |-
+        $A = (A^{-1})^{-1}$. De determinant van $A^{-1}$ is $3 - 2 = 1$, dus met de formule voor de inverse van een $2 \times 2$-matrix is $A = \km{3 & -2 \\ -1 & 1}$. Controle: $\km{3 & -2 \\ -1 & 1}\km{1 & 2 \\ 1 & 3} = \km{1 & 0 \\ 0 & 1}$.
+
+- id: h3-k-detprod
+  soort: kort
+  opgave: |-
+    De productregel. Neem $A = \km{1 & 2 \\ 3 & 4}$ en $B = \km{0 & 1 \\ 2 & 5}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $\det A$, $\det B$ en $\det(AB)$, en controleer de productregel.
+      antwoord: |-
+        $-2$, $-2$ en $4$
+      uitwerking: |-
+        $\det A = 4 - 6 = -2$ en $\det B = 0 - 2 = -2$. $AB = \km{0 + 4 & 1 + 10 \\ 0 + 8 & 3 + 20} = \km{4 & 11 \\ 8 & 23}$, met $\det(AB) = 92 - 88 = 4 = (-2) \cdot (-2)$.
+    - opgave: |-
+        Bereken $\det(A^4)$ en $\det(A^3 B)$ zonder machten uit te rekenen.
+      antwoord: |-
+        $16$ en $16$
+      uitwerking: |-
+        $\det(A^4) = (\det A)^4 = (-2)^4 = 16$ en $\det(A^3B) = (\det A)^3 \cdot \det B = (-8) \cdot (-2) = 16$.
+    - opgave: |-
+        Kan $\det(CD) = 0$ zijn als $\det C \neq 0$ en $\det D \neq 0$? Leg uit.
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee: $\det(CD) = \det C \cdot \det D$, en een product van twee getallen verschillend van 0 is niet 0.
+
+- id: h3-k-detrij
+  soort: kort
+  opgave: |-
+    Determinanten en rijbewerkingen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een $3 \times 3$-matrix $A$ heeft $\det A = 5$. Wat is de determinant als je in $A$ de eerste en de derde rij verwisselt? Als je de tweede rij met 3 vermenigvuldigt? Als je bij de derde rij twee keer de eerste optelt? En wat is $\det(2A)$?
+      antwoord: |-
+        $-5$; $15$; $5$; $40$
+      uitwerking: |-
+        Rijen verwisselen: $-5$. Eén rij maal 3: $3 \cdot 5 = 15$. Een veelvoud van een rij optellen: blijft $5$. In $2A$ is elke rij maal 2: $2^3 \cdot 5 = 40$.
+    - opgave: |-
+        Bereken met rijbewerkingen: $\begin{vmatrix} 1 & 1 & 2 \\ 2 & 3 & 1 \\ 3 & 1 & 4 \end{vmatrix}$.
+      antwoord: |-
+        $-8$
+      uitwerking: |-
+        Met $R_2 - 2R_1$ en $R_3 - 3R_1$ verandert de determinant niet: $\begin{vmatrix} 1 & 1 & 2 \\ 0 & 1 & -3 \\ 0 & -2 & -2 \end{vmatrix}$. Ontwikkel naar de eerste kolom: $1 \cdot \bigl(1 \cdot (-2) - (-3) \cdot (-2)\bigr) = -2 - 6 = -8$.
+    - opgave: |-
+        Leg zonder rekenwerk uit waarom $\begin{vmatrix} 2 & -1 & 3 \\ 5 & 0 & 7 \\ 4 & -2 & 6 \end{vmatrix} = 0$.
+      antwoord: |-
+        $R_3 = 2R_1$
+      uitwerking: |-
+        De derde rij is het dubbel van de eerste. Met $R_3 - 2R_1$ krijg je een nulrij, en dat verandert de determinant niet. Ontwikkelen naar een nulrij geeft 0.
+
+- id: h3-k-invpar
+  soort: kort
+  opgave: |-
+    Voor welke reële $k$ is de matrix inverteerbaar?
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\begin{bmatrix} k & 3 \\ 2 & k + 1 \end{bmatrix}$
+      antwoord: |-
+        $k \neq 2$ en $k \neq -3$
+      uitwerking: |-
+        $\det = k(k + 1) - 6 = k^2 + k - 6 = (k - 2)(k + 3)$. Dat is 0 voor $k = 2$ en $k = -3$; voor alle andere $k$ is de matrix inverteerbaar.
+    - opgave: |-
+        $\begin{bmatrix} 1 & 2 & 1 \\ 0 & k & 2 \\ 1 & 0 & k \end{bmatrix}$
+      antwoord: |-
+        voor elke $k$
+      uitwerking: |-
+        Naar de eerste kolom: $1 \cdot (k^2 - 0) + 1 \cdot (4 - k) = k^2 - k + 4$. De discriminant is $1 - 16 < 0$, dus de determinant is nooit 0: inverteerbaar voor elke $k$.
+    - opgave: |-
+        $\begin{bmatrix} k & 1 & 0 \\ 1 & k & 1 \\ 0 & 1 & k \end{bmatrix}$
+      antwoord: |-
+        $k \neq 0$, $k \neq \sqrt2$ en $k \neq -\sqrt2$
+      uitwerking: |-
+        Naar de eerste rij: $k(k^2 - 1) - 1 \cdot (k - 0) = k^3 - 2k = k(k^2 - 2)$. Dat is 0 voor $k = 0$ en $k = \pm\sqrt2$.
+
+- id: h3-k-vierkant
+  soort: kort
+  opgave: |-
+    Rang, determinant en inverse.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken de determinant van $A = \km{2 & 1 & 0 \\ 1 & 3 & 1 \\ 0 & 1 & 2}$. Wat is de rang van $A$? Hoeveel oplossingen heeft $AX = B$ voor een kolom $B$?
+      antwoord: |-
+        $\det A = 8$; rang 3; precies één
+      uitwerking: |-
+        Naar de eerste rij: $2 \cdot (6 - 1) - 1 \cdot (2 - 0) = 10 - 2 = 8 \neq 0$. Dus is $A$ inverteerbaar, $\operatorname{rang} A = 3$, en heeft $AX = B$ voor elke $B$ precies één oplossing.
+    - opgave: |-
+        Een $3 \times 3$-matrix $M$ heeft rang 2. Wat weet je over $\det M$? Is $M$ inverteerbaar?
+      antwoord: |-
+        $\det M = 0$; nee
+      uitwerking: |-
+        De rang is niet 3, dus is $M$ niet inverteerbaar en is $\det M = 0$.
+    - opgave: |-
+        Een $4 \times 4$-matrix $N$ heeft determinant $-3$. Hoeveel oplossingen heeft $NX = O$?
+      antwoord: |-
+        precies één: $X = O$
+      uitwerking: |-
+        $\det N \neq 0$, dus is $NX = B$ bepaald voor elke $B$, ook voor $B = O$. De enige oplossing is $X = O$.
 
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3

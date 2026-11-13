@@ -261,6 +261,65 @@
       uitwerking: |-
         $x = -1$: $\sqrt{(-1)^2} = \sqrt1 = 1 \neq -1$.
 
+- id: h2-contra-of
+  soort: kort
+  opgave: |-
+    Formuleer de contrapositie met De Morgan, en bewijs ze: als $mn$ oneven is, dan zijn $m$ en $n$ allebei oneven (met $m, n \in \Z$).
+  antwoord: |-
+    als $m$ even is of $n$ even is, dan is $mn$ even
+  uitwerking: |-
+    Het besluit is een \textit{en}; zijn ontkenning is volgens De Morgan een \textit{of}.\\
+    Contrapositie: \textit{als $m$ even is of $n$ even is, dan is $mn$ even}.\\
+    Twee gevallen.\\
+    \textit{$m$ even}, $m = 2a$: $mn = 2an = 2 \cdot an$, even.\\
+    \textit{$n$ even}, $n = 2b$: $mn = 2bm = 2 \cdot bm$, even.\\
+    In beide gevallen is $mn$ even. De contrapositie is bewezen, dus ook de uitspraak.
+
+- id: h2-wortel
+  soort: kort
+  opgave: |-
+    Lees het bewijs dat $\sqrt2$ irrationaal is nog eens.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Waar gebruikt het bewijs dat de breuk $\frac{a}{b}$ volledig vereenvoudigd is?
+      antwoord: |-
+        in de tegenspraak op het einde
+      uitwerking: |-
+        Op het einde: $a$ en $b$ blijken allebei even, terwijl ze geen gemeenschappelijke deler groter dan 1 hebben. Zonder die afspraak was er geen tegenspraak.
+    - opgave: |-
+        Probeer hetzelfde bewijs voor $\sqrt4 = \frac{a}{b}$. Waar loopt het mis? Waarom moet het mislopen?
+      antwoord: |-
+        uit $b^2 = k^2$ volgt niet dat $b$ even is; $\sqrt4 = \frac21$ is rationaal
+      uitwerking: |-
+        Kwadrateren geeft $a^2 = 4b^2$, dus $a^2$ is even en $a$ is even: $a = 2k$. Dan is $4k^2 = 4b^2$, dus $b^2 = k^2$. Daaruit volgt niet dat $b$ even is, dus er is geen tegenspraak.\\
+        Het moet mislopen: $\sqrt4 = 2 = \frac21$ is wel rationaal, dus een correct bewijs van het tegendeel bestaat niet.
+
+- id: h2-weerleg
+  soort: kort
+  opgave: |-
+    Weerleg met een tegenvoorbeeld.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Als $p$ een priemgetal is, dan is $p^2 + 2$ een priemgetal.
+      antwoord: |-
+        bv. $p = 2$
+      uitwerking: |-
+        $p = 2$ is priem, maar $2^2 + 2 = 6 = 2 \cdot 3$ is geen priemgetal. (Ook $p = 5$ werkt: $27 = 3 \cdot 9$.)
+    - opgave: |-
+        Als $n^2$ deelbaar is door 4, dan is $n$ deelbaar door 4.
+      antwoord: |-
+        bv. $n = 2$
+      uitwerking: |-
+        $n = 2$: $n^2 = 4$ is deelbaar door 4, maar $2$ niet.
+    - opgave: |-
+        Voor elk reëel getal $x$ is $x^3 \geqslant x$.
+      antwoord: |-
+        bv. $x = \frac12$
+      uitwerking: |-
+        $x = \frac12$: $x^3 = \frac18 < \frac12 = x$. (Ook $x = -2$ werkt: $-8 < -2$.)
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------

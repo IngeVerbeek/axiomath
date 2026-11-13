@@ -149,6 +149,174 @@
       uitwerking: |-
         $10^0 = 1$.
 
+- id: h2-k-tussen
+  soort: kort
+  opgave: |-
+    Tussen welke twee opeenvolgende gehele getallen ligt de logaritme? Leg uit zonder rekentoestel, en controleer daarna met je rekentoestel.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\log 450$
+      antwoord: |-
+        tussen 2 en 3; $\approx 2{,}653$
+      uitwerking: |-
+        $10^2 = 100 < 450 < 1000 = 10^3$, dus $2 < \log 450 < 3$. Rekentoestel: $\log 450 \approx 2{,}653$.
+    - opgave: |-
+        $\ln 20$
+      antwoord: |-
+        tussen 2 en 3; $\approx 2{,}996$
+      uitwerking: |-
+        $\e^2 \approx 7{,}39 < 20 < \e^3 \approx 20{,}09$, dus $2 < \ln 20 < 3$, en zelfs heel dicht bij 3. Rekentoestel: $\ln 20 \approx 2{,}996$.
+    - opgave: |-
+        $\log 0{,}03$
+      antwoord: |-
+        tussen $-2$ en $-1$; $\approx -1{,}523$
+      uitwerking: |-
+        $10^{-2} = 0{,}01 < 0{,}03 < 0{,}1 = 10^{-1}$, dus $-2 < \log 0{,}03 < -1$. Rekentoestel: $\log 0{,}03 \approx -1{,}523$.
+
+- id: h2-k-logmacht
+  soort: kort
+  opgave: |-
+    Vereenvoudig.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\log_2 8^x$
+      antwoord: |-
+        $3x$
+      uitwerking: |-
+        $8^x = \bigl(2^3\bigr)^x = 2^{3x}$, dus $\log_2 8^x = \log_2 2^{3x} = 3x$.
+    - opgave: |-
+        $\ln \e^{2x + 1}$
+      antwoord: |-
+        $2x + 1$
+      uitwerking: |-
+        De logaritme van een macht van het grondtal $\e$ is de exponent: $2x + 1$.
+    - opgave: |-
+        $\log_5 \sqrt{5^x}$
+      antwoord: |-
+        $\frac{x}{2}$
+      uitwerking: |-
+        $\sqrt{5^x} = \bigl(5^x\bigr)^{\frac12} = 5^{\frac{x}{2}}$, dus $\log_5 \sqrt{5^x} = \frac{x}{2}$.
+
+- id: h2-k-machtlog
+  soort: kort
+  opgave: |-
+    Bereken zonder rekentoestel.
+  lijst: reeks
+  kolommen: 4
+  delen:
+    - opgave: |-
+        $7^{\log_7 5}$
+      antwoord: |-
+        5
+      uitwerking: |-
+        Macht en logaritme met hetzelfde grondtal heffen elkaar op: $7^{\log_7 5} = 5$.
+    - opgave: |-
+        $2^{3 + \log_2 5}$
+      antwoord: |-
+        40
+      uitwerking: |-
+        Product van machten: $2^3 \cdot 2^{\log_2 5} = 8 \cdot 5 = 40$.
+    - opgave: |-
+        $\e^{2\ln 3}$
+      antwoord: |-
+        9
+      uitwerking: |-
+        Macht van een macht: $\e^{2\ln 3} = \bigl(\e^{\ln 3}\bigr)^2 = 3^2 = 9$.
+    - opgave: |-
+        $10^{-\log 4}$
+      antwoord: |-
+        $\frac14$
+      uitwerking: |-
+        Negatieve exponent: $10^{-\log 4} = \dfrac{1}{10^{\log 4}} = \dfrac14$.
+
+- id: h2-k-product
+  soort: kort
+  opgave: |-
+    Bereken zonder rekentoestel.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\log_6 3 + \log_6 12$
+      antwoord: |-
+        2
+      uitwerking: |-
+        Productregel: $\log_6(3 \cdot 12) = \log_6 36 = 2$.
+    - opgave: |-
+        $\log 25 + \log 40$
+      antwoord: |-
+        3
+      uitwerking: |-
+        Productregel: $\log(25 \cdot 40) = \log 1000 = 3$.
+    - opgave: |-
+        $\ln \dfrac{\e}{2} + \ln(2\e)$
+      antwoord: |-
+        2
+      uitwerking: |-
+        Productregel: $\ln\bigl(\frac{\e}{2} \cdot 2\e\bigr) = \ln \e^2 = 2$.
+
+- id: h2-k-quotient
+  soort: kort
+  opgave: |-
+    Bereken zonder rekentoestel.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\log_2 80 - \log_2 5$
+      antwoord: |-
+        4
+      uitwerking: |-
+        Quotiëntregel: $\log_2 \frac{80}{5} = \log_2 16 = 4$.
+    - opgave: |-
+        $\log 3 - \log 3000$
+      antwoord: |-
+        $-3$
+      uitwerking: |-
+        Quotiëntregel: $\log \frac{3}{3000} = \log 0{,}001 = -3$.
+    - opgave: |-
+        $\ln 5 - \ln\bigl(5\e^2\bigr)$
+      antwoord: |-
+        $-2$
+      uitwerking: |-
+        Quotiëntregel: $\ln \frac{5}{5\e^2} = \ln \e^{-2} = -2$.
+
+- id: h2-k-macht
+  soort: kort
+  opgave: |-
+    Schrijf als een veelvoud van $\ln 2$.
+  lijst: reeks
+  kolommen: 4
+  delen:
+    - opgave: |-
+        $\ln 8$
+      antwoord: |-
+        $3\ln 2$
+      uitwerking: |-
+        $\ln 2^3 = 3\ln 2$.
+    - opgave: |-
+        $\ln \sqrt2$
+      antwoord: |-
+        $\frac12 \ln 2$
+      uitwerking: |-
+        $\ln 2^{\frac12} = \frac12 \ln 2$.
+    - opgave: |-
+        $\ln \dfrac{1}{16}$
+      antwoord: |-
+        $-4\ln 2$
+      uitwerking: |-
+        $\frac{1}{16} = 2^{-4}$, dus $\ln 2^{-4} = -4\ln 2$.
+    - opgave: |-
+        $\ln \sqrt[3]{4}$
+      antwoord: |-
+        $\frac23 \ln 2$
+      uitwerking: |-
+        $\sqrt[3]{4} = \bigl(2^2\bigr)^{\frac13} = 2^{\frac23}$, dus $\ln \sqrt[3]{4} = \frac23 \ln 2$.
+
 - id: h2-k-samen
   soort: kort
   opgave: |-
@@ -175,6 +343,32 @@
         1
       uitwerking: |-
         $\ln \frac{6}{3} + \ln \frac{\e}{2} = \ln\bigl(2 \cdot \frac{\e}{2}\bigr) = \ln \e = 1$.
+
+- id: h2-k-uitsplitsen
+  soort: kort
+  opgave: |-
+    Schrijf met $\ln x$ en $\ln y$, of met $\log_2 x$ en $\log_2 y$ (met $x, y > 0$).
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\ln\bigl(x^3 y\bigr)$
+      antwoord: |-
+        $3\ln x + \ln y$
+      uitwerking: |-
+        Productregel, dan machtregel: $\ln x^3 + \ln y = 3\ln x + \ln y$.
+    - opgave: |-
+        $\log_2 \dfrac{8x}{y^2}$
+      antwoord: |-
+        $3 + \log_2 x - 2\log_2 y$
+      uitwerking: |-
+        $\log_2 8 + \log_2 x - \log_2 y^2 = 3 + \log_2 x - 2\log_2 y$.
+    - opgave: |-
+        $\ln \sqrt{\dfrac{x}{\e}}$
+      antwoord: |-
+        $\frac12 \ln x - \frac12$
+      uitwerking: |-
+        Machtregel, dan quotiëntregel: $\frac12 \ln \frac{x}{\e} = \frac12(\ln x - \ln \e) = \frac12 \ln x - \frac12$.
 
 - id: h2-rekenregels
   soort: kort
@@ -312,6 +506,25 @@
         $\approx 3{,}151$
       uitwerking: |-
         $x \ln 3 = (x - 1)\ln 5$, dus $x(\ln 5 - \ln 3) = \ln 5$ en $x = \frac{\ln 5}{\ln \frac53} \approx 3{,}151$.
+
+- id: h2-k-db
+  soort: kort
+  opgave: |-
+    Het geluidsniveau is $L = 10 \log \frac{I}{I_0}$ (in dB).
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een stofzuiger maakt $72$ dB, gefluister $30$ dB. Hoeveel keer intenser is het geluid van de stofzuiger?
+      antwoord: |-
+        $10^{4{,}2} \approx 15\,800$ keer
+      uitwerking: |-
+        $72 - 30 = 10 \log \frac{I_s}{I_f}$, dus $\log \frac{I_s}{I_f} = 4{,}2$ en $\frac{I_s}{I_f} = 10^{4{,}2} \approx 15\,800$.
+    - opgave: |-
+        Met hoeveel dB stijgt het geluidsniveau als de intensiteit $1000$ keer zo groot wordt?
+      antwoord: |-
+        met 30 dB
+      uitwerking: |-
+        $L_2 - L_1 = 10 \log \frac{I_2}{I_1} = 10 \log 1000 = 10 \cdot 3 = 30$ dB.
 
 - id: h2-schaal
   soort: kort

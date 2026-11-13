@@ -282,6 +282,44 @@
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
 
+- id: h2-mu
+  soort: kort
+  opgave: |-
+    De punten op een groot examen zijn normaal verdeeld met $\sigma = 12$. De examencommissie wil dat hoogstens 15~\% van de deelnemers minder dan 50 haalt.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoe hoog moet het gemiddelde dan minstens zijn?
+      antwoord: |-
+        $\mu \approx 62{,}4$
+      uitwerking: |-
+        Links van 50 ligt 15~\%: $z = {}$\texttt{invNorm(0.15,0,1)} $\approx -1{,}036$. Uit $50 = \mu - 1{,}036 \cdot 12$ volgt $\mu \approx 62{,}4$.
+    - opgave: |-
+        Een ander examen heeft $\mu = 60$. Hoe groot mag $\sigma$ hoogstens zijn?
+      antwoord: |-
+        $\sigma \approx 9{,}65$
+      uitwerking: |-
+        Nu is $\mu$ bekend en $\sigma$ niet: $50 = 60 - 1{,}036\,\sigma$, dus $\sigma = \frac{10}{1{,}036} \approx 9{,}65$. Bij een grotere spreiding haalt meer dan 15~\% minder dan 50.
+
+- id: h2-scheef
+  soort: kort
+  opgave: |-
+    De verkoopprijzen van 500 woningen in een regio hebben gemiddelde 280\,000~euro en standaardafwijking 150\,000~euro.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken met het model $N(280\,000;\ 150\,000)$ het percentage woningen met een negatieve prijs.
+      antwoord: |-
+        $\approx 3{,}1$~\%
+      uitwerking: |-
+        $z = \frac{0 - 280\,000}{150\,000} \approx -1{,}87$, en \texttt{normalcdf(-1E99,0,280000,150000)} $\approx 0{,}031$.
+    - opgave: |-
+        Is het normale model hier bruikbaar? Verklaar.
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Nee. Een negatieve prijs bestaat niet, en toch geeft het model daar 3~\%. Woningprijzen zijn scheef, met een lange staart naar de dure woningen: de standaardafwijking is groot in vergelijking met het gemiddelde.
+
 - id: h2-d1
   soort: opdracht
   niveau: 1

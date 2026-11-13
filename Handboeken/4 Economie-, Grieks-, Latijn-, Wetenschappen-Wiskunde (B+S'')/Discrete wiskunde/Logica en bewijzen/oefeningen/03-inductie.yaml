@@ -209,6 +209,28 @@
     want $k + 1 > 2$.\\
     \textit{Besluit.} Volgens het principe van volledige inductie geldt het voor alle $n \geqslant 4$.
 
+- id: h3-basis
+  soort: kort
+  opgave: |-
+    Iemand beweert: $1 + 3 + 5 + \cdots + (2n - 1) = n^2 + 1$ voor alle $n \geqslant 1$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat de inductiestap klopt.
+      antwoord: |-
+        $k^2 + 1 + (2k + 1) = (k + 1)^2 + 1$
+      uitwerking: |-
+        Stel $1 + 3 + \cdots + (2k - 1) = k^2 + 1$. De volgende term is $2k + 1$, dus\\
+        $1 + 3 + \cdots + (2k - 1) + (2k + 1) = k^2 + 1 + 2k + 1 = (k + 1)^2 + 1$,\\
+        de formule voor $n = k + 1$.
+    - opgave: |-
+        Klopt de basisstap? Voor welke $n$ is de formule waar?
+      antwoord: |-
+        nee; voor geen enkele $n$
+      uitwerking: |-
+        $n = 1$: links $1$, rechts $1^2 + 1 = 2$. De basisstap faalt.\\
+        De echte som is $n^2$, dus de formule geeft altijd 1 te veel: ze is voor geen enkele $n$ waar. De inductiestap geeft die fout gewoon door.
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------

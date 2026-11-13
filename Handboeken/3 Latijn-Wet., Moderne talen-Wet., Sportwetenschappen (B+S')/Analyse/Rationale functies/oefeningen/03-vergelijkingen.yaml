@@ -233,6 +233,46 @@
       uitwerking: |-
         $\frac16 + \frac13 + \frac1c = 1$ met $c > 0$. Dus $\frac1c = 1 - \frac12 = \frac12$ en $c = 2$ minuten.
 
+- id: h3-dubbel
+  soort: kort
+  opgave: |-
+    Los op. Let op de factoren met een even multipliciteit.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\dfrac{x^2 - 4}{x^2 + 2x + 1} \geqslant 0$
+      antwoord: |-
+        $\left]-\infty, -2\right] \cup \left[2, +\infty\right[$
+      uitwerking: |-
+        $\frac{(x - 2)(x + 2)}{(x + 1)^2} \geqslant 0$: nulwaarden $\pm 2$, dubbele pool $-1$ (het teken blijft). \tekentabel{cccccccc}{x & & -2 & & -1 & & 2 & }{f & + & 0 & - & | & - & 0 & +} Oplossing $\left]-\infty, -2\right] \cup \left[2, +\infty\right[$.
+    - opgave: |-
+        $\dfrac{(x - 1)^2}{x^2 - 4x} < 0$
+      antwoord: |-
+        $\left]0, 1\right[ \cup \left]1, 4\right[$
+      uitwerking: |-
+        $\frac{(x - 1)^2}{x(x - 4)} < 0$: dubbele nulwaarde $1$ (het teken blijft), polen $0$ en $4$. \tekentabel{cccccccc}{x & & 0 & & 1 & & 4 & }{f & + & | & - & 0 & - & | & +} In $1$ is de breuk nul, en niet strikt negatief: $1$ hoort er niet bij. Oplossing $\left]0, 1\right[ \cup \left]1, 4\right[$.
+
+- id: h3-tweebreuken
+  soort: kort
+  opgave: |-
+    Los op.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $\dfrac{2}{x - 1} \leqslant \dfrac{1}{x + 1}$
+      antwoord: |-
+        $\left]-\infty, -3\right] \cup \left]-1, 1\right[$
+      uitwerking: |-
+        $\frac{2(x + 1) - (x - 1)}{(x - 1)(x + 1)} \leqslant 0$, dus $\frac{x + 3}{(x - 1)(x + 1)} \leqslant 0$. \tekentabel{cccccccc}{x & & -3 & & -1 & & 1 & }{f & - & 0 & + & | & - & | & +} Oplossing $\left]-\infty, -3\right] \cup \left]-1, 1\right[$.
+    - opgave: |-
+        $\dfrac{x}{x - 1} > x$
+      antwoord: |-
+        $\left]-\infty, 0\right[ \cup \left]1, 2\right[$
+      uitwerking: |-
+        $\frac{x - x(x - 1)}{x - 1} > 0$, dus $\frac{-x(x - 2)}{x - 1} > 0$. Rechts van $2$ is de breuk negatief (zoals $\frac{-x^2}{x}$), en alle nulwaarden en de pool zijn enkelvoudig. \tekentabel{cccccccc}{x & & 0 & & 1 & & 2 & }{f & + & 0 & - & | & + & 0 & -} Oplossing $\left]-\infty, 0\right[ \cup \left]1, 2\right[$. Wie met $x - 1$ vermenigvuldigt, vindt alleen een deel.
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------

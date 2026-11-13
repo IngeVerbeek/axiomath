@@ -313,6 +313,106 @@
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3 (in de volgorde van het boek)
 #----------------------------------------------------------------------------------------
 
+- id: h4-bgsin-k
+  soort: kort
+  opgave: |-
+    Boogsinus.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bepaal exact $\bgsin\frac{\sqrt2}{2}$ en $\bgsin(-1)$.
+      antwoord: |-
+        $\frac{\pi}{4}$; $-\frac{\pi}{2}$
+      uitwerking: |-
+        $\sin\frac{\pi}{4} = \frac{\sqrt2}{2}$ en $\sin\bigl(-\frac{\pi}{2}\bigr) = -1$, en beide hoeken liggen in $\bigl[-\frac{\pi}{2}, \frac{\pi}{2}\bigr]$.
+    - opgave: |-
+        Bepaal $\bgsin(-0{,}3)$ op vier decimalen.
+      antwoord: |-
+        $\approx -0{,}3047$
+      uitwerking: |-
+        Rekentoestel in radialen: $\sin^{-1}(-0{,}3) \approx -0{,}3047$. Die hoek ligt in $\bigl[-\frac{\pi}{2}, \frac{\pi}{2}\bigr]$, in het vierde kwadrant.
+    - opgave: |-
+        Iemand beweert: $\bgsin\bigl(-\frac12\bigr) = \frac{7\pi}{6}$, want $\sin\frac{7\pi}{6} = -\frac12$. Wat is er fout?
+      antwoord: |-
+        $\frac{7\pi}{6}$ ligt niet in het bereik; $\bgsin\bigl(-\frac12\bigr) = -\frac{\pi}{6}$
+      uitwerking: |-
+        Het klopt dat $\sin\frac{7\pi}{6} = -\frac12$, maar $\frac{7\pi}{6}$ ligt niet in $\bigl[-\frac{\pi}{2}, \frac{\pi}{2}\bigr]$. De hoek in dat interval met sinus $-\frac12$ is $-\frac{\pi}{6}$.
+
+- id: h4-bgcos-k
+  soort: kort
+  opgave: |-
+    Boogcosinus.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bepaal exact $\bgcos\frac12$ en $\bgcos(-1)$.
+      antwoord: |-
+        $\frac{\pi}{3}$; $\pi$
+      uitwerking: |-
+        $\cos\frac{\pi}{3} = \frac12$ en $\cos\pi = -1$, en beide hoeken liggen in $[0, \pi]$.
+    - opgave: |-
+        Bepaal $\bgcos(-0{,}4)$ op vier decimalen. In welk kwadrant ligt de hoek?
+      antwoord: |-
+        $\approx 1{,}9823$; het tweede
+      uitwerking: |-
+        Rekentoestel in radialen: $\cos^{-1}(-0{,}4) \approx 1{,}9823$. Dat ligt tussen $\frac{\pi}{2} \approx 1{,}5708$ en $\pi$: het tweede kwadrant.
+    - opgave: |-
+        Leg uit waarom $\bgcos(-a) = \pi - \bgcos a$ voor elke $a \in [-1, 1]$.
+      antwoord: |-
+        uitleg
+      uitwerking: |-
+        Stel $\theta = \bgcos a$, dus $\cos\theta = a$ en $0 \leqslant \theta \leqslant \pi$. Dan is $\cos(\pi - \theta) = -\cos\theta = -a$ (supplementaire hoeken), en ook $\pi - \theta$ ligt in $[0, \pi]$. Dus is $\pi - \theta$ de boogcosinus van $-a$.
+
+- id: h4-cos-k
+  soort: kort
+  opgave: |-
+    Los op.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\cos x = -\frac{\sqrt3}{2}$ (algemene oplossing)
+      antwoord: |-
+        $x = \pm\frac{5\pi}{6} + k \cdot 2\pi$
+      uitwerking: |-
+        $\bgcos\bigl(-\frac{\sqrt3}{2}\bigr) = \pi - \frac{\pi}{6} = \frac{5\pi}{6}$, dus $x = \frac{5\pi}{6} + k \cdot 2\pi$ of $x = -\frac{5\pi}{6} + k \cdot 2\pi$ ($k \in \Z$).
+    - opgave: |-
+        $\cos x = -0{,}3$ in $[0, 2\pi[$, op vier decimalen
+      antwoord: |-
+        $x \approx 1{,}8755$ of $x \approx 4{,}4077$
+      uitwerking: |-
+        $\bgcos(-0{,}3) \approx 1{,}8755$, dus $x \approx \pm 1{,}8755 + k \cdot 2\pi$. In $[0, 2\pi[$: $1{,}8755$ (met $k = 0$) en $-1{,}8755 + 2\pi \approx 4{,}4077$ (met $k = 1$).
+    - opgave: |-
+        $\cos x = -1$ (algemene oplossing)
+      antwoord: |-
+        $x = \pi + k \cdot 2\pi$
+      uitwerking: |-
+        $\bgcos(-1) = \pi$. De twee reeksen $\pi + k \cdot 2\pi$ en $-\pi + k \cdot 2\pi$ zijn dezelfde, want $-\pi$ en $\pi$ horen bij hetzelfde punt $(-1, 0)$: $x = \pi + k \cdot 2\pi$.
+
+- id: h4-tan-k
+  soort: kort
+  opgave: |-
+    Los op.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $\tan x = \frac{\sqrt3}{3}$ (algemene oplossing)
+      antwoord: |-
+        $x = \frac{\pi}{6} + k\pi$
+      uitwerking: |-
+        $\bgtan\frac{\sqrt3}{3} = \frac{\pi}{6}$, dus $x = \frac{\pi}{6} + k\pi$ ($k \in \Z$).
+    - opgave: |-
+        $\tan x = 4$ in $[0, 2\pi[$, op vier decimalen
+      antwoord: |-
+        $x \approx 1{,}3258$ of $x \approx 4{,}4674$
+      uitwerking: |-
+        $\bgtan 4 \approx 1{,}3258$, dus $x \approx 1{,}3258 + k\pi$. In $[0, 2\pi[$: $k = 0$ en $k = 1$, dus $1{,}3258$ en $1{,}3258 + \pi \approx 4{,}4674$.
+    - opgave: |-
+        $\tan x = -2$ (algemene oplossing, op vier decimalen)
+      antwoord: |-
+        $x \approx -1{,}1071 + k\pi$
+      uitwerking: |-
+        $\bgtan(-2) \approx -1{,}1071$, dus $x \approx -1{,}1071 + k\pi$ ($k \in \Z$).
+
 - id: h4-o1
   soort: opdracht
   niveau: 1

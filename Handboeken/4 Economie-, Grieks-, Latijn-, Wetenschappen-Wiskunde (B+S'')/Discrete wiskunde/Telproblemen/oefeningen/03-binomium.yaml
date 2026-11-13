@@ -231,6 +231,26 @@
       uitwerking: |-
         $14 - 3k = -4$ geeft $k = 6$: de term is $\binom76 x^{-4} = 7x^{-4}$.
 
+- id: h3-somtwee
+  soort: kort
+  opgave: |-
+    Gebruik de som van een rij van de driehoek van Pascal.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel deelverzamelingen met minstens 3 elementen heeft $\{1, 2, 3, 4, 5, 6\}$?
+      antwoord: |-
+        42
+      uitwerking: |-
+        Alle deelverzamelingen: $2^6 = 64$. Met 0, 1 of 2 elementen: $\binom60 + \binom61 + \binom62 = 1 + 6 + 15 = 22$.\par
+        Minstens 3 elementen: $64 - 22 = 42$.
+    - opgave: |-
+        Bereken $\displaystyle\sum_{k=2}^{10} \binom{10}{k}$ zonder rekentoestel.
+      antwoord: |-
+        1013
+      uitwerking: |-
+        De volledige som is $2^{10} = 1024$. De termen met $k = 0$ en $k = 1$ ontbreken: $1024 - 1 - 10 = 1013$.
+
 - id: h3-somrij
   soort: kort
   opgave: |-
@@ -250,7 +270,7 @@
       uitwerking: |-
         De term met $k = 0$ ontbreekt: $2^9 - \binom90 = 512 - 1 = 511$.
     - opgave: |-
-        Bereken $\binom60 + \binom62 + \binom64 + \binom66$ met de twee formules uit het kader.
+        Bereken $\binom60 + \binom62 + \binom64 + \binom66$ met de som van een rij en de som met afwisselende tekens.
       antwoord: |-
         32
       uitwerking: |-

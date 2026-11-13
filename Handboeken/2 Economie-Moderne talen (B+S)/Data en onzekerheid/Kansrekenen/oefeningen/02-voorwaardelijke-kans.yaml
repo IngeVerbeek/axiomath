@@ -259,6 +259,75 @@
       uitwerking: |-
         Alleen de kolom alarm telt: $\frac{490}{1485} \approx 0{,}33$. Twee op de drie alarmen zijn vals, omdat er zoveel meer nachten zonder inbraak zijn.
 
+- id: h2-product
+  soort: kort
+  opgave: |-
+    Gebruik de productregel.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        In een klas van 20 leerlingen zitten 8 meisjes. Er worden na elkaar twee leerlingen geloot. Wat is de kans dat het twee meisjes zijn?
+      antwoord: |-
+        $\tfrac{14}{95} \approx 0{,}147$
+      uitwerking: |-
+        De eerste is een meisje met kans $\frac{8}{20}$. Is dat zo, dan blijven er 7 meisjes over in 19 leerlingen. $\frac{8}{20} \cdot \frac{7}{19} = \frac{56}{380} = \frac{14}{95} \approx 0{,}147$.
+    - opgave: |-
+        Op een parking is 30~\% van de auto's elektrisch, en van de elektrische auto's is 40~\% wit. Wat is de kans dat een willekeurige auto elektrisch en wit is?
+      antwoord: |-
+        $0{,}12$
+      uitwerking: |-
+        $P(E \cap W) = P(E) \cdot P(W \gegeven E) = 0{,}3 \cdot 0{,}4 = 0{,}12$.
+    - opgave: |-
+        Je trekt drie kaarten na elkaar uit een spel van 52, zonder teruglegging. Wat is de kans op drie harten?
+      antwoord: |-
+        $\tfrac{11}{850} \approx 0{,}013$
+      uitwerking: |-
+        $\frac{13}{52} \cdot \frac{12}{51} \cdot \frac{11}{50} = \frac{1716}{132\,600} = \frac{11}{850} \approx 0{,}013$. Dat is dezelfde kans als met $\binom{n}{k}$ in hoofdstuk 1.
+
+- id: h2-onverenigbaar
+  soort: kort
+  opgave: |-
+    Gegeven: $P(A) = 0{,}4$ en $P(B) = 0{,}3$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken $P(A \cup B)$ als $A$ en $B$ onverenigbaar zijn.
+      antwoord: |-
+        $0{,}7$
+      uitwerking: |-
+        Dan is $P(A \cap B) = 0$, dus $P(A \cup B) = 0{,}4 + 0{,}3 = 0{,}7$.
+    - opgave: |-
+        Bereken $P(A \cup B)$ als $A$ en $B$ onafhankelijk zijn.
+      antwoord: |-
+        $0{,}58$
+      uitwerking: |-
+        Dan is $P(A \cap B) = 0{,}4 \cdot 0{,}3 = 0{,}12$, dus $P(A \cup B) = 0{,}4 + 0{,}3 - 0{,}12 = 0{,}58$.
+    - opgave: |-
+        Kunnen $A$ en $B$ hier tegelijk onverenigbaar en onafhankelijk zijn?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Onverenigbaar geeft $P(A \cap B) = 0$, onafhankelijk geeft $P(A \cap B) = 0{,}12$. Beide tegelijk kan niet.
+
+- id: h2-totaal
+  soort: kort
+  opgave: |-
+    Een winkel koopt zijn appels bij drie boomgaarden: 50~\% bij $A$, 30~\% bij $B$ en 20~\% bij $C$. Bij $A$ is 1~\% van de appels rot, bij $B$ 2~\% en bij $C$ 4~\%.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Teken een boomdiagram.
+      antwoord: |-
+        drie takken, elk gesplitst in rot en niet rot
+      uitwerking: |-
+        Eerst $A$ ($0{,}5$), $B$ ($0{,}3$) of $C$ ($0{,}2$). Daarna rot of niet: $0{,}01$ en $0{,}99$ na $A$, $0{,}02$ en $0{,}98$ na $B$, $0{,}04$ en $0{,}96$ na $C$.
+    - opgave: |-
+        Wat is de kans dat een willekeurige appel rot is?
+      antwoord: |-
+        $0{,}019$
+      uitwerking: |-
+        Drie paden naar \textit{rot}: $0{,}5 \cdot 0{,}01 + 0{,}3 \cdot 0{,}02 + 0{,}2 \cdot 0{,}04 = 0{,}005 + 0{,}006 + 0{,}008 = 0{,}019$.
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------

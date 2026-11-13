@@ -311,6 +311,100 @@
       uitwerking: |-
         Een kaart is nooit klaveren en ruiten tegelijk: onverenigbaar. $\frac{13}{52} + \frac{13}{52} = \frac12$.
 
+- id: h1-laplace-fout
+  soort: kort
+  opgave: |-
+    Lies redeneert: \textit{een gezin met drie kinderen heeft 0, 1, 2 of 3 meisjes, dus de kans op drie meisjes is $\frac14$.} Neem aan dat elk kind met kans $\frac12$ een meisje is.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Schrijf de even waarschijnlijke uitkomsten op.
+      antwoord: |-
+        8 rijtjes: $JJJ, JJM, \ldots, MMM$
+      uitwerking: |-
+        Noteer het geslacht van het oudste, het middelste en het jongste kind: $JJJ$, $JJM$, $JMJ$, $MJJ$, $JMM$, $MJM$, $MMJ$, $MMM$. Die 8 rijtjes zijn even waarschijnlijk.
+    - opgave: |-
+        Wat is de juiste kans op drie meisjes? En op precies één meisje? Wat is de fout van Lies?
+      antwoord: |-
+        $\tfrac18$; \ $\tfrac38$; de vier aantallen zijn niet even waarschijnlijk
+      uitwerking: |-
+        Drie meisjes: alleen $MMM$, dus $\frac18$. Precies één meisje: $JJM$, $JMJ$, $MJJ$, dus $\frac38$. Lies past de wet van Laplace toe op de aantallen 0, 1, 2 en 3, maar die zijn niet even waarschijnlijk: één meisje kan op drie manieren, drie meisjes maar op één.
+
+- id: h1-gokker
+  soort: kort
+  opgave: |-
+    Een eerlijke dobbelsteen gaf in de eerste 60 worpen 20 keer een zes.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Wat is de relatieve frequentie van een zes na 60 worpen?
+      antwoord: |-
+        $\tfrac13$
+      uitwerking: |-
+        $\frac{20}{60} = \frac13$, duidelijk meer dan $\frac16$.
+    - opgave: |-
+        Wat is de kans op een zes bij worp 61?
+      antwoord: |-
+        $\tfrac16$
+      uitwerking: |-
+        Nog altijd $\frac16$: de dobbelsteen heeft geen geheugen.
+    - opgave: |-
+        Hoeveel zessen verwacht je in de volgende 600 worpen? Wat is dan de relatieve frequentie na 660 worpen? Wat leer je daaruit?
+      antwoord: |-
+        100; \ $\approx 0{,}182$
+      uitwerking: |-
+        In 600 worpen verwacht je $600 \cdot \frac16 = 100$ zessen. Na 660 worpen zijn dat er ongeveer $20 + 100 = 120$, en is de relatieve frequentie $\frac{120}{660} \approx 0{,}182$. Ze komt dichter bij $\frac16$, zonder dat er minder zessen vallen: de 10 zessen te veel van het begin wegen gewoon minder door.
+
+- id: h1-grenzen
+  soort: kort
+  opgave: |-
+    Kan dit? Verklaar.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een weerbericht geeft voor morgen een kans op regen van 120~\%.
+      antwoord: |-
+        nee
+      uitwerking: |-
+        120~\% is $1{,}2$, en een kans is hoogstens 1.
+    - opgave: |-
+        Voor een gebeurtenis $A$ is $P(A) = 0{,}35$ en $P(\compl{A}) = 0{,}55$.
+      antwoord: |-
+        nee
+      uitwerking: |-
+        $A$ en $\compl{A}$ zijn onverenigbaar en vormen samen $\Omega$, dus hun kansen zijn samen 1. Hier is dat $0{,}9$.
+    - opgave: |-
+        Tom gooit twee dobbelstenen en zegt: \textit{de kans op minstens één zes is $\frac16 + \frac16 = \frac13$.} Wat is de juiste kans?
+      antwoord: |-
+        nee; $\tfrac{11}{36}$
+      uitwerking: |-
+        Tom telt $(6, 6)$ twee keer: \textit{zes bij de eerste} en \textit{zes bij de tweede} zijn niet onverenigbaar. In het rooster bevatten 11 van de 36 koppels een zes (6 in de rij, 6 in de kolom, en $(6, 6)$ één keer). De kans is $\frac{11}{36}$, iets minder dan $\frac{12}{36} = \frac13$.
+
+- id: h1-onverenigbaar
+  soort: kort
+  opgave: |-
+    Gebruik de somregel voor onverenigbare gebeurtenissen.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bij een dartbord van een kermis is de kans op het rode vak $0{,}15$ en op het groene vak $0{,}35$. Wat is de kans op rood of groen?
+      antwoord: |-
+        $0{,}5$
+      uitwerking: |-
+        Een pijl treft nooit twee vakken tegelijk: onverenigbaar. $0{,}15 + 0{,}35 = 0{,}5$.
+    - opgave: |-
+        Je gooit met twee dobbelstenen. Wat is de kans dat de som 4 of 10 is?
+      antwoord: |-
+        $\tfrac16$
+      uitwerking: |-
+        Som 4: $(1, 3), (2, 2), (3, 1)$. Som 10: $(4, 6), (5, 5), (6, 4)$. Een worp heeft maar één som, dus $\frac{3}{36} + \frac{3}{36} = \frac{6}{36} = \frac16$.
+    - opgave: |-
+        Waarom mag je bij een dobbelsteen de kans op \textit{een even getal of een 5} wel zo berekenen, maar de kans op \textit{een even getal of meer dan 4} niet?
+      antwoord: |-
+        even en 5 zijn onverenigbaar, even en meer dan 4 niet
+      uitwerking: |-
+        Een 5 is nooit even, dus $\frac36 + \frac16 = \frac46$. Maar 6 is even én meer dan 4: optellen geeft $\frac36 + \frac26 = \frac56$, terwijl de gunstige uitkomsten 2, 4, 5 en 6 zijn, dus $\frac46$.
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------

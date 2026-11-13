@@ -107,6 +107,136 @@
       uitwerking: |-
         Het minteken keert de breuk om: $\bigl(\frac49\bigr)^{-\frac32} = \bigl(\frac94\bigr)^{\frac32} = \Bigl(\sqrt{\tfrac94}\Bigr)^3 = \bigl(\frac32\bigr)^3 = \frac{27}{8}$.
 
+- id: h1-k-product
+  soort: kort
+  opgave: |-
+    Bereken zonder rekentoestel, of schrijf als één macht van $x$ (met $x > 0$).
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $5^{0{,}7} \cdot 5^{1{,}3}$
+      antwoord: |-
+        25
+      uitwerking: |-
+        Zelfde grondtal, dus exponenten optellen: $5^{0{,}7 + 1{,}3} = 5^2 = 25$.
+    - opgave: |-
+        $x^{\frac12} \cdot x^{\frac34}$
+      antwoord: |-
+        $x^{\frac54}$
+      uitwerking: |-
+        Exponenten optellen, op dezelfde noemer: $x^{\frac24 + \frac34} = x^{\frac54}$.
+    - opgave: |-
+        $7^{\frac13} \cdot 7^{-\frac43}$
+      antwoord: |-
+        $\frac17$
+      uitwerking: |-
+        $7^{\frac13 - \frac43} = 7^{-1} = \frac17$.
+
+- id: h1-k-quotient
+  soort: kort
+  opgave: |-
+    Bereken zonder rekentoestel, of schrijf als één macht van $x$ (met $x > 0$).
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\dfrac{6^{\frac52}}{6^{\frac12}}$
+      antwoord: |-
+        36
+      uitwerking: |-
+        Exponenten aftrekken: $6^{\frac52 - \frac12} = 6^2 = 36$.
+    - opgave: |-
+        $\dfrac{x}{\sqrt[4]{x}}$
+      antwoord: |-
+        $x^{\frac34}$
+      uitwerking: |-
+        $\dfrac{x^1}{x^{\frac14}} = x^{1 - \frac14} = x^{\frac34}$.
+    - opgave: |-
+        $\dfrac{1}{\sqrt[5]{x^2}}$
+      antwoord: |-
+        $x^{-\frac25}$
+      uitwerking: |-
+        $\sqrt[5]{x^2} = x^{\frac25}$, en één gedeeld door een macht is de macht met de tegengestelde exponent: $\dfrac{1}{x^{\frac25}} = x^{-\frac25}$.
+
+- id: h1-k-machtmacht
+  soort: kort
+  opgave: |-
+    Bereken zonder rekentoestel, of schrijf als één macht van $x$ (met $x > 0$).
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\bigl(9^{\frac34}\bigr)^{\frac23}$
+      antwoord: |-
+        3
+      uitwerking: |-
+        Exponenten vermenigvuldigen: $9^{\frac34 \cdot \frac23} = 9^{\frac12} = \sqrt9 = 3$.
+    - opgave: |-
+        $\sqrt[3]{x^{\frac34}}$
+      antwoord: |-
+        $x^{\frac14}$
+      uitwerking: |-
+        Een derdemachtswortel is de macht $\frac13$: $\bigl(x^{\frac34}\bigr)^{\frac13} = x^{\frac34 \cdot \frac13} = x^{\frac14}$.
+    - opgave: |-
+        $\bigl(8^{-\frac12}\bigr)^{\frac43}$
+      antwoord: |-
+        $\frac14$
+      uitwerking: |-
+        $8^{-\frac12 \cdot \frac43} = 8^{-\frac23} = \dfrac{1}{\bigl(\sqrt[3]{8}\bigr)^2} = \dfrac{1}{4}$.
+
+- id: h1-k-prodgrondtal
+  soort: kort
+  opgave: |-
+    Bereken zonder rekentoestel, of vereenvoudig (met $x > 0$).
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $3^{\frac12} \cdot 12^{\frac12}$
+      antwoord: |-
+        6
+      uitwerking: |-
+        Zelfde exponent, dus grondtallen vermenigvuldigen: $(3 \cdot 12)^{\frac12} = 36^{\frac12} = 6$.
+    - opgave: |-
+        $5^{\frac23} \cdot 25^{\frac23}$
+      antwoord: |-
+        25
+      uitwerking: |-
+        $(5 \cdot 25)^{\frac23} = 125^{\frac23} = \bigl(\sqrt[3]{125}\bigr)^2 = 5^2 = 25$.
+    - opgave: |-
+        $\bigl(8x^6\bigr)^{\frac13}$
+      antwoord: |-
+        $2x^2$
+      uitwerking: |-
+        Verdeel de exponent over de factoren: $8^{\frac13} \cdot \bigl(x^6\bigr)^{\frac13} = 2 \cdot x^{6 \cdot \frac13} = 2x^2$.
+
+- id: h1-k-quotgrondtal
+  soort: kort
+  opgave: |-
+    Bereken zonder rekentoestel, of vereenvoudig (met $x > 0$).
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $\dfrac{80^{\frac14}}{5^{\frac14}}$
+      antwoord: |-
+        2
+      uitwerking: |-
+        Zelfde exponent, dus grondtallen delen: $\bigl(\frac{80}{5}\bigr)^{\frac14} = 16^{\frac14} = 2$.
+    - opgave: |-
+        $\dfrac{2^{\frac35}}{64^{\frac35}}$
+      antwoord: |-
+        $\frac18$
+      uitwerking: |-
+        $\bigl(\frac{2}{64}\bigr)^{\frac35} = \bigl(\frac{1}{32}\bigr)^{\frac35} = \Bigl(\sqrt[5]{\tfrac{1}{32}}\Bigr)^3 = \bigl(\frac12\bigr)^3 = \frac18$.
+    - opgave: |-
+        $\Bigl(\dfrac{27}{x^3}\Bigr)^{\frac23}$
+      antwoord: |-
+        $\dfrac{9}{x^2}$
+      uitwerking: |-
+        $\dfrac{27^{\frac23}}{\bigl(x^3\bigr)^{\frac23}} = \dfrac{\bigl(\sqrt[3]{27}\bigr)^2}{x^2} = \dfrac{9}{x^2}$.
+
 - id: h1-machten
   soort: kort
   opgave: |-
@@ -138,6 +268,38 @@
         $x^{\frac32}$
       uitwerking: |-
         $\dfrac{x^2}{x^{\frac12}} = x^{2 - \frac12} = x^{\frac32}$.
+
+- id: h1-k-vergelijken
+  soort: kort
+  opgave: |-
+    Welk getal is het grootst? Antwoord zonder rekentoestel.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $1{,}5^{0{,}3}$ of $1{,}5^{0{,}29}$
+      antwoord: |-
+        $1{,}5^{0{,}3}$
+      uitwerking: |-
+        Het grondtal $1{,}5 > 1$, dus $1{,}5^x$ is stijgend. Omdat $0{,}3 > 0{,}29$, is $1{,}5^{0{,}3} > 1{,}5^{0{,}29}$.
+    - opgave: |-
+        $\bigl(\frac23\bigr)^{\sqrt2}$ of $\bigl(\frac23\bigr)^{1{,}5}$
+      antwoord: |-
+        $\bigl(\frac23\bigr)^{\sqrt2}$
+      uitwerking: |-
+        Het grondtal ligt tussen 0 en 1, dus de functie is dalend. Omdat $\sqrt2 \approx 1{,}414 < 1{,}5$, is $\bigl(\frac23\bigr)^{\sqrt2} > \bigl(\frac23\bigr)^{1{,}5}$.
+    - opgave: |-
+        $0{,}9^{10}$ of $1$
+      antwoord: |-
+        $1$
+      uitwerking: |-
+        Schrijf $1 = 0{,}9^0$. De functie $0{,}9^x$ is dalend en $10 > 0$, dus $0{,}9^{10} < 0{,}9^0 = 1$.
+    - opgave: |-
+        $4^{-2}$ of $2^{-3}$
+      antwoord: |-
+        $2^{-3}$
+      uitwerking: |-
+        Breng beide naar grondtal 2: $4^{-2} = \bigl(2^2\bigr)^{-2} = 2^{-4}$. Omdat $2^x$ stijgt en $-4 < -3$, is $2^{-4} < 2^{-3}$.
 
 - id: h1-k-grafiek
   soort: kort
@@ -209,6 +371,32 @@
       uitwerking: |-
         $\bigl(\frac12\bigr)^x = (2^{-1})^x = 2^{-x}$ en $16 = 2^4$. Dus $-x = 4$ en $x = -4$.
 
+- id: h1-k-tweekanten
+  soort: kort
+  opgave: |-
+    Los op.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $25^x = 125^{x - 2}$
+      antwoord: |-
+        $x = 6$
+      uitwerking: |-
+        Beide als macht van 5: $5^{2x} = 5^{3(x - 2)} = 5^{3x - 6}$. Exponenten gelijk: $2x = 3x - 6$, dus $x = 6$.
+    - opgave: |-
+        $\bigl(\frac14\bigr)^x = 8^{x + 5}$
+      antwoord: |-
+        $x = -3$
+      uitwerking: |-
+        Beide als macht van 2: $2^{-2x} = 2^{3x + 15}$. Dan is $-2x = 3x + 15$, dus $-5x = 15$ en $x = -3$.
+    - opgave: |-
+        $3^{x^2} = 9^{x + 4}$
+      antwoord: |-
+        $x = 4$ of $x = -2$
+      uitwerking: |-
+        $9^{x + 4} = 3^{2x + 8}$, dus $x^2 = 2x + 8$. Dan is $x^2 - 2x - 8 = (x - 4)(x + 2) = 0$: $x = 4$ of $x = -2$.
+
 - id: h1-k-intrest
   soort: kort
   opgave: |-
@@ -259,6 +447,31 @@
       uitwerking: |-
         $400 \cdot \bigl(\frac12\bigr)^{\frac{t}{3}} = 50 \iff \bigl(\frac12\bigr)^{\frac{t}{3}} = \frac18 = \bigl(\frac12\bigr)^3$. Exponenten gelijkstellen: $\frac{t}{3} = 3$, dus $t = 9$ uur (drie halveringstijden).
 
+- id: h1-k-daling
+  soort: kort
+  opgave: |-
+    Een kudde van $1200$ rendieren wordt elk jaar $7$\,\% kleiner.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef de groeifactor en het model.
+      antwoord: |-
+        $0{,}93$; $R(t) = 1200 \cdot 0{,}93^t$
+      uitwerking: |-
+        Er verdwijnt $7$\,\%, dus er blijft $93$\,\% over: de groeifactor is $1 - \frac{7}{100} = 0{,}93$, en $R(t) = 1200 \cdot 0{,}93^t$ met $t$ in jaar.
+    - opgave: |-
+        Hoeveel rendieren zijn er na 5 jaar?
+      antwoord: |-
+        ongeveer 835
+      uitwerking: |-
+        $R(5) = 1200 \cdot 0{,}93^5 \approx 834{,}8$: ongeveer 835 rendieren.
+    - opgave: |-
+        Met hoeveel procent is de kudde in die 5 jaar afgenomen?
+      antwoord: |-
+        ongeveer $30{,}4$\,\%
+      uitwerking: |-
+        $0{,}93^5 \approx 0{,}696$: er blijft $69{,}6$\,\% over, dus de kudde is met ongeveer $30{,}4$\,\% afgenomen. Dat is minder dan $5 \cdot 7\,\% = 35$\,\%.
+
 - id: h1-groei
   soort: kort
   opgave: |-
@@ -277,6 +490,25 @@
         ongeveer $21{,}9$\,\%
       uitwerking: |-
         De groeifactor per 10 jaar is $1{,}02^{10} \approx 1{,}219$: ongeveer $21{,}9$\,\% per 10 jaar. Dat is meer dan $10 \cdot 2$\,\%, omdat ook de groei zelf weer groeit.
+
+- id: h1-k-verdubbeltijd
+  soort: kort
+  opgave: |-
+    Het aantal volgers van een videokanaal verdubbelt elke 5 weken. Nu zijn er $1200$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Hoeveel volgers zijn er na 12 weken?
+      antwoord: |-
+        ongeveer 6334
+      uitwerking: |-
+        Na $t$ weken zijn er $\frac{t}{5}$ verdubbelingstijden voorbij: $V(t) = 1200 \cdot 2^{\frac{t}{5}}$. Dan is $V(12) = 1200 \cdot 2^{2{,}4} \approx 6334$ volgers.
+    - opgave: |-
+        Met hoeveel procent groeit het aantal per week?
+      antwoord: |-
+        ongeveer $14{,}9$\,\%
+      uitwerking: |-
+        De groeifactor per week is $2^{\frac15} \approx 1{,}1487$: ongeveer $14{,}9$\,\% per week. Controle: $1{,}1487^5 \approx 2$.
 
 - id: h1-e
   soort: kort

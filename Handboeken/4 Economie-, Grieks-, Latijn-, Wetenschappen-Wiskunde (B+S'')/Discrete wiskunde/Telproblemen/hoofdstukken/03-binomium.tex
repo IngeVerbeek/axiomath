@@ -29,7 +29,15 @@ Een som met veel termen die volgens een regel gemaakt zijn, schrijf je kort met 
 
 \figuren{$\displaystyle\sum_{k=1}^{5} k^2 = 1^2 + 2^2 + 3^2 + 4^2 + 5^2 = 55$ \qquad\qquad $\displaystyle\sum_{k=0}^{3} 2^k = 1 + 2 + 4 + 8 = 15$}
 
-De letter $k$ is een teller: je vult achtereenvolgens elke gehele waarde in, en telt de uitkomsten op. Welke letter je kiest, maakt niet uit.
+De letter $k$ is een teller: je vult achtereenvolgens elke gehele waarde in, en telt de uitkomsten op. Welke letter je kiest, maakt niet uit: $\sum_{k=1}^{5} k^2$ en $\sum_{i=1}^{5} i^2$ zijn dezelfde som. Omgekeerd kun je een som met een regelmaat kort schrijven: zoek een voorschrift voor de termen.
+
+\voorbeeld{}{Schrijf met het sommatieteken: $4 + 7 + 10 + \cdots + 31$.\label{vb:h3-sigma}}{%
+\uitleg{Elke term is 3 meer dan de vorige. Een voorschrift met $3k$ ligt dus voor de hand; we zoeken waar de teller begint en stopt.}
+\begin{stappen}
+4 = 3 \cdot 1 + 1, \ 7 = 3 \cdot 2 + 1, \ldots & De termen zijn $3k + 1$, te beginnen bij $k = 1$. \\[1ex]
+31 = 3 \cdot 10 + 1 & De laatste term hoort bij $k = 10$. \\[1ex]
+4 + 7 + \cdots + 31 = \sum_{k=1}^{10} (3k + 1) & Tien termen. Ook goed: $\sum_{k=0}^{9} (3k + 4)$.
+\end{stappen}}
 
 \begin{oefeningen}
 \oef{h3-sigma}
@@ -64,6 +72,8 @@ Het boomdiagram toont het bewijs voor $n = 3$. In elke factor kies je $a$ of $b$
 \end{tikzpicture}}
 
 De coëfficiënten $\binom{n}{k}$ heten daarom ook \textbf{binomiaalcoëfficiënten}: ze staan in rij $n$ van de driehoek van Pascal. De exponent van $a$ daalt van $n$ tot 0, die van $b$ stijgt van 0 tot $n$, en hun som is altijd $n$. Er zijn $n + 1$ termen.
+
+Een klassieke fout is $(a + b)^n = a^n + b^n$. Zo vergeet je alle termen waarin je uit sommige factoren $a$ en uit andere $b$ kiest. Zo is $(a + b)^2 - (a^2 + b^2) = 2ab$, en $(1 + 1)^3 = 8$, niet $1 + 1 = 2$.
 
 \voorbeeld{}{Werk uit: $(x + 2)^4$.\label{vb:h3-binomium}}{%
 \uitleg{We nemen de coëfficiënten uit rij 4 van de driehoek, $1, 4, 6, 4, 1$, met $a = x$ en $b = 2$. Vergeet niet dat ook de machten van 2 meetellen.}
@@ -121,6 +131,15 @@ k = 3: \ \binom{7}{3} \cdot 2^3 = 35 \cdot 8 = 280 & De coëfficiënt van $x^3$ 
 \binom{6}{4} = 15 & De term zonder $x$ is 15.
 \end{stappenbreed}}
 
+Niet elke macht komt voor. In $\bigl(x^2 + \frac1x\bigr)^6$ is de exponent $12 - 3k$ altijd een veelvoud van 3.
+
+\voorbeeld{}{Komt $x^5$ voor in de uitwerking van $\Bigl(x^2 + \dfrac1x\Bigr)^6$?\label{vb:h3-geenterm}}{%
+\uitleg{We gebruiken de algemene term van het vorige voorbeeld, met $x^{12 - 3k}$, en zoeken een $k$ met exponent 5.}
+\begin{stappen}
+12 - 3k = 5 \ \Rightarrow \ k = \tfrac73 & Geen natuurlijk getal: geen enkele term heeft exponent 5. \\[1ex]
+\text{nee} & $x^5$ komt niet voor: de coëfficiënt van $x^5$ is 0.
+\end{stappen}}
+
 \begin{werkwijze}
 Schrijf de algemene term en breng alle machten van $x$ samen tot één macht $x^{\ldots}$ met $k$ in de exponent. Stel die exponent gelijk aan de gevraagde, los op naar $k$, en vul in. Is er geen natuurlijke $k$ tussen 0 en $n$, dan komt die macht niet voor.
 \end{werkwijze}
@@ -134,23 +153,69 @@ Schrijf de algemene term en breng alle machten van $x$ samen tot één macht $x^
 %========================================================================================
 \section{Gevolgen}
 
-Vul je in het binomium bijzondere waarden in voor $a$ en $b$, dan vind je eigenschappen van de driehoek van Pascal.
+Vul je in het binomium bijzondere waarden in voor $a$ en $b$, dan vind je eigenschappen van de driehoek van Pascal. Ze hebben ook een betekenis als telling.
+
+\subsection{De som van een rij}
+
+Tel de getallen van een rij van de driehoek op: $1 + 1 = 2$, $1 + 2 + 1 = 4$, $1 + 3 + 3 + 1 = 8$, $1 + 4 + 6 + 4 + 1 = 16$. Telkens een macht van 2.
 
 \begin{theorie}
 \begin{stelling}{Som van een rij}
-Voor elk natuurlijk getal $n$ is \quad $\formule{\sum_{k=0}^{n} \binom{n}{k} = 2^n}$ \quad en, als $n \geqslant 1$, \quad $\formule{\sum_{k=0}^{n} (-1)^k \binom{n}{k} = 0}$
+Voor elk natuurlijk getal $n$ is \quad $\formule{\sum_{k=0}^{n} \binom{n}{k} = 2^n}$
 \end{stelling}
 
 \begin{bewijs}
-Neem $a = b = 1$ in het binomium: $(1 + 1)^n = \sum_{k=0}^{n} \binom{n}{k} 1^{n - k} 1^k$, dus $2^n = \sum_{k=0}^n \binom{n}{k}$. Neem $a = 1$ en $b = -1$: $(1 - 1)^n = 0$ voor $n \geqslant 1$, en rechts staat $\sum_{k=0}^{n} (-1)^k \binom{n}{k}$.
+Neem $a = b = 1$ in het binomium. Alle machten van 1 zijn 1, dus
+\bewijsregel{2^n = (1 + 1)^n = \sum_{k=0}^{n} \binom{n}{k} 1^{n - k} 1^k = \sum_{k=0}^{n} \binom{n}{k} .}
+Het kan ook door te tellen. Een verzameling met $n$ elementen heeft $2^n$ deelverzamelingen: bij elk element beslis je \textit{erin} of \textit{niet}, $n$ stappen met 2 mogelijkheden. Tel je ze per aantal elementen $k$, dan zijn er $\binom{n}{k}$ met $k$ elementen, voor $k = 0, 1, \ldots, n$. De som van al die aantallen is dus ook $2^n$.
 \end{bewijs}
 \end{theorie}
 
-De eerste formule ken je al uit opdracht \ref{oef:h1-o14} van hoofdstuk 1: een verzameling met $n$ elementen heeft $2^n$ deelverzamelingen. De som $\sum \binom{n}{k}$ telt ze ook, gerangschikt per aantal elementen $k$. De tweede formule zegt dat er evenveel deelverzamelingen met een even aantal elementen zijn als met een oneven aantal.
+\voorbeeld{}{Een pizzeria heeft 8 toppings. Hoeveel pizza's met minstens 2 verschillende toppings kun je bestellen?\label{vb:h3-somrij}}{%
+\uitleg{Een pizza is een deelverzameling van de 8 toppings. Alle deelverzamelingen samen zijn er $2^8$; we trekken die met 0 of 1 topping af.}
+\begin{stappen}
+2^8 = 256 & Alle keuzes van toppings: de som van rij 8. \\[1ex]
+\binom80 + \binom81 = 1 + 8 = 9 & Geen topping of precies één. \\[2ex]
+256 - 9 = 247 & Pizza's met minstens 2 toppings.
+\end{stappen}}
+
+\begin{oefeningen}
+\oef{h3-somtwee}
+\end{oefeningen}
+
+\subsection{De som met afwisselende tekens}
+
+Zet je afwisselend een plus- en een minteken tussen de getallen van een rij, dan vind je telkens 0: $1 - 3 + 3 - 1 = 0$ en $1 - 4 + 6 - 4 + 1 = 0$.
+
+\begin{theorie}
+\begin{stelling}{Som met afwisselende tekens}
+Voor elk natuurlijk getal $n \geqslant 1$ is \quad $\formule{\sum_{k=0}^{n} (-1)^k \binom{n}{k} = 0}$
+\end{stelling}
+
+\begin{bewijs}
+Neem $a = 1$ en $b = -1$ in het binomium. Omdat $n \geqslant 1$, is
+\bewijsregel{0 = (1 - 1)^n = \sum_{k=0}^{n} \binom{n}{k} 1^{n - k} (-1)^k = \sum_{k=0}^{n} (-1)^k \binom{n}{k} .}
+\end{bewijs}
+\end{theorie}
+
+Voor $n = 0$ bestaat de som uit één term, $\binom00 = 1$, en is ze dus niet 0. Daarom de voorwaarde $n \geqslant 1$.
+
+Wat betekent de stelling? De termen met even $k$ krijgen een plusteken, die met oneven $k$ een minteken. De som is 0, dus zijn er evenveel deelverzamelingen met een even aantal elementen als met een oneven aantal: elk de helft van $2^n$, dus $2^{n - 1}$. Ook dat kun je rechtstreeks inzien: neem een vast element $x$, en voeg het toe aan een deelverzameling zonder $x$ of haal het weg uit een deelverzameling met $x$. Zo hoort bij elke even deelverzameling precies één oneven, en omgekeerd.
+
+\voorbeeld{}{Hoeveel deelverzamelingen met een even aantal elementen heeft een verzameling met 7 elementen?\label{vb:h3-even}}{%
+\uitleg{Er zijn evenveel even als oneven deelverzamelingen, en samen zijn het er $2^7$.}
+\begin{stappen}
+\frac{2^7}{2} = 2^6 = 64 & De helft van alle 128 deelverzamelingen. \\[2ex]
+\binom70 + \binom72 + \binom74 + \binom76 = 1 + 21 + 35 + 7 = 64 & Controle: tel ze per aantal elementen.
+\end{stappen}}
 
 \begin{oefeningen}
 \oef{h3-somrij}
+
+\oef{h3-som}
 \end{oefeningen}
+
+\subsection{Benaderen}
 
 Het binomium is ook handig om te benaderen. Is $b$ klein, dan worden de hogere machten van $b$ snel verwaarloosbaar.
 
@@ -165,9 +230,8 @@ Wie alleen de eerste twee termen gebruikt, vindt $1{,}2$: dat is de groei zonder
 
 \begin{oefeningen}
 \oef{h3-benader}
-
-\oef{h3-som}
 \end{oefeningen}
+
 
 %========================================================================================
 \opdrachtenkop
@@ -264,13 +328,13 @@ Wie alleen de eerste twee termen gebruikt, vindt $1{,}2$: dat is de groei zonder
 \end{oefeningen}
 
 \herhaalschema{%
-  \fzv{oef:h3-t6}{oef:h3-sigma}%
+  \fv{oef:h3-t6}{vb:h3-sigma}{oef:h3-sigma}%
   \fv{oef:h3-t1}{vb:h3-binomium2}{oef:h3-binomium}%
   \fv{oef:h3-t2}{vb:h3-term}{oef:h3-coef}%
   \fv{oef:h3-t3}{vb:h3-term2}{oef:h3-term}%
   \fv{oef:h3-t7}{vb:h3-term}{oef:h3-o17}%
   \fv{oef:h3-t4}{vb:h3-benadering}{oef:h3-benader}%
-  \fzv{oef:h3-t5}{oef:h3-somrij}}
+  \fv{oef:h3-t5}{vb:h3-somrij}{oef:h3-somtwee}}
 
 \ifzelfstudie
 \section*{Maak je eigen samenvatting}

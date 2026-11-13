@@ -19,15 +19,11 @@ Waarom is de som van twee oneven getallen altijd even? Je kunt het nagaan voor $
 \end{oefeningen}
 
 %========================================================================================
-\section{Een bewijs lezen}
+\section{Een bewijs lezen}\label{sec:h2-lezen}
 
-Een bewijs lees je niet zoals een verhaal. Je stelt bij elke stap vragen, en beantwoordt ze voor jezelf. Dat heet \textbf{zelfuitleg}. Het kost tijd, maar zo begrijp je een bewijs echt, en leer je hoe je er zelf een maakt.
+\subsection{Even, oneven en deelbaar}
 
-\begin{werkwijze}
-Lees een bewijs regel per regel. Vraag je bij elke regel af: \textbf{1.}~Welke definitie, eigenschap of eerdere regel wordt hier gebruikt? \textbf{2.}~Hoe volgt deze regel uit wat ervoor staat? \textbf{3.}~Waar wordt de veronderstelling gebruikt? Vraag je op het einde af: \textbf{4.}~Wat is het idee van het bewijs, in één zin?
-\end{werkwijze}
-
-We spreken eerst af wat even en oneven betekent.
+Een bewijs steunt op definities: alleen wat je precies kunt opschrijven, kun je bewijzen. De bewijzen in dit hoofdstuk gaan over gehele getallen, en gebruiken vooral drie definities.
 
 \begin{theorie}
 Een geheel getal $n$ is \textbf{\textcolor{accent}{even}} als $\formule{n = 2k}$ voor een geheel getal $k$, en \textbf{\textcolor{accent}{oneven}} als $\formule{n = 2k + 1}$ voor een geheel getal $k$.
@@ -35,6 +31,28 @@ Een geheel getal $n$ is \textbf{\textcolor{accent}{even}} als $\formule{n = 2k}$
 \vspace{1mm}
 Een geheel getal $a$ \textbf{\textcolor{accent}{deelt}} $b$, kort $\formule{a \deelt b}$, als $\formule{b = a \cdot k}$ voor een geheel getal $k$.
 \end{theorie}
+
+Elk geheel getal is even of oneven: deel je het door 2, dan is de rest 0 of 1. Dat geldt ook voor negatieve getallen, zoals $-7 = 2 \cdot (-4) + 1$. Geen getal is beide; dat bewijs je in opdracht~\ref{oef:h2-o22}. Om te tonen dat een getal even of oneven is, schrijf je het dus in de vorm $2 \cdot \ldots$ of $2 \cdot \ldots + 1$, met een geheel getal op de puntjes.
+
+\voorbeeld{}{Is $6n + 9$ even of oneven, voor een geheel getal $n$?\label{vb:h2-oneven}}{%
+\uitleg{Probeer eerst een paar waarden: $n = 0$ geeft 9, $n = 1$ geeft 15. Het vermoeden is \textit{oneven}. Om het voor elke $n$ te tonen, schrijven we het getal in de vorm $2k + 1$.}
+\begin{stappen}
+6n + 9 = 6n + 8 + 1 & Splits 9 in een even deel en 1. \\[1ex]
+= 2(3n + 4) + 1 & Zonder 2 af. \\[1ex]
+k = 3n + 4 \in \Z & Een geheel getal, want $n$ is geheel: $6n + 9$ is oneven.
+\end{stappen}}
+
+\begin{oefeningen}
+\oef{h2-definities}
+\end{oefeningen}
+
+\subsection{Zelfuitleg}
+
+Een bewijs lees je niet zoals een verhaal. Je stelt bij elke stap vragen, en beantwoordt ze voor jezelf. Dat heet \textbf{zelfuitleg}. Het kost tijd, maar zo begrijp je een bewijs echt, en leer je hoe je er zelf een maakt.
+
+\begin{werkwijze}
+Lees een bewijs regel per regel. Vraag je bij elke regel af: \textbf{1.}~Welke definitie, eigenschap of eerdere regel wordt hier gebruikt? \textbf{2.}~Hoe volgt deze regel uit wat ervoor staat? \textbf{3.}~Waar wordt de veronderstelling gebruikt? Vraag je op het einde af: \textbf{4.}~Wat is het idee van het bewijs, in één zin?
+\end{werkwijze}
 
 \voorbeeld{}{Lees het bewijs van de stelling \textit{de som van twee oneven getallen is even}, en beantwoord de vragen van de werkwijze.\label{vb:h2-lezen}}{%
 \uitleg{Links staat het bewijs, rechts de zelfuitleg.}
@@ -58,15 +76,41 @@ Het idee kun je ook tekenen. Een even getal is een aantal stippen in paren, een 
 \end{tikzpicture}}
 
 \begin{oefeningen}
-\oef{h2-definities}
-
 \oef{h2-lezen}
 \end{oefeningen}
 
 %========================================================================================
-\section{Het rechtstreekse bewijs}
+\section{Het rechtstreekse bewijs}\label{sec:h2-rechtstreeks}
 
-Bij een \textbf{rechtstreeks bewijs} van $p \dan q$ neem je aan dat $p$ waar is, en leid je in stappen af dat $q$ waar is. Dat deed het bewijs in sectie 1.
+\subsection{Van veronderstelling naar besluit}
+
+De meeste stellingen zijn implicaties $p \dan q$: uit een veronderstelling $p$ volgt een besluit $q$. De meest voor de hand liggende aanpak vertrekt bij $p$ en werkt naar $q$ toe.
+
+\begin{theorie}
+Bij een \textbf{\textcolor{accent}{rechtstreeks bewijs}} van $p \dan q$ neem je aan dat $p$ waar is, en leid je in stappen af dat $q$ waar is.
+\end{theorie}
+
+Waarom volstaat dat? Een implicatie $p \dan q$ is alleen vals als $p$ waar is en $q$ vals. Wie toont dat $q$ volgt telkens $p$ waar is, sluit net dat geval uit. Is $p$ vals, dan is de implicatie vanzelf waar: daar hoef je niets te bewijzen. Gaat de stelling over alle getallen, neem dan een \textit{willekeurig} getal dat aan $p$ voldoet. Wat je voor dat getal bewijst zonder een bepaalde waarde te kiezen, geldt voor elk getal.
+
+\voorbeeld{}{Bewijs: als $3 \deelt a$ en $5 \deelt b$, dan $15 \deelt ab$ (met $a, b \in \Z$).\label{vb:h2-direct}}{%
+\uitleg{De veronderstelling zegt iets over $a$ en $b$ apart. We schrijven ze uit met de definitie van \textit{deelt}, en zoeken in $ab$ een factor 15.}
+\begin{stappen}
+a = 3k \text{ en } b = 5m \text{ met } k, m \in \Z & De veronderstelling, met de definitie. Twee letters, want $k$ en $m$ zijn niet gelijk. \\[1ex]
+ab = 3k \cdot 5m = 15 \cdot km & Vermenigvuldigen en de factoren 3 en 5 samennemen. \\[1ex]
+\text{dus } 15 \deelt ab & De definitie van \textit{deelt}, met het gehele getal $km$.
+\end{stappen}}
+
+\begin{werkwijze}
+Schrijf de veronderstelling uit met de definities (bv. $n = 2k + 1$), met een nieuwe letter voor elk getal. Werk met algebra naar de vorm van het besluit (bv. $2 \cdot$ iets). Benoem het gehele getal dat je vindt.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h2-rechtstreeks}
+\end{oefeningen}
+
+\subsection{Gevallen onderscheiden}
+
+Soms lukt het niet in één keer, maar wel als je weet of een getal even of oneven is. Dan splits je het bewijs. Dat mag, als de gevallen samen alle mogelijkheden dekken: welk geval zich ook voordoet, het besluit volgt. Met de connectieven: weet je dat $p_1 \of p_2$ altijd waar is, en bewijs je $p_1 \dan q$ en $p_2 \dan q$, dan is $q$ waar.
 
 \voorbeeld{}{Bewijs: voor elk geheel getal $n$ is $n^2 + n$ even.\label{vb:h2-rechtstreeks}}{%
 \uitleg{$n^2 + n = n(n + 1)$ is een product van twee opeenvolgende getallen. Eén ervan is even. We maken dat precies door twee gevallen te onderscheiden.}
@@ -78,27 +122,31 @@ n = 2k + 1\colon \ n(n + 1) = (2k + 1)(2k + 2) = 2(2k + 1)(k + 1) & Is $n$ oneve
 In beide gevallen is $n^2 + n$ even. Elk geheel getal is even of oneven, dus het geldt voor alle $n$.}
 
 \begin{werkwijze}
-Schrijf de veronderstelling uit met de definities (bv. $n = 2k + 1$). Werk met algebra naar de vorm van het besluit (bv. $2 \cdot$ iets). Benoem het gehele getal dat je vindt. Valt het niet in één keer, onderscheid dan gevallen die samen alle mogelijkheden dekken.
+Kies gevallen die samen alle mogelijkheden dekken, zoals $n$ even en $n$ oneven, of de rest 0, 1 of 2 bij deling door 3. Bewijs elk geval apart, en zeg op het einde waarom de gevallen alles dekken.
 \end{werkwijze}
 
 \begin{oefeningen}
-\oef{h2-rechtstreeks}
-
 \oef{h2-gevallen}
 \end{oefeningen}
 
 %========================================================================================
-\section{Bewijs via de contrapositie}
+\section{Bewijs via de contrapositie}\label{sec:h2-contrapositie}
 
-Soms is $p \dan q$ moeilijk rechtstreeks te bewijzen, maar de contrapositie $\niet q \dan \niet p$ gemakkelijk. Omdat ze gelijkwaardig zijn (hoofdstuk 1), volstaat het de contrapositie te bewijzen.
+\subsection{Het idee}
+
+Soms is $p \dan q$ moeilijk rechtstreeks te bewijzen, omdat $p$ weinig houvast geeft. De contrapositie $\niet q \dan \niet p$ is gelijkwaardig (stelling Contrapositie in~\ref{sec:h1-contrapositie}): is de ene waar, dan ook de andere. Het volstaat dus de contrapositie rechtstreeks te bewijzen.
 
 \voorbeeld{}{Bewijs: als $n^2$ even is, dan is $n$ even.\label{vb:h2-contrapositie}}{%
 \uitleg{Rechtstreeks zou je uit $n^2 = 2k$ iets over $n$ moeten halen, met een wortel. De contrapositie \textit{als $n$ oneven is, dan is $n^2$ oneven} is eenvoudig.}
-\begin{stappenbreed}
+\begin{stappen}
 n = 2k + 1 & Veronderstelling van de contrapositie: $n$ is oneven. \\[1ex]
 n^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1 & Kwadrateren, en de vorm $2 \cdot$ iets $+ 1$ maken. \\[1ex]
 \text{dus } n^2 \text{ is oneven} & De contrapositie is bewezen, dus ook de stelling.
-\end{stappenbreed}}
+\end{stappen}}
+
+\begin{werkwijze}
+Schrijf de contrapositie $\niet q \dan \niet p$ volledig uit. Bewijs ze rechtstreeks, van $\niet q$ naar $\niet p$. Besluit dat ook de oorspronkelijke uitspraak waar is.
+\end{werkwijze}
 
 \begin{oefeningen}
 \oef{h2-contrapositie}
@@ -106,14 +154,70 @@ n^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1 & Kwadrateren, en de vorm $2 \cdot$ iets 
 \oef{h2-contra-formuleer}
 \end{oefeningen}
 
+\subsection{Contrapositie en De Morgan}
+
+Staat er in de stelling een \textit{en} of een \textit{of}, dan ontken je bij de contrapositie met De Morgan.
+
+\voorbeeld{}{Bewijs: als $mn$ even is, dan is $m$ even of $n$ even (met $m, n \in \Z$).\label{vb:h2-contra-of}}{%
+\uitleg{Het besluit is een \textit{of}; volgens De Morgan is zijn ontkenning een \textit{en}, waarmee je kunt rekenen.}
+\begin{stappen}
+\niet q\colon \ m \text{ oneven en } n \text{ oneven} & De ontkenning van \textit{$m$ even of $n$ even}. \\[1ex]
+m = 2a + 1,\ n = 2b + 1 & De definitie, met twee letters. \\[1ex]
+mn = 4ab + 2a + 2b + 1 = 2(2ab + a + b) + 1 & Uitwerken: $mn$ is oneven, dat is $\niet p$.
+\end{stappen}
+De contrapositie \textit{als $m$ en $n$ oneven zijn, dan is $mn$ oneven} is bewezen, dus ook de stelling.}
+
+\begin{oefeningen}
+\oef{h2-contra-of}
+\end{oefeningen}
+
 %========================================================================================
-\section{Bewijs uit het ongerijmde}
+\section{Bewijs uit het ongerijmde}\label{sec:h2-ongerijmde}
+
+\subsection{Het principe}
+
+Hoe bewijs je dat iets \textit{niet} bestaat? Je kunt niet alle getallen nagaan. Wel kun je aannemen dat het toch bestaat, en tonen dat daaruit onzin volgt.
 
 \begin{theorie}
-Bij een \textbf{\textcolor{accent}{bewijs uit het ongerijmde}} van een uitspraak $q$ neem je aan dat $\niet q$ waar is, en leid je daaruit een \textbf{\textcolor{accent}{tegenspraak}} af: iets wat tegelijk waar en vals is. Dan kan $\niet q$ niet waar zijn, dus is $q$ waar.
+Een \textbf{\textcolor{accent}{tegenspraak}} is een uitspraak van de vorm $\formule{r \en \niet r}$: iets wat tegelijk waar en vals zou zijn.
+
+\vspace{1mm}
+Bij een \textbf{\textcolor{accent}{bewijs uit het ongerijmde}} van een uitspraak $q$ neem je aan dat $\niet q$ waar is, en leid je daaruit een tegenspraak af.
+
+\begin{stelling}{Principe van het ongerijmde}
+Is $\formule{\niet q \dan (r \en \niet r)}$ waar, dan is $\formule{q}$ waar.
+\end{stelling}
+
+\begin{bewijs}
+$r$ en $\niet r$ zijn nooit allebei waar, dus $r \en \niet r$ is altijd vals. Een implicatie met een vals tweede deel is alleen waar als ook het eerste deel vals is. Dus is $\niet q$ vals, en $q$ waar.
+\end{bewijs}
 \end{theorie}
 
-Dit is vooral handig als $q$ iets zegt als \textit{er bestaat geen \ldots} of \textit{is niet \ldots}: dan geeft $\niet q$ je iets om mee te rekenen.
+Dit is vooral handig als $q$ iets zegt als \textit{er bestaat geen \ldots} of \textit{is niet \ldots}: dan geeft $\niet q$ je iets om mee te rekenen. De tegenspraak kan met de veronderstelling zelf zijn, of met iets wat al vaststaat.
+
+\voorbeeld{}{Bewijs uit het ongerijmde: $m^2 - n^2 = 1$ heeft geen oplossing met positieve gehele getallen $m$ en $n$.\label{vb:h2-ongerijmde}}{%
+\uitleg{\textit{Er bestaan geen} geeft weinig houvast. We nemen aan dat zulke $m$ en $n$ wel bestaan, en ontbinden het verschil van twee kwadraten.}
+\begin{stappen}
+\text{stel } m^2 - n^2 = 1 \text{ met } m, n \geqslant 1 & De ontkenning van wat we willen bewijzen. \\[1ex]
+(m - n)(m + n) = 1 & Merkwaardig product. \\[1ex]
+m + n \geqslant 2 \text{ en } m - n \geqslant 1 & $m - n$ is een geheel getal, en positief omdat het product $1$ positief is. \\[1ex]
+(m - n)(m + n) \geqslant 1 \cdot 2 = 2 & Tegenspraak met $(m - n)(m + n) = 1$.
+\end{stappen}
+De aanname is dus vals: zulke $m$ en $n$ bestaan niet.}
+
+\begin{werkwijze}
+Schrijf: \textit{Stel uit het ongerijmde dat \ldots} met de ontkenning van wat je wilt bewijzen. Reken en redeneer verder tot je een tegenspraak vindt met de veronderstelling of met iets wat vaststaat. Besluit dat de ontkenning onmogelijk is, en de uitspraak dus waar.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h2-ongerijmde}
+
+\oef{h2-ongerijmde-2}
+\end{oefeningen}
+
+\subsection{De wortel uit 2 is irrationaal}
+
+Een getal is rationaal als je het kunt schrijven als een breuk $\frac{a}{b}$ met gehele $a$ en $b$, en $b \neq 0$. Elke breuk kun je volledig vereenvoudigen, tot teller en noemer geen gemeenschappelijke deler groter dan 1 meer hebben. Is $\sqrt2$ zo'n breuk? Een rekenmachine geeft $1{,}414\,213\,56\ldots$, maar dat zegt niets over de cijfers verderop.
 
 \begin{theorie}
 \begin{stelling}{$\sqrt2$ is irrationaal}
@@ -127,7 +231,15 @@ dus $a^2$ is even, en volgens voorbeeld \ref{vb:h2-contrapositie} is $a$ even: $
 \end{bewijs}
 \end{theorie}
 
-Het bewijs gebruikt een eerder bewezen resultaat: zo bouwt de wiskunde verder op wat al vaststaat. Een tweede klassiek bewijs uit het ongerijmde is ruim 2000 jaar oud, en staat bij Euclides.
+Hoe nauwkeurig je ook meet: $\sqrt2$ is nooit exact een breuk. Het bewijs gebruikt een eerder bewezen resultaat, zoals de wiskunde altijd verder bouwt op wat al vaststaat. De tegenspraak is hier met de veronderstelling zelf: de breuk was vereenvoudigd, en toch kun je ze nog vereenvoudigen.
+
+\begin{oefeningen}
+\oef{h2-wortel}
+\end{oefeningen}
+
+\subsection{Oneindig veel priemgetallen}
+
+Een tweede klassiek bewijs uit het ongerijmde is ruim 2000 jaar oud, en staat bij Euclides. Het gebruikt dat elk geheel getal $N > 1$ een priemdeler heeft: de kleinste deler van $N$ die groter is dan 1, is priem, want een kleinere deler ervan zou ook $N$ delen.
 
 \begin{theorie}
 \begin{stelling}{Er zijn oneindig veel priemgetallen}
@@ -137,37 +249,49 @@ Er is geen grootste priemgetal.
 \begin{bewijs}
 Stel uit het ongerijmde dat er maar eindig veel priemgetallen zijn: $p_1, p_2, \ldots, p_m$. Bekijk
 \bewijsregel{N = p_1 \cdot p_2 \cdots p_m + 1 .}
-$N$ is groter dan 1, dus heeft het een priemdeler $p$. Die moet een van de $p_i$ zijn. Maar $p_i$ deelt $p_1 p_2 \cdots p_m$, en als het ook $N$ deelt, deelt het het verschil 1: onmogelijk. Tegenspraak.
+$N$ is groter dan 1, dus heeft het een priemdeler $p$. Die moet een van de $p_i$ zijn, dus $p$ deelt ook het product $p_1 p_2 \cdots p_m$. Schrijf $N = p\,s$ en $p_1 p_2 \cdots p_m = p\,t$, dan is
+\bewijsregel{1 = N - p_1 p_2 \cdots p_m = p\,(s - t) ,}
+dus $p$ deelt 1. Dat kan niet, want $p \geqslant 2$. Tegenspraak.
 \end{bewijs}
 \end{theorie}
 
-\begin{werkwijze}
-Schrijf: \textit{Stel uit het ongerijmde dat \ldots} met de ontkenning van wat je wilt bewijzen. Reken en redeneer verder tot je een tegenspraak vindt met de veronderstelling of met iets wat vaststaat. Besluit dat de ontkenning onmogelijk is, en de uitspraak dus waar.
-\end{werkwijze}
+Hoeveel priemgetallen je ook opsomt, er is er altijd nog een dat niet in de lijst staat. De tegenspraak is hier met iets wat vaststaat: geen priemgetal deelt 1.
 
 \begin{oefeningen}
-\oef{h2-ongerijmde}
-
-\oef{h2-ongerijmde-2}
-
 \oef{h2-euclides}
 \end{oefeningen}
 
 %========================================================================================
-\section{Ontkrachten met een tegenvoorbeeld}
+\section{Ontkrachten met een tegenvoorbeeld}\label{sec:h2-tegenvoorbeeld}
 
-Een uitspraak \textit{voor alle \ldots} weerleg je met één tegenvoorbeeld (hoofdstuk 1). Vaak is het leerzaam om na te gaan welke voorwaarde van een stelling je niet mag weglaten.
+Om een uitspraak \textit{voor alle \ldots} te weerleggen, heb je geen redenering nodig: één tegenvoorbeeld volstaat. Dat volgt uit de ontkenning van kwantoren (\ref{sec:h1-ontkennen}): de ontkenning van $\forall x\colon P(x) \dan Q(x)$ is $\exists x\colon P(x) \en \niet Q(x)$, en een $\exists$-uitspraak bewijs je met één voorbeeld.
+
+\voorbeeld{}{Weerleg: \textit{als $n$ een priemgetal is, dan is $2n + 1$ een priemgetal}.\label{vb:h2-weerleg}}{%
+\uitleg{We zoeken een $n$ die priem is (het eerste deel waar), waarvoor $2n + 1$ geen priemgetal is (het tweede deel vals). We proberen de priemgetallen op volgorde.}
+\begin{stappen}
+n = 2, 3, 5\colon \ 2n + 1 = 5, 7, 11 & Allemaal priem: geen tegenvoorbeeld. \\[1ex]
+n = 7\colon \ 2n + 1 = 15 = 3 \cdot 5 & 7 is priem, 15 niet: een tegenvoorbeeld.
+\end{stappen}
+De uitspraak is vals. De eerste drie gevallen tonen dat voorbeelden die kloppen niets bewijzen.}
+
+Voorbeelden kunnen een uitspraak nooit bewijzen, alleen weerleggen. Dat $n^2 + n + 41$ een priemgetal is voor $n = 0, 1, \ldots, 39$, bewijst niets voor $n = 40$ (opdracht \ref{oef:h1-o3} van hoofdstuk 1).
+
+Vaak is het leerzaam om na te gaan welke voorwaarde van een stelling je niet mag weglaten. Ook dat doe je met een tegenvoorbeeld.
 
 \voorbeeld{}{De stelling zegt: \textit{als $a > 0$ en $b > 0$, en $a > b$, dan is $a^2 > b^2$}. Toon met een tegenvoorbeeld aan dat de voorwaarde \textit{$b > 0$} nodig is.\label{vb:h2-tegenvoorbeeld}}{%
-\uitleg{We zoeken getallen met $a > b$, maar met $b$ negatief, waarvoor $a^2 \leqslant b^2$.}
+\uitleg{We zoeken getallen met $a > 0$ en $a > b$, maar met $b$ negatief, waarvoor $a^2 \leqslant b^2$.}
 \begin{stappen}
 a = 1, \ b = -3\colon \ a > b & Aan de andere voorwaarden is voldaan. \\[1ex]
 a^2 = 1 < 9 = b^2 & Het besluit klopt niet: de voorwaarde $b > 0$ is nodig.
 \end{stappen}}
 
-Voorbeelden kunnen een uitspraak nooit bewijzen, alleen weerleggen. Dat $n^2 + n + 41$ een priemgetal is voor $n = 0, 1, \ldots, 39$, bewijst niets voor $n = 40$ (opdracht \ref{oef:h1-o3} van hoofdstuk 1).
+\begin{werkwijze}
+Schrijf de uitspraak als $\forall x\colon P(x) \dan Q(x)$. Zoek een $x$ waarvoor $P(x)$ waar is en $Q(x)$ vals: probeer kleine getallen, $0$, negatieve getallen en breuken. Controleer beide delen, en schrijf de berekening op.
+\end{werkwijze}
 
 \begin{oefeningen}
+\oef{h2-weerleg}
+
 \oef{h2-tegen}
 \end{oefeningen}
 
@@ -270,10 +394,10 @@ Voorbeelden kunnen een uitspraak nooit bewijzen, alleen weerleggen. Dat $n^2 + n
 \end{oefeningen}
 
 \herhaalschema{%
-  \fv{oef:h2-t1}{vb:h2-rechtstreeks}{oef:h2-rechtstreeks}%
-  \fv{oef:h2-t2}{vb:h2-contrapositie}{oef:h2-contrapositie}%
-  \fzv{oef:h2-t3}{oef:h2-ongerijmde}%
-  \fv{oef:h2-t4}{vb:h2-tegenvoorbeeld}{oef:h2-tegen}%
+  \fv{oef:h2-t1}{vb:h2-direct}{oef:h2-rechtstreeks}%
+  \fv{oef:h2-t2}{vb:h2-contra-of}{oef:h2-contra-of}%
+  \fv{oef:h2-t3}{vb:h2-ongerijmde}{oef:h2-ongerijmde}%
+  \fv{oef:h2-t4}{vb:h2-weerleg}{oef:h2-weerleg}%
   \fv{oef:h2-t5}{vb:h2-lezen}{oef:h2-lezen}%
   \fv{oef:h2-t6}{vb:h2-rechtstreeks}{oef:h2-gevallen}%
   \fv{oef:h2-t7}{vb:h2-contrapositie}{oef:h2-o20}}

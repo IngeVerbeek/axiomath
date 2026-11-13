@@ -365,6 +365,131 @@
       uitwerking: |-
         $B^2 = \km{0 + 1 & 0 + 0 \\ 0 + 0 & 1 + 0} = I$, dus $B^3 = B^2 B = IB = B$. Een even macht is $I$, een oneven macht is $B$. 2026 is even: $B^{2026} = I$.
 
+- id: h1-k-optel
+  soort: kort
+  opgave: |-
+    $A$, $B$ en $C$ zijn matrices met dezelfde dimensie. Vereenvoudig zonder elementen uit te rekenen, en zeg welke rekenregels je gebruikt.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $(A - B) + B$
+      antwoord: |-
+        $A$
+      uitwerking: |-
+        $(A - B) + B = \bigl(A + (-B)\bigr) + B = A + \bigl((-B) + B\bigr) = A + O = A$: associativiteit, commutativiteit ($(-B) + B = B + (-B)$), tegengestelde matrix en nulmatrix.
+    - opgave: |-
+        $A + (B - A) + (C - B)$
+      antwoord: |-
+        $C$
+      uitwerking: |-
+        Omdat de optelling commutatief en associatief is, mag je de termen herschikken: $A + (-A) + B + (-B) + C = O + O + C = C$.
+    - opgave: |-
+        $(A + B) + (C - A) - (B + C)$
+      antwoord: |-
+        $O$
+      uitwerking: |-
+        $-(B + C)$ is $(-B) + (-C)$, want op elke plaats staat $-(b_{ij} + c_{ij}) = -b_{ij} - c_{ij}$. Herschik: $A + (-A) + B + (-B) + C + (-C) = O$.
+    - opgave: |-
+        Bereken $(A + B) + (B - A)$ voor $A = \km{3 & -2 \\ 5 & 1}$ en $B = \km{1 & 4 \\ 0 & -2}$.
+      antwoord: |-
+        $\km{2 & 8 \\ 0 & -4}$
+      uitwerking: |-
+        Herschik: $A + (-A) + B + B = B + B$. Dus is de uitkomst $\km{1 + 1 & 4 + 4 \\ 0 + 0 & -2 - 2} = \km{2 & 8 \\ 0 & -4}$, zonder de elementen van $A$.
+
+- id: h1-k-scalair
+  soort: kort
+  opgave: |-
+    Vereenvoudig eerst, en bereken dan met $A = \km{1 & -2 \\ 3 & 0}$ en $B = \km{0 & 4 \\ -1 & 2}$.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $3(A - 2B) + 2(3B - A)$
+      antwoord: |-
+        $A = \km{1 & -2 \\ 3 & 0}$
+      uitwerking: |-
+        $3A - 6B + 6B - 2A = (3 - 2)A + (-6 + 6)B = A = \km{1 & -2 \\ 3 & 0}$.
+    - opgave: |-
+        $4(A + B) - 2(A - B)$
+      antwoord: |-
+        $2A + 6B = \km{2 & 20 \\ 0 & 12}$
+      uitwerking: |-
+        $4A + 4B - 2A + 2B = 2A + 6B = \km{2 & -4 \\ 6 & 0} + \km{0 & 24 \\ -6 & 12} = \km{2 & 20 \\ 0 & 12}$.
+    - opgave: |-
+        $\tfrac12(4A - 2B) + B$
+      antwoord: |-
+        $2A = \km{2 & -4 \\ 6 & 0}$
+      uitwerking: |-
+        $\tfrac12 \cdot 4A - \tfrac12 \cdot 2B + B = 2A - B + B = 2A = \km{2 & -4 \\ 6 & 0}$.
+    - opgave: |-
+        $3(2A) - 2(3A)$
+      antwoord: |-
+        $O$
+      uitwerking: |-
+        $3(2A) = 6A$ en $2(3A) = 6A$, dus het verschil is $0A = O$, de $2 \times 2$-nulmatrix.
+
+- id: h1-k-product
+  soort: kort
+  opgave: |-
+    Rekenregels voor het product.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken met zo weinig mogelijk rekenwerk $AB + AC$ voor $A = \km{2 & 5 \\ 1 & 3}$, $B = \km{1 & -1 \\ 4 & 0}$ en $C = \km{-1 & 1 \\ -4 & 1}$.
+      antwoord: |-
+        $\km{0 & 5 \\ 0 & 3}$
+      uitwerking: |-
+        $AB + AC = A(B + C)$ en $B + C = \km{0 & 0 \\ 0 & 1}$. Dus $A(B + C) = \km{2 \cdot 0 + 5 \cdot 0 & 2 \cdot 0 + 5 \cdot 1 \\ 1 \cdot 0 + 3 \cdot 0 & 1 \cdot 0 + 3 \cdot 1} = \km{0 & 5 \\ 0 & 3}$.
+    - opgave: |-
+        Bereken $ABC$ voor $A = \km{1 & -1 & 2}$, $B = \km{3 \\ 1 \\ 1}$ en $C = \km{2 & 0 & 5}$. Welk product reken je eerst?
+      antwoord: |-
+        $\km{8 & 0 & 20}$
+      uitwerking: |-
+        Eerst $AB$, een $1 \times 1$-matrix: $AB = \km{3 - 1 + 2} = \km{4}$. Dan $(AB)C = \km{4 \cdot 2 & 4 \cdot 0 & 4 \cdot 5} = \km{8 & 0 & 20}$. (Eerst $BC$ geeft een $3 \times 3$-matrix: meer werk.)
+    - opgave: |-
+        Werk de haakjes uit: $(A + B)(C + D)$.
+      antwoord: |-
+        $AC + AD + BC + BD$
+      uitwerking: |-
+        Distributiviteit met de som links: $(A + B)(C + D) = A(C + D) + B(C + D)$. Dan met de som rechts: $AC + AD + BC + BD$. De volgorde in elke term blijft: de eerste factor links.
+    - opgave: |-
+        Welke uitdrukkingen zijn gelijk aan $A(B + C)$? \quad $AB + AC$ \quad $BA + CA$ \quad $AB + CA$
+      antwoord: |-
+        alleen $AB + AC$
+      uitwerking: |-
+        Volgens de distributiviteit is $A(B + C) = AB + AC$, met $A$ telkens links. $BA + CA = (B + C)A$, en dat is in het algemeen iets anders. In $AB + CA$ staat $A$ één keer rechts.
+    - opgave: |-
+        Vereenvoudig: $(2A)(3B) - 5AB$.
+      antwoord: |-
+        $AB$
+      uitwerking: |-
+        Zet de getallen vooraan: $(2A)(3B) = 2 \cdot 3 \cdot AB = 6AB$. Dan is $6AB - 5AB = (6 - 5)AB = AB$.
+
+- id: h1-k-macht
+  soort: kort
+  opgave: |-
+    Rekenregels voor machten.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Van een matrix $A$ weet je dat $A^2 = \km{2 & 1 \\ 1 & 1}$ en $A^3 = \km{3 & 2 \\ 2 & 1}$. Bereken $A^5$ en $A^6$ zonder $A$ te zoeken.
+      antwoord: |-
+        $A^5 = \km{8 & 5 \\ 5 & 3}$, $A^6 = \km{13 & 8 \\ 8 & 5}$
+      uitwerking: |-
+        $A^5 = A^2 A^3 = \km{6 + 2 & 4 + 1 \\ 3 + 2 & 2 + 1} = \km{8 & 5 \\ 5 & 3}$ en $A^6 = A^3 A^3 = \km{9 + 4 & 6 + 2 \\ 6 + 2 & 4 + 1} = \km{13 & 8 \\ 8 & 5}$.
+    - opgave: |-
+        Werk uit: $(A - B)^2$.
+      antwoord: |-
+        $A^2 - AB - BA + B^2$
+      uitwerking: |-
+        $(A - B)(A - B) = A^2 - AB - BA + B^2$. Alleen als $AB = BA$ is dat $A^2 - 2AB + B^2$.
+    - opgave: |-
+        Toon aan dat $(AB)^2 \neq A^2 B^2$ voor $A = \km{1 & 1 \\ 0 & 1}$ en $B = \km{1 & 0 \\ 1 & 1}$.
+      antwoord: |-
+        $(AB)^2 = \km{5 & 3 \\ 3 & 2}$, $A^2B^2 = \km{5 & 2 \\ 2 & 1}$
+      uitwerking: |-
+        $AB = \km{2 & 1 \\ 1 & 1}$, dus $(AB)^2 = \km{4 + 1 & 2 + 1 \\ 2 + 1 & 1 + 1} = \km{5 & 3 \\ 3 & 2}$. Verder is $A^2 = \km{1 & 2 \\ 0 & 1}$ en $B^2 = \km{1 & 0 \\ 2 & 1}$, zodat $A^2 B^2 = \km{1 + 4 & 2 \\ 2 & 1} = \km{5 & 2 \\ 2 & 1}$. Die verschillen: $(AB)^2 = ABAB$, en de middelste $B$ en $A$ mag je niet van plaats wisselen.
+
 # ---------------------------------------------------------------- OPDRACHTEN, niveau 1
 
 - id: h1-o1

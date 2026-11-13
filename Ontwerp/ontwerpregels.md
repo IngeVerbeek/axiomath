@@ -71,6 +71,12 @@ Toegevoegd op 6 november 2026, na de feedback op Integralen:
 - **Benoem ook wanneer een methode niet werkt,** met een concreet voorbeeld: iemand substitueert, en krijgt niet alles naar $u$.
 - **Benoem de soorten letters** als ze verward kunnen worden, zoals de dummyvariabele en de grensvariabele, en toon het verschil in een eigen voorbeeld.
 
+Toegevoegd op 9 november 2026, na feedback op de eerste versies van de andere cursussen: de leerstof was te gecomprimeerd.
+
+- **Doe de theorie uitgebreid uit de doeken.** Een eigenschap of stelling krijgt de ruimte: een inleiding die zegt waarom je ze nodig hebt, het kader, een bewijs, wat ze betekent, een voorbeeld en een korte oefening.
+- **Eén eigenschap per keer.** Splits een lijst met rekenregels op en leg ze één voor één uit, elk met een eigen naam, uitleg en voorbeeld. Stapel ze niet in één kader.
+- **Bewijs waar nodig:** elke stelling of eigenschap die leerlingen niet uit de 2de graad kennen en die met hun middelen te bewijzen is. Laat je een bewijs weg, zeg dan in de tekst waarom (te zwaar, valt buiten het leerplan).
+
 ## Notatie
 
 Vastgelegd op 6 november 2026. Geldt voor alle cursussen.

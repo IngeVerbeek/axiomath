@@ -266,6 +266,163 @@
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3 (de volgorde van het boek)
 #----------------------------------------------------------------------------------------
 
+- id: h3-periodiek-k
+  soort: kort
+  opgave: |-
+    Periodieke functies.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Een functie $f$ is periodiek met periode $4$, met $f(1) = 3$ en $f(2) = -1$. Bereken $f(9)$, $f(-2)$ en $f(14)$.
+      antwoord: |-
+        $3$; $-1$; $-1$
+      uitwerking: |-
+        $f(9) = f(1 + 2 \cdot 4) = f(1) = 3$, $f(-2) = f(2 - 4) = f(2) = -1$ en $f(14) = f(2 + 3 \cdot 4) = f(2) = -1$.
+    - opgave: |-
+        Voor alle $x$ is $\sin(x + 4\pi) = \sin x$. Waarom is $4\pi$ dan niet de periode van de sinus?
+      antwoord: |-
+        $2\pi$ is kleiner
+      uitwerking: |-
+        Ook $\sin(x + 2\pi) = \sin x$ voor alle $x$, en $2\pi < 4\pi$. De periode is het kleinste positieve getal met die eigenschap.
+    - opgave: |-
+        Een functie $g$ heeft periode $5$. Is $g(3) = g(-7)$? Waarom?
+      antwoord: |-
+        ja
+      uitwerking: |-
+        Ja: $-7 = 3 - 2 \cdot 5$, dus $-7$ ligt twee periodes vóór $3$, en $g(-7) = g(3)$.
+
+- id: h3-sin-k
+  soort: kort
+  opgave: |-
+    De sinusfunctie. Gebruik een schets van de grafiek.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef alle nulwaarden van $\sin x$ in $[-\pi, 3\pi]$.
+      antwoord: |-
+        $-\pi$, $0$, $\pi$, $2\pi$, $3\pi$
+      uitwerking: |-
+        De nulwaarden zijn $k\pi$; in $[-\pi, 3\pi]$ is dat voor $k = -1, 0, 1, 2, 3$: $-\pi$, $0$, $\pi$, $2\pi$ en $3\pi$.
+    - opgave: |-
+        Voor welke $x$ is $\sin x = 1$?
+      antwoord: |-
+        $x = \frac{\pi}{2} + k \cdot 2\pi$ ($k \in \Z$)
+      uitwerking: |-
+        De top ligt in $\frac{\pi}{2}$, en herhaalt zich na elke periode $2\pi$: $x = \frac{\pi}{2} + k \cdot 2\pi$ met $k \in \Z$.
+    - opgave: |-
+        Hoeveel oplossingen heeft $\sin x = -0{,}5$ in $[-2\pi, 2\pi]$?
+      antwoord: |-
+        4
+      uitwerking: |-
+        $-0{,}5$ ligt tussen $-1$ en $1$: twee oplossingen per periode. Het interval telt twee periodes, en in de randen is $\sin x = 0$. Dus 4 oplossingen.
+
+- id: h3-cos-k
+  soort: kort
+  opgave: |-
+    De cosinusfunctie. Gebruik een schets van de grafiek.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef alle nulwaarden van $\cos x$ in $[0, 3\pi]$.
+      antwoord: |-
+        $\frac{\pi}{2}$, $\frac{3\pi}{2}$, $\frac{5\pi}{2}$
+      uitwerking: |-
+        De nulwaarden zijn $\frac{\pi}{2} + k\pi$; in $[0, 3\pi]$ is dat voor $k = 0, 1, 2$: $\frac{\pi}{2}$, $\frac{3\pi}{2}$ en $\frac{5\pi}{2}$.
+    - opgave: |-
+        Voor welke $x$ is $\cos x = 1$?
+      antwoord: |-
+        $x = k \cdot 2\pi$ ($k \in \Z$)
+      uitwerking: |-
+        De cosinus begint in een top in $0$, en die herhaalt zich na elke periode: $x = k \cdot 2\pi$ met $k \in \Z$.
+    - opgave: |-
+        Op welk deel van $[0, 2\pi]$ is $\cos x$ negatief?
+      antwoord: |-
+        $\bigl]\frac{\pi}{2}, \frac{3\pi}{2}\bigr[$
+      uitwerking: |-
+        Tussen de nulwaarden $\frac{\pi}{2}$ en $\frac{3\pi}{2}$ ligt het dal $(\pi, -1)$: daar is de cosinus negatief. Op de eenheidscirkel is dat het tweede en het derde kwadrant.
+
+- id: h3-amplitude-k
+  soort: kort
+  opgave: |-
+    De amplitude.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        Geef het bereik van $5\sin x$.
+      antwoord: |-
+        $[-5, 5]$
+      uitwerking: |-
+        Amplitude $5$, evenwichtslijn $y = 0$: het bereik is $[-5, 5]$.
+    - opgave: |-
+        Geef het bereik van $0{,}4\sin x$.
+      antwoord: |-
+        $[-0{,}4;\ 0{,}4]$
+      uitwerking: |-
+        Amplitude $0{,}4$: het bereik is $[-0{,}4;\ 0{,}4]$.
+    - opgave: |-
+        Voor welke $a > 0$ is de grootste waarde van $a\sin x$ gelijk aan $2{,}5$?
+      antwoord: |-
+        $a = 2{,}5$
+      uitwerking: |-
+        De grootste waarde van $a\sin x$ is $a$, dus $a = 2{,}5$.
+    - opgave: |-
+        Geef het bereik en de amplitude van $-2\sin x$.
+      antwoord: |-
+        $[-2, 2]$; $2$
+      uitwerking: |-
+        Uit $-1 \leqslant \sin x \leqslant 1$ volgt $-2 \leqslant -2\sin x \leqslant 2$. Het bereik is $[-2, 2]$ en de amplitude $2$. De grafiek is die van $2\sin x$, gespiegeld om de $x$-as.
+
+- id: h3-fase-k
+  soort: kort
+  opgave: |-
+    De faseverschuiving.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Schrijf $\sin(3x + \pi)$ in de vorm $\sin\bigl(b(x - c)\bigr)$. Over hoeveel en in welke zin is de grafiek van $\sin 3x$ verschoven?
+      antwoord: |-
+        $\sin\bigl(3(x + \frac{\pi}{3})\bigr)$; $\frac{\pi}{3}$ naar links
+      uitwerking: |-
+        $3x + \pi = 3\bigl(x + \frac{\pi}{3}\bigr) = 3\bigl(x - (-\frac{\pi}{3})\bigr)$, dus $c = -\frac{\pi}{3}$: een verschuiving over $\frac{\pi}{3}$ naar links.
+    - opgave: |-
+        Schrijf $\sin\bigl(\frac{x}{2} - \frac{\pi}{4}\bigr)$ in de vorm $\sin\bigl(b(x - c)\bigr)$ en geef het stijgende nulpunt.
+      antwoord: |-
+        $\sin\bigl(\frac12(x - \frac{\pi}{2})\bigr)$; $\bigl(\frac{\pi}{2}, 0\bigr)$
+      uitwerking: |-
+        $\frac{x}{2} - \frac{\pi}{4} = \frac12\bigl(x - \frac{\pi}{2}\bigr)$, dus $c = \frac{\pi}{2}$ en het stijgende nulpunt is $\bigl(\frac{\pi}{2}, 0\bigr)$.
+    - opgave: |-
+        Over hoeveel en in welke zin moet je de grafiek van $\sin 4x$ verschuiven om die van $\sin(4x - \pi)$ te krijgen?
+      antwoord: |-
+        $\frac{\pi}{4}$ naar rechts
+      uitwerking: |-
+        $4x - \pi = 4\bigl(x - \frac{\pi}{4}\bigr)$, dus $c = \frac{\pi}{4}$: over $\frac{\pi}{4}$ naar rechts, niet over $\pi$.
+
+- id: h3-evenwicht-k
+  soort: kort
+  opgave: |-
+    De evenwichtslijn.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef de grootste en de kleinste waarde van $3\sin 2x - 4$.
+      antwoord: |-
+        $-1$ en $-7$
+      uitwerking: |-
+        $a = 3$ en $d = -4$: de grootste waarde is $d + a = -1$, de kleinste $d - a = -7$.
+    - opgave: |-
+        Een sinusfunctie schommelt tussen $2$ en $10$. Geef de evenwichtslijn en de amplitude.
+      antwoord: |-
+        $y = 6$; $4$
+      uitwerking: |-
+        $d = \frac{10 + 2}{2} = 6$ en $a = \frac{10 - 2}{2} = 4$.
+    - opgave: |-
+        Geef het bereik van $\frac12\sin(\pi x) + 1$.
+      antwoord: |-
+        $\bigl[\frac12, \frac32\bigr]$
+      uitwerking: |-
+        $d = 1$ en $a = \frac12$: van $1 - \frac12 = \frac12$ tot $1 + \frac12 = \frac32$.
+
 - id: h3-o9
   soort: opdracht
   niveau: 1

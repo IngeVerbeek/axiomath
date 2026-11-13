@@ -8,7 +8,7 @@
 
 \mychapter{1}{Rekenen met matrices}
 
-\lkr{Leerplan B+S: LPD 25-27 (matrices), met de wenken over rekenregels, nuldelers en niet-commutativiteit. Alleen de eenvoudige eigenschappen krijgen een bewijs, op het niveau van $2 \times 2$-matrices. Het accent ligt op het product: wanneer het bestaat, hoe je het uitrekent en wat het betekent in een context. Het product $AX$ met een kolom komt terug in hoofdstuk 2 (stelsels) en hoofdstuk 3 (de inverse).}
+\lkr{Leerplan B+S: LPD 25-27 (matrices), met de wenken over rekenregels, nuldelers en niet-commutativiteit. Elke rekenregel krijgt een eigen bewijs; laat leerlingen een algemeen bewijs eventueel eerst nagaan voor $2 \times 2$-matrices. Het accent ligt op het product: wanneer het bestaat, hoe je het uitrekent en wat het betekent in een context. Het product $AX$ met een kolom komt terug in hoofdstuk 2 (stelsels) en hoofdstuk 3 (de inverse).}
 
 Een tabel met getallen kom je overal tegen: een puntenlijst, een uurrooster, de verkoop van een winkel per dag. Laat je de opschriften weg en houd je alleen de getallen over, dan heb je een matrix. Dat lijkt een kleine stap, maar zo kun je met hele tabellen tegelijk rekenen.
 
@@ -175,32 +175,75 @@ A + B = \begin{bmatrix} 3 + (-2) & -1 + 6 & 0 + 1 \\ 2 + 2 & 5 + (-3) & -4 + 7 \
 A - B = \begin{bmatrix} 3 - (-2) & -1 - 6 & 0 - 1 \\ 2 - 2 & 5 - (-3) & -4 - 7 \end{bmatrix} = \begin{bmatrix} 5 & -7 & -1 \\ 0 & 8 & -11 \end{bmatrix} & Nu trekken we af. Een negatief getal aftrekken is het tegengestelde optellen.
 \end{stappenbreed}}
 
-Optellen gebeurt plaats per plaats, en op elke plaats tel je gewone getallen op. Daarom erft de optelling van matrices de rekenregels die je al kent.
+\subsection{Rekenregels voor de optelling}
+
+Optellen gebeurt plaats per plaats, en op elke plaats tel je gewone getallen op. Daarom erft de optelling van matrices de rekenregels die je van getallen kent. We bekijken ze één voor één. Het bewijs steunt telkens op hetzelfde idee: twee matrices met dezelfde dimensie zijn gelijk als ze op elke plaats hetzelfde element hebben.
+
+Bij getallen maakt de volgorde van een som niet uit. Bij matrices ook niet.
 
 \begin{theorie}
-\begin{stelling}{Eigenschappen van de optelling}
-Voor matrices $A$, $B$ en $C$ met dezelfde dimensie:
-
-\vspace{1mm}
-{\centering\arrayrulecolor{accent}\renewcommand{\arraystretch}{1.6}%
-\begin{tabular}{|>{\centering\arraybackslash}m{3.4cm}|>{\centering\arraybackslash$}m{6.4cm}<{$}|}
-\hline
-commutatief & \formule{A + B = B + A} \\ \hline
-associatief & \formule{(A + B) + C = A + (B + C)} \\ \hline
-nulmatrix & \formule{A + O = A} \\ \hline
-tegengestelde & \formule{A + (-A) = O} \\ \hline
-\end{tabular}\par}
-
-\vspace{1mm}
-Hierin is $-A$ de \textbf{\textcolor{accent}{tegengestelde matrix}}: elk element van teken veranderd.
+\begin{stelling}{Commutativiteit van de optelling}
+Voor matrices $A$ en $B$ met dezelfde dimensie is \qquad $\formule{A + B = B + A}$
 \end{stelling}
 
 \begin{bewijs}
-We bewijzen de eerste regel; de andere gaan op dezelfde manier. Op elke plaats staat in $A + B$ en in $B + A$ een som van twee getallen, en voor getallen geldt
+Beide matrices hebben de dimensie van $A$ en $B$. Op plaats $(i, j)$ staat in $A + B$ en in $B + A$ een som van twee getallen, en voor getallen geldt
 \bewijsregel{a_{ij} + b_{ij} = b_{ij} + a_{ij} .}
-De matrices hebben dezelfde dimensie en op elke plaats hetzelfde element, dus ze zijn gelijk.
+Op elke plaats staat dus hetzelfde element, en de matrices zijn gelijk.
 \end{bewijs}
 \end{theorie}
+
+Tel je drie matrices op, dan moet je eerst twee ervan samennemen. Welke twee je eerst neemt, maakt niet uit.
+
+\begin{theorie}
+\begin{stelling}{Associativiteit van de optelling}
+Voor matrices $A$, $B$ en $C$ met dezelfde dimensie is \qquad $\formule{(A + B) + C = A + (B + C)}$
+\end{stelling}
+
+\begin{bewijs}
+Op plaats $(i, j)$ staat links $(a_{ij} + b_{ij}) + c_{ij}$ en rechts $a_{ij} + (b_{ij} + c_{ij})$. Voor getallen zijn die gelijk, dus ook de matrices.
+\end{bewijs}
+\end{theorie}
+
+Daarom laten we de haakjes weg en schrijven we gewoon $A + B + C$. Samen met de commutativiteit betekent dat: in een som van matrices mag je de termen in elke volgorde optellen.
+
+Bij getallen verandert $a + 0$ niets, en heeft elk getal een tegengestelde. Bij matrices speelt de nulmatrix met de juiste dimensie de rol van 0.
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{tegengestelde matrix}} $-A$ krijg je door elk element van $A$ van teken te veranderen: \quad $\formule{(-A)_{ij} = -a_{ij}}$
+
+\begin{stelling}{Nulmatrix}
+Voor elke matrix $A$ en de nulmatrix $O$ met dezelfde dimensie is \qquad $\formule{A + O = A}$
+\end{stelling}
+
+\begin{bewijs}
+Op plaats $(i, j)$ staat $a_{ij} + 0 = a_{ij}$.
+\end{bewijs}
+
+\begin{stelling}{Tegengestelde matrix}
+Voor elke matrix $A$ is \qquad $\formule{A + (-A) = O}$
+\end{stelling}
+
+\begin{bewijs}
+Op plaats $(i, j)$ staat $a_{ij} + (-a_{ij}) = 0$.
+\end{bewijs}
+\end{theorie}
+
+Aftrekken is dus optellen met de tegengestelde: $A - B = A + (-B)$, want op elke plaats staat $a_{ij} - b_{ij} = a_{ij} + (-b_{ij})$. Zo gelden de regels ook voor sommen waarin een verschil staat.
+
+\voorbeeld{}{Bereken $(A + B) - A$ voor $A = \begin{bmatrix} 17 & -23 \\ 8 & 41 \end{bmatrix}$ en $B = \begin{bmatrix} 2 & -1 \\ 0 & 5 \end{bmatrix}$, met zo weinig mogelijk rekenwerk.\label{vb:h1-optelregels}}{%
+\uitleg{Je kunt $A + B$ uitrekenen en daarna $A$ aftrekken, maar dan reken je acht keer. Met de rekenregels zie je dat $A$ wegvalt, en dan hoef je niets meer uit te rekenen.}
+\begin{stappen}
+(A + B) - A = (A + B) + (-A) & Aftrekken is de tegengestelde optellen. \\[1ex]
+= (B + A) + (-A) & Commutativiteit: verwissel $A$ en $B$. \\[1ex]
+= B + \bigl(A + (-A)\bigr) & Associativiteit: neem $A$ en $-A$ samen. \\[1ex]
+= B + O = B & Een matrix plus haar tegengestelde is de nulmatrix, en $O$ verandert niets.
+\end{stappen}
+Het antwoord is dus $B = \km{2 & -1 \\ 0 & 5}$, zonder één element van $A$ te gebruiken.}
+
+\begin{oefeningen}
+\oef{h1-k-optel}
+\end{oefeningen}
 
 \subsection{Een matrix vermenigvuldigen met een getal}
 
@@ -208,16 +251,9 @@ Stijgen alle prijzen van het vertaalbureau met 10~\%, dan vermenigvuldig je elke
 
 \begin{theorie}
 Het \textbf{\textcolor{accent}{product van een getal}} $r$ en een matrix $A$ krijg je door elk element met $r$ te vermenigvuldigen: \quad $\formule{(rA)_{ij} = r \cdot a_{ij}}$
-
-\begin{stelling}{Rekenregels}
-Voor getallen $r$, $s$ en matrices $A$, $B$ met dezelfde dimensie:
-
-\vspace{1mm}
-\qquad $\formule{r(A + B) = rA + rB}$ \qquad $\formule{(r + s)A = rA + sA}$ \qquad $\formule{r(sA) = (rs)A}$
-\end{stelling}
 \end{theorie}
 
-Ook deze regels volgen uit de rekenregels voor getallen, plaats per plaats. Zo is $(-1)A = -A$, en \mbox{$A + A = 2A$}, zoals je zou verwachten.
+Zo is $(-1)A = -A$, en $1A = A$.
 
 \voorbeeld{}{Bereken $3A - 2B$ voor $A = \begin{bmatrix} 2 & 0 \\ -1 & 4 \end{bmatrix}$ en $B = \begin{bmatrix} 1 & -3 \\ 5 & 2 \end{bmatrix}$.\label{vb:h1-scalair}}{%
 \uitleg{Zoals bij getallen gaat vermenigvuldigen voor aftrekken: eerst $3A$ en $2B$, daarna het verschil.}
@@ -226,7 +262,65 @@ Ook deze regels volgen uit de rekenregels voor getallen, plaats per plaats. Zo i
 3A - 2B = \begin{bmatrix} 6 - 2 & 0 - (-6) \\ -3 - 10 & 12 - 4 \end{bmatrix} = \begin{bmatrix} 4 & 6 \\ -13 & 8 \end{bmatrix} & Plaats per plaats aftrekken.
 \end{stappenbreed}}
 
-Met die rekenregels kun je ook een vergelijking oplossen waarin de onbekende een matrix is. Je rekent zoals met getallen, alleen deel je niet door een matrix: je vermenigvuldigt met een getal.
+\begin{oefeningen}
+\oef{h1-som}
+\end{oefeningen}
+
+\subsection{Rekenregels voor het product met een getal}
+
+Ook hier reken je op elke plaats met gewone getallen, dus erft het product met een getal de regels van de getallen. Er zijn er drie, en ze zeggen hoe een getal samengaat met een som van matrices, met een som van getallen en met een ander getal.
+
+\begin{theorie}
+\begin{stelling}{Distributiviteit over een som van matrices}
+Voor een getal $r$ en matrices $A$ en $B$ met dezelfde dimensie is \qquad $\formule{r(A + B) = rA + rB}$
+\end{stelling}
+
+\begin{bewijs}
+Op plaats $(i, j)$ staat links $r(a_{ij} + b_{ij})$ en rechts $ra_{ij} + rb_{ij}$. Voor getallen zijn die gelijk.
+\end{bewijs}
+\end{theorie}
+
+Een getal voor een som van matrices mag je dus over de termen verdelen, zoals $3(A - B) = 3A - 3B$.
+
+\begin{theorie}
+\begin{stelling}{Distributiviteit over een som van getallen}
+Voor getallen $r$ en $s$ en een matrix $A$ is \qquad $\formule{(r + s)A = rA + sA}$
+\end{stelling}
+
+\begin{bewijs}
+Op plaats $(i, j)$ staat links $(r + s)a_{ij}$ en rechts $ra_{ij} + sa_{ij}$. Voor getallen zijn die gelijk.
+\end{bewijs}
+\end{theorie}
+
+Met deze regel neem je veelvouden van dezelfde matrix samen, zoals gelijksoortige termen: $2A + 5A = 7A$, en $A + A = 1A + 1A = 2A$.
+
+\begin{theorie}
+\begin{stelling}{Twee getallen na elkaar}
+Voor getallen $r$ en $s$ en een matrix $A$ is \qquad $\formule{r(sA) = (rs)A}$
+\end{stelling}
+
+\begin{bewijs}
+Op plaats $(i, j)$ staat links $r(sa_{ij})$ en rechts $(rs)a_{ij}$. Voor getallen zijn die gelijk.
+\end{bewijs}
+\end{theorie}
+
+Vermenigvuldig je een matrix met twee getallen na elkaar, dan mag je die getallen eerst met elkaar vermenigvuldigen: $2(3A) = 6A$. Met de drie regels werk je haakjes uit en vereenvoudig je, net als in de algebra van getallen.
+
+\voorbeeld{}{Bereken $2(A + 3B) - 3(A + 2B)$ voor $A = \begin{bmatrix} 3 & -1 \\ 0 & 2 \end{bmatrix}$ en $B = \begin{bmatrix} 5 & 7 \\ -2 & 4 \end{bmatrix}$.\label{vb:h1-vereenvoudig}}{%
+\uitleg{We vereenvoudigen eerst de uitdrukking met de letters, en vullen pas daarna de matrices in. Misschien valt er iets weg.}
+\begin{stappen}
+2(A + 3B) - 3(A + 2B) = 2A + 2(3B) - 3A - 3(2B) & Verdeel elk getal over de som tussen haakjes. \\[1ex]
+= 2A + 6B - 3A - 6B & Twee getallen na elkaar: $2 \cdot 3 = 6$ en $3 \cdot 2 = 6$. \\[1ex]
+= (2 - 3)A + (6 - 6)B = -A & Neem de termen met $A$ en die met $B$ samen. $0B$ is de nulmatrix. \\[1ex]
+= \begin{bmatrix} -3 & 1 \\ 0 & -2 \end{bmatrix} & Nu pas invullen: elk element van $A$ van teken veranderen.
+\end{stappen}
+De matrix $B$ had je dus niet nodig.}
+
+\begin{oefeningen}
+\oef{h1-k-scalair}
+\end{oefeningen}
+
+Met dezelfde rekenregels los je een vergelijking op waarin de onbekende een matrix is. Je rekent zoals met getallen, alleen deel je niet door een matrix: je vermenigvuldigt met een getal.
 
 \voorbeeld{}{Bepaal de matrix $X$ waarvoor $2X + A = B$, met $A = \begin{bmatrix} 1 & 5 \\ -2 & 0 \end{bmatrix}$ en $B = \begin{bmatrix} 7 & -1 \\ 4 & 6 \end{bmatrix}$.\label{vb:h1-vergelijking}}{%
 \uitleg{We zonderen $X$ af zoals in een vergelijking met getallen: eerst $A$ naar de andere kant brengen, dan beide leden met $\tfrac12$ vermenigvuldigen. Pas op het einde vullen we de matrices in.}
@@ -244,8 +338,6 @@ Breng alle termen met $X$ naar het ene lid en de rest naar het andere, zoals bij
 \nujij{Bepaal $X$ als $X - \km{2 & 1 \\ 0 & 3} = 3\km{1 & 0 \\ 1 & 1}$.}{$X = \km{3 & 0 \\ 3 & 3} + \km{2 & 1 \\ 0 & 3} = \km{5 & 1 \\ 3 & 6}$.}
 
 \begin{oefeningen}
-\oef{h1-som}
-
 \oef{h1-vergelijking}
 \end{oefeningen}
 
@@ -344,35 +436,121 @@ Zet de matrices zo dat de opschriften van de kolommen van de eerste matrix dezel
 \oef{h1-context}
 \end{oefeningen}
 
-\subsection{Eigenschappen van het product}
+%========================================================================================
+\section{Rekenregels voor het product}
 
-Bij getallen maakt de volgorde van een product niet uit: $3 \cdot 5 = 5 \cdot 3$. Bij matrices hebben we net gezien dat $PS$ en $SP$ zelfs een andere dimensie kunnen hebben. Maar wat als beide producten dezelfde dimensie hebben? Probeer het eerst zelf.
+Bij getallen ken je heel wat rekenregels voor het product: de volgorde maakt niet uit, je mag haakjes verplaatsen en uitwerken, 1 verandert niets, en een product is pas 0 als een factor 0 is. Welke van die regels blijven gelden voor matrices? We bekijken ze één voor één.
+
+\subsection{De volgorde telt}
+
+Bij getallen is $3 \cdot 5 = 5 \cdot 3$. Bij matrices zagen we al dat $PS$ en $SP$ een andere dimensie kunnen hebben. Maar wat als beide producten dezelfde dimensie hebben? Probeer het eerst zelf.
 
 \begin{oefeningen}
 \oef{h1-commutatief}
 \end{oefeningen}
 
-Je vindt twee verschillende matrices: $AB \neq BA$. Het product van matrices is dus \emph{niet commutatief}. Bij een product van matrices moet je altijd zeggen in welke volgorde je vermenigvuldigt: $AB$ is \textit{A maal B}, met $A$ links. Andere regels voor getallen blijven wel gelden. Dat kun je nagaan op voorbeelden, en we nemen ze aan zonder bewijs.
-
 \begin{theorie}
-\begin{stelling}{Eigenschappen van het product}
-Voor matrices waarvan de producten bestaan, en een getal $r$:
-
-\vspace{1mm}
-{\centering\arrayrulecolor{accent}\renewcommand{\arraystretch}{1.6}%
-\begin{tabular}{|>{\centering\arraybackslash}m{3.4cm}|>{\centering\arraybackslash$}m{8.6cm}<{$}|}
-\hline
-associatief & \formule{(AB)C = A(BC)} \\ \hline
-distributief & \formule{A(B + C) = AB + AC} \quad \text{en} \quad \formule{(A + B)C = AC + BC} \\ \hline
-met een getal & \formule{r(AB) = (rA)B = A(rB)} \\ \hline
-\end{tabular}\par}
-
-\vspace{1mm}
-In het algemeen is \ $\formule{AB \neq BA}$.
+\begin{stelling}{Het product is niet commutatief}
+Er bestaan vierkante matrices $A$ en $B$ met \qquad $\formule{AB \neq BA}$
 \end{stelling}
+
+\begin{bewijs}
+Eén voorbeeld volstaat. Neem $A = \km{0 & 1 \\ 0 & 0}$ en $B = \km{0 & 0 \\ 1 & 0}$. Dan is
+\bewijsregel{AB = \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} \qquad\text{maar}\qquad BA = \begin{bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix} .}
+\end{bewijs}
 \end{theorie}
 
-Omdat het product associatief is, mag je de haakjes weglaten: $ABC$ betekent $(AB)C$ en dat is ook $A(BC)$. De volgorde van de matrices mag je niet veranderen.
+Dat betekent niet dat $AB$ en $BA$ altijd verschillen: soms zijn ze toevallig gelijk. Maar je mag er niet op rekenen. Zeg bij een product van matrices dus altijd in welke volgorde je vermenigvuldigt: $AB$ is \textit{A maal B}, met $A$ links. En vermenigvuldig je beide leden van een gelijkheid met een matrix, doe het dan aan dezelfde kant.
+
+\subsection{Associativiteit}
+
+Bij drie matrices $A$, $B$ en $C$ kun je eerst $AB$ berekenen en dat product met $C$ vermenigvuldigen, of eerst $BC$ en dan $A$ maal dat product. Dat geeft hetzelfde, al zie je dat niet meteen.
+
+\begin{theorie}
+\begin{stelling}{Associativiteit van het product}
+Is $A$ een $m \times n$-, $B$ een $n \times p$- en $C$ een $p \times q$-matrix, dan is \qquad $\formule{(AB)C = A(BC)}$
+\end{stelling}
+
+\begin{bewijs}
+Beide producten zijn $m \times q$-matrices. Het element op plaats $(i, j)$ van $(AB)C$ is rij $i$ van $AB$ maal kolom $j$ van $C$:
+\bewijsregel{(AB)_{i1}c_{1j} + (AB)_{i2}c_{2j} + \cdots + (AB)_{ip}c_{pj} .}
+Elke $(AB)_{il}$ is zelf een som $a_{i1}b_{1l} + \cdots + a_{in}b_{nl}$. Werk je de haakjes uit, dan krijg je de som van alle producten $a_{ik}b_{kl}c_{lj}$, met $k$ van 1 tot $n$ en $l$ van 1 tot $p$: één term voor elk paar $(k, l)$. Het element op plaats $(i, j)$ van $A(BC)$ is
+\bewijsregel{a_{i1}(BC)_{1j} + a_{i2}(BC)_{2j} + \cdots + a_{in}(BC)_{nj} ,}
+met $(BC)_{kj} = b_{k1}c_{1j} + \cdots + b_{kp}c_{pj}$. Uitwerken geeft opnieuw alle producten $a_{ik}b_{kl}c_{lj}$, één voor elk paar $(k, l)$. Op elke plaats staan dus dezelfde termen, en de matrices zijn gelijk.
+\end{bewijs}
+\end{theorie}
+
+Daarom mag je de haakjes weglaten: $ABC$ betekent $(AB)C$, en dat is ook $A(BC)$. De volgorde van de matrices mag je wel niet veranderen. Welke twee je eerst vermenigvuldigt, kies je zo dat het rekenwerk het kleinst is.
+
+\voorbeeld{}{Bereken $ABC$ voor $A = \begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix}$, $B = \begin{bmatrix} 2 & 0 & 1 \end{bmatrix}$ en $C = \begin{bmatrix} 3 \\ 1 \\ -2 \end{bmatrix}$.\label{vb:h1-assoc}}{%
+\uitleg{$AB$ is een $3 \times 3$-matrix met negen elementen, maar $BC$ is een $1 \times 1$-matrix: één getal. We rekenen dus eerst $BC$ uit.}
+\begin{stappen}
+BC = \begin{bmatrix} 2 \cdot 3 + 0 \cdot 1 + 1 \cdot (-2) \end{bmatrix} = \begin{bmatrix} 4 \end{bmatrix} & Een rij maal een kolom. \\[1.5ex]
+ABC = A(BC) = \begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix} \begin{bmatrix} 4 \end{bmatrix} = \begin{bmatrix} 4 \\ 8 \\ -4 \end{bmatrix} & Een $3 \times 1$ maal een $1 \times 1$: elk element van $A$ maal 4.
+\end{stappen}
+Langs de andere weg is $AB = \km{2 & 0 & 1 \\ 4 & 0 & 2 \\ -2 & 0 & -1}$, en $(AB)C$ geeft dezelfde kolom, na negen producten meer.}
+
+\subsection{Distributiviteit}
+
+Haakjes uitwerken mag bij matrices ook, maar omdat de volgorde telt, zijn er twee regels: één met de som rechts en één met de som links.
+
+\begin{theorie}
+\begin{stelling}{Distributiviteit}
+Voor matrices waarvan de producten bestaan, is
+
+\vspace{1mm}
+\qquad $\formule{A(B + C) = AB + AC}$ \qquad en \qquad $\formule{(A + B)C = AC + BC}$
+\end{stelling}
+
+\begin{bewijs}
+Het element op plaats $(i, j)$ van $A(B + C)$ is rij $i$ van $A$ maal kolom $j$ van $B + C$:
+\bewijsregel{a_{i1}(b_{1j} + c_{1j}) + \cdots + a_{in}(b_{nj} + c_{nj}) = (a_{i1}b_{1j} + \cdots + a_{in}b_{nj}) + (a_{i1}c_{1j} + \cdots + a_{in}c_{nj}) ,}
+en dat is $(AB)_{ij} + (AC)_{ij}$. Op dezelfde manier is het element op plaats $(i, j)$ van $(A + B)C$
+\bewijsregel{(a_{i1} + b_{i1})c_{1j} + \cdots + (a_{in} + b_{in})c_{nj} = (AC)_{ij} + (BC)_{ij} .}
+\end{bewijs}
+\end{theorie}
+
+Een matrix voor een som verdeel je dus over de termen, en ze blijft links staan; een matrix achter een som blijft rechts staan. Omgekeerd kun je een gemeenschappelijke factor afzonderen, als die in elke term aan dezelfde kant staat. In $AB + CA$ lukt dat niet: $A$ staat een keer links en een keer rechts, en $A(B + C)$ is iets anders.
+
+\voorbeeld{}{Bereken $AB + AC$ voor $A = \begin{bmatrix} 3 & -1 \\ 2 & 5 \end{bmatrix}$, $B = \begin{bmatrix} 4 & 7 \\ -2 & 3 \end{bmatrix}$ en $C = \begin{bmatrix} -3 & -7 \\ 2 & -2 \end{bmatrix}$.\label{vb:h1-distr}}{%
+\uitleg{Twee producten uitrekenen en optellen is veel werk. In beide termen staat $A$ links, dus kunnen we $A$ afzonderen. Misschien is $B + C$ eenvoudig.}
+\begin{stappen}
+AB + AC = A(B + C) & Distributiviteit, van rechts naar links gelezen. \\[1ex]
+B + C = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} & Plaats per plaats optellen. \\[3.5ex]
+A(B + C) = \begin{bmatrix} 3 + 0 & 0 - 1 \\ 2 + 0 & 0 + 5 \end{bmatrix} = \begin{bmatrix} 3 & -1 \\ 2 & 5 \end{bmatrix} & Eén product in plaats van twee, en de uitkomst is gewoon $A$.
+\end{stappen}}
+
+\subsection{Een getal in een product}
+
+Staat er in een product van matrices ook een getal, dan mag je dat getal verplaatsen: een getal heeft geen links of rechts.
+
+\begin{theorie}
+\begin{stelling}{Getal in een product}
+Voor een getal $r$ en matrices waarvan het product $AB$ bestaat, is \qquad $\formule{r(AB) = (rA)B = A(rB)}$
+\end{stelling}
+
+\begin{bewijs}
+Op plaats $(i, j)$ staat in $r(AB)$ het getal
+\bewijsregel{r(a_{i1}b_{1j} + \cdots + a_{in}b_{nj}) = ra_{i1}b_{1j} + \cdots + ra_{in}b_{nj} .}
+Schrijf je elke term $ra_{ik}b_{kj}$ als $(ra_{ik})b_{kj}$, dan staat er rij $i$ van $rA$ maal kolom $j$ van $B$: het element van $(rA)B$. Schrijf je elke term als $a_{ik}(rb_{kj})$, dan staat er het element van $A(rB)$.
+\end{bewijs}
+\end{theorie}
+
+Getallen mag je dus vooraan zetten en met elkaar vermenigvuldigen, zodat je maar één product van matrices overhoudt.
+
+\voorbeeld{}{Bereken $\bigl(\tfrac12 A\bigr)(4B)$ voor $A = \begin{bmatrix} 2 & 1 \\ -1 & 3 \end{bmatrix}$ en $B = \begin{bmatrix} 1 & 0 \\ 2 & -1 \end{bmatrix}$.\label{vb:h1-getal}}{%
+\uitleg{Met $\tfrac12 A$ krijg je breuken. We zetten de getallen eerst vooraan.}
+\begin{stappen}
+\bigl(\tfrac12 A\bigr)(4B) = \tfrac12 \cdot 4 \cdot AB = 2AB & Twee keer de regel: eerst $\tfrac12$, dan 4 naar voren. \\[1.5ex]
+AB = \begin{bmatrix} 2 + 2 & 0 - 1 \\ -1 + 6 & 0 - 3 \end{bmatrix} = \begin{bmatrix} 4 & -1 \\ 5 & -3 \end{bmatrix} & Het product zonder getallen. \\[3.5ex]
+2AB = \begin{bmatrix} 8 & -2 \\ 10 & -6 \end{bmatrix} & Elk element maal 2.
+\end{stappen}}
+
+\begin{oefeningen}
+\oef{h1-k-product}
+\end{oefeningen}
+
+\subsection{De eenheidsmatrix}
 
 Bij getallen speelt 1 een bijzondere rol: $1 \cdot a = a \cdot 1 = a$. Bij matrices doet de eenheidsmatrix dat.
 
@@ -387,13 +565,17 @@ Voor elke vierkante $n \times n$-matrix $A$ geldt \quad $\formule{A I_n = I_n A 
 \end{stelling}
 
 \begin{bewijs}
-We doen het voor $n = 2$; bij grotere matrices gaat het net zo. Neem $A = \km{a & b \\ c & d}$. Dan is
-\bewijsregel{A I_2 = \begin{bmatrix} a \cdot 1 + b \cdot 0 & a \cdot 0 + b \cdot 1 \\ c \cdot 1 + d \cdot 0 & c \cdot 0 + d \cdot 1 \end{bmatrix} = \begin{bmatrix} a & b \\ c & d \end{bmatrix} = A ,}
-en op dezelfde manier is $I_2 A = A$.
+In kolom $j$ van $I_n$ staat alleen op plaats $j$ een 1, de rest is 0. Rij $i$ van $A$ maal kolom $j$ van $I_n$ is dus
+\bewijsregel{a_{i1} \cdot 0 + \cdots + a_{ij} \cdot 1 + \cdots + a_{in} \cdot 0 = a_{ij} ,}
+zodat $AI_n = A$. Zo heeft ook rij $i$ van $I_n$ alleen op plaats $i$ een 1, en rij $i$ van $I_n$ maal kolom $j$ van $A$ is $a_{ij}$: $I_n A = A$.
 \end{bewijs}
 \end{theorie}
 
-Als het duidelijk is welke dimensie bedoeld is, schrijven we gewoon $I$. Een tweede verschil met getallen gaat over het getal 0. Als $a \cdot b = 0$, dan is $a = 0$ of $b = 0$. Bij matrices hoeft dat niet.
+Als het duidelijk is welke dimensie bedoeld is, schrijven we gewoon $I$. De eenheidsmatrix is een matrix die met elke vierkante matrix van haar dimensie commuteert: daar maakt de volgorde wel niets uit.
+
+\subsection{Nuldelers}
+
+Een laatste verschil met getallen gaat over het getal 0. Als $a \cdot b = 0$, dan is $a = 0$ of $b = 0$. Bij matrices hoeft dat niet.
 
 \voorbeeld{}{Bereken $AB$ voor $A = \begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix}$ en $B = \begin{bmatrix} 2 & -4 \\ -1 & 2 \end{bmatrix}$. Wat valt je op?\label{vb:h1-nuldeler}}{%
 \uitleg{We rekenen het product gewoon uit, en vergelijken met wat we van getallen gewoon zijn.}
@@ -402,7 +584,7 @@ AB = \begin{bmatrix} 2 - 2 & -4 + 4 \\ 4 - 4 & -8 + 8 \end{bmatrix} = \begin{bma
 AB = O, \text{ maar } A \neq O \text{ en } B \neq O & Het product van twee matrices kan de nulmatrix zijn, zonder dat een van beide de nulmatrix is.
 \end{stappen}}
 
-Daarom mag je in een gelijkheid van matrices niet zomaar \textit{schrappen}: uit $AB = AC$ volgt niet dat $B = C$.
+Zulke matrices heten \textbf{nuldelers}. Daarom mag je in een gelijkheid van matrices niet zomaar \textit{schrappen}: uit $AB = AC$ volgt niet dat $B = C$. In het voorbeeld is $AB = O = AO$, maar $B \neq O$.
 
 \begin{oefeningen}
 \oef{h1-eigenschap}
@@ -413,6 +595,8 @@ Daarom mag je in een gelijkheid van matrices niet zomaar \textit{schrappen}: uit
 
 Een getal tot de derde macht is drie keer dat getal maal zichzelf. Bij een matrix kan dat ook, maar alleen als ze vierkant is: een $2 \times 3$-matrix kun je niet met zichzelf vermenigvuldigen, want 3 kolommen passen niet op 2 rijen.
 
+\subsection{Machten berekenen}
+
 \begin{theorie}
 Voor een vierkante matrix $A$ en een natuurlijk getal $n \geqslant 1$ is de \textbf{\textcolor{accent}{macht}}
 
@@ -420,7 +604,7 @@ Voor een vierkante matrix $A$ en een natuurlijk getal $n \geqslant 1$ is de \tex
 \qquad $\formule{A^n = \underbrace{A \cdot A \cdots A}_{n \text{ factoren}}}$ \qquad en we spreken af dat $\formule{A^0 = I}$.
 \end{theorie}
 
-Omdat het product associatief is, maakt het niet uit welke factoren je eerst vermenigvuldigt. Zo is $A^3 = A^2 \cdot A = A \cdot A^2$, en $A^5 = A^2 \cdot A^3$. Zoals bij getallen geldt dus $A^m A^n = A^{m+n}$.
+Omdat het product associatief is, hoeven er geen haakjes te staan: welke factoren je eerst vermenigvuldigt, maakt niet uit. Zo is $A^3 = A^2 \cdot A = A \cdot A^2$.
 
 \voorbeeld{}{Bereken $A^2$ en $A^3$ voor $A = \begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix}$, en zoek een formule voor $A^n$.\label{vb:h1-macht}}{%
 \uitleg{We berekenen de eerste machten met de hand. Elke volgende macht is de vorige maal $A$. Dan kijken we welk element verandert, en hoe.}
@@ -432,9 +616,46 @@ A^n = \begin{bmatrix} 1 & 2n \\ 0 & 1 \end{bmatrix} & Het element rechtsboven is
 
 Let op: $A^2$ is niet de matrix met de kwadraten van de elementen. In het voorbeeld zou dat $\km{1 & 4 \\ 0 & 1}$ geven, toevallig hetzelfde, maar bij $\km{1 & 2 \\ 3 & 4}$ is $A^2 = \km{7 & 10 \\ 15 & 22}$ en niet $\km{1 & 4 \\ 9 & 16}$.
 
-Ook de merkwaardige producten veranderen, omdat $AB$ en $BA$ verschillen. Met de distributiviteit krijg je
+\nujij{Bereken $A^2$ en $A^3$ voor $A = \km{2 & 0 \\ 0 & -1}$. Wat is $A^n$?}{$A^2 = \km{4 & 0 \\ 0 & 1}$, $A^3 = \km{8 & 0 \\ 0 & -1}$, en $A^n = \km{2^n & 0 \\ 0 & (-1)^n}$.}
+
+\begin{oefeningen}
+\oef{h1-macht}
+\end{oefeningen}
+
+\subsection{Rekenregels voor machten}
+
+Bij getallen is $a^2 \cdot a^3 = a^5$: twee factoren en nog drie factoren zijn samen vijf factoren. Dezelfde telling werkt bij matrices.
+
+\begin{theorie}
+\begin{stelling}{Product van machten}
+Voor een vierkante matrix $A$ en natuurlijke getallen $m$ en $n$ is \qquad $\formule{A^m A^n = A^{m+n}}$
+\end{stelling}
+
+\begin{bewijs}
+Is $m = 0$, dan staat er $IA^n = A^n$, en dat klopt; zo ook als $n = 0$. Zijn $m, n \geqslant 1$, dan is
+\bewijsregel{A^m A^n = \underbrace{A \cdots A}_{m \text{ factoren}} \cdot \underbrace{A \cdots A}_{n \text{ factoren}} ,}
+en omdat het product associatief is, mogen we de haakjes rond de twee groepen weglaten. Er staan dan $m + n$ factoren $A$ na elkaar: dat is $A^{m+n}$.
+\end{bewijs}
+\end{theorie}
+
+In het bijzonder is $A^m A^n = A^n A^m$: twee machten van dezelfde matrix mag je wel van plaats wisselen. Bij machten van verschillende matrices loopt het mis, omdat je de factoren niet kunt herschikken. Zo is $(AB)^2 = ABAB$, en dat is in het algemeen niet $AABB = A^2B^2$. Om dezelfde reden veranderen de merkwaardige producten. Met de distributiviteit krijg je
 \[ (A + B)^2 = (A + B)(A + B) = A^2 + AB + BA + B^2 . \]
 Alleen als $AB = BA$ mag je de twee middelste termen samennemen tot $2AB$.
+
+\voorbeeld{}{Bereken $(A + B)^2$ en $A^2 + 2AB + B^2$ voor $A = \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$ en $B = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}$.\label{vb:h1-merkwaardig}}{%
+\uitleg{We rekenen beide uitdrukkingen uit en vergelijken. Het verschil moet uit $AB$ en $BA$ komen, dus die berekenen we ook.}
+\begin{stappen}
+(A + B)^2 = \begin{bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix} = \begin{bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix} & Eerst de som, dan het kwadraat. \\[4ex]
+A^2 = A, \quad B^2 = O, \quad AB = B, \quad BA = O & Vier kleine producten. Hier is $AB \neq BA$. \\[1ex]
+A^2 + 2AB + B^2 = \begin{bmatrix} 1 & 2 \\ 0 & 0 \end{bmatrix} & Dat is niet $(A + B)^2$. \\[3.5ex]
+A^2 + AB + BA + B^2 = \begin{bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix} & De juiste formule geeft wel $(A + B)^2$.
+\end{stappen}}
+
+\begin{oefeningen}
+\oef{h1-k-macht}
+\end{oefeningen}
+
+\subsection{Hoge machten}
 
 Hogere machten met de hand uitrekenen is veel werk. Je rekentoestel kan het voor je doen.
 
@@ -452,12 +673,6 @@ Een kleine macht van een kleine matrix reken je met de hand uit: telkens de vori
 \end{werkwijze}
 
 \lkr{Op de TI-84: \texttt{2nd} \texttt{x}$^{-1}$ (MATRIX), tab EDIT om de matrix in te voeren, en in het rekenscherm \texttt{[A]\^{}10}. Leerlingen ronden soms af vóór ze verder rekenen: laat ze altijd met de matrix in het geheugen werken.}
-
-\nujij{Bereken $A^2$ en $A^3$ voor $A = \km{2 & 0 \\ 0 & -1}$. Wat is $A^n$?}{$A^2 = \km{4 & 0 \\ 0 & 1}$, $A^3 = \km{8 & 0 \\ 0 & -1}$, en $A^n = \km{2^n & 0 \\ 0 & (-1)^n}$.}
-
-\begin{oefeningen}
-\oef{h1-macht}
-\end{oefeningen}
 
 %========================================================================================
 \opdrachtenkop

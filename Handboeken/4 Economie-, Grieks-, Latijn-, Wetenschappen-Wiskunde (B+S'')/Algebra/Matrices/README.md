@@ -36,7 +36,7 @@ python Opmaak/maak-pdf.py 4/Algebra/Matrices --hoofdstuk 2    snel: alleen hoofd
 
 - **Volgorde:** stelsels (LPD 37) komen voor de inverse (LPD 36), omdat de inverse en de rang met rijherleiden berekend worden. Matrixmodellen (LPD 35) staan achteraan, zodat het evenwicht met een stelsel kan.
 - **Hoofdstuk 2:** uitgebreide matrix, elementaire rijbewerkingen (met bewijs dat ze de oplossingen niet veranderen), rijgereduceerde vorm (uniciteit niet bewezen), bepaald, onbepaald en strijdig, stelsels met één parameter. Minstens een stelsel met drie onbekenden, zoals het leerplan vraagt; ook één met vier onbekenden als opdracht.
-- **Hoofdstuk 3:** inverse (uniek, met bewijs), matrixvergelijkingen, inverse met $[A \,|\, I]$, determinant van een $2 \times 2$-matrix (via de inverse, met bewijs) en van een $3 \times 3$-matrix (ontwikkelen en Sarrus), eigenschappen van de determinant (zonder algemeen bewijs), de regel van Cramer, de rang en het verband tussen rang, determinant, inverse en stelsels.
+- **Hoofdstuk 3:** inverse (uniek, met bewijs), matrixvergelijkingen, inverse met $[A \,|\, I]$, determinant van een $2 \times 2$-matrix (via de inverse, met bewijs) en van een $3 \times 3$-matrix (ontwikkelen en Sarrus), eigenschappen van de determinant (elk apart, bewezen voor $2 \times 2$ en $3 \times 3$), de regel van Cramer, de rang en het verband tussen rang, determinant, inverse en stelsels.
 - **Niet opgenomen:** determinanten van $4 \times 4$-matrices met de hand, de adjunctmatrix in het algemeen.
 - **Rekentoestel:** de leerkrachtenversie noemt `rref(` op de TI-84.
 

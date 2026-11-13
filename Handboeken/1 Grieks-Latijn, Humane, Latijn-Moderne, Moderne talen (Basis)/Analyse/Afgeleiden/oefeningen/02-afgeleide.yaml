@@ -152,7 +152,7 @@
   opgave: |-
     Bereken de afgeleide.
   lijst: reeks
-  kolommen: 4
+  kolommen: 2
   delen:
     - opgave: |-
         $2x^5 - 4x^3 + x - 9$
@@ -281,6 +281,146 @@
         afleidbaar, $f'(0) = 0$
       uitwerking: |-
         $\dfrac{f(h) - f(0)}{h} = \dfrac{h\,|h|}{h} = |h| \to 0$, langs links en langs rechts. Dus $f'(0) = 0$: geen knik, de raaklijn in $(0, 0)$ is de $x$-as.
+
+- id: h2-dq
+  soort: kort
+  opgave: |-
+    Het differentiequotiënt.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken het differentiequotiënt van $f(x) = x^2 + 2x$ tussen $2$ en $2 + h$. Wat is het voor $h = 1$ en voor $h = -0{,}5$? Welk getal nadert het als $h$ naar $0$ gaat?
+      antwoord: |-
+        $6 + h$; $7$; $5{,}5$; $6$
+      uitwerking: |-
+        $f(2) = 8$ en $f(2 + h) = (2 + h)^2 + 2(2 + h) = 4 + 4h + h^2 + 4 + 2h = h^2 + 6h + 8$. Het differentiequotiënt is $\dfrac{h^2 + 6h + 8 - 8}{h} = \dfrac{h^2 + 6h}{h} = 6 + h$. Voor $h = 1$ is dat $7$, voor $h = -0{,}5$ is het $5{,}5$. Het nadert $6$.
+    - opgave: |-
+        De temperatuur in een oven is $T(t) = 20 + 30t$ graden na $t$ minuten (voor $0 \leqslant t \leqslant 6$). Bereken het differentiequotiënt tussen $t = 1$ en $t = 4$. Wat betekent het?
+      antwoord: |-
+        $30$ graden per minuut
+      uitwerking: |-
+        $\dfrac{T(4) - T(1)}{4 - 1} = \dfrac{140 - 50}{3} = 30$. Tussen de eerste en de vierde minuut stijgt de temperatuur gemiddeld $30$ graden per minuut. Omdat $T$ een eerstegraadsfunctie is, is dat op elk interval zo.
+
+- id: h2-afgpunt
+  soort: kort
+  opgave: |-
+    Bereken met de definitie.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        $f'(2)$ voor $f(x) = x^2 + x$
+      antwoord: |-
+        $5$
+      uitwerking: |-
+        $f(2) = 6$. $\dfrac{(2 + h)^2 + (2 + h) - 6}{h} = \dfrac{4h + h^2 + h}{h} = 5 + h \to 5$.
+    - opgave: |-
+        $f'(-1)$ voor $f(x) = 3x^2$
+      antwoord: |-
+        $-6$
+      uitwerking: |-
+        $f(-1) = 3$. $\dfrac{3(-1 + h)^2 - 3}{h} = \dfrac{3 - 6h + 3h^2 - 3}{h} = -6 + 3h \to -6$.
+    - opgave: |-
+        $f'(4)$ voor $f(x) = \dfrac{1}{x}$
+      antwoord: |-
+        $-\frac{1}{16}$
+      uitwerking: |-
+        $\dfrac{\frac{1}{4 + h} - \frac14}{h} = \dfrac{4 - (4 + h)}{4h(4 + h)} = \dfrac{-1}{4(4 + h)} \to -\dfrac{1}{16}$.
+
+- id: h2-afgfunctie
+  soort: kort
+  opgave: |-
+    Bereken de afgeleide functie met de definitie.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x) = x^2 - 5x$
+      antwoord: |-
+        $2x - 5$
+      uitwerking: |-
+        $f(x + h) - f(x) = x^2 + 2xh + h^2 - 5x - 5h - x^2 + 5x = 2xh + h^2 - 5h$. Delen door $h$: $2x + h - 5 \to 2x - 5$.
+    - opgave: |-
+        $f(x) = 4 - 3x^2$
+      antwoord: |-
+        $-6x$
+      uitwerking: |-
+        $f(x + h) - f(x) = 4 - 3x^2 - 6xh - 3h^2 - 4 + 3x^2 = -6xh - 3h^2$. Delen door $h$: $-6x - 3h \to -6x$.
+
+- id: h2-machtn
+  soort: kort
+  opgave: |-
+    Machten met een natuurlijke exponent.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bereken de afgeleide van $x^9$ en van $x^{20}$.
+      antwoord: |-
+        $9x^8$; $20x^{19}$
+      uitwerking: |-
+        De exponent komt ervoor, en de nieuwe exponent is één kleiner: $9x^8$ en $20x^{19}$.
+    - opgave: |-
+        Bereken de richtingscoëfficiënt van de raaklijn aan de grafiek van $f(x) = x^5$ in het punt met $x = -1$.
+      antwoord: |-
+        $5$
+      uitwerking: |-
+        $f'(x) = 5x^4$, dus $f'(-1) = 5 \cdot 1 = 5$.
+    - opgave: |-
+        In welke punten van de grafiek van $f(x) = x^3$ heeft de raaklijn richtingscoëfficiënt $12$?
+      antwoord: |-
+        $(2, 8)$ en $(-2, -8)$
+      uitwerking: |-
+        $f'(x) = 3x^2 = 12 \iff x^2 = 4 \iff x = 2$ of $x = -2$. De punten zijn $(2, 8)$ en $(-2, -8)$.
+
+- id: h2-veelvoud
+  soort: kort
+  opgave: |-
+    Bereken de afgeleide.
+  lijst: reeks
+  kolommen: 4
+  delen:
+    - opgave: |-
+        $7x^3$
+      antwoord: |-
+        $21x^2$
+      uitwerking: |-
+        $7 \cdot 3x^2 = 21x^2$.
+    - opgave: |-
+        $\dfrac{x^4}{2}$
+      antwoord: |-
+        $2x^3$
+      uitwerking: |-
+        $\frac12 x^4$ geeft $\frac12 \cdot 4x^3 = 2x^3$.
+    - opgave: |-
+        $-\dfrac{3}{x^2}$
+      antwoord: |-
+        $\frac{6}{x^3}$
+      uitwerking: |-
+        $-3x^{-2}$ geeft $-3 \cdot (-2)x^{-3} = \dfrac{6}{x^3}$.
+    - opgave: |-
+        $6\sqrt[3]{x}$
+      antwoord: |-
+        $\frac{2}{\sqrt[3]{x^2}}$
+      uitwerking: |-
+        $6x^{\frac13}$ geeft $6 \cdot \frac13 x^{-\frac23} = 2x^{-\frac23} = \dfrac{2}{\sqrt[3]{x^2}}$.
+
+- id: h2-negmacht
+  soort: kort
+  opgave: |-
+    De afgeleide van $\dfrac{1}{g}$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon met de quotiëntregel aan dat $\Bigl(\dfrac{1}{g}\Bigr)' = -\dfrac{g'}{g^2}$ als $g$ afleidbaar is en $g(x) \neq 0$.
+      antwoord: |-
+        teller $1$, met afgeleide $0$
+      uitwerking: |-
+        Quotiëntregel met teller $1$ en noemer $g$: $\Bigl(\dfrac{1}{g}\Bigr)' = \dfrac{0 \cdot g - 1 \cdot g'}{g^2} = -\dfrac{g'}{g^2}$.
+    - opgave: |-
+        Bereken daarmee de afgeleide van $\dfrac{1}{x^2 + 1}$ en van $\dfrac{1}{x^3 - 2x}$.
+      antwoord: |-
+        $-\frac{2x}{(x^2 + 1)^2}$; $-\frac{3x^2 - 2}{(x^3 - 2x)^2}$
+      uitwerking: |-
+        Met $g(x) = x^2 + 1$ en $g'(x) = 2x$: $-\dfrac{2x}{(x^2 + 1)^2}$. Met $g(x) = x^3 - 2x$ en $g'(x) = 3x^2 - 2$: $-\dfrac{3x^2 - 2}{(x^3 - 2x)^2}$.
 
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3

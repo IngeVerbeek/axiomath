@@ -326,6 +326,46 @@
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
 
+- id: h3-domein-valkuil
+  soort: kort
+  opgave: |-
+    Bepaal $f \circ g$, vereenvoudig, en geef het domein.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x) = \dfrac1x$ en $g(x) = \dfrac1x$
+      antwoord: |-
+        $x$, met domein $\R \setminus \{0\}$
+      uitwerking: |-
+        $(f \circ g)(x) = \frac{1}{1/x} = x$. Maar $x$ moet in $\dom g$ liggen, dus $x \neq 0$ (en $g(x) = \frac1x$ is nooit $0$, dus ligt altijd in $\dom f$). Domein $\R \setminus \{0\}$.
+    - opgave: |-
+        $f(x) = x^2 - 1$ en $g(x) = \sqrt{x + 1}$
+      antwoord: |-
+        $x$, met domein $\left[-1, +\infty\right[$
+      uitwerking: |-
+        $(f \circ g)(x) = \bigl(\sqrt{x + 1}\bigr)^2 - 1 = x + 1 - 1 = x$. $x$ moet in $\dom g$ liggen: $x \geqslant -1$, en $\dom f = \R$. Domein $\left[-1, +\infty\right[$.
+
+- id: h3-inverse-breuk
+  soort: kort
+  opgave: |-
+    Bepaal de inverse, met haar domein, en controleer met één getal.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x) = \dfrac{1}{x + 1}$
+      antwoord: |-
+        $\inv{f}(x) = \dfrac1x - 1$, $\R \setminus \{0\}$
+      uitwerking: |-
+        $\ber f = \R \setminus \{0\}$: een breuk met teller $1$ is nooit $0$. $y = \frac{1}{x + 1} \iff x + 1 = \frac1y \iff x = \frac1y - 1$. Dus $\inv{f}(x) = \frac1x - 1$ met domein $\R \setminus \{0\}$. Controle: $f(0) = 1$ en $\inv{f}(1) = 0$.
+    - opgave: |-
+        $g(x) = 4 + \dfrac2x$
+      antwoord: |-
+        $\inv{g}(x) = \dfrac{2}{x - 4}$, $\R \setminus \{4\}$
+      uitwerking: |-
+        $\frac2x$ is nooit $0$, dus $\ber g = \R \setminus \{4\}$. $y = 4 + \frac2x \iff \frac2x = y - 4 \iff x = \frac{2}{y - 4}$. Dus $\inv{g}(x) = \frac{2}{x - 4}$ met domein $\R \setminus \{4\}$. Controle: $g(2) = 5$ en $\inv{g}(5) = 2$.
+
 - id: h3-o1
   soort: opdracht
   niveau: 1

@@ -252,6 +252,136 @@
       uitwerking: |-
         De hoogste macht is $x^5$ (niet de term met de grootste coëfficiënt). Oneven, positief: links onder, rechts boven.
 
+- id: h1-graad
+  soort: kort
+  opgave: |-
+    Bepaal de graad, de hoogstegraadsterm en de constante term, zonder uit te werken.
+  lijst: reeks
+  kolommen: 3
+  delen:
+    - opgave: |-
+        $(3x - 1)^2(x^3 + 2)$
+      antwoord: |-
+        graad $5$; $9x^5$; $2$
+      uitwerking: |-
+        Hoogstegraadsterm $(3x)^2 \cdot x^3 = 9x^5$, dus graad $5$. Constante term $(-1)^2 \cdot 2 = 2$.
+    - opgave: |-
+        $(2 - x)^4(x + 5)$
+      antwoord: |-
+        graad $5$; $x^5$; $80$
+      uitwerking: |-
+        De hoogste term van $2 - x$ is $-x$: $(-x)^4 \cdot x = x^5$, want bij een even macht verdwijnt het minteken. Constante term $2^4 \cdot 5 = 80$.
+    - opgave: |-
+        $(x^2 + 1)^2 - x^4$
+      antwoord: |-
+        graad $2$; $2x^2$; $1$
+      uitwerking: |-
+        Een verschil, geen product: de regel geldt niet, want de termen in $x^4$ vallen weg. Uitwerken: $x^4 + 2x^2 + 1 - x^4 = 2x^2 + 1$.
+
+- id: h1-staart
+  soort: kort
+  opgave: |-
+    Bepaal quotiënt en rest met een staartdeling, en controleer.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $(x^3 - 2x^2 + 4x - 1) : (x^2 + 2)$
+      antwoord: |-
+        $Q = x - 2$, $R = 2x + 3$
+      uitwerking: |-
+        Eerste term $x$: $x^3 - 2x^2 + 4x - 1 - x(x^2 + 2) = -2x^2 + 2x - 1$. Tweede term $-2$: $-2x^2 + 2x - 1 + 2(x^2 + 2) = 2x + 3$, van graad $1 < 2$: stop. Controle: $(x^2 + 2)(x - 2) + 2x + 3 = x^3 - 2x^2 + 4x - 1$.
+    - opgave: |-
+        $(6x^3 + x^2 + 1) : (2x^2 - x)$
+      antwoord: |-
+        $Q = 3x + 2$, $R = 2x + 1$
+      uitwerking: |-
+        $6x^3 : 2x^2 = 3x$: $6x^3 + x^2 + 1 - 3x(2x^2 - x) = 4x^2 + 1$. $4x^2 : 2x^2 = 2$: $4x^2 + 1 - 2(2x^2 - x) = 2x + 1$: stop. Controle: $(2x^2 - x)(3x + 2) + 2x + 1 = 6x^3 + x^2 + 1$.
+
+- id: h1-kandidaat
+  soort: kort
+  opgave: |-
+    Gebruik de delers van de constante term.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef de kandidaat-nulwaarden van $f(x) = x^3 + x^2 - 4x + 6$, en bepaal alle nulwaarden.
+      antwoord: |-
+        $\pm 1, \pm 2, \pm 3, \pm 6$; enige nulwaarde $-3$
+      uitwerking: |-
+        Kandidaten: de delers van $6$, dus $\pm 1, \pm 2, \pm 3, \pm 6$. Proberen: $f(1) = 4$, $f(-1) = 10$, $f(2) = 10$, $f(-2) = 10$, $f(-3) = -27 + 9 + 12 + 6 = 0$. Horner met $a = -3$ op $1, 1, -4, 6$ geeft $1, -2, 2$ en rest $0$: $f(x) = (x + 3)(x^2 - 2x + 2)$. De discriminant van $x^2 - 2x + 2$ is $4 - 8 < 0$, dus $-3$ is de enige nulwaarde. De andere kandidaten hoef je niet meer te proberen.
+    - opgave: |-
+        Toon aan dat $g(x) = 3x^3 + x^2 + 6x + 2$ geen gehele nulwaarde heeft. Ga na dat $-\frac13$ wel een nulwaarde is.
+      antwoord: |-
+        $g(\pm 1) \neq 0$, $g(\pm 2) \neq 0$; $g\bigl(-\frac13\bigr) = 0$
+      uitwerking: |-
+        De kandidaten zijn de delers van $2$: $g(1) = 12$, $g(-1) = -6$, $g(2) = 42$, $g(-2) = -30$. Geen enkele is nul. Maar $g\bigl(-\frac13\bigr) = -\frac19 + \frac19 - 2 + 2 = 0$. De stelling vindt alleen gehele nulwaarden; hier is $g(x) = (3x + 1)(x^2 + 2)$.
+
+- id: h1-voorschrift
+  soort: kort
+  opgave: |-
+    Gebruik het aantal nulwaarden.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Bepaal de veeltermfunctie $f$ van graad 3 met nulwaarden $0$, $1$ en $4$, en $f(2) = 8$.
+      antwoord: |-
+        $f(x) = -2x(x - 1)(x - 4)$
+      uitwerking: |-
+        Drie nulwaarden bij graad 3: $f(x) = c\,x(x - 1)(x - 4)$. Dan is $f(2) = c \cdot 2 \cdot 1 \cdot (-2) = -4c = 8$, dus $c = -2$.
+    - opgave: |-
+        Bepaal de veeltermfunctie $f$ van graad 4 met dubbele nulwaarden $1$ en $-1$, en $f(0) = 3$.
+      antwoord: |-
+        $f(x) = 3(x - 1)^2(x + 1)^2$
+      uitwerking: |-
+        De multipliciteiten zijn samen $4$: $f(x) = c\,(x - 1)^2(x + 1)^2$. Dan is $f(0) = c \cdot 1 \cdot 1 = c = 3$.
+    - opgave: |-
+        Kan een veeltermfunctie van graad 3 de nulwaarden $1$ en $5$ en een dubbele nulwaarde $2$ hebben?
+      antwoord: |-
+        nee
+      uitwerking: |-
+        Geteld met multipliciteit zijn dat $1 + 1 + 2 = 4$ nulwaarden, en een veelterm van graad 3 heeft er hoogstens $3$.
+
+- id: h1-teken
+  soort: kort
+  opgave: |-
+    Stel de tekentabel op zonder getallen in te vullen.
+  lijst: reeks
+  kolommen: 2
+  delen:
+    - opgave: |-
+        $f(x) = x^2(x - 4)(x + 1)^3$
+      antwoord: |-
+        \tekentabel{cccccccc}{x & & -1 & & 0 & & 4 & }{f(x) & + & 0 & - & 0 & - & 0 & +}
+      uitwerking: |-
+        Hoogstegraadsterm $x^2 \cdot x \cdot x^3 = x^6$: rechts positief. In $4$ (enkel) wisselt het teken, in $0$ (dubbel) niet, in $-1$ (multipliciteit 3) wel. \tekentabel{cccccccc}{x & & -1 & & 0 & & 4 & }{f(x) & + & 0 & - & 0 & - & 0 & +}
+    - opgave: |-
+        $f(x) = -(x - 2)^2(x + 3)$
+      antwoord: |-
+        \tekentabel{cccccc}{x & & -3 & & 2 & }{f(x) & + & 0 & - & 0 & -}
+      uitwerking: |-
+        Hoogstegraadsterm $-x^3$: rechts negatief. In $2$ (dubbel) blijft het teken, in $-3$ (enkel) wisselt het. \tekentabel{cccccc}{x & & -3 & & 2 & }{f(x) & + & 0 & - & 0 & -}
+    - opgave: |-
+        $f(x) = (x^2 + 1)(1 - x)^3$
+      antwoord: |-
+        \tekentabel{cccc}{x & & 1 & }{f(x) & + & 0 & -}
+      uitwerking: |-
+        Hoogstegraadsterm $x^2 \cdot (-x)^3 = -x^5$: rechts negatief. De factor $x^2 + 1$ is nooit nul. In $1$ (multipliciteit 3) wisselt het teken. \tekentabel{cccc}{x & & 1 & }{f(x) & + & 0 & -}
+
+- id: h1-schets2
+  soort: kort
+  opgave: |-
+    Ontbind en schets de grafiek van $f(x) = x^3 + x^2 - 5x + 3$.
+  antwoord: |-
+    $(x - 1)^2(x + 3)$: snijdt in $-3$, raakt in $1$
+  uitwerking: |-
+    Delers van $3$: $f(1) = 1 + 1 - 5 + 3 = 0$. Horner met $a = 1$ op $1, 1, -5, 3$ geeft $1, 2, -3$: $f(x) = (x - 1)(x^2 + 2x - 3) = (x - 1)^2(x + 3)$. Nulwaarden $1$ (dubbel: raakt) en $-3$ (enkel: snijdt). Hoogstegraadsterm $x^3$: links onder, rechts boven. $f(0) = 3$. \tekentabel{cccccc}{x & & -3 & & 1 & }{f(x) & - & 0 & + & 0 & +}
+    \figuren{\begin{tikzpicture}[x=.55cm,y=.2cm,font=\scriptsize]
+      \rooster{-4}{1}{2}{-6}{2}{10}
+      \kromme{-3.3}{2.1}{(\x-1)^2*(\x+3)}
+      \vol{(-3,0)} \vol{(1,0)} \vol{(0,3)}
+    \end{tikzpicture}}
+
 #----------------------------------------------------------------------------------------
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------

@@ -206,6 +206,31 @@
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
 
+- id: h4-voorwaarde
+  soort: kort
+  opgave: |-
+    Mag je hier de formule voor een 95~\%-\hspace{0pt}betrouwbaarheidsinterval voor een proportie gebruiken? Bereken het interval als het mag.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        In een aselecte steekproef van 50 leerlingen zijn er 3 linkshandig.
+      antwoord: |-
+        nee: $n\hat{p} = 3 < 5$
+      uitwerking: |-
+        $\hat{p} = 0{,}06$ en $n\hat{p} = 3 < 5$: de normale benadering is niet bruikbaar. De formule zou $[-0{,}006;\ 0{,}126]$ geven, met een negatieve ondergrens.
+    - opgave: |-
+        In een aselecte steekproef van 200 leerlingen zijn er 12 linkshandig.
+      antwoord: |-
+        ja: $[0{,}027;\ 0{,}093]$
+      uitwerking: |-
+        $n\hat{p} = 12 \geqslant 5$ en $n(1 - \hat{p}) = 188 \geqslant 5$. Met $\hat{p} = 0{,}06$ is $E = 1{,}96\sqrt{\frac{0{,}06 \cdot 0{,}94}{200}} \approx 0{,}033$: interval $[0{,}027;\ 0{,}093]$.
+    - opgave: |-
+        Op de website van een sportclub stemmen 5000 bezoekers; 3100 willen een nieuwe tribune.
+      antwoord: |-
+        nee: geen aselecte steekproef
+      uitwerking: |-
+        De aantallen zijn groot genoeg, maar de stemmers zijn vrijwilligers en bezoekers van de site: de steekproef is niet aselect. Een interval rond $\hat{p} = 0{,}62$ zegt niets betrouwbaars over alle supporters.
+
 - id: h4-d1
   soort: opdracht
   niveau: 1

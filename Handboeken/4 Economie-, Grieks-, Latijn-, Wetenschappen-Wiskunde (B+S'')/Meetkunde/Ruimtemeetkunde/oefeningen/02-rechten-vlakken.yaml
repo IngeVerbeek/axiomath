@@ -187,6 +187,86 @@
 # OPDRACHTEN: door elkaar, eerst niveau 1, dan 2, dan 3
 #----------------------------------------------------------------------------------------
 
+- id: h2-vlakpar
+  soort: kort
+  opgave: |-
+    Gegeven $A(2, 0, 1)$, $B(3, 1, 1)$ en $C(2, 2, 3)$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Geef parametervergelijkingen van het vlak $ABC$.
+      antwoord: |-
+        $x = 2 + r$, $y = r + 2s$, $z = 1 + 2s$
+      uitwerking: |-
+        $\overrightarrow{AB} = \vcr{1}{1}{0}$ en $\overrightarrow{AC} = \vcr{0}{2}{2}$ zijn niet collineair, want de nullen staan op een andere plaats. Met punt $A$: $x = 2 + r$, $y = r + 2s$, $z = 1 + 2s$.
+    - opgave: |-
+        Ligt $D(3, 5, 5)$ in dat vlak?
+      antwoord: |-
+        ja, met $r = 1$ en $s = 2$
+      uitwerking: |-
+        $x = 3$ geeft $r = 1$ en $z = 5$ geeft $s = 2$. Dan is $y = 1 + 4 = 5$: dat klopt, dus $D$ ligt in het vlak.
+    - opgave: |-
+        Waarom bepalen $O$, $P(1, 2, 3)$ en $Q(-2, -4, -6)$ geen vlak?
+      antwoord: |-
+        ze liggen op één rechte
+      uitwerking: |-
+        $\overrightarrow{OQ} = -2\,\overrightarrow{OP}$: de vectoren zijn collineair, dus de drie punten liggen op één rechte door $O$. Door die rechte gaan oneindig veel vlakken.
+
+- id: h2-driepunten
+  soort: kort
+  opgave: |-
+    Geef een cartesiaanse vergelijking van het vlak door $A(1, 1, 0)$, $B(2, 0, 1)$ en $C(0, 1, 2)$.
+  antwoord: |-
+    $2x + 3y + z = 5$
+  uitwerking: |-
+    $\overrightarrow{AB} = \vcr{1}{-1}{1}$ en $\overrightarrow{AC} = \vcr{-1}{0}{2}$ geven $x = 1 + r - s$, $y = 1 - r$, $z = r + 2s$.\par
+    Uit de tweede: $r = 1 - y$. Dan geeft de eerste $s = 1 + r - x = 2 - x - y$. Invullen in de derde: $z = 1 - y + 2(2 - x - y) = 5 - 2x - 3y$, of $2x + 3y + z = 5$.\par
+    Controle: $A$, $B$ en $C$ geven $2 + 3 + 0$, $4 + 0 + 1$ en $0 + 3 + 2$, telkens $5$.
+
+- id: h2-bijzonder
+  soort: kort
+  opgave: |-
+    Vlakken evenwijdig met een as.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Welk vlak stelt de vergelijking $y = -1$ voor?
+      antwoord: |-
+        het vlak evenwijdig met het $xz$-vlak door $(0, -1, 0)$
+      uitwerking: |-
+        Er staat geen $x$ en geen $z$: alle punten $(x, -1, z)$. Dat is het vlak evenwijdig met het $xz$-vlak, op afstand $1$ aan de negatieve kant van de $y$-as.
+    - opgave: |-
+        Geef een vergelijking van het vlak door $(3, 0, 0)$ en $(0, 6, 0)$ dat evenwijdig is met de $z$-as.
+      antwoord: |-
+        $2x + y = 6$
+      uitwerking: |-
+        Evenwijdig met de $z$-as: de vergelijking bevat geen $z$. In het $xy$-vlak is het de rechte door $(3, 0)$ en $(0, 6)$: $\frac{x}{3} + \frac{y}{6} = 1$, of $2x + y = 6$.
+    - opgave: |-
+        Toon aan dat de $z$-as in het vlak $x - 3y = 0$ ligt.
+      antwoord: |-
+        $(0, 0, z)$ klopt voor elke $z$
+      uitwerking: |-
+        Een punt van de $z$-as is $(0, 0, z)$, en $0 - 3 \cdot 0 = 0$ klopt voor elke $z$. Alle punten van de $z$-as liggen dus in het vlak.
+
+- id: h2-zelfde
+  soort: kort
+  opgave: |-
+    Gegeven de rechte $l\colon x = 1 + 2r$, $y = -r$, $z = 3 + r$.
+  lijst: enumerate
+  delen:
+    - opgave: |-
+        Toon aan dat $m\colon x = 5 - 4s$, $y = -2 + 2s$, $z = 5 - 2s$ dezelfde rechte is als $l$.
+      antwoord: |-
+        richtingen collineair, en $(5, -2, 5)$ ligt op $l$
+      uitwerking: |-
+        $\vcr{-4}{2}{-2} = -2\vcr{2}{-1}{1}$: de richtingsvectoren zijn collineair. Het punt $(5, -2, 5)$ van $m$ ligt op $l$: $1 + 2r = 5$ geeft $r = 2$, en dan is $y = -2$ en $z = 5$. De rechten vallen samen.
+    - opgave: |-
+        Is ook $n\colon x = 5 - 4s$, $y = -2 + 2s$, $z = 4 - 2s$ dezelfde rechte?
+      antwoord: |-
+        nee, evenwijdig maar verschillend
+      uitwerking: |-
+        De richtingsvector is dezelfde als die van $m$, dus collineair met die van $l$. Maar $(5, -2, 4)$ ligt niet op $l$: $r = 2$ geeft $z = 5 \neq 4$. De rechten zijn evenwijdig, maar vallen niet samen.
+
 - id: h2-o1
   soort: opdracht
   niveau: 1

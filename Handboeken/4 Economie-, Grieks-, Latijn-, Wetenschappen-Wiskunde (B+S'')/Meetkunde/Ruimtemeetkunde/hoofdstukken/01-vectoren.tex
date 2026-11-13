@@ -21,10 +21,16 @@ Een drone hangt $3$ meter boven een punt van een sportveld. Om zijn plaats te ge
 %========================================================================================
 \section{Coördinaten in de ruimte}
 
-\naast{%
-Een \textbf{orthonormaal assenstelsel} in de ruimte heeft drie onderling loodrechte assen door de oorsprong $O$, met dezelfde lengte-eenheid. Een punt $P$ heeft drie coördinaten $(x, y, z)$: je bereikt het vanuit $O$ door $x$ langs de $x$-as, $y$ langs de $y$-as en $z$ omhoog te gaan.
+\subsection{Een assenstelsel in de ruimte}
 
-In de figuur ligt de balk met hoekpunten $O$ en $P(2, 3, 2)$ met zijn ribben langs de assen.}{%
+In het vlak leg je een punt vast met twee coördinaten, op twee loodrechte assen. In de ruimte is er een richting meer: de hoogte. Daarom komt er een derde as bij, die loodrecht staat op de eerste twee.
+
+\naast{%
+\begin{theorie}
+Een \textbf{\textcolor{accent}{orthonormaal assenstelsel}} in de ruimte bestaat uit drie onderling loodrechte assen door een punt $O$, de \textbf{\textcolor{accent}{oorsprong}}, met dezelfde lengte-eenheid.
+
+Een punt $P$ heeft drie \textbf{\textcolor{accent}{coördinaten}} $\formule{P(x, y, z)}$: je bereikt $P$ vanuit $O$ door $x$ te gaan in de zin van de $x$-as, $y$ in de zin van de $y$-as en $z$ in de zin van de $z$-as.
+\end{theorie}}{%
 \begin{tikzpicture}[ruimte,scale=.85,font=\scriptsize]
   \assendrie{4}
   \draw[accent] (2,0,0) -- (2,3,0) -- (0,3,0) (2,0,0) -- (2,0,2) -- (0,0,2) -- (0,3,2) -- (2,3,2) -- (2,0,2) (2,3,0) -- (2,3,2) (0,3,0) -- (0,3,2);
@@ -32,89 +38,329 @@ In de figuur ligt de balk met hoekpunten $O$ en $P(2, 3, 2)$ met zijn ribben lan
   \node[left] at (2,0,0) {$2$}; \node[below] at (0,3,0) {$3$}; \node[left] at (0,0,2) {$2$};
 \end{tikzpicture}}
 
+Op papier tekenen we de ruimte in \textit{schuine projectie}: de $y$-as naar rechts, de $z$-as omhoog, en de $x$-as schuin naar onder met een kortere eenheid, zodat ze naar je toe lijkt te wijzen. In de figuur ligt de balk met overstaande hoekpunten $O$ en $P(2, 3, 2)$ met zijn ribben langs de assen.
+
+Twee assen bepalen samen een \textit{coördinaatvlak}. Het $xy$-vlak is het horizontale vlak door $O$: de punten met $z = 0$. Zo bestaat het $xz$-vlak uit de punten met $y = 0$, en het $yz$-vlak uit de punten met $x = 0$. Het punt $(x, y, 0)$ ligt recht onder of boven $P(x, y, z)$: het is de loodrechte projectie van $P$ op het $xy$-vlak.
+
+\voorbeeld{}{Teken het punt $Q(3, -2, 2)$ in een assenstelsel in schuine projectie.\label{vb:h1-tekenen}}{%
+\uitleg{Een tekening in schuine projectie is plat: verschillende punten van de ruimte kunnen op dezelfde plaats van het blad terechtkomen. Daarom teken je een punt niet in één keer, maar loop je langs de assen.}
+\naast{\begin{stappenvrij}{2.4cm}{5.9cm}
+(3, 0, 0) & Ga vanuit $O$ drie eenheden langs de $x$-as, schuin naar voren. \\[1ex]
+Q'(3, -2, 0) & Ga twee eenheden evenwijdig met de $y$-as, naar links, want $y$ is negatief. $Q'$ ligt in het $xy$-vlak. \\[1ex]
+Q(3, -2, 2) & Ga vanuit $Q'$ twee eenheden recht omhoog.
+\end{stappenvrij}}{%
+\begin{tikzpicture}[ruimte,scale=.7,font=\scriptsize]
+  \assendrie{3.4}
+  \draw[lijngrijs] (0,-3,0) -- (0,0,0);
+  \draw[accent,dashed] (0,0,0) -- (3,0,0) -- (3,-2,0) -- (3,-2,2);
+  \fill[accent] (3,-2,0) circle (.07) node[below,text=black] {$Q'$};
+  \fill[accent] (3,-2,2) circle (.07) node[left,text=black] {$Q$};
+\end{tikzpicture}}}
+
+\begin{werkwijze}
+Een punt $(x, y, z)$ tekenen: ga $x$ eenheden langs de $x$-as, dan $y$ eenheden evenwijdig met de $y$-as, en dan $z$ eenheden verticaal. Teken die drie stukken als hulplijnen in stippellijn: zonder hulplijnen kun je het punt in de figuur niet aflezen.
+\end{werkwijze}
+
 \begin{oefeningen}
 \oef{h1-coordinaten}
 \end{oefeningen}
 
+\subsection{De afstand tussen twee punten}
+
+In het vlak is de afstand tussen $(x_1, y_1)$ en $(x_2, y_2)$ gelijk aan $\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$: de stelling van Pythagoras in een rechthoekige driehoek met een horizontale en een verticale rechthoekszijde. In de ruimte gebruik je Pythagoras twee keer.
+
 \begin{theorie}
-De \textbf{\textcolor{accent}{afstand}} tussen $A(x_1, y_1, z_1)$ en $B(x_2, y_2, z_2)$ en het \textbf{\textcolor{accent}{midden}} van $[AB]$ zijn
-\[\formule{|AB| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}} \qquad \formule{M\Bigl(\tfrac{x_1 + x_2}{2}, \tfrac{y_1 + y_2}{2}, \tfrac{z_1 + z_2}{2}\Bigr)}.\]
+\begin{stelling}{Afstand tussen twee punten}
+De afstand tussen $A(x_1, y_1, z_1)$ en $B(x_2, y_2, z_2)$ is
+
+\vspace{1mm}
+\qquad $\formule{|AB| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}}$
+\end{stelling}
+
+\begin{bewijs}
+\naast{Neem het hulppunt $C(x_2, y_2, z_1)$: het ligt even hoog als $A$, en recht onder of boven $B$. In het horizontale vlak $z = z_1$ liggen $A$ en $C$, en daar geldt de afstandsformule van het vlak:
+\bewijsregel{|AC|^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2 .}
+De rechte $CB$ is verticaal, dus staat ze loodrecht op dat vlak en op $AC$. In de rechthoekige driehoek $ACB$ is $|CB| = |z_2 - z_1|$, en Pythagoras geeft
+\bewijsregel{|AB|^2 = |AC|^2 + |CB|^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2 .}
+Valt $C$ samen met $A$ of met $B$, dan is er geen driehoek. Maar dan is $|AC| = 0$ of $|CB| = 0$, en klopt de formule nog steeds.}{%
+\begin{tikzpicture}[ruimte,scale=.62,font=\scriptsize]
+  \fill[accent!10] (3,-.4,.6) -- (3,4,.6) -- (-.6,4,.6) -- (-.6,-.4,.6) -- cycle;
+  \draw[accent!50] (3,-.4,.6) -- (3,4,.6) -- (-.6,4,.6) -- (-.6,-.4,.6) -- cycle;
+  \draw[grijs,dashed] (2.2,.3,.6) -- (.4,.3,.6) -- (.4,3.2,.6);
+  \draw[accent,thick] (2.2,.3,.6) -- (.4,3.2,.6) -- (.4,3.2,2.8) -- cycle;
+  \draw (.4,2.9,.6) -- (.4,2.9,.85) -- (.4,3.2,.85);
+  \fill[accent] (2.2,.3,.6) circle (.07) node[below,text=black] {$A$};
+  \fill[accent] (.4,3.2,.6) circle (.07) node[below right,text=black] {$C$};
+  \fill[accent] (.4,3.2,2.8) circle (.07) node[above,text=black] {$B$};
+  \node[right] at (.4,3.2,1.7) {$|z_2 - z_1|$};
+  \node at (2.7,3.6,.6) {$z = z_1$};
+\end{tikzpicture}}
+\end{bewijs}
 \end{theorie}
 
-De afstandsformule is twee keer de stelling van Pythagoras: eerst in het horizontale vlak, dan in de verticale driehoek met de hoogte.
+De afstand is dus de wortel uit de som van de kwadraten van de drie verschillen. Voor de afstand tot de oorsprong zijn die verschillen gewoon de coördinaten: $|OP| = \sqrt{x^2 + y^2 + z^2}$.
 
-\voorbeeld{}{Bereken de afstand tussen $A(1, 2, 3)$ en $B(4, -2, 15)$, en het midden van $[AB]$.\label{vb:h1-afstand}}{%
-\uitleg{Neem de verschillen van de coördinaten.}
+\voorbeeld{}{Bereken de afstand tussen $A(1, 2, 3)$ en $B(4, -2, 15)$.\label{vb:h1-afstand}}{%
+\uitleg{Bereken eerst de drie verschillen. De volgorde van $A$ en $B$ speelt geen rol, want de verschillen worden gekwadrateerd.}
 \begin{stappenbreed}
-|AB| = \sqrt{3^2 + (-4)^2 + 12^2} = \sqrt{169} = 13 & Verschillen $3$, $-4$, $12$. \\
-M\bigl(\tfrac52, 0, 9\bigr) & Gemiddelden.
+x_2 - x_1 = 3,\quad y_2 - y_1 = -4,\quad z_2 - z_1 = 12 & Telkens de coördinaat van $B$ min die van $A$. \\
+|AB| = \sqrt{3^2 + (-4)^2 + 12^2} = \sqrt{169} = 13 & Het minteken verdwijnt in het kwadraat.
 \end{stappenbreed}}
 
 \begin{oefeningen}
 \oef{h1-afstand}
-
-\oef{h1-midden}
 \end{oefeningen}
 
 %========================================================================================
-\needspace{20\baselineskip}
 \section{Vectoren}
+
+\subsection{De vector van \texorpdfstring{$A$}{A} naar \texorpdfstring{$B$}{B}}
+
+Ga je van $A(x_1, y_1, z_1)$ naar $B(x_2, y_2, z_2)$, dan verandert elke coördinaat: $x$ met $x_2 - x_1$, $y$ met $y_2 - y_1$ en $z$ met $z_2 - z_1$. Die drie veranderingen samen vormen een vector: een verplaatsing. Een vector heeft een richting, een zin en een lengte, maar geen vaste plaats. Elke pijl met dezelfde richting, zin en lengte stelt dezelfde vector voor, net zoals in het vlak.
 
 \begin{theorie}
 De \textbf{\textcolor{accent}{vector}} $\overrightarrow{AB}$ van $A(x_1, y_1, z_1)$ naar $B(x_2, y_2, z_2)$ heeft als coördinaten de verschillen:
-\[\formule{\overrightarrow{AB} = \vc{x_2 - x_1}{y_2 - y_1}{z_2 - z_1}}.\]
-Vectoren tel je op en vermenigvuldig je met een getal per coördinaat. De \textbf{\textcolor{accent}{norm}} (lengte) van $\vec v = \vcr{a}{b}{c}$ is $\formule{\norm{\vec v} = \sqrt{a^2 + b^2 + c^2}}$.
+\[\formule{\overrightarrow{AB} = \vc{x_2 - x_1}{y_2 - y_1}{z_2 - z_1}}\]
+Een punt $P$ verplaatst over een vector $\vec v$ is het punt $P + \vec v$: tel de coördinaten op. Zo is $\formule{B = A + \overrightarrow{AB}}$.
 \end{theorie}
 
-Een vector is een verplaatsing: hij heeft een richting, een zin en een lengte, maar geen vaste plaats. Twee pijlen met dezelfde richting, zin en lengte stellen dezelfde vector voor. Zo is $B = A + \overrightarrow{AB}$: vertrek in $A$ en verplaats.
+Twee vectoren zijn gelijk als hun coördinaten gelijk zijn. Is $\overrightarrow{AB} = \overrightarrow{CD}$, dan zijn de pijlen van $A$ naar $B$ en van $C$ naar $D$ even lang, evenwijdig en in dezelfde zin.
 
-\voorbeeld{}{Gegeven $A(1, 0, 2)$, $B(3, 4, -2)$ en $C(0, 1, 1)$. Bereken $\overrightarrow{AB}$, $\norm{\overrightarrow{AB}}$ en het punt $D$ waarvoor $ABDC$ een parallellogram is.\label{vb:h1-vectoren}}{%
-\uitleg{In een parallellogram $ABDC$ is $\overrightarrow{CD} = \overrightarrow{AB}$: $D = C + \overrightarrow{AB}$.}
+\voorbeeld{}{Gegeven $A(1, 0, 2)$, $B(3, 4, -2)$ en $C(0, 1, 1)$. Bereken $\overrightarrow{AB}$ en het punt $D$ waarvoor $ABDC$ een parallellogram is.\label{vb:h1-vectoren}}{%
+\uitleg{In het parallellogram $ABDC$ zijn $[AB]$ en $[CD]$ overstaande zijden: even lang, evenwijdig en in dezelfde zin. Dus is $\overrightarrow{CD} = \overrightarrow{AB}$, en vind je $D$ door $C$ te verplaatsen over $\overrightarrow{AB}$.}
 \begin{stappenbreed}
-\overrightarrow{AB} = \vc{2}{4}{-4},\quad \norm{\overrightarrow{AB}} = \sqrt{4 + 16 + 16} = 6 & \\
-D = C + \overrightarrow{AB} = (0 + 2, 1 + 4, 1 - 4) = (2, 5, -3) &
+\overrightarrow{AB} = \vcr{3 - 1}{4 - 0}{-2 - 2} = \vcr{2}{4}{-4} & Eindpunt min beginpunt. \\
+D = C + \overrightarrow{AB} = (0 + 2, 1 + 4, 1 - 4) = (2, 5, -3) & Verplaats $C$ over $\overrightarrow{AB}$.
+\end{stappenbreed}
+Let op de volgorde van de letters. In een parallellogram $ABCD$ liggen $A$ en $C$ tegenover elkaar, en is $\overrightarrow{AD} = \overrightarrow{BC} = \vcr{-3}{-3}{3}$. Dat geeft een ander punt: $D = A + \overrightarrow{BC} = (-2, -3, 5)$.}
+
+\begin{oefeningen}
+\oef{h1-vector-ab}
+\end{oefeningen}
+
+\subsection{Optellen en vermenigvuldigen met een getal}
+
+Twee verplaatsingen na elkaar zijn samen weer een verplaatsing. Daarom tel je vectoren op, en dat gebeurt per coördinaat. Zo vermenigvuldig je ook een vector met een getal.
+
+\begin{theorie}
+Voor $\vec v = \vcr{v_1}{v_2}{v_3}$, $\vec w = \vcr{w_1}{w_2}{w_3}$ en een getal $k$ is
+\[\formule{\vec v + \vec w = \vc{v_1 + w_1}{v_2 + w_2}{v_3 + w_3}} \qquad\qquad \formule{k\,\vec v = \vc{k v_1}{k v_2}{k v_3}}\]
+\begin{stelling}{Regel van Chasles}
+Voor drie punten $A$, $B$ en $C$ is \quad $\formule{\overrightarrow{AB} + \overrightarrow{BC} = \overrightarrow{AC}}$
+\end{stelling}
+\begin{bewijs}
+Neem $A(x_1, y_1, z_1)$, $B(x_2, y_2, z_2)$ en $C(x_3, y_3, z_3)$. De eerste coördinaat van $\overrightarrow{AB} + \overrightarrow{BC}$ is
+\bewijsregel{(x_2 - x_1) + (x_3 - x_2) = x_3 - x_1 ,}
+de eerste coördinaat van $\overrightarrow{AC}$. Voor $y$ en $z$ gaat het net zo.
+\end{bewijs}
+\end{theorie}
+
+\naast{Van $A$ naar $B$ en dan van $B$ naar $C$ brengt je van $A$ naar $C$: de tussenstop doet er niet toe. Zo kun je een vector opsplitsen via tussenpunten naar keuze. In de kubus is
+\[\overrightarrow{AG} = \overrightarrow{AB} + \overrightarrow{BC} + \overrightarrow{CG} ,\]
+drie ribben na elkaar in plaats van de lichaamsdiagonaal. Het verschil $\vec v - \vec w$ is $\vec v + (-1)\vec w$. Voor vectoren gelden dezelfde rekenregels als voor getallen, zoals $\vec v + \vec w = \vec w + \vec v$ en $k(\vec v + \vec w) = k\vec v + k\vec w$: dat zie je per coördinaat.}{%
+\begin{tikzpicture}[ruimte,scale=1,font=\scriptsize]
+  \draw[grijs] (2,0,0) -- (2,2,0) -- (0,2,0) (2,0,0) -- (2,0,2) -- (0,0,2) -- (0,2,2) -- (2,2,2) -- (2,0,2) (2,2,0) -- (2,2,2) (0,2,0) -- (0,2,2);
+  \draw[grijs,dashed] (0,0,0) -- (2,0,0) (0,0,0) -- (0,2,0) (0,0,0) -- (0,0,2);
+  \draw[->,accent,very thick] (0,0,0) -- (2,0,0);
+  \draw[->,accent,very thick] (2,0,0) -- (2,2,0);
+  \draw[->,accent,very thick] (2,2,0) -- (2,2,2);
+  \draw[->,accent,thick,dashed] (0,0,0) -- (2,2,2);
+  \node[above left] at (0,0,0) {$A$}; \node[below] at (2,0,0) {$B$}; \node[below] at (2,2,0) {$C$}; \node[right] at (2,2,2) {$G$};
+\end{tikzpicture}}
+
+\voorbeeld{}{Een drone vertrekt in $A$ en vliegt naar $B$, met $\overrightarrow{AB} = \vcr{40}{30}{10}$. Daarna vliegt hij naar $C$, met $\overrightarrow{BC} = \vcr{-10}{20}{30}$, in meter. Hoe ver ligt $C$ van $A$, in vogelvlucht?\label{vb:h1-chasles}}{%
+\uitleg{We kennen $C$ niet, maar wel de twee verplaatsingen. Met de regel van Chasles tel je ze op.}
+\begin{stappenbreed}
+\overrightarrow{AC} = \overrightarrow{AB} + \overrightarrow{BC} = \vcr{30}{50}{40} & Optellen per coördinaat. \\
+|AC| = \sqrt{30^2 + 50^2 + 40^2} = \sqrt{5000} \approx 70{,}7 & De coördinaten van $\overrightarrow{AC}$ zijn de verschillen in de afstandsformule.
+\end{stappenbreed}
+De drone ligt ongeveer $70{,}7$ m van zijn vertrekpunt, terwijl hij $\sqrt{2600} + \sqrt{1400} \approx 88{,}4$ m gevlogen heeft.}
+
+\begin{oefeningen}
+\oef{h1-chasles}
+\end{oefeningen}
+
+\subsection{De norm van een vector}
+
+De lengte van een pijl die $\vec v$ voorstelt, heet de \textit{norm} van $\vec v$. Teken je de pijl vanuit $O$, dan eindigt hij in het punt met dezelfde coördinaten als $\vec v$, en geeft de afstandsformule de lengte.
+
+\begin{theorie}
+De \textbf{\textcolor{accent}{norm}} of lengte van $\vec v = \vcr{a}{b}{c}$ is \quad $\formule{\norm{\vec v} = \sqrt{a^2 + b^2 + c^2}}$
+\begin{stelling}{Norm van een veelvoud}
+Voor elke vector $\vec v$ en elk getal $k$ is \quad $\formule{\norm{k\,\vec v} = |k|\,\norm{\vec v}}$
+\end{stelling}
+\begin{bewijs}
+Met $\vec v = \vcr{a}{b}{c}$ is $k\vec v = \vcr{ka}{kb}{kc}$, en
+\bewijsregel{\norm{k\,\vec v} = \sqrt{k^2a^2 + k^2b^2 + k^2c^2} = \sqrt{k^2}\,\sqrt{a^2 + b^2 + c^2} = |k|\,\norm{\vec v} ,}
+want $\sqrt{k^2} = |k|$, ook als $k$ negatief is.
+\end{bewijs}
+\end{theorie}
+
+Vermenigvuldigen met $k$ rekt een vector dus uit met de factor $|k|$. Is $k$ negatief, dan keert bovendien de zin om; de richting blijft dezelfde. Met $k = \frac{1}{\norm{\vec v}}$ krijg je een vector met norm 1 in dezelfde richting en zin: een \textit{eenheidsvector}.
+
+\voorbeeld{}{Geef een vector met dezelfde richting als $\vec v = \vcr{2}{-6}{3}$, met tegengestelde zin en met norm $14$.\label{vb:h1-norm}}{%
+\uitleg{Een vector met dezelfde richting is een veelvoud $k\vec v$. De norm bepaalt $|k|$, de zin het teken van $k$.}
+\begin{stappenbreed}
+\norm{\vec v} = \sqrt{4 + 36 + 9} = 7 & \\
+|k| = \tfrac{14}{7} = 2,\quad k = -2 & De zin moet omkeren, dus $k$ is negatief. \\
+-2\vec v = \vcr{-4}{12}{-6} & Controle: $\sqrt{16 + 144 + 36} = \sqrt{196} = 14$.
+\end{stappenbreed}}
+
+\begin{werkwijze}
+Een vector met een gegeven norm in de richting van $\vec v$: bereken $\norm{\vec v}$, deel de gewenste norm door $\norm{\vec v}$, en vermenigvuldig $\vec v$ met dat getal. Neem het tegengestelde als de zin moet omkeren.
+\end{werkwijze}
+
+\begin{oefeningen}
+\oef{h1-norm}
+
+\oef{h1-vectoren}
+\end{oefeningen}
+
+\subsection{Het midden van een lijnstuk}
+
+Het midden van $[AB]$ bereik je vanuit $A$ met de helft van de verplaatsing van $A$ naar $B$. Met vectoren vind je zo een formule die je uit het vlak kent, nu met drie coördinaten.
+
+\begin{theorie}
+\begin{stelling}{Midden van een lijnstuk}
+Het midden van $[AB]$, met $A(x_1, y_1, z_1)$ en $B(x_2, y_2, z_2)$, is
+
+\vspace{1mm}
+\qquad $\formule{M\Bigl(\dfrac{x_1 + x_2}{2}, \dfrac{y_1 + y_2}{2}, \dfrac{z_1 + z_2}{2}\Bigr)}$
+\end{stelling}
+\begin{bewijs}
+Het midden $M$ ligt op $[AB]$, op de halve afstand: $\overrightarrow{AM}$ heeft dezelfde richting en zin als $\overrightarrow{AB}$, en de halve lengte. De vector $\frac12\overrightarrow{AB}$ ook, want $\norm{\frac12\overrightarrow{AB}} = \frac12\norm{\overrightarrow{AB}}$. Dus $\overrightarrow{AM} = \frac12\overrightarrow{AB}$, en
+\bewijsregel{M = A + \tfrac12\overrightarrow{AB} .}
+De eerste coördinaat daarvan is $x_1 + \frac12(x_2 - x_1) = \frac{x_1 + x_2}{2}$. Voor $y$ en $z$ gaat het net zo.
+\end{bewijs}
+\end{theorie}
+
+Elke coördinaat van het midden is dus het gemiddelde van de coördinaten van de eindpunten.
+
+\voorbeeld{}{Bereken het midden van $[AB]$, met $A(1, 2, 3)$ en $B(4, -2, 15)$.\label{vb:h1-midden}}{%
+\uitleg{Neem per coördinaat het gemiddelde.}
+\begin{stappenbreed}
+M\Bigl(\tfrac{1 + 4}{2}, \tfrac{2 - 2}{2}, \tfrac{3 + 15}{2}\Bigr) = M\bigl(\tfrac52, 0, 9\bigr) & Controle: $|AM| = \sqrt{\frac94 + 4 + 36} = \frac{13}{2}$, de helft van $|AB| = 13$.
+\end{stappenbreed}}
+
+Vaak ken je het midden en één eindpunt, en zoek je het andere.
+
+\voorbeeld{}{Het punt $M(2, 1, -1)$ is het midden van $[AB]$, met $A(5, -3, 0)$. Bereken $B$.\label{vb:h1-midden-terug}}{%
+\uitleg{Van $A$ naar $M$ is de halve weg. Ga je vanuit $M$ nog eens even ver in dezelfde richting, dan kom je in $B$.}
+\begin{stappenbreed}
+\overrightarrow{AM} = \vcr{-3}{4}{-1} & \\
+B = M + \overrightarrow{AM} = (2 - 3, 1 + 4, -1 - 1) = (-1, 5, -2) & Controle: het gemiddelde van $5$ en $-1$ is $2$, enzovoort.
 \end{stappenbreed}}
 
 \begin{oefeningen}
-\oef{h1-vectoren}
+\oef{h1-midden}
 
 \oef{h1-parallellogram}
-
-\oef{h1-norm}
 \end{oefeningen}
 
 %========================================================================================
-\needspace{12\baselineskip}
 \section{Collineaire en coplanaire vectoren}
 
-\begin{theorie}
-Twee vectoren $\vec v$ en $\vec w \neq \vec 0$ zijn \textbf{\textcolor{accent}{collineair}} (evenwijdig) als $\formule{\vec v = k\,\vec w}$ voor een getal $k$.
+\subsection{Collineaire vectoren}
 
-Drie vectoren zijn \textbf{\textcolor{accent}{coplanair}} als ze in één vlak liggen: als een van hen een lineaire combinatie van de andere twee is, $\formule{\vec u = r\,\vec v + s\,\vec w}$.
+Twee vectoren zijn evenwijdig als de ene een veelvoud is van de andere: dan hebben hun pijlen dezelfde richting, en verschillen ze alleen in lengte en misschien in zin. Daarmee onderzoek je of punten op één rechte liggen.
+
+\begin{theorie}
+Twee vectoren $\vec v$ en $\vec w \neq \vec 0$ zijn \textbf{\textcolor{accent}{collineair}} als \quad $\formule{\vec v = k\,\vec w}$ \quad voor een getal $k$.
+\begin{stelling}{Drie punten op één rechte}
+Zijn $A$, $B$ en $C$ punten met $A \neq B$, dan liggen ze op één rechte als en slechts als $\formule{\overrightarrow{AC} = k\,\overrightarrow{AB}}$ voor een getal $k$.
+\end{stelling}
+\begin{bewijs}
+Liggen $A$, $B$ en $C$ op één rechte, dan heeft $\overrightarrow{AC}$ de richting van $\overrightarrow{AB}$, of is $C = A$. Neem $k = \frac{|AC|}{|AB|}$ als $C$ aan dezelfde kant van $A$ ligt als $B$, en $k = -\frac{|AC|}{|AB|}$ anders. Dan heeft $k\overrightarrow{AB}$ dezelfde richting, zin en lengte als $\overrightarrow{AC}$, dus $\overrightarrow{AC} = k\overrightarrow{AB}$. Voor $C = A$ werkt $k = 0$.
+
+Omgekeerd: is $\overrightarrow{AC} = k\overrightarrow{AB}$ met $k \neq 0$, dan is de rechte $AC$ evenwijdig met de rechte $AB$. Door $A$ gaat maar één rechte met die richting, dus vallen de twee rechten samen, en ligt $C$ op $AB$. Voor $k = 0$ is $C = A$.
+\end{bewijs}
 \end{theorie}
 
-Drie punten $A$, $B$, $C$ liggen op één rechte als $\overrightarrow{AB}$ en $\overrightarrow{AC}$ collineair zijn. Vier punten liggen in één vlak als $\overrightarrow{AB}$, $\overrightarrow{AC}$ en $\overrightarrow{AD}$ coplanair zijn.
-
 \voorbeeld{}{Liggen $A(1, 2, 3)$, $B(2, 4, 7)$ en $C(4, 8, 15)$ op één rechte?\label{vb:h1-collineair}}{%
-\uitleg{Vergelijk $\overrightarrow{AB}$ en $\overrightarrow{AC}$: is de ene een veelvoud van de andere?}
+\uitleg{Vergelijk $\overrightarrow{AB}$ en $\overrightarrow{AC}$: is de ene een veelvoud van de andere? Dan is de verhouding in elke coördinaat dezelfde.}
 \begin{stappenbreed}
-\overrightarrow{AB} = \vc{1}{2}{4},\quad \overrightarrow{AC} = \vc{3}{6}{12} = 3\,\overrightarrow{AB} & Ja: collineair, dus op één rechte.
-\end{stappenbreed}}
+\overrightarrow{AB} = \vcr{1}{2}{4},\quad \overrightarrow{AC} = \vcr{3}{6}{12} & \\
+\overrightarrow{AC} = 3\,\overrightarrow{AB} & De verhoudingen $\frac31$, $\frac62$ en $\frac{12}{4}$ zijn alle drie $3$.
+\end{stappenbreed}
+De vectoren zijn collineair: de drie punten liggen op één rechte, en $C$ ligt drie keer zo ver van $A$ als $B$, aan dezelfde kant.}
+
+Let op nullen. Bij $\vcr{1}{0}{2}$ en $\vcr{3}{1}{6}$ geven de eerste en de derde coördinaat de factor $3$, maar $3 \cdot 0 = 0 \neq 1$: ze zijn niet collineair. De verhouding $\frac10$ kun je niet berekenen, dus controleer je met de factor in elke coördinaat.
+
+\begin{werkwijze}
+Collineair of niet: zoek de factor $k$ met een coördinaat die niet nul is, en controleer dat $k$ keer de ene vector in elke coördinaat de andere geeft.
+\end{werkwijze}
 
 \begin{oefeningen}
 \oef{h1-collineair}
 \end{oefeningen}
 
+\subsection{Coplanaire vectoren}
+
+Teken je drie vectoren vanuit hetzelfde punt, dan liggen hun pijlen meestal niet in één vlak, zoals de drie ribben uit een hoekpunt van een kubus. Liggen ze wel in één vlak, dan heten ze coplanair.
+
+\begin{theorie}
+Drie vectoren zijn \textbf{\textcolor{accent}{coplanair}} als hun pijlen, getekend vanuit eenzelfde punt, in één vlak liggen.
+\begin{stelling}{Kenmerk van coplanaire vectoren}
+Zijn $\vec v$ en $\vec w$ niet collineair, dan zijn $\vec u$, $\vec v$ en $\vec w$ coplanair als en slechts als
+
+\vspace{1mm}
+\qquad $\formule{\vec u = r\,\vec v + s\,\vec w}$ \quad voor getallen $r$ en $s$.
+\end{stelling}
+\begin{bewijs}
+\naast{Stel $\vec v = \overrightarrow{OV}$, $\vec w = \overrightarrow{OW}$ en $\vec u = \overrightarrow{OU}$. Omdat $\vec v$ en $\vec w$ niet collineair zijn, bepalen $O$, $V$ en $W$ een vlak $\alpha$.
+
+Is $\vec u = r\vec v + s\vec w$, dan ligt de pijl van $r\vec v$ op de rechte $OV$ en die van $s\vec w$ op $OW$, dus in $\alpha$. Hun som is de diagonaal van het parallellogram met die zijden, en ligt ook in $\alpha$.
+
+Omgekeerd: ligt $U$ in $\alpha$, trek dan in $\alpha$ door $U$ de evenwijdige met $OW$. Ze snijdt $OV$ in een punt $R$, want $OV$ en $OW$ zijn niet evenwijdig. Dan is $\overrightarrow{OR} = r\vec v$ en $\overrightarrow{RU} = s\vec w$ voor zekere $r$ en $s$, en met Chasles
+\bewijsregel{\vec u = \overrightarrow{OR} + \overrightarrow{RU} = r\,\vec v + s\,\vec w .}}{%
+\begin{tikzpicture}[x=.75cm,y=.75cm,font=\scriptsize]
+  \fill[accent!10] (-.5,-.5) -- (4.2,-.5) -- (5,2.1) -- (.3,2.1) -- cycle;
+  \node at (4.3,1.8) {$\alpha$};
+  \draw[grijs,dashed] (-.3,0) -- (4,0);
+  \draw[grijs,dashed] (2.4,0) -- (3.18,1.43);
+  \draw[->,accent,very thick] (0,0) -- (1.6,0) node[below,text=black] {$V$};
+  \draw[->,accent,very thick] (0,0) -- (.6,1.1) node[left,text=black] {$W$};
+  \draw[->,accent,thick] (0,0) -- (3.18,1.43) node[above,text=black] {$U$};
+  \fill (2.4,0) circle (.05) node[below] {$R$};
+  \node[below left] at (0,0) {$O$};
+\end{tikzpicture}}
+\end{bewijs}
+\end{theorie}
+
+In het vlak van $\vec v$ en $\vec w$ bereik je dus elk punt met een stuk in de richting van $\vec v$ en een stuk in de richting van $\vec w$. Vier punten $A$, $B$, $C$ en $D$ liggen in één vlak als $\overrightarrow{AB}$, $\overrightarrow{AC}$ en $\overrightarrow{AD}$ coplanair zijn.
+
 \voorbeeld{}{Liggen $O(0, 0, 0)$, $B(1, 0, 1)$, $C(0, 1, 1)$ en $D(2, 3, 4)$ in één vlak?\label{vb:h1-coplanair}}{%
-\uitleg{Zoek $r$ en $s$ met $\overrightarrow{OD} = r\,\overrightarrow{OB} + s\,\overrightarrow{OC}$: een stelsel van drie vergelijkingen met twee onbekenden.}
+\uitleg{$\overrightarrow{OB}$ en $\overrightarrow{OC}$ zijn niet collineair. Zoek dus $r$ en $s$ met $\overrightarrow{OD} = r\,\overrightarrow{OB} + s\,\overrightarrow{OC}$: een stelsel van drie vergelijkingen met twee onbekenden.}
 \begin{stappenbreed}
-\vc{2}{3}{4} = r\vc{1}{0}{1} + s\vc{0}{1}{1} & \\
-r = 2,\ s = 3,\ \text{controle } r + s = 5 \neq 4 & Derde vergelijking klopt niet.
+\vcr{2}{3}{4} = r\vcr{1}{0}{1} + s\vcr{0}{1}{1} = \vcr{r}{s}{r + s} & Per coördinaat een vergelijking. \\
+r = 2,\ s = 3,\ \text{maar } r + s = 5 \neq 4 & De eerste twee vergelijkingen geven $r$ en $s$, de derde klopt niet.
 \end{stappenbreed}
-Er is geen oplossing: de vier punten liggen \textit{niet} in één vlak. Met $D(2, 3, 5)$ zou het wel zo zijn.}
+Er zijn geen $r$ en $s$: de vier punten liggen \textit{niet} in één vlak. Met $D(2, 3, 5)$ zou het wel zo zijn.}
+
+Kies voor $\vec v$ en $\vec w$ altijd twee vectoren die niet collineair zijn. De vectoren $\vcr{0}{1}{0}$, $\vcr{1}{0}{0}$ en $\vcr{2}{0}{0}$ liggen in het $xy$-vlak en zijn dus coplanair, maar $\vcr{0}{1}{0}$ is geen combinatie van de twee andere, die collineair zijn.
+
+Vier punten die je op het eerste gezicht niet in één vlak verwacht, kunnen er toch in liggen.
+
+\voorbeeld{}{Een kubus met ribbe $2$ heeft hoekpunten $(0, 0, 0)$ en $(2, 2, 2)$ en ribben langs de assen. Toon aan dat de middens $P(2, 1, 0)$, $Q(1, 2, 0)$, $R(0, 2, 1)$ en $S(0, 1, 2)$ van vier ribben in één vlak liggen.\label{vb:h1-coplanair-kubus}}{%
+\uitleg{Neem de vectoren vanuit $P$. $\overrightarrow{PQ}$ en $\overrightarrow{PR}$ zijn niet collineair, want de nul staat niet op dezelfde plaats.}
+\naast{\begin{stappenvrij}{5.4cm}{3.6cm}
+\overrightarrow{PQ} = \vcr{-1}{1}{0},\ \overrightarrow{PR} = \vcr{-2}{1}{1} & \\
+\overrightarrow{PS} = \vcr{-2}{0}{2} & \\
+\vcr{-2}{0}{2} = \vcr{-r - 2s}{r + s}{s} & Stel $\overrightarrow{PS} = r\overrightarrow{PQ} + s\overrightarrow{PR}$. \\
+s = 2,\quad r = -2 & Uit de derde en de tweede coördinaat. \\
+-r - 2s = 2 - 4 = -2 & De eerste klopt ook.
+\end{stappenvrij}
+De vier punten liggen in één vlak. In dat vlak liggen nog twee ribmiddens: samen vormen ze een regelmatige zeshoek.}{%
+\begin{tikzpicture}[ruimte,scale=.95,font=\scriptsize]
+  \draw[grijs] (2,0,0) -- (2,2,0) -- (0,2,0) (2,0,0) -- (2,0,2) -- (0,0,2) -- (0,2,2) -- (2,2,2) -- (2,0,2) (2,2,0) -- (2,2,2) (0,2,0) -- (0,2,2);
+  \draw[grijs,dashed] (0,0,0) -- (2,0,0) (0,0,0) -- (0,2,0) (0,0,0) -- (0,0,2);
+  \fill[accent!15] (2,1,0) -- (1,2,0) -- (0,2,1) -- (0,1,2) -- (1,0,2) -- (2,0,1) -- cycle;
+  \draw[accent] (2,1,0) -- (1,2,0) -- (0,2,1) -- (0,1,2) -- (1,0,2) -- (2,0,1) -- cycle;
+  \foreach \p/\n/\q in {{2,1,0}/P/below,{1,2,0}/Q/right,{0,2,1}/R/right,{0,1,2}/S/above}{\fill[accent] (\p) circle (.06) node[\q,text=black] {$\n$};}
+\end{tikzpicture}}}
 
 \begin{werkwijze}
-Collineair: kijk of de verhoudingen van de coördinaten gelijk zijn (let op nullen). Coplanair: schrijf $\vec u = r\vec v + s\vec w$ per coördinaat uit, los twee vergelijkingen op naar $r$ en $s$, en controleer met de derde.
+Coplanair of niet: kies twee vectoren $\vec v$ en $\vec w$ die niet collineair zijn. Schrijf $\vec u = r\vec v + s\vec w$ per coördinaat uit, los twee vergelijkingen op naar $r$ en $s$, en controleer met de derde.
 \end{werkwijze}
 
 \begin{oefeningen}
@@ -225,9 +471,9 @@ Collineair: kijk of de verhoudingen van de coördinaten gelijk zijn (let op null
 \herhaalschema{%
   \fzv{oef:h1-t5}{oef:h1-coordinaten}%
   \fv{oef:h1-t1}{vb:h1-afstand}{oef:h1-afstand}%
-  \fv{oef:h1-t6}{vb:h1-afstand}{oef:h1-midden}%
-  \fv{oef:h1-t2}{vb:h1-vectoren}{oef:h1-vectoren}%
-  \fv{oef:h1-t7}{vb:h1-vectoren}{oef:h1-norm}%
+  \fv{oef:h1-t6}{vb:h1-midden-terug}{oef:h1-midden}%
+  \fv{oef:h1-t2}{vb:h1-vectoren}{oef:h1-vector-ab}%
+  \fv{oef:h1-t7}{vb:h1-norm}{oef:h1-norm}%
   \fv{oef:h1-t3}{vb:h1-collineair}{oef:h1-collineair}%
   \fv{oef:h1-t4}{vb:h1-coplanair}{oef:h1-coplanair}}
 
